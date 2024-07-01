@@ -1,0 +1,737 @@
+//===== rAthena Script =======================================
+//= Merchant Skills Quests
+//===== By: ==================================================
+//= kobra_k88
+//===== Current Version: =====================================
+//= 1.8
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: =========================================
+//= Quests for skills: Crazy Uproar, Change Cart, Cart Revolution
+//===== Additional Comments: =================================
+//= 1.5 Rescripted to Aegis 10.3 stadards. [L0ne_W0lf]
+//= 1.6 Updated to latest available official file. [Masao]
+//= 1.7 Fixed JobLevel requirements. [Euphy]
+//= 1.8 Moved Alberta NPC to pre-re/re paths. [Euphy]
+//============================================================
+
+alberta,83,96,5	script	Necko	98,7,7,{
+	if (BaseClass == Job_Merchant) {
+		if (getskilllv("MC_LOUD") == 1) {
+			mes "[Necko]";
+			mes "Desculpe. ";
+			mes "Oh? ";
+			mes "Pukakakakakakakakaka!!!";
+			mes "Muito tempo sem ver!";
+			mes "Como vai voc ?";
+			mes "Que bom ver voc  de novo!!";
+			mes "Alguma coisa nova?";
+			mes "Uau ~ estou t o feliz em ver voc !";
+			mes "Voc ! ";
+			mes "Posso esquecer como voc   !";
+			mes "Pukakakakakakakaka!!!";
+			mes "Muito bom te ver!!";
+			mes "  t o bom ver voc  assim!";
+			mes "Venha para Alberta com frequ ncia!";
+			mes "Matando dois p ssaros com uma pedra!!";
+			mes "Eu posso te ver e gritar tamb m!!";
+			mes "Qu o melhor eu posso conseguir!!!";
+			mes "Keuhahahahahahaha!!";
+			mes "Pukakakakakakakakaka!!!";
+			mes "Ppyakikakikakakakakakaka!!";
+			close;
+		}
+		else if (JobLevel < 15 && Class == Job_Merchant ) {
+			mes "[Necko]";
+			mes "Ah, voc  veio porque";
+			mes "voc  est  apaixonado pela minha voz?";
+			mes "Minha voz est  alta, n o  ?";
+			mes "considerando que voc  pode ouvi-lo   dist ncia.";
+			mes "E tamb m.";
+			mes "(Olha ao redor)";
+			next;
+			mes "[Necko]";
+			mes "Minha voz n o   apenas alta!";
+			mes "!";
+			mes "Quando voc  for um comerciante de n vel 15";
+			mes "Eu vou te contar o segredo!";
+			mes "Ent o venha de novo!!!";
+			next;
+			mes "[Necko]";
+			mes "Uahhahahahahahahahahaha!";
+			mes "Kyukwakakakakakakakakaka!";
+			close;
+		}
+		else if ((countitem(722) > 6) && (countitem(532) > 0) && (countitem(921) > 49) && (JobLevel >= 15 || (BaseJob == Job_Blacksmith || BaseJob == Job_Alchemist))) {
+			mes "[Necko]";
+			mes "Oh! ";
+			mes "Voc  est  qualificado para aprender a gritar!";
+			mes "Aprenda a gritar com minha ajuda.";
+			mes "Voc  gostaria de aprender Crazy Uproar?";
+			next;
+			switch (select("Sim!!!!:N o.:O que   isso?")) {
+			case 1:
+				mes "[Necko]";
+				mes "Ahahahahaha!! ";
+				mes "Esse   o esp rito!";
+				mes "Aqui vamos n s!";
+				next;
+				delitem 722,7; //Scarlet_Jewel
+				delitem 532,1; //Banana_Juice
+				delitem 921,50; //Mushroom_Spore
+				skill "MC_LOUD",1,SKILL_PERM;
+				mes "[Necko]";
+				mes "Voc  aprendeu Uproar Louco!!";
+				mes "Grite o quanto quiser!";
+				mes "Hahahahahahaha!";
+				close;
+			case 2:
+				mes "[Necko]";
+				mes "Ah... ok.";
+				mes "Pooooh...";
+				close;
+			case 3:
+				mes "[Necko]";
+				mes "Crazy Uproar usa sua voz alta";
+				mes "para aumentar o esp rito de batalha";
+				mes "Com 8 SP, voc  ganha um adicional";
+				mes "4 FOR por 5 minutos!!!!!";
+				mes "Se voc  us -lo repetidamente";
+				mes "s o 5 minutos a partir desse ponto.";
+				next;
+				mes "[Necko]";
+				mes "Fique casual na vida cotidiana,";
+				mes "e quando voc  precisa lutar";
+				mes "isso reunir  seu esp rito.";
+				mes "Muito  til, devo dizer!!!!";
+				close;
+			}
+		}
+		mes "[Necko]";
+		mes "Oh, voc  ficou encantado";
+		mes "pela minha voz?";
+		mes "Na verdade, minha voz   alta!";
+		mes "Voc  pode ouvir isso de t o longe.";
+		mes "E tamb m.";
+		mes "(Olha ao redor)";
+		next;
+		mes "[Necko]";
+		mes "Minha voz n o   S  alta!";
+		mes "Eu aprendi a habilidade";
+		mes "isso me deixa gritar..";
+		mes "A habilidade Crazy Uroar!";
+		next;
+		mes "[Necko]";
+		mes "Crazy Uproar usa sua voz alta";
+		mes "para aumentar o esp rito de batalha";
+		mes "Com 8 PP, voc  ganha um adicional";
+		mes "4 FOR por 5 minutos!!!!!";
+		mes "Se voc  us -lo repetidamente";
+		mes "s o 5 minutos desse ponto.";
+		next;
+		mes "[Necko]";
+		mes "Fique casual na vida cotidiana,";
+		mes "mas grite para reunir mais";
+		mes "for a quando voc  luta.";
+		mes "  muito  til!!!!";
+		mes "Para aprender essa habilidade, primeiro voc  precisa";
+		mes "para aprender o essencial do som!!!";
+		next;
+		mes "[Necko]";
+		mes "Voc  pode aprender isso em Payon";
+		mes "de um cantor com apenas uma voz alta";
+		mes "Voc  pode aprender com ele!";
+		next;
+		mes "[Necko]";
+		mes "Mas essa pessoa morreu!";
+		mes "Ent o voc  n o pode mais aprender!";
+		mes "Hahahahahahahaha!!!!";
+		mes "..............................";
+		mes "...Ah, voc  parece desapontado?";
+		mes "Voc  quer aprender Crazy Uproar?";
+		next;
+		mes "[Necko]";
+		mes "Hmm... Devo te ensinar?";
+		mes "Se voc  realmente quiser, claro.";
+		mes "Primeiro, devo queimar as cordas vocais.";
+		mes "Existem algumas coisas necess rias para fazer isso.";
+		next;
+		mes "[Necko]";
+		mes "7 p rolas, 1 garrafa de suco de banana,";
+		mes "e 50 esporos de cogumelos!";
+		mes "Ent o vou queimar sua corda vocal!";
+		next;
+		mes "[Necko]";
+		mes "Vejo voc  quando estiver pronto!";
+		mes "Vou preparar minha garganta para isso tamb m!!";
+		mes "Bboowuuuuuuuuuuuuuuh~~~!!";
+		close;
+	}
+	mes "[Necko]";
+	mes "A loja de Necko est  fechada no momento.";
+	mes "volte mais tarde. ";
+	close;
+
+OnTouch_:
+	mes "[!?]";
+	mes "Muahahahahahahahahahahaha!!";
+	mes "Pukakakakakakakakakakakaka!";
+	close;
+}
+
+alberta,119,221,6	script	Charlron	107,{
+	if (BaseClass == Job_Merchant) {
+		if (getskilllv("MC_CHANGECART") == 1) {
+			mes "[Charlron]";
+			mes "Hum? ";
+			mes "o barulho carregando uma carro a.";
+			mes "Foi voc .";
+			mes "Sim eu lembro de voc .";
+			mes "o que voc  acha? ";
+			next;
+			mes "[Charlron]";
+			mes "Aproveite a vida.";
+			mes "A vida n o   simplesmente se mover";
+			mes "para frente..Lentamente, olhando em volta,";
+			mes "arrastar um carrinho pesado  ";
+			mes "a maneira como n s, comerciantes, vivemos.";
+			mes "Ent o at  a pr xima.";
+			next;
+			mes "[Charlron]";
+			mes "Seja saud vel ~";
+			close;
+		}
+		else if (JobLevel >= 30|| (BaseJob == Job_Blacksmith || BaseJob == Job_Alchemist)) {
+			mes "[Charlron]";
+			mes "Prazer em ver voc , colega comerciante";
+			mes "Se eu me lembro bem,";
+			mes "voc    aquele comerciante famoso";
+			mes "nos dias de hoje.";
+			next;
+			mes "Mas seu carrinho n o";
+			mes "parecem se adequar   sua fama.";
+			mes "Que pena.";
+			next;
+			switch (select("  por isso que vim aqui.:E o meu carrinho?:Dois pares   uma pena?")) {
+			case 1:
+				if ((countitem(1019) > 49) && (countitem(998) > 9) && (countitem(919) > 19)) {
+					mes "[Charlron]";
+					mes "Haha! ";
+					mes "Com as coisas que voc  trouxe";
+					mes "Vou trocar seu carrinho.";
+					next;
+					delitem 1019,50; //Wooden_Block
+					delitem 998,10; //Iron
+					delitem 919,20; //Animal's_Skin
+					skill "MC_CHANGECART",1,SKILL_PERM;
+					mes "[Charlron]";
+					mes "Parab ns.";
+					mes "Voc  pode escolher um carrinho";
+					mes "de acordo com seu gosto.";
+					mes "E agora voc  nem precisa";
+					mes "eu para te ajudar. ";
+					mes "preciso   de algum SP.";
+					next;
+					mes "[Charlron]";
+					mes "Conveniente, voc  n o acha?";
+					mes "Ah, e mais uma coisa!";
+					mes "Cada vez que voc  sobe de n vel, voc  pode";
+					mes "tem um novo carrinho diferente";
+					mes "Ent o trabalhe duro.";
+					next;
+					mes "[Charlron]";
+					mes "Mas de qualquer forma, ficou muito bem em voc !";
+					mes "Hahaha! ";
+					close;
+				}
+				mes "[Charlron]";
+				mes "Mmm...   verdade que eu";
+				mes "troque de carrinho, mas...";
+				mes "Para fazer isso, preciso";
+				mes "alguns materiais para usar.";
+				next;
+				mes "[Charlron]";
+				mes "50 troncos.";
+				mes "10 Ferro.";
+				mes "20 peles de animais.";
+				mes "Eu preciso de pelo menos essas coisas";
+				mes "para mudar seu carrinho.";
+				next;
+				mes "[Charlron]";
+				mes "Ent o venha me ver quando voc ";
+				mes "preparei tudo.";
+				close;
+			case 2:
+				mes "[Charlron]";
+				mes "Ah n o, voc  n o sabe nada?(muda de tom)";
+				mes "Uma nova maneira de mostrar o ego de um comerciante!";
+				mes "Uma express o de um excelente c rebro!";
+				mes "Change Cart   uma habilidade que";
+				mes "faz um comerciante se destacar!";
+				next;
+				mes "[Charlron]";
+				mes "Uma habilidade divertida que permite que voc ";
+				mes "use um carrinho de acordo com o seu";
+				mes "n vel com apenas 40 SP!";
+				next;
+				mes "[Charlron]";
+				mes "Isso   carrinho de mudan as!";
+				mes "Uma habilidade b sica para qualquer comerciante.";
+				mes "vou te ensinar como fazer";
+				mes "um, ent o observe com cuidado, e";
+				mes "fa a exatamente o que eu fa o para fazer";
+				mes "o seu no futuro!";
+				next;
+				mes "[Charlron]";
+				mes "Mas, como   a primeira vez";
+				mes "voc  precisa preparar alguns materiais.";
+				mes "50 troncos!";
+				mes "10 Ferro!";
+				mes "20 peles de animais!";
+				mes "-traga isso por favor!";
+				next;
+				mes "[Charlron]";
+				mes "Tudo o que temos que fazer  ";
+				mes "fa a um usando esses materiais,";
+				mes "ent o volte quando estiver pronto.";
+				mes "OK?";
+				close;
+			case 3:
+				mes "[Charlron]";
+				mes "...n o   'CART O'!";
+				close;
+			}
+		}
+		mes "[Charlron]";
+		mes "Bem vindo jovem.";
+		mes "Vender   divertido? ";
+		mes "comerciante Charlron. ";
+		mes "fazendo algumas pesquisas sobre.";
+		mes "carrinhos recentemente.";
+		next;
+		mes "[Charlron]";
+		mes "Voc  n o est  cansado desse carrinho?";
+		mes "Venha at  mim se voc  quiser";
+		mes "mude seu carrinho. ";
+		mes "Mas existem algumas condi  es.";
+		next;
+		mes "[Charlron]";
+		mes "Sou um comerciante muito famoso,";
+		mes "ent o eu realmente n o lido com iniciantes.";
+		mes "Quando voc  estiver no n vel 30";
+		mes "Posso considerar estabelecer";
+		mes "um acordo com voc .";
+		close;
+	}
+	mes "[Charlron]";
+	mes "Eu sou um comerciante que";
+	mes "lida com muitas coisas, Charlron.";
+	mes "Se voc  encontrar algo interessante";
+	mes "volte e tente";
+	mes "negociar um acordo comigo.";
+	close;
+}
+
+-	script	::Gershaun_alberta	-1,{
+	if (BaseClass == Job_Merchant) {
+		if (getskilllv("MC_CARTREVOLUTION") == 1) {
+			mes "[Gershaun]";
+			mes "Ah, muito tempo sem ver!";
+			mes "Ohh, as marcas vermelhas no seu carrinho.";
+			mes "Devem ser as marcas de 'isso'...";
+			mes "Parece que eu lhe ensinei a habilidade corretamente!";
+			next;
+			mes "[Gershaun]";
+			mes "Voc  tem sangue como o meu em voc !";
+			mes "Hum! ";
+			mes "Eu estou feliz! ";
+			mes "Aqui! ";
+			close;
+		}
+		else if (JobLevel >= 35 || (BaseJob == Job_Blacksmith || BaseJob == Job_Alchemist)) {
+			mes "[Gershaun]";
+			mes "Ah, sim. ";
+			mes "para um comerciante. ";
+			mes "muito bom carregar coisas!?";
+			mes "Mmm voc  deveria ser capaz de aprender";
+			mes "Revolu  o do carrinho!";
+			next;
+			switch (select("Ei~ foi por isso que vim.:O que   isso?")) {
+			case 1:
+				set .@care_random,rand(1,3);
+				if (.@care_random == 1) {
+					if ((countitem(533) > 1) && (countitem(998) > 19) && (countitem(938) > 29) && (countitem(601) > 19) && (countitem(962) > 4)) {
+						mes "[Gershaun]";
+						mes "Hoho!";
+						mes "Entendi! ";
+						mes "Revolu  o do carrinho!";
+						next;
+						mes "[Gershaun]";
+						mes "Ah, que dia lindo!";
+						mes "Eu recompensarei aqueles que";
+						mes "balan am ansiosamente seus carrinhos!";
+						next;
+						delitem 533,2; //Grape_Juice
+						delitem 998,20; //Iron
+						delitem 938,30; //Sticky_Mucus
+						delitem 601,20; //Wing_Of_Fly
+						delitem 962,5; //Tentacle
+						skill "MC_CARTREVOLUTION",1,SKILL_PERM;
+						mes "Agora voc  pode usar o Cart Revolution";
+						mes "Espero que voc  fa a comerciantes";
+						mes "famoso por usar este incr vel";
+						mes "poder de destrui  o. ";
+						next;
+						mes "[Gershaun]";
+						mes "Tenha um  timo dia!!";
+						close;
+					}
+					else if (countitem(532) > 0) {
+						mes "[Gershaun]";
+						mes "Ah!";
+						mes "  suco de banana!";
+						mes "Muito obrigado!";
+						mes "............... Kaah!";
+						delitem 532,1; //Banana_Juice
+						mes "Muito refrescante! ";
+						next;
+						mes "[Gershaun]";
+						mes "Hum?";
+						mes "Voc  ainda n o foi embora?";
+						mes "Ah! ";
+						mes "para a revolu  o do carrinho!";
+						mes "OK ent o. ";
+						mes "o Suco de Banana, eu vou te ensinar.";
+						next;
+						mes "[Gershaun]";
+						mes "N o   dif cil te ensinar";
+						mes "Revolu  o do carrinho, mas preciso que voc  se prepare";
+						mes "os materiais para modificar seu carrinho.";
+						mes "Os itens que preciso s o..";
+						next;
+						mes "[Gershaun]";
+						mes "Primeiro preciso de 20 ferros para fazer o carrinho";
+						mes "dur vel. ";
+						mes "O choque.";
+						mes "E cerca de 20 Fly Wings e 5 Tent culos?";
+						mes "E 2 garrafas de suco de uva para mim!";
+						next;
+						mes "[Gershaun]";
+						mes "Basta trazer isso.";
+						mes "N o estou dizendo APENAS 30 ou 20.";
+						mes "Depende da minha condi  o!";
+						mes "Hahahaha!";
+						mes "Eu estarei esperando. ";
+						close;
+					}
+					mes "[Gershaun]";
+					mes "Hum!";
+					mes "Nada pode ser feito sem uma bebida refrescante!";
+					mes "Que tal iniciar uma conversa";
+					mes "com pelo menos uma garrafa de suco de banana?";
+					close;
+				}
+				if (.@care_random == 2) {
+					if ((countitem(533) > 1) && (countitem(998) > 14) && (countitem(938) > 24) && (countitem(601) > 14) && (countitem(962) > 4)) {
+						mes "[Gershaun]";
+						mes "Mmm, isso   bom!";
+						mes " timo! ";
+						mes "...Revolu  o do carrinho!";
+						next;
+						mes "[Gershaun]";
+						mes "Ah, que dia lindo!";
+						mes "Eu recompensarei aqueles que";
+						mes "balan am ansiosamente seus carrinhos!";
+						next;
+						delitem 533,2; //Grape_Juice
+						delitem 998,15; //Iron
+						delitem 938,25; //Sticky_Mucus
+						delitem 601,15; //Wing_Of_Fly
+						delitem 962,5; //Tentacle
+						skill "MC_CARTREVOLUTION",1,SKILL_PERM;
+						mes "Agora voc  pode usar o Cart Revolution";
+						mes "Espero que voc  fa a comerciantes";
+						mes "famoso por usar seu incr vel";
+						mes "poder de destrui  o. ";
+						next;
+						mes "[Gershaun]";
+						mes "Tenha um bom dia!!";
+						close;
+					}
+					else if (countitem(532) > 0) {
+						mes "[Gershaun]";
+						mes "Ah!";
+						mes "  suco de banana!";
+						mes "Muito obrigado!";
+						mes "...............Kaaah!";
+						delitem 532,1; //Banana_Juice
+						mes "Muito bom! ";
+						next;
+						mes "[Gershaun]";
+						mes "Hum?";
+						mes "Voc  ainda n o foi embora?";
+						mes "Ah! ";
+						mes "para a revolu  o do carrinho!";
+						mes "OK ent o. ";
+						mes "o suco de banana, eu te ensino.";
+						next;
+						mes "[Gershaun]";
+						mes "N o   dif cil te ensinar";
+						mes "Revolu  o do carrinho, mas preciso que voc  se prepare";
+						mes "os materiais para modificar seu carrinho.";
+						mes "Os itens que preciso s o..";
+						next;
+						mes "[Gershaun]";
+						mes "Primeiro preciso de 20 ferros para fazer o carrinho";
+						mes "dur vel. ";
+						mes "O choque.";
+						mes "E cerca de 20 Fly Wings e 5 Tent culos?";
+						mes "E 2 garrafas de suco de uva para mim!";
+						next;
+						mes "[Gershaun]";
+						mes "Traga isso para mim.";
+						mes "Mas isso n o significa que quero apenas 30 e 20.";
+						mes "Tudo depende da minha condi  o!";
+						mes "Apenas me traga isso por enquanto.";
+						mes "Hahahaha!";
+						mes "Estou ansioso para isso. ";
+						close;
+					}
+					mes "[Gershaun]";
+					mes "Hum!";
+					mes "Nada   de gra a hoje em dia!";
+					mes "Que tal tentar iniciar uma conversa";
+					mes "oferecendo uma garrafa de suco de banana ou algo assim?";
+					close;
+				}
+				if (.@care_random == 3) {
+					if ((countitem(533) > 1) && (countitem(998) > 22) && (countitem(938) > 31) && (countitem(601) > 22) && (countitem(962) > 5)) {
+						mes "[Gershaun]";
+						mes "Mmm, isso   bom!";
+						mes " timo! ";
+						mes "...Revolu  o do carrinho!";
+						next;
+						mes "[Gershaun]";
+						mes "Ah, que dia lindo!";
+						mes "Eu recompensarei aqueles que";
+						mes "balan am ansiosamente seus carrinhos!";
+						next;
+						delitem 533,2; //Grape_Juice
+						delitem 998,23; //Iron
+						delitem 938,32; //Sticky_Mucus
+						delitem 601,23; //Wing_Of_Fly
+						delitem 962,6; //Tentacle
+						skill "MC_CARTREVOLUTION",1,SKILL_PERM;
+						mes "Agora voc  pode usar o Cart Revolution";
+						mes "Espero que voc  fa a comerciantes";
+						mes "famoso por usar seu incr vel";
+						mes "poder de destrui  o. ";
+						next;
+						mes "[Gershaun]";
+						mes "Tenha um bom dia!!";
+						close;
+					}
+					else if (countitem(532) > 0) {
+						mes "[Gershaun]";
+						mes "Ah!";
+						mes "  suco de banana!";
+						mes "Muito obrigado!";
+						mes "...............Kaaah!";
+						delitem 532,1; //Banana_Juice
+						mes "Muito bom! ";
+						next;
+						mes "[Gershaun]";
+						mes "Hum?";
+						mes "Voc  ainda n o foi embora?";
+						mes "Ah! ";
+						mes "para a revolu  o do carrinho!";
+						mes "OK ent o. ";
+						mes "o suco de banana, eu te ensino.";
+						next;
+						mes "[Gershaun]";
+						mes "N o   dif cil te ensinar";
+						mes "Revolu  o do carrinho, mas preciso que voc  se prepare";
+						mes "os materiais para modificar seu carrinho.";
+						mes "Os itens que preciso s o..";
+						next;
+						mes "[Gershaun]";
+						mes "Primeiro preciso de 20 ferros para fazer o carrinho";
+						mes "dur vel. ";
+						mes "O choque.";
+						mes "E cerca de 20 Fly Wings e 5 Tent culos?";
+						mes "E 2 garrafas de suco de uva para mim!";
+						next;
+						mes "[Gershaun]";
+						mes "Basta trazer isso.";
+						mes "N o estou dizendo APENAS 30 ou 20.";
+						mes "Depende da minha condi  o!";
+						mes "Hahahaha!";
+						mes "Eu estarei esperando. ";
+						close;
+					}
+					mes "[Gershaun]";
+					mes "Hum!";
+					mes "Nada pode ser feito sem uma bebida refrescante!";
+					mes "Que tal iniciar uma conversa";
+					mes "com pelo menos uma garrafa de suco de banana?";
+					close;
+				}
+			case 2:
+				mes "[Gershaun]";
+				mes "... voc  parece n o saber";
+				mes "sobre a revolu  o do carrinho.";
+				mes "Ok, vou te contar uma hist ria";
+				mes "Nunca contei a ningu m antes.";
+				mes "Ou a com aten  o.";
+				next;
+				mes "[Gershaun]";
+				mes "Eu pesquisei sobre um diferente";
+				mes "maneira de usar o carrinho.";
+				mes "Eu tentei cozinhar ramen";
+				mes "e at  tentei pular corda.";
+				mes "Mas nenhum deles foi capaz";
+				mes "para me satisfazer.";
+				next;
+				mes "[Gershaun]";
+				mes "Em desespero, eu vaguei";
+				mes "pelos campos com meu carrinho.";
+				mes "Depois de vagar atordoado dia ap s dia..";
+				mes "Eu conheci um monstro muito forte.";
+				mes "A vida estava em perigo!";
+				mes "Por que eu - um comerciante sem armas e sem armadura!";
+				next;
+				mes "[Gershaun]";
+				mes "Eu estava morrendo de medo.. pensando";
+				mes "e esperando que este n o fosse o";
+				mes " ltimo de mim. ";
+				mes "Tentei a  ltima coisa poss vel.";
+				mes "Usei meu carrinho para acertar o monstro!";
+				next;
+				mes "[Gershaun]";
+				mes "O monstro morreu com um golpe.";
+				mes "Foi ent o que percebi uma coisa.";
+				mes "Os carrinhos tamb m podem se tornar armas!";
+				mes "Finalmente percebi que podemos";
+				mes "ataque com carrinhos!";
+				next;
+				mes "[Gershaun]";
+				mes "Revolu  o do carrinho!";
+				mes "Essa   a nova habilidade de ataque que desenvolvi.";
+				mes "Usando 12 SP voc  levanta seu carrinho";
+				mes "para acertar seu oponente..";
+				mes "bem na cabe a!";
+				next;
+				mes "[Gershaun]";
+				mes "Quanto mais pesado for o seu carrinho, mais";
+				mes "mais forte voc  pode atacar! ";
+				mes "seu oponente ficar  ferido e";
+				mes "for ado a recuar!";
+				mes "Esta   a revolu  o do carrinho!";
+				close;
+			}
+		}
+		mes "[Gershaun]";
+		mes "Mmm, um jovem comerciante.";
+		mes "Voc  tamb m deve usar carrinhos.";
+		mes "J  que voc  precisa fazer neg cios.";
+		mes "Mas isso   tudo?";
+		next;
+		mes "[Gershaun]";
+		mes "Eu pesquisei sobre um diferente";
+		mes "maneira de usar o carrinho.";
+		mes "Eu tentei cozinhar ramen";
+		mes "e at  tentei pular corda.";
+		mes "Mas nenhum deles foi capaz";
+		mes "para me satisfazer.";
+		next;
+		switch (select("Eu sei eu sei.:...?")) {
+		case 1:
+			mes "[Gershaun]";
+			mes "... n o, o que estou dizendo  .";
+			close;
+		case 2:
+			mes "[Gershaun]";
+			mes "Em desespero, eu vaguei";
+			mes "pelos campos com meu carrinho.";
+			mes "Depois de vagar atordoado dia ap s dia..";
+			mes "Eu conheci um monstro muito forte.";
+			mes "A vida estava em perigo!";
+			mes "Por que eu - um comerciante sem armas e sem armadura!";
+			next;
+			mes "[Gershaun]";
+			mes "Eu estava morrendo de medo.. pensando";
+			mes "e esperando que este n o fosse o";
+			mes " ltimo de mim. ";
+			mes "Tentei a  ltima coisa poss vel.";
+			mes "Usei meu carrinho para acertar o monstro!";
+			mes "E ent o! ";
+			next;
+			mes "[Gershaun]";
+			mes "O monstro morreu com um golpe.";
+			mes "Foi ent o que percebi uma coisa.";
+			mes "Os carrinhos tamb m podem se tornar armas!";
+			mes "Finalmente percebi que podemos";
+			mes "ataque com carrinhos!";
+			next;
+			mes "[Gershaun]";
+			mes "Revolu  o do carrinho!";
+			mes "Essa   a nova habilidade de ataque que desenvolvi.";
+			mes "Usando 12 SP voc  levanta seu carrinho";
+			mes "para acertar seu oponente..";
+			mes "bem na cabe a!";
+			next;
+			mes "[Gershaun]";
+			mes "Quanto mais pesado for o seu carrinho, mais";
+			mes "mais forte voc  pode atacar! ";
+			mes "seu oponente ficar  ferido e";
+			mes "for ado a recuar!";
+			next;
+			mes "[Gershaun]";
+			mes "Voc  gostaria de aprender essa habilidade?";
+			next;
+			switch (select("Sim!!:Eu quero aprender habilidades de sushi...")) {
+			case 1:
+				mes "[Gershaun]";
+				mes "OK!";
+				mes "Vou te dar um treinamento especial!";
+				mes "Primeiro voc  precisa de sa de!";
+				mes "V  ao comerciante";
+				mes "n vel 35!";
+				mes "Conversaremos depois disso!";
+				close;
+			case 2:
+				mes "[Rei do Sushi Gershaun]";
+				if (Sex == SEX_FEMALE) {
+					mes "Garota est pida!";
+				}
+				else {
+					mes "Garoto est pido!";
+				}
+				mes "  muito cedo para voc ";
+				mes "at  coloque as m os no sushi!";
+				close;
+			}
+		}
+	}
+	mes "[Gershaun]";
+	mes "Se n o funcionar, fa a funcionar.";
+	mes "Se n o funcionar, fa a funcionar.";
+	mes "Se n o funcionar, fa a funcionar.";
+	close;
+}
+
+//============================================================ 
+// Old changelog
+//============================================================ 
+//= Fully working
+//= 1.1 Bug fixes
+//= 1.a Now using functions found in "Global_Functions.txt"
+//=     for class checks.[kobra_k88]
+//= 1.2 Added Baby Class Support [Lupus]
+//= 1.3 Removed callfunc Is_####_Class in favor of baseClass [Silentdragon]
+//= 1.4 Fixed exploits [Lupus]
+//= 1.4a Fixed some typos [IVBela] 1.4b  Gershaun -> Gershuan
+//=     changed perm. variables to temp ones [Lupus]
+//= 1.4b Added missing 1 Banana Juice requirement to Cart Revolution [DracoRPG]
+//============================================================
+

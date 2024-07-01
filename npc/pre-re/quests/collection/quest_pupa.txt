@@ -1,0 +1,237 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+gef_fild04,191,54,3	script	Halgus#Pupa_Hunt	123,{
+	if (#mobpupa >= .consec) {
+		mes .npc$;
+		mes "Voce já fez 3 missões comigo hoje.";
+		mes "Volte amanhã";
+		close;
+	}
+	if (checkquest(60110) != -1) {
+		if (checkquest(60110, HUNTING) != 2) {
+			mes "[Halgus]";
+			mes "Você se livrou dos Pupa?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Halgus]";
+					mes "Hmm, eu não acho que você tenha se livrado de 50 Pupa ainda...";
+					close;
+				case 2:
+					mes "[Halgus]";
+					mes "Lembre-se, se livre de 50 desses Pupa do campo.";
+					close;
+				case 3:
+					mes "[Halgus]";
+					mes "Tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você tenha feito será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Halgus]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60110;
+							close;
+						case 2:
+							mes "[Halgus]";
+							mes "Lembre-se, se livre de 50 desses Pupa do campo.";
+							close;
+					}
+			}
+		} else {
+			mes "[Halgus]";
+			mes "Ah, muito obrigado.";
+			mes "Eu sei que eu poderia ter feito isso sozinho, mas não é fácil ficar aqui o tempo todo.";
+			getexp 385, 30;
+			erasequest 60110;
+			#mobpupa++;
+			close;
+		}
+	}
+	if (checkquest(60111) != -1) {
+		if (checkquest(60111, HUNTING) != 2) {
+			mes "[Halgus]";
+			mes "Você se livrou dos Pupa?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Halgus]";
+					mes "Hmm, eu não acho que você tenha se livrado de 100 Pupa ainda...";
+					close;
+				case 2:
+					mes "[Halgus]";
+					mes "Lembre-se, se livre de 100 desses Pupa do campo.";
+					close;
+				case 3:
+					mes "[Halgus]";
+					mes "Tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você tenha feito será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Halgus]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60111;
+							close;
+						case 2:
+							mes "[Halgus]";
+							mes "Lembre-se, se livre de 100 desses Pupa do campo.";
+							close;
+					}
+			}
+		} else {
+			mes "[Halgus]";
+			mes "Ah, muito obrigado.";
+			mes "Eu sei que eu poderia ter feito isso sozinho, mas não é fácil ficar aqui o tempo todo.";
+			getexp 385, 30;
+			getexp 385, 30;
+			erasequest 60111;
+			#mobpupa++;
+			close;
+		}
+	}
+	if (checkquest(60112) != -1) {
+		if (checkquest(60112, HUNTING) != 2) {
+			mes "[Halgus]";
+			mes "Você se livrou dos Pupa?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Halgus]";
+					mes "Hmm, eu não acho que você tenha se livrado de 150 Pupa ainda...";
+					close;
+				case 2:
+					mes "[Halgus]";
+					mes "Lembre-se, se livre de 150 desses Pupa do campo.";
+					close;
+				case 3:
+					mes "[Halgus]";
+					mes "Tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você tenha feito será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Halgus]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60112;
+							close;
+						case 2:
+							mes "[Halgus]";
+							mes "Lembre-se, se livre de 150 desses Pupa do campo.";
+							close;
+					}
+			}
+		} else {
+			mes "[Halgus]";
+			mes "Ah, muito obrigado.";
+			mes "Eu sei que eu poderia ter feito isso sozinho, mas não é fácil ficar aqui o tempo todo.";
+			getexp 385, 30;
+			getexp 385, 30;
+			getexp 385, 30;
+			erasequest 60112;
+			#mobpupa++;
+			close;
+		}
+	}
+// Verificar nível mínimo
+	if (BaseLevel > 1) {
+		// Verificar nível máximo
+		if (BaseLevel < 21) {
+			mes "[Halgus]";
+			mes "Novo por aqui, não é?";
+			mes "Bom, veja, eu gosto de ajudar novos rostos por aqui.";
+			mes "E, vamos ser honestos, você não é o rosto mais bonito que eu já vi.";
+			next;
+			mes "[Halgus]";
+			mes "De qualquer forma, minha filha achou que seria divertido coletar pupas ao redor deste campo, e está ficando desagradável.";
+			mes "Você se importaria de me ajudar a se livrar de algumas Pupa para limpar este campo?";
+			next;
+			switch (select("Claro, não me importo:Não")) {
+				case 1:
+					mes "[Halgus]";
+					mes "Mesmo? O que você gostaria de fazer para ajudar?";
+					next;
+					switch (select("Coletar itens:Se livrar de Pupa:Cancelar")) {
+						case 1:
+							// Entrega de itens
+							mes "[Halgus]";
+							mes "Você pode coletar ^00CE0025 Crisálidas^000000 e devolvê-las para mim, prometo recompensá-lo bem.";
+							next;
+							switch (select("Eu tenho Crisálidas:O que você precisa?")) {
+								case 1:
+									if (countitem(915) > 24) {
+										mes "[Halgus]";
+										mes "Incrível, você encontrou tantas tão rápido.";
+										mes "Como prometido, me dê as Crisálidas e eu vou recompensá-lo com minha sabedoria.";
+										delitem 915, 25; //Crisálida
+										getexp 385, 30;
+										#mobpupa++;
+										close;
+									} else {
+										mes "[Halgus]";
+										mes "Eu preciso de ^00CE0025 Crisálidas^000000 e não menos, por favor.";
+										close;
+									}
+								case 2:
+									mes "[Halgus]";
+									mes "Eu preciso de ^00CE0025 Crisálidas^000000.";
+									close;
+							}
+						case 2:
+							// Missão de contagem de mortes
+							mes "[Halgus]";
+							mes "Muito obrigado!";
+							mes "Quantas você gostaria de se livrar?";
+							next;
+							switch (select("50 Pupa:100 Pupa:150 Pupa")) {
+								case 1:
+									mes "[Halgus]";
+									mes "Se você puder se livrar de 50 dessas Pupa do campo, ficarei grato.";
+									setquest 60110;
+									close;
+								case 2:
+									mes "[Halgus]";
+									mes "Se você puder se livrar de 100 dessas Pupa do campo, ficarei grato.";
+									setquest 60111;
+									close;
+								case 3:
+									mes "[Halgus]";
+									mes "Se você puder se livrar de 150 dessas Pupa do campo, ficarei grato.";
+									setquest 60112;
+									close;
+							}
+						case 3:
+							mes "[Halgus]";
+							mes "Se mudar de ideia, por favor, volte.";
+							close;
+					}
+				case 2:
+					mes "[Halgus]";
+					mes "Se mudar de ideia, por favor, volte.";
+					close;
+			}
+		} else {
+			mes "[Halgus]";
+			mes "Você provavelmente poderia me ajudar facilmente, mas quero dar caridade para aqueles que não são tão fortes quanto você.";
+			close;
+		}
+	} else {
+		mes "[Halgus]";
+		mes "Por favor, volte quando estiver um pouco mais forte.";
+		close;
+	}
+OnClock0001:
+query_sql ("DELETE FROM `acc_reg_num` WHERE `key`='#mobpupa'");
+end;
+
+OnInit:
+	.consec = 3;
+	end;
+}

@@ -1,0 +1,77 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+valkyrie,44,47,5	script	Arquimago#Valkyrie	735,{
+	if (ADVJOB == 0 ||  Upper != 1) {
+		set .@karma_d,rand(1,10);
+		if (.@karma_d > 4) {
+			mes "[Arquimago]";
+			mes "Parabéns.";
+			mes "Honra aos guerreiros!";
+			close;
+		}
+		mes "[Arquimago]";
+		mes "Nós, Arquimagos, temos";
+		mes "a responsabilidade de";
+		mes "usar nossa magia destrutiva";
+		mes "para os propósitos certos.";
+		next;
+		mes "[Arquimago]";
+		mes "Uma vida inteira de treinamento";
+		mes "é necessária antes de se tornar";
+		mes "um Arquimago. Você consegue imaginar";
+		mes "o que aconteceria se nosso poder";
+		mes "caísse em mãos erradas?!";
+		close;
+	}
+	else if (ADVJOB == Job_High_Wizard && Class == Job_Mage_High && JobLevel > 39) {
+		mes "[Arquimago]";
+		mes "É hora.";
+		mes "E Midgard está";
+		mes "precisando daqueles que podem";
+		mes "manejar a magia mais forte...";
+		next;
+		mes "[Arquimago]";
+		mes "Gostaria de";
+		mes "se tornar um Arquimago?";
+		next;
+		if (select("Não.:Sim.") == 1) {
+			mes "[Arquimago]";
+			mes "Quando estiver pronto,";
+			mes "sinta-se à vontade para voltar.";
+			mes "Honra aos guerreiros!";
+			close;
+		}
+		if (SkillPoint) {
+			mes "[Arquimago]";
+			mes "Ainda é possível aprender mais habilidades. Por favor, utilize";
+			mes "todos os seus Pontos de Habilidade restantes antes de voltar para mim.";
+			close;
+		}
+		jobchange Job_high_Wizard;
+		set ADVJOB,0;
+		mes "[Arquimago]";
+		mes "Parabéns.";
+		mes "Como Arquimago,";
+		mes "espero que use seus poderes";
+		mes "para trazer paz aos oprimidos.";
+		close;
+	}
+	mes "[Arquimago]";
+	mes "Bem-vindo";
+	mes "a Valhalla,";
+	mes "o Salão da Honra.";
+	next;
+	mes "[Arquimago]";
+	mes "Por favor, sinta-se";
+	mes "à vontade";
+	mes "enquanto estiver aqui.";
+	mes "Honra aos guerreiros!";
+	close;
+}

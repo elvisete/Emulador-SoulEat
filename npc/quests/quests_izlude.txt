@@ -1,0 +1,90 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+// Edgar's Offer :: iz_npc
+//============================================================
+-	script	::Edgar_izlude	-1,{
+	if (MISC_QUEST & 16) {
+		mes "[Edgar]";
+		mes "Então você está indo para Alberta de novo? ";
+		mes "Como é isso?";
+		next;
+		if (select("Tudo bem~!:Por que você está sendo tão legal comigo?!") == 1) {
+			if (Zeny < 250) {
+				mes "[Edgar]";
+				mes "Hum...";
+				mes "Isso não é";
+				mes "dinheiro suficiente.";
+				mes "Por que você não vai";
+				mes "conseguir mais algum dinheiro?";
+				close ;
+			}
+			set Zeny, Zeny-250;
+			warp "alberta",195,164;
+			end;
+		}
+		mes "[Edgar]";
+		mes "É assim que eu sou. ";
+		close;
+	}
+	mes "[Edgar]";
+	mes "Minha cidade, Izlude, está ligada a Alberta pelo porto no oeste. ";
+	next;
+	mes "[Edgar]";
+	mes "Tem um cara que conheço muito bem, Phelix, que mora em Alberta. ";
+	next;
+	mes "[Edgar]";
+	mes "Mas ele é um cara muito legal e gosta de ajudar outras pessoas. ";
+	next;
+	mes "[Edgar]";
+	mes "Ultimamente, as pessoas em Alberta dizem que ele está realmente tentando ajudar as pessoas e que sua demanda por gelatinas é apenas um encobrimento.  ";
+	next;
+	if (select("Você pode me dizer como chegar a Alberta?:Fim da conversa") == 1) {
+		mes "[Edgar]";
+		mes "Huh? ";
+		next;
+		if (select("Ok, entendi.:Mas estou cansado de andar e estou sem dinheiro!") == 1) {
+			mes "[Edgar]";
+			mes "Tudo bem, tome cuidado ~";
+			close;
+		}
+		mes "[Edgar]";
+		mes "OK...";
+		mes "Você não quer caminhar E não tem dinheiro, mas ainda quer ir para lá? ";
+		next;
+		mes "[Edgar]";
+		mes "Bem bem. ";
+		next;
+		if (select("Tudo bem~!:Bah, que roubo!!") == 1) {
+			set MISC_QUEST,MISC_QUEST | 16;
+			if (Zeny < 250) {
+				mes "[Edgar]";
+				mes "Hum...";
+				mes "Isso não é";
+				mes "dinheiro suficiente.";
+				mes "Vá e pegue";
+				mes "um pouco mais.";
+				close;
+			}
+			set Zeny, Zeny-250;
+			warp "alberta",195,164;
+			end;
+		}
+		mes "[Edgar]";
+		mes "Garoto, oh garoto,";
+		mes "se você acha";
+		mes "isso é um roubo...";
+		close;
+	}
+	mes "[Edgar]";
+	mes "Sim, está bem.";
+	mes "Te vejo mais tarde~";
+	close;
+}
+

@@ -1,0 +1,110 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+lou_fild01,240,354,4	script	Mantis Researcher	878,{
+	if (#mobmart >= .consec) {
+		mes .npc$;
+		mes "Voce já fez 3 missões comigo hoje.";
+		mes "Volte amanhã";
+		close;
+	}
+	if (checkquest(60179) != -1) {
+		if (checkquest(60179, HUNTING) != 2) {
+			mes "[Pesquisador de Mantis]";
+			mes "Você terminou de caçar os 50 Mantis?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Pesquisador de Mantis]";
+					mes "Hmm, eu não acho que você tenha caçado 50 ainda.";
+					close;
+				case 2:
+					mes "[Pesquisador de Mantis]";
+					mes "Lembre-se, eu preciso de ajuda para caçar Mantis, então vá e caçe 50 deles.";
+					close;
+				case 3:
+					mes "[Pesquisador de Mantis]";
+					mes "Tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você fez será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Pesquisador de Mantis]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60179;
+							close;
+						case 2:
+							mes "[Pesquisador de Mantis]";
+							mes "Por favor, mate 50 Mantis para tornar este local um lugar onde as pessoas possam ir e ganhar experiência.";
+							close;
+					}
+			}
+		}
+		mes "[Pesquisador de Mantis]";
+		mes "Incrível, você fez isso rapidinho.";
+		getexp 18818, 7527;
+		erasequest 60179;
+		#mobmart++;
+		close;
+	}
+	if ((BaseLevel > 34) && (BaseLevel < 71)) {
+		mes "[Pesquisador de Mantis]";
+		mes "Oh, ótimo!";
+		mes "Você está aqui para me ajudar, certo?";
+		mes "Se não, eu não sei o que fazer com os Monstros neste lugar!";
+		next;
+		switch (select("Claro:Não")) {
+			case 1:
+				mes "[Pesquisador de Mantis]";
+				mes "Ótimo! Eu sabia desde o momento em que te vi que posso contar com você!";
+				mes "Eu preciso que você reduza a quantidade de Monstros que estão atualmente causando estragos neste Mapa!";
+				mes "Há muitos Mantis por aqui, o que torna impossível para os jogadores de níveis mais baixos ganharem boa experiência.";
+				next;
+				mes "[Pesquisador de Mantis]";
+				mes "Então, você ainda gostaria de me ajudar?";
+				next;
+				switch (select("Claro:Cancelar")) {
+					case 1:
+						if (BaseLevel > 70) {
+							mes "[Pesquisador de Mantis]";
+							mes "Obrigado pela sua grande ajuda com os Mantis!";
+							mes "Atualmente, a situação está estável e eu não preciso mais da sua ajuda para matá-los.";
+							close;
+						}
+						mes "[Pesquisador de Mantis]";
+						mes "Mate 50 desses Mantis e me avise quando terminar. Eu vou recompensar seus esforços.";
+						setquest 60179;
+						close;
+					case 2:
+						mes "[Pesquisador de Mantis]";
+						mes "Se mudar de ideia, por favor, volte.";
+						close;
+				}
+			case 2:
+				mes "[Pesquisador de Mantis]";
+				mes "Se mudar de ideia, por favor, volte.";
+				close;
+		}
+	}
+	mes "[Pesquisador de Mantis]";
+	mes "Oh, garoto, oh, garoto!";
+	next;
+	mes "[Pesquisador de Mantis]";
+	mes "Desculpe, não posso falar agora. Estou em um mundo de dor aqui, esses malditos Mantis vão me matar.";
+	close;
+
+OnClock0001:
+query_sql ("DELETE FROM `acc_reg_num` WHERE `key`='#mobmart'");
+end;
+
+OnInit:
+	.consec = 3;
+	end;
+	
+}

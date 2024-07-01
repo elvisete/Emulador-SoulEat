@@ -1,0 +1,256 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+// Prontera
+//============================================================
+prontera,158,213,1	script	Sign Post#Prt1	111,{
+	mes "^993300- A placa de sinalização lê -^000000";
+	mes "Norte até o Castelo de Prontera";
+	mes "Norte para Al De Baran";
+	mes "Noroeste para Geffen";
+	mes "Leste para Campos de Prontera";
+	mes "Do sul até os campos de Prontera";
+	mes "Sudeste para Alberta";
+	mes "Sudoeste para Marrocos";
+	mes "Sudoeste para Comodo";
+	mes "Oeste para Prontera Fields";
+	close;
+}
+
+prontera,156,197,1	script	Prontera Bulletin#Prt2	111,{
+	mes "^993300- Leituras do Boletim Prontera -^000000";
+	mes "Procura-se: dois acessórios de clipe";
+	mes "Por favor entre em contato...";
+	mes "- O nome parece estar desgastado -";
+	mes "Vendo: Espada Bastarda Usada";
+	mes "Aceito qualquer oferta!";
+	mes "Contato Abramulious";
+	mes "Procura-se ajuda: Comprar ou vender um Peco Peco usado?";
+	mes "Contate Grasisium em Marrocos agora!";
+	close;
+}
+
+prontera,278,212,1	script	Sign#Prt3	111,{
+	mes "^993300- A placa diz -^000000";
+	mes "Por favor, ajude a manter Prontera um lugar limpo.";
+	close;
+}
+/*
+prontera,150,326,1	script	Sign#Prt4	111,{
+	mes "^993300- A placa diz -^000000";
+	mes "Cidadãos de Prontera são recebidos no Castelo de Prontera.";
+	close;
+}
+*/
+prontera,31,212,1	script	Billboard#Prt5	111,{
+	mes "^993300- Leituras do outdoor -^000000";
+	mes "~QUERIDO~";
+	mes "iROGM01";
+	mes "Morto ou vivo";
+	mes "*Matar Roubar em Glast Heim*";
+	mes "~RECOMPENSA~";
+	mes "50.000 Zenis";
+	mes "Contato: iROGM02";
+	close;
+}
+
+prontera,165,305,1	script	Billboard#Prt6	111,{
+	mes "^993300- Leituras do outdoor -^000000";
+	mes "Esperamos que você aproveite sua estadia em Prontera.";
+	close;
+}
+
+prontera,145,304,1	script	Sign#Prt7	111,{
+	mes "^993300- A placa diz -^000000";
+	mes "Observação:";
+	mes "Perdi meu carrinho no Monte Mjolnir, se alguém encontrar por favor me avise, minha vida estava naquele balde de mercadorias!";
+	close;
+}
+
+// Morocc
+//============================================================
+morocc,144,84,1	script	Sign#Moc1	111,{
+	mes "^993300- A placa diz -^000000";
+	mes "Procura-se: guarda-costas para proteger minha loja de ladrões";
+	mes "Entre em contato com o açougueiro";
+	close;
+}
+
+morocc,145,83,1	script	Sign#Moc2	111,{
+	mes "^993300- A placa diz -^000000";
+	mes "Vendo Peco Peco bem cuidado!";
+	mes "Este lindo exemplar só foi montado por mim, vem com sela, arnês e...";
+	close;
+}
+
+morocc,32,174,1	script	Bulletin#Moc3	111,{
+	mes "^993300- As leituras do boletim -^000000";
+	mes "^0099FFMulheres marroquinas em pé de guerra!^000000";
+	mes "Um estudo recente mostrou que a maioria dos cidadãos do sexo masculino em";
+	mes "Marrocos prefere as mulheres de Geffen. ";
+	mes "de Marrocos afirmaram que tiveram vários relacionamentos";
+	mes "com mulheres da Geffen fora da região de Marrocos.";
+	next;
+	mes "^993300- Continuação do Boletim -^000000";
+	mes "'Eu simplesmente prefiro a companhia deles, só isso...' disse um homem marroquino.";
+	mes "'não é como se eu fosse contra as mulheres marroquinas ou algo assim, então qual é o problema...'";
+	mes "Além de questões emocionais e estressantes em relação ao dia a dia";
+	mes "atividades desses homens.";
+	mes "A caça ainda parece ser sua prioridade número um";
+	mes "sobre encontrar uma mulher decente na região....";
+	close;
+}
+
+morocc,168,266,1	script	Sign#Moc5	111,{
+	mes "^993300- A placa diz -^000000";
+	mes "Bem-vindo ao Marrocos.";
+	close;
+}
+
+morocc,168,264,1	script	Billboard#Moc6	111,{
+	mes "^993300- Leituras do outdoor -^000000";
+	mes "^CC0033Batalha Real!^000000";
+	mes "Você tem o que é preciso para lutar contra alguém em um jogo de morte sem limites, jogador contra jogador!";
+	mes "Vá para Prontera se você acha que tem o que é preciso!";
+	close;
+}
+
+morocc,298,211,1	script	Sign#Moc7	111,{
+	mes "^993300- A placa diz -^000000";
+	mes "Bem-vindo ao Marrocos.";
+	close;
+}
+
+// Geffen
+//============================================================
+geffen,116,58,1	script	Geffen Bulletin#Gef1	111,{
+	mes "^993300- Leituras do Boletim Geffen -^000000";
+	mes "Lembre-se do Wizard...Não é quantas habilidades você conhece, é a magia que conta!";
+	close;
+}
+/*
+geffen,61,174,1	script	Sign#Gef2	111,{
+	mes "^993300- A placa diz -^000000";
+	mes "- Parece estar escrito em um idioma desconhecido para você -";
+	close;
+}
+*/
+geffen,113,104,1	script	Billboard#Gef3	111,{
+	mes "^993300- Leituras do outdoor -^000000";
+	mes "Vendo: Boneca Chon Chon novíssima!";
+	mes "Que ótimo presente para dar a uma pessoa querida, entre em contato comigo agora!";
+	mes "- O nome parece estar manchado -";
+	mes "";
+	mes "Comprando: Manteau!";
+	mes "Estou congelando e não tenho zeny, por favor me ajude!";
+	mes "Contato Edionius";
+	close;
+}
+
+geffen,119,190,1	script	Sign Post#Gef4	111,{
+	mes "^993300- A placa de sinalização lê -^000000";
+	mes "Norte até Geffen Fields";
+	mes "Nordeste até Al De Baran";
+	mes "Noroeste para Glast Heim";
+	mes "Leste para Geffen Fields";
+	mes "Sul para Marrocos";
+	mes "Sudeste para Prontera";
+	mes "Sudeste para Alberta";
+	mes "Sudoeste para Comodo";
+	mes "Oeste para Geffen Fields";
+	close;
+}
+
+geffen,168,175,1	script	Sign#Gef5	111,{
+	mes "^993300- A placa diz -^000000";
+	mes "''Você é sempre bem-vindo na Geffen''";
+	close;
+}
+
+geffen,183,61,1	script	Sign#Gef6	111,{
+	mes "^993300- A placa diz -^000000";
+	mes "Bem-vindo.";
+	close;
+}
+
+// Al De Baran
+//============================================================
+aldebaran,181,172,1	script	Billboard#Alde1	111,{
+	mes "^993300- Leituras do outdoor -^000000";
+	mes "Em busca de:";
+	mes "Perdi meu animal de estimação Bongun, não foi minha culpa, ele simplesmente fugiu...";
+	mes "Se você o vir, por favor me avise. ";
+	close;
+}
+
+aldebaran,133,104,1	script	Al De Baran Bulletin#Al2	111,{
+	mes "^993300- Leituras do Boletim Al De Baran -^000000";
+	mes "''Aproveite a sua estadia em Al De Baran''";
+	close;
+}
+
+aldebaran,54,223,1	script	Billboard#Alde3	111,{
+	mes "^993300- Leituras do outdoor -^000000";
+	mes "Procura-se ajuda:";
+	mes "Procuramos pessoas jovens, fortes e atléticas que sejam";
+	mes "interessado em uma carreira em tempo integral como ferreiro. ";
+	mes "em Geffen!";
+	close;
+}
+
+aldebaran,197,228,1	script	#Alde4	-1,1,1,{
+OnTouch_:
+	mes "[Proprietário da casa]";
+	mes "Saia do meu telhado, seu bom sanguessuga!";
+	close;
+}
+
+aldebaran,217,222,1	script	Sign#Alde5	111,{
+	mes "^993300- A placa diz -^000000";
+	mes "Eu vi Papai Noel em Lutie!";
+	mes "- O resto parece rabisco -";
+	close;
+}
+
+// Alberta
+//============================================================
+alberta,35,241,1	script	Billboard#Alb1	111,{
+	mes "^993300- Leituras do outdoor -^000000";
+	mes "Bem-vindo a Alberta, o paraíso dos comerciantes.";
+	close;
+}
+
+alberta,37,39,1	script	Billboard#Alb2	111,{
+	mes "^993300- Leituras do outdoor -^000000";
+	mes "Bem-vindo.";
+	close;
+}
+
+alberta,99,151,1	script	Sign#Alb3	111,{
+	mes "^993300- A placa diz -^000000";
+	mes "Ferramentas no carrinho cheio!";
+	mes "Você precisa de ferramentas? ";
+	mes "Entre, nunca fechamos!";
+	close;
+}
+
+alberta,196,152,1	script	Sign#Alb4	111,{
+	mes "^993300- A placa diz -^000000";
+	mes "Tempos de atracação e embarque muito carregados. ";
+	mes "Envio e recebimento, por favor...";
+	mes "- Você não consegue entender o resto -";
+	close;
+}
+
+alberta,149,54,1	script	Sign#Alb5	111,{
+	mes "^993300- A placa diz -^000000";
+	mes "Bem-vindo.";
+	close;
+}
+

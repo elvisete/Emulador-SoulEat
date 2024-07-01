@@ -1,0 +1,210 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+// Criador de PecoPeco (para Cavaleiros) :: criador
+//============================================================
+prontera,55,350,5	script	Criador de PecoPeco#knt	105,{
+	if(Upper==0) set .@price,2500; // PecoPeco Normal - preço padrão
+	if(Upper==1) set .@price,2500; // PecoPeco Armado
+	if(Upper==2) set .@price,2500; // PecoPeco Bebê
+
+	mes "[Criador de PecoPeco]";
+	if (BaseJob == Job_Knight && Class < Job_Rune_Knight) {
+		mes "Bem-vindo.";
+		mes "Honrado Cavaleiro,";
+		mes "gostaria de alugar";
+		mes "um PecoPeco? A taxa de";
+		mes "aluguel é de "+.@price+" zeny.";
+		next;
+		switch(select("Alugar PecoPeco:Cancelar")) {
+		case 1:
+			if (Zeny < .@price) {
+				mes "[Criador de PecoPeco]";
+				mes "Você não possui";
+				mes "zeny suficiente.";
+				mes "Você está...";
+				mes "falido?";
+				close;
+			}
+			else if(getskilllv("KN_RIDING") == 0) {
+				mes "[Criador de PecoPeco]";
+				mes "Desculpe, mas você";
+				mes "não está elegível para este";
+				mes "serviço. Por favor, aprenda";
+				mes "primeiro a habilidade PecoPeco Ride.";
+				close;
+			}
+			else if(checkriding()) {
+				mes "[Criador de PecoPeco]";
+				mes "Você já está";
+				mes "montado em um";
+				mes "PecoPeco.";
+				close;
+			}
+			else if(ismounting()) {
+				mes "[Criador de PecoPeco]";
+				mes "Por favor, remova sua montaria atual.";
+				close;
+			}
+			set Zeny, Zeny-.@price;
+			setriding;
+			close;
+		case 2:
+			mes "[Criador de PecoPeco]";
+			mes "Entendo.";
+			mes "Bem, então,";
+			mes "tenha um bom dia.";
+			close;
+		}
+	} else {
+		mes "Desculpe, mas esses";
+		mes "PecoPecos estão disponíveis";
+		mes "apenas para Cavaleiros";
+		mes "e Lord Knights.";
+		close;
+	}
+}
+
+// Criador de Grand PecoPeco (para Crusaders)
+//============================================================
+prontera,232,318,3	script	Criador de PecoPeco#cru	105,{
+	if(Upper==0) set .@price,3500; // PecoPeco Normal - preço padrão
+	if(Upper==1) set .@price,3500; // PecoPeco Armado
+	if(Upper==2) set .@price,3500; // PecoPeco Bebê
+
+	mes "[Criador de PecoPeco]";
+	if (BaseJob == Job_Crusader && Class < Job_Rune_Knight) {
+		if(Upper != 1 ) mes "Bem-vindo, Crusader.";
+		else mes "Bem-vindo, Paladin.";
+		mes "Temos um PecoPeco especial";
+		mes "preparado para você. Para alugar";
+		mes "um custará "+.@price+" zeny.";
+		next;
+		switch(select("Alugar PecoPeco:Sair")) {
+		case 1:
+			if (Zeny < .@price) {
+				mes "[Criador de PecoPeco]";
+				mes "Você não possui";
+				mes "zeny suficiente.";
+				mes "Se deseja um";
+				mes "PecoPeco, traga "+.@price+" zeny...";
+				close;
+			}
+			else if(getskilllv("KN_RIDING") == 0) {
+				mes "[Criador de PecoPeco]";
+				mes "Você deve aprender";
+				mes "a montar um PecoPeco antes";
+				mes "que eu possa alugar um para você.";
+				close;
+			}
+			else if(checkriding()) {
+				mes "[Criador de PecoPeco]";
+				mes "Você já está";
+				mes "montado em um PecoPeco.";
+				close;
+			}
+			else if(ismounting()) {
+				mes "[Criador de PecoPeco]";
+				mes "Por favor, remova sua montaria atual.";
+				close;
+			}
+			set Zeny, Zeny-.@price;
+			setriding;
+			close;
+		case 2:
+			mes "[Criador de PecoPeco]";
+			mes "Vejo você por aí.";
+			close;
+		}
+	} else {
+		mes "Posso ajudar em algo?";
+		mes "Este serviço de aluguel";
+		mes "de PecoPeco é estritamente";
+		mes "para Crusaders e Paladins.";
+		close;
+	}
+}
+
+// Mestre de Falcões :: criador
+//============================================================
+hu_in01,381,304,5	script	Criador de Falcões#hnt	105,{
+	if(Upper==0) set .@price,2500; // Falcão Normal - preço padrão
+	if(Upper==1) set .@price,2500; // Falcão com Cachecol
+	if(Upper==2) set .@price,2500; // Falcão Bebê
+
+	mes "[Criador de Falcões]";
+	if (BaseJob == Job_Hunter) {
+		if (checkwug()) {
+			mes "Um...";
+			mes "Você não pode alugar um Falcão";
+			mes "até dispensar o seu Warg primeiro!";
+			close;
+		}
+		mes "Você precisa de um Falcão?";
+		mes "Você pode alugar o seu próprio";
+		mes "fiel pássaro de rapina por uma";
+		mes "taxa de apenas "+.@price+" zeny~";
+		next;
+		switch(select("Alugar Falcão:Cancelar")) {
+		case 1:
+			if (checkwug()) {
+				mes "[Criador de Falcões]";
+				mes "Um...";
+				mes "Você não pode alugar um Falcão";
+				mes "até dispensar o seu Warg primeiro!";
+				close;
+			}
+			if (Zeny < .@price) {
+				mes "[Criador de Falcões]";
+				mes "O que é isso?";
+				mes "Você não tem";
+				mes "zeny suficiente?!";
+				mes "É melhor começar";
+				mes "a caçar dinheiro";
+				mes "em vez de monstros~";
+				close;
+			}
+			else if(getskilllv("HT_FALCON") == 0) {
+				mes "[Criador de Falcões]";
+				mes "Gosh~";
+				mes "Aprenda a";
+				mes "manejar um Falcão";
+				mes "primeiro! Eu não posso alugar um";
+				mes "para você se você não souber";
+				mes "lidar com isso, sabia.";
+				close;
+			}
+			else if(checkfalcon()) {
+				mes "[Criador de Falcões]";
+				mes "Um...";
+				mes "Você já tem";
+				mes "um Falcão. Está bem";
+				mes "ali, você não consegue vê-lo?";
+				close;
+			}
+			set Zeny, Zeny-.@price;
+			setfalcon;
+			close;
+		case 2:
+			mes "[Criador de Falcões]";
+			mes "E-espera, para";
+			mes "onde você está indo?";
+			mes "Esses Falcões são de primeira,";
+			mes "eu garanto! Vamos lá, amigo~";
+			close;
+		}
+	} else {
+		mes "Jovem tolo!";
+		mes "Falcões só podem";
+		mes "ser usados por Caçadores";
+		mes "e Atiradores, entendeu?";
+		mes "...Heh heh, com inveja?";
+		close;
+	}
+}

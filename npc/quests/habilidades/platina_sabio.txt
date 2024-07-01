@@ -1,0 +1,492 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+yuno_in03,176,24,3	script	Mischna	755,{
+	if(BaseJob != Job_Sage) {
+		mes "[Mishuna]";
+		mes "Bom dia, sou Mishuna, um";
+		mes "dos instrutores aqui no";
+		mes "Academia de Magia Schweicherbil.";
+		mes "Por acaso você é um Sábio";
+		mes "ou estudioso? ";
+		next;
+		mes "[Mishuna]";
+		mes "Oh isso é muito ruim.";
+		mes "Me desculpe. ";
+		mes "por acaso conheço algum, ou encontro";
+		mes "qualquer coisa em suas viagens, por favor";
+		mes "encaminhe-os para mim caso ainda não tenham ouvido falar das lições que dou.";
+		next;
+		mes "[Mishuna]";
+		mes "Me desculpe por incomodar";
+		mes "você, e eu agradeço";
+		mes "para seu tempo. ";
+		mes "dia para você, aventureiro.";
+		close;
+	}
+	if(SAG_SK == 100) {
+		set .@Element, getskilllv("SA_ELEMENTFIRE") + getskilllv("SA_ELEMENTGROUND") + getskilllv("SA_ELEMENTWIND") + getskilllv("SA_ELEMENTWATER");
+		set .@Convert, getskilllv("SA_CREATECON");
+		if(.@Element && .@Convert) {
+			mes "[Mishuna]";
+			mes "Se você tem algum Sage ou";
+			mes "Amigos estudiosos que ainda não";
+			mes "aprendi as habilidades do senhor";
+			mes "Os pergaminhos de Barmundt, então";
+			mes "por favor encaminhe-os para mim.";
+			next;
+			mes "[Mishuna]";
+			mes "Eu confio que você é";
+			mes "descobrindo que estes";
+			mes "habilidades baseadas em elementos";
+			mes "são muito úteis em batalha.";
+			mes "Conhecimento realmente equivale";
+			mes "ao poder a longo prazo...";
+			close;
+		}
+		mes "[Mishuna]";
+		mes "Ah, você deve ter";
+		mes "esqueci o que ensinei";
+		mes "você de alguma forma. ";
+		mes "você perdeu sua cópia do";
+		mes "pergaminho de habilidade que eu te dei? ";
+		mes "importa, eu vou ajudá-lo a lembrar.";
+		next;
+		if(.@Element == 0) {
+			mes "[Mishuna]";
+			mes "Você terá a chance de";
+			mes "escolha que tipo de ^FF0000Elemental";
+			mes "Mude ^ 000000 habilidade que você deseja, mesmo uma que você não tinha anteriormente";
+			mes "aprenda, contanto que você cumpra";
+			mes "os requisitos da habilidade.";
+			next;
+			mes "[Mishuna]";
+			mes "Tenha em mente que uma vez";
+			mes "você aprende seu Elemental";
+			mes "Mude de habilidade, você não será";
+			mes "capaz de mudá-lo. ";
+			mes "habilidade que você gostaria de aprender?";
+			next;
+			setarray .@ReqSkill[0],280,283,282,281;
+			setarray .@ReqSkill$[0],"Chama","Terremoto","Tornado","Tsunami";
+			setarray .@Skill[0],1018,1017,1019,1008;
+			setarray .@Skill$[0],"Fogo","Terra","Vento","Água";
+			while(1) {
+				set .@i, select("Mudança Elemental do Fogo: Mudança Elemental da Terra: Mudança Elemental do Vento: Mudança Elemental da Água")-1;
+				if(getskilllv(.@ReqSkill[.@i]) == 0) {
+					mes "[Mishuna]";
+					mes "Sinto muito, mas você não";
+					mes "aprendi ^FF0000Endow"+.@ReqSkill$[.@i]+"^000000, a habilidade";
+					mes "necessário para ^FF0000"+.@Skill$[.@i]+"Elementar";
+					mes "Alterar^000000. ";
+					mes "Dotar"+.@ReqSkill$[.@i]+"ou selecione outro";
+					mes "Habilidade de Mudança Elemental.";
+					next;
+				}
+				else {
+					mes "[Mishuna]";
+					mes "Muito bem, vou";
+					mes "te ensinar o ^FF0000"+.@Skill$[.@i];
+					mes "Mudança Elemental ^ 000000 habilidade";
+					mes "e o conversor ^FF0000Elemental";
+					mes "Habilidade de criação^000000. ";
+					mes "ainda enquanto eu canto este feitiço.";
+					next;
+					mes "[Mishuna]";
+					mes "%$";
+					specialeffect2 EF_RUWACH;
+					next;
+					mes "[Mishuna]";
+					mes "Sim!";
+					specialeffect2 EF_BRANDISHSPEAR;
+					next;
+					mes "^3355FFVocê conseguiu";
+					mes "aprendeu o"+.@Skill$[.@i]+"Elementar";
+					mes "Mudar habilidade e o Elemental";
+					mes "Habilidade de criação de conversor.^000000";
+					skill .@Skill[.@i],1,SKILL_PERM;
+					if(.@Convert == 0)
+						skill "SA_CREATECON",1,SKILL_PERM;
+					next;
+					break;
+				}
+			}
+		}
+		else if(.@Convert == 0) {
+			mes "[Mishuna]";
+			mes "Tudo bem, estou indo";
+			mes "lançar um feitiço que";
+			mes "irá ajudá-lo a lembrar";
+			mes "as habilidades que você esqueceu.";
+			mes "Não se mova e tente";
+			mes "fique o mais imóvel possível...";
+			next;
+			mes "[Mishuna]";
+			mes "%$";
+			specialeffect2 EF_RUWACH;
+			next;
+			mes "[Mishuna]";
+			mes "Sim!";
+			specialeffect2 EF_BRANDISHSPEAR;
+			next;
+			mes "^3355FFVocê recuperou com sucesso";
+			mes "o Cobridor Elemental";
+			mes "Habilidade de criação e são";
+			mes "capaz de usá-lo novamente.^000000";
+			skill "SA_CREATECON",1,SKILL_PERM;
+			next;
+		}
+		mes "[Mishuna]";
+		mes "Ah, você aprendeu isso";
+		mes "habilidades tão rapidamente quanto pensei";
+		mes "você poderia. ";
+		mes "Espero que você use isso habilmente";
+		mes "talentos para os propósitos certos.";
+		mes "Adeus por agora,"+strcharinfo(0)+".";
+		close;
+	}
+	else if(SAG_SK == 0) {
+		mes "[Mishuna]";
+		mes "Bom dia, sou Mishuna, um";
+		mes "dos instrutores aqui no";
+		mes "Academia de Magia Schweicherbil.";
+		mes "Como posso ser útil?";
+		next;
+		select("Busco novos conhecimentos.");
+		mes "[Mishuna]";
+		mes "Ah, você deve estar"+strcharinfo(0)+".";
+		mes "Eu estava ansioso para conhecer";
+		mes "você. ";
+		mes "conhecimento, posso sugerir";
+		mes "lendo o recentemente restaurado";
+		mes "pergaminhos de Sir Barmundt?";
+		next;
+		mes "[Mishuna]";
+		mes "Os pergaminhos de Sir Barmundt contêm";
+		mes "conhecimento sobre os 4 elementos,";
+		mes "que são Fogo, Água, Terra e Vento. ";
+		mes "pergaminhos podem ser aplicados no";
+		mes "uso de 2 novas habilidades Sage.";
+		next;
+		mes "[Mishuna]";
+		mes "O primeiro é chamado ^FF0000Elemental";
+		mes "Altere ^ 000000, o que permite que você";
+		mes "para alterar o atributo de um monstro";
+		mes "de acordo com o elemento específico da habilidade Mudança Elemental";
+		mes "que você aprendeu.";
+		next;
+		mes "[Mishuna]";
+		mes "O segundo é chamado";
+		mes "Criação de Conversor Elemental,";
+		mes "que permite criar";
+		mes "itens de conversão necessários para usar a habilidade Mudança Elemental.";
+		next;
+		mes "[Mishuna]";
+		mes "Embora o conhecimento";
+		mes "essas duas habilidades foram";
+		mes "perdidos há anos, finalmente";
+		mes "consegui recuperar a maior parte";
+		mes "disso. ";
+		mes "pronto para aprender essas habilidades?";
+		next;
+		if(select("Talvez mais tarde.: Sim, estou.") == 1) {
+			mes "[Mishuna]";
+			mes "Ah, você deve estar ocupado, certo";
+			mes "agora. ";
+			mes "de volta quando você pensa que está";
+			mes "pronto para aprender. ";
+			mes "adeus e tenha um bom dia ~";
+			close;
+		}
+		mes "[Mishuna]";
+		mes "Muito bem, então. ";
+		mes "deve aprender o Elemental";
+		mes "Habilidade de Criação de Coverter, que";
+		mes "é essencial para aprender";
+		mes "Habilidade de Mudança Elemental.";
+		next;
+		mes "[Mishuna]";
+		mes "Por favor traga o necessário";
+		mes "materiais para que possamos";
+		mes "construir um elemental básico";
+		mes "conversor para que você";
+		mes "aprenda a habilidade. ";
+		mes "você precisará trazer...";
+		next;
+		mes "[Mishuna]";
+		mes "^ff00007 Buzinas^000000,";
+		mes "^ff000012 Conchas Arco-Íris^000000,";
+		mes "^ff000010 Conchas de caracol^000000,";
+		mes "^ff00004 Rolos em branco^000000 e";
+		mes "^ff000010 Caudas de Escorpião^000000.^000000";
+		next;
+		mes "[Mishuna]";
+		mes "Tudo bem, eu estarei";
+		mes "próximo aqui para o seu";
+		mes "retornar. ";
+		mes "preciso desses itens para criar";
+		mes "um conversor para que você possa aprender a habilidade com meu exemplo...";
+		set SAG_SK,1;
+		close;
+	}
+	else if(SAG_SK == 1) {
+		if (countitem(904) < 10 || countitem(947) < 7 || countitem(1013) < 12 || countitem(946) < 10 || countitem(7433) < 4) {
+			mes "[Mishuna]";
+			mes "Hm, você ainda não";
+			mes "reuniu todos os materiais";
+			mes "necessário para criar um elemental";
+			mes "disfarce. ";
+			mes "o que levar para que você";
+			mes "não esqueça da próxima vez...";
+			next;
+			mes "[Mishuna]";
+			mes "^ff00007 Buzinas^000000,";
+			mes "^ff000012 Conchas Arco-Íris^000000,";
+			mes "^ff000010 Conchas de caracol^000000,";
+			mes "^ff00004 Rolos em branco^000000 e";
+			mes "^ff000010 Caudas de Escorpião^000000.^000000";
+			next;
+			mes "[Mishuna]";
+			mes "Não esqueça que precisamos";
+			mes "todos esses itens para criar";
+			mes "um conversor para que você possa";
+			mes "aprenda o Conversor Elemental";
+			mes "Habilidade de criação observando";
+			mes "eu demonstro isso para você.";
+			close;
+		}
+		else {
+			mes "[Mishuna]";
+			mes "Ótimo, você trouxe tudo.";
+			mes "Agora, deixe-me explicar a habilidade.";
+			mes "As habilidades que você aprende como um Sábio";
+			mes "determine que tipo de conversores elementares você pode criar.";
+			next;
+			mes "[Mishuna]";
+			mes "A habilidade ^FF0000Endow Blaze^000000 permite";
+			mes "você criará o elemental do Fogo";
+			mes "conversores. ";
+			mes "habilidade permite a criação";
+			mes "de conversores elementares da Terra.";
+			next;
+			mes "[Mishuna]";
+			mes "^FF0000Endow Tornado^000000 ativa";
+			mes "a criação do elemental do Vento";
+			mes "conversores e ^FF0000Endow Tsunami^000000";
+			mes "permite a criação de Água";
+			mes "conversores elementares. ";
+			mes "tudo faz sentido, certo?";
+			next;
+			mes "[Mishuna]";
+			mes "Agora, seu disfarce elemental";
+			mes "a taxa de sucesso de criação depende";
+			mes "no nível do Endow Blaze, Endow Quake, Endow Tornado,";
+			mes "ou Dotar habilidades de Tsunami, e";
+			mes "suas habilidades.";
+			next;
+			mes "[Mishuna]";
+			mes "Agora, por favor, pegue esta cópia";
+			mes "do pergaminho de Barmundt e use";
+			mes "isso como referência quando você tenta";
+			mes "para criar conversores elementares";
+			mes "quando você usa o Elemental";
+			mes "Habilidade de criação de conversor.";
+			next;
+			mes "^3355FFVocê aprendeu o";
+			mes "Conversor Elemental";
+			mes "Habilidade de criação revisando";
+			mes "sua cópia do pergaminho de Barmundt.^000000";
+			specialeffect2 EF_ABSORBSPIRITS;
+			delitem 904,10; // Scorpion_Tail
+			delitem 947,7; // Horn
+			delitem 1013,12; // Rainbow_Shell
+			delitem 946,10; // Snail's_Shell
+			delitem 7433,4; // Blank_Scroll
+			set SAG_SK,2;
+			skill "SA_CREATECON",1,SKILL_PERM;
+			next;
+			mes "[Mishuna]";
+			mes "Uau,"+strcharinfo(0)+"!";
+			mes "Você aprendeu essa habilidade";
+			mes "muito rapidamente! ";
+			mes "as pessoas dizem que você é um";
+			mes "dos melhores Sábios ao redor!";
+			next;
+			mes "[Mishuna]";
+			mes "Agora você está pronto para";
+			mes "aprenda a outra habilidade,";
+			mes "Mudança Elemental. ";
+			mes "preciso preparar algumas coisas";
+			mes "para esta lição, então nos encontraremos";
+			mes "e discutiremos isso mais tarde, ok?";
+			close;
+		}
+	}
+	else if(SAG_SK == 2) {
+		if(getskilllv("SA_CREATECON") == 0) {
+			skill "SA_CREATECON",1,SKILL_PERM;
+			mes "- Lembrei-me de ^ff0000Habilidade de criação de conversor elementar^000000 Enquanto converso com Mishuna! ";
+			next;
+		}
+		mes "[Mishuna]";
+		mes "Você terá a chance de";
+		mes "escolha que tipo de ^FF0000Elemental";
+		mes "Mude ^ 000000 habilidade que você deseja, mesmo uma que você não tinha anteriormente";
+		mes "aprenda, contanto que você cumpra";
+		mes "os requisitos da habilidade.";
+		next;
+		mes "[Mishuna]";
+		mes "Tenha em mente que uma vez";
+		mes "você aprende seu Elemental";
+		mes "Mude de habilidade, você não será";
+		mes "capaz de mudá-lo. ";
+		mes "habilidade que você gostaria de aprender?";
+		next;
+		setarray .@ReqSkill[0],280,283,282,281;
+		setarray .@ReqSkill$[0],"Chama","Terremoto","Tornado","Tsunami";
+		setarray .@ReqItem$[0],"Sangue Vermelho","Vidas Verdes","Vento de Verdura","Azuis cristalinos";
+		setarray .@Skill$[0],"Fogo","Terra","Vento","Água";
+		while(1) {
+			set .@i, select("Mudança Elemental do Fogo: Mudança Elemental da Terra: Mudança Elemental do Vento: Mudança Elemental da Água")-1;
+			if(getskilllv(.@ReqSkill[.@i]) == 0) {
+				mes "[Mishuna]";
+				mes "Sinto muito, mas você não";
+				mes "aprendi ^FF0000Endow"+.@ReqSkill$[.@i]+"^000000, a habilidade";
+				mes "necessário para o"+.@Skill$[.@i]+"Habilidade de Mudança Elemental. ";
+				mes .@ReqSkill$[.@i]+"ou selecione outra habilidade de Mudança Elemental para eu lhe ensinar.";
+				next;
+			}
+			else {
+				mes "[Mishuna]";
+				mes "Muito bem, então. ";
+				mes "traga os seguintes itens";
+				mes "para que você possa aprender";
+				mes .@Skill$[.@i]+"Habilidade de Mudança Elemental.";
+				next;
+				mes "[Mishuna]";
+				mes "^FF000020"+.@ReqItem$[.@i]+"^000000,";
+				mes "^FF00001 Solução Payon^000000 e";
+				mes "^FF00001 Solução Marrocos^000000. ";
+				mes "volte para mim assim que tiver";
+				mes "todos os materiais prontos.";
+				set SAG_SK, 10 * (.@i+1); //10,20,30,40
+				close;
+			}
+		}
+	}
+	else if(SAG_SK == 10 || SAG_SK == 20 || SAG_SK == 30 || SAG_SK == 40) {
+		if(getskilllv("SA_CREATECON") == 0) {
+			skill "SA_CREATECON",1,SKILL_PERM;
+			mes "- Lembrei-me de ^ff0000Habilidade de criação de conversor elementar^000000 Enquanto converso com Mishuna! ";
+			next;
+		}
+		set .@i, (SAG_SK/10) - 1;
+		setarray .@ReqItem[0],990,993,992,991;
+		setarray .@ReqItem$[0],"Sangue Vermelho","Vidas Verdes","Vento de Verdura","Azuis cristalinos";
+		setarray .@Skill[0],1018,1017,1019,1008;
+		setarray .@Skill$[0],"Fogo","Terra","Vento","Água";
+		if (countitem(.@ReqItem[.@i]) < 20 || countitem(1089) < 1 || countitem(1088) < 1) {
+			mes "[Mishuna]";
+			mes "Você está tendo problemas";
+			mes "reunindo todos os necessários";
+			mes "Unid? ";
+			mes "lembrá-lo do que você precisa";
+			mes "para me levar a aprender o"+.@Skill$[.@i];
+			mes "Habilidade de Mudança Elemental.";
+			next;
+			mes "[Mishuna]";
+			mes "^ff000020"+.@ReqItem$[.@i]+"^000000,";
+			mes "^ff00001 Solução Payon^000000 e";
+			mes "^ff00001 Solução Marrocos^000000. ";
+			mes "não esqueça e tenha o";
+			mes "materiais prontos para o próximo";
+			mes "vez que você me ver, certo?";
+			close;
+		}
+		mes "[Mishuna]";
+		mes "Ah, você está de volta. ";
+		mes "finalmente te ensinar sobre o";
+		mes .@Skill$[.@i]+"Habilidade de Mudança Elemental.";
+		mes "Esta habilidade tem a chance de";
+		mes "alterar permanentemente um alvo";
+		mes "atributo do monstro para"+.@Skill$[.@i]+".";
+		next;
+		mes "[Mishuna]";
+		mes "Lembre-se que você deve";
+		mes "use um conversor elementar para";
+		mes "lançar esta habilidade, e que ela tem uma taxa de sucesso, semelhante ao";
+		mes "Criação de Conversor Elemental";
+		mes "habilidade. ";
+		next;
+		mes "[Mishuna]";
+		mes "Agora,"+strcharinfo(0)+",";
+		mes "vou lançar um feitiço";
+		mes "isso vai te ajudar a memorizar";
+		mes "o"+.@Skill$[.@i]+"Mudança Elemental";
+		mes "habilidade. ";
+		next;
+		mes "^3355FFMishuna começa a cantar";
+		mes "um encantamento estranho como";
+		mes "um suave brilho azul envolve";
+		mes "seu corpo e cresce lentamente";
+		mes "mais brilhante e mais intenso.^000000";
+		specialeffect2 EF_RUWACH;
+		next;
+		mes "[Mishuna]";
+		mes "@";
+		specialeffect2 EF_BRANDISHSPEAR;
+		delitem .@ReqItem[.@i],20;
+		delitem 1089,1; // Payon Potion
+		delitem 1088,1; // Morocc Potion
+		set SAG_SK,100;
+		skill .@Skill[.@i],1,0;
+		next;
+		mes "[Mishuna]";
+		mes strcharinfo(0)+"...";
+		mes "Estou feliz em dizer que você";
+		mes "memorizou com sucesso o";
+		mes .@Skill$[.@i]+"Habilidade de Mudança Elemental.";
+		mes "Espero que lhe sirva bem";
+		mes "em batalha. ";
+		close;
+	}
+	else {
+		mes "[Mishuna]";
+		mes "Se você tem algum Sage ou";
+		mes "Amigos estudiosos que ainda não";
+		mes "aprendi as habilidades do senhor";
+		mes "Os pergaminhos de Barmundt, então";
+		mes "por favor encaminhe-os para mim.";
+		next;
+		mes "[Mishuna]";
+		mes "Eu confio que você é";
+		mes "descobrindo que estes";
+		mes "habilidades baseadas em elementos";
+		mes "são muito úteis em batalha.";
+		mes "Conhecimento realmente equivale";
+		mes "ao poder a longo prazo...";
+		close;
+	}
+}
+
+//============================================================ 
+// Old changelog
+//===== Additional Comments: ================================= 
+//= 1.0 for fully working skills only [Lupus]
+//= 1.1 Added more new skill quests for more classes [Lupus]
+//= Somehow eA engine doesn't let you keep learn't skill V_V'
+//= 1.2 Added to correct locations, correct NPC's, fixed
+//= some of the items required and made them into real
+//= quests. [Reddozen] 
+//= 1.3 Fixed bugs and minor typos. Optimized [Lupus]
+//= 1.3a fixed an item ID typo, thx 2Spiritual Kid
+//= 1.3b Splitted into different files [DracoRPG]
+//= 1.3c Fixed some typos [IVBela]
+//============================================================
+

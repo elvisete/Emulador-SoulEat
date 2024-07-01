@@ -1,0 +1,68 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+prontera,218,218,3	script	Amante dos Pets	96,{
+	mes "[Amante dos Pets Jenny]";
+	mes "Oh, oi!";
+	mes "Você também é um amante dos animais como eu?";
+	next;
+	mes "[Amante dos Pets Jenny]";
+	mes "Eu sei que é realmente difícil manter seus pets felizes.";
+	mes "Tudo o que é preciso é o tipo certo de comida.";
+	next;
+	mes "[Amante dos Pets Jenny]";
+	mes "Eu sei que às vezes é realmente difícil conseguir a comida certa para o seu pet.";
+	next;
+	mes "[Amante dos Pets Jenny]";
+	mes "Você está procurando por alguma comida?";
+	next;
+	switch(select("Sim:Não")) {
+	case 1:
+		if ((countitem(7158) > 19) && (countitem(970) > 0)) {
+			mes "[Amante dos Pets Jenny]";
+			mes "Oh, você tem ^ff000020 Broken Liquor Jars^000000 e ^ff00001 Alcohol^000000!";
+			mes "Você deseja trocá-los por";
+			mes "^ff000020 Spirit Liquor^000000 para o seu pet Wanderer?";
+			next;
+			switch(select("Sim, por favor!:Não, obrigado.")) {
+			case 1:
+				mes "[Amante dos Pets Jenny]";
+				mes "Ok, aqui estão eles.";
+				mes "Espero que mantenha seu";
+				mes "pet fofo feliz.";
+				delitem 7158,20; //Broken_Wine_Vessel
+				delitem 970,1; //Alchol
+				getitem 7824,20; //Spirit_Liquor
+				close;
+			case 2:
+				mes "[Amante dos Pets Jenny]";
+				mes "Hehe, me avise se mudar de ideia.";
+				close;
+			}
+		}
+		else {
+			mes "[Amante dos Pets Jenny]";
+			mes "Na verdade, agora posso ajudar você a obter Spirit Liquor para pets Wanderer.";
+			next;
+			mes "[Amante dos Pets Jenny]";
+			mes "Tudo o que você precisa fazer é me trazer ^FF0000 20 Broken Liquor Jars^000000 e ^FF0000 1 Alcohol^000000.";
+			mes "Posso lhe dar ^FF0000 20 Spirit Liquor^000000 por isso.";
+			next;
+			mes "Você pode obter Broken Liquor Jars de monstros Tengu no calabouço de Amatsu.";
+			close;
+		}
+	case 2:
+		close;
+	}
+}
+
+prontera,220,218,3	script	Berry Toe	955,{
+	specialeffect EF_CHANGEDARK;
+	end;
+}

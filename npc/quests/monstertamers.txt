@@ -1,0 +1,752 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+alberta_in,173,76,4	script	Monster Tamer#alb	125,{
+	mes "[Iwado]";
+	mes "Este é o auge da era da domesticação de monstros! ";
+	next;
+	switch(select("^3355FF' Domando Monstros '^000000 ?:Peça ^3355FF' Suco de Monstro '^000000:Peça ^3355FF' Flor Cantante '^000000:Peça ^3355FF' Flor Selvagem '^000000:Cancelar")) {
+	case 1:
+		mes "[Iwado]";
+		mes "Esses itens monstruosos, necessários para se comunicar com monstros, são obrigatórios! ";
+		next;
+		mes "[Iwado]";
+		mes "Temos um sistema que permite que você";
+		mes "para colocar as mãos neles";
+		mes "itens legais sem peso!";
+		mes "Suco Monstruoso!";
+		mes "Cantando Flor!";
+		mes "Aaand....Flor Selvagem!";
+		next;
+		mes "[Iwado]";
+		mes "Fazer";
+		mes "Suco de Monstro, você precisa";
+		mes "^3355FF1 Animal Gore^000000 e";
+		mes "^3355FF2 Maçã^000000.";
+		next;
+		mes "[Iwado]";
+		mes "Para 1 Flor Cantante,";
+		mes "você vai precisar";
+		mes "^3355FF1 Planta Cantante^000000.";
+		next;
+		mes "[Iwado]";
+		mes "Se você quiser que eu faça";
+		mes "1 flor selvagem,";
+		mes "Só me dá";
+		mes "^3355FF1 Flor extravagante^000000 e";
+		mes "^3355FF1 Trevo^000000.";
+		close;
+	case 2:
+		mes "[Iwado]";
+		mes "Este é um item que está muito além";
+		mes "qualquer coisa que nós, humanos, possamos beber!";
+		mes "Seu nome? ";
+		mes "O sabor extremamente azedo";
+		mes "é perfeito para monstros. ";
+		next;
+		if ((countitem(702) > 0) && (countitem(512) > 1)) {
+			mes "[Iwado]";
+			mes "Oh ! ";
+			next;
+			mes "[Iwado]";
+			mes "Tenho que torcer essas maçãs...";
+			mes "Na medida...";
+			next;
+			mes "^3355FF*Splash splash swoosh shoosh splash splash*^000000";
+			next;
+			mes "[Iwado]";
+			mes "OK. ";
+			mes "Por favor, leve-o para o";
+			mes "monstro fofo você";
+			mes "estão aumentando.";
+			mes "Suco Monstruoso!";
+			delitem 512,2;  //Apple
+			delitem 702,1;  //Animal_Blood
+			getitem 626,1; // Monster_Juice
+			close;
+		}
+		else {
+			mes "[Iwado]";
+			mes "Para o dono do monstro";
+			mes "que adora usar suco de monstro...";
+			mes "Eu dominei a receita do Monster Juice!";
+			next;
+			mes "[Iwado]";
+			mes "Se você me trouxer";
+			mes "^3355FF1 Animal Gore^000000 e";
+			mes "^3355FF2 Maçã^000000";
+			mes "Com todo o meu orgulho de domador de monstros, farei isso para você!";
+			close;
+		}
+	case 3:
+		mes "[Iwado]";
+		mes "Uma flor com uma canção que é";
+		mes "muito além da compreensão humana!";
+		mes "Seu nome? ";
+		mes "Um perfume que te deixa tonto de prazer. ";
+		next;
+		if (countitem(707) > 0) {
+			mes "[Iwado]";
+			mes "Oh! ";
+			next;
+			mes "[Iwado]";
+			mes "Ter que...";
+			mes "Torça isso...";
+			mes "Na medida...";
+			next;
+			mes "^3355FF*Esfarelado, esfarelado, arranhão*^000000";
+			next;
+			mes "[Iwado]";
+			mes "OK. ";
+			mes "Por favor, leve-o para o";
+			mes "monstro fofo você";
+			mes "estão aumentando.";
+			mes "Flor cantando!";
+			delitem 707,1;  //Singing_Plant
+			getitem 629,1; // Singing_Flower
+			close;
+		}
+		else {
+			mes "[Iwado]";
+			mes "Para o dono do monstro";
+			mes "que adora usar Flor Cantante...";
+			mes "Eu forneço uma maneira de fazer";
+			mes "1 Flor Cantante!";
+			next;
+			mes "[Iwado]";
+			mes "Se você me trouxer";
+			mes "^3355FF1 Planta Cantante ^000000,";
+			mes "Com todo o meu orgulho de domador de monstros, farei um para você agora mesmo!";
+			close;
+		}
+	case 4:
+		mes "[Iwado]";
+		mes "Esta é uma flor que está muito além do que os humanos podem contemplar! ";
+		next;
+		if ((countitem(2207) > 0) && (countitem(705) > 0)) {
+			mes "[Iwado]";
+			mes "Oh! ";
+			next;
+			mes "[IWado]";
+			mes "Tenho que distorcer isso...";
+			mes "Na medida...";
+			next;
+			mes "^3355FF*Esfarelar, esfarelar, rasgar, rasgar*^000000";
+			next;
+			mes "[Iwado]";
+			mes "OK. ";
+			mes "Por favor, leve-o para o";
+			mes "monstros fofos você";
+			mes "estão aumentando.";
+			mes "Flores silvestres!";
+			delitem 2207,1;  //Fancy_Flower
+			delitem 705,1;  //Clover
+			getitem 10009,1; // Wild_Flower
+			close;
+		}
+		else {
+			mes "[Iwado]";
+			mes "Para o dono do monstro";
+			mes "que adora usar Flor Selvagem...";
+			mes "Eu forneço uma maneira de fazer";
+			mes "1 flor selvagem!";
+			next;
+			mes "[Iwado]";
+			mes "^3355FF1 Flor extravagante^000000 e";
+			mes "^3355FF1 Trevo^000000";
+			mes "é tudo que eu preciso! ";
+			close;
+		}
+	case 5:
+		mes "[Iwado]";
+		mes "Ah...!";
+		mes "Você não deve ter decidido qual monstro deseja criar.";
+		next;
+		mes "[Iwado]";
+		mes "Definitivamente não é uma decisão a ser tomada de forma descuidada! ";
+		close;
+	}
+}
+
+
+aldeba_in,168,175,4	script	Monster Tamer#alde	125,{
+	mes "[YU]";
+	mes "Você deve estar procurando por itens monstruosos! ";
+	next;
+	mes "[YU]";
+	mes "Posso fazer todo tipo de coisas legais para o seu Monstro Fofo.";
+	mes "Basta perguntar ~";
+	next;
+	switch(select("^3355FF' Domar Monstros '^000000?:Encomendar ^3355FF' Elmo de Caveira '^000000:Encomendar ^3355FF' Máscara de Oxigênio Monstro '^000000:Encomendar ^3355FF' Fita de Seda '^000000:Encomendar ^3355FF' Grampo de Cabelo Estelar '^000000 ")) {
+	case 1:
+		mes "[YU]";
+		mes "Os itens monstruosos que são";
+		mes "necessário para comunicar";
+		mes "com monstros...";
+		mes "Estes são obrigatórios!";
+		mes "Nós, membros da guilda Monster Tamer,";
+		mes "tem uma oferta muito razoável.";
+		next;
+		mes "[YU]";
+		mes "Nós fornecemos um sistema que permite que você tenha esses itens legais com menos complicações!";
+		mes "Fita de seda!";
+		mes "Máscara de oxigênio monstro!";
+		mes "Elmo de caveira!";
+		next;
+		mes "[YU]";
+		mes "Grampo de cabelo estelar!";
+		mes "Casca de ovo minúscula!!";
+		mes "Óculos de balancim!!!";
+		next;
+		mes "[YU]";
+		mes "1 Elmo de Crânio requer";
+		mes "1 ^3355FFElmo ósseo^000000";
+		next;
+		mes "[YU]";
+		mes "1 Máscara de Oxigênio Monstruosa requer";
+		mes "1 ^3355FFMáscara de oxigênio^000000.";
+		next;
+		mes "[YU]";
+		mes "1 fita de seda requer";
+		mes "1 ^3355FFFita^000000.";
+		next;
+		mes "[YU]";
+		mes "1 Grampo Estelar requer";
+		mes "1 ^3355FFEstelar^000000.";
+		next;
+		mes "[YU]";
+		mes "1 pequena casca de ovo requer";
+		mes "1 ^3355FFEcasca de ovo^000000.";
+		next;
+		mes "[YU]";
+		mes "1 Rocker Glassess requer";
+		mes "^3355FF400 Zeny^000000,";
+		mes "2 ^3355FFZargon^000000 e";
+		mes "1 ^3355FFFita^000000.";
+		next;
+		mes "[YU]";
+		mes "Faça o seu melhor para encontrar esses itens para poder criar um Monstro Fofo! ";
+		close;
+	case 2:
+		mes "[YU]";
+		mes "Este é um item muito além do que os humanos podem usar! ";
+		next;
+		if (countitem(5017) > 0) {
+			mes "[YU]";
+			mes "Oh! ";
+			next;
+			mes "[YU]";
+			mes "Tenho que esfregar";
+			mes "este Elmo de Osso";
+			mes "na medida...";
+			next;
+			mes "[YU]";
+			mes "OK. ";
+			mes "Por favor, leve isso para";
+			mes "o monstro fofo que você";
+			mes "estão aumentando.";
+			mes "Elmo de Caveira!";
+			delitem 5017,1;  //Bone_Helm
+			getitem 10001,1; // Skull_Helm
+			close;
+		}
+		else {
+			mes "[YU]";
+			mes "Para o dono de monstro que adora estragar seu monstro, oferecemos uma maneira de fazer um Elmo de Caveira.";
+			next;
+			mes "[YU]";
+			mes "Apenas me traga...";
+			mes "^3355FF1 Elmo de osso^000000!";
+			mes "Com todo o meu orgulho de domador de monstros, farei isso para você!";
+			close;
+		}
+	case 3:
+		mes "[YU]";
+		mes "Este item está muito além do que os humanos podem usar. ";
+		next;
+		if (countitem(5004) > 0) {
+			mes "[YU]";
+			mes "Oh! ";
+			next;
+			mes "[YU]";
+			mes "Tenho que separar";
+			mes "esta máscara de oxigênio";
+			mes "na medida...";
+			next;
+			mes "^3355FF*Flip-flop... Zowie!*^000000";
+			next;
+			mes "[YU]";
+			mes "OK. ";
+			mes "Por favor, leve-o para";
+			mes "o monstro fofo que você";
+			mes "estão aumentando...";
+			mes "Máscara de oxigênio monstro!";
+			delitem 5004,1;  //Oxygen_Mask
+			getitem 10002,1; // Monster_Oxygen_Mask
+			close;
+		}
+		else {
+			mes "[YU]";
+			mes "Para o dono do monstro que deseja mimar seu monstro com seu próprio aparelho respiratório, oferecemos uma maneira de criar 1 Máscara de Oxigênio Monstruosa!";
+			next;
+			mes "[YU]";
+			mes "Traga-me...";
+			mes "^3355FF1 Máscara de oxigênio^000000.";
+			mes "Com todo o meu orgulho de domador de monstros, farei isso para você imediatamente!";
+			close;
+		}
+	case 4:
+		mes "[YU]";
+		mes "Este não é um item que um ser humano normal ousaria usar! ";
+		next;
+		if (countitem(2208) > 0) {
+			mes "[YU]";
+			mes "Oh! ";
+			next;
+			mes "[YU]";
+			mes "Tenho que desvendar";
+			mes "esta fita";
+			mes "na medida...";
+			next;
+			mes "[YU]";
+			mes "OK. ";
+			mes "Por favor, leve-o para";
+			mes "o monstro fofo que você";
+			mes "estão aumentando.";
+			mes "Fita de seda!";
+			delitem 2208,1;  //Ribbon
+			getitem 10007,1; // Silk_Ribbon
+			close;
+		}
+		else {
+			mes "[YU]";
+			mes "Para os donos de monstros que gostam de vestir seus animais de estimação com elegância, oferecemos uma maneira de criar 1 Fita de Seda!";
+			next;
+			mes "[YU]";
+			mes "Apenas me traga...";
+			mes "^3355FF1 Fita^000000!";
+			mes "com todo o meu orgulho de domador de monstros, farei isso para você!";
+			close;
+		}
+	case 5:
+		mes "[YU]";
+		mes "Este é um item muito além do senso de moda dos humanos! ";
+		next;
+		if (countitem(2294) > 0) {
+			mes "[YU]";
+			mes "Oh! ";
+			next;
+			mes "[YU]";
+			mes "Agora, se eu puder";
+			mes "só descasque isso";
+			mes "sem quebrá-lo...";
+			next;
+			mes "^3355FF*Brilha, brilha*^000000";
+			next;
+			mes "[YU]";
+			mes "OK. ";
+			mes "Por favor, leve-o para";
+			mes "o monstro fofo que você";
+			mes "estão aumentando";
+			mes "Grampo de cabelo estelar!";
+			delitem 2294,1;  // Stellar
+			getitem 10011,1; // Stellar_Hairpin
+			close;
+		}
+		else {
+			mes "[YU]";
+			mes "Para os donos de monstros que desejam o melhor para seu lindo animal de estimação, oferecemos uma espera para criar 1 Grampo de Cabelo Estelar!";
+			next;
+			mes "[YU]";
+			mes "Apenas me traga...";
+			mes "^3355FF 1 Estelar!^000000";
+			mes "com todo o meu orgulho de domador de monstros, farei isso para você!";
+			close;
+		}
+	case 6:
+		mes "[YU]";
+		mes "Isso está muito além do que os chapéus que os humanos podem usar. ";
+		next;
+		if (countitem(5015) > 0) {
+			mes "[YU]";
+			mes "Oh! ";
+			next;
+			mes "[YU]";
+			mes "Ter que";
+			mes "quebrar isso";
+			mes "na medida...";
+			next;
+			mes "^3355FF*Esfoliante, esfoliante, espremedor*^000000";
+			next;
+			mes "[YU]";
+			mes "OK. ";
+			mes "Por favor, leve-o para";
+			mes "o monstro fofo que você";
+			mes "estão aumentando";
+			mes "Casca de ovo minúscula!";
+			delitem 5015,1;  //Egg_Shell
+			getitem 10012,1; // Tiny_Egg_Shell
+			close;
+		}
+		else {
+			mes "[YU]";
+			mes "Para o dono de monstro que gosta de ovos e de cascas de ovos, oferecemos uma maneira de criar 1 minúscula casca de ovo!";
+			next;
+			mes "[YU]";
+			mes "Apenas me traga...";
+			mes "^3355FF1 Pequena casca de ovo^000000!";
+			mes "com todo o meu orgulho de domador de monstros, farei isso para você!";
+			close;
+		}
+	case 7:
+		mes "[YU]";
+		mes "Ah, sim, estes são óculos muito além dos óculos dos humanos normais. ";
+		next;
+		if ((countitem(912) > 1) && (countitem(2208) > 0) && (Zeny > 399)) {
+			mes "[YU]";
+			mes "Oh! ";
+			next;
+			mes "[YU]";
+			mes "Ok, agora tudo que preciso fazer é pegar esse Zargon e, hum, fazer lentes para óculos com ele. ";
+			next;
+			mes "^3355FF*Squeak squeak esmagamento*^000000";
+			next;
+			mes "[YU]";
+			mes "Uau! ";
+			mes "De alguma forma eu consegui.";
+			mes "Por favor, leve isso para";
+			mes "o monstro fofo que você";
+			mes "estão aumentando.";
+			mes "Óculos de balancim!";
+			delitem 912,2;  //Zargon
+			delitem 2208,1;  //Ribbon
+			set Zeny,Zeny-400;
+			getitem 10014,1; // Rocker_Glasses
+			close;
+		}
+		else {
+			mes "[YU]";
+			mes "Para o dono de monstro que gosta de óculos de monstro, oferecemos uma maneira de fazer Rocker Glasses!";
+			next;
+			mes "[YU]";
+			mes "Apenas me traga...";
+			mes "^3355FF2 Zargão^000000";
+			mes "^3355FF1 Fita^000000 e";
+			mes "^3355FF400 zeny^000000.";
+			mes "Eu farei isso para você, com todo meu orgulho de domador de monstros!";
+			close;
+		}
+	case 8:
+		mes "[YU]";
+		mes "Ah...!";
+		mes "Você não deve ter decidido qual monstro deseja criar.";
+		next;
+		mes "[YU]";
+		mes "Definitivamente não é uma decisão a ser tomada de forma descuidada! ";
+		close;
+	}
+}
+
+-	script	::MonsterTamer_izlude	-1,{
+	mes "[Shogo]";
+	mes "Você está preocupado com";
+	mes "coletando itens para monstros";
+	mes "e quer uma pausa?";
+	mes "Vamos reunir itens";
+	mes "para seus animais de estimação fofos.";
+	next;
+	switch(select("^3355FF' Domando Monstros '^000000?:Encomendar ^3355FF' Livro do Diabo '^000000:Encomendar ^3355FF' Sem Destinatário '^000000:Encomendar ^3355FF' Troféu Orc '^000000:Cancelar")) {
+	case 1:
+		mes "[Shogo]";
+		mes "Os itens para domesticar monstros são necessários para se comunicar com o monstro de sua escolha! ";
+		next;
+		mes "[Shogo]";
+		mes "Nós fornecemos um sistema que permite que você tenha esses itens legais com menos complicações!";
+		mes "Livro do Diabo!";
+		mes "Sem destinatário!";
+		mes "Troféu Orc!";
+		next;
+		mes "[Shogo]";
+		mes "Por 1 Livro do Diabo, você pode trocar:";
+		mes "^3355FF1 Livro mágico antigo^000000";
+		mes "^3355FF2 Boca Horrenda^000000.";
+		next;
+		mes "[Shogo]";
+		mes "Por 1 Sem Destinatário, você pode trocar ^3355FF1 Old Portrait^000000.";
+		next;
+		mes "[Shogo]";
+		mes "Por último, você pode trocar";
+		mes "^3355FF1 Emblema de Cavalaria ^ 000000 e";
+		mes "^3355FF1 Cauda de Escorpião^000000";
+		mes "por 1 Troféu Orc.";
+		mes "Experimente estes itens fantásticos!";
+		close;
+	case 2:
+		mes "[Shogo]";
+		mes "Este é um item muito além do que os humanos podem ler! ";
+		next;
+		if ((countitem(1006) > 0) && (countitem(958) > 1)) {
+			mes "[Shogo]";
+			mes "Oh! ";
+			next;
+			mes "[Shogo]";
+			mes "Vamos ver...";
+			mes "Hmm, isso vai ser difícil.";
+			next;
+			mes "^3355FF*Toc toc raspar raspar*^000000";
+			next;
+			mes "[Shogo]";
+			mes "OK. ";
+			mes "Por favor, leve-o para";
+			mes "o monstro fofo que você";
+			mes "estão aumentando.";
+			mes "Livro do Diabo!";
+			delitem 958,2;  //Horrendous_Mouth
+			delitem 1006,1;  //Old_Magic_Book
+			getitem 642,1; // Book_Of_Devil
+			close;
+		}
+		else {
+			mes "[Shogo]";
+			mes "Para o proprietário que deseja criar um monstro que possa ser invocado usando o Livro do Diabo, oferecemos uma forma de criar 1 Livro do Diabo!";
+			next;
+			mes "[Shogo]";
+			mes "Apenas me traga...";
+			mes "^3355FF1 Livro de magia antigo^000000 e";
+			mes "^3355FF2 Boca Horrenda^000000!";
+			mes "Se você me trouxer esses itens, com todo o meu orgulho de domador de monstros, eu farei isso para você!";
+			close;
+		}
+	case 3:
+		mes "[Shogo]";
+		mes "Este é um item que expressa sentimentos além do que um ser humano pode sentir. ";
+		next;
+		if (countitem(7014) > 0) {
+			mes "[Shogo]";
+			mes "Oh! ";
+			next;
+			mes "[Shogo]";
+			mes "Tenho que dobrar este retrato antigo corretamente...";
+			next;
+			mes "^3355FF*Escova para raspar*^000000";
+			next;
+			mes "[Shogo]";
+			mes "OK. ";
+			mes "Por favor, leve este item";
+			mes "para o monstro fofo";
+			mes "você está aumentando.";
+			mes "Sem destinatário!";
+			delitem 7014,1;  //Old_Portrait
+			getitem 636,1; // No_Recipient
+			close;
+		}
+		else {
+			mes "[Shogo]";
+			mes "Para o dono de monstro que gosta de No Recipient, oferecemos uma maneira de criar itens especiais!";
+			next;
+			mes "[Shogo]";
+			mes "Apenas me traga...";
+			mes "^3355FF1 Retrato antigo^000000!";
+			mes "Se você trouxer isso para mim, com todo o meu orgulho de domador de monstros, eu farei isso para você!";
+			close;
+		}
+	case 4:
+		mes "[Shogo]";
+		mes "Este é um item muito além do orgulho dos humanos!";
+		mes "Seu nome?";
+		mes "^3355Troféu FFOrc^000000!";
+		next;
+		if ((countitem(1004) > 0) && (countitem(904) > 0)) {
+			mes "[Shogo]";
+			mes "Oh! ";
+			next;
+			mes "[Shogo]";
+			mes "Ter que...";
+			mes "Encaixe essa Cauda de Escorpião...";
+			mes "Na medida...";
+			next;
+			mes "^3355FF*Clang clang Boong*^000000";
+			next;
+			mes "[Shogo]";
+			mes "OK. ";
+			mes "Por favor, leve isso para";
+			mes "o monstro fofo";
+			mes "você está criando...";
+			mes "Troféu Orc!";
+			delitem 904,1;  //Scorpion's_Tail
+			delitem 1004,1;  //Patriotism_Marks
+			getitem 635,1; // Horror_Of_Tribe
+			close;
+		}
+		else {
+			mes "[Shogo]";
+			mes "Para o dono do monstro";
+			mes "quem gosta de Horror of Tribe...";
+			mes "Uma maneira de fazer Horror of Tribe!";
+			mes "^3355FF 1 Emblema de Cavalaria ^000000!";
+			mes "^3355FF 1 Cauda de Escorpião^000000!";
+			next;
+			mes "[Shogo]";
+			mes "Se você trouxer esses itens para mim,";
+			mes "com todo o meu orgulho de monstro";
+			mes "domador, eu farei isso para você!";
+			close;
+		}
+	case 5:
+		mes "[Shogo]";
+		mes "Ah...!";
+		mes "Você não deve ter decidido qual monstro deseja criar.";
+		next;
+		mes "[Shogo]";
+		mes "Definitivamente não é uma decisão a ser tomada de forma descuidada! ";
+		close;
+	}
+}
+
+comodo,112,182,0	script	Munak's Grandma	103,{
+	if (countitem(1558) > 0) {
+		mes "[avó de Munak]";
+		mes "Oh meu Deus...";
+		mes "Você viu minha neta,";
+		if (Sex == SEX_MALE) {
+			mes "garoto? ";
+		}
+		else {
+			mes "mocinha? ";
+		}
+		mes "está faltando...";
+		next;
+		mes "[Vovó de Munak]";
+		mes "Não me lembro exatamente quando";
+		mes "era, mas quando eu morava em Payon, eu";
+		mes "tinha uma neta fofa. ";
+		mes "fiquei muito feliz quando eu a fiz";
+		mes "cabelo tipo ^000077Danggie^000000...";
+		next;
+		mes "[Vovó de Munak]";
+		mes "Ela estava sempre trabalhando com o";
+		mes "chefe da aldeia... Ela era tão doce";
+		mes "garota, e sempre se deu bem com";
+		mes "filho do chefe...";
+		next;
+		mes "[Vovó de Munak]";
+		mes "Mas um dia nossa divindade ficou com raiva";
+		mes "e amaldiçoou o filho do chefe com um";
+		mes "doença! ";
+		mes "minha neta para ele como um";
+		mes "companheiro para acabar com a maldição...";
+		next;
+		mes "[Vovó de Munak]";
+		mes "O filho do chefe recuperou o";
+		mes "saúde, mas perdi minha";
+		mes "neta! ";
+		mes "e não pensar nela, então tentei";
+		mes "deixei minha miséria para trás e vim";
+		mes "aqui para Comodo...";
+		next;
+		switch(select("Oh vamos lá! ")) {
+		case 1:
+			mes "[Vovó de Munak]";
+			mes "Parece que minha neta me assombra";
+			mes "sonhos todas as noites. ";
+			mes "vem tentando se animar há anos";
+			mes "agora...";
+			close;
+		case 2:
+			if (countitem(901) > 0) {
+				mes "[Vovó de Munak]";
+				mes "Oh Deus!";
+				mes "É o diário da minha neta!";
+				mes "Esta é a escrita dela! ";
+				next;
+				mes "[Vovó de Munak]";
+				if (Sex == SEX_MALE) {
+					mes "Jovem... vou ler isso para você se";
+				}
+				else {
+					mes "Mocinha... vou ler isso para você se";
+				}
+				mes "você me dá com um Danggie,";
+				mes "por favor. ";
+				mes "isso pertencia a ela agora...";
+				next;
+				switch(select("De jeito nenhum.:Ok, eu vou.")) {
+				case 1:
+					mes "[Vovó de Munak]";
+					mes "Oh...?";
+					if (Sex == SEX_MALE) {
+						mes "Tudo bem, jovem.";
+						mes "Obrigado mesmo assim.";
+					}
+					else {
+						mes "Obrigado mesmo assim,";
+						mes "jovem";
+					}
+					next;
+					mes "[Vovó de Munak]";
+					mes "Está tudo bem...";
+					mes "Só posso esperar que a divindade esteja";
+					mes "cuidando bem dela!";
+					close;
+				case 2:
+					delitem 1558,1;
+					delitem 901,1;
+					mes "[Vovó de Munak]";
+					if (Sex == SEX_MALE) {
+						mes "Oh!";
+						mes "Obrigado,";
+						mes "jovem~!";
+					}
+					else {
+						mes "Bondade!";
+						mes "Obrigado,";
+						mes "mocinha...";
+					}
+					next;
+					mes "[Vovó de Munak]";
+					mes "Tudo bem...";
+					mes "Eu vou ler isso.";
+					mes "Deixe-me ver...";
+					next;
+					mes "[Vovó de Munak]";
+					mes "Parece que minha neta estava";
+					mes "tratado pelo chefe como se fosse seu";
+					mes "criança! ";
+					mes "memórias neste livro!";
+					next;
+					getitem 659,1;
+					mes "[Vovó de Munak]";
+					mes "Ah, obrigado. ";
+					mes "lembrança da minha neta. ";
+					mes "você tanto! ";
+					mes "você!";
+					close;
+				}
+			}
+			else {
+				mes "[Vovó de Munak]";
+				mes "O que? ";
+				mes "Eu não... não consigo me lembrar, meu Deus...";
+				next;
+				mes "[Vovó de Munak]";
+				mes "Eu realmente gostaria de poder fazer o cabelo dela";
+				mes "em ^000077Danggie^000000 novamente. ";
+				mes "desejo... Ah, ah minha neta...";
+				close;
+			}
+		}
+	}
+	else {
+		mes "[Vovó de Munak]";
+		mes "Minha própria neta...";
+		mes "Por que ela teve que sair...?";
+		close;
+	}
+}
+

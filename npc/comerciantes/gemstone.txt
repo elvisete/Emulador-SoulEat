@@ -1,0 +1,106 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+payon,173,238,5	script	Jade#pay	754,{
+	if (checkweight(1201, 1) == 0) {
+		mes "^3355FFEspere um segundo! Neste momento, você está carregando muitos itens consigo. Volte depois de guardar alguns de seus pertences no Kafra Storage.^000000";
+		close;
+	}
+	mes "[Jade]";
+	mes "Traga-me duas";
+	mes "Gemas da";
+	mes "mesma cor, e eu vou";
+	mes "mudá-los para Gemas";
+	mes "de uma cor diferente.";
+	next;
+	switch(select("Gemas Azuis para Gemas Vermelhas!:Gemas Vermelhas para Gemas Amarelas!:Gemas Amarelas para Gemas Azuis!")) {
+	case 1: callsub S_TrocarGemas, 717, 716;
+	case 2: callsub S_TrocarGemas, 716, 715;
+	case 3: callsub S_TrocarGemas, 715, 717;
+	}
+
+S_TrocarGemas:
+	.@item_req = getarg(0);
+	.@item_id = getarg(1);
+
+	if (countitem(.@item_req) < 2) {
+		mes "[Jade]";
+		mes "Hah...!";
+		mes "Você está brincando, né?";
+		mes "Eu não posso fornecer este";
+		mes "serviço se você não me der pelo menos";
+		mes "2 "+ getitemname(.@item_req) +"s!";
+		close;
+	}
+	else {
+		.@gems = countitem(.@item_req) / 2;
+		mes "[Jade]";
+		mes "Acredito que posso criar";
+		mes "um total de "+ .@gems +" "+ getitemname(.@item_id) +"s";
+		mes "usando os "+ getitemname(.@item_req) +"s";
+		mes "que você tem atualmente.";
+		mes "O que você quer fazer?";
+		next;
+		switch(select("Me dê o máximo que puder.:Quero definir a quantidade.:Eu desisto.")) {
+		case 1:
+			delitem .@item_req, .@gems * 2;
+			getitem .@item_id, .@gems;
+			break;
+		case 2:
+			mes "[Jade]";
+			mes "Então, quantos";
+			mes "você quer?";
+			mes "O número máximo";
+			mes "que você pode inserir é 100.";
+			next;
+			while(1) {
+				input .@input, 0, 101;
+				if (.@input == 0) {
+					mes "[Jade]";
+					mes "Nada mesmo?";
+					mes "Acho que você";
+					mes "mudou de ideia...";
+					close;
+				}
+				else if (.@input > 100) {
+					mes "[Jade]";
+					mes "Hmm...";
+					mes "Eu pedi para você inserir";
+					mes "uma quantidade não maior";
+					mes "do que 100, lembra-se...?";
+					next;
+				}
+				else if (.@gems < .@input) {
+					// Diálogo personalizado
+					mes "[Jade]";
+					mes "Hmm...";
+					mes "Você não tem tantas";
+					mes "gemas para trocar...";
+					next;
+				}
+				else break;
+			}
+			delitem .@item_req, .@input * 2;
+			getitem .@item_id, .@input;
+			break;
+		case 3:
+			mes "[Jade]";
+			mes "Claro, sem problemas.";
+			mes "Volte a qualquer momento.";
+			close;
+		}
+		mes "[Jade]";
+		mes "Pronto.";
+		mes "Sinta-se à vontade para voltar";
+		mes "a qualquer momento.";
+		mes "Hm, qual é essa expressão?";
+		mes "Tem algo no meu rosto?";
+		close;
+	}
+}

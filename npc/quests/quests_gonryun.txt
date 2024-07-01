@@ -1,0 +1,3807 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+// Broken Sword :: broken_sword
+//============================================================ 
+gon_in,17,93,5	script	Chief#gon	775,{
+	if (BaseLevel > 50) {
+		if (b_sword == 0) {
+			set b_sword,1;
+			mes "[Shi Yan Wen]";
+			mes "Hum...?";
+			mes "Ah, olá ~";
+			mes "Eu sou Shi Yan Wen, o chefe de";
+			mes "esta aldeia. ";
+			next;
+			mes "[Shi Yan Wen]";
+			mes "Embora a nossa aldeia não tenha";
+			mes "associada a outras cidades muito";
+			mes "muito, recentemente começamos";
+			mes "para permitir visitantes vindos de Alberta.";
+			next;
+			mes "[Shi Yan Wen]";
+			mes "Eu sinto que esta cidade tem sido";
+			mes "isolado por muito tempo. ";
+			mes "por isso, as pessoas nesta cidade ainda não são muito amigáveis ??com os visitantes.";
+			next;
+			mes "[Shi Yan Wen]";
+			mes "Além disso, temos tido um problema recente com ladrões";
+			mes "que estão se divertindo demais em Kunlun...";
+			mes "Bem, você veio visitar aqui";
+			mes "então espero que você aproveite sua estadia.";
+			close;
+		}
+		else if (b_sword < 18) {
+			switch (b_sword) {
+			case 1:
+				mes "[Shi Yan Wen]";
+				mes "Ah, olá ~";
+				mes "Eu sou Shi Yan Wen, o chefe de";
+				mes "esta aldeia. ";
+				next;
+				mes "[Shi Yan Wen]";
+				mes "Embora a nossa aldeia não tenha";
+				mes "associada a outras cidades muito";
+				mes "muito, recentemente começamos";
+				mes "para permitir visitantes vindos de Alberta.";
+				next;
+				mes "[Shi Yan Wen]";
+				mes "Eu sinto que esta cidade tem sido";
+				mes "isolado por muito tempo. ";
+				mes "por isso, as pessoas nesta cidade ainda não são muito amigáveis ??com os visitantes.";
+				next;
+				mes "[Shi Yan Wen]";
+				mes "Além disso, temos tido um problema recente com ladrões";
+				mes "que estão se divertindo demais em Kunlun...";
+				mes "Bem, você veio visitar aqui";
+				mes "então espero que você aproveite sua estadia.";
+				close;
+			case 2:
+				mes "[Shi Yan Wen]";
+				mes "Ah, é você ~";
+				mes "O que você acha daqui até agora?";
+				mes "Como você provavelmente já percebeu,";
+				mes "a vila não é tão pacífica, né?";
+				next;
+				if (select("Está tudo bem.:Ouvi dizer que algo foi roubado...") == 1) {
+					mes "[Shi Yan Wen]";
+					mes "Bem, estou feliz que você não se importe.";
+					mes "Apenas tome cuidado com os ladrões,";
+					mes "e tente não agir de forma suspeita";
+					mes "na Vila.";
+					close;
+				}
+				mes "[Shi Yan Wen]";
+				mes "Hmm... você já ouviu falar?";
+				mes "Foi ontem à noite quando o";
+				mes "ocorreu um roubo. ";
+				mes "são verdadeiros. ";
+				next;
+				switch(select("......:O que foi roubado?:Alguém ficou ferido?")) {
+				case 1:
+					mes "[Shi Yan Wen]";
+					mes "Eu não posso acreditar realmente";
+					mes "aconteceu... Bem, se você ver";
+					mes "qualquer personagem suspeito por perto,";
+					mes "ou encontrar o que foi roubado, por favor me avise.";
+					set b_sword,3;
+					close;
+				case 2:
+					mes "[Shi Yan Wen]";
+					mes "Bem...";
+					mes "Erm... foi...";
+					mes "...apenas uma espada comum.";
+					mes "Mas para nós, tem sido um tesouro de família há muitas gerações.";
+					next;
+					mes "[Shi Yan Wen]";
+					mes "Eu devo encontrar essa espada";
+					mes "não importa o que!";
+					mes "... mas não posso ir encontrá-lo apenas";
+					mes "por mim mesmo. ";
+					next;
+					mes "[Shi Yan Wen]";
+					mes "Você sabe como é ocupado ser o";
+					mes "chefe de uma aldeia. ";
+					next;
+					if (select("Espero que você encontre logo.:Posso encontrar para você?") == 1) {
+						mes "[Shi Yan Wen]";
+						mes "hum.. Obrigado.";
+						mes "Se você de alguma forma se deparar com isso,";
+						mes "por favor, me avise.";
+						set b_sword,11;
+						close;
+					}
+					mes "[Shi Yan Wen]";
+					mes "Ah!~ Você está falando sério??";
+					mes "...As pessoas da aldeia são";
+					mes "muito medo hoje em dia porque";
+					mes "dos ladrões. ";
+					mes "para pedir ajuda a eles...";
+					next;
+					mes "[Shi Yan Wen]";
+					mes "Se você me ajudar a encontrar a espada, certamente retribuirei seus esforços.";
+					set b_sword,3;
+					close;
+				case 3:
+					mes "[Shi Yan Wen]";
+					mes "Felizmente, ninguém ficou ferido.";
+					mes "Entretanto, os ladrões levaram";
+					mes "valioso tesouro familiar";
+					mes "que foi transmitido de";
+					mes "geração em geração.";
+					next;
+					mes "[Shi Yan Wen]";
+					mes "Eu devo encontrar essa espada";
+					mes "não importa o que!";
+					mes "...Mas eu não posso ir encontrá-lo apenas";
+					mes "por mim mesmo. ";
+					next;
+					mes "[Shi Yan Wen]";
+					mes "Você sabe como é ocupado ser o";
+					mes "chefe de uma aldeia. ";
+					next;
+					if (select("Espero que você encontre logo.:Posso encontrar para você?") == 1) {
+						mes "[Shi Yan Wen]";
+						mes "Hum... obrigado.";
+						mes "Se você de alguma forma se deparar com isso,";
+						mes "por favor, me avise.";
+						set b_sword,11;
+						close;
+					}
+					mes "[Shi Yan Wen]";
+					mes "Ah!~ Você está falando sério??";
+					mes "...As pessoas da aldeia são";
+					mes "muito medo hoje em dia porque";
+					mes "dos ladrões. ";
+					mes "para pedir ajuda a eles...";
+					next;
+					mes "[Shi Yan Wen]";
+					mes "Se você me ajudar a encontrar a espada, certamente retribuirei seus esforços.";
+					set b_sword,3;
+					close;
+				}
+			case 3:
+			case 4:
+			case 5:
+				mes "[Shi Yan Wen]";
+				mes "Ainda não encontrou?";
+				mes "Não há pressa, vá com calma.";
+				mes "Você tem que cuidar";
+				mes "você mesmo primeiro antes";
+				mes "fazendo favores aos outros.";
+				close;
+			case 6:
+				mes "[Shi Yan Wen]";
+				mes "Ah, você encontrou uma pista?";
+				mes "Até agora, parece";
+				mes "você está fazendo um bom trabalho.";
+				mes "Tome este velho remédio de família, pode ser útil em breve.";
+				set b_sword,7;
+				getitem 504,3; //White_Potion
+				close;
+			case 7:
+				mes "[Shi Yan Wen]";
+				mes "Pode ser útil para você";
+				mes "saiba que o ladrão sustentou";
+				mes "uma lesão, então ele provavelmente não está muito longe daqui.";
+				close;
+			case 8:
+				mes "[Shi Yan Wen]";
+				mes "O que...?";
+				mes "Minha espada foi quebrada!?";
+				mes "Inacreditável~!!";
+				mes "Como isso pôde acontecer??";
+				next;
+				mes "[Shi Yan Wen]";
+				mes "Primeiro é roubado, e agora";
+				mes "está em pedaços... *Sobre*";
+				mes "Você poderia por favor pesquisar";
+				mes "pelo resto da minha espada?";
+				mes "Significa muito para minha família...";
+				close;
+			case 9:
+				mes "[Shi Yan Wen]";
+				mes "*Soluço*...";
+				mes "...minha espada... em pedaços...";
+				mes "Eu imploro, por favor, encontre-os";
+				mes "para mim. ";
+				close;
+			case 10:
+				mes "[Shi Yan Wen]";
+				mes "Ah!";
+				mes "Você encontrou as peças para mim ~";
+				mes "Eu sabia que voce poderia fazer isso.";
+				mes "Mas a espada ainda está quebrada.";
+				mes "O que devo fazer...?";
+				next;
+				mes "[Shi Yan Wen]";
+				mes "Se estiver tudo bem para você,";
+				mes "você consertaria minha espada para mim?";
+				mes "Eu vou retribuir sua ajuda.";
+				next;
+				if (select("De jeito nenhum.:Tudo bem.") == 1) {
+					mes "[Shi Yan Wen]";
+					mes "Bem, entendo... você tem sido tão";
+					mes "boa pessoa. ";
+					mes "seu trabalho duro. ";
+					mes "maravilhoso se você pudesse ajudar";
+					mes "eu conserto a espada, mas eu";
+					mes "não vai forçá-lo.";
+					next;
+					mes "[Shi Yan Wen]";
+					mes "Vou encontrar uma maneira de reparar";
+					mes "isto. ";
+					mes "nunca o teria encontrado.";
+					mes "Por favor, aceite isso como um";
+					mes "sinal da minha gratidão...";
+					set b_sword,15;
+					getitem 603,1; //Old_Blue_Box
+					next;
+					mes "[Shi Yan Wen]";
+					mes "Se você encontrar alguma informação";
+					mes "ou pistas sobre aquele maldito";
+					mes "ladrão, por favor me avise.";
+					mes "Eu tenho minha espada de volta, mas";
+					mes "não há como eu perdoar";
+					mes "esta afronta aos meus antepassados...";
+					close;
+				}
+				mes "[Shi Yan Wen]";
+				mes "Tanta generosidade...";
+				mes "Estou realmente em dívida com você...";
+				mes "Eu não tenho ideia de como essa espada";
+				mes "quebrou em pedaços, no entanto.";
+				mes "Você provavelmente precisará encontrar um";
+				mes "ferreiro famoso para consertá-lo.";
+				next;
+				mes "[Shi Yan Wen]";
+				mes "Como já mencionei, isso é";
+				mes "um importante tesouro familiar...";
+				mes "Oh! ";
+				next;
+				mes "[Shi Yan Wen]";
+				mes "Tem um cara chamado ^555555Zuo Hei^000000";
+				mes "na Vila. ";
+				mes "muitos lugares ao redor do mundo.";
+				mes "Ele pode conhecer tal armeiro. ";
+				next;
+				mes "[Shi Yan Wen]";
+				mes "Ah, uma última coisa. ";
+				mes "mas uma bugiganga, mas por favor";
+				mes "aceite este presente meu.";
+				set b_sword,14;
+				getitem 603,1; //Old_Blue_Box
+				close;
+			case 11:
+				mes "[Shi Yan Wen]";
+				mes "A aldeia não está em boa situação";
+				mes "humor hoje em dia, mas há";
+				mes "ainda há muitas coisas para ver em Kunlun.";
+				close;
+			case 12:
+				mes "[Shi Yan Wen]";
+				mes "Hmm.. sem vestígios? ";
+				mes "... Nada? ";
+				mes "tudo bem. ";
+				mes "tentando ajudar.";
+				mes "Hum....";
+				next;
+				mes "[Shi Yan Wen]";
+				mes "Aqui... pegue isso.";
+				mes "Divirta-se em Kunlun ~";
+				set b_sword,13;
+				getitem 504,1; //White_Potion
+				close;
+			case 13:
+				mes "[Shi Yan Wen]";
+				mes "Está tudo indo bem?";
+				mes "A aldeia não foi";
+				mes "de bom humor ultimamente.";
+				mes "Ainda assim, por favor, tente";
+				mes "divirta-se.";
+				close;
+			case 14:
+			case 15:
+			case 16:
+			case 17:
+				mes "[Shi Yan Wen]";
+				mes "Eu realmente aprecio o que você é";
+				mes "fazendo. ";
+				mes "algo está finalmente sendo feito";
+				mes "sobre esses roubos.";
+				next;
+				mes "[Shi Yan Wen]";
+				mes "Talvez agora, a paz finalmente";
+				mes "venha para a aldeia, como antigamente...";
+				close;
+			}
+		}
+		else if (b_sword < 32) {
+			mes "[Shi Yan Wen]";
+			mes "Eu aprecio o que você está fazendo,";
+			mes "e sua ajuda foi";
+			mes "um alívio para mim. ";
+			mes "parece menos tenso, assim como";
+			mes "foi nos velhos tempos.";
+			next;
+			mes "[Shi Yan Wen]";
+			mes "Embora eu espere que você esteja";
+			mes "poder consertar meu";
+			mes "espada em breve, você";
+			mes "já fez tanto por";
+			mes "meu. ";
+			mes "pedindo que você faça mais.";
+			close;
+		}
+		else if (b_sword == 32) {
+			if (countitem(1123) < 1) {
+				mes "[Shi Yan Wen]";
+				mes "Hum.....";
+				mes "Ainda não terminei, hein?";
+				mes "Ainda assim, é bom saber";
+				mes "está sendo consertado...";
+				mes "Estarei esperando, então.";
+				close;
+			}
+			mes "[Shi Yan Wen]";
+			mes "Ah, é você ~ Olá.";
+			mes "............";
+			mes "Essa é minha espada?";
+			mes "Uau, você conseguiu!";
+			mes "Bom trabalho!";
+			next;
+			mes "[Shi Yan Wen]";
+			mes "Este é um pequeno presente para você.";
+			mes "Por favor, aceite isso como agradecimento por um trabalho bem executado!";
+			delitem 1123,1; //Haedonggum
+			set b_sword,33;
+			getitem 2404,1; //Shoes_
+			next;
+			mes "[Shi Yan Wen]";
+			mes "Obrigado por todos os seus esforços.";
+			mes "Com esta espada reparada, eu não";
+			mes "mais sinto que estou envergonhado";
+			mes "meus ancestrais...";
+			mes "Heh heh...";
+			mes "Divirta-se em Kunlun.";
+			close;
+		}
+		mes "[Shi Yan Wen]";
+		mes "Ah, é você ~";
+		mes "Mais uma vez, gostaria de agradecer";
+		mes "você por toda sua ajuda.";
+		mes "Aproveite a sua estadia na nossa aldeia.";
+		mes "Heh heh ~";
+		close;
+	}
+	mes "[Shi Yan Wen]";
+	mes "Hum...?";
+	mes "Ah, olá ~";
+	mes "Eu sou Shi Yan Wen, o chefe de";
+	mes "esta aldeia. ";
+	next;
+	mes "[Shi Yan Wen]";
+	mes "Embora a nossa aldeia não tenha";
+	mes "associada a outras cidades muito";
+	mes "muito, recentemente começamos";
+	mes "para permitir visitantes vindos de Alberta.";
+	next;
+	mes "[Shi Yan Wen]";
+	mes "Eu sinto que esta cidade tem sido";
+	mes "isolado por muito tempo. ";
+	mes "por isso, as pessoas nesta cidade ainda não são muito amigáveis ??com os visitantes.";
+	next;
+	mes "[Shi Yan Wen]";
+	mes "Além disso, temos tido um problema recente com ladrões";
+	mes "que estão se divertindo demais em Kunlun...";
+	mes "Bem, você veio visitar aqui";
+	mes "então espero que você aproveite sua estadia.";
+	close;
+}
+
+gon_in,152,35,4	script	Hostess#gon	702,{
+	if (b_sword < 1) {
+		mes "[Mei Yen Fang]";
+		mes "Ah... você é novo aqui, certo?";
+		mes "Veio de fora da cidade?";
+		mes "É comum ver muitos";
+		mes "estrangeiros hoje em dia.";
+		mes "Isso deixou as pessoas da aldeia ocupadas.";
+		next;
+		mes "[Mei Yen Fang]";
+		mes "Ah, o que estou dizendo...";
+		mes "Quer um pouco de vinho?";
+		next;
+		if (select("Sim, por favor: Não, está tudo bem.") == 1) {
+			mes "[Mei Yen Fang]";
+			mes "Oops~! ";
+			mes "Muitos clientes vieram antes,";
+			mes "então agora estamos sem vinho...";
+			mes "Está ficando difícil acompanhar o número crescente de clientes...";
+			close;
+		}
+		mes "[Mei Yen Fang]";
+		mes "Bem, divirta-se na aldeia.";
+		mes "Passe por aqui novamente algum dia.";
+		close;
+	}
+	switch(b_sword) {
+	case 1:
+	case 2:
+		mes "[Mei Yen Fang]";
+		mes "Ei, quer saber?";
+		mes "A casa do chefe foi assaltada";
+		mes "noite passada. ";
+		mes "isso aconteceu...acho que isso é obra daqueles ladrões...";
+		next;
+		mes "[Mei Yen Fang]";
+		mes "Como tudo isso é preocupante...";
+		mes "Pode até acontecer comigo!";
+		mes "É melhor eu tomar cuidado...";
+		mes "Ah, o que estou dizendo?";
+		mes "Aproveite seu tempo na minha loja...hehe~";
+		set b_sword,2;
+		close;
+	case 3:
+		mes "[Mei Yen Fang]";
+		mes "Ah, é você de novo~";
+		mes "Ouvi dizer que você decidiu";
+		mes "para ajudar nosso chefe.";
+		mes "Por favor, faça o seu melhor por ele!";
+		mes "Todos na aldeia têm";
+		mes "estive no limite...";
+		next;
+		mes "[Mei Yen Fang]";
+		mes "Você vê aquele cara ali";
+		mes "encostado na mesa?";
+		mes "Ele parece saber sobre o que";
+		mes "aconteceu ontem à noite, mas...";
+		mes "Ele bebeu a noite toda.";
+		set b_sword,4;
+		close;
+	}
+	if (b_sword > 3 && b_sword < 11) {
+		mes "[Mei Yen Fang]";
+		mes "Olá ~";
+		mes "Sentindo tensão na aldeia,";
+		mes "huh? ";
+		mes "ladrões...";
+		next;
+		mes "[Mei Yen Fang]";
+		mes "Eles também estão dificultando as coisas para o meu negócio...";
+		mes "";
+		mes "*Suspirar*";
+		close;
+	}
+	else if (b_sword == 11 || b_sword == 12) {
+		mes "[Mei Yen Fang]";
+		mes "Sentindo tensão na aldeia,";
+		mes "huh? ";
+		mes "...";
+		close;
+	}
+	mes "[Mei Yen Fang]";
+	mes "Você o pegou?!";
+	mes "Nossa, você é muito corajoso.";
+	mes "Eu deveria me preparar para executar o";
+	mes "compre novamente. ";
+	mes "peça um pouco de vinho primeiro.";
+	next;
+	mes "[Mei Yen Fang]";
+	mes "Xue Bong bebeu todo o vinho do";
+	mes "loja, e não reabasteci nenhum";
+	mes "já que todo mundo ficou com medo";
+	mes "pelos roubos...";
+	mes "Mas pare na próxima vez.";
+	mes "Vou preparar um pouco de vinho.";
+	close;
+}
+
+gon_in,165,16,4	script	Man in hangover#gon	748,{
+	if (b_sword < 4) {
+		mes "[Xue Bong]";
+		mes "Ahhh.. meu estômago.. minha cabeça..";
+		mes "Eu não deveria beber tanto..";
+		mes "Ehhhh....";
+		emotion ET_PROFUSELY_SWEAT;
+		close;
+	}
+	else if (b_sword < 6) {
+		switch(b_sword) {
+		case 4:
+			if (countitem(506) < 1) {
+				mes "[Xue Bong]";
+				mes "*Urk!* Estou me sentindo mal...";
+				mes "Alguém pode me trazer uma poção?";
+				mes "*Gemido*....";
+				emotion ET_PROFUSELY_SWEAT;
+				close;
+			}
+			mes "[Xue Bong]";
+			mes "Ahhh... meu estômago...";
+			mes "Eu preciso de algo...";
+			mes "Gemido ~ Uh, ei você!";
+			mes "Você poderia me dar um";
+			mes "dos seus ^00FF00Green_Potion^000000s?";
+			mes "acho que vou vomitar...";
+			next;
+			switch(select("Não.:Aqui, beba isso!")) {
+			case 1:
+				mes "[Xue Bong]";
+				mes "Uh...";
+				mes "Tem certeza?";
+				next;
+				switch(select("Desculpe, não tenho nenhum.:Aqui, você pode ficar com ele!")) {
+				case 1:
+					mes "[Xue Bong]";
+					mes "Vamos lá cara...";
+					mes "Eu... estou com muita dor aqui...";
+					set b_sword,12;
+					close;
+				case 2:
+					delitem 506,1; //Green_Potion
+					set b_sword,5;
+					mes "[Xue Bong]";
+					mes "Ah cara... obrigado.";
+					mes "Achei que você estava me provocando.";
+					mes "Sinto-me muito melhor agora.";
+					mes "Então... uh, o que traz você aqui?";
+					next;
+					if (select("Ouvi falar do ladrão?:Nada.") == 1) {
+						mes "[Xue Bong]";
+						mes "Ah, um ladrão ~";
+						mes "Hum... deixe-me ver..";
+						mes "Saí para passear no meio";
+						mes "da noite enquanto eu bebia.";
+						mes "E ouvi um barulho.";
+						next;
+						mes "[Xue Bong]";
+						mes "Olhei em volta e descobri que";
+						mes "área perto da casa do chefe era";
+						mes "mais brilhante do que qualquer outra área...";
+						mes "Foi estranho...";
+						mes "[Xue Bong]";
+						mes "Então continuei assistindo e";
+						mes "de repente, vi algo";
+						mes "movendo-se nos telhados...";
+						next;
+						mes "[Xue Bong]";
+						mes "Desapareceu em um segundo.";
+						mes "Eu estava bêbado e estava escuro";
+						mes "fora. ";
+						mes "se era um homem,";
+						mes "um poring, ou se eu tivesse apenas";
+						mes "bebi demais..eheh.";
+						set b_sword,6;
+						close;
+					}
+					mes "[Xue Bong]";
+					mes "Ok então, obrigado novamente.";
+					mes "Não seja um bebedor como eu,";
+					mes "a menos que você queira sofrer";
+					mes "ressacas graves. ";
+					close;
+				}
+			case 2:
+				delitem 506,1; //Green_Potion
+				set b_sword,5;
+				emotion ET_THANKS;
+				mes "[Xue Bong]";
+				mes "Uau, obrigado!";
+				mes "Sinto-me muito melhor agora.";
+				mes "Hmm... você parece novo por aqui.";
+				mes "Quer saber alguma coisa?";
+				next;
+				switch(select("Sobre um ladrão...:Quanto você tem bebido?:Nada~")) {
+				case 1:
+					mes "[Xue Bong]";
+					mes "Ah, um ladrão, né? ";
+					mes "Saí para passear no meio";
+					mes "da noite enquanto eu bebia.";
+					mes "De repente, ouvi um barulho estranho...";
+					next;
+					mes "[Xue Bong]";
+					mes "Olhei em volta e descobri que";
+					mes "área perto da casa do chefe era";
+					mes "mais brilhante do que qualquer outra área. ";
+					next;
+					mes "[Xue Bong]";
+					mes "Então continuei assistindo e,";
+					mes "de repente, vi algo se movendo nos telhados...";
+					next;
+					if (select("Para onde?:Provavelmente uma Rosa Selvagem.") == 1) {
+						mes "[Xue Bong]";
+						mes "Hum?";
+						mes "Bem Deixe-me ver..";
+						mes "Veio de... e foi para... hum...";
+						mes "murmúrio..";
+						next;
+						mes "^3355FFEle começou a resmungar um pouco^000000";
+						mes "......";
+						next;
+						mes "[Xue Bong]";
+						mes "Ah, ah!! ";
+						mes "Um santuário, sim, o ladrão era";
+						mes "indo para um santuário e";
+						mes "desaparecido. ";
+						mes "certeza se era um humano ou um";
+						mes "animal...";
+						set b_sword,6;
+						next;
+						mes "[Xue Bong]";
+						mes "Mais alguma coisa em que eu possa ajudá-lo?";
+						mes "Eu aprecio a poção.";
+						next;
+						switch(select("Obrigado pela informação.:Pare de beber tanto.:Ok, tchau")) {
+						case 1:
+							mes "[Xue Bong]";
+							mes "Vejo você mais tarde então.";
+							mes "Estou sempre aqui bebendo..eheh.";
+							close;
+						case 2:
+							mes "[Xue Bong]";
+							mes "Ehh..Não se importe comigo.";
+							mes "Eu sou um bebedor social...";
+							mes "";
+							mes "É que não tenho ninguém com quem conviver.";
+							close;
+						case 3:
+							mes "[Xue Bong]";
+							mes "Tudo bem.";
+							mes "Volte sempre que tiver";
+							mes "quaisquer outras perguntas.";
+							close;
+						}
+					}
+					mes "[Xue Bong]";
+					mes "Sim talvez.";
+					mes "Estava tão escuro lá fora e eu estava";
+					mes "bêbado então não me lembro";
+					mes "claramente. ";
+					close;
+				case 2:
+					mes "[Xue Bong]";
+					mes "Ah..um....eu..eu não me lembro.";
+					mes "Quando acordei, havia toneladas de";
+					mes "garrafas vazias ao meu redor.";
+					mes "...";
+					next;
+					mes "^3355FF.......";
+					mes "Por alguma razão, você não consegue discernir a confiabilidade do testemunho dele...^000000";
+					close;
+				case 3:
+					mes "[Xue Bong]";
+					mes "Está bem então.";
+					mes "Espero que você nunca beba como eu";
+					mes "no futuro. ";
+					mes "por um longo tempo se você fizer isso.";
+					mes "Você sabe o que é uma ressaca, certo?";
+					close;
+				}
+			}
+		case 5:
+			mes "[Xue Bong]";
+			mes "Ah é você. ";
+			mes "Obrigado pela poção da última vez.";
+			mes "O que você está fazendo?";
+			mes "Tem alguma pergunta para mim?";
+			next;
+			switch(select("Sobre um ladrão ontem à noite...:Não, só de passagem..")) {
+			case 1:
+				mes "[Xue Bong]";
+				mes "Ah~ um ladrão...?";
+				mes "Hum... deixe-me ver...";
+				mes "Saí para passear no meio";
+				mes "da noite enquanto eu bebia.";
+				mes "De repente, ouvi um barulho estranho...";
+				next;
+				mes "[Xue Bong]";
+				mes "Olhei em volta e descobri que";
+				mes "área perto da casa do chefe era";
+				mes "mais brilhante do que qualquer outra área. ";
+				next;
+				mes "[Xue Bong]";
+				mes "Então continuei assistindo e,";
+				mes "de repente, vi algo se movendo nos telhados...";
+				next;
+				mes "[Xue Bong]";
+				mes "Desapareceu em um segundo.";
+				mes "Eu estava bêbado e estava escuro";
+				mes "fora. ";
+				mes "se era um homem, um poring,";
+				mes "ou se eu tivesse bebido demais...heheh~";
+				set b_sword,6;
+				close;
+			case 2:
+				mes "[Xue Bong]";
+				mes "Ok, então, obrigado novamente.";
+				mes "Não seja um bebedor como eu,";
+				mes "a menos que você queira sofrer";
+				mes "ressacas graves. ";
+				close;
+			}
+		}
+	}
+	else if (b_sword < 11) {
+		mes "[Xue Bong]";
+		mes "Bem, espero que você possa encontrar";
+		mes "aqueles ladrões. ";
+		mes "paz em nossa aldeia, precisamos ajudar nosso chefe...";
+		close;
+	}
+	else if (b_sword <14) {
+		switch(b_sword) {
+		case 11:
+			mes "[Xue Bong]";
+			mes "Ahhh.. meu estômago.. minha cabeça..";
+			mes "Eu não deveria beber tanto..";
+			mes "ah....";
+			emotion ET_PROFUSELY_SWEAT;
+			close;
+		case 12:
+			mes "[Xue Bong]";
+			mes "Enhhhh..vá embora.";
+			mes "Você é impiedoso...";
+			mes "Como você pôde virar um";
+			mes "olho cego para um";
+			mes "o sofrimento do bebedor?";
+			mes "Urk...!";
+			emotion ET_FRET;
+			close;
+		case 13:
+			mes "[Xue Bong]";
+			mes "Enhhhh... vá embora.";
+			mes "Você é tão insensível...";
+			mes "Como você pôde se afastar";
+			mes "um bêbado necessitado...?";
+			mes "*Gemido*...";
+			emotion ET_FRET;
+			close;
+		}
+	}
+	mes "[Xue Bong]";
+	mes "Então você encontrou o chefe";
+	mes "pertences?! ";
+	mes "Eu sabia que voce poderia fazer isso!";
+	mes "Você é corajoso o suficiente";
+	mes "para fazer qualquer coisa!";
+	mes "Bom trabalho!";
+	close;
+}
+
+gon_dun01,148,156,0	script	start01#gnbs	-1,{
+OnInit:
+	sleep 10000;
+OnCommandOn:
+	donpcevent "trace1-"+rand(1,5)+"#gnbs::OnCommandOn";
+	end;
+}
+
+gon_dun01,201,25,0	script	trace1-1#gnbs	139,1,1,{
+	if (b_sword == 7) donpcevent "timer1-1::OnCommandOn";
+	end;
+
+OnTimer10000:
+	stopnpctimer;
+	disablenpc "trace1-1#gnbs";
+	donpcevent "start01#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace1-1#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace1-1#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun01,2,1,0	script	timer1-1	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer1-1";
+	end;
+
+OnCommandOn:
+	enablenpc "timer1-1";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer1-1";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem1-1::OnCommandOn";
+	end;
+}
+
+gon_dun01,202,25,0	script	#getitem1-1	111,2,1,{
+	if (b_sword != 7) end;
+	set b_sword,8;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	close;
+
+OnInit:
+	disablenpc "#getitem1-1";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem1-1";
+	donpcevent "timer1-1::OnCommandOff";
+	donpcevent "start01#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem1-1";
+	end;
+}
+
+gon_dun01,190,160,0	script	trace1-2#gnbs	139,1,1,{
+	if (b_sword == 7) donpcevent "timer1-2::OnCommandOn";
+	end;
+
+OnTimer100000:
+	stopnpctimer;
+	disablenpc "trace1-2#gnbs";
+	donpcevent "start01#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace1-2#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace1-2#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun01,3,1,0	script	timer1-2	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer1-2";
+	end;
+
+OnCommandOn:
+	enablenpc "timer1-2";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer1-2";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem1-2::OnCommandOn";
+	end;
+}
+
+gon_dun01,190,159,0	script	#getitem1-2	111,2,1,{
+	if (b_sword != 7) end;
+	set b_sword,8;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	close;
+
+OnInit:
+	disablenpc "#getitem1-2";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem1-2";
+	donpcevent "timer1-2::OnCommandOff";
+	donpcevent "start01#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem1-2";
+	end;
+}
+
+gon_dun01,163,53,0	script	trace1-3#gnbs	139,1,1,{
+	if (b_sword == 7) donpcevent "timer1-3::OnCommandOn";
+	end;
+
+OnTimer90000:
+	stopnpctimer;
+	disablenpc "trace1-3#gnbs";
+	donpcevent "start01#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace1-3#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace1-3#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun01,4,1,0	script	timer1-3	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer1-3";
+	end;
+
+OnCommandOn:
+	enablenpc "timer1-3";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer1-3";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem1-3::OnCommandOn";
+	end;
+}
+
+gon_dun01,164,53,0	script	#getitem1-3	111,2,1,{
+	if (b_sword != 7) end;
+	set b_sword,8;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	close;
+
+OnInit:
+	disablenpc "#getitem1-3";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem1-3";
+	donpcevent "timer1-3::OnCommandOff";
+	donpcevent "start01#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem1-3";
+	end;
+}
+
+gon_dun01,133,183,0	script	trace1-4#gnbs	139,1,1,{
+	if (b_sword == 7) donpcevent "timer1-4::OnCommandOn";
+	end;
+
+OnTimer150000:
+	stopnpctimer;
+	disablenpc "trace1-4#gnbs";
+	donpcevent "start01#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace1-4#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace1-4#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun01,5,1,0	script	timer1-4	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer1-4";
+	end;
+
+OnCommandOn:
+	enablenpc "timer1-4";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer1-4";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem1-4::OnCommandOn";
+	end;
+}
+
+gon_dun01,134,183,0	script	#getitem1-4	111,2,1,{
+	if (b_sword != 7) end;
+	set b_sword,8;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	close;
+
+OnInit:
+	disablenpc "#getitem1-4";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem1-4";
+	donpcevent "timer1-4::OnCommandOff";
+	donpcevent "start01#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem1-4";
+	end;
+}
+
+gon_dun01,139,257,0	script	trace1-5#gnbs	139,1,1,{
+	if (b_sword == 7) donpcevent "timer1-5::OnCommandOn";
+	end;
+
+OnTimer170000:
+	stopnpctimer;
+	disablenpc "trace1-5#gnbs";
+	donpcevent "start01#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace1-5#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace1-5#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun01,6,1,0	script	timer1-5	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer1-5";
+	end;
+
+OnCommandOn:
+	enablenpc "timer1-5";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer1-5";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem1-5::OnCommandOn";
+	end;
+}
+
+gon_dun01,140,257,0	script	#getitem1-5	111,2,1,{
+	if (b_sword != 7) end;
+	set b_sword,8;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	close;
+
+OnInit:
+	disablenpc "#getitem1-5";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem1-5";
+	donpcevent "timer1-5::OnCommandOff";
+	donpcevent "start01#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem1-5";
+	end;
+}
+
+gon_dun02,1,1,0	script	start02#gnbs	-1,{
+OnInit:
+	sleep 10000;
+OnCommandOn:
+	donpcevent "trace2-"+rand(1,6)+"#gnbs::OnCommandOn";
+	end;
+}
+
+gon_dun02,65,168,0	script	trace2-1#gnbs	139,1,1,{
+	if (b_sword == 8) donpcevent "timer2-1::OnCommandOn";
+	end;
+
+OnTimer80000:
+	stopnpctimer;
+	disablenpc "trace2-1#gnbs";
+	donpcevent "start02#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace2-1#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace2-1#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun02,2,1,0	script	timer2-1	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer2-1";
+	end;
+
+OnCommandOn:
+	enablenpc "timer2-1";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer2-1";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem2-1::OnCommandOn";
+	end;
+}
+
+gon_dun02,202,25,0	script	#getitem2-1	111,2,1,{
+	if (b_sword != 8) end;
+	set b_sword,9;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	close;
+
+OnInit:
+	disablenpc "#getitem2-1";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem2-1";
+	donpcevent "timer2-1::OnCommandOff";
+	donpcevent "start02#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem2-1";
+	end;
+}
+
+gon_dun02,265,200,0	script	trace2-2#gnbs	139,1,1,{
+	if (b_sword == 8) donpcevent "timer2-2::OnCommandOn";
+	end;
+
+OnTimer130000:
+	stopnpctimer;
+	disablenpc "trace2-2#gnbs";
+	donpcevent "start02#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace2-2#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace2-2#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun02,3,1,0	script	timer2-2	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer2-2";
+	end;
+
+OnCommandOn:
+	enablenpc "timer2-2";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer2-2";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem2-2::OnCommandOn";
+	end;
+}
+
+gon_dun02,265,201,0	script	#getitem2-2	111,2,1,{
+	if (b_sword != 8) end;
+	set b_sword,9;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	close;
+
+OnInit:
+	disablenpc "#getitem2-2";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem2-2";
+	donpcevent "timer2-2::OnCommandOff";
+	donpcevent "start02#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem2-2";
+	end;
+}
+
+gon_dun02,247,129,0	script	trace2-3#gnbs	139,1,1,{
+	if (b_sword == 8) donpcevent "timer2-3::OnCommandOn";
+	end;
+
+OnTimer110000:
+	stopnpctimer;
+	disablenpc "trace2-3#gnbs";
+	donpcevent "start02#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace2-3#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace2-3#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun02,4,1,0	script	timer2-3	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer2-3";
+	end;
+
+OnCommandOn:
+	enablenpc "timer2-3";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer2-3";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem2-3::OnCommandOn";
+	end;
+}
+
+gon_dun02,247,128,0	script	#getitem2-3	111,2,1,{
+	if (b_sword != 8) end;
+	set b_sword,9;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	close;
+
+OnInit:
+	disablenpc "#getitem2-3";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem2-3";
+	donpcevent "timer2-3::OnCommandOff";
+	donpcevent "start02#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem2-3";
+	end;
+}
+
+gon_dun02,149,74,0	script	trace2-4#gnbs	139,1,1,{
+	if (b_sword == 8) donpcevent "timer2-4::OnCommandOn";
+	end;
+
+OnTimer230000:
+	stopnpctimer;
+	disablenpc "trace2-4#gnbs";
+	donpcevent "start02#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace2-4#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace2-4#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun02,5,1,0	script	timer2-4	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer2-4";
+	end;
+
+OnCommandOn:
+	enablenpc "timer2-4";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer2-4";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem2-4::OnCommandOn";
+	end;
+}
+
+gon_dun02,149,75,0	script	#getitem2-4	111,2,1,{
+	if (b_sword != 8) end;
+	set b_sword,9;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	close;
+
+OnInit:
+	disablenpc "#getitem2-4";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem2-4";
+	donpcevent "timer2-4::OnCommandOff";
+	donpcevent "start02#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem2-4";
+	end;
+}
+
+gon_dun02,23,105,0	script	trace2-5#gnbs	139,1,1,{
+	if (b_sword == 8) donpcevent "timer2-5::OnCommandOn";
+	end;
+
+OnTimer190000:
+	stopnpctimer;
+	disablenpc "trace2-5#gnbs";
+	donpcevent "start02#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace2-5#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace2-5#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun02,6,1,0	script	timer2-5	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer2-5";
+	end;
+
+OnCommandOn:
+	enablenpc "timer2-5";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer2-5";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem2-5::OnCommandOn";
+	end;
+}
+
+gon_dun02,23,106,0	script	#getitem2-5	111,2,1,{
+	if (b_sword != 8) end;
+	set b_sword,9;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	close;
+
+OnInit:
+	disablenpc "#getitem2-5";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem2-5";
+	donpcevent "timer2-5::OnCommandOff";
+	donpcevent "start02#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem2-5";
+	end;
+}
+
+gon_dun02,249,39,0	script	trace2-6#gnbs	139,1,1,{
+	if (b_sword == 8) donpcevent "timer2-6::OnCommandOn";
+	end;
+
+OnTimer110000:
+	stopnpctimer;
+	disablenpc "trace2-6#gnbs";
+	donpcevent "start02#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace2-6#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace2-6#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun02,7,1,0	script	timer2-6	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer2-6";
+	end;
+
+OnCommandOn:
+	enablenpc "timer2-6";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer2-6";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem2-6::OnCommandOn";
+	end;
+}
+
+gon_dun02,249,40,0	script	#getitem2-6	111,2,1,{
+	if (b_sword != 8) end;
+	set b_sword,9;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	close;
+
+OnInit:
+	disablenpc "#getitem2-6";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem2-6";
+	donpcevent "timer2-6::OnCommandOff";
+	donpcevent "start02#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem2-6";
+	end;
+}
+
+gon_dun03,1,1,0	script	start03#gnbs	-1,{
+OnInit:
+	sleep 10000;
+OnCommandOn:
+	donpcevent "trace3-"+rand(1,7)+"#gnbs::OnCommandOn";
+	end;
+}
+
+gon_dun03,11,75,0	script	trace3-1#gnbs	139,1,1,{
+	if (b_sword == 9) donpcevent "timer3-1::OnCommandOn";
+	end;
+
+OnTimer200000:
+	stopnpctimer;
+	disablenpc "trace3-1#gnbs";
+	donpcevent "start03#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace3-1#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace3-1#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun03,2,1,0	script	timer3-1	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer3-1";
+	end;
+
+OnCommandOn:
+	enablenpc "timer3-1";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer3-1";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem3-1::OnCommandOn";
+	end;
+}
+
+gon_dun03,10,74,0	script	#getitem3-1	111,2,1,{
+	if (b_sword != 9) end;
+	set b_sword,10;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	next;
+	mes "Você coloca todas as peças no";
+	mes "chão e os montou.";
+	mes "Parece que você encontrou todas as peças da lâmina.";
+	close;
+
+OnInit:
+	disablenpc "#getitem3-1";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem3-1";
+	donpcevent "timer3-1::OnCommandOff";
+	donpcevent "start03#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem3-1";
+	end;
+}
+
+gon_dun03,199,103,0	script	trace3-2#gnbs	139,1,1,{
+	if (b_sword == 9) donpcevent "timer3-2::OnCommandOn";
+	end;
+
+OnTimer130000:
+	stopnpctimer;
+	disablenpc "trace3-2#gnbs";
+	donpcevent "start03#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace3-2#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace3-2#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun03,3,1,0	script	timer3-2	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer3-2";
+	end;
+
+OnCommandOn:
+	enablenpc "timer3-2";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer3-2";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem3-2::OnCommandOn";
+	end;
+}
+
+gon_dun03,199,102,0	script	#getitem3-2	111,2,1,{
+	if (b_sword != 9) end;
+	set b_sword,10;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	next;
+	mes "Você coloca todas as peças no";
+	mes "chão e os montou.";
+	mes "Parece que você encontrou todas as peças da lâmina.";
+	close;
+
+OnInit:
+	disablenpc "#getitem3-2";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem3-2";
+	donpcevent "timer3-2::OnCommandOff";
+	donpcevent "start03#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem3-2";
+	end;
+}
+
+gon_dun03,14,162,0	script	trace3-3#gnbs	139,1,1,{
+	if (b_sword == 9) donpcevent "timer3-3::OnCommandOn";
+	end;
+
+OnTimer110000:
+	stopnpctimer;
+	disablenpc "trace3-3#gnbs";
+	donpcevent "start03#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace3-3#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace3-3#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun03,4,1,0	script	timer3-3	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer3-3";
+	end;
+
+OnCommandOn:
+	enablenpc "timer3-3";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer3-3";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem3-3::OnCommandOn";
+	end;
+}
+
+gon_dun03,14,163,0	script	#getitem3-3	111,2,1,{
+	if (b_sword != 9) end;
+	set b_sword,10;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	next;
+	mes "Você coloca todas as peças no";
+	mes "chão e os montou.";
+	mes "Parece que você encontrou todas as peças da lâmina.";
+	close;
+
+OnInit:
+	disablenpc "#getitem3-3";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem3-3";
+	donpcevent "timer3-3::OnCommandOff";
+	donpcevent "start03#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem3-3";
+	end;
+}
+
+gon_dun03,155,263,0	script	trace3-4#gnbs	139,1,1,{
+	if (b_sword == 9) donpcevent "timer3-4::OnCommandOn";
+	end;
+
+OnTimer230000:
+	stopnpctimer;
+	disablenpc "trace3-4#gnbs";
+	donpcevent "start03#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace3-4#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace3-4#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun03,5,1,0	script	timer3-4	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer3-4";
+	end;
+
+OnCommandOn:
+	enablenpc "timer3-4";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer3-4";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem3-4::OnCommandOn";
+	end;
+}
+
+gon_dun03,156,263,0	script	#getitem3-4	111,2,1,{
+	if (b_sword != 9) end;
+	set b_sword,10;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	next;
+	mes "Você coloca todas as peças no";
+	mes "chão e os montou.";
+	mes "Parece que você encontrou todas as peças da lâmina.";
+	close;
+
+OnInit:
+	disablenpc "#getitem3-4";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem3-4";
+	donpcevent "timer3-4::OnCommandOff";
+	donpcevent "start03#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem3-4";
+	end;
+}
+
+gon_dun03,169,90,0	script	trace3-5#gnbs	139,1,1,{
+	if (b_sword == 9) donpcevent "timer3-5::OnCommandOn";
+	end;
+
+OnTimer190000:
+	stopnpctimer;
+	disablenpc "trace3-5#gnbs";
+	donpcevent "start03#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace3-5#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace3-5#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun03,6,1,0	script	timer3-5	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer3-5";
+	end;
+
+OnCommandOn:
+	enablenpc "timer3-5";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer3-5";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem3-5::OnCommandOn";
+	end;
+}
+
+gon_dun03,170,90,0	script	#getitem3-5	111,2,1,{
+	if (b_sword != 9) end;
+	set b_sword,10;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	next;
+	mes "Você coloca todas as peças no";
+	mes "chão e os montou.";
+	mes "Parece que você encontrou todas as peças da lâmina.";
+	close;
+
+OnInit:
+	disablenpc "#getitem3-5";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem3-5";
+	donpcevent "timer3-5::OnCommandOff";
+	donpcevent "start03#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem3-5";
+	end;
+}
+
+gon_dun03,162,40,0	script	trace3-6#gnbs	139,1,1,{
+	if (b_sword == 9) donpcevent "timer3-6::OnCommandOn";
+	end;
+
+OnTimer110000:
+	stopnpctimer;
+	disablenpc "trace3-6#gnbs";
+	donpcevent "start03#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace3-6#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace3-6#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun03,7,1,0	script	timer3-6	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer3-6";
+	end;
+
+OnCommandOn:
+	enablenpc "timer3-6";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer3-6";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem3-6::OnCommandOn";
+	end;
+}
+
+gon_dun03,68,39,0	script	#getitem3-6	111,1,2,{
+	if (b_sword != 9) end;
+	set b_sword,10;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	next;
+	mes "Você coloca todas as peças no";
+	mes "chão e os montou.";
+	mes "Parece que você encontrou todas as peças da lâmina.";
+	close;
+
+OnInit:
+	disablenpc "#getitem3-6";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem3-6";
+	donpcevent "timer3-6::OnCommandOff";
+	donpcevent "start03#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem3-6";
+	end;
+}
+
+gon_dun03,68,212,0	script	trace3-7#gnbs	139,1,1,{
+	if (b_sword == 9) donpcevent "timer3-7::OnCommandOn";
+	end;
+
+OnTimer110000:
+	stopnpctimer;
+	disablenpc "trace3-7#gnbs";
+	donpcevent "start03#gnbs::OnCommandOn";
+	end;
+
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "trace3-7#gnbs";
+	end;
+
+OnCommandOn:
+	enablenpc "trace3-7#gnbs";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+}
+
+gon_dun03,6,1,0	script	timer3-7	-1,{
+OnInit:
+	initnpctimer;
+	stopnpctimer;
+	disablenpc "timer3-7";
+	end;
+
+OnCommandOn:
+	enablenpc "timer3-7";
+	setnpctimer 0;
+	startnpctimer;
+	end;
+
+OnCommandOff:
+	stopnpctimer;
+	disablenpc "timer3-7";
+	end;
+
+OnTimer3000:
+	donpcevent "#getitem3-7::OnCommandOn";
+	end;
+}
+
+gon_dun03,68,213,0	script	#getitem3-7	111,1,2,{
+	if (b_sword != 9) end;
+	set b_sword,10;
+	mes "Você encontrou um pedaço de lâmina ^FF0000^000000.";
+	mes "Parece que faz parte da espada que você estava procurando.";
+	next;
+	mes "Você coloca todas as peças no";
+	mes "chão e os montou.";
+	mes "Parece que você encontrou todas as peças da lâmina.";
+	close;
+
+OnInit:
+	disablenpc "#getitem3-7";
+	end;
+
+OnCommandOn:
+	enablenpc "#getitem3-7";
+	donpcevent "timer3-7::OnCommandOff";
+	donpcevent "start03#gnbs::OnCommandOn";
+	end;
+
+OnCommandOff:
+	disablenpc "#getitem3-7";
+	end;
+}
+
+gon_in,18,27,5	script	Madam#gnbs	771,{
+	mes "[Shang Hua Yen]";
+	mes "Ho, ho, ho ~";
+	mes "Quem pode ser?";
+	mes "Um visitante de fora da cidade~";
+	mes "Bem-vindo!";
+	next;
+	if (select("Olá, senhora ~: Onde está o chefe?") == 1) {
+		mes "[Shang Hua Yen]";
+		mes "Olá, querido ~";
+		close;
+	}
+	if (Sex == SEX_FEMALE) {
+		mes "[Shang Hua Yen]";
+		mes "Hoho ~ ele está lá em cima.";
+		mes "Nossa, você é uma senhora tão bonita ~";
+		mes "Só não fique muito extasiada com meu marido, certo?";
+		mes "Tee hee~";
+		close;
+	}
+	mes "[Shang Hua Yen]";
+	mes "Ah, ele está lá em cima...";
+	mes "Meu ~! ";
+	mes "homem. ";
+	mes "Tee hee~";
+	emotion ET_THROB;
+	close;
+}
+
+gon_dun03,62,222,0	script	Strange dead body#gnbs	111,{
+	if (b_sword < 7) {
+		mes "Aqui está um cadáver em decomposição.";
+		mes "Parece que monstros o devoraram.";
+		close;
+	}
+	else if (b_sword > 6 && b_sword < 11) {
+		mes "Há uma mensagem escrita entre os ossos do cadáver.";
+		mes "do cadáver.";
+		mes "Dê uma olhada?";
+		next;
+		if (select("Sim.: Eca, não!") == 1) {
+			mes "^3355FFO papel está velho e desbotado,";
+			mes "mas há palavras sobre isso.";
+			mes "Está escrito com sangue.";
+			mes "As letras estão desbotadas e é quase impossível ler...^000000";
+			next;
+			mes "^FF0000Droga, não consigo.. acreditar.. falhei..";
+			mes "Sayum... eu deveria...";
+			mes "cuidado.. ehhh.. mas.. pausa";
+			mes "..pedaços.. e separados..";
+			mes "Eu com";
+			mes "isso...^000000";
+			next;
+			mes "^3355FFO resto era indecifrável...";
+			mes "Ele provavelmente não aguentaria mais...^000000";
+			close;
+		}
+		mes "[^6699FF" + strcharinfo(0) + "^000000]";
+		mes "Eca, não!";
+		mes "";
+		mes "Eca, eca, ECA!";
+		next;
+		mes "^3355FFVocê sente que há algo importante aqui...";
+		mes "Mas a carcaça apodrecida tem um";
+		mes "odor desagradável que faz você se sentir enjoado.^000000";
+		close;
+	}
+	else if (b_sword == 11 || b_sword == 12) {
+		mes "^3355FFÉ um cadáver humano em decomposição...";
+		mes "Eu deveria apenas passar.^000000";
+		close;
+	}
+	mes "^3355FFA esqueleto mastigado por";
+	mes "monstros...sinto muito por";
+	mes "ele, mas comece a entender isso";
+	mes "sensação realmente assustadora depois de ficar olhando para ele por um tempo.^000000";
+	close;
+}
+
+gonryun,139,142,7	script	Girl##gnbs1	772,{
+	if (b_sword < 12) {
+		mes "[Shi Ying Xiao]";
+		mes "..........";
+		mes "Fiquei feliz em conhecer visitantes";
+		mes "de fora da aldeia,";
+		mes "mas por causa do ladrão, me sinto péssimo agora...";
+		emotion ET_THINK;
+		close;
+	}
+	mes "[Shi Ying Xiao]";
+	mes "Ele Ele...";
+	mes "Estou tão feliz agora~";
+	mes "Muitos visitantes estão chegando ao nosso";
+	mes "aldeia agora. ";
+	mes "Alguém encontrou a herança do meu pai~";
+	next;
+	if (select("Que bom que você está aliviado.: Esse seria eu!") == 1) {
+		mes "[Shi Ying Xiao]";
+		mes "Sim, o clima de todo";
+		mes "a vila parece ter se acalmado...";
+		mes "Tenho certeza de que quem encontrou a espada do meu pai é uma ótima pessoa.";
+		close;
+	}
+	mes "[^6699FF" + strcharinfo(0) + "^000000]";
+	mes "Esse seria eu!";
+	next;
+	mes "[^6699FF" + strcharinfo(0) + "^000000]";
+	mes "EU SOU SEU HERÓI!";
+	next;
+	emotion ET_SMILE;
+	mes "[Shi Ying Xiao]";
+	mes "Muito obrigado por trazer esperança à nossa aldeia, herói~";
+	close;
+}
+
+gonryun,100,241,0	script	Stranger#gnbs	733,{
+	if (b_sword < 14) {
+		mes "[Zuo Hei]";
+		mes "Hum...";
+		mes "Estou muito ocupado agora, volte mais tarde.";
+		emotion ET_THINK;
+		close;
+	}
+	else if (b_sword < 17) {
+		switch(b_sword) {
+		case 14:
+			switch(nakha) {
+			case 0:
+				mes "[Zuo Hei]";
+				mes "Hum...";
+				mes "O que é?";
+				mes "O que você quer?";
+				mes "Eu não gosto de ser incomodado.";
+				next;
+				if (select("Pergunte sobre o ferreiro.:Por que você está sendo tão mau?") == 1) {
+					mes "[Zuo Hei]";
+					mes "Ahh..";
+					mes "Então foi você quem encontrou";
+					mes "a espada, né?";
+					mes "Você também foi solicitado a consertá-lo?";
+					next;
+					if (select("Exatamente.:Não..só estou...") == 1) {
+						mes "[Zuo Hei]";
+						mes "Hum...";
+						mes "Se você quiser alguma informação de";
+						mes "eu, volte depois de ajudar o";
+						mes "pessoa na aldeia que está em";
+						mes "problema agora.";
+						next;
+						mes "[Zuo Hei]";
+						mes "É outra herança";
+						mes "problema, mas eu quero";
+						mes "ver por mim mesmo isso";
+						mes "você está realmente interessado";
+						mes "em ajudar os outros.";
+						set b_sword,16;
+						close;
+					}
+					mes "[Zuo Hei]";
+					mes "Hum, pensei que não...";
+					mes "Agora, não me incomode mais.";
+					mes "Tenho um monte de coisas para fazer.";
+					close;
+				}
+				mes "[Zuo Hei]";
+				mes "Gr...";
+				mes "Por que você deveria se preocupar com o";
+				mes "personalidade de outra pessoa?";
+				mes "Isso não é da sua conta.";
+				mes "Dê uma olhada no espelho primeiro";
+				mes "antes de dizer coisas assim.";
+				emotion ET_ANGER;
+				close;
+			case 1:
+				mes "[Zuo Hei]";
+				mes "Hum...";
+				mes "Você está ajudando";
+				mes "alguém agora, eu ouvi.";
+				mes "Por que você não vai cuidar deles primeiro?";
+				mes "Quando você começa a ajudar alguém,";
+				mes "você não pode simplesmente desistir no meio do caminho.";
+				set b_sword,16;
+				close;
+			case 2:
+				mes "[Zuo Hei]";
+				mes "Hum...";
+				mes "Você está ajudando";
+				mes "alguém agora, eu ouvi.";
+				mes "Por que você não vai cuidar deles primeiro?";
+				mes "Quando você começa a ajudar alguém,";
+				mes "você não pode simplesmente desistir no meio do caminho.";
+				set b_sword,16;
+				close;
+			case 3:
+				mes "[Zuo Hei]";
+				mes "Hum...";
+				mes "O que você quer??";
+				next;
+				if (select("Pergunte sobre o ferreiro.:Por que você está sendo tão mau?") == 1) {
+					mes "[Zuo Hei]";
+					mes "Ahh...";
+					mes "Então foi você quem encontrou";
+					mes "a espada, né? ";
+					next;
+					if (select("Exatamente.:Não...só estou...") == 1) {
+						mes "[Zuo Hei]";
+						mes "Hum...";
+						mes "Desde que foi quebrado,";
+						mes "você precisará de um ferreiro muito habilidoso.";
+						mes "Vá para ^FF0000Geffen^000000, você encontrará alguém";
+						mes "quem pode ajudá-lo.";
+						set b_sword,17;
+						close;
+					}
+					mes "[Zuo Hei]";
+					mes "Hum, pensei que não...";
+					mes "Agora, não me incomode mais.";
+					mes "Tenho um monte de coisas para fazer.";
+					close;
+				}
+				mes "[Zuo Hei]";
+				mes "Gr...";
+				mes "Por que você deveria se preocupar com o";
+				mes "personalidade de outra pessoa?";
+				mes "Isso não é da sua conta.";
+				mes "Dê uma olhada no espelho primeiro";
+				mes "antes de dizer coisas assim.";
+				emotion ET_ANGER;
+				close;
+			case 4:
+				mes "[Zuo Hei]";
+				mes "Acho que estava perdendo meu tempo.";
+				mes "Se você fizer uma promessa a alguém,";
+				mes "é sua responsabilidade";
+				mes "prossiga até a conclusão.";
+				next;
+				mes "[Zuo Hei]";
+				mes "Eu não gosto de pessoas que não conseguem";
+				mes "cumprir as promessas que fazem.";
+				mes "Você não obterá nenhuma informação minha.";
+				mes "Nunca mais me incomode.";
+				set b_sword,15;
+				close;
+			}
+			break;
+		case 15:
+			mes "[Zuo Hei]";
+			mes "Desculpe, estou ocupado agora.";
+			mes "Por que você não volta mais tarde?";
+			emotion ET_THINK;
+			close;
+		case 16:
+			switch(nakha) {
+			case 0:
+				mes "[Zuo Hei]";
+				mes "Hum......";
+				mes "Você não terminou com o";
+				mes "exigência que eu lhe dei...";
+				mes "Não posso te dar nenhuma informação";
+				mes "até terminar seu trabalho.";
+				close;
+			case 1:
+				mes "[Zuo Hei]";
+				mes "Hum....";
+				mes "Quando você começa a ajudar alguém,";
+				mes "você não pode simplesmente desistir no meio do caminho.";
+				mes "Por que você não vai cuidar deles primeiro?";
+				close;
+			case 2:
+				mes "[Zuo Hei]";
+				mes "Hum....";
+				mes "Quando você começa a ajudar alguém,";
+				mes "você não pode simplesmente desistir no meio do caminho.";
+				mes "Por que você não vai cuidar deles primeiro?";
+				close;
+			case 3:
+				mes "[Zuo Hei]";
+				mes "Hum......";
+				mes "O que você quer?";
+				next;
+				if (select("Pergunte sobre o ferreiro.:Por que você está sendo tão mau?") == 1) {
+					mes "[Zuo Hei]";
+					mes "Ahh...";
+					mes "Então foi você quem encontrou";
+					mes "a espada, né?";
+					mes "Você também foi solicitado a consertá-lo?";
+					next;
+					if (select("Exatamente.:Não, só estou...") == 1) {
+						mes "[Zuo Hei]";
+						mes "Hum...";
+						mes "Desde que foi quebrado,";
+						mes "você precisará de um ferreiro muito habilidoso.";
+						mes "Vá para ^FF0000Geffen^000000, você encontrará alguém";
+						mes "quem pode ajudá-lo.";
+						set b_sword,17;
+						close;
+					}
+					mes "[Zuo Hei]";
+					mes "Ah, suponho que não.";
+					mes "Por que você está me perguntando então?";
+					mes "Não me incomode mais.";
+					mes "Tenho um monte de coisas para fazer.";
+					close;
+				}
+				mes "[Zuo Hei]";
+				mes "Gr...";
+				mes "Por que você deveria se preocupar com o";
+				mes "personalidade de outra pessoa?";
+				mes "Isso não é da sua conta.";
+				mes "Dê uma olhada no espelho primeiro";
+				mes "antes de dizer coisas assim.";
+				emotion ET_ANGER;
+				close;
+			case 4:
+				mes "[Zuo Hei]";
+				mes "Acho que estava perdendo meu tempo.";
+				mes "Se você fizer uma promessa";
+				mes "alguém, é seu";
+				mes "responsabilidade de";
+				mes "prossiga até a conclusão.";
+				next;
+				mes "[Zuo Hei]";
+				mes "Eu não gosto de pessoas que falham";
+				mes "para cumprir suas promessas.";
+				mes "Você não obterá nenhuma informação minha. ";
+				set b_sword,15;
+				close;
+			}
+		}
+	}
+	else if (b_sword < 33) {
+		mes "[Zuo Hei]";
+		mes "Olá... hum...";
+		mes "Eu não disse para você ir para ^FF0000Geffen^000000?";
+		mes "Você encontrará um ferreiro famoso";
+		mes "que pode consertar a espada para você.";
+		mes "Essa é toda a informação que posso";
+		mes "te dar, realmente.";
+		next;
+		mes "[Zuo Hei]";
+		mes "Cabe a você fazer bom uso disso.";
+		close;
+	}
+	mes "[Zuo Hei]";
+	mes "Hum...";
+	mes "Ajudar pessoas em apuros é";
+	mes "uma coisa tão legal de se fazer.";
+	mes "Você está fazendo a coisa certa.";
+	close;
+}
+
+geffen_in,71,112,2	script	Blacksmith#SaYumMoon	731,{
+	if (b_sword < 17) {
+		mes "[Aumgarl]";
+		mes "*soluço*..*soluço*....";
+		mes "Meu pobre bebê Lyroo..";
+		mes "*Farejar*...";
+		close;
+	}
+	else if (b_sword < 32) {
+		switch(b_sword) {
+		case 17:
+			mes "[Aumgarl]";
+			mes "*Soluço*...";
+			mes "Meu pobre bebê Lyroo..";
+			mes "*Farejar*...";
+			next;
+			if (select("Senhor...?:...........") == 1) {
+				mes "[Aumgarl]";
+				mes "Hmm... Quem é você?";
+				mes "Você precisa de algo?";
+				mes "Se não, por favor, saia...";
+				next;
+				if (select("Vim consertar esta espada.:Ouvi dizer que você é um ferreiro famoso...") == 1) {
+					mes "[Aumgarl]";
+					mes "Hum...";
+					mes "Sinto muito, mas estamos fechados.";
+					mes "Volte outra vez.";
+					mes "Adeus.";
+					set b_sword,18;
+					close;
+				}
+				mes "[Aumgarl]";
+				mes "Sim, sou ferreiro,";
+				mes "mas não acho que sou famoso.";
+				mes "E infelizmente, estamos fechados no momento.";
+				close;
+			}
+			mes "[Aumgarl]";
+			mes "Se você não tem nada a me dizer,";
+			mes "então por favor me deixe em paz.";
+			close;
+		case 18:
+			mes "[Aumgarl]";
+			mes "Como eu disse, estamos fechados!";
+			mes "Volte mais tarde.";
+			if (rand(1,8) == 7) {
+				set b_sword,19;
+				mes "Você não me ouviu?! ";
+			}
+			close2;
+			warp "geffen",173,169;
+			end;
+		case 19:
+			mes "[Aumgarl]";
+			mes "Hum...";
+			mes "Você é persistente!!";
+			mes "O que é que você quer?";
+			next;
+			switch(select("Quero me casar com sua neta.:Sua neta é uma garota tão bonita.:Vim consertar a espada.")) {
+			case 1:
+				mes "[Aumgarl]";
+				mes ".....";
+				mes ".........";
+				mes ".............";
+				mes "...................";
+				mes "........................";
+				next;
+				mes "[Aumgarl]";
+				mes "Quem diabos é você?";
+				mes "O que você quer com o meu";
+				mes "neta de repente!?";
+				mes "Saia já daqui!";
+				mes "Nunca mais volte aqui!";
+				emotion ET_HNG;
+				close;
+			case 2:
+				mes "[Aumgarl]";
+				mes "Você está certo ~";
+				mes "Minha neta é tão bonita.";
+				mes "Hahaha...ah...hah...";
+				mes "..... *soluço, soluço*....";
+				next;
+				switch(select("Quero casar com ela...:Vim consertar a espada.:Algo errado?")) {
+				case 1:
+					mes "[Aumgarl]";
+					mes ".....";
+					mes ".........";
+					mes ".............";
+					mes "...................";
+					mes "........................";
+					next;
+					mes "[Aumgarl]";
+					mes "Quem diabos é você?";
+					mes "O que você quer com o meu";
+					mes "neta de repente!?";
+					mes "Saia daqui seu pervertido!";
+					mes "Nunca mais volte aqui!";
+					emotion ET_HNG;
+					close;
+				case 2:
+					mes "[Aumgarl]";
+					mes "...............";
+					mes "Uma espada?";
+					mes "Não me lembro quando foi a última";
+					mes "época que trabalhei com aço foi.";
+					mes "Hum...";
+					mes "Posso ver a espada?";
+					next;
+					mes "[Aumgarl]";
+					mes "Hum......";
+					mes "Hummm......";
+					mes "............";
+					next;
+					mes "^0000FFEle estudou atentamente as peças da espada por um tempo.^000000";
+					next;
+					mes "[Aumgarl]";
+					mes "Hum...";
+					mes "Então é esse, hein?";
+					mes "Bem... me desculpe, mas esta espada";
+					mes "não é algo que eu possa consertar";
+					mes "no momento.";
+					next;
+					mes "[Aumgarl]";
+					mes "Por que você não vai encontrar";
+					mes "outro ferreiro?";
+					mes "Eu realmente sinto muito.";
+					close;
+				case 3:
+					mes "[Aumgarl]";
+					mes "Hum... bem...";
+					mes "Isso não é algo que eu normalmente";
+					mes "contar a estranhos, mas....";
+					mes "Minha neta Lyroo tem";
+					mes "uma doença incurável...";
+					next;
+					mes "[Aumgarl]";
+					mes "Não muito depois de ela nascer,";
+					mes "seus pais morreram em um acidente.";
+					mes "Desde aquele dia, tenho cuidado dela...";
+					next;
+					mes "[Aumgarl]";
+					mes "Mas não foi só isso...";
+					mes "Logo depois ela começou a sofrer";
+					mes "de uma doença grave. ";
+					mes "médicos de todos os lados";
+					mes "Midgard...";
+					next;
+					mes "[Aumgarl]";
+					mes "Mas nenhum deles poderia";
+					mes "diagnosticar a doença dela...";
+					next;
+					switch(select("Lamento ouvir isso.:Vou fazê-la feliz.:Eu quero curá-la.")) {
+					case 1:
+						mes "[Aumgarl]";
+						mes "*Suspirar*...";
+						mes "Eu apenas terei que aceitar isso";
+						mes "como seu destino. ";
+						mes "sinto muito por Lyroo.";
+						mes "...";
+						emotion ET_THINK;
+						close;
+					case 2:
+						mes "[Aumgarl]";
+						mes "Hum...";
+						mes "O que você quer dizer...?";
+						mes "'Faça-a feliz?'";
+						mes "Você não está fazendo nenhum sentido...";
+						mes "Estou confuso...";
+						next;
+						switch(select("Vou fazê-la feliz o tempo todo.:Quero levá-la comigo.:Vou curá-la.")) {
+						case 1:
+							mes "[Aumgarl]";
+							mes "...";
+							mes "O que você está falando?";
+							mes "Fazê-la feliz o tempo todo?";
+							mes "Ela está morrendo mesmo em";
+							mes "este momento.";
+							next;
+							mes "[Aumgarl]";
+							mes "Eu acho que você está fora";
+							mes "sua mente, doente!";
+							mes "Saia daqui!";
+							close;
+						case 2:
+							mes "[Aumgarl]";
+							mes "...O que você quer dizer?";
+							mes "Você quer levá-la para onde?";
+							mes "O que você vai fazer?";
+							next;
+							if (select("Eu vou curá-la.:Sinto muito.") == 1) {
+								mes "[Aumgarl]";
+								mes "É inútil falar sobre";
+								mes "isso por mais tempo. ";
+								mes "existe alguém que pode";
+								mes "curar minha neta.";
+								close;
+							}
+							mes "[Aumgarl]";
+							mes "Ahh...";
+							mes "Não estou culpando você.";
+							mes "De qualquer maneira, não é sua culpa.";
+							mes "...*Suspirar*...";
+							next;
+							if (select("Bem...:Vou rezar pela recuperação dela.") == 1) {
+								mes "[Aumgarl]";
+								mes "Errar..";
+								mes "Lamento perguntar isso a você...";
+								mes "Mas você me faria um favor?";
+								mes "Hum...";
+								next;
+								if (select("Não Claro.") == 1) {
+									mes "[Aumgarl]";
+									mes "Errar...";
+									mes "Tudo bem, não vou incomodar você..";
+									mes "Adeus...";
+									close;
+								}
+								mes "[Aumgarl]";
+								mes "Não será fácil, mas";
+								mes "você me ajudaria a encontrar";
+								mes "um médico... Não, qualquer um";
+								mes "quem pode curar Lyroo...";
+								next;
+								mes "[Aumgarl]";
+								mes "Alguém que tenha alguma informação sobre a doença dela?? ";
+								mes "...*Soluço*...";
+								next;
+								select("Sim senhor.");
+								mes "[Aumgarl]";
+								mes "Oh...";
+								mes "Muito obrigado.";
+								mes "Se Lyroo conseguir recuperar a saúde,";
+								mes "Nunca esquecerei sua ajuda.";
+								next;
+								mes "[Aumgarl]";
+								mes "Obrigado...";
+								mes "Obrigado...";
+								set b_sword,20;
+								close;
+							}
+							mes "[Aumgarl]";
+							mes "Bem... obrigado.";
+							mes "Vou tentar o meu melhor para";
+							mes "fazê-la feliz até o";
+							mes "muito final..";
+							mes "Por favor, venha algum dia";
+							mes "para dizer oi para Lyroo.";
+							close;
+						case 3:
+							mes "[Aumgarl]";
+							mes ".............";
+							mes "Como você vai curar";
+							mes "minha neta?";
+							mes "Você não parece";
+							mes "um médico para mim.";
+							next;
+							switch(select("Eu sou médico.:Conheço um médico famoso.:Vou curá-la de qualquer maneira.")) {
+							case 1:
+								mes "[Aumgarl]";
+								mes "Hum...";
+								mes "Eu pareço um idiota para você?";
+								mes "Eu odeio pessoas que mentem assim. ";
+								mes "Saia da minha frente.";
+								mes "";
+								emotion ET_HNG;
+								close2;
+								warp "geffen",173,169;
+								end;
+							case 2:
+								mes "[Aumgarl]";
+								mes "Um médico famoso?";
+								mes "Eu conheci todos os tipos de";
+								mes "médicos famosos. ";
+								mes "provavelmente conheceu quem";
+								mes "você já deve saber.";
+								close;
+							case 3:
+								mes "[Aumgarl]";
+								mes "................";
+								mes "Você quer curá-la";
+								mes "não importa o que?";
+								mes "Como vamos fazer isso?";
+								mes "E se piorar,";
+								mes "Huh?";
+								next;
+								mes "[Aumgarl]";
+								mes "Estou cansado de você se gabar.";
+								mes "Por favor, deixe-nos em paz.";
+								close;
+							}
+						}
+					case 3:
+						mes "[Aumgarl]";
+						mes ".................";
+						mes "Obrigado pela preocupação...";
+						mes "mas você é um estranho para nós.";
+						mes "Eu não posso deixar você fazer isso.";
+						mes "Obrigado de qualquer forma.";
+						close;
+					}
+				}
+			case 3:
+				mes "[Aumgarl]";
+				mes ".........";
+				mes "Hum...";
+				mes "Sinto muito, mas estou";
+				mes "muito cansado agora.";
+				mes "Não posso te ajudar...";
+				close;
+			}
+		case 20:
+		case 21:
+		case 22:
+		case 23:
+			mes "[Aumgarl]";
+			mes "Hmmm...";
+			mes "Por que você não tenta procurar";
+			mes "algum lugar que é sempre";
+			mes "Lotado de pessoas. ";
+			mes "claro que deve haver alguém";
+			mes "por aí quem sabe...";
+			close;
+		case 24:
+		case 25:
+		case 26:
+			mes "[Aumgarl]";
+			mes "Ahh...";
+			mes "Lyroo está lá em cima...";
+			mes "Mas ela está com dor.";
+			mes "Tente não falar com ela";
+			mes "por muito tempo.";
+			close;
+		case 27:
+			mes "[Aumgarl]";
+			mes "Oh meu Deus...";
+			mes "Obrigado...";
+			mes "Eu nunca pensei que você";
+			mes "realmente me ajude.";
+			mes "Vá em frente e veja Lyroo.";
+			close;
+		case 28:
+			mes "[Aumgarl]";
+			mes "Muito obrigado...";
+			mes "Sem a sua ajuda...";
+			emotion ET_CRY;
+			mes "teria sido inútil.";
+			next;
+			mes "[Aumgarl]";
+			mes "Tudo bem....";
+			mes "Existe alguma coisa que eu possa";
+			mes "fazer por você? ";
+			mes "retribua seu favor de alguma forma.";
+			next;
+			switch(select("Não...eu não preciso de nada.:Você consertaria a espada para mim?")) {
+			case 1:
+				mes "[Aumgarl]";
+				mes "Hum...";
+				mes "Sempre que você tiver um favor a pedir,";
+				mes "venha e me encontre. ";
+				mes "meu melhor para ajudá-lo.";
+				set b_sword,29;
+				close;
+			case 2:
+				mes "[Aumgarl]";
+				mes "Hum....";
+				mes "Mostre-me esta espada.";
+				mes "preciso dar uma olhada nisso primeiro";
+				mes "para saber se posso consertá-lo ou não.";
+				next;
+				mes "^0000FFVocê mostra as peças do";
+				mes "espada quebrada para Aumgarl.";
+				mes "....................";
+				mes "Aumgarl deu uma olhada cuidadosa";
+				mes "em pedaços por um tempo...^000000";
+				next;
+				mes "...";
+				mes "...";
+				mes "...";
+				mes "...";
+				next;
+				mes "[Aumgarl]";
+				mes "Hum...";
+				mes "Não é possível começar a trabalhar";
+				mes "imediatamente. ";
+				mes "alguns materiais.";
+				next;
+				mes "[Aumgarl]";
+				mes "Para reparar esta espada, eu preciso";
+				mes "para reabastecer meus suprimentos.";
+				mes "Já que Lyroo está lá em cima com dor,";
+				mes "Acho que não posso sair de casa.";
+				next;
+				mes "[Aumgarl]";
+				mes "Então... você poderia pegar o";
+				mes "materiais para mim?";
+				mes "Me desculpe, estou perguntando";
+				mes "você faça isso também.";
+				next;
+				if (select("Umm...vamos fazer isso da próxima vez.:Tudo bem, vou buscá-los.") == 1) {
+					mes "[Aumgarl]";
+					mes "Hum.....";
+					mes "Me desculpe, não posso";
+					mes "ajudá-lo imediatamente.";
+					mes "Volte aqui quando";
+					mes "você precisa da minha ajuda então.";
+					close;
+				}
+				mes "[Aumgarl]";
+				mes "Ah~~ sério?";
+				mes "Obrigado!";
+				mes "Tenho certeza que posso consertá-lo para você.";
+				mes "Agora, ouça com atenção,";
+				mes "é disso que vou precisar-";
+				next;
+				mes "[Aumgarl]";
+				mes "^FF00FF Uma bigorna";
+				mes "2 Oridecons brutos";
+				mes "5 espadas quebradas";
+				mes "2 aços";
+				mes "1 Martelo de Ferreiro";
+				mes "Migalhas de 2 estrelas";
+				mes "5 carvões vivos ^ 000000";
+				next;
+				mes "[Aumgarl]";
+				mes "É bastante, né?";
+				mes "Mas estes são os necessários";
+				mes "suprimentos que precisamos para consertar a espada.";
+				mes "Vou procurar outros materiais.";
+				set b_sword,30;
+				close;
+			}
+		case 29:
+			mes "[Aumgarl]";
+			mes "Ah ~ é você.";
+			mes "Tem algum favor para pedir?";
+			mes "Eu farei o meu melhor";
+			mes "para ajudá-lo.";
+			next;
+			switch(select("Talvez da próxima vez...:Por favor, conserte esta espada para mim.")) {
+			case 1:
+				mes "[Aumgarl]";
+				mes "Bem...";
+				mes "Se você alguma vez tiver um favor para";
+				mes "pergunte, venha e me encontre.";
+				close;
+			case 2:
+				mes "[Aumgarl]";
+				mes "Hum....";
+				mes "Mostre-me esta espada.";
+				mes "preciso dar uma olhada nisso primeiro";
+				mes "para saber se posso consertá-lo ou não.";
+				next;
+				mes "^0000FFVocê mostra as peças do";
+				mes "espada quebrada para Aumgarl.";
+				mes "....................";
+				mes "Aumgarl deu uma olhada cuidadosa";
+				mes "em pedaços por um tempo...^000000";
+				next;
+				mes "...";
+				mes "...";
+				mes "...";
+				mes "...";
+				next;
+				mes "[Aumgarl]";
+				mes "Hum...";
+				mes "Bem,";
+				mes "Não é possível começar a trabalhar";
+				mes "imediatamente.";
+				mes "Preciso de alguns materiais.";
+				next;
+				mes "[Aumgarl]";
+				mes "Para reparar esta espada, eu preciso";
+				mes "para reabastecer meus suprimentos.";
+				mes "Já que Lyroo está lá em cima com dor,";
+				mes "Acho que não posso sair de casa.";
+				next;
+				mes "[Aumgarl]";
+				mes "Então... você poderia pegar o";
+				mes "materiais para mim?";
+				mes "Me desculpe, estou perguntando";
+				mes "você faça isso também.";
+				next;
+				if (select("Umm..vamos fazer isso da próxima vez.:Tudo bem, vou buscá-los.") == 1) {
+					mes "[Aumgarl]";
+					mes "Hum.....";
+					mes "Me desculpe, não posso";
+					mes "ajudá-lo imediatamente.";
+					mes "Volte aqui quando";
+					mes "você precisa da minha ajuda então.";
+					close;
+				}
+				mes "[Aumgarl]";
+				mes "Ah~~ sério?";
+				mes "Obrigado!";
+				mes "Tenho certeza que posso consertá-lo para você.";
+				mes "Agora, ouça com atenção,";
+				mes "é disso que vou precisar-";
+				next;
+				mes "[Aumgarl]";
+				mes "^FF00FF Uma bigorna";
+				mes "2 Oridecons brutos";
+				mes "5 espadas quebradas";
+				mes "2 aços";
+				mes "1 Martelo de Ferreiro";
+				mes "Migalhas de 2 estrelas";
+				mes "5 carvões vivos ^ 000000";
+				next;
+				mes "[Aumgarl]";
+				mes "É bastante, né?";
+				mes "Estes são suprimentos necessários.";
+				mes "Precisamos deles para consertar a espada.";
+				mes "Vou procurar outros materiais.";
+				set b_sword,30;
+				close;
+			}
+		case 30:
+			if (countitem(986) > 0 && countitem(756) > 1 && countitem(7110) > 4 && countitem(999) > 1 && countitem(1005) > 0 && countitem(1000) > 1 && countitem(7098) > 4) {
+				mes "[Aumgarl]";
+				mes "Ah, que bom! ";
+				mes "Tudo bem, volte mais tarde,";
+				mes "e vou mandar consertar.";
+				delitem 986,1; //Anvil
+				delitem 756,2; //Oridecon_Stone
+				delitem 7110,5; //Vroken_Sword
+				delitem 999,2; //Steel
+				delitem 1005,1; //Hammer_Of_Blacksmith
+				delitem 1000,2; //Star_Crumb
+				delitem 7098,5; //Live_Coal
+				set b_sword,31;
+				close;
+			}
+			mes "[Aumgarl]";
+			mes "Hum.....";
+			mes "Ainda não encontrou tudo?";
+			mes "Aqui está a lista novamente-";
+			next;
+			mes "[Aumgarl]";
+			mes "^FF00FF 1 Bigorna";
+			mes "2 Oridecons brutos";
+			mes "5 espadas quebradas";
+			mes "2 aços";
+			mes "1 Martelo de Ferreiro";
+			mes "Migalhas de 2 estrelas";
+			mes "5 carvões vivos ^ 000000";
+			next;
+			mes "[Aumgarl]";
+			mes "Anotou-os?";
+			mes "Quase encontrei os outros materiais.";
+			close;
+		case 31:
+			if (rand(1,5) == 2) {
+				mes "[Aumgarl]";
+				mes "Ei, você está de volta.";
+				mes "Aqui está! ";
+				mes "é ótimo, pois";
+				mes "claro. ";
+				mes "primeira vista.";
+				mes "De fato...";
+				next;
+				mes "[Aumgarl]";
+				mes "não vi qualidade";
+				mes "desta magnitude em um";
+				mes "em muito tempo.";
+				mes "Eu te invejo...";
+				mes "Hehehe......";
+				next;
+				mes "'Você recebeu conserto";
+				mes "'^FF0000Espada de SaYumMoon^000000'.";
+				set b_sword,32;
+				getitem 1123,1; //Haedonggum
+				close;
+			}
+			mes "[Aumgarl]";
+			mes "Hum... ainda não acabou.";
+			mes "Você me daria um pouco";
+			mes "um pouco mais de tempo? ";
+			mes "mais do que eu pensava. ";
+			close;
+		}
+	}
+	mes "[Aumgarl]";
+	mes "Obrigado...";
+	mes "Você tem sido uma grande ajuda";
+	mes "para nós. ";
+	mes "tem sido de alguma utilidade para você.";
+	close;
+}
+
+geffen_in,106,106,7	script	Girl#gnbs2	716,{
+	if (b_sword < 20) {
+		mes "[Liroo]";
+		mes "Ah... Ah...";
+		mes "Ah... Oi.......";
+		next;
+		mes "^0000FFEssa garota parece estar com muita dor...^000000";
+		close;
+	}
+	else if (b_sword < 24) {
+		mes "[Liroo]";
+		mes "Aaa....Aaa....";
+		mes "você... você....";
+		mes "você é o único...";
+		mes "quem vai....curar....";
+		mes "...meu? ";
+		next;
+		mes "[Liroo]";
+		mes "..isso... obrigado....";
+		next;
+		mes "^0000FFÉ melhor parar de falar com ela e";
+		mes "apresse-se e encontre uma cura.^000000";
+		close;
+	}
+	else if (b_sword == 24 || b_sword == 25 || b_sword == 26) {
+		mes "[Liroo]";
+		mes "Ah... ah....";
+		if (Sex == SEX_FEMALE)
+			mes "É .. você .. linda ... irmã ..";
+		else
+			mes "É .. você .. lindo ... irmão ..";
+		mes "Ah... heh, heh...";
+		next;
+		if (select("Pergunte sobre o estado de saúde dela.:Converse um pouco com ela.") == 1) {
+			if (rand(1,4) == 3) {
+				mes "[Liroo]";
+				mes "Uh... humm...?";
+				mes "Hum... eu...";
+				mes "Eu não posso falar... por muito tempo.";
+				mes "Então ouça....";
+				mes "com cuidado..por favor...";
+				next;
+				mes "[Liroo]";
+				mes "^0030FFMeu corpo...fica frio repetidamente e";
+				mes "quente... não estou suando nada...";
+				mes "....Mas estou paralisado...frequentemente";
+				mes "muitas vezes..e...meu coração bate...";
+				mes "...irregularmente.^000000";
+				next;
+				mes "[Liroo]";
+				mes "Ah... hah ~";
+				mes "...........";
+				next;
+				mes "^0000FFEla parece ter adormecido.^000000";
+				close;
+			}
+			mes "[Liroo]";
+			mes "Eu sou tão...";
+			mes "...cansado.";
+			mes ".............";
+			next;
+			mes "^0000FFEla parece ter adormecido.^000000";
+			close;
+		}
+		mes "[Liroo]";
+		mes "Ahh........";
+		mes "Quero falar com você..";
+		mes "mas desculpa....";
+		next;
+		mes "^0000FFEla parece ter adormecido.^000000";
+		close;
+	}
+	else if (b_sword == 27) {
+		mes "[Liroo]";
+		mes "eh... hum?";
+		if (Sex == SEX_FEMALE)
+			mes "Ah... é você, linda irmã...";
+		else
+			mes "Ah... é você, lindo irmão...";
+		mes "Hum? ";
+		next;
+		if (select("Não é nada.:É o seu remédio.") == 1) {
+			mes "[Liroo]";
+			mes "Oh...";
+			mes "Tudo bem...";
+			mes "...";
+			next;
+			mes "^0000FFVocê realmente deveria dar o remédio a ela.^000000";
+			close;
+		}
+		mes "[Liroo]";
+		mes "Ah!";
+		mes "Você encontrou o remédio ~!";
+		mes "Estou tão aliviada...";
+		next;
+		mes "^0000FFVocê deu a ela o remédio que você";
+		mes "recebido de Cylrnel.";
+		mes "Depois de tomar o remédio, Lyroo";
+		mes "adormeceu.^000000";
+		delitem 606,1; //Aloebera
+		set b_sword,28;
+		close;
+	}
+	mes "[Liroo]";
+	mes "Hehehehe...";
+	if (Sex == SEX_FEMALE)
+		mes "Obrigado minha linda irmã.";
+	else 
+		mes "Obrigado lindo irmão ~";
+	mes "Vou recuperar minha saúde";
+	mes "e seja uma garota forte!";
+	close;
+}
+
+prontera,275,86,2	script	Young man#SaYumMoon	97,{
+	if (b_sword < 20) {
+		mes "[Neil]";
+		mes "Oh cara, isso é tão bom";
+		mes "estar fora do hospital...";
+		mes "Eu pensei que ia ser";
+		mes "lá para sempre~!";
+		next;
+		mes "[Neil]";
+		mes "Ouça cara, aprecie";
+		mes "sua saúde, porque quase";
+		mes "nada é pior do que";
+		mes "estar realmente muito doente...";
+		close;
+	}
+	mes "[Neil]";
+	mes "Não faz muito tempo, eu estava no";
+	mes "hospital, preso deitado na cama...";
+	mes "Ninguém sabia o que estava errado";
+	mes "comigo... mas eu fiquei mais fraco";
+	mes "diariamente...";
+	next;
+	mes "[Neil]";
+	mes "Mas então, este ^FF5000médico de Juno^000000";
+	mes "chegou e ela me ajudou";
+	mes "recupere-se em pouco tempo!";
+	mes "Embora... eu ainda não consiga andar tão bem.";
+	next;
+	mes "[Neil]";
+	mes "Todos os outros médicos disseram";
+	mes "meu caso era desesperador, e isso";
+	mes "Eu nunca me recuperaria. ";
+	mes "este médico Juno foi capaz de";
+	mes "encontre uma cura...";
+	next;
+	mes "[Neil]";
+	mes "Foi um milagre!";
+	mes "Estou tão feliz por estar vivo!";
+	if (b_sword == 20) set b_sword,21;
+	close;
+}
+
+yuno,208,164,4	script	Active little girl#gnbs	101,{
+	if (b_sword < 21) {
+		mes "[Hisa]";
+		mes ".....";
+		mes "Esta cidade é tão chata.";
+		mes "Sem eventos, sem festivais...";
+		mes "Tudo o que as pessoas fazem o dia todo é ficar em";
+		mes "em casa e estudar. ";
+		close;
+	}
+	mes "[Hisa]";
+	mes "Há uma pessoa em Juno que";
+	mes "Eu ainda respeito. ";
+	next;
+	mes "[Hisa]";
+	mes "Ela é especialista em medicina";
+	mes "tratamento. ";
+	mes "doente nesta cidade, ela vem para";
+	mes "cure essa pessoa imediatamente...";
+	next;
+	mes "[Hisa]";
+	mes "Ela também me conta muitas";
+	mes "histórias interessantes sobre";
+	mes "suas experiências. ";
+	mes "fez uma viagem ao redor";
+	mes "mundo... É tão interessante!";
+	next;
+	mes "[Hisa]";
+	mes "Ela provavelmente está em casa depois";
+	mes "voltando de alguma viagem.";
+	mes "Haha ~";
+	if (b_sword == 21) set b_sword,22;
+	if (rand(1,2) == 2) {
+		next;
+		mes "[Hisa]";
+		mes "Ah, certo ~!";
+		mes "Ela também é conhecida por ser inconstante";
+		mes "e uma mulher esquecida. ";
+	}
+	close;
+}
+
+yuno_in01,99,101,4	script	Doctor#gnbs	744,{
+	if (b_sword < 23) {
+		mes "[??????]";
+		mes "Eu não acredito que nos conhecemos";
+		mes "antes, mas você se importaria";
+		mes "voltando mais tarde? ";
+		close;
+	}
+	else if (b_sword < 27) {
+		switch(b_sword) {
+		case 23:
+			mes "[Cilrnel]";
+			mes "Olá posso te ajudar?";
+			mes "Se não for urgente,";
+			mes "por favor, volte mais tarde.";
+			next;
+			if (rand(1,4) == 2) {
+				mes "[Cilrnel]";
+				mes "Hmm... você se parece com você";
+				mes "Queres me perguntar alguma coisa?";
+				next;
+				if (select("Você é tão linda.:Você gosta de viajar?") == 1) {
+					if (rand(1,4) == 4) {
+						mes "[Cilrnel]";
+						mes "...com licença?";
+						mes "Ah ha ha ~";
+						mes "Você é um cara engraçado.";
+						mes "Tentando me dar em cima?";
+						mes "Ah ha ha ha.";
+						next;
+						if (select("Sim, me apaixonei à primeira vista.:Tenho um favor a pedir.") == 1) {
+							if (rand(1,3) == 3) {
+								mes "[Cilrnel]";
+								mes "HAHAHAHAHAHAHAHA!";
+								mes "Ah... me desculpe..";
+								mes "Eu não vi um cara como você";
+								mes "por muito tempo.";
+								emotion ET_SMILE;
+								next;
+								mes "[Cilrnel]";
+								mes "Você me faz rir...";
+								mes "Mas adivinhe?";
+								mes "Eu já sei que você não está";
+								mes "aqui para bater em mim.";
+								mes "Então, o que você realmente queria?";
+								next;
+								select("Bem, na verdade...");
+								mes "^FF0000Você conta a Cylrnel sobre Lyroo,";
+								mes "e sobre o favor para Aumgarl, o ferreiro.^000000";
+								next;
+								if (rand(1,3) == 2) {
+									mes "[Cilrnel]";
+									mes "Hum.....";
+									mes "Então foi isso que aconteceu...";
+									mes "Bem, eu preciso saber o";
+									mes "sintomas exatos...vá e";
+									mes "descubra para mim e então";
+									mes "volte depois.";
+									next;
+									mes "[Cilrnel]";
+									mes "Sem os sintomas exatos, não consigo fazer um diagnóstico preciso.";
+									set b_sword,24;
+									close;
+								}
+								mes "[Cilrnel]";
+								mes "Bem agora...";
+								mes "Essa é uma longa história.";
+								next;
+								mes "[Cilrnel]";
+								mes "Eu não tenho ideia de por que você está";
+								mes "tentando ajudar essas pessoas,";
+								mes "então é um pouco difícil de acreditar";
+								mes "você...";
+								close;
+							}
+							mes "[Cilrnel]";
+							mes "Oh irmão!";
+							mes "Eu nunca pensei que alguém";
+							mes "como se você ainda pudesse existir.";
+							mes "Sinto muito, mas você está";
+							mes "realmente não é meu tipo.";
+							close;
+						}
+						if (rand(1,3) == 3) {
+							mes "[Cilrnel]";
+							mes "É assim mesmo?";
+							mes "bem então,";
+							mes "Deixe-me ouvir sua história.";
+							next;
+							select("Bem, é assim...");
+							mes "^FF0000Você conta a Cylrnel sobre Lyroo,";
+							mes "e sobre o favor de Aumgarl, o ferreiro.^000000";
+							next;
+							if (rand(1,3) == 2) {
+								mes "[Cilrnel]";
+								mes "Hum.....";
+								mes "Então foi isso que aconteceu...";
+								mes "Bem, eu preciso saber o";
+								mes "sintomas exatos...vá e";
+								mes "descubra para mim e então";
+								mes "volte depois.";
+								next;
+								mes "[Cilrnel]";
+								mes "Sem os sintomas exatos, não consigo fazer um diagnóstico preciso.";
+								set b_sword,24;
+								close;
+							}
+							mes "[Cilrnel]";
+							mes "Bem agora...";
+							mes "Essa é uma longa história.";
+							next;
+							mes "[Cilrnel]";
+							mes "Eu não tenho ideia de por que você está";
+							mes "tentando ajudar essas pessoas,";
+							mes "então é um pouco difícil de acreditar";
+							mes "você...";
+							close;
+						}
+						mes "[Cilrnel]";
+						mes "Bem...";
+						mes "Embora eu queira ajudar,";
+						mes "Você é um estranho, e o";
+						mes "os moradores precisam da minha ajuda.";
+						mes "Eu não tenho nenhum tempo extra";
+						mes "para ajudá-lo. ";
+						close2;
+						warp "yuno",246,143;
+						end;
+					}
+					mes "[Cilrnel]";
+					mes "Ahahaha..";
+					mes "Você é um cara engraçado.";
+					mes "Mas, isso não vai";
+					mes "trabalhe em mim!";
+					close;
+				}
+				mes "[Cilrnel]";
+				mes "Err... bem, eu sei, mas...";
+				mes "Se você não tem nenhum";
+				mes "favores para pedir, por favor, saia.";
+				mes "Estou muito ocupado agora.";
+				close;
+			}
+			mes "[Cilrnel]";
+			mes "Sinto muito, mas não tenho";
+			mes "a qualquer momento para você agora.";
+			close;
+		case 24:
+			mes "[Cilrnel]";
+			mes "Ah, você está de volta...";
+			mes "Você descobriu os sintomas?";
+			mes "Eu queria ir com você, mas";
+			mes "Tenho estado muito ocupado.";
+			next;
+			if (select("Ainda não...:Sim, aqui.") == 1) {
+				mes "[Cilrnel]";
+				mes "O que! ";
+				mes "Corra para a casa dela!";
+				mes "Ela está com muita dor!";
+				mes "Seu corpo poderia estar paralisado";
+				mes "a qualquer momento!";
+				close;
+			}
+			mes "[Cilrnel]";
+			mes "Que alivio...";
+			mes "Você chegou mais cedo do que eu pensava.";
+			mes "Vou te fazer algumas perguntas sobre";
+			mes "a condição dela. ";
+			next;
+			mes "[Cilrnel]";
+			mes "Primeiro, como estava a temperatura corporal dela?";
+			set sick,0;
+			next;
+			switch(select("Muito quente.:Muito frio.:Normal.:Fica quente e frio repetidamente.")) {
+			case 1:
+				set .@sick1$,"Muito quente.";
+				break;
+			case 2:
+				set .@sick1$,"Muito frio.";
+				break;
+			case 3:
+				set .@sick1$,"Normal.";
+				break;
+			case 4:
+				set .@sick1$,"Fica quente e frio repetidamente";
+				set .@sick,.@sick+1;
+				break;
+			}
+			mes "[Cilrnel]";
+			mes "OK...";
+			mes "Agora, sobre a condição fisiológica.";
+			next;
+			switch(select("Sem suor.:Suor por todo o corpo.:Nariz escorrendo.:Sem lágrimas, suores.")) {
+			case 1:
+				set .@sick2$,"Sem suor.";
+				set .@sick,.@sick+1;
+				break;
+			case 2:
+				set .@sick2$,"Suando por todo o corpo.";
+				break;
+			case 3:
+				set .@sick2$,"Nariz escorrendo.";
+				break;
+			case 4:
+				set .@sick2$,"Sem lágrimas, sem suor.";
+				break;
+			}
+			mes "[Cilrnel]";
+			mes "A seguir, conte-me sobre";
+			mes "sua condição física.";
+			next;
+			switch(select("Nada em particular.:Fica paralisado com frequência.:Os músculos ficam moles.:Os músculos ficam duros.")) {
+			case 1:
+				set .@sick3$,"Nada em particular.";
+				break;
+			case 2:
+				set .@sick3$,"Fica paralisado com frequência.";
+				set .@sick,.@sick+1;
+				break;
+			case 3:
+				set .@sick3$,"Os músculos ficaram macios.";
+				break;
+			case 4:
+				set .@sick3$,"Os músculos ficaram duros.";
+				break;
+			}
+			mes "[Cilrnel]";
+			mes "E quanto aos órgãos internos?";
+			next;
+			switch(select("O estômago dói como se tivesse sido esfaqueado por uma faca.:A cabeça dói como se tivesse sido esmagada por um martelo.:O coração bate irregularmente.:Tem dificuldade em respirar.")) {
+			case 1:
+				set .@sick4$,"O estômago dói como se tivesse sido esfaqueado por uma faca.";
+				break;
+			case 2:
+				set .@sick4$,"A cabeça dói como se tivesse sido esmagada por um martelo.";
+				break;
+			case 3:
+				set .@sick4$,"O coração bate irregularmente.";
+				set .@sick,.@sick+1;
+				break;
+			case 4:
+				set .@sick4$,"Tem dificuldade em respirar.";
+				break;
+			}
+			mes "[Cilrnel]";
+			mes "Hmm.. tudo bem.";
+			mes "Deixe-me verificar isso.";
+			mes "então os sintomas são";
+			mes "..............";
+			next;
+			mes "[Cilrnel]";
+			mes "^FF0000"+.@sick1$+"";
+			mes ""+.@sick2$+"";
+			mes ""+.@sick3$+"";
+			mes ""+.@sick4$+"^000000";
+			mes "certo?";
+			next;
+			if (select("Não..não exatamente..:Sim, tenho certeza.") == 1) {
+				mes "[Cilrnel]";
+				mes "Então volte para ela e";
+				mes "encontre os sintomas exatos";
+				mes "imediatamente~!!";
+				close;
+			}
+			mes "[Cilrnel]";
+			mes "Você tem certeza disso, certo?";
+			mes "Se forem os sintomas errados,";
+			mes "Eu não posso ser responsável.";
+			next;
+			if (select("Err..deixe-me ir e verificar.:Tenho certeza.") == 1) {
+				mes "[Cilrnel]";
+				mes "Então, volte para ela e";
+				mes "encontre os sintomas exatos";
+				mes "imediatamente~!!";
+				close;
+			}
+			mes "[Cilrnel]";
+			mes "Hum.....";
+			mes "Corretamente. ";
+			mes "Agora, vá buscar esses ingredientes.";
+			mes "Obtenha-os o mais rápido possível.";
+			mes "Tudo bem?";
+			next;
+			if (.@sick == 4) {
+				mes "[Cilrnel]";
+				mes "^FF00002 Sementes de Yggdrasil";
+				mes "3 Aloés";
+				mes "1 rosa murcha";
+				mes "10 Areias Estelares Bruxas";
+				mes "5Corações Ardentes";
+				mes "5 cubos de gelo";
+				set b_sword,26;
+				next;
+				mes "[Cilrnel]";
+				mes "Anotou-os?";
+				mes "Eu vou te contar mais uma vez.";
+				mes "Nós precisamos...";
+				next;
+				mes "[Cilrnel]";
+				mes "^FF00002 Sementes de Yggdrasil";
+				mes "3 Aloés";
+				mes "1 rosa murcha";
+				mes "10 Areias Estelares Bruxas";
+				mes "5Corações Ardentes";
+				mes "5 cubos de gelo";
+				next;
+			}
+			else {
+				mes "[Cilrnel]";
+				mes "^FF00001 Semente Yggdrasil";
+				mes "1 babosa";
+				mes "5 Areias Estelares Bruxas";
+				mes "3Corações Ardentes";
+				mes "3 cubos de gelo";
+				set b_sword,25;
+				next;
+				mes "[Cilrnel]";
+				mes "Anotou-os?";
+				mes "Eu vou te contar mais uma vez.";
+				mes "Nós precisamos...";
+				next;
+				mes "[Cilrnel]";
+				mes "^FF00001 Semente Yggdrasil";
+				mes "1 babosa";
+				mes "5 Areias Estelares Bruxas";
+				mes "3Corações Ardentes";
+				mes "3 cubos de gelo";
+				next;
+			}
+			mes "[Cilrnel]";
+			mes "Obtenha-os o mais rápido possível.";
+			mes "Não há muito tempo para Lyroo.";
+			close;
+		case 25:
+			if (countitem(608) > 0 && countitem(704) > 0 && countitem(1061) > 2 && countitem(7066) > 2) {
+				mes "[Cilrnel]";
+				mes "Hum...";
+				mes "Bom, você pegou todos eles.";
+				mes "Deixe-me ver agora...";
+				mes ".............";
+				next;
+				mes "^FF0000Cylrnel começou a mixar";
+				mes "os ingredientes.";
+				mes "................";
+				mes ".............";
+				mes ".........";
+				mes "......^000000";
+				next;
+				mes "[Cilrnel]";
+				mes "............";
+				mes "O que?!?!";
+				mes "...";
+				mes "Ei você...";
+				mes "Você me deu a informação errada!";
+				delitem 608,1; //Seed_Of_Yggdrasil
+				delitem 704,1; //Aloe
+				delitem 1061,5; //Starsand_Of_Witch
+				delitem 7097,3; //Burning_Heart
+				delitem 7066,3; //Ice_Piece
+				set b_sword,24;
+				next;
+				mes "[Cilrnel]";
+				mes "Eu escolhi os ingredientes";
+				mes "de acordo com os sintomas";
+				mes "você descreveu...";
+				mes "Mas isso não é remédio!!";
+				mes "Agora vá e descubra seus sintomas exatos!";
+				close2;
+				warp "yuno",246,143;
+				end;
+			}
+			mes "[Cilrnel]";
+			mes "...";
+			mes "Ei ~ você não tem tudo";
+			mes "os ingredientes ainda.";
+			mes "Vá buscá-los todos imediatamente.";
+			next;
+			mes "[Cilrnel]";
+			mes "^FF00001 Semente de Yggdrasil";
+			mes "1 babosa";
+			mes "5 Areias Estelares Bruxas";
+			mes "3Corações Ardentes";
+			mes "3 cubos de gelo";
+			next;
+			mes "[Cilrnel]";
+			mes "Tudo bem?";
+			mes "Agora, apresse-se!";
+			close2;
+			warp "yuno",246,143;
+			end;
+		case 26:
+			if (countitem(608) > 1 && countitem(704) > 2 && countitem(748) > 0 && countitem(1061) > 9 && countitem(7097) > 4 && countitem(7066) > 4) {
+				mes "[Cilrnel]";
+				mes "Hum...";
+				mes "Bom, você pegou todos eles.";
+				mes "Deixe-me ver..";
+				mes ".............";
+				next;
+				mes "^FF0000Cylrnel começou a mixar";
+				mes "os ingredientes.";
+				mes "................";
+				mes ".............";
+				mes ".........";
+				mes "......^000000";
+				next;
+				mes "[Cilrnel]";
+				mes "Aqui ~! ";
+				mes "Eu não acho que este medicamento irá";
+				mes "curar sua doença completamente.";
+				mes "No entanto, isso aliviará muito sua dor.";
+				next;
+				mes "[Cilrnel]";
+				mes "Não foi fácil fazer isso";
+				mes "medicamento. ";
+				mes "isso para Lyroo e dê-lhe meus cumprimentos...";
+				delitem 608,2; //Seed_Of_Yggdrasil
+				delitem 704,3; //Aloe
+				delitem 748,1; //Witherless_Rose
+				delitem 1061,10; //Starsand_Of_Witch
+				delitem 7097,5; //Burning_Heart
+				delitem 7066,5; //Ice_Piece
+				set b_sword,27;
+				getitem 606,1; //Aloebera
+				close;
+			}
+			mes "[Cilrnel]";
+			mes "...";
+			mes "Ei ~ Você não tem tudo";
+			mes "os ingredientes ainda.";
+			mes "Vá buscá-los todos imediatamente!";
+			next;
+			mes "[Cilrnel]";
+			mes "^FF00002 Sementes de Yggdrasil";
+			mes "3 Aloés";
+			mes "1 rosa murcha";
+			mes "10 Areias Estelares Bruxas";
+			mes "5Corações Ardentes";
+			mes "5 cubos de gelo";
+			next;
+			mes "[Cilrnel]";
+			mes "Tudo bem?";
+			mes "Vá buscá-los o mais rápido possível.";
+			close2;
+			warp "yuno",246,143;
+			end;
+		}
+	}
+	mes "[Cilrnel]";
+	mes "Ei...";
+	mes "Como ela está?";
+	mes "Melhorando?";
+	mes "Ao tomar esse remédio,";
+	mes "ela se recuperará rapidamente.";
+	next;
+	mes "[Cilrnel]";
+	mes "Diga a ela para vir até mim";
+	mes "algum dia para obter médico";
+	mes "tratamento. ";
+	mes "casa até aqui seria bom";
+	mes "exercício também.";
+	next;
+	mes "[Cilrnel]";
+	mes "O nome da doença dela é";
+	mes "chamado '^FF0000Amarhade^000000'.";
+	mes "É raro, relativamente";
+	mes "doença desconhecida, então um exato";
+	mes "o tratamento ainda não foi encontrado.";
+	next;
+	mes "[Cilrnel]";
+	mes "Mas encontrei um tratamento...";
+	mes "E...é...um...segredo! ";
+	emotion ET_DELIGHT;
+	close;
+}
+
+yuno_in01,104,94,0	script	go away#gnbs	139,2,1,{
+OnTouch_:
+	if (b_sword < 22) {
+		mes "[??????]";
+		mes "^FF0000O que você está fazendo aqui?";
+		mes "Saia daqui!^000000";
+		close2;
+		warp "yuno",246,143;
+		end;
+	}
+	else if (b_sword == 22) {
+		if (rand(1,10) == 10) {
+			mes "[??????]";
+			mes "Estou muito ocupado agora. ";
+			set b_sword,23;
+			close;
+		}
+		mes "[??????]";
+		mes "^FF0000O que você está fazendo aqui?";
+		mes "Saia daqui!^000000";
+		close2;
+		warp "yuno",246,143;
+		end;
+	}
+	end;
+}
+
+// Lost Knife :: gon_npc
+//============================================================ 
+gonryun,237,226,3	script	Han Ran Jiao#gon	776,{
+	if (nakha == 0) {
+		mes "[Han Ran Jiao]";
+		mes "Oh não! ";
+		mes "Não acredito que caí";
+		mes "minha faca insubstituível! ";
+		next;
+		if (BaseLevel >= 20) {
+			set nakha,1;
+			setquest 10034;
+			mes "[Han Ran Jiao]";
+			mes "Eu preciso descer para pegá-lo";
+			mes "mas... os monstros...";
+			mes "Estou com tanto medo... O que devo fazer?!";
+			close;
+		}
+	}
+	if (nakha == 1) {
+		mes "[Han Ran Jiao]";
+		mes "Oh não! ";
+		mes "Não acredito que caí";
+		mes "minha faca insubstituível! ";
+		next;
+		mes "[Han Ran Jiao]";
+		mes "Eu preciso descer para pegá-lo";
+		mes "mas... os monstros...";
+		mes "Estou com tanto medo... O que devo fazer?!";
+		close;
+	}
+	if (nakha == 2 && countitem(1201) > 0) {
+		mes "[Han Ran Jiao]";
+		mes "Ehhhh... o que devo fazer...";
+		mes "Ah~! ";
+		mes "Posso lhe ajudar com algo?";
+		mes "Hum?";
+		next;
+		mes "[Han Ran Jiao]";
+		mes "Aquela... aquela faca!";
+		mes "Essa é a faca sagrada do meu ancestral";
+		mes "que eu acidentalmente deixei cair";
+		mes "aqui! ";
+		next;
+		mes "[Han Ran Jiao]";
+		mes "Eu deixei cair aquela faca de ser";
+		mes "descuidado. ";
+		mes "ancestrais. ";
+		mes "uma faca barata...";
+		next;
+		mes "[Han Ran Jiao]";
+		mes "Mas já esteve no";
+		mes "família há muito tempo.";
+		mes "Você poderia por favor devolver isso";
+		mes "faca para mim?";
+		next;
+		if (select("Devolva a faca.:Recusar.") == 1) {
+			set nakha,3;
+			completequest 10035;
+			delitem 1201,1; //Knife
+			mes "[Han Ran Jiao]";
+			mes "Obrigado! ";
+			mes "Por favor, tome essas poções.";
+			mes "Eles podem não ser muitos, mas eles";
+			mes "são o melhor que posso lhe dar.";
+			getitem 505,2; //Blue_Potion
+			next;
+			mes "[Han Ran Jiao]";
+			mes "Você manteve minha herança de família segura!";
+			mes "Eu lhe dou minha mais profunda gratidão";
+			mes "por devolver isso.";
+			close;
+		}
+		mes "[Han Ran Jiao]";
+		mes "Não ~! ";
+		mes "Seu canalha! ";
+		mes "assombrar você para sempre! ";
+		close;
+	}
+	if (nakha == 2) {
+		mes "[Han Ran Jiao]";
+		mes "Oh não! ";
+		mes "Não acredito que caí";
+		mes "minha faca insubstituível! ";
+		next;
+		mes "[Han Ran Jiao]";
+		mes "Eu preciso descer para pegá-lo";
+		mes "mas... os monstros...";
+		mes "Estou com tanto medo... O que devo fazer?!";
+		close;
+	}
+	if (nakha == 3) {
+		mes "[Han Ran Jiao]";
+		mes "Meu vizinho parecia muito preocupado com alguma coisa...";
+		mes "Bem, tenho coisas melhores com que me preocupar do que seu chá chique.";
+		close;
+	}
+}
+
+gon_fild01,245,257,0	script	#gonknife	111,3,3,{
+OnTouch_:
+	if (nakha == 1) {
+		set nakha,2;
+		changequest 10034,10035;
+		mes "^3355FFHm? ";
+		mes "";
+		mes "Algo estava escondido sob as folhas...^000000";
+		mes "";
+		mes "- Você encontrou uma faca velha -";
+		close2;
+		getitem 1201,1; //Knife
+	}
+	end;
+}
+

@@ -1,0 +1,2491 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+// Headgear Quests 1
+// Cross Hat, Bulb Hairband, Striped Hairband, Blue Hairband
+//============================================================ 
+comodo,228,159,3	script	Hair Ornament Girl	700,{
+	mes "[Garota com enfeite de cabelo]";
+	if (Sex == SEX_MALE) {
+		mes "Ah, olá!";
+		mes "Gostaria de encomendar uma faixa de cabelo? ";
+	}
+	else {
+		mes "Olá ~!";
+		mes "Acho que um desses vai combinar muito bem com uma garota bonita como você. ";
+	}
+	next;
+	mes "[Garota com enfeite de cabelo]";
+	mes "Se você me der alguns itens simples, posso fazer uma linda faixa de cabelo. ";
+	next;
+	switch(select("Chapéu cruzado: faixa de lâmpada: faixa de cabelo listrada: faixa de cabelo azul")) {
+	case 1:
+		if ((countitem(2608) > 0) && (countitem(7069) > 499)) {
+			mes "[Garota com enfeite de cabelo]";
+			mes "Você escolheu o Cross Hat?";
+			mes "Se você trouxe todos os itens necessários, eu farei isso para você ~";
+			next;
+			mes "[Garota com enfeite de cabelo]";
+			mes "Mas antes que eu possa fazer isso, você pode verificar se os itens estão corretos?";
+			mes "Se for um item forjado e atualizado ou contiver cartas de monstro, essas cartas e atualizações serão perdidas.";
+			next;
+			mes "[Garota com enfeite de cabelo]";
+			mes "É melhor trazer apenas para manter os itens solicitados em seu inventário. ";
+			next;
+			switch(select("Não.:Sim.")) {
+			case 1:
+				mes "[Garota com enfeite de cabelo]";
+				mes "Ah, tudo bem. ";
+				mes "Até breve~";
+				close;
+			case 2:
+				mes "^3355FFSwish swish recorte recorte^000000";
+				next;
+				delitem 2608,1;  //Rosary
+				delitem 7069,500;  //Broken_Armor_Piece
+				mes "[Garota com enfeite de cabelo]";
+				mes "Veja isso! ";
+				mes "Por favor, volte novamente ~ hoooo!";
+				getitem 5036,1; // Cross_Band
+				close;
+			}
+		}
+		else {
+			mes "[Garota com enfeite de cabelo]";
+			mes "Ah, você escolheu Cross Hat?";
+			mes "Existem alguns itens necessários para fazer esta faixa de cabeça.";
+			next;
+			mes "[Garota com enfeite de cabelo]";
+			mes "Eu vou precisar...";
+			mes "^3355FF1 Rosário^000000";
+			mes "^3355FF500 Armadura destruída^000000";
+			next;
+			mes "[Garota com enfeite de cabelo]";
+			mes "Se você trouxer todos os itens, eu farei isso para você imediatamente.";
+			mes "Vejo você então ~";
+			close;
+		}
+	case 2:
+		if ((countitem(2233) > 0) && (countitem(746) > 19)) {
+			mes "[Garota com enfeite de cabelo]";
+			mes "Você escolheu a banda Bulb?";
+			mes "Se você trouxe todos os itens necessários, eu farei isso para você ~";
+			next;
+			mes "[Garota com enfeite de cabelo]";
+			mes "Mas antes que eu possa fazer isso, você pode verificar se os itens estão corretos?";
+			mes "Se for um item forjado e atualizado ou contiver cartas de monstro, essas cartas e atualizações serão perdidas.";
+			next;
+			mes "[Garota com enfeite de cabelo]";
+			mes "É melhor trazer apenas para manter os itens solicitados em seu inventário. ";
+			next;
+			switch(select("Não.:Sim.")) {
+			case 1:
+				mes "[Garota com enfeite de cabelo]";
+				mes "Ah, tudo bem. ";
+				close;
+			case 2:
+				mes "^3355FFSwish swish recorte recorte^000000";
+				next;
+				delitem 2233,1;  //Circlet_
+				delitem 746,20;  //Glass_Bead
+				mes "[Garota com enfeite de cabelo]";
+				mes "Veja isso! ";
+				mes "Por favor, volte novamente ~ hoooo!";
+				getitem 5034,1; // Light_Bulb_Band
+				close;
+			}
+		}
+		else {
+			mes "[Garota com enfeite de cabelo]";
+			mes "Ah, você escolheu Bulb Band?";
+			mes "Existem alguns itens necessários para fazer esta faixa de cabeça.";
+			next;
+			mes "[Garota com enfeite de cabelo]";
+			mes "Eu vou precisar...";
+			mes "^3355FF1 Círculo com fenda ^000000";
+			mes "^3355FF20 Conta de vidro^000000";
+			next;
+			mes "[Garota com enfeite de cabelo]";
+			mes "Se você trouxer todos os itens, eu farei isso para você imediatamente.";
+			mes "Vejo você então ~";
+			close;
+		}
+	case 3:
+		if (countitem(1099) > 1499) {
+			mes "[Garota com enfeite de cabelo]";
+			mes "Você escolheu a banda Stripe?";
+			mes "Se você trouxe todos os itens necessários, eu farei isso para você ~";
+			next;
+			mes "[Garota com enfeite de cabelo]";
+			mes "Você quer que eu faça isso agora?";
+			next;
+			switch(select("Não.:Sim.")) {
+			case 1:
+				mes "[Garota com enfeite de cabelo]";
+				mes "Vejo você mais tarde então ~";
+				close;
+			case 2:
+				mes "^3355FFSwish swish recorte recorte^000000";
+				next;
+				delitem 1099,1500;  //Worn_Out_Prison_Uniform
+				mes "[Garota com enfeite de cabelo]";
+				mes "Veja isso! ";
+				mes "Por favor, volte novamente~";
+				getitem 5049,1; // Stripe_Band
+				close;
+			}
+		}
+		else {
+			mes "[Garota com enfeite de cabelo]";
+			mes "Ah, você escolheu a banda Stripe? ";
+			next;
+			mes "[Garota com enfeite de cabelo]";
+			mes "Eu vou precisar...";
+			mes "^3355FF1500 Uniforme de prisão desgastado^000000";
+			next;
+			mes "[Garota com enfeite de cabelo]";
+			mes "Se você trouxer todos os itens, eu farei isso para você imediatamente.";
+			mes "Vejo você então ~";
+			close;
+		}
+	case 4:
+		if ((countitem(2211) > 0) && (countitem(978) > 0) && (countitem(7003) > 299)) {
+			mes "[Garota com enfeite de cabelo]";
+			mes "Você escolheu a faixa de cabelo azul?";
+			mes "Se você trouxe todos os itens necessários, eu farei isso para você ~";
+			next;
+			mes "[Garota com enfeite de cabelo]";
+			mes "Mas antes que eu possa fazer isso, você pode verificar se os itens estão corretos?";
+			mes "Se for um item forjado e atualizado ou contiver cartas de monstro, essas cartas e atualizações serão perdidas.";
+			next;
+			mes "[Garota com enfeite de cabelo]";
+			mes "É melhor trazer apenas para manter os itens solicitados em seu inventário. ";
+			next;
+			switch(select("Não.:Sim.")) {
+			case 1:
+				mes "[Garota com enfeite de cabelo]";
+				mes "Ah, tudo bem. ";
+				close;
+			case 2:
+				mes "^3355FFSwish swish recorte recorte^000000";
+				next;
+				delitem 2211,1;  //Bandana
+				delitem 978,1;  //Cobaltblue_Dyestuffs
+				delitem 7003,300;  //Anolian_Skin
+				mes "[Garota com enfeite de cabelo]";
+				mes "Veja isso! ";
+				mes "Por favor, volte novamente~";
+				getitem 5052,1; // Blue_Hair_Band
+				close;
+			}
+		}
+		else {
+			mes "[Garota com enfeite de cabelo]";
+			mes "Ah, você escolheu a faixa de cabelo azul?";
+			mes "Existem alguns itens necessários para fazer esta faixa de cabeça.";
+			next;
+			mes "[Garota com enfeite de cabelo]";
+			mes "Eu vou precisar...";
+			mes "^3355FF1 Bandana^000000";
+			mes "^3355FF1 Corantes Azul Cobalto^000000";
+			mes "^3355FF300 Pele Anoliana^000000";
+			next;
+			mes "[Garota com enfeite de cabelo]";
+			mes "Se você trouxer todos os itens, eu farei isso para você imediatamente.";
+			mes "Vejo você então ~";
+			close;
+		}
+	}
+}
+
+// Headgear Quests 2
+// 'Mine Helmet', 'Parcel Hat', 'Money Loser's Grief', 'Phantom of the Opera Mask'
+//============================================================ 
+comodo,273,137,4	script	Traveler#head	702,{
+	mes "[Isac Mari]";
+	mes "Viajo pelo mundo e coleciono muitas histórias interessantes de pessoas. ";
+	next;
+	mes "[Isac Mari]";
+	mes "Eu sei fazer todos os tipos de chapéus mundanos. ";
+	next;
+	switch(select("Capacete de Mina: Chapéu de Pacote: Luto pela Ganância: Máscara Fantasma da Ópera")) {
+	case 1:
+		if ((countitem(5009) > 0) && (countitem(5028) > 0) && (countitem(999) > 24) && (countitem(747) > 0)) {
+			mes "[Isac Mari]";
+			mes "O Capacete de Mina foi projetado para que os mineiros nas minas de carvão tenham luz no escuro. ";
+			next;
+			mes "[Isac Mari]";
+			mes "Mas você pode verificar se os itens em seu inventário não foram atualizados ou se possuem cartas compostas? ";
+			next;
+			mes "[Isac Mari]";
+			mes "É melhor manter apenas os itens usados ??para fazer o Mine Hat em seu inventário. ";
+			next;
+			switch(select("Me dê um minuto~!:Vamos fazer o Chapéu da Mina.")) {
+			case 1:
+				mes "[Isac Mari]";
+				mes "Tudo bem. ";
+				close;			break;
+			case 2:
+				mes "^3355FF*Pensou,Pensou*";
+				mes "*Pop!*^000000";
+				next;
+				mes "[Isac Mari]";
+				mes "Uau! ";
+				next;
+				delitem 5009,1;  //Safety_Helmet
+				delitem 5028,1;  //Candle
+				delitem 747,1;  //Crystal_Mirror
+				delitem 999,25;  //Steel
+				mes "[Isac Mari]";
+				mes "Não tenho certeza se este é o caminho certo, mas parece certo. ";
+				getitem 5031,1; // Mine_Helm
+				close;
+			}
+		}
+		else {
+			mes "[Isac Mari]";
+			mes "Ouvi dizer que Capacetes de Mina são usados ??nas minas perto de Geffen. ";
+			next;
+			mes "[Isac Mari]";
+			mes "Um dia, um mineiro remodelou seu próprio capacete de segurança para poder trabalhar com as duas mãos. ";
+			next;
+			mes "[Isac Mari]";
+			mes "Se você quiser fazer meu capacete,";
+			mes "^3355FF1 Capacete de segurança^000000";
+			mes "^3355FF1 Vela^000000";
+			mes "^3355FF1 Espelho de Cristal^000000";
+			mes "^3355FF25 Aço^000000";
+			mes "é necessário para criá-lo.";
+			next;
+			mes "[Isac Mari]";
+			mes "Se você trouxer todos os itens, eu farei isso para você imediatamente. ";
+			close;
+		}
+	case 2:
+		if ((countitem(1059) > 149) && (countitem(907) > 99) && (countitem(978) > 0)) {
+			mes "[Isac Mari]";
+			mes "Parcel Hat parece ser útil para empresários carregarem seus produtos. ";
+			mes "Se você trouxe todos os itens necessários, eu farei isso para você ~";
+			next;
+			mes "[Isac Mari]";
+			mes "Mas você pode verificar se os itens em seu inventário não foram atualizados ou se possuem cartas compostas? ";
+			next;
+			mes "[Isac Mari]";
+			mes "É melhor manter apenas os itens usados ??para fazer o Parcel Hat em seu inventário. ";
+			next;
+			switch(select("Me dê um minuto~!:Vamos fazer o Chapéu Parcel.")) {
+			case 1:
+				mes "[Isac Mari]";
+				mes "Tudo bem. ";
+				close;
+			case 2:
+				mes "^3355FF*Pensou,Pensou*";
+				mes "*Pop!*^000000";
+				next;
+				mes "[Isac Mari]";
+				mes "Oh...";
+				mes "Acho que errei!";
+				mes "Não, espere, acho que posso consertar isso...";
+				next;
+				delitem 1059,150;  //Transparent_Cloth
+				delitem 907,100;  //Resin
+				delitem 978,1;  //Cobaltblue_Dyestuffs
+				mes "[Isac Mari]";
+				mes "Bem...";
+				mes "Hum, parece um chapéu de pacote. ";
+				getitem 5023,1; // Hat_Of_Bundle
+				close;
+			}
+		}
+		else {
+			mes "[Isac Mari]";
+			mes "Ouvi dizer que em Alberta os comerciantes estão sempre vendendo mercadorias em seus carrinhos no meio das ruas.";
+			next;
+			mes "[Isac Mari]";
+			mes "Mas na zona leste do país, eles usam uma forma diferente de transferir mercadorias.";
+			next;
+			mes "[Isac Mari]";
+			mes "As mercadorias seriam embaladas em um pacote e colocadas no topo da cabeça para que você não precisasse carregar as coisas manualmente. ";
+			next;
+			mes "[Isac Mari]";
+			mes "Eu vou precisar...";
+			mes "^3355FF150 Tecido^000000";
+			mes "^3355FF100 Resina^000000 e";
+			mes "^3355FF1 Corantes Azul Cobalto^000000";
+			mes "para fazer um chapéu de pacote.";
+			next;
+			mes "[Isac Mari]";
+			mes "Se você trouxer todos os itens, eu farei isso para você imediatamente. ";
+			close;
+		}
+	case 3:
+		if ((countitem(2233) > 0) && (countitem(969) > 0) && (countitem(949) > 79) && (countitem(999) > 19) && (countitem(938) > 799)) {
+			mes "[Isac Mari]";
+			mes "Luto pela ganância...";
+			mes "Se você trouxe todos os itens necessários, eu irei em frente e farei isso para você ~";
+			next;
+			mes "[Isac Mari]";
+			mes "Mas você pode verificar se os itens em seu inventário não foram atualizados ou se possuem cartas compostas? ";
+			next;
+			mes "[Isac Mari]";
+			mes "É melhor manter apenas os itens usados ??para fazer o Grief for Greed em seu inventário. ";
+			next;
+			switch(select("Me dê um minuto~!:Vamos fazer o Luto pela Ganância.")) {
+			case 1:
+				mes "[Isac Mari]";
+				mes "Tudo bem. ";
+				close;
+			case 2:
+				mes "^3355FF*Pensou,Pensou*";
+				mes "*Pop!*^000000";
+				next;
+				mes "[Isac Mari]";
+				mes "Uau! ";
+				next;
+				delitem 2233,1;  //Circlet_
+				delitem 969,1;  //Gold
+				delitem 949,80;  //Feather
+				delitem 999,20;  //Steel
+				delitem 938,800;  //Sticky_Mucus
+				mes "[Isac Mari]";
+				mes "Posso ter cometido alguns erros, mas parece bom o suficiente. ";
+				getitem 5021,1; // Bankruptcy_Of_Heart
+				close;
+			}
+		}
+		else {
+			mes "[Isac Mari]";
+			mes "Luto pela ganância...";
+			mes "Há uma história de um comerciante honesto que viveu em Marrocos há muito tempo e que teve uma briga com uma guilda ruim.";
+			next;
+			mes "[Isac Mari]";
+			mes "Como o comerciante honesto não estava enganando as pessoas com seus preços, sua barraca de rua foi atacada pela má guilda e todos os seus bens foram levados.";
+			next;
+			mes "[Isac Mari]";
+			mes "Então, o comerciante honesto perdeu tudo, exceto alguns itens quebrados. ";
+			next;
+			mes "[Isac Mari]";
+			mes "Este chapéu especial apela à simpatia das pessoas, fazendo-as comprar mais mercadorias para apoiar a bondade interior dos comerciantes honestos.";
+			next;
+			mes "[Isac Mari]";
+			mes "Para este chapéu, vou precisar...";
+			mes "^3355FF1 Círculo com fenda ^000000";
+			mes "^3355FF1 Ouro^000000";
+			mes "^3355FF20 Aço^000000";
+			mes "^3355FF80 Pena^000000";
+			mes "^3355FF800 Muco pegajoso^000000";
+			next;
+			mes "[Isac Mari]";
+			mes "Se você trouxer todos os itens, eu farei isso para você imediatamente. ";
+			close;
+		}
+	case 4:
+		if ((countitem(2281) > 0) && (countitem(1048) > 49)) {
+			mes "[Isac Mari]";
+			mes "Máscara Fantasma Ópera...";
+			mes "Assustador, mas também trágico e romântico. ";
+			next;
+			mes "[Isac Mari]";
+			mes "Mas você pode verificar se os itens em seu inventário não foram atualizados ou se possuem cartas compostas? ";
+			next;
+			mes "[Isac Mari]";
+			mes "É melhor manter apenas os itens usados ??para fazer a Máscara de Ópera em seu inventário. ";
+			next;
+			switch(select("Me dê um minuto~!:Vamos fazer a Máscara da Ópera.")) {
+			case 1:
+				mes "[Isac Mari]";
+				mes "Tudo bem. ";
+				close;
+			case 2:
+				mes "^3355FF*Pensou,Pensou*";
+				mes "*Pop!*^000000";
+				next;
+				mes "[Isac Mari]";
+				mes "Uau! ";
+				next;
+				delitem 2281,1;  //Phantom_Of_Opera
+				delitem 1048,50;  //Slender_Snake
+				mes "[Isac Mari]";
+				mes "Não tenho certeza se este é o caminho certo.";
+				mes "Mas parece bem. ";
+				getitem 5043,1; // Opera_Ghost_Mask
+				close;
+			}
+		}
+		else {
+			mes "[Isac Mari]";
+			mes "Máscara Fantasma Ópera...";
+			mes "Por trás dessa máscara está uma história sobre o amor e a tragédia pessoal de um homem.";
+			next;
+			mes "[Isac Mari]";
+			mes "Você pode conhecê-lo como o Fantasma da Ópera. ";
+			next;
+			mes "[Isac Mari]";
+			mes "No entanto, ele se apaixonou por uma bela cantora e usou seus talentos para impulsioná-la a novos patamares de fama. ";
+			next;
+			mes "[Isac Mari]";
+			mes "No fim...";
+			mes "Ela se importava profundamente com ele, mas estava apaixonada por outro cantor. ";
+			next;
+			mes "[Isac Mari]";
+			mes "A máscara que ele usava tem um formato diferente de outras máscaras de ópera e foi feita para cobrir suas cicatrizes faciais específicas.";
+			next;
+			mes "[Isac Mari]";
+			mes "Se você quiser fazer o Fantasma da Ópera. ";
+			mes "^3355FF1 Máscara de Ópera^000000";
+			mes "^3355FF50 Cabelo horrível^000000";
+			next;
+			mes "[Isac Mari]";
+			mes "Se você trouxer todos os itens, eu farei isso para você imediatamente. ";
+			close;
+		}
+	}
+}
+
+// Doomed Swords - Comodo Portion. (Continued in Juno)
+//============================================================ 
+comodo,206,310,4	script	Campground Boy#cmd	704,{
+	switch (dmdswrd_Q) {
+	case 0:
+		mes "[Rochito]";
+		mes "Pão, frutas, legumes...";
+		mes "Blá. ";
+		mes "nada comparado ao";
+		mes "sabor forte de carne. ";
+		mes "Acampar com churrasco em Comodo é";
+		mes "paraíso para um amante de carne como eu~";
+		next;
+		if (select("Churrasco Acampamento...?:Cancelar") == 1) {
+			mes "[Rochito]";
+			mes "Sim cara... Você pode comer";
+			mes "Carne de Komodoru o dia todo quando";
+			mes "você vai acampar com churrasco. ";
+			mes "é um animal nativo de Comodo";
+			mes "e cada parte é deliciosa. ";
+			next;
+			mes "[Rochito]";
+			mes "O que torna esta carne uniforme";
+			mes "mais gostoso é o especial";
+			mes "Tempero Koserahserah eles";
+			mes "usar. ";
+			mes "viciante. ";
+			mes "não podemos começar nosso churrasco!";
+			next;
+			mes "[Rochito]";
+			mes "Se nos decidirmos por alguma coisa";
+			mes "menos que o melhor churrasco,";
+			mes "então nossos camaradas que morreram";
+			mes "para ajudar ^FF0000 a banir aquela bruxa^000000";
+			mes "certamente tenha vergonha de nós!";
+			next;
+			mes "[Rochito]";
+			mes "Diga, você nos faria um favor?";
+			mes "O Chefe de Comodo estava indo";
+			mes "para trazer o Koserahserah e";
+			mes "junte-se a nós para o nosso churrasco, mas";
+			mes "estamos supondo que ele precisa";
+			mes "cancelar por causa de suas funções.";
+			next;
+			mes "[Rochito]";
+			mes "Vamos ver, nosso Chefe vive para";
+			mes "a oeste desses acampamentos.";
+			mes "Você poderia visitá-lo e ver";
+			mes "por que ele está demorando tanto";
+			mes "para vir até aqui?";
+			set dmdswrd_Q,1;
+			close;
+		}
+		mes "[Rochito]";
+		mes "Você sabe, as pessoas se reúnem";
+		mes "nesses acampamentos em";
+		mes "memória e respeito daqueles";
+		mes "que caíram em batalha";
+		mes "contra a bruxa de Comodo.";
+		next;
+		mes "[Rochito]";
+		mes "Muito antes de Comodo ser";
+		mes "construído dentro desta enorme caverna,";
+		mes "essa bruxa morava aqui. ";
+		mes "livre-se dela, mas há rumores de que ela ainda está por aí...";
+		break;
+	case 1:
+		mes "[Rochito]";
+		mes "A carne de Komodoru é especialmente";
+		mes "ótimo quando é temperado com";
+		mes "Koseráserá. ";
+		mes "é uma das reivindicações da Comodo para";
+		mes "fama! ";
+		next;
+		mes "[Rochito]";
+		mes "Falando nisso, nosso chefe";
+		mes "ainda não veio e trouxe";
+		mes "o Koseráserá! ";
+		mes "veja por que ele está demorando tanto?";
+		mes "Sua casa está localizada a oeste de";
+		mes "esses acampamentos.";
+		break;
+	case 2:
+		mes "[Rochito]";
+		mes "Ah, ei, você está de volta.";
+		mes "Você falou com nosso";
+		mes "Chefe? ";
+		mes "ele teve que cancelar - nós";
+		mes "estive planejando esse passeio";
+		mes "com ele por um bom tempo...";
+		next;
+		mes "^3355FFVocê dá ao Rochito o";
+		mes "Tempero Koserahserah,";
+		mes "e explique por que o chefe";
+		mes "não pode ir ao churrasco.^000000";
+		next;
+		mes "[Rochito]";
+		mes "Ah, maluco. ";
+		mes "tenho responsabilidades, mas é";
+		mes "ainda um pouco decepcionante.";
+		mes "Afinal, ele é um amigo. ";
+		mes "pelo menos ele foi gentil o suficiente";
+		mes "para enviar o Koserahserah.";
+		next;
+		mes "[Rochito]";
+		mes "É realmente uma pena isso";
+		mes "ele não pode se juntar a nós. ";
+		mes "uma ideia! ";
+		mes "esta garrafa para Tausupa, er, nosso";
+		mes "Chefe? ";
+		mes "vinho vintage especial ~";
+		next;
+		mes "^3355FFVocê recebeu uma garrafa";
+		mes "de vinho Mureuchieligu para";
+		mes "entregar ao Chefe Comodo.^000000";
+		set dmdswrd_Q,3;
+		break;
+	case 3:
+		mes "[Rochito]";
+		mes "Eu sei que deveria estar";
+		mes "entregando aquela garrafa de";
+		mes "vinho para o chefe eu mesmo,";
+		mes "mas eu tenho que cuidar disso";
+		mes "churrasco. ";
+		mes "entender...";
+		next;
+		mes "[Rochito]";
+		mes "De qualquer forma, você estaria fazendo";
+		mes "me um grande favor se você";
+		mes "falou com o chefe e deu";
+		mes "a ele meus agradecimentos, junto com";
+		mes "aquela garrafa de Mureuchieligu.";
+		break;
+	default:
+		mes "[Rochito]";
+		mes "Ah, olá ~";
+		mes "Obrigado por nos ajudar";
+		mes "saiu mais cedo. ";
+		mes "Chief se juntaria a nós em nosso";
+		mes "churrasco, mas eu entendo";
+		mes "que ele tem que proteger Comodo.";
+		next;
+		mes "[Rochito]";
+		mes "Ei, quer saber?";
+		mes "Eu não posso exatamente retribuir você";
+		mes "com, você sabe, coisas reais,";
+		mes "mas posso te dar uma dica quente.";
+		mes "Tem um cara no local";
+		mes "Pub com algumas informações preciosas.";
+		next;
+		mes "[Rochito]";
+		mes "Sim, supostamente, isso";
+		mes "cara sabe mais sobre o";
+		mes "caverna que Comodo foi construído";
+		mes "em... De qualquer forma, eu realmente entendo";
+		mes "sentindo que isso pode";
+		mes "levar a alguma coisa, sabe?";
+		break;
+	}
+	close;
+}
+
+comodo,204,310,4	script	Camping Youth#cmd	65,{
+	switch (dmdswrd_Q) {
+	case 0:
+	case 1:
+		mes "[Rocha]";
+		mes "Oh cara...";
+		mes "Estou tão animado!";
+		mes "Meus amigos e eu";
+		mes "estava planejando obter";
+		mes "juntos para esse churrasco";
+		mes "por tanto tempo~";
+		next;
+		if(select("Amigos...?:Cancelar") == 1) {
+			mes "[Rocha]";
+			mes "Sim, alguns de nós sabemos";
+			mes "um ao outro quando brigamos";
+			mes "juntos na Guerra do";
+			mes "Bruxa. ";
+			mes "é o chefe desta aldeia!";
+			mes "Huh, por que ele ainda não está aqui?";
+			next;
+			mes "[Rocha]";
+			mes "De qualquer forma, mesmo que";
+			mes "nossas estações na vida têm";
+			mes "mudou, felizmente estamos";
+			mes "ainda amigos. ";
+			mes "base com um chefe de aldeia.";
+			next;
+			mes "[Rocha]";
+			mes "Faz-me sentir...";
+			mes "Importante. ";
+			mes "com uma importante figura política,";
+			mes "afinal. ";
+			mes "amigos podem acabar na vida...";
+			close;
+		}
+		mes "[Rocha]";
+		mes "Eu quase esqueci";
+		mes "o quanto eu amo pendurar";
+		mes "sair com esses caras. ";
+		mes "deveria ter churrasco";
+		mes "juntos o tempo todo ~";
+		break;
+	case 2:
+		mes "[Rocha]";
+		mes "Wha--? ";
+		mes "mas ele ainda nos enviou tudo isso Koserahserah? ";
+		mes "Eu acho... Isso nos dá";
+		mes "uma razão para segurar outro";
+		mes "churrasco aqui logo, certo?";
+		break;
+	case 3:
+		mes "[Rocha]";
+		mes "Ei, quando você entregar";
+		mes "aquele vinho para Tausupa, o";
+		mes "Chefe da Aldeia, você deixaria";
+		mes "ele sabe que sentimos falta do cara?";
+		mes "Ele pode estar ocupado, mas sempre será nosso amigo insubstituível.";
+		break;
+	case 4:
+		mes "[Rocha]";
+		mes "Ah, ei, você falou";
+		mes "para Tausupa? ";
+		mes "é uma pena que ele esteja ocupado,";
+		mes "mas é ótimo ouvir isso";
+		mes "ele vai gostar do nosso presente. ";
+		mes "Acredito que é hora de comer!";
+		next;
+		mes "[Rocha]";
+		mes "Mas antes disso, vamos";
+		mes "faça um brinde... a Tausupa!";
+		mes "Guardião de Comodo, e";
+		mes "um dos melhores amigos que";
+		mes "um cara pode ter! ";
+		mes "Hahahaha hahahaha~!";
+		set dmdswrd_Q,5;
+		next;
+		mes "[Rocha]";
+		mes "Ah, você sabe o que seria";
+		mes "tornar esta refeição perfeita?";
+		mes "Alguns desses lendários";
+		mes "^3355FFQueijo Comodo^000000 que ouvi";
+		mes "cerca de ^3355FFToruna^000000. ";
+		mes "pode não existir, mas ainda assim...!";
+		break;
+	default:
+		mes "[Rocha]";
+		mes "Você sabe, você é realmente";
+		mes "pessoa fria. ";
+		mes "ajudando-nos a manter contato";
+		mes "com nosso velho amigo, o";
+		mes "Chefe da vila. ";
+		mes "responsável deve ser duro...";
+		next;
+		mes "[Rocha]";
+		mes "Há duas coisas que";
+		mes "faria nosso churrasco";
+		mes "absolutamente perfeito - tendo";
+		mes "o chefe da aldeia aqui, e";
+		mes "um pouco daquele lendário Queijo Comodo que ^3355FFToruna^000000 me contou.";
+		break;
+	}
+	close;
+}
+
+comodo,209,305,4	script	Camping Maiden#cmd	71,{
+	mes "[Emralhadas]";
+	mes "Rockha, deixe-me servir";
+	mes "você outra bebida. ";
+	mes "sempre sonhei com isso";
+	mes "durante a Guerra da Bruxa...";
+	mes "Nos divertindo, todos nós";
+	mes "juntos em um tempo de paz ~";
+	next;
+	if (select("Guerra da Bruxa?:Cancelar") == 1) {
+		mes "[Emralhadas]";
+		mes "Antes de eu contar sobre o";
+		mes "Guerra da Bruxa, eu acho";
+		mes "Eu deveria contar a você sobre o";
+		mes "missão para recuperar 4 espadas raras";
+		mes "de poder, considerado o mais";
+		mes "armas poderosas já feitas.";
+		next;
+		mes "[Emralhadas]";
+		mes "Agora, todas as 4 espadas foram";
+		mes "encontrado com sucesso há 10 anos";
+		mes "depois que a busca começou. ";
+		mes "Foram escolhidos 4 protetores para";
+		mes "garantir que as espadas";
+		mes "não caia em mãos erradas.";
+		next;
+		mes "[Emralhadas]";
+		mes "Você pode não pensar assim, apenas";
+		mes "olhando para nós, mas estávamos";
+		mes "os protetores - eu, Rockha,";
+		mes "Rochito, e Tausupa, o chefe";
+		mes "desta aldeia. ";
+		next;
+		mes "[Emralhadas]";
+		mes "No entanto, isso não impediu";
+		mes "Mariposum, antiga bruxa de";
+		mes "Comodo, de nos atacar e";
+		mes "tentando roubar as espadas. ";
+		mes "era incrivelmente poderoso e";
+		mes "precisávamos de um exército para combatê-la.";
+		next;
+		mes "[Emralhadas]";
+		mes "Essa foi a Guerra do";
+		mes "Bruxa, basicamente. ";
+		mes "com sua própria arma estranha";
+		mes "de destruição em massa contra o";
+		mes "quatro de nós apoiados por um grande";
+		mes "força de soldados corajosos.";
+		next;
+		mes "[Emralhadas]";
+		mes "Muitos dos nossos camaradas morreram...";
+		mes "Mas finalmente conseguimos";
+		mes "aprisionando a bruxa usando";
+		mes "o poder das espadas. ";
+		mes "se não fosse por Tausupa, teríamos";
+		mes "nunca fui capaz de fazer isso.";
+		close;
+	}
+	mes "[Emralhadas]";
+	mes "Rockha, ainda temos";
+	mes "para terminar nossa missão:";
+	mes "coma todo o churrasco";
+	mes "que possivelmente possamos!";
+	mes "Vamos nos encher...";
+	mes "Até amanhã!";
+	close;
+}
+
+comodo,209,314,4	script	Campground Lad#cmd	706,{
+	switch (dmdswrd_Q) {
+	case 0:
+	case 1:
+		mes "[Rota]";
+		mes "Anos atrás, houve um grande";
+		mes "missão para recuperar 4 espadas raras";
+		mes "de incrível poder, supostamente";
+		mes "as espadas mais fortes já feitas!";
+		mes "Mas você sabe, há um estranho";
+		mes "boato sobre uma quinta espada secreta.";
+		next;
+		mes "[Rota]";
+		mes "Esta 5ª espada é suposta";
+		mes "para ser escondido perto de Glastheim.";
+		mes "Se existir, pode ter";
+		mes "o poder de mudar o mundo!";
+		mes "Isso não é assustador?";
+		break;
+	case 2:
+	case 3:
+		mes "[Rota]";
+		mes "Ei, isso não é Koserahserah?";
+		mes "Esse é o melhor tempero que";
+		mes "você pode comer em pratos de carne!";
+		mes "Oh, você conseguiu isso do chefe";
+		mes "dar ao Rochito? ";
+		mes "devem ser bons amigos...";
+		break;
+	default:
+		mes "[Rota]";
+		mes "Olá, obrigado por ajudar";
+		mes "fora Rockha, Rochito e";
+		mes "Emralhadas. ";
+		mes "eu desde que nasci, então é";
+		mes "como se eles fossem uma família para mim.";
+		next;
+		mes "[Rota]";
+		mes "Uma das razões que";
+		mes "eles me trouxeram aqui para";
+		mes "Comodo foi para que eu pudesse";
+		mes "finalmente conheça Tausupa. ";
+		mes "Acho que ele está muito ocupado agora.";
+		mes "Mesmo assim, gosto deste lugar!";
+		break;
+	}
+	close;
+}
+
+comodo,221,310,4	script	BBQ Boy#cmd	86,{
+	mes "[Rinta]";
+	mes "Eu não queria,";
+	mes "mas eu acidentalmente";
+	mes "espionou aqueles";
+	mes "gente ali. ";
+	mes "eles são realmente velhos amigos";
+	mes "com o nosso chefe da aldeia?";
+	next;
+	mes "[Rinta]";
+	mes "Nesse caso, eles devem";
+	mes "estar recebendo o especial";
+	mes "tratamento geralmente reservado";
+	mes "para dignitários visitantes e";
+	mes "algo parecido. ";
+	close;
+}
+
+comodo,218,309,4	script	BBQ Visitor#cmd	90,{
+	mes "[Razy]";
+	mes "Aquelas pessoas ali";
+	mes "são amigos da Vila";
+	mes "Chefe? ";
+	mes "eles por muito tempo...";
+	mes "Eu nem conhecia nosso chefe";
+	mes "tinha amigos fora de Comodo.";
+	next;
+	mes "[Razy]";
+	mes "Você sabe, eles meio que";
+	mes "me parecem velhos companheiros de guerra,";
+	mes "espalhando suas conversas";
+	mes "com palavras como ''missão'' todas";
+	mes "A Hora. ";
+	mes "pequenas cicatrizes que todos eles têm...";
+	close;
+}
+
+comodo,216,310,4	script	BBQ Papa#cmd::CmdFamily	50,{
+	mes "[Menino churrasco]";
+	mes "D-papai! ";
+	mes "pessoas falando sobre a verdade?";
+	mes "Houve realmente um mal";
+	mes "bruxa aqui na nossa aldeia?";
+	next;
+	mes "[churrasco mamãe]";
+	mes "Mel...";
+	mes "Tenho certeza que aqueles";
+	mes "boas pessoas eram";
+	mes "só brincando~";
+	mes "Como isso pode ser verdade?";
+	next;
+	mes "[churrasco papai]";
+	mes "Agora, agora, não conte";
+	mes "eu, meu homenzinho, estou com medo";
+	mes "de algo como um pouco";
+	mes "bruxa. ";
+	mes "conto, filho: não há razão para";
+	mes "sinta medo em tudo.";
+	next;
+	mes "[Menino churrasco]";
+	mes "Não, papai, eu não estou";
+	mes "assustado! ";
+	mes "realmente morava aqui, então ela";
+	mes "casa está em algum lugar por perto";
+	mes "aqui em Comodo, certo? ";
+	mes "vou encontrá-lo algum dia!";
+	next;
+	mes "[churrasco mamãe]";
+	mes "Ah, mas tenho certeza que nosso";
+	mes "Chefe já saberia";
+	mes "algo sobre aquela bruxa";
+	mes "se ela realmente existe. ";
+	mes "vamos nos apressar e comer antes";
+	mes "a churrasqueira queima, ok?";
+	next;
+	mes "[Menino churrasco]";
+	mes "Sim, churrasco!";
+	mes "Hummm... Algum dia,";
+	mes "se aquela bruxa for real,";
+	mes "eu vou descobrir";
+	mes "tudo sobre ela!";
+	close;
+}
+
+comodo,215,307,4	duplicate(CmdFamily)	BBQ Mama#cmd	74
+
+comodo,213,310,4	duplicate(CmdFamily)	BBQ Boy#cmd2	706
+
+cmd_in02,32,140,4	script	Chief#cmd	49,{
+	if (dmdswrd_Q > 4) {
+		mes "[Tausupa]";
+		mes "Talvez você não possa dizer porque";
+		mes "da maneira como a luz reflete,";
+		mes "mas o Comodo é realmente construído";
+		mes "dentro de uma enorme caverna, dando a";
+		mes "ilusão de uma noite eterna.";
+		mes "É muito lindo, sério...";
+		next;
+		mes "[Tausupa]";
+		mes "As pessoas vêm de todo";
+		mes "o mundo para experimentar";
+		mes "emoção e beleza de";
+		mes "nossa pequena vila única.";
+		mes "Nós nos tornamos bastante";
+		mes "a atração turística ~";
+		close;
+	}
+	switch (dmdswrd_Q) {
+	case 3:
+		mes "[Tausupa]";
+		mes "Ah, como estão meus amigos";
+		mes "fazendo? ";
+		mes "Eu poderia ter entregado isso";
+		mes "Koserahserah pessoalmente,";
+		mes "mas não posso fugir dos meus deveres como";
+		mes "Chefe e protetor da aldeia.";
+		next;
+		mes "^3355FFVocê dá a Tausupa o";
+		mes "Vinho Meruchieligu que";
+		mes "Rochito pediu para você entregar.^000000";
+		next;
+		mes "[Tausupa]";
+		mes "Ah... Que gentil";
+		mes "eles! ";
+		mes "este vinho? ";
+		mes "Rockha deve ter escolhido";
+		mes "isso - com certeza vou gostar.";
+		next;
+		mes "[Tausupa]";
+		mes "Você poderia, por favor, expressar meu";
+		mes "obrigado aos meus amigos, ^3355FFRochito^000000,";
+		mes "e ^3355FFRockha^000000? ";
+		mes "faz muito tempo que não os vejo, mas";
+		mes "Espero que eu tenha a chance de";
+		mes "visitá-los em breve.";
+		set dmdswrd_Q,4;
+		break;
+	case 4:
+		mes "[Tausupa]";
+		mes "Você poderia, por favor, expressar meu";
+		mes "obrigado aos meus amigos, ^3355FFRochito^000000,";
+		mes "e ^3355FFRockha^000000? ";
+		mes "faz muito tempo que não os vejo, mas";
+		mes "Espero que eu tenha a chance de";
+		mes "visitá-los em breve.";
+		break;
+	default:
+		mes "[Tausupa]";
+		mes "Saudações, aventureiro,";
+		mes "Eu sou Tausupa, o Chefe de";
+		mes "Comodo, uma cidade famosa pela sua beleza e vida noturna. ";
+		mes "aproveite sua estadia, esteja você em busca de emoção ou relaxamento ~";
+		next;
+		switch(select("Sobre o Casino:Sobre Banished Witch:Cancelar")) {
+		case 1:
+			mes "[Tausupa]";
+			mes "Ah sim, Comodo é o mundo";
+			mes "famoso por seu cassino. ";
+			mes "há muitos jogos que você pode";
+			mes "aproveite, mas você precisará usar";
+			mes "o sistema especial de conversão e moeda Eulwo do Casino...";
+			break;
+		case 2:
+			switch (dmdswrd_Q) {
+			case 0:
+				mes "[Tausupa]";
+				mes "Bruxa banida...?";
+				mes "Ah ha ha, não se preocupe,";
+				mes "meu amigo, isso é apenas";
+				mes "uma história muito antiga. ";
+				mes "sua preocupação...";
+				break;
+			case 1:
+				mes "[Tausupa]";
+				mes "Ah, a julgar pelo cheiro";
+				mes "de carne de churrasco em suas roupas,";
+				mes "Eu estou supondo que você encontrou";
+				mes "Rochito nos acampamentos,";
+				mes "certo? ";
+				next;
+				mes "[Tausupa]";
+				mes "Eu não gostaria de nada melhor";
+				mes "do que me juntar a eles, mas devo";
+				mes "fique aqui. ";
+				mes "que ela não revive usando o poder da minha espada para suprimi-la.";
+				next;
+				mes "[Tausupa]";
+				mes "Embora eu planejasse ver";
+				mes "hoje, meus deveres devem";
+				mes "tenha prioridade. ";
+				mes "leve esse tempero para o Rochito";
+				mes "e deixá-lo saber que eu não posso";
+				mes "venha, e que eu sinto muito...?";
+				next;
+				mes "^3355FFVocê recebeu";
+				mes "o Koseráserá";
+				mes "tempero do Chefe.^000000";
+				next;
+				mes "[Tausupa]";
+				mes "Muito obrigado...";
+				mes "Eu entendo que meu";
+				mes "amigos não podem começar o";
+				mes "churrasco sem Comodo's";
+				mes "tempero mundialmente famoso...";
+				set dmdswrd_Q,2;
+				break;
+			case 2:
+				mes "[Tausupa]";
+				mes "Por favor, leve este especial";
+				mes "Tempero Koserserah para";
+				mes "meu amigo ^3355FFRochito^000000 no";
+				mes "acampamento de churrasco. ";
+				mes "novamente por sua ajuda, aventureiro.";
+				break;
+			}
+			break;
+		case 3:
+			mes "[Tausupa]";
+			mes "Talvez você não possa dizer porque";
+			mes "da maneira como a luz reflete,";
+			mes "mas o Comodo é realmente construído";
+			mes "dentro de uma enorme caverna, dando a";
+			mes "ilusão de uma noite eterna.";
+			mes "É muito lindo, sério...";
+			next;
+			mes "[Tausupa]";
+			mes "As pessoas vêm de todo";
+			mes "o mundo para experimentar";
+			mes "emoção e beleza de";
+			mes "nossa pequena vila única.";
+			mes "Nós nos tornamos bastante";
+			mes "a atração turística ~";
+			break;
+		}
+		break;
+	}
+	close;
+}
+
+comodo,88,97,4	script	Toruna#cmd	109,{
+	mes "[Toruna]";
+	mes "Quando penso nisso,";
+	mes "há muitos fascinantes";
+	mes "fatos sobre Comodo. ";
+	mes "você acredita nesta cidade inteira";
+	mes "é construído dentro de uma caverna natural?";
+	next;
+	switch(select("Essa caverna é enorme!:Esse lugar com certeza é estranho...:Cancelar")) {
+	case 1:
+		mes "[Toruna]";
+		mes "Oh, esta é uma caverna enorme,";
+		mes "mas não é impossível para";
+		mes "natureza para criar algo";
+		mes "deste tamanho e escala, se fornecido";
+		mes "milhares, talvez até milhões";
+		mes "de anos. ";
+		next;
+		mes "[Toruna]";
+		mes "Agora, a água é conhecida como";
+		mes "um solvente universal: correr";
+		mes "a água abrirá seu próprio caminho";
+		mes "no rock, com tempo suficiente.";
+		mes "Agora, tenha em mente que isso";
+		mes "caverna já foi calcário sólido.";
+		next;
+		mes "[Toruna]";
+		mes "Anos e anos de corrida";
+		mes "água das chuvas e do";
+		mes "lençol freático quebrou";
+		mes "este bolsão gigante de calcário,";
+		mes "limpando este enorme e aberto";
+		mes "área, a Caverna Comodo.";
+		next;
+		mes "[Toruna]";
+		mes "Isso pode parecer incrédulo,";
+		mes "mas as rachaduras no calcário crescem";
+		mes "em falhas, então lacunas espaçosas";
+		mes "ao longo de anos e anos de erosão. ";
+		mes "incrível? ";
+		break;
+	case 2:
+		switch (dmdswrd_Q) {
+		case 5:
+			mes "[Toruna]";
+			mes "Sim, isso é bastante";
+			mes "peculiar. ";
+			mes "estranho é esse boato que eu tenho";
+			mes "tenho ouvido falar. ";
+			next;
+			mes "[Toruna]";
+			mes "É essa lenda urbana";
+			mes "sobre este magnífico queijo";
+			mes "que você só encontra no Comodo. ";
+			mes "isto. ";
+			mes "para fazer qualquer queijo.";
+			next;
+			mes "[Toruna]";
+			mes "No entanto, há isso";
+			mes "homem estranho que insiste";
+			mes "sobre a sua existência. ";
+			mes "aqui o considero algum";
+			mes "uma espécie de mergulhão comum, mas quem";
+			mes "sabe? ";
+			set dmdswrd_Q,6;
+			next;
+			mes "[Toruna]";
+			mes "Bem, você pode decidir por";
+			mes "você mesmo se ele está desligado";
+			mes "seu roqueiro. ";
+			mes "Eu o vi, ele estava no";
+			mes "Comodo Bar, para que você possa";
+			mes "provavelmente encontrá-lo lá.";
+			break;
+		case 6:
+			mes "[Toruna]";
+			mes "Bem, eu gosto de pensar";
+			mes "Comodo como único. ";
+			mes "realmente estranhos são alguns";
+			mes "os moradores desta área. ";
+			mes "já te contei sobre";
+			mes "homem no Comodo Bar, sim?";
+			next;
+			mes "[Toruna]";
+			mes "Ele continua insistindo";
+			mes "que existe um especial";
+			mes "tipo de queijo em Comodo";
+			mes "que você não pode chegar a lugar nenhum";
+			mes "outro. ";
+			mes "pode valer a pena verificar a afirmação...";
+			break;
+		default:
+			mes "[Toruna]";
+			mes "Ah, você sabia disso";
+			mes "antes de ser um exótico";
+			mes "vila de emoção e";
+			mes "lazer, Comodo já foi";
+			mes "um refúgio para criaturas malignas, governado por uma bruxa chamada Meropusum?";
+			next;
+			mes "[Toruna]";
+			mes "Esta bruxa ficou adormecida por";
+			mes "anos até que ela foi acordada";
+			mes "de alguma forma, anos atrás. ";
+			mes "uma enorme ameaça para o povo, mas então ela foi finalmente derrotada";
+			mes "na famosa Guerra da Bruxa.";
+			next;
+			mes "[Toruna]";
+			mes "Um dos heróis disso";
+			mes "a guerra tornou-se o atual chefe";
+			mes "desta aldeia, e foi";
+			mes "através de sua liderança que";
+			mes "Comodo cresceu e se tornou um próspero";
+			mes "atração turística.";
+			next;
+			mes "[Toruna]";
+			mes "No entanto, a ameaça de";
+			mes "Meropusum ainda existe,";
+			mes "então eu teria cuidado quando";
+			mes "explorando o desabitado";
+			mes "áreas da região de Comodo.";
+			break;
+		}
+		break;
+	case 3:
+		mes "[Toruna]";
+		mes "Há muito o que fazer";
+		mes "nesta cidade de Comodo,";
+		mes "bem como muito para aprender";
+		mes "sobre isso. ";
+		mes "visitando esta cidade exótica...";
+		break;
+	}
+	close;
+}
+
+comodo,164,291,4	script	Rakusa#cmd	73,{
+	switch (dmdswrd_Q) {
+	case 6:
+		mes "[Rakusa]";
+		mes "Veja aquele cara sentado";
+		mes "lá? ";
+		mes "é falar sobre Queijo Comodo,";
+		mes "apenas resmungando bobagens sobre";
+		mes "seus sabores incríveis o dia todo";
+		mes "longo. ";
+		next;
+		mes "[Rakusa]";
+		mes "Primeiro de tudo, você precisa";
+		mes "maldito leite para fazer qualquer";
+		mes "queijo. ";
+		mes "por aqui? ";
+		mes "então! ";
+		mes "acredita que isso existe...";
+		set dmdswrd_Q,7;
+		break;
+	case 7:
+		mes "[Rakusa]";
+		mes "Caramba! ";
+		mes "que a ideia do Comodo ainda";
+		mes "comer um queijo é uma loucura, mas";
+		mes "aquele cara falando ficou";
+		mes "estou curioso agora! ";
+		mes "existir? ";
+		break;
+	default:
+		mes "[Rakusa]";
+		mes "Você sabe, Comodo tem";
+		mes "reputação de oferecer";
+		mes "recreação de alta classe, então";
+		mes "as pessoas esquecem que nós realmente";
+		mes "tem duas masmorras perigosas.";
+		next;
+		mes "[Rakusa]";
+		mes "Vocês, aventureiros, precisam";
+		mes "tenha muito cuidado se você explorar";
+		mes "as cavernas - os monstros lá";
+		mes "são extraordinariamente fortes. ";
+		mes "certeza de que você está bem preparado";
+		mes "antes mesmo de pensar em ir!";
+		break;
+	}
+	close;
+}
+
+comodo,169,284,4	script	Kichiri#cmd	98,{
+	switch (dmdswrd_Q) {
+	case 7:
+		mes "[Kichiri]";
+		mes "Maldito ^3355FFMagatu^000000...!";
+		mes "Ele pode falar sobre mais alguma coisa";
+		mes "além do queijo Comodo?";
+		mes "Não vejo por que ele está tão animado";
+		mes "sobre as coisas! ";
+		mes "é apenas uma história de uma velha esposa.";
+		next;
+		mes "[Kichiri]";
+		mes "Você faria";
+		mes "me um favor e receba";
+		mes "Magatu calar a boca?";
+		mes "Eu só quero beber";
+		mes "meu álcool em paz!";
+		set dmdswrd_Q,8;
+		break;
+	case 8:
+		mes "[Kichiri]";
+		mes "Caramba! ";
+		mes "me deixou pensando! ";
+		mes "só porque eu nunca vi";
+		mes "Queijo Comodo não significa";
+		mes "isso não existe, certo? ";
+		break;
+	default:
+		mes "[Kichiri]";
+		mes "Há mais a fazer do que";
+		mes "jogos de azar em Comodo, você";
+		mes "saber. ";
+		mes "para assistir os dançarinos";
+		mes "palco no meio do";
+		mes "Vila. ";
+		next;
+		mes "[Kichiri]";
+		mes "Ouvi dizer que a Dança";
+		mes "Academia só aceita mulheres";
+		mes "Arqueiros se tornarão prospectivos";
+		mes "Dançarinos. ";
+		mes "sentido - eles são tonificados e adequados,";
+		mes "mas também não é musculoso...";
+		break;
+	}
+	close;
+}
+
+comodo,163,280,4	script	Magatu#cmd	55,{
+	switch (dmdswrd_Q) {
+	case 8:
+		mes "[Magatu]";
+		mes "Queijo Comodo...";
+		mes "Realmente existe...!";
+		mes "E estou tão perto de";
+		mes "tendo a prova! ";
+		mes "Esse olhar em seus olhos...";
+		mes "Você realmente acredita em mim!";
+		next;
+		mes "[Magatu]";
+		mes "Finalmente, não só";
+		mes "alguém que acredita em mim,";
+		mes "mas ainda por cima um aventureiro!";
+		mes "Ótimo, isso é perfeito! ";
+		mes "ouça, você quer saber mais";
+		mes "sobre o Queijo Comodo, certo?";
+		next;
+		mes "[Magatu]";
+		mes "Bem, eu sei";
+		mes "alguém que conhece alguém";
+		mes "isso pode ser capaz de lhe dar";
+		mes "a chance de experimentar você mesmo! ";
+		mes "encontre-o no Cassino Comodo.";
+		next;
+		mes "[Magatu]";
+		mes "Ah, aqui, antes que eu esqueça,";
+		mes "pegue minha tampa da garrafa da sorte!";
+		mes "Mostre isso para Manzi e ele";
+		mes "saiba que eu te enviei, e que";
+		mes "você quer saber mais sobre";
+		mes "o indescritível queijo Comodo.";
+		next;
+		mes "^3355FFVocê recebeu";
+		mes "A garrafa da sorte do Magatu";
+		mes "boné para apresentar a Manzi.";
+		set dmdswrd_Q,9;
+		break;
+	case 9:
+		mes "[Magatu]";
+		mes "Ah, não se esqueça de";
+		mes "mostre minha tampa da garrafa da sorte";
+		mes "para Manzi, ok? ";
+		mes "ele dentro do Comodo's Casino~";
+		mes "Boa sorte e espero que você consiga";
+		mes "para experimentar aquele queijo Comodo ~";
+		break;
+	default:
+		mes "[Magatu]";
+		mes "É verdade, realmente";
+		mes "existe... Queijo Comodo!";
+		mes "Seu sabor deve ser incomparavelmente";
+		mes "delicioso se os aventureiros tiverem";
+		mes "procurado para obtê-lo por tanto";
+		mes "muitas gerações...";
+		break;
+	}
+	close;
+}
+
+cmd_in02,189,99,4	script	Manzi#cmd	85,{
+	switch (dmdswrd_Q) {
+	case 9:
+		mes "["+strcharinfo(0)+"]";
+		mes "Desculpe, mas estou";
+		mes "procurando por alguém";
+		mes "chamado Manzi. ";
+		mes "sabe onde posso encontrá-lo?";
+		next;
+		mes "[Manzi]";
+		mes "Ei cara, estou bem aqui.";
+		mes "Então, o que exatamente você";
+		mes "querer? ";
+		mes "problemas ou algo assim, não é?";
+		next;
+		mes "^3355FFVocê dá a Manzi o";
+		mes "tampa de garrafa da sorte que você";
+		mes "recebido de Magatsu.^000000";
+		next;
+		mes "[Manzi]";
+		mes "Uau, Magatsu te deu";
+		mes "esse? ";
+		mes "estar procurando por esse Comodo";
+		mes "Queijo de que ele fica falando.";
+		mes "Tudo bem, eu devo um favor a ele, então";
+		mes "Eu vou te dizer com quem falar...";
+		next;
+		mes "[Manzi]";
+		mes "Do Cassino, vá para o norte";
+		mes "em direção ao centro do";
+		mes "aldeia, e depois olhar para";
+		mes "à direita onde você verá";
+		mes "o Palco de Dança. ";
+		mes "esta velha ali.";
+		next;
+		mes "[Manzi]";
+		mes "Não se deixe enganar pelo";
+		mes "como ela parece - tão velha";
+		mes "senhora é uma das Comodo";
+		mes "anciãos mais sábios. ";
+		mes "sobre o queijo e";
+		mes "diga a ela que eu te enviei ~";
+		next;
+		mes "[Manzi]";
+		mes "Ah, ela não vai te levar";
+		mes "muito a sério, a menos que você";
+		mes "mostre isso a ela. ";
+		mes "você é a tampa da garrafa da sorte, então vou te dar minha moeda da sorte!";
+		mes "A velha vai reconhecer isso ~";
+		next;
+		set dmdswrd_Q,10;
+		mes "^3355FFVocê recebeu o de Manzi";
+		mes "''moeda da sorte.'' Estranhamente";
+		mes "chega, ambos os lados";
+		mes "são cabeças.";
+		break;
+	case 10:
+		mes "[Manzi]";
+		mes "Procure a velha";
+		mes "perto do Palco de Dança aqui";
+		mes "em Comodo e pergunte a ela sobre";
+		mes "Queijo Comodo, certo? ";
+		mes "e tente não insultá-la, ok?";
+		mes "Isso vai me fazer ficar mal~";
+		break;
+	default:
+		if (Class == Job_Novice) {
+			mes "[Manzi]";
+			mes "O que...?";
+			mes "Como é uma criança";
+			mes "você está fazendo em um cassino?";
+			mes "Claro, não é contra o";
+			mes "regras, mas acho que você deveria";
+			mes "saia e jogue em outro lugar!";
+			close;
+		}
+		mes "[Manzi]";
+		mes "Ei, divirta-se";
+		mes "o Cassino, mas não vá fanfarrão";
+		mes "selvagem. ";
+		mes "aqui com a camisa nas costas, sabe? ";
+		mes "até sair daqui com isso...";
+		break;
+	}
+	close;
+}
+
+comodo,187,153,4	script	Hullaris#cmd	701,{
+	switch (dmdswrd_Q) {
+	case 10:
+		mes "[Hullaris]";
+		mes "Hula~hula~hula~";
+		mes "Amar juntos, amar juntos,";
+		mes "estamos curtindo um pouco mais ~";
+		mes "Amar juntos, amar juntos,";
+		mes "estamos morando no chão~";
+		next;
+		if (select("Presente Moeda de Muzi: Hum... Queijo Comodo?") == 1) {
+			mes "^3355FFVocê apresenta a sorte de Muzi";
+			mes "moeda para a velha.^000000";
+			next;
+			mes "[Hullaris]";
+			mes "Amor! ";
+			mes "Amor juntos ~";
+			mes "Amor! ";
+			mes "Amor juntos-hm?";
+			mes "Oh, isso é hum, Muzi's";
+			mes "moeda de trapaça, não é?";
+			next;
+			mes "[Hullaris]";
+			mes "Ele sempre disse que ele";
+			mes "pode enviar alguém com";
+			mes "aquela moeda para mim como um sinal";
+			mes "de sua confiança naquela pessoa.";
+			mes "Suponho, então, que estou";
+			mes "a seu serviço. ";
+			next;
+			mes "[Hullaris]";
+			mes "O que exatamente você precisava?";
+			mes "Eu estou supondo que você veio";
+			mes "aqui para me perguntar uma coisa";
+			mes "sobre Comodo. ";
+			mes "anciãos mais velhos, eu sei mais";
+			mes "sobre esta aldeia do que a maioria...";
+			next;
+			mes "["+strcharinfo(0)+"]";
+			mes "Na verdade, eu estava esperando";
+			mes "você pode me contar sobre";
+			mes "Queijo Comodo. ";
+			mes "existe, eu gostaria de saber";
+			mes "onde posso conseguir alguns.";
+			next;
+			mes "[Hullaris]";
+			mes "Oh aquilo. ";
+			mes "Queijo Comodo existe,";
+			mes "e é tão precioso quanto o";
+			mes "dizem as lendas. ";
+			mes "não é um verdadeiro queijo, embora você possa pensar assim pelo seu sabor.";
+			next;
+			mes "[Hullaris]";
+			mes "Sim, é muito raro, natural";
+			mes "substância e não é feito de";
+			mes "leite de vaca ou cabra ou qualquer coisa";
+			mes "assim. ";
+			mes "O queijo não é apenas comida.";
+			mes "Não, é muito mais...";
+			next;
+			mes "[Hullaris]";
+			mes "Aqueles que comem Comodo";
+			mes "Queijo descobre que seu";
+			mes "o verdadeiro potencial é desbloqueado.";
+			mes "O verdadeiro nome do Queijo Comodo";
+			mes "é a ^3355FFPedra do Despertar^000000. ";
+			mes "isso não parece impressionante?";
+			next;
+			mes "[Hullaris]";
+			mes "A Pedra do Despertar é";
+			mes "uma das chaves para obter";
+			mes "algum tipo de poder proibido.";
+			mes "É por isso que apenas os mais corajosos";
+			mes "aventureiros podem esperar o";
+			mes "chance de comê-lo.";
+			next;
+			mes "[Hullaris]";
+			mes "Você realmente deseja";
+			mes "coma o Queijo Comodo e";
+			mes "veja onde seu poder pode levar";
+			mes "você? ";
+			next;
+			mes "[Hullaris]";
+			mes "Quando você decidir";
+			mes "para perseguir o Despertar";
+			mes "Stone, procure um homem chamado";
+			mes "^3355FFNigirboran^000000. ";
+			mes "se você é digno";
+			mes "do Queijo Comodo...";
+			set dmdswrd_Q,11;
+			next;
+			mes "[Hullaris]";
+			mes "Agora você deveria estar";
+			mes "capaz de encontrar Nigiroban";
+			mes "treinando em algum lugar em um";
+			mes "das Cavernas da Masmorra de Comodo.";
+			mes "Vou mandar uma mensagem para ele";
+			mes "deixe ele saber que você está vindo...";
+			close;
+		}
+		mes "[Hullaris]";
+		mes "Amor! ";
+		mes "Amor juntos ~";
+		mes "Amor! ";
+		mes "Amor juntos-hm?";
+		if (Sex == SEX_MALE) {
+			mes "Garoto, você está arruinando";
+			mes "meu ritmo! ";
+		}
+		else {
+			mes "Garota, você está arruinando";
+			mes "meu ritmo! ";
+		}
+		break;
+	case 11:
+		mes "[Hullaris]";
+		mes "Você realmente deseja";
+		mes "coma o Queijo Comodo e";
+		mes "veja onde seu poder pode levar";
+		mes "você? ";
+		next;
+		mes "[Hullaris]";
+		mes "Quando você decidir";
+		mes "para perseguir o Despertar";
+		mes "Stone, procure um homem chamado";
+		mes "^3355FFNigirboran^000000. ";
+		mes "se você é digno";
+		mes "do Queijo Comodo...";
+		next;
+		mes "[Hullaris]";
+		mes "Agora você deveria estar";
+		mes "capaz de encontrar Nigiroban";
+		mes "treinando em algum lugar em um";
+		mes "das Cavernas da Masmorra de Comodo.";
+		mes "Vou mandar uma mensagem para ele";
+		mes "deixe ele saber que você está vindo...";
+		break;
+	case 12:
+		mes "[Hullaris]";
+		mes "Hum? ";
+		mes "teste de Nigirboran, tem";
+		mes "você? ";
+		mes "até que você consiga passar. ";
+		mes "significa sua morte, você sabe.";
+		break;
+	case 13:
+		mes "[Hullaris]";
+		mes "Ah, você voltou.";
+		mes "Então você conseguiu passar";
+		mes "O pequeno teste de Nigirboran? ";
+		mes "aventureiro como você deveria";
+		mes "poder não ter problemas";
+		mes "com isso. ";
+		next;
+		mes "^3355FFVocê apresenta o token que";
+		mes "significa que você passou";
+		mes "Teste de Nigirboran para Hullaris.^000000";
+		next;
+		mes "[Hullaris]";
+		mes "Ah, eu estava certo, afinal.";
+		mes "Fico feliz em ver que você";
+		mes "provou ser digno de comer isso";
+		mes "Queijo Comodo ou mais";
+		mes "com precisão, o Despertar";
+		mes "Pedra. ";
+		next;
+		mes "[Hullaris]";
+		mes "Aí está você...";
+		mes "Apenas corajoso e digno";
+		mes "aventureiros estão autorizados a";
+		mes "coma isso. ";
+		mes "comer Queijo Comodo é";
+		mes "uma honra rara e cobiçada!";
+		next;
+		mes "^3355FFHullaris com cuidado";
+		mes "te entrega um prato de";
+		mes "Queijo Comodo. ";
+		mes "o sabor rico e suave do";
+		mes "cada pedaço...";
+		mes "É sublimemente delicioso!^000000";
+		next;
+		mes "^3355FFDepois de terminar de comer o";
+		mes "Queijo Comodo, você sente";
+		mes "uma energia sutil, mas definida";
+		mes "pulsando suavemente através de seu";
+		mes "corpo. ";
+		mes "confiança tranquila de ser capaz";
+		mes "para realizar qualquer coisa.^000000";
+		set dmdswrd_Q,14;
+		next;
+		mes "[Hullaris]";
+		mes "Hahahah! ";
+		mes "Você acha que? ";
+		mes "não é? ";
+		mes "delicioso é isso. ";
+		mes "os alimentos nunca podem corresponder ao";
+		mes "qualidade do queijo Comodo ~";
+		next;
+		mes "[Hullaris]";
+		mes "Agora, eu sei que você provavelmente";
+		mes "tem coisas para fazer, mas pode";
+		mes "Sugiro que você visite o";
+		mes "cidade de Al De Baran? ";
+		mes "um homem lá que pode te dizer";
+		mes "sobre a Ardósia de Muriniel.";
+		next;
+		mes "[Hullaris]";
+		mes "Você já comeu o";
+		mes "Pedra do Despertar, então você pode";
+		mes "bem como obter as outras coisas";
+		mes "que você precisa para ganhar um dos";
+		mes "as três espadas proibidas.";
+		mes "É apenas um pensamento...";
+		break;
+	default:
+		mes "[Hullaris]";
+		mes "Ah... Dança.";
+		mes "É mais do que apenas um formulário";
+		mes "de entretenimento. ";
+		mes "é sedução, é batalha,";
+		mes "e é amor. ";
+		mes "A dançarina pode entender isso...";
+		next;
+		mes "[Hullaris]";
+		mes "Você sabe, Comodo é famoso";
+		mes "pela sua Academia de Dança e pelo";
+		mes "Dançarinos que foram treinados";
+		mes "lá. ";
+		mes "Arqueiros, por que vocês não sugerem";
+		mes "visitando a escola para eles?";
+		break;
+	}
+	close;
+}
+
+beach_dun3,30,220,4	script	Nigirboran#cmd	704,{
+	switch (dmdswrd_Q) {
+	case 11:
+		mes "[Nigirboran]";
+		mes "Você é aquele que";
+		mes "Hullaris enviado? ";
+		mes "aqui para ganhar o direito de";
+		mes "coma a Pedra do Despertar...";
+		mes "Ou Queijo Comodo, como é";
+		mes "mais comumente conhecido.";
+		next;
+		mes "[Nigirboran]";
+		mes "Sim, tem muitos nomes...";
+		mes "Mas é mais do que um mero";
+		mes "deleite saboroso - o Despertar";
+		mes "A Stone pode ajudá-lo a acessar";
+		mes "seu verdadeiro potencial. ";
+		next;
+		mes "[Nigirboran]";
+		mes "Se sua mente e corpo";
+		mes "não são suficientemente treinados,";
+		mes "seu corpo irá rejeitar o";
+		mes "Queijo Comodo e você";
+		mes "morreria de forma lenta, dolorosa,";
+		mes "mas uma morte incrivelmente saborosa.";
+		next;
+		mes "[Nigirboran]";
+		mes "Mas tenho certeza que isso não acontecerá";
+		mes "Aconteceu com você! ";
+		mes "enviou você para mim, você deve";
+		mes "tem uma chance de lutar, certo?";
+		mes "Então volte quando estiver";
+		mes "pronto para o teste ~";
+		set dmdswrd_Q,12;
+		break;
+	case 12:
+		mes "[Nigirboran]";
+		mes "Bom, você voltou--";
+		mes "Eu não esperaria nada menos";
+		mes "um aventureiro corajoso e ousado.";
+		mes "Agora fique quieto enquanto eu avalio seu";
+		mes "energias internas do corpo e ver se ele consegue lidar com o Queijo Comodo...";
+		next;
+		mes "[Nigirboran]";
+		mes "Tudo bem.";
+		mes "Você está pronto?";
+		mes "Agora... Prepare-se!";
+		mes "Heeeeyah! ";
+		next;
+		if (JobLevel > 20 && BaseLevel > 25) {
+			switch(rand(1,3)) {
+			case 1:
+				mes "^3355FFA poderosa corrente de";
+				mes "o calor imediatamente aumenta";
+				mes "através do seu corpo da cabeça";
+				mes "toe, e você luta para";
+				mes "evite se contorcer.^000000";
+				next;
+				mes "[Nigirboran]";
+				mes "Hmm... Seu corpo parece";
+				mes "bem treinado, mas sua mente";
+				mes "ainda está se recuperando do teste.";
+				mes "Se você comeu o queijo Comodo";
+				mes "agora, você seria reduzido a um";
+				mes "incoerente inválido...";
+				next;
+				mes "[Nigirboran]";
+				mes "Vá e treine você mesmo";
+				mes "um pouco mais e tente";
+				mes "para melhorar a sua mente";
+				mes "sensação de clareza. ";
+				mes "você se sente pronto, venha";
+				mes "de volta para mim mais uma vez.";
+				break;
+			case 2:
+				mes "^3355FFA poderosa corrente de";
+				mes "o calor imediatamente aumenta";
+				mes "através do seu corpo da cabeça";
+				mes "toe, e você luta para";
+				mes "evite se contorcer.^000000";
+				next;
+				mes "[Nigirboran]";
+				mes "Huh. ";
+				mes "forte, mas seu espírito";
+				mes "é fraco. ";
+				mes "treinamento. ";
+				mes "o Queijo Comodo agora...";
+				mes "Você evaporaria.";
+				next;
+				mes "[Nigirboran]";
+				mes "Mas não desanime,";
+				mes "é muito cedo para você";
+				mes "desistir. ";
+				mes "treinar um pouco mais, e então";
+				mes "volte para mim quando você";
+				mes "sinta que está pronto.";
+				break;
+			case 3:
+				mes "^3355FFA poderosa corrente de";
+				mes "o calor imediatamente aumenta";
+				mes "através do seu corpo da cabeça";
+				mes "toe, e você luta para";
+				mes "evite se contorcer.^000000";
+				next;
+				mes "[Nigirboran]";
+				mes "Sim Sim...";
+				mes "Sua mente, alma e corpo";
+				mes "parece bem treinado. ";
+				mes "pode comer o queijo Comodo";
+				mes "sem qualquer efeito nocivo. ";
+				mes "bom, acho que você está pronto.";
+				next;
+				mes "[Nigirboran]";
+				mes "Aqui, pegue este pequeno";
+				mes "token para Hullaris. ";
+				mes "vai provar a ela que";
+				mes "você passou meu pouco";
+				mes "teste. ";
+				next;
+				mes "^3355FFVocê recebeu";
+				mes "um botão de token para";
+				mes "presente para Hullaris";
+				mes "de Nigirboran.^000000";
+				set dmdswrd_Q,13;
+				next;
+				mes "[Nigirboran]";
+				mes "Ah, quase esqueci";
+				mes "para perguntar a você. ";
+				mes "procure o Queijo Comodo,";
+				mes "ou a Pedra do Despertar?";
+				mes "Você está procurando um dos";
+				mes "as 3 espadas proibidas?";
+				next;
+				mes "[Nigirboran]";
+				mes "Eu não sei todos os detalhes,";
+				mes "mas eu sei que você vai precisar";
+				mes "a ^3355FFPedra do Despertar^000000, o ^3355FFLivro^000000";
+				mes "^3355FFdo Cordeiro^000000 e ^3355FFSlate de^000000";
+				mes "^3355FFMurniel^000000 para ter a chance de obter uma dessas espadas.";
+				next;
+				mes "[Nigirboran]";
+				mes "Vamos ver... Depois de você";
+				mes "fale com Hullaris, você";
+				mes "deveria ir para Al De Baran";
+				mes "e encontrar alguém chamado";
+				mes "^3355FFMeteurengut^000000 para saber mais";
+				mes "a ardósia de Muriniel.";
+				next;
+				mes "[Nigirboran]";
+				mes "De qualquer forma, desejo a você";
+				mes "boa sorte em";
+				mes "realizando o seu";
+				mes "metas. ";
+				break;
+			}
+			close;
+		}
+		else {
+			mes "^3355FFA torrente de calor";
+			mes "grosso através de seu";
+			mes "corpo inteiro e você";
+			mes "imediatamente desmaiar de";
+			mes "a onda de energia.^000000";
+			next;
+			mes "[Nigirboran]";
+			mes "Bondade...!";
+			mes "Sua mente e corpo";
+			mes "são muito fracos para";
+			mes "lidar com o queijo Comodo";
+			mes "agora. ";
+			mes "treine muito mais...";
+			next;
+			mes "[Nigirboran]";
+			mes "Depois de desenvolver";
+			mes "um pouco mais de força, venha";
+			mes "de volta para mim. ";
+			mes "esse pequeno teste a qualquer momento~";
+			close;
+		}
+		break;
+	case 13:
+		mes "[Nigirboran]";
+		mes "Eu não sei todos os detalhes,";
+		mes "mas eu sei que você vai precisar";
+		mes "a ^3355FFPedra do Despertar^000000, o ^3355FFLivro^000000";
+		mes "^3355FFdo Cordeiro^000000 e ^3355FFSlate de^000000";
+		mes "^3355FFMurniel^000000 para ter uma chance";
+		mes "de obter uma espada proibida.";
+		next;
+		mes "[Nigirboran]";
+		mes "Vamos ver... Depois de você";
+		mes "fale com Hullaris, você";
+		mes "deveria ir para Al De Baran";
+		mes "e encontrar alguém chamado";
+		mes "^3355FFMeteurengut^000000 para saber mais";
+		mes "a ardósia de Muriniel.";
+		next;
+		mes "[Nigirboran]";
+		mes "De qualquer forma, desejo a você";
+		mes "boa sorte em";
+		mes "realizando o seu";
+		mes "metas. ";
+		break;
+	case 14:
+		mes "[Nigirboran]";
+		mes "Em algum lugar em ^3355FFAl De Baran^000000,";
+		mes "você encontrará um homem chamado";
+		mes "^3355FFMeteurengut^000000. ";
+		mes "capaz de ajudá-lo a aprender mais";
+		mes "sobre a Ardósia de Muriniel.";
+		break;
+	default:
+		mes "[Nigirboran]";
+		mes "Ah... Olá.";
+		mes "Eu acho que você poderia dizer";
+		mes "que eu sou algo";
+		mes "um treinador aqui em Comodo.";
+		mes "Meu nome é Nigirboran.";
+		mes "Eu sei que é difícil dizer...";
+		next;
+		mes "[Nigirboran]";
+		mes "Se Hullaris não enviou";
+		mes "você, então eu não acho";
+		mes "Eu posso ser de alguma ajuda real";
+		mes "para você. ";
+		mes "o caso, então eu apreciaria";
+		mes "é se você me deixar treinar...";
+		break;
+	}
+	close;
+}
+
+aldebaran,44,53,4	script	Meteurengut#cmd	64,{
+	switch (dmdswrd_Q) {
+	case 14:
+		mes "[Meteurengut]";
+		mes "Ah. ";
+		mes "pelo brilho de alguém que tem";
+		mes "comido da Pedra do Despertar.";
+		mes "Só isso pode provar o seu valor";
+		mes "como um aventureiro, mas você está";
+		mes "livre de seus desejos egoístas?";
+		next;
+		mes "[Meteurengut]";
+		mes "Mesmo o menor";
+		mes "mancha de ganância ou ciúme";
+		mes "pode revelar-se um corruptor";
+		mes "influência quando o poder não é";
+		mes "temperado pela sabedoria e";
+		mes "sentimento de verdadeira compaixão.";
+		next;
+		mes "[Meteurengut]";
+		mes "Outros como você vieram";
+		mes "diante de mim na esperança de aprender";
+		mes "sobre a Ardósia de Muriniel e";
+		mes "eventualmente obtendo um dos";
+		mes "três lâminas amaldiçoadas. ";
+		next;
+		mes "[Meteurengut]";
+		mes "A Ardósia de Muriniel é uma";
+		mes "artefato alquímico que pode";
+		mes "ajude alguém a acessar o inimaginável";
+		mes "poder, originalmente desenvolvido";
+		mes "por um mestre da alquimia que foi";
+		mes "conhecido como Rikaseh Sumarecon.";
+		next;
+		mes "[Meteurengut]";
+		mes "Sumarecon teve dois aprendizes,";
+		mes "e depois de ter transmitido os segredos da Ardósia de Muriniel";
+		mes "para apenas um de seus protegidos, seu outro protegido o matou e o";
+		mes "outro aluno por ciúme.";
+		next;
+		mes "[Meteurengut]";
+		mes "Os segredos do Sumarecon eram";
+		mes "pensei que estava perdido para sempre...";
+		mes "Felizmente, anos depois, um";
+		mes "Alquimista chamado Kuprite encontrado";
+		mes "Documentos secretos da Sumarecon";
+		mes "contendo seu conhecimento.";
+		next;
+		mes "[Meteurengut]";
+		mes "Kuprite então ensinou estes";
+		mes "segredos para um seleto grupo de";
+		mes "Estudantes de alquimia, um dos quais";
+		mes "foi meu ancestral, Burukesaemu.";
+		mes "E então, por causa da minha linhagem,";
+		mes "Eu aprendi esses segredos.";
+		next;
+		mes "[Meteurengut]";
+		mes "Se você deseja que eu";
+		mes "reproduzir a ardósia de";
+		mes "Muriniel para você então";
+		mes "por favor me traga os itens";
+		mes "Eu preciso completar o";
+		mes "procedimento alquímico secreto.";
+		next;
+		mes "[Meteurengut]";
+		mes "vou precisar";
+		mes "^3355FF1 Safira^000000,";
+		mes "^3355FF1 Pedra Brilhante^000000,";
+		mes "^3355FF1 Elunium bruto^000000,";
+		mes "^3355FF1 Esmeralda^000000, e";
+		mes "^3355FF1 Pedra preciosa azul^000000.";
+		set dmdswrd_Q,15;
+		break;
+	case 15:
+		if (countitem(717) > 0 && countitem(726) > 0 && countitem(721) > 0 && countitem(640) > 0 && countitem(757) > 0) {
+			mes "[Meteurengut]";
+			mes "Você já encontrou";
+			mes "todos os itens que preciso";
+			mes "criar a Ardósia de Muriniel?";
+			mes "Fantástico. ";
+			mes "nisto. ";
+			mes "mais uma coisa que devo pedir a você.";
+			delitem 717,1; //Blue_Gemstone
+			delitem 726,1; //Blue_Jewel
+			delitem 721,1; //Azure_Jewel
+			delitem 640,1; //Shining_Stone
+			delitem 757,1; //Elunium_Stone
+			set dmdswrd_Q,16;
+			next;
+			mes "[Meteurengut]";
+			mes "Você poderia por favor me trazer";
+			mes "^3355FF1 Teia de aranha^000000? ";
+			mes "eles matando aranhas em";
+			mes "Muriniel Pass, que fica no";
+			mes "caminho para Al De Baran daqui.";
+			next;
+			mes "[Meteurengut]";
+			mes "eu teria pedido por isso";
+			mes "mais cedo, mas preciso me preparar";
+			mes "todas essas pedras, e eu preciso";
+			mes "as teias de aranha mais frescas que posso conseguir.";
+			mes "Vou me certificar de que essas pedras estejam prontas quando você voltar.";
+			close;
+		}
+		mes "[Meteurengut]";
+		mes "Se você deseja que eu";
+		mes "reproduzir a ardósia de";
+		mes "Muriniel para você então";
+		mes "por favor me traga os itens";
+		mes "Eu preciso completar o";
+		mes "procedimento alquímico secreto.";
+		next;
+		mes "[Meteurengut]";
+		mes "vou precisar";
+		mes "^3355FF1 Safira^000000,";
+		mes "^3355FF1 Pedra Brilhante^000000,";
+		mes "^3355FF1 Elunium bruto^000000,";
+		mes "^3355FF1 Esmeralda^000000, e";
+		mes "^3355FF1 Pedra preciosa azul^000000.";
+		break;
+	case 16:
+		if (countitem(1025) > 0) {
+			mes "[Meteurengut]";
+			mes "Vejo que você trouxe";
+			mes "para mim uma teia de aranha. ";
+			mes "acredite, mas é parte integrante";
+			mes "criando a Ardósia de Muriniel.";
+			mes "Agora, se você esperar um momento,";
+			mes "vou completar a lousa...";
+			next;
+			delitem 1025,1; //Spiderweb
+			mes "*^3355FFClang Clang Clang!*";
+			mes "*Zaaaaaaaaaaaaap*";
+			mes "*Ching tink t-t-t-tap*^000000";
+			set dmdswrd_Q,17;
+			next;
+			mes "[Meteurengut]";
+			mes "*Ufa* Acabou.";
+			mes "Por favor, cuide disso";
+			mes "ardósia, e saiba que eu sou";
+			mes "confiando a você um artefato";
+			mes "que pode ajudá-lo a acessar o poder";
+			mes "alem da sua imaginação...";
+			next;
+			mes "^3355FFVocê recebeu";
+			mes "a ardósia de Muriniel.^000000";
+			next;
+			mes "[Meteurengut]";
+			mes "Lá. ";
+			mes "a Pedra do Despertar e você";
+			mes "possuir a Ardósia de Muriniel.";
+			mes "Agora você deve tentar obter o";
+			mes "^3355FFLivro do Cordeiro^000000 se você estiver";
+			mes "em busca de uma espada condenada...";
+			next;
+			mes "[Meteurengut]";
+			mes "Eu sei muito pouco sobre";
+			mes "esse artefato e seus segredos";
+			mes "são tão bem guardados quanto os de";
+			mes "a ardósia de Muriniel. ";
+			mes "Eu sei que um homem em Marrocos pode criar o Livro do Cordeiro...";
+			next;
+			mes "[Meteurengut]";
+			mes "Se esse homem ainda estiver em";
+			mes "Marrocos, então ele provavelmente irá";
+			mes "reconhecer a emanação sutil";
+			mes "da Pedra do Despertar e do";
+			mes "Ardósia de Muriniel de você. ";
+			close;
+		}
+		mes "[Meteurengut]";
+		mes "Ah, você trouxe um";
+		mes "Teia de aranha? ";
+		mes "estranho, mas eu realmente preciso do";
+		mes "energia única encontrada apenas em";
+		mes "teias de aranha frescas para terminar o";
+		mes "Ardósia de Muriniel para você...";
+		break;
+	case 17:
+		mes "[Meteurengut]";
+		mes "Você comeu do";
+		mes "Pedra do Despertar e";
+		mes "agora possui a ardósia de";
+		mes "Muriniel. ";
+		mes "fazer é obter o Livro do";
+		mes "Cordeiro. ";
+		next;
+		mes "[Meteurengut]";
+		mes "Tudo o que posso te dizer é que";
+		mes "deveria haver um homem em";
+		mes "Marrocos que pode criá-lo";
+		mes "para você. ";
+		mes "sinta a Ardósia de Muriniel,";
+		mes "então ele pode te chamar...";
+		break;
+	default:
+		mes "[Meteurengut]";
+		mes "A ^3355FFSlate de Muriniel^000000";
+		mes "é um artefato antigo";
+		mes "que só pode ser criado";
+		mes "pelo poder da Alquimia.";
+		mes "É um dos mais bem guardados";
+		mes "segredos da minha família...";
+		next;
+		mes "[Meteurengut]";
+		mes "Eu sou responsável por proteger";
+		mes "os segredos de sua criação, mas também devo compartilhar o poder";
+		mes "da lousa com aqueles que";
+		mes "provar que são dignos disso.";
+		next;
+		mes "[Meteurengut]";
+		mes "Afinal, o poder é inútil";
+		mes "se nunca for usado. ";
+		mes "se o poder nunca for equilibrado com";
+		mes "sabedoria e compaixão, então";
+		mes "inevitavelmente causará mais danos";
+		mes "do que bom no final...";
+		break;
+	}
+	close;
+}
+
+morocc,201,30,4	script	Zaka#cmd	99,{
+	switch (dmdswrd_Q) {
+	case 17:
+		mes "[Zaka]";
+		mes "...Você aí! ";
+		mes "Sim, eu posso sentir isso de";
+		mes "você... O poder do";
+		mes "Pedra do Despertar... E...";
+		mes "A ardósia de Muriniel?";
+		mes "Finalmente você veio.";
+		next;
+		mes "[Zaka]";
+		mes "Estou plenamente consciente de que apenas";
+		mes "aqueles que procuram possuir um";
+		mes "das espadas condenadas seria";
+		mes "se preocupem em obter";
+		mes "esses itens. ";
+		next;
+		mes "[Zaka]";
+		mes "Eu estive esperando por isso";
+		mes "ansiava pela oportunidade de";
+		mes "crie o Livro do Cordeiro.";
+		mes "Se você realmente quer o livro,";
+		mes "Eu vou te ajudar contanto que";
+		mes "você irá me ajudar.";
+		next;
+		mes "[Zaka]";
+		mes "No entanto, a criação do livro";
+		mes "é um processo complicado e";
+		mes "requer vários estágios de";
+		mes "preparação. ";
+		mes "peço que você me traga os itens";
+		mes "Preciso em lotes separados.";
+		next;
+		mes "[Zaka]";
+		mes "Tudo bem...";
+		mes "O que foi agora?";
+		mes "Ah sim. ";
+		mes "Eu preciso é ^3355FF2 Snake Scales^000000,";
+		mes "então, por favor, traga-os logo.";
+		set dmdswrd_Q,18;
+		break;
+	case 18:
+		if (countitem(926) > 1) {
+			delitem 926,2; //Scale_Of_Snakes
+			set dmdswrd_Q,19;
+			mes "[Zaka]";
+			mes "Ah, você trouxe";
+			mes "as escamas de cobra? ";
+			mes "deixe-me levá-los agora e";
+			mes "começar a trabalhar no Livro de";
+			mes "o cordeiro. ";
+			mes "para me trazer ^3355FF1 Scale Shell^000000.";
+			next;
+			mes "[Zaka]";
+			mes "eu sei que seria mais";
+			mes "conveniente para você se eu dissesse";
+			mes "você tudo que eu precisava em";
+			mes "uma vez, mas na verdade, desta forma";
+			mes "é muito mais conveniente para";
+			mes "meu. ";
+			close;
+		}
+		mes "[Zaka]";
+		mes "A primeira coisa que vou";
+		mes "preciso começar a criar";
+		mes "o Livro do Cordeiro é";
+		mes "^3355FF2 Escamas de cobra^000000. ";
+		mes "para mim assim que você os conseguir,";
+		mes "tudo bem? ";
+		break;
+	case 19:
+		if (countitem(936) > 0) {
+			mes "[Zaka]";
+			mes "Oh legal! ";
+			mes "esta Scale Shell para mim,";
+			mes "certo? ";
+			mes "ajudar a melhorar o livro";
+			mes "durabilidade física, mas";
+			mes "ainda precisa de durabilidade mágica...";
+			next;
+			mes "[Zaka]";
+			mes "Em seguida, você precisa trazer";
+			mes "me ^3355FF1 Concha Brilhante^000000. ";
+			mes "e trazer você para mim antes";
+			mes "Eu termino essa parte do processo, ok? ";
+			mes "você pode levar o seu tempo...";
+			delitem 936,1; //Scales_Shell
+			set dmdswrd_Q,20;
+			close;
+		}
+		mes "[Zaka]";
+		mes "Estarei esperando certo";
+		mes "aqui enquanto você vai e";
+		mes "procure por um ^3355FFScale Shell^000000";
+		mes "que você pode trazer para mim.";
+		mes "Vou precisar disso para";
+		mes "terminar este Livro do Cordeiro.";
+		break;
+	case 20:
+		if (countitem(954) > 0) {
+			mes "[Zaka]";
+			mes "Ah, você chegou bem na hora!";
+			mes "Você tem o Iluminado";
+			mes "Escala? ";
+			mes "é apenas mais um item que";
+			mes "Quero pedir que você me traga:";
+			mes "^3355FF1 Escala fedorenta^000000. ";
+			delitem 954,1; //Shining_Scales
+			set dmdswrd_Q,21;
+			next;
+			mes "[Zaka]";
+			mes "A energia de um Stinky";
+			mes "A escala pode ser usada para";
+			mes "regular o poder de";
+			mes "artefatos incrivelmente potentes.";
+			mes "Sem esse item, o Livro";
+			mes "do Cordeiro não adianta muito...";
+			close;
+		}
+		mes "[Zaka]";
+		mes "Se você quiser que eu";
+		mes "terminar este livro de";
+		mes "o Cordeiro, você precisa";
+		mes "voltar aqui com";
+		mes "^3355FF1 Escala brilhante^000000. ";
+		mes "não há como contornar isso...";
+		break;
+	case 21:
+		if (countitem(959) > 0) {
+			mes "[Zaka]";
+			mes "O que é isso?";
+			mes "Oh, certo. ";
+			mes "traga-me uma escala fedorenta.";
+			mes "Agora posso finalmente concluir";
+			mes "este Livro do Cordeiro! ";
+			mes "estava ansioso por isso...";
+			next;
+			mes "^3355FFZaka conclui";
+			mes "a criação do";
+			mes "Livro do Cordeiro.^000000";
+			delitem 959,1; //Rotten_Scale
+			set dmdswrd_Q,22;
+			next;
+			mes "[Zaka]";
+			mes "O que...?!";
+			mes "É isso? ";
+			mes "está feito. ";
+			mes "bastante anticlimático, mas";
+			mes "finalmente posso ver isso";
+			mes "coisa com meus próprios olhos!";
+			next;
+			mes "[Zaka]";
+			mes "Tudo bem, você comeu do";
+			mes "Pedra do Despertar, obteve o";
+			mes "Ardósia de Muriniel, e agora tem";
+			mes "o Livro do Cordeiro. ";
+			mes "chegando muito perto de possuir";
+			mes "uma das espadas condenadas.";
+			next;
+			mes "[Zaka]";
+			mes "Há homem que você";
+			mes "deve encontrar em Comodo chamado";
+			mes "^3355FFGanhou^000000. ";
+			mes "então te darei a prova de que";
+			mes "mostra que você está qualificado para";
+			mes "seja um porta-espada condenado.";
+			next;
+			mes "[Zaka]";
+			mes "Ele parece um simples";
+			mes "homem, mas ele é um verdadeiro vivo";
+			mes "lenda conhecida por sua sabedoria.";
+			mes "Se você realmente quer um condenado";
+			mes "espada, você precisa falar com";
+			mes "Ganhe e peça a ele para guiá-lo.";
+			close;
+		}
+		mes "[Zaka]";
+		mes "A última coisa que eu preciso";
+		mes "para completar o Livro do";
+		mes "Cordeiro tem ^3355FF1 Escala Fedorenta^000000. ";
+		mes "traga isso para mim assim que";
+		mes "você pode. ";
+		mes "paciente, jovem aventureiro.";
+		break;
+	case 22:
+		mes "[Zaka]";
+		mes "Agora você precisa visitar um";
+		mes "homem chamado ^3355FFWon^000000 em Comodo";
+		mes "para obter a prova de que";
+		mes "mostra que você está qualificado para";
+		mes "possuir uma espada condenada.";
+		mes "Espero que você consiga...";
+		break;
+	default:
+		mes "[Zaka]";
+		mes "Você já ouviu falar que espadas";
+		mes "com o poder de mudar";
+		mes "mundo realmente existe? ";
+		mes "que três espadas contêm isso";
+		mes "imenso poder, mas eles são";
+		mes "também vinculado a maldições poderosas.";
+		next;
+		mes "[Zaka]";
+		mes "Portanto, o Mysteltainn,";
+		mes "Ogretooth e Executor";
+		mes "foram todos selados.";
+		mes "Apenas um grande aventureiro verdadeiramente";
+		mes "pode liberar essas espadas condenadas e realmente empunhá-las...";
+		break;
+	}
+	close;
+}
+
+comodo,232,87,4	script	Won#cmd	106,{
+	switch (dmdswrd_Q) {
+	case 22:
+		mes "[Ganho]";
+		mes "Hum...? ";
+		mes "já que alguém veio aqui para";
+		mes "obter a qualificação para possuir um";
+		mes "espada condenada. ";
+		mes "é por isso que você está aqui...";
+		next;
+		mes "[Ganho]";
+		mes "Para um homem como eu, o";
+		mes "presenças do Livro do";
+		mes "Cordeiro, a Ardósia de Muriniel,";
+		mes "e aquele que comeu do";
+		mes "Awakening Stone são inconfundíveis.";
+		next;
+		mes "[Ganho]";
+		mes "Agora escute. ";
+		mes "não me importo por que você quer um";
+		mes "espada condenada. ";
+		mes "seu poder, você pagará o preço";
+		mes "eventualmente. ";
+		mes "certifique-se de que você está pronto para o rapé.";
+		next;
+		mes "[Ganho]";
+		mes "Claro, eu também quero";
+		mes "certifique-se de não trazer";
+		mes "grande sofrimento para o mundo";
+		mes "usando uma espada condenada. ";
+		mes "vou verificar se você está, você";
+		mes "sabe, equilibrado e tudo mais.";
+		next;
+		mes "[Ganho]";
+		mes "Tudo bem, deixe-me pegar";
+		mes "um olhar em seus olhos...";
+		mes "Sim, está bem. ";
+		mes "entenda o valor do";
+		mes "Pedra do Despertar, Livro do Cordeiro e Ardósia de Muriniel.";
+		next;
+		mes "[Ganho]";
+		mes "Sim, não consigo sentir nenhum";
+		mes "má intenção sua.";
+		mes "Isso é muito bom. ";
+		mes "parece bastante experiente em batalha, então tenho certeza que você tem resistência";
+		mes "lidar com uma espada condenada...";
+		next;
+		mes "[Ganho]";
+		mes "Ah, mas o mais importante,";
+		mes "você não me parece louco";
+		mes "de forma alguma. ";
+		mes "é a qualificação oficial";
+		mes "símbolo de possuir uma espada condenada.";
+		next;
+		mes "^3355FFVocê recebe o";
+		mes "Selo de Muriniel.^000000";
+		set dmdswrd_Q,23;
+		next;
+		mes "[Ganho]";
+		mes "Mysteltainn, Executor,";
+		mes "e Dente de Ogro... Estes são";
+		mes "as lâminas proibidas, o";
+		mes "espadas condenadas. ";
+		mes "que você não pode escolher";
+		mes "qual arma você empunhará...";
+		next;
+		mes "[Ganho]";
+		mes "Essas espadas têm vontade";
+		mes "próprios. ";
+		mes "espada que mais te encontra";
+		mes "digno disso escolherá você.";
+		mes "Você pode entender isso, certo?";
+		next;
+		mes "[Ganho]";
+		mes "Agora que você tem isso";
+		mes "qualificação, eu deveria";
+		mes "para direcioná-lo aos Sábios";
+		mes "que pode ajudar a levá-lo a";
+		mes "as espadas condenadas.";
+		next;
+		mes "[Ganho]";
+		mes "O primeiro Sábio que você";
+		mes "uma visita obrigatória é ^3355FFSage Yklah^000000";
+		mes "na cidade de ^3355FFJuno^000000 no";
+		mes "República de Schwarzwald.";
+		mes "Sua busca para obter um";
+		mes "espada condenada ainda não acabou...";
+		break;
+	case 23:
+		mes "[Ganho]";
+		mes "Agora que você tem isso";
+		mes "qualificação, eu deveria";
+		mes "para direcioná-lo aos Sábios";
+		mes "que pode ajudar a levá-lo a";
+		mes "as espadas condenadas.";
+		next;
+		mes "[Ganho]";
+		mes "O primeiro Sábio que você";
+		mes "uma visita obrigatória é ^3355FFSage Yklah^000000";
+		mes "na cidade de ^3355FFJuno^000000 no";
+		mes "República de Schwarzwald.";
+		mes "Sua busca para obter um";
+		mes "espada condenada ainda não acabou...";
+		break;
+	case 24:
+		mes "1 2 3 4 5 6 7 8 9 10 1 2 3 4 5";
+		break;
+	default:
+		mes "[Ganho]";
+		mes "Os visitantes e até mesmo os";
+		mes "pessoas que moram aqui sempre";
+		mes "parece estar se divertindo tão bem";
+		mes "tempo, apenas descansando no lazer.";
+		mes "É difícil acreditar na guerra";
+		mes "da Bruxa até aconteceu...";
+		next;
+		mes "[Ganho]";
+		mes "Mas nem todos aqui";
+		mes "Comodo pode relaxar";
+		mes "tão facilmente. ";
+		mes "a responsabilidade de procurar";
+		mes "fora aqueles que são dignos de, bem, não sei se posso dizer...";
+		next;
+		mes "[Ganho]";
+		mes "Você só tem de";
+		mes "confie que eu tenho um";
+		mes "incrivelmente importante";
+		mes "trabalho a fazer. ";
+		mes "não parece que estou fazendo";
+		mes "qualquer coisa agora, mas...";
+		break;
+	}
+	close;
+}
+

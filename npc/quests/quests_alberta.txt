@@ -1,0 +1,2970 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+// Doll Quest
+//============================================================
+alberta,117,135,0	script	Elin	96,{
+	if (checkweight(1201,1) == 0) {
+		mes "[Elin]";
+		mes "^3355FFEspere um segundo! ";
+		close;
+	}
+	mes "[Elin]";
+	if (Sex == SEX_MALE) {
+		mes "Olá ~!";
+		mes "Heh heh, você é um menino, então provavelmente não gosta de bonecas, certo? ";
+	} else {
+		mes "Olá, oi ~! ";
+	}
+	next;
+	mes "[Elin]";
+	mes "Você sabe, eu realmente quero uma boneca nova! ";
+	next;
+	switch(select("Hum, espero que seu pai também lhe dê um.:Que tal eu lhe dar um agora?")) {
+	case 1:
+		mes "[Elin]";
+		mes "Sim, estou esperando";
+		mes "ele me dá um Yoyo";
+		mes "boneca. ";
+		close;
+	case 2:
+		if (MaxWeight - Weight < 1000) {
+			mes "[Elin]";
+			if (Sex == SEX_MALE) {
+				mes "Talvez você devesse guardar algumas de suas coisas primeiro, parece que você está carregando muita coisa, hee hee ~";
+			} else {
+				mes "Você sempre carrega tanta coisa com você? ";
+			}
+			close;
+		}
+		mes "[Elin]";
+		if (Sex == SEX_MALE) {
+			mes "Ó meu Deus!";
+			mes "Realmente? ";
+			mes "que querido ~!";
+		} else {
+			mes "Você vai mesmo?";
+			mes "Você vai dar";
+			mes "eu uma boneca? ";
+		}
+		next;
+		mes "[Elin]";
+		mes "Que tipo de boneca você vai me dar? ";
+		next;
+		switch(select("Boneca Poring:Boneca Chonchon:Fantoche:Boneca Rocker:Boneca Spore:Boneca Osiris:Boneca Baphomet:Boneca Guaxinim:Boneca Yoyo:Sou tão adorável quanto uma boneca.")) {
+		case 1:
+			if (countitem(741) >= 1) {
+				delitem 741,1; //Poring_Doll
+				mes "[Elin]";
+				mes "Ah...";
+				mes "eu tenho muito";
+				mes "das bonecas Poring...";
+				next;
+				mes "[Elin]";
+				if (Sex == SEX_MALE) {
+					mes "Mas já que um garoto fofo está me dando, ficarei feliz em aceitá-lo! ";
+				} else {
+					mes "Mas como uma garota legal está me dando, eu aceito! ";
+				}
+				next;
+				mes "[Elin]";
+				mes "Ooh, deixe-me dar-lhe algo como um pequeno agradecimento. ";
+				next;
+				getitem 529,1; //Candy
+				mes "[Elin]";
+				if (Sex == SEX_MALE) {
+					mes "Não sei se você está velho demais para gostar de doces, mas acho que está tudo bem.";
+				} else {
+					mes "Então, tente não comer muito, ok? ";
+				}
+				next;
+				mes "[Elin]";
+				mes "Obrigado";
+				mes "muito para";
+				mes "a boneca Poring!";
+				close;
+			} else {
+				mes "[Elin]";
+				if (Sex == SEX_MALE) {
+					mes "Ah...?";
+					mes "Você estava apenas me provocando?";
+				} else {
+					mes "Ah...";
+					mes "Você não está tirando sarro de mim, está?";
+				}
+				next;
+				mes "[Elin]";
+				mes "Acho que você esqueceu em algum lugar...";
+				close;
+			}
+		case 2:
+			if (countitem(742) >= 1) {
+				delitem 742,1; //Chonchon_Doll
+				mes "[Elin]";
+				mes "Ah--!";
+				mes "Uma boneca Ch-Ch, Chonchon?!";
+				next;
+				mes "[Elin]";
+				if (Sex == SEX_MALE) {
+					mes "Mas já que... Você é... um cara tão legal... é melhor eu aceitar...!";
+				} else {
+					mes "Mas já que... Já que é um presente... acho que vou aceitar...";
+				}
+				next;
+				mes "[Elin]";
+				mes "Mm~";
+				mes "Deixe-me dar-lhe";
+				mes "algo em troca...";
+				next;
+				getitem 530,1; //Candy_Striper
+				mes "[Elin]";
+				mes "Se você comer demais, seus dentes vão começar a apodrecer... pelo menos é o que a mamãe diz.";
+				next;
+				mes "[Elin]";
+				mes "E..";
+				mes "Uh...";
+				mes "Obrigado";
+				mes "para a boneca?";
+				close;
+			} else {
+				mes "[Elin]";
+				mes "Bonecos Chonchon são feios de qualquer maneira, mas você ainda mentiu para mim! ";
+				next;
+				mes "[Elin]";
+				mes "Waaaaaaaaah~~";
+				close;
+			}
+		case 3:
+			if (countitem(740) >= 1) {
+				delitem 740,1; //Stuffed_Doll
+				mes "[Elin]";
+				mes "Uau...!";
+				mes "Parece um coelho!";
+				next;
+				mes "[Elin]";
+				mes "Eu realmente gosto desse fantoche ~ Heh hehe! ";
+				next;
+				mes "[Elin]";
+				mes "Ooh Ooh!";
+				mes "Eu tenho algo";
+				mes "para você também!";
+				mes "Hum, onde";
+				mes "fiz isso... Ah!";
+				next;
+				getitem 530,1; //Candy_Striper
+				mes "[Elin]";
+				mes "Aqui está! ";
+				close;
+			} else {
+				mes "[Elin]";
+				mes "Awww, você estava apenas brincando? ";
+				next;
+				mes "[Elin]";
+				mes "^666666*Cheirar...*^000000";
+				next;
+				mes "[Elin]";
+				mes "Waaaaaaaaah~~";
+				close;
+			}
+		case 4:
+			if (countitem(752) >= 1) {
+				delitem 752,1; //Grasshopper_Doll
+				mes "[Elin]";
+				mes "Ah! ";
+				mes "É o Rocker que gosta de cantar e dançar! ";
+				next;
+				mes "[Elin]";
+				mes "Hmmm, eu deveria te dar algo também, hein? ";
+				next;
+				getitem 532,7; //Banana_Juice
+				mes "[Elin]";
+				mes "Aqui você vai! ";
+				close;
+			} else {
+				mes "[Elin]";
+				mes "Ahhhh...";
+				next;
+				mes "[Elin]";
+				mes "Você não";
+				mes "realmente tem uma boneca...?";
+				mes "Eu também estava tão animado com isso...";
+				close;
+			}
+		case 5:
+			if (countitem(743) >= 1) {
+				delitem 743,1; //Spore_Doll
+				mes "[Elin]";
+				mes "É um cogumelo?";
+				mes "Ewwwwwwwww, nojento!";
+				mes "Mamãe me fez comer";
+				mes "cogumelos hoje também...";
+				next;
+				mes "[Elin]";
+				mes "Mas essa boneca é fofa, então vou levar. ";
+				next;
+				getitem 538,5; //Well_Baked_Cookie
+				mes "[Elin]";
+				mes "Hehe~ Minha mãe fez isso! ";
+				next;
+				mes "[Elin]";
+				mes "Obrigado por";
+				mes "a boneca! ";
+				mes "Cuide bem dele!";
+				close;
+			} else {
+				mes "[Elin]";
+				mes "Eh...?";
+				mes "Você não";
+				mes "tem uma boneca?";
+				next;
+				mes "[Elin]";
+				mes "Ahhhh...";
+				mes "Não é legal";
+				mes "provocar as pessoas";
+				mes "assim. ";
+				close;
+			}
+		case 6:
+			if (countitem(751) >= 1) {
+				delitem 751,1; //Osiris_Doll
+				mes "[Elin]";
+				mes "Ahhhhh!";
+				mes "O que é isso";
+				mes "coisa?! ";
+				next;
+				mes "[Elin]";
+				mes "Nunca vi uma boneca assim antes. ";
+				next;
+				mes "[Elin]";
+				mes "Aqui, já que você me deu uma boneca tão bem feita, é melhor eu lhe dar algo bom também.";
+				next;
+				getitem 522,2; //Fruit_Of_Mastela
+				mes "[Elin]";
+				mes "Eu descobri quando fui secretamente para a floresta. ";
+				if (Sex == SEX_MALE) {
+					mes "Como são dois, você pode compartilhar com sua namorada. ";
+				} else {
+					mes "Como são dois, você pode compartilhar com seu namorado. ";
+				}
+				close;
+			} else {
+				mes "[Elin]";
+				mes "Ahhhh...";
+				mes "Por que você tem";
+				mes "para tirar sarro de mim?";
+				close;
+			}
+		case 7:
+			if (countitem(750) >= 1) {
+				delitem 750,1; //Baphomet_Doll
+				mes "[Elin]";
+				mes "Huh?";
+				mes "É uma cabrinha...";
+				next;
+				mes "[Elin]";
+				mes "Isto é tão estranho. ";
+				next;
+				getitem 525,5; //Panacea
+				mes "[Elin]";
+				mes "Meu pai me deu isso quando eu estava muito doente. ";
+				next;
+				mes "[Elin]";
+				mes "Ei, ei ~";
+				mes "Obrigado por";
+				mes "a boneca. ";
+				close;
+			} else {
+				mes "[Elin]";
+				mes "Seu grande mentiroso! ";
+				close;
+			}
+		case 8:
+			if (countitem(754) >= 1) {
+				delitem 754,1; //Raccoondog_Doll
+				mes "[Elin]";
+				mes "Hehe, é um";
+				mes "boneca guaxinim.";
+				mes "É muito fofo ~";
+				next;
+				mes "[Elin]";
+				mes "eu não gosto";
+				mes "Esfumaçados na vida real,";
+				mes "mas essa boneca é legal!";
+				next;
+				getitem 539,3; //Piece_Of_Cake
+				mes "[Elin]";
+				mes "Aqui, deixe-me dar um bolo que minha avó fez. ";
+				next;
+				mes "[Elin]";
+				mes "Ei, ei ~";
+				mes "Obrigado pela boneca.";
+				mes "Eu vou mantê-lo";
+				mes "no meu quarto!";
+				close;
+			} else {
+				mes "[Elin]";
+				mes "Ei! ";
+				close;
+			}
+		case 9:
+			if (countitem(753) >= 1) {
+				delitem 753,1; //Monkey_Doll
+				mes "[Elin]";
+				mes "Uauuuu~!";
+				next;
+				mes "[Elin]";
+				mes "Uma boneca Yoyo! ";
+				next;
+				mes "[Elin]";
+				mes "Desde que você deu";
+				mes "eu sou uma boneca tão linda,";
+				mes "Eu quero te dar";
+				mes "alguma coisa também!";
+				next;
+				getitem 608,1; //Seed_Of_Yggdrasil
+				mes "[Elin]";
+				mes "Meu pai o pegou a caminho de outra cidade. ";
+				next;
+				mes "[Elin]";
+				mes "Hehe~";
+				mes "Obrigado por";
+				mes "a boneca. ";
+				mes "isso antes de eu ir";
+				mes "dormir!";
+				close;
+			} else {
+				mes "[Elin]";
+				mes "Ei...";
+				mes "Por que você está tirando sarro de mim?!";
+				close;
+			}
+		case 10:
+			mes "["+strcharinfo(0)+"]";
+			mes "Sou adorável como uma boneca...";
+			next;
+			mes "[Elin]";
+			mes "O queaaaaaaaa...?";
+			next;
+			mes "[Elin]";
+			mes "^3355FFO que fez^000000";
+			mes "^3355FFvocê acabou de dizer?!^000000";
+			close;
+		}
+	}
+}
+
+// 'Boy's Cap' Quest
+//============================================================
+alberta_in,28,145,4	script	Grampa	120,{
+	mes "[Vovô]";
+	mes "*Suspiro*...";
+	mes "....*Suspiro!*";
+	mes "Oh...";
+	mes "Alguns podem dizer que vivi uma vida plena de vinho, mulheres e música...";
+	next;
+	mes "[Vovô]";
+	mes "Mas minha alma ainda arde com vigor juvenil! ";
+	next;
+	if (countitem(1030) > 9) {
+		switch(select("Mostre a ele a pele do pé do tigre.:Troque com o boné dos meninos.:Cancelar")) {
+		case 1:
+			mes "[Vovô]";
+			mes "Ahhhh~!!";
+			mes "É aquele...?";
+			mes "Isso é!";
+			mes "Essa é a pele do tigre!! ";
+			next;
+			mes "[Vovô]";
+			mes "Uma olhada nele pode restaurar suas forças, uma cheirada e seu sangue ferve de vigoroso prazer...";
+			next;
+			mes "[Vovô]";
+			mes "Só uma mordida...";
+			mes "Vai reviver minha virilidade!!!! ";
+			close;
+		case 2:
+			delitem 1030,10;  //Tiger_Footskin
+			getitem 5016,1; //Boy's_Cap
+			mes "[Vovô]";
+			mes "Obrigado !!";
+			mes "Com isso posso reviver meu esplendor juvenil!! ";
+			next;
+			mes "[Vovô]";
+			mes "...";
+			mes "Não. ";
+			mes "Na verdade, me sinto ainda pior. ";
+			close;
+		case 3:
+			mes "[Vovô]";
+			mes "Ele... Ei, garoto!! ";
+			close;
+		}
+	} 
+	else {
+		switch(select("Discussão: Cancelar")) {
+		case 1:
+			mes "[Vovô]";
+			mes "Escute bem...";
+			mes "Você tem que cuidar de si mesmo o melhor que puder. ";
+			next;
+			mes "[Vovô]";
+			mes "Para restaurar minha juventude, tentei todo tipo de coisas, principalmente por boatos, mas nada funcionou. ";
+			next;
+			mes "[Vovô]";
+			mes "Quase desisti de restaurar minha juventude. ";
+			next;
+			mes "[Vovô]";
+			mes "Você não ouviu?! ";
+			next;
+			mes "[Vovô]";
+			mes "Antes de eu morrer...";
+			mes "Eu gostaria de poder comer 10 Pele de Tigre. ";
+			next;
+			mes "[Vovô]";
+			mes "Se alguém me ajudasse a consegui-los, eu daria a essa pessoa meu item precioso, ^3355FFBoys Cap^000000 sem arrependimento...";
+			close;
+		case 2:
+			mes "[Vovô]";
+			mes "COF cof !!";
+			mes "Tigre .... Tigre ..... Pé ..... pele ..... Tosse Tosse !!";
+			close;
+		}
+	}
+}
+
+// 'Antlers' Quest
+//============================================================
+alberta_in,122,53,4	script	Cherokee	47,{
+	mes "[Cherokee]";
+	mes "Olá ~!";
+	next;
+	mes "[Cherokee]";
+	mes "O que você acha dos chifres de animais? ";
+	next;
+	mes "[Cherokee]";
+	mes "Quero dizer, há tantas coisas que você pode fazer com chifres. ";
+	next;
+	mes "[Cherokee]";
+	mes "Eu colecionei quase todos os tipos de chifre, exceto um tipo, que é ^FF3355Evil Horn^000000. ";
+	next;
+	mes "[Cherokee]";
+	mes "Você...";
+	mes "Você tem ^FF3355Evil Horn^000000?";
+	mes "Se você me oferecer 20 Evil Horns, eu lhe darei um ^3355FFAntler^000000 da minha preciosa coleção. ";
+	next;
+	switch(select("Ok, vamos combinar.:Cale a boca, Dumbo.")) {
+	case 1:
+		if (countitem(923) > 19) {
+			delitem 923,20;  //Evil_Horn
+			mes "[Cherokee]";
+			mes "Uau~! ";
+			mes "Obrigado! ";
+			getitem 2284,1; // Antler
+			next;
+			mes "[Cherokee]";
+			mes "Com sua grande ajuda, posso realizar meu desejo desta vez. ";
+			close;
+		}
+		else {
+			mes "[Cherokee]";
+			mes "Hum...";
+			mes "Você parece não ter o suficiente. ";
+			close;
+		}
+	case 2:
+		mes "[Cherokee]";
+		mes "Bem, tudo bem. ";
+		close;
+	}
+}
+
+// 'Bao Bao', 'Crescent Hairpin', 'Fashionable Glasses', 'Heart Hairpin' Quest
+//============================================================
+alberta,120,53,1	script	Stylish Merchant#new30	51,{
+	if ((countitem(10007) > 0) && (countitem(968) > 49)) {
+		mes "[Zic]";
+		mes "Eu sei, eu sei, você só quer comprar um Bao Bao para você. ";
+		next;
+		mes "^3355FF*Baque! ";
+		mes "*Ah! ";
+		mes "*Boom Bum!*^000000";
+		next;
+		delitem 10007,1;  //Silk_Ribbon
+		delitem 968,50;  //Voucher_Of_Orcish_Hero
+		mes "[Zic]";
+		mes "Ufa!";
+		mes "Aí está ~!";
+		mes "Agora faça bom uso disso!!";
+		getitem 5042,1; // Hair_Protector
+		close;
+	}
+	else if((countitem(5041) > 0) && (countitem(999) > 9)) {
+		mes "[Zic]";
+		mes "Tudo bem, tudo bem! ";
+		next;
+		mes "^3355FF*Baque! ";
+		mes "*Ah! ";
+		mes "*Boom Bum!*^000000";
+		next;
+		delitem 5041,1;  //Heart_Hair_Pin
+		delitem 999,10;  //Steel
+		mes "[Zic]";
+		mes "Ufa!";
+		mes "Está feito ~!";
+		mes "Agora use-o e";
+		mes "parecer bonita ou";
+		mes "alguma coisa, sim?";
+		getitem 5048,1; // First_Moon_Hair_Pin
+		close;
+	}
+	else if((countitem(2271) > 0) && (countitem(975) > 0)) {
+		mes "[Zic]";
+		mes "Sim, sim, você veio buscar seus óculos da moda. ";
+		next;
+		mes "^3355FF*Baque! ";
+		mes "*Ah! ";
+		mes "*Boom Bum!*^000000";
+		next;
+		delitem 2271,1;  //Jack_A_Dandy
+		delitem 975,1;  //Scarlet_Dyestuffs
+		mes "[Zic]";
+		mes "Ufa, está feito!";
+		mes "Agora vá usá-los e fique tão na moda quanto esses óculos, eu acho.";
+		getitem 5047,1; // Fashion_Sunglass
+		close;
+	}
+	else if(countitem(7013) > 1199){
+		mes "[Zic]";
+		mes "Ok, ok, você quer seu grampo de coração, estou trabalhando nisso. ";
+		next;
+		mes "^3355FF*Baque! ";
+		mes "*Ah! ";
+		mes "*Boom Bum!*^000000";
+		next;
+		delitem 7013,1200;  //Coral_Reef
+		mes "[Zic]";
+		mes "Ufa~!";
+		mes "Finalmente, está feito!";
+		mes "Faça-me feliz e";
+		mes "use-o com orgulho ~";
+		getitem 5041,1; // Heart_Hair_Pin
+		close;
+	}
+	else {
+		mes "[Zic]";
+		mes "Sim, isso é legal";
+		mes "a brisa é ótima!";
+		mes "Eu amo o mar!";
+		next;
+		mes "[Zic]";
+		mes "...Hum?";
+		mes "Ah cara. ";
+		next;
+		mes "[Zic]";
+		mes "Ok, ok, você venceu. ";
+		next;
+		mes "[Zic]";
+		mes "Deixe-me saber em qual item você está interessado e talvez eu faça isso para você...";
+		next;
+		switch(select("Bao Bao:Grampo de cabelo Cresent:Óculos elegantes:Grampo de coração")) {
+		case 1:
+			mes "[Zic]";
+			mes "Entããão...";
+			mes "Você quer que eu faça um Bao Bao para você, hein? ";
+			next;
+			mes "[Zic]";
+			mes "Vamos ver, vou precisar...";
+			mes "1 ^0000FFFita de seda^000000";
+			mes "50 ^0000FFEmblema Heroico^000000";
+			mes "...Você já sabia disso?";
+			close;
+		case 2:
+			mes "[Zic]";
+			mes "Então você quer um grampo Crescent, hein? ";
+			next;
+			mes "[Zic]";
+			mes "Ok, vou precisar...";
+			mes "1 ^0000FFGrampo de coração^000000";
+			mes "10 ^0000FFAço^000000";
+			mes "...Você já sabia disso?";
+			close;
+		case 3:
+			mes "[Zic]";
+			mes "Esquisito. ";
+			next;
+			mes "[Zic]";
+			mes "Eu preciso ter...";
+			mes "1 ^0000FFJack seja Dandy^000000";
+			mes "1 ^0000FFCorantes Escarlate^000000";
+			mes "...Você já sabia disso?";
+			close;
+		case 4:
+			mes "[Zic]";
+			mes "Você quer um grampo de coração, hein? ";
+			next;
+			mes "[Zic]";
+			mes "Apenas me dê...";
+			mes "1200 ^0000FFRecife de coral^000000.";
+			mes "...Você já sabia disso?";
+			close;
+		}
+	}
+}
+
+// 'Hat of the Sun God', 'Sunday Hat', 'Mage Hat', 'Magician Hat' Quest
+//============================================================
+alberta,136,79,1	script	Hat store girl#new30	71,{
+	mes "[Tempestade]";
+	mes "Ah, que brisa fresca. ";
+	next;
+	mes "[Tempestade]";
+	mes "Ooh, o sol está muito forte hoje. ";
+	next;
+	mes "[Tempestade]";
+	mes "Oh, estou com muita sede! ";
+	next;
+	switch(select("Deixe-me presentear você com uma Poção Amarela.:O quê, você espera que eu lhe dê uma?!")) {
+	case 1:
+		if (countitem(503) > 0){
+			mes "[Tempestade]";
+			mes "Ah, muito obrigado. ";
+			next;
+			mes "^3355FF*Gole, gole*^000000";
+			delitem 503,1;  //Yellow_Potion
+			next;
+			mes "[Tempestade]";
+			mes "Aaaaaaa~~!!!";
+			mes "Está tão frio!! ";
+			next;
+			switch(select("Está muito quente, não está~?:Você deveria usar seu chapéu...")) {
+			case 1:
+				mes "[Tempestade]";
+				mes "Sim, está muito quente....";
+				next;
+				mes "[Tempestade]";
+				mes "Eu tenho";
+				mes "^0000FFChapéu de Domingo^000000,";
+				mes "^0000FFChapéu Mage^000000 e...";
+				mes "^0000FFChapéu Mágico^000000 e mais no meu quarto.";
+				next;
+				mes "[Tempestade]";
+				mes "Trouxe esses chapéus para poder vendê-los e usar o dinheiro nas minhas férias aqui, mas agora parece que tenho que usar um ~";
+				next;
+				switch(select("Chapéu de Domingo!!?:Chapéu de Mago?!?:Chapéu de Mágico??!??")) {
+				case 1:
+					mes "[Tempestade]";
+					mes "Oh? ";
+					next;
+					mes "[Tempestade]";
+					mes "Hmm, acho que não. ";
+					next;
+					mes "[Tempestade]";
+					mes "eu precisaria...";
+					mes "^0000FF250 Tecido^000000";
+					mes "^0000FF1 Chapéu com fenda^000000";
+					mes "^0000FF1 Tampa com fenda^000000";
+					mes "^0000FF600 Pena macia^000000";
+					next;
+					if ((countitem(1059) > 249) && (countitem(2221) > 0) && (countitem(2227) > 0) && (countitem(7063) > 599)) {
+						mes "[Tempestade]";
+						mes "O que?!?";
+						mes "Você já tem todos os itens? ";
+						next;
+						mes "[Tempestade]";
+						mes "Eu só quero fazer algo para a Poção Amarela, então não vou cobrar nenhum zeny pelo meu serviço de confecção de chapéus.";
+						switch(select("Ah, por favor.: Não, obrigado.")) {
+						case 1:
+							next;
+							mes "[Tempestade]";
+							mes "Tudo bem. ";
+							next;
+							mes "^3355FF*Baque! ";
+							mes "*Thic-Tac!*^000000";
+							next;
+							mes "^3355FF*Beeeeeeh~~~*^000000";
+							next;
+							delitem 1059,250; //Transparent_Cloth
+							delitem 2221,1; //Hat_
+							delitem 2227,1; //Cap_
+							delitem 7063,600; //Soft_Feather
+							mes "[Tempestade]";
+							mes "Aqui está, tee hee ~";
+							mes "Que tal isso? ";
+							getitem 5032,1; //Picnic_Hat
+							next;
+							mes "[Tempestade]";
+							mes "Mais uma vez, obrigado pelo seu favor. ";
+							close;
+						case 2:
+							next;
+							mes "[Tempestade]";
+							mes "Ah, tudo bem ~";
+							next;
+							mes "[Tempestade]";
+							mes "Se por acaso você me visitar mais tarde, ficarei mais do que feliz em fazer um chapéu para você~";
+							next;
+							mes "[Tempestade]";
+							mes "Pois bem, até mais~";
+							close;
+						}
+					}
+					else {
+						mes "[Tempestade]";
+						mes "Vou te contar um segredo, porque você me deu a Poção Amarela~";
+						next;
+						mes "[Tempestade]";
+						mes "Estou ansioso para ver você novamente ~~";
+						close;
+					}
+				case 2:
+					mes "[Tempestade]";
+					mes "Oh? ";
+					next;
+					mes "[Tempestade]";
+					mes "Hmm, acho que não. ";
+					next;
+					mes "[Tempestade]";
+					mes "^0000FF1 Chapéu de Mago^000000";
+					mes "^0000FF400 Escama de Dragão^000000";
+					mes "^0000FF50 Pó para Molde^000000";
+					mes "^0000FF1 Cartão Salgueiro Ancião^000000";
+					next;
+					if ((countitem(2252) > 0) && (countitem(1036) > 399) && (countitem(4052) > 0) && (countitem(7001) > 49)) {
+						mes "[Tempestade]";
+						mes "O que?!?";
+						mes "Você já tem todos os itens? ";
+						next;
+						mes "[Tempestade]";
+						mes "Eu só quero fazer algo legal para você, então não vou cobrar nenhum zeny pelo meu serviço de confecção de chapéus.";
+						switch(select("Ah, por favor.: Não, obrigado.")) {
+						case 1:
+							next;
+							mes "[Tempestade]";
+							mes "Tudo bem. ";
+							next;
+							mes "^3355FF*Baque! ";
+							mes "*Thic-Tac!*^000000";
+							next;
+							mes "^3355FF*Beeeeeeh~~~*^000000";
+							next;
+							delitem 2252,1; //Star_Sparkling
+							delitem 1036,400; //Dragon_Scale
+							delitem 4052,1; //Elder_Wilow_Card
+							delitem 7001,50; //Mould_Powder
+							mes "[Tempestade]";
+							mes "Aqui está, tee hee ~";
+							mes "Que tal isso?";
+							mes "Você gosta disso?";
+							getitem 5027,1; //Wizardry_Hat
+							next;
+							mes "[Tempestade]";
+							mes "Mais uma vez, obrigado pelo seu favor. ";
+							close;
+						case 2:
+							next;
+							mes "[Tempestade]";
+							mes "Ah, tudo bem ~";
+							next;
+							mes "[Tempestade]";
+							mes "Se por acaso você me visitar mais tarde, ficarei mais do que feliz em fazer um chapéu para você~";
+							next;
+							mes "[Tempestade]";
+							mes "Pois bem, até mais~";
+							close;
+						}
+					}
+					else {
+						mes "[Tempestade]";
+						mes "Vou te contar um segredo, porque você me deu a Poção Amarela~";
+						next;
+						mes "[Tempestade]";
+						mes "Estou ansioso para ver você novamente ~~";
+						close;
+					}
+				case 3:
+					mes "[Tempestade]";
+					mes "Oh? ";
+					next;
+					mes "[Tempestade]";
+					mes "Hmm, acho que não. ";
+					next;
+					mes "[Tempestade]";
+					mes "^0000FF1 Chapéu de Mago^000000";
+					mes "^0000FF450 Lábios Antigos^000000";
+					mes "^0000FF1200 Casca Sólida^000000";
+					next;
+					if ((countitem(2252) > 0) && (countitem(1054) > 449) && (countitem(943) > 1199)) {
+						mes "[Tempestade]";
+						mes "O que?!?";
+						mes "Você já tem todos os itens?";
+						mes "Se houver itens forjados ou itens com slots com cartas de monstro, coloque-os em seu armazenamento.";
+						next;
+						mes "[Tempestade]";
+						mes "Eu só quero fazer algo legal para você, então não vou cobrar nenhum zeny pelo meu serviço de confecção de chapéus.";
+						switch(select("Por favor faça: Não, obrigado")) {
+						case 1:
+							next;
+							mes "[Tempestade]";
+							mes "Tudo bem. ";
+							next;
+							mes "^3355FF*Baque! ";
+							mes "*Thic-Tac!*^000000";
+							next;
+							mes "^3355FF*Beeeeeeh~~~*^000000";
+							next;
+							delitem 2252,1; //Star_Sparkling
+							delitem 1054,450; //Lip_Of_Ancient_Fish
+							delitem 943,1200; //Solid_Shell
+							mes "[Tempestade]";
+							mes "Aqui está, tee hee ~";
+							mes "Que tal isso?";
+							mes "Você gosta disso?";
+							getitem 5045,1; //Magician_Hat
+							next;
+							mes "[Tempestade]";
+							mes "Mais uma vez, obrigado pelo seu favor. ";
+							close;
+						case 2:
+							next;
+							mes "[Tempestade]";
+							mes "Ah, tudo bem ~";
+							next;
+							mes "[Tempestade]";
+							mes "Se por acaso você me visitar mais tarde, ficarei mais do que feliz em fazer um chapéu para você~";
+							next;
+							mes "[Tempestade]";
+							mes "Pois bem, até mais~";
+							close;
+						}
+					}
+					else {
+						mes "[Tempestade]";
+						mes "Vou te contar um segredo, porque você me deu a Poção Amarela~";
+						next;
+						mes "[Tempestade]";
+						mes "Estou ansioso para ver você novamente ~~";
+						close;
+					}
+				}
+			case 2:
+				mes "[Tempestade]";
+				mes "Bem, os chapéus que tenho comigo são para meus clientes. ";
+				next;
+				mes "[Tempestade]";
+				mes "Quero fazer algo especial para você porque você me mostrou muita gentileza, mas não tenho nada parecido no momento.";
+				next;
+				if ((countitem(7086) > 0) && (countitem(969) > 9) && (countitem(999) > 39) && (countitem(1003) > 49) && (countitem(984) > 1)) {
+					mes "[Tempestade]";
+					mes "Hum...";
+					mes "Acho que posso fazer um item especial com os itens que você já possui.";
+					next;
+					mes "[Tempestade]";
+					mes "Se houver itens forjados ou itens com slots com cartas de monstro, coloque-os em seu armazenamento Kafra.";
+					next;
+					mes "[Tempestade]";
+					mes "Heh heh...";
+					mes "Acho que vou fazer para você um Chapéu do Deus Sol ~";
+					next;
+					delitem 7086,1; //Symbol_Of_Sun
+					delitem 969,10; //Gold
+					delitem 999,40; //Steel
+					delitem 1003,50; //Coal
+					delitem 984,2; //Oridecon
+					mes "[Tempestade]";
+					mes "Ver! ";
+					mes "Haha, fiz isso mais rápido que a velocidade da luz!";
+					next;
+					mes "[Tempestade]";
+					mes "...Ou talvez eu apenas tenha dado a você o que já tinha e peguei seus itens. ";
+					getitem 5022,1; // Helm_Of_Sun
+					next;
+					mes "[Tempestade]";
+					mes "De qualquer forma, eu só queria dar algo muito legal para você...";
+					close;
+				}
+				else {
+					mes "[Tempestade]";
+					mes "Hum...";
+					mes "^0000FF1 Emblema do Deus Sol^000000";
+					mes "^0000FF10 Ouro^000000";
+					mes "^0000FF40 Aço^000000";
+					mes "^0000FF50 Carvão^000000";
+					mes "^0000FF2 Oridecon^000000";
+					next;
+					mes "[Tempestade]";
+					mes "Se você tiver isso, posso fazer para você meu fantástico 'Chapéu do Deus Sol!'";
+					next;
+					mes "[Tempestade]";
+					mes "Eu só quero fazer algo realmente especial para você, então não vou cobrar nenhum zeny para fazer este chapéu.";
+					close;
+				}
+			}
+		}
+		else {
+			mes "[Tempestade]";
+			mes "Hum, agradeço, mas acho que você acabou de ficar sem Poções Amarelas?";
+			close;
+		}
+	case 2:
+		mes "[Tempestade]";
+		mes "....Que rude!";
+		close;
+	}
+}
+
+// Turtle Quest
+//============================================================
+alberta,91,70,4	script	Kinsey#tur	89,{
+	mes "[Kinsey]";
+	mes "O que um homem precisa fazer para conseguir uma bebida forte por aqui? ";
+	next;
+	mes "[Kinsey]";
+	mes "Bem, o álcool no pub aqui é de segunda categoria, mas tenho que admitir, tem uma ótima atmosfera.";
+	next;
+	mes "[Kinsey]";
+	mes "Aliás, esse velhinho está sempre lá contando histórias sobre a Ilha da Tartaruga! ";
+	next;
+	if (select("^3333FF*ting!*^000000:Parece divertido~") == 1) {
+		mes "[Kinsey]";
+		mes "Uau...";
+		mes "Ei, seus olhos brilharam quando eu disse 'Ilha da Tartaruga!' ";
+		next;
+		mes "[Kinsey]";
+		mes "*Aham*";
+		mes "'Tartaruga";
+		mes "Ilha.'";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "^3333FF*ting!*^000000";
+		next;
+		mes "[Kinsey]";
+		mes "Ah...";
+		mes "Você deve ser um aventureiro. ";
+		next;
+		mes "[Kinsey]";
+		mes "Por que você não dá uma olhada perto do pub e procura aquele velho? ";
+		next;
+		mes "[Kinsey]";
+		mes "Ah, e hum, eu já estive no quarto dele antes. ";
+		next;
+		mes "[Kinsey]";
+		mes "Mas se ele pedir para você pagar uma bebida para ele, eu não faria isso. ";
+		close;
+	}
+	mes "[Kinsey]";
+	mes "Sim, acho que é muito legal ouvir as histórias dele. ";
+	next;
+	mes "[Kinsey]";
+	mes "Quero dizer, eles nem servem um 'Boogieman', muito menos um 'Cobo'. ";
+	close;
+}
+
+alberta_in,23,104,4	script	Grandpa Turtle#tur	120,{
+	mes "[Vovô Tartaruga]";
+	mes "Uau...";
+	mes "Tão tonto...";
+	next;
+	mes "[Vovô Tartaruga]";
+	mes "Não existe um estabelecimento decente para beber em toda Alberta! ";
+	next;
+	switch(select("Conte-me sobre a Ilha da Tartaruga:Como posso chegar lá?:Pare de falar")) {
+	case 1:
+		mes "[Vovô Tartaruga]";
+		mes "Eh...?";
+		mes "Ilha da Tartaruga?";
+		next;
+		mes "[Vovô Tartaruga]";
+		mes "Bem, há muito folclore sobre esse lugar. ";
+		next;
+		mes "[Vovô Tartaruga]";
+		mes "Outras pessoas dizem que uma poção que pode prolongar sua vida pode ser encontrada em algum lugar da Ilha da Tartaruga. ";
+		next;
+		mes "[Vovô Tartaruga]";
+		mes "Mas tenho certeza de que a Ilha da Tartaruga existe e que algo maravilhoso pode ser encontrado lá.";
+		next;
+		mes "[Vovô Tartaruga]";
+		mes "Mas só quem tem um coração bom e ávido por aventura deveria poder ir a esse tipo de lugar.";
+		next;
+		switch(select("^3333FF*ting!*^000000:Conte-me mais, velho!")) {
+		case 1:
+			mes "[Vovô Tartaruga]";
+			mes "Ha ha ha ~!";
+			if (Sex == SEX_MALE)
+				mes "Gosto do brilho nos seus olhos, meu garoto! ";
+			else
+				mes "Não adianta esconder o brilho nos seus olhos, minha querida! ";
+			next;
+			mes "[Vovô Tartaruga]";
+			mes "Diga-me...";
+			mes "Você já ouviu falar de um homem chamado ^3355FFJornadan Niliria^000000? ";
+			next;
+			mes "[Vovô Tartaruga]";
+			mes "^3355FFJornadan Niliria^000000 era um homem forte e convicto. ";
+			next;
+			mes "[Vovô Tartaruga]";
+			mes "Mesmo depois de aprenderem tudo o que puderam, grande parte da viagem dependeu da esperança e da fé de que a lenda da Ilha da Tartaruga era verdadeira...";
+			next;
+			mes "[Vovô Tartaruga]";
+			mes "Depois de uma longa e árdua jornada, seus esforços foram recompensados ??e eles desembarcaram na Ilha da Tartaruga!";
+			next;
+			mes "[Vovô Tartaruga]";
+			mes "No entanto, fica mais complicado depois disso. ";
+			next;
+			mes "[Vovô Tartaruga]";
+			mes "Heh heh...";
+			mes "Se quiser saber mais, por que não vai até o extremo leste do porto de Alberta? ";
+			next;
+			mes "[Vovô Tartaruga]";
+			mes "Ele provavelmente poderia lançar mais luz sobre o assunto da lenda da Ilha da Tartaruga.";
+			next;
+			mes "[Vovô Tartaruga]";
+			mes "Ah, mais uma coisa! ";
+			next;
+			mes "[Vovô Tartaruga]";
+			mes "Ah...";
+			mes "O fogo da juventude!";
+			mes "Quando os ventos morrerem, que seus sonhos encham suas velas ~ Boa sorte para você!";
+			close;
+		}
+		mes "[Vovô Tartaruga]";
+		mes "Grrr...!";
+		next;
+		mes "[Vovô Tartaruga]";
+		mes "Posso não saber muito, mas não falarei com ninguém motivado apenas pela ganância. ";
+		close;
+	case 2:
+		if ((MISC_QUEST & 65536) || TURTLE) {
+			if(MISC_QUEST & 65536) set TURTLE,0; //now clear the var
+			mes "[Vovô Tartaruga]";
+			mes "Bem...";
+			mes "Se você for para o lado leste do porto de Alberta, encontrará um velho barqueiro.";
+			next;
+			mes "[Vovô Tartaruga]";
+			mes "O nome dele é ^3355FFGotanblue^000000. ";
+			close;
+		}
+		mes "[Vovô Tartaruga]";
+		mes "Ilha da Tartaruga...?";
+		next;
+		mes "[Vovô Tartaruga]";
+		mes "Que coisa, esse lugar é difícil de encontrar e ainda mais difícil de viajar. ";
+		next;
+		mes "[Vovô Tartaruga]";
+		mes "Ho-ho-ho...";
+		mes "Por que você não fala com um marinheiro gordinho que conheço chamado ^3355FFGotanblue^000000. ";
+		next;
+		mes "[Vovô Tartaruga]";
+		mes "Diga a ele que eu enviei você, e ele poderá lhe contar mais sobre a Ilha da Tartaruga. ";
+		next;
+		mes "[Vovô Tartaruga]";
+		mes "Bem então...";
+		mes "Boa sorte ~";
+		set TURTLE,1;
+		setquest 11029;
+		close;
+	case 3:
+		mes "[Vovô Tartaruga]";
+		mes "Ahhh...";
+		mes "Mesmo nesta idade...";
+		mes "Eu não entendo";
+		mes "como posso beber tanto...";
+		close;
+	}
+}
+
+-	script	::Sailor_alberta	-1,{
+	if (TURTLE || (MISC_QUEST & 65536)) {
+		mes "[Gotanblue]";
+		mes "Eh...";
+		mes "Seus olhos...";
+		mes "Posso dizer que você está curioso sobre a Ilha da Tartaruga. ";
+		next;
+		switch(select("Você conhece a Ilha da Tartaruga?:Como posso chegar lá?:Pare de falar.")) {
+		case 1:
+			mes "[Gotanblue]";
+			mes "Ilha da Tartaruga...?";
+			mes "Bem, primeiro acho justo avisar que a Ilha da Tartaruga tirou a vida dos meus amigos. ";
+			next;
+			mes "[Gotanblue]";
+			mes "Queríamos saber se as lendas sobre aquela ilha eram verdadeiras, por isso deixamos tudo para trás para descobrir a verdade.";
+			next;
+			mes "[Gotanblue]";
+			mes "Jornadan Niliria foi um dos maiores caçadores de tesouros de todos os tempos e reuniu homens de todo o mundo para sua tripulação. ";
+			next;
+			mes "[Gotanblue]";
+			mes "Acontece que eu era o melhor em navegação. ";
+			next;
+			mes "[Gotanblue]";
+			mes "De qualquer forma, nossa maior pista sobre a localização da Ilha da Tartaruga sugeria que ela ficava perto de Alberta, então nossa viagem começou daqui.";
+			next;
+			mes "[Gotanblue]";
+			mes "Navegamos dia e noite, à deriva durante semanas, até que um dia fomos cercados por uma névoa incrivelmente espessa. ";
+			next;
+			mes "[Gotanblue]";
+			mes "Mas nenhum de nós se arrependeu e simplesmente seguimos em frente. ";
+			next;
+			mes "[Gotanblue]";
+			mes "Finalmente, um recife de coral apareceu de repente e não conseguimos desviar dele. ";
+			next;
+			mes "[Gotanblue]";
+			mes "Depois de acamparmos em terra e explorarmos a ilha, aprendemos algo bastante notável.";
+			next;
+			mes "[Gotanblue]";
+			mes "Houve um homem que chegou à Ilha da Tartaruga antes de nós. ";
+			next;
+			mes "[Gotanblue]";
+			mes "De acordo com seus registros, ele viajou sozinho para encontrar a Ilha da Tartaruga e conseguiu chegar sozinho. ";
+			next;
+			mes "[Gotanblue]";
+			mes "À medida que explorávamos mais a Ilha da Tartaruga, descobrimos que ela não só era abundante em tesouros, mas também continha um item de grande interesse.";
+			next;
+			mes "[Gotanblue]";
+			mes "No registro do primeiro explorador, algum tipo de incrível ^3355FFfragmento de jóia^000000 foi mencionado.";
+			next;
+			mes "[Gotanblue]";
+			mes "Ele viajou para a Ilha da Tartaruga com o propósito de descobrir os segredos das artes da espada e se deparou com uma joia que afirmava ser a mais bela do mundo.";
+			next;
+			mes "[Gotanblue]";
+			mes "Pelos registros de ^3355FFOne^000000, fomos capazes de explorar minuciosamente tudo o que pode ser visto na Ilha da Tartaruga. ";
+			next;
+			mes "[Gotanblue]";
+			mes "Mesmo depois de meses de busca, nunca conseguimos encontrar vestígios do fragmento da joia. ";
+			next;
+			mes "[Gotanblue]";
+			mes "Por fim, arrumamos nossas coisas para sair da ilha. ";
+			next;
+			mes "[Gotanblue]";
+			mes "Passamos um mês tentando navegar através daquela névoa. ";
+			next;
+			mes "[Gotanblue]";
+			mes "Nossos espíritos foram esmagados!! ";
+			next;
+			mes "[Gotanblue]";
+			mes "Enquanto lutávamos contra a neblina, perdemos nossos camaradas um por um. ";
+			next;
+			mes "[Gotanblue]";
+			mes "Fomos os únicos que não cedemos ao desespero e mantivemos obstinadamente as nossas esperanças. ";
+			next;
+			mes "[Gotanblue]";
+			mes "Bem, essa é a minha história. ";
+			next;
+			mes "[Gotanblue]";
+			mes "Heh heh...";
+			mes "Tenho certeza que ele pode lhe dar detalhes que nem eu seria capaz de fornecer...";
+			close2;
+			// erasequest 11029;
+			end;
+		case 2:
+			mes "[Gotanblue]";
+			mes "Depois da minha história da Ilha da Tartaruga, você ainda não tem medo de ir? ";
+			next;
+			mes "[Gotanblue]";
+			mes "Se você quiser que eu o guie até lá, cobrarei 10.000 zeny. ";
+			next;
+			if (select("Ilha da Tartaruga -> 10000 zeny:Cancelar") == 1) {
+				if (Zeny > 9999) {
+					mes "[Gotanblue]";
+					mes "Tudo bem!!";
+					mes "Você fez sua escolha! ";
+					next;
+					mes "^3355FF*Choo Choo*^000000";
+					set Zeny, Zeny-10000;
+					warp "tur_dun01",157,39;
+					close2;
+					// erasequest 11029;
+					end;
+				}
+				mes "[Gotanblue]";
+				mes "Hmmm...";
+				mes "Desculpe, mas você não tem zeny suficiente. ";
+				close;
+			}
+			mes "[Gotanblue]";
+			mes "Tudo bem então...";
+			mes "Bem, se o espírito de aventura te agarrar, estarei aqui esperando.";
+			close;
+		case 3:
+			mes "[Gotanblue]";
+			mes "Eh...";
+			next;
+			mes "[Gotanblue]";
+			mes "Volte sempre que sentir que está pronto para ouvir minha história, certo?";
+			close;
+		}
+	}
+	mes "[Gotanblue]";
+	mes "Ahhhh...!";
+	mes "Basta olhar para aquele oceano! ";
+	close;
+}
+
+tur_dun01,165,29,4	script	Sailor#tur2	709,{
+	mes "[Gotanblue]";
+	mes "Você quer";
+	mes "para retornar";
+	mes "para Alberta?";
+	next;
+	if (select("Vá para Alberta: pare de falar") == 1) {
+		mes "[Gotanblue]";
+		mes "Heh heh...";
+		mes "Eu certamente espero que você tenha encontrado o que estava procurando. ";
+		next;
+		mes "^3355FF* Choo Choo *^000000";
+		if (checkre(0))
+			warp "alberta",238,112;
+		else
+			warp "alberta",241,115;
+	}
+	close;
+}
+
+-	script	::Turtle_Scholar_alberta	-1,{
+	mes "[Jornadan Niliria]";
+	mes "Cada lugar";
+	mes "tem seu próprio e único";
+	mes "cheiros, imagens e sons.";
+	next;
+	mes "[Jornadan Niliria]";
+	mes "Até mesmo o grande e sempre crescente céu que é compartilhado por todos os povos da terra parece estranho quando você está em uma terra nova e estrangeira.";
+	next;
+	mes "[Jornandan Niliria]";
+	mes "Heh heh...";
+	mes "Assim como o meu";
+	mes "tempo na Ilha da Tartaruga.";
+	mes "Hah Hah Hah ~";
+	next;
+	switch(select("Sobre Ilha da Tartaruga:Você é Jornadan Niliria?!:Pare de falar")) {
+	case 1:
+		mes "[Jornadan Niliria]";
+		mes "Tartaruga...";
+		mes "Ilha...";
+		next;
+		mes "[Jornadan Niliria]";
+		mes "É quase bobo, mas a Ilha da Tartaruga foi nomeada simplesmente porque tem o formato de uma tartaruga.";
+		next;
+		mes "[Jornadan Niliria]";
+		mes "Agora, a Ilha da Tartaruga está cercada por uma densa neblina. ";
+		next;
+		mes "[Jornadan Niliria]";
+		mes "Mas, na verdade, o nevoeiro é o resultado de um fenómeno natural. ";
+		next;
+		mes "[Jornadan Niliria]";
+		mes "Heh heh...";
+		mes "Depois de alcançar a compreensão, a verdade se torna muito simples. ";
+		next;
+		mes "[Jornadan Niliria]";
+		mes "Acredite ou não, eu também temia os perigos da Ilha da Tartaruga. ";
+		next;
+		mes "[Jornadan Niliria]";
+		mes "Ainda assim, há uma coisa que ainda não descobri. ";
+		next;
+		mes "[Jornandan Niliria]";
+		mes "Então, até encontrar, continuarei pesquisando e aprendendo o máximo que puder até conseguir. ";
+		close;
+	case 2:
+		mes "[Jornadan Niliria]";
+		mes "Hum...?";
+		mes "Você já ouviu falar de mim?";
+		next;
+		mes "[Jornadan Niliria]";
+		mes "Ah...";
+		mes "Suponho que você saiba sobre meus dias de caça ao tesouro e provavelmente sobre a Ilha da Tartaruga.";
+		next;
+		mes "[Jornadan Niliria]";
+		mes "Bem, como você pode ver, estou um pouco mais velho agora. ";
+		next;
+		mes "[Jornadan Niliria]";
+		mes "Mas talvez, algum dia, se minha pesquisa der frutos, eu me aventure mais uma vez e procure o único tesouro que nunca encontrei...";
+		close;
+	case 3:
+		mes "[Jornadan Niliria]";
+		mes "Quando você quiser descobrir a verdade, nunca ceda ao desespero. ";
+		next;
+		mes "[Jornadan Niliria]";
+		mes "...";
+		next;
+		mes "[Jornadan Niliria]";
+		mes "...";
+		mes "......";
+		next;
+		mes "[Jornadan Niliria]";
+		mes "A propósito, estou com muita fome. ";
+		close;
+	}
+}
+
+alberta_in,18,102,4	script	Letter#tur	111,{
+	mes "[Carta do Explorador]";
+	mes "-O/X/XOVX-";
+	mes "Se você encontrar esta carta, por favor, não desconsidere o que leu.";
+	next;
+	mes "[Carta do Explorador]";
+	mes "Embora tenhamos encontrado a Ilha da Tartaruga, parece que nossa expedição irá falhar.";
+	next;
+	mes "[Carta do Explorador]";
+	mes "Resta apenas metade da nossa tripulação e só temos comida suficiente para mais dez dias. ";
+	next;
+	mes "[Carta do Explorador]";
+	mes "Esta maldita ilha deve ser amaldiçoada. ";
+	next;
+	mes "[Carta do Explorador]";
+	mes "Se não conseguirmos ajuda ou não encontrarmos Alberta logo...";
+	mes "Bem...";
+	close;
+}
+
+alberta,246,117,4	script	Voyage log#tur	111,{
+	if (rand(2)) {
+		mes "[Registro de viagem]";
+		mes "03h20";
+		mes "Não há luz das estrelas esta noite e não conseguimos ver nem cem metros à nossa frente. ";
+		next;
+		mes "[Registro de viagem]";
+		mes "Os rostos dos meus camaradas traíram os seus medos. ";
+		next;
+		mes "[Registro de viagem]";
+		mes "04:10";
+		mes "Há 5 minutos, nosso camarada Cooker foi morto quando o mastro quebrou repentinamente e caiu sobre sua cabeça.";
+		next;
+		mes "[Registro de viagem]";
+		mes "A hora estimada da morte é 04h07. ";
+		next;
+		mes "[Registro de viagem]";
+		mes "04:45";
+		mes "Enquanto dois de nossos trabalhadores consertavam o fundo do convés, eles foram atacados por monstros que haviam escapado pelas rachaduras do convés.";
+		next;
+		mes "[Registro de viagem]";
+		mes "Esses dois foram perdidos no ataque. ";
+		next;
+		mes "[Registro de viagem]";
+		mes "Dos danos ao deck, perdemos 30% dos nossos suprimentos. ";
+		next;
+		mes "[Registro de viagem]";
+		mes "05:23";
+		mes "Parece haver cada vez mais recifes para navegar, e eles ficam maiores à medida que viajamos. ";
+		next;
+		mes "[Registro de viagem]";
+		mes "Escrito por";
+		mes "Capitão Jornadan Niliria";
+		close;
+	}
+	else {
+		if (TURTLE == 1) {
+			mes "^3355FFO papel está rasgado e algas e mofo estão grudados no papel. ";
+			next;
+			switch(rand(1,3)) {
+			case 1:
+				mes "^3355FFHá uma folha de bananeira entre algumas páginas. ";
+				next;
+				mes "[Registro de viagem]";
+				mes "Data O/X";
+				mes "Logo depois de chegarmos à Ilha da Tartaruga, procuramos freneticamente por comida.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Foi tão ruim que dava para ver os ossos através da nossa pele.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Data X/X";
+				mes "Encontramos algum tipo de fruta para comer! ";
+				next;
+				mes "[Registro de viagem]";
+				mes "Data XO/X";
+				mes "Bem, não era exatamente como as bananas que temos em Rune-Midgarts, mas era muito parecida.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Data de saída";
+				mes "No meio da noite, um dos homens relatou que passou mal após comer o alimento.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Data OO/O";
+				mes "Outro membro da tripulação, Berot Berot, também apresentou indigestão grave.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Agora está ficando muito claro que a comida que comemos contém algum tipo de veneno.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Data XO/O";
+				mes "A terceira pessoa a sofrer de indigestão faleceu hoje. ";
+				next;
+				mes "[Registro de viagem]";
+				mes "Nossas suspeitas foram confirmadas quando descobrimos que os animais da Ilha da Tartaruga não comiam as bananas que encontramos.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Data OX/O";
+				mes "Decidimos selar essa fruta venenosa, mas descobrimos que ela não apodreceu, nem depois de tirarmos a casca.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Não temos ideia de por que é prejudicial comer ou por que nunca morre, mas é de algum interesse médico ou científico.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Entretanto, decidimos enterrar esta fruta até podermos voltar para Alberta.";
+				next;
+				mes "[Registro de viagem]";
+				mes "^FF3355tur_dun01^000000";
+				mes "^FF3355X: 160, Y: 81^000000";
+				next;
+				mes "^3355FFNo diário de viagem há uma chave fina marcada com uma caveira. ";
+				set TURTLE,2;
+				changequest 11029,11030;
+				close;
+			case 2:
+				mes "^3355FFVocê nota uma página com um carimbo em forma de pata de pássaro. ";
+				next;
+				mes "[Registro de viagem]";
+				mes "Data X/OO";
+				mes "Encontramos evidências de que outras pessoas estiveram aqui e que não somos os primeiros a encontrar a Ilha da Tartaruga.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Houve pelo menos uma pessoa que chegou aqui antes de nós. ";
+				next;
+				mes "[Registro de viagem]";
+				mes "A partir de amanhã começaremos a procurar esses registros ocultos.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Data O/OO";
+				mes "Estamos tendo dificuldade em tentar encontrar algum registro. ";
+				next;
+				mes "[Registro de viagem]";
+				mes "Data XO/OO";
+				mes "Finalmente encontramos os registros que procurávamos.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Suas anotações foram tão difíceis de encontrar porque apenas um homem, em vez de uma equipe inteira, chegou à Ilha da Tartaruga antes de nós!";
+				next;
+				mes "[Registro de viagem]";
+				mes "Este homem era um espadachim conhecido simplesmente como ‘One’. ";
+				next;
+				mes "[Registro de viagem]";
+				mes "Seus registros foram escritos em pele de animais, mas eram duráveis ??e ainda fáceis de ler depois de todo esse tempo.";
+				next;
+				mes "[Registro de viagem]";
+				mes "De acordo com suas notas, Turtle Island consiste em 4 níveis. ";
+				next;
+				mes "[Registro de viagem]";
+				mes "Ainda assim, é certo que algo tem algum controle sobre a Ilha da Tartaruga.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Para manter este registro seguro, nossa tripulação decidiu esconder este valioso registro no segundo nível da Ilha da Tartaruga.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Procure aqui...";
+				mes "^FF3355tur_dun02^000000";
+				mes "^FF3355X: 132, Y: 251^000000";
+				next;
+				mes "^3355FFHá a imagem de uma árvore na qual há um pequeno buraco de fechadura claramente mostrado sob as raízes.^000000";
+				next;
+				mes "^3355FFVocê ganhou^000000";
+				mes "^3355FFa chave Roots.^000000";
+				set TURTLE,3;
+				changequest 11029,11031;
+				close;
+			case 3:
+				mes "^3355FFEstas páginas deste diário estão sujas de lama e algumas delas estão faltando.^000000";
+				next;
+				mes "[Registro de viagem]";
+				mes "Data O/XX";
+				mes "O maior tesouro da Ilha da Tartaruga, como nunca foi visto, está escondido, selado em algum lugar secreto...";
+				next;
+				mes "[Registro de viagem]";
+				mes "Passamos muitos dias procurando por ele, mas não encontramos nenhum vestígio.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Enquanto isso, coletamos muitos tesouros preciosos. ";
+				next;
+				mes "[Registro de viagem]";
+				mes "Data XO/XX";
+				mes "Escondemos o tesouro que deixamos para trás para evitar que seja roubado.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Está em algum lugar no quarto nível, na parte inferior da ilha. ";
+				next;
+				mes "[Registro de viagem]";
+				mes "Porém, a tecnologia desta caixa do tesouro é muito sofisticada e não será fácil abri-la à força.";
+				next;
+				mes "[Registro de viagem]";
+				mes "Aqui...";
+				mes "^FF3355tur_dun01^000000";
+				mes "^FF3355X: 203, Y: 155^000000";
+				next;
+				mes "^3355FFVocê encontra três pequenos buracos sob a pedra da tartaruga. ";
+				next;
+				mes "^3355FFVocê ganhou ^000000";
+				mes "^3355FFa chave de segurança^000000";
+				set TURTLE,4;
+				changequest 11029,11032;
+				close;
+			}
+		}
+		mes "^3355FFVocê fechou o diário de viagem.^000000";
+		close;
+	}
+}
+
+tur_dun01,160,81,4	script	Skull Stone#tur	111,{
+	if (TURTLE == 2) {
+		mes "^3355FFDebaixo da pedra^000000";
+		mes "^3355FFé um pequeno buraco de fechadura^000000";
+		mes "^3355FFcom uma marca de caveira.^000000";
+		mes "^3355FFVocê usou a tecla Caveira^000000";
+		mes "^3355FFnaquele buraco da fechadura.^000000";
+		next;
+		mes "^3355FF*Clique! ";
+		next;
+		mes "^3355FFDe repente, o topo de^000000";
+		mes "^3355FFa pedra abriu e^000000";
+		mes "^3355FFAlguns itens apareceram!!^000000";
+		next;
+		set MISC_QUEST,MISC_QUEST | 65536;
+		set TURTLE,0;
+		completequest 11030;
+		switch(rand(1,3)) {
+		case 1:
+			getitem 532,5; //Banana_Juice
+			mes "^3355FFVocê ganhou^000000";
+			mes "^3355FF5 Suco de Banana^000000";
+			close;
+		case 2:
+			getitem 513,5; //Banana
+			mes "^3355FFVocê ganhou^000000";
+			mes "^3355FF5 Banana^000000";
+			close;
+		case 3:
+			getitem 513,5; //Banana
+			getitem 532,5; //Banana_Juice
+			mes "^3355FFVocê ganhou^000000";
+			mes "^3355FF5 Banana e^000000";
+			mes "^3355FF5 Suco de Banana^000000";
+			close;
+		}
+	}
+	mes "^3355FFÉ assustador^000000";
+	mes "^3355FFtúmulo de pedra com ^000000";
+	mes "^3355FFCrânio horrível nele.^000000";
+	close;
+}
+
+tur_dun02,132,251,4	script	Turtle Tree Roots#tur	111,{
+	if (TURTLE == 3) {
+		mes "^3355FFUDebaixo das raízes da árvore^000000";
+		mes "^3355FFé um pequeno buraco de fechadura^000000";
+		mes "^3355FFmarcado com uma insígnia de raiz.^000000";
+		mes "^3355FFVocê usou a chave Roots^000000";
+		mes "^3355FFnaquele buraco da fechadura.^000000";
+		next;
+		mes "^3355FF*Suave,suave!*^000000";
+		next;
+		mes "^3355FFEntre as raízes^000000";
+		mes "^3355FFUma pequena porta se abre,^000000";
+		mes "^3355FFrevelando um^000000";
+		mes "^3355FDobre a rolagem.^000000";
+		next;
+		mes "[Pergaminho antigo]";
+		mes "^FF3355Seguindo o^000000";
+		mes "^FF3355legenda de^000000";
+		mes "^FF3355minha aldeia,^000000";
+		mes "^FF3355Eu vim^000000";
+		mes "^FF3355para melhorar meu^000000";
+		mes "^FF3355Esgrima...^000000";
+		next;
+		mes "[Pergaminho antigo]";
+		mes "^FF3355Apenas aquele que^000000";
+		mes "^FF3355corta a casca^000000";
+		mes "^FF3355de uma tartaruga^000000";
+		mes "^FF3355pode se tornar um^000000";
+		mes "^FF3355grande mestre^000000";
+		mes "^FF3355da espada...^000000";
+		next;
+		mes "[Pergaminho antigo]";
+		mes "^FF3355Para cumprir isso^000000";
+		mes "^FF3355lenda, eu tenho^000000";
+		mes "^FF3355venha. ";
+		mes "^FF3355cortará o^000000";
+		mes "^FF3355casca de tartaruga!!^000000";
+		next;
+		mes "[Pergaminho antigo]";
+		mes "^FF3355Vai...^000000";
+		mes "^FF3355tur_dun02^000000";
+		mes "^FF3355X: 46, Y: 125^000000";
+		next;
+		mes "^3355FFDentro da pilha de tartarugas^000000";
+		mes "^3355FFcristais, um pergaminho está oculto.^000000";
+		set TURTLE,7;
+		changequest 11031,11033;
+		mes "^3355FFVocê ganhou ^000000";
+		mes "^3355FFChave de cristal tartaruga.^000000";
+		close;
+	}
+	mes "^3355FFExistem antigos,^000000";
+	mes "^3355FFraízes grossas de árvores^000000";
+	mes "^3355FFancorado em^000000";
+	mes "^3355FFo chão aqui.^000000";
+	close;
+}
+
+tur_dun02,46,125,4	script	A pile of turtle crystal	111,{
+	if (TURTLE == 7) {
+		mes "^3355FFEntre os Cristais de Tartaruga,^000000";
+		mes "^3355FFvocê encontra um buraco de fechadura estranho.^000000";
+		next;
+		mes "^3355FFVocê usa o";
+		mes "Chave de cristal tartaruga";
+		mes "no buraco da fechadura.^000000";
+		next;
+		mes "^3355FF*Clique! ";
+		next;
+		mes "^3355FFEntre os cristais,000000";
+		mes "^3355FFUma pequena placa de cristal^000000";
+		mes "^3355FFem que uma mensagem^000000";
+		mes "^3355FFin gravado.^000000";
+		next;
+		mes "[Placa de Cristal]";
+		mes "^3355AAI, o espadachim,^000000";
+		mes "^3355AA'Um', foi bem-sucedido.^000000";
+		mes "^3355AAI cortei o casco da tartaruga.^000000";
+		mes "^3355AAAgora vou tentar^000000";
+		mes "^3355AACristal de tartaruga cortado.^000000";
+		next;
+		mes "[Placa de Cristal]";
+		mes "^3355AAA superfície da tartaruga^000000";
+		mes "^3355AAcristal é tão áspero e^000000";
+		mes "^3355AAirregular. ";
+		mes "^3355AApara aprimorar minhas habilidades.^000000";
+		next;
+		mes "[Placa de Cristal]";
+		mes "^3355AAVai ser difícil,^000000";
+		mes "^3355AAmas vou conseguir...^000000";
+		next;
+		mes "[Placa de cristal]";
+		mes "^3355AAVá 5 passos para leste,^000000";
+		mes "^3355AA30 passos para o sul^000000";
+		mes "^3355AA e 5 passos ^000000";
+		mes "^3355AAo pilar da tartaruga.^000000";
+		mes "^3355AALá você encontrará^000000";
+		mes "^3355AAo fim da arte da espada.^000000";
+		next;
+		mes "^3355FFNa borda do cristal^000000";
+		mes "^3355FFplaca, é uma chave longa.^000000";
+		set TURTLE,8;
+		changequest 11033,11034;
+		mes "^3355FFVocê ganhou o^000000";
+		mes "^3355FFChave do Pilar Tartaruga.^000000";
+		close;
+	}
+	mes "^3355FFHá tantas tartarugas^000000";
+	mes "^3355FFCristais que só podem ser^000000";
+	mes "^3355FFencontrado na ilha da Tartaruga.^000000";
+	close;
+}
+
+tur_dun02,49,158,4	script	Turtle Pillar#tur	111,{
+	if (TURTLE == 8) {
+		mes "^3355FFNa base do pilar^000000";
+		mes "^3355FFé um pequeno buraco de fechadura com^000000";
+		mes "^3355FFUma marca em forma de tartaruga.^000000";
+		mes "^3355FFVocê usou o";
+		mes "Chave do Pilar da Tartaruga";
+		mes "naquele buraco da fechadura.^000000";
+		next;
+		mes "^3355FF*Clique! ";
+		next;
+		mes "^3355FFNa base do pilar,^000000";
+		mes "^3355FFUma portinha aparece e^000000";
+		mes "^3355FFdaquela porta está gravado^000000";
+		mes "^3355FFConta de pedra desenrolada.^000000";
+		next;
+		mes "[Conta de Pedra Tartaruga]";
+		mes "Este pilar de tartaruga é feito do material mais resistente da ilha.";
+		next;
+		mes "[Conta de Pedra Tartaruga]";
+		mes "Cortá-lo é impossível até mesmo para alguém com habilidades lendárias. ";
+		next;
+		mes "[Conta de Pedra Tartaruga]";
+		mes "Desenvolvi minhas habilidades mentais e treinei usando materiais desta ilha. ";
+		next;
+		mes "[Conta de Pedra Tartaruga]";
+		mes "Este pode ser o auge da esgrima? ";
+		next;
+		mes "[Conta de Pedra Tartaruga]";
+		mes "Para esta realização final, deixo uma oferenda.";
+		next;
+		mes "[Conta de Pedra Tartaruga]";
+		mes "Pretendo oferecer minha gratidão ao sangue dos monstros que matei e aos materiais que usei em meu treinamento.";
+		next;
+		mes "^3355FFExistem muitos itens^000000";
+		mes "^3355FFsob o pilar...^000000";
+		set MISC_QUEST,MISC_QUEST | 65536;
+		set TURTLE,0;
+		completequest 11034;
+		switch(rand(1,10)) {
+		case 1:
+			getitem 702,1; //Animal_Blood
+			mes "^3355FFVocê ganhou ^000000";
+			mes "^3355FF Sangramento de Animal.^000000";
+			close;
+		case 2:
+			getitem 716,1; //Red_Gemstone
+			mes "^3355FFVocê ganhou^000000";
+			mes "^3355FFa Pedra Preciosa Vermelha.^000000";
+			close;
+		case 3:
+			getitem 734,1; //Red_Frame
+			mes "^3355FFVocê ganhou^000000";
+			mes "^3355FFa Moldura Vermelha^000000";
+			close;
+		case 4:
+			getitem 10019,1; //Red_Muffler
+			mes "^3355FFVocê ganhou^000000";
+			mes "^3355FFRLenço vermelho.^000000";
+			close;
+		case 5:
+			getitem 725,1; //Red_Jewel
+			mes "^3355FFVocê ganhou^000000";
+			mes "^3355FFa Sardonix.^000000";
+			close;
+		case 6:
+			getitem 716,1; //Red_Gemstone
+			mes "^3355FFVocê ganhou^000000";
+			mes "^3355FFa Pedra Preciosa Vermelha.^000000";
+			close;
+		case 7:
+			getitem 716,1; //Red_Gemstone
+			mes "^3355FFVocê ganhou^000000";
+			mes "^3355FFa Pedra Preciosa Vermelha.^000000";
+			close;
+		case 8:
+			getitem 716,1; //Red_Gemstone
+			mes "^3355FFVocê ganhou^000000";
+			mes "^3355FFa Pedra Preciosa Vermelha.^000000";
+			close;
+		case 9:
+			getitem 716,1; //Red_Gemstone
+			mes "^3355FFVocê ganhou^000000";
+			mes "^3355FFa Pedra Preciosa Vermelha.^000000";
+			close;
+		case 10:
+			getitem 725,1; //Red_Jewel
+			mes "^3355FFVocê ganhou^000000";
+			mes "^3355FFa Sardonix.^000000";
+			close;
+		}
+	}
+	mes "^3355FFEste Pilar da Tartaruga^000000";
+	mes "^3355FFé apenas um de^000000";
+	mes "^3355FFmuitos pilares.^000000";
+	next;
+	mes "^3355FFOu é...?^000000";
+	close;
+}
+
+tur_dun01,203,155,4	script	Turtle stone#tur	111,{
+	if (TURTLE == 4) {
+		mes "^3355FFNo topo da pedra";
+		mes "é um pequeno buraco de fechadura";
+		mes "com a marca da tartaruga.^000000";
+		next;
+		mes "^3355FFVocê usou o";
+		mes "Chave de segurança";
+		mes "naquele buraco.^000000";
+		next;
+		mes "^3355FF*Tat tat tat tat*^000000";
+		next;
+		mes "^3355FFA parte de trás da pedra";
+		mes "dividido em duas partes";
+		mes "revelando alguns escondidos";
+		mes "palavras gravadas dentro.^000000";
+		next;
+		mes "[Pedra da Tartaruga]";
+		mes "Aquele que sonha ser uma estrela da serenidade deve primeiro considerar o cometa e os três raios de luz como um só.";
+		next;
+		mes "[Pedra da Tartaruga]";
+		mes "Você já possui o cometa, então eu lhe concedo a primeira luz...";
+		next;
+		mes "[Pedra da Tartaruga]";
+		mes "- Luz do segundo estágio -";
+		mes "^FF3355B2, X: 75, Y: 249 ^ 000000";
+		next;
+		mes "^3355FFNa parte inferior da pedra";
+		mes "abaixo da linha das palavras,";
+		mes "repousa uma conta vermelha brilhante.^000000";
+		next;
+		set TURTLE,10;
+		changequest 11032,11035;
+		mes "^3355FFVocê coloca a conta vermelha no";
+		mes "Chave de segurança, encaixando-a";
+		mes "dentro de um dos três pequenos orifícios.^000000";
+		close;
+	}
+	mes "^3355FFÉ apenas um";
+	mes "tartaruga normal";
+	mes "pedra. ";
+	mes "no topo";
+	mes "está escrito";
+	mes "as palavras,";
+	mes "'1º estágio.'^000000";
+	close;
+}
+
+tur_dun02,75,249,4	script	Turtle stone#tur2	111,{
+	if (TURTLE == 10) {
+		mes "^3355FFNo topo da pedra";
+		mes "é um pequeno buraco de fechadura";
+		mes "com a marca da tartaruga.^000000";
+		next;
+		mes "^3355FFVocê usou o";
+		mes "Chave de segurança";
+		mes "no buraco da fechadura.^000000";
+		next;
+		mes "^3355FF*Clique! ";
+		next;
+		mes "^3355FFA parte de trás da pedra";
+		mes "dividido em duas partes";
+		mes "revelando alguns escondidos";
+		mes "palavras no interior.^000000";
+		next;
+		mes "[Pedra da Tartaruga]";
+		mes "Aquele que sonha ser uma estrela da serenidade deve primeiro considerar o cometa e os três raios de luz como um só.";
+		next;
+		mes "[Pedra da Tartaruga]";
+		mes "Você já possui o cometa e a primeira luz, então agora lhe concedo a segunda luz.";
+		next;
+		mes "[Pedra da tartaruga]";
+		mes "- Luz do terceiro estágio -";
+		mes "^FF3355B3 . ";
+		next;
+		mes "No fundo da pedra";
+		mes "abaixo da linha das palavras,";
+		mes "repousa uma conta amarela brilhante.";
+		next;
+		set TURTLE,11;
+		changequest 11035,11036;
+		mes "^3355FFVocê definiu a conta amarela";
+		mes "na chave de segurança, encaixando-a";
+		mes "dentro de um dos três pequenos orifícios.^000000";
+		close;
+	}
+	mes "^3355FFÉ apenas um";
+	mes "tartaruga normal";
+	mes "pedra. ";
+	mes "no topo,";
+	mes "as palavras";
+	mes "'2ª fase'";
+	mes "estão escritos.^000000";
+	close;
+}
+
+tur_dun03,118,233,4	script	Turtle Stone#tur3	111,{
+	if (TURTLE == 11) {
+		mes "^3355FFNo topo da pedra";
+		mes "é um pequeno buraco de fechadura";
+		mes "com a marca da tartaruga.^000000";
+		next;
+		mes "^3355FFVocê usou o";
+		mes "Chave de segurança";
+		mes "no buraco da fechadura.^000000";
+		next;
+		mes "^3355FF*Clique! ";
+		next;
+		mes "^3355FFA parte de trás da pedra";
+		mes "dividido em duas partes";
+		mes "revelando alguns escondidos";
+		mes "palavras no interior.^000000";
+		next;
+		mes "[Pedra da Tartaruga]";
+		mes "Aquele que sonha ser uma estrela da serenidade deve primeiro considerar o cometa e os três raios de luz como um só.";
+		next;
+		mes "[Pedra da Tartaruga]";
+		mes "Você já possui o cometa e as duas primeiras luzes. ";
+		next;
+		mes "[Pedra da Tartaruga]";
+		mes "- Estrela da Serenidade -";
+		mes "^FF3355B4 . ";
+		next;
+		mes "^3355FFNa parte inferior da pedra";
+		mes "abaixo da linha das palavras,";
+		mes "repousa uma conta azul brilhante.^000000";
+		next;
+		set TURTLE,12;
+		changequest 11036,11037;
+		mes "^3355FFVocê define a conta azul para o";
+		mes "na Chave de Segurança, encaixando-a";
+		mes "dentro de um dos três pequenos orifícios.^000000";
+		close;
+	}
+	mes "^3355FFÉ apenas um";
+	mes "tartaruga normal";
+	mes "pedra. ";
+	mes "no topo,";
+	mes "as palavras,";
+	mes "'3ª etapa'";
+	mes "estão escritos.^000000";
+	close;
+}
+
+tur_dun04,113,178,4	script	Turtle Statue#tur	111,{
+	if (TURTLE == 12) {
+		mes "^3355FFNo topo da estátua";
+		mes "é um pequeno buraco de fechadura";
+		mes "com a marca da tartaruga.^000000";
+		mes "^3355FFVocê usou o";
+		mes "Chave de segurança";
+		mes "no buraco da fechadura.^000000";
+		next;
+		mes "^3355FF*Clique! ";
+		next;
+		mes "^3355FFA estátua se dividiu em";
+		mes "duas partes revelando um";
+		mes "placa de metal embaixo.^000000";
+		next;
+		mes "[Prato de metal]";
+		mes "Para aquele que sonha ser uma estrela de serenidade entre o povo: Você sabe segurar o cometa e os três raios de luz como um só.";
+		next;
+		mes "^3355FFVocê encontra uma pequena alavanca";
+		mes "na parte inferior do";
+		mes "prato de metal. ";
+		mes "abre como uma gaveta.^000000";
+		next;
+		set MISC_QUEST,MISC_QUEST | 65536;
+		set TURTLE,0;
+		completequest 11037;
+		if (rand(1,20) == 7) {
+			switch(rand(1,4)) {
+			case 1:
+				getitem 644,1; //Gift_Box
+				mes "^3355FFDentro da gaveta,";
+				mes "é uma caixa de presente. ";
+				mes "A caixa de presente agora é sua.^000000";
+				close;
+			case 2:
+				getitem 616,1; //Old_Card_Album
+				mes "^3355FFDentro da gaveta,";
+				mes "é um álbum de cartas antigo.";
+				mes "Agora é seu.^000000";
+				close;
+			case 3:
+				getitem 617,1; //Old_Violet_Box
+				mes "^3355FFDentro da gaveta,";
+				mes "é uma velha caixa roxa.";
+				mes "Agora é seu.^000000";
+				close;
+			case 4:
+				getitem 617,1; //Old_Violet_Box
+				mes "^3355FFDentro da gaveta,";
+				mes "é uma velha caixa roxa.";
+				mes "Agora é seu.^000000";
+				close;
+			}
+		}
+		getitem 604,1; //Branch_Of_Dead_Tree
+		mes "^3355FFDentro da gaveta,";
+		mes "é um galho morto.";
+		mes "Agora é seu.^000000";
+		close;
+	}
+	mes "^3355FFÉ uma estátua de tartaruga";
+	mes "feito de tartaruga comum";
+	mes "pedra. ";
+	mes "a palavra 'Segurança'. ^ 000000";
+	close;
+}
+
+tur_dun03,105,76,4	script	Knight Leader#tur	110,5,5,{
+	mes "[Takuyaka]";
+	mes "Para onde foram todos os meus homens?!";
+	mes "Isso é horrível ~!";
+	next;
+	mes "[Takuyaka]";
+	mes "Oh...";
+	mes "*Uau!*";
+	mes "Finalmente, outra pessoa.";
+	mes "Me diga quem você é!";
+	next;
+	switch(select("Quem é você para perguntar?:"+ strcharinfo(0) +"!:O que você está fazendo aqui?:Primeiro, me diga quem você é.")) {
+	case 1:
+		mes "[Takuyaka]";
+		mes "Como ousa falar comigo nesse tom! ";
+		next;
+		mes "[Takuyaka]";
+		mes "Então me diga a verdade! ";
+		close;
+	case 2:
+		mes "[Takuyaka]";
+		mes "" + strcharinfo(0) + "?";
+		mes "Bem, seu nome soa melhor que o meu. ";
+		next;
+		mes "[Takuyaka]";
+		mes "Você tem alguma coisa para me dar? ";
+		close;
+	case 3:
+		mes "[Takuyaka]";
+		mes "Ouvi dizer que muitos tesouros podem ser encontrados na Ilha da Tartaruga. ";
+		next;
+		mes "[Takuyaka]";
+		mes "No entanto, estamos totalmente perdidos. ";
+		next;
+		mes "[Takuyaka]";
+		mes "Se você vir algum deles, diga que eles devem se reunir aqui! ";
+		close;
+	case 4:
+		mes "[Takuyaka]";
+		mes "Meu? ";
+		next;
+		mes "[Mudasamu]";
+		mes "Realmente agora?";
+		next;
+		mes "[Takuyaka]";
+		mes "Quieto!";
+		next;
+		mes "[Takuyaka]";
+		mes "De qualquer forma, viemos aqui com a mais pura das intenções. ";
+		next;
+		mes "[Takuyaka]";
+		mes "Mudasamu!";
+		mes "Por que é isso";
+		mes "acontecendo comigo!!!!";
+		next;
+		mes "[Mudasamu]";
+		mes "Huh...!";
+		mes "Por que você deveria";
+		mes "fique surpreso,";
+		mes "seu anão gordinho?";
+		close;
+	}
+
+OnTouch_:
+	mes "[Voz assustada]";
+	mes "O que-o que?!";
+	next;
+	mes "[Voz Aterrorizada]";
+	mes "O que é esse barulho?!";
+	mes "M-M-Mudasamu!";
+	mes "Me proteja!";
+	next;
+	mes "[Mudasamu]";
+	mes "Não.";
+	mes "E cale-se.";
+	close;
+}
+
+tur_dun03,105,74,4	script	Mudasamu#tur	119,{
+	mes "[Mudasamu]";
+	mes "Meu nome é Mudasamu...";
+	mes "Segundo no comando do";
+	mes "Cavaleiros de Segurança de Alberta.";
+	next;
+	mes "[Mudasamu]";
+	mes "Viemos aqui para resgatar caçadores de tesouros que possam estar em apuros. ";
+	next;
+	mes "[Mudasamu]";
+	mes "Basicamente, o nosso líder estava tão distraído com a ideia de encontrar o tesouro ele mesmo que perdemos os nossos homens. ";
+	next;
+	emotion ET_ANGER;
+	mes "[Takuyaka]";
+	mes "Olá, Mudasamu!";
+	mes "Você está falando";
+	mes "sobre mim?!";
+	next;
+	mes "[Mudasamu]";
+	mes "Não, gordo,";
+	mes "não estivessem";
+	mes "falando sobre você.";
+	next;
+	mes "[Mudasamu]";
+	mes "*Suspirar...*";
+	mes "É melhor eu ser pago";
+	mes "horas extras para";
+	mes "aguentando isso.";
+	close;
+}
+
+tur_dun01,190,115,4	script	Knight#tur	105,{
+	mes "[?]";
+	mes "Onde eles estão?";
+	mes "Ah, ei! ";
+	next;
+	switch(select("Quem é você?:Desculpe, não.:Por que você veio aqui?:Como você chegou aqui?")) {
+	case 1:
+		mes "[Passats]";
+		mes "Meu nome é Passats, um orgulhoso Cavaleiro da Segurança de Alberta. ";
+		next;
+		mes "[Passats]";
+		mes "Nossa tarefa aqui é salvar pessoas, mas quando chegamos à Ilha da Tartaruga, fomos atacados por uma multidão de monstros! ";
+		next;
+		mes "[Passats]";
+		mes "Agora estou sozinho. ";
+		close;
+	case 2:
+		mes "[Passats]";
+		mes "Ah bem...";
+		mes "Bem, se acontecer de você encontrar mais alguém na minha unidade, você poderia avisar onde estou?";
+		next;
+		mes "[Passat]";
+		mes "Ah, e se você encontrar nosso líder, dê um chute na bunda dele, certo? ";
+		next;
+		if (BaseLevel <= 10)
+			percentheal 40,0;
+		mes "[Passats]";
+		mes "Oh...";
+		mes "E, hum...";
+		mes "Alegrar!";
+		close;
+	case 3:
+		mes "[Passats]";
+		mes "Há muitas histórias sobre a incrível riqueza que pode ser encontrada nesta ilha. ";
+		next;
+		mes "[Passats]";
+		mes "Mas então, o problema começou quando algum navegador realmente sabia o caminho para a Ilha da Tartaruga. ";
+		next;
+		mes "[Passats]";
+		mes "De qualquer forma, algumas pessoas de Alberta têm vindo tolamente para cá, na esperança de encontrar um tesouro. ";
+		next;
+		mes "[Passats]";
+		mes "Então agora estamos aqui para procurar moradores em apuros e mandá-los de volta para casa em segurança. ";
+		close;
+	case 4:
+		mes "[Passats]";
+		mes "Hmmm...";
+		next;
+		mes "[Passats]";
+		mes "Nenhuma pista.";
+		next;
+		select("Como pode ser?!");
+		mes "[Passats]";
+		mes "Ah, não fique com raiva. ";
+		next;
+		mes "[Passats]";
+		mes "EU...";
+		mes "Eu também sou uma vítima ~";
+		close;
+	}
+}
+
+tur_dun03,189,126,4	script	Knight#tur2	105,{
+	mes "[Jayprocat]";
+	mes "Oh? ";
+	next;
+	if (select("O que é isso exatamente?:Não estou impressionado.") == 1) {
+		mes "[Jayprocat]";
+		mes "Bem...";
+		mes "Deveríamos proteger o povo de Alberta. ";
+		next;
+		mes "[Jayprocat]";
+		mes "Então, quando um grupo deles pegou a febre do tesouro e começou a vir para cá, viemos resgatá-los. ";
+		next;
+		mes "[Jayprocat]";
+		mes "Acontece que, por alguma piada do destino, nosso líder é esse cara rechonchudo que atraiu uma multidão de monstros para nós, desenterrando um tesouro ruidosamente, em vez de fazer o que deveríamos fazer.";
+		next;
+		mes "[Jayprocat]";
+		mes "*Suspirar...*";
+		mes "Por que Mudasamu não estava no comando? ";
+		close;
+	}
+	mes "[Jayprocat]";
+	mes "Bem...";
+	mes "É verdade que estragamos bastante a nossa missão atual de salvar qualquer um aqui em busca de tesouros, já que precisamos ser resgatados agora também.";
+	next;
+	mes "[Jayprocat]";
+	mes "*Farejar*";
+	mes "Por que tivemos que ser atacados por tantos monstros na minha primeira missão? ";
+	next;
+	if (select("Por que você fugiu?:Eu não me importo.") == 1) {
+		mes "[Jayprocat]";
+		mes "Não, eu não fugi! ";
+		next;
+		mes "[Jayprocat]";
+		mes "Os monstros são todos tartarugas altamente evoluídas. ";
+		next;
+		mes "[Jayprocat]";
+		mes "Eu não tinha ideia de que os monstros desta ilha eram muito mais fortes do que os que vivem perto de Alberta.";
+		next;
+		mes "[Jayprocat]";
+		mes "Suas conchas são tão resistentes e parece que não conseguimos encontrar nenhum ponto fraco! ";
+		close;
+	}
+	mes "[Jayprocat]";
+	mes "Você é tão cruel...";
+	mes "Quer dizer, sou realmente novo nisso!";
+	close;
+}
+
+tur_dun03,104,171,4	script	Knight#tur3	105,{
+	mes "[Tempestade]";
+	mes "Eu sou o único que sobrou? ";
+	next;
+	if(select("Talvez eles tenham fugido?:O que aconteceu?") == 1) {
+		mes "[Tempestade]";
+		mes "Não, nunca fugiríamos do perigo.";
+		next;
+		mes "[Tempestade]";
+		mes "Bem, meio que fizemos, mas isso foi porque foi uma ordem direta do nosso líder! ";
+		next;
+		mes "[Tempestade]";
+		mes "Mesmo que esse líder seja um pouco ganancioso, com cabelos que possam estar ralos...";
+		next;
+		mes "[Tempestade]";
+		mes "^FF0000E tem o corpo";
+		mes "de uma baleia grávida^000000.";
+		next;
+		mes "[Tempestade]";
+		mes "Oh espere!";
+		mes "eu não deveria";
+		mes "já disse isso!";
+		mes "O que eu quis dizer";
+		mes "dizer foi...";
+		next;
+		mes "[Tempestade]";
+		mes "^CC0000E tem o";
+		mes "corpo de uma baleia";
+		mes "grávida de gêmeos^000000.";
+		next;
+		mes "[Tempestade]";
+		mes "Grrr...!";
+		mes "Estou com tanta raiva!";
+		mes "Por que Mudasamu não pode";
+		mes "ser nosso líder?!";
+		close;
+	}
+	mes "[Tempestade]";
+	mes "Tínhamos bons planos para esta missão, feitos pelo nosso segundo em comando, Mudasamu. ";
+	next;
+	mes "[Tempestade]";
+	mes "Sempre que Takuyaka lidera uma missão, ele sempre consegue bagunçar tudo! ";
+	next;
+	mes "[Tempestade]";
+	mes "*Farejar*";
+	mes "Eu suo e sangro pelos Cavaleiros de Segurança de Alberta, e ainda sou torturado pelo fato de Sir Porky nos comandar. ";
+	next;
+	mes "[Tempestade]";
+	mes "Nosso orçamento para armas e armaduras sempre acaba depois que Takuyaka visita um bufê... Por que temos que ser tão infelizes?!";
+	close;
+}
+
+tur_dun03,67,130,4	script	Knight#tur4	105,{
+	mes "[Nisureia]";
+	mes "Hum? ";
+	next;
+	mes "[Nisureia]";
+	mes "Estou começando a pensar que todos os meus camaradas foram mortos pelos monstros daqui...";
+	next;
+	if (BaseLevel <= 40) {
+		mes "[Nisureia]";
+		mes "Tendo uma";
+		mes "momento difícil?";
+		next;
+		if (Zeny <= 3000) {
+			mes "[Nisureia]";
+			mes "Mesmo que você seja muito forte, mais cedo ou mais tarde poderá precisar de um adiamento. ";
+			next;
+			if (select("Sim, ajude-me.:Não, obrigado.") == 1) {
+				mes "[Nisureia]";
+				mes "Ok, então, deixe-me ativar essa coisa de teletransporte que nos foi doada pela Kafra Corporation...";
+				close2;
+				warp "alberta",241,115;
+				end;
+			}
+			mes "[Nisureia]";
+			mes "Ah, esse é o espírito! ";
+			next;
+			mes "[Nisureia]";
+			mes "Bem, boa sorte!";
+			close;
+		}
+		mes "[Nisureia]";
+		mes "Você parece perdido! ";
+		next;
+		mes "[Nyusuréia]";
+		mes "De qualquer forma...";
+		mes "Boa sorte!";
+		mes "Você vai precisar disso!";
+		close;
+	}
+	mes "[Nisureia]";
+	mes "Huh...";
+	mes "Você parece calmo e controlado. ";
+	next;
+	mes "[Nisureia]";
+	mes "Tenho sonhos de me tornar um grande cavaleiro, mas como nosso 'líder' é todo gordo e sem cérebro, estamos presos nesta situação.";
+	next;
+	mes "[Nisureia]";
+	mes "De qualquer forma, tome cuidado neste terceiro nível da Ilha da Tartaruga. ";
+	close;
+}
+
+// Alberta Boy
+//============================================================ 
+alberta_in,131,95,5	script	Iromo#ep3_2	706,{
+	if (ep13_2_hiki == 13) {
+		mes "[Iromo]";
+		mes "Mas... este mundo é...";
+		mes "Que mundo grande... Não apenas humanos...";
+		mes "Outras formas de vida como nós...";
+		mes "Onde eles poderiam estar?...";
+		next;
+		mes "[Iromo]";
+		mes "...Suas vidas.. e...";
+		mes "Seu reino... e terra...";
+		mes "Onde eles poderiam estar...";
+		next;
+		mes "[Iromo]";
+		mes "Se eles existissem, seria ótimo...";
+		mes "Não... eles devem existir...";
+		mes "Eu desejo que um dia... um dia eu possa ir para lá...";
+		close;
+	}
+	if (ep13_2_hiki == 12) {
+		mes "[Iromo]";
+		mes "Se for muito doloroso...";
+		mes "É melhor se eu não...";
+		next;
+		mes "-Pausa silenciosa-";
+		next;
+		mes "-"+strcharinfo(0)+"começa a falar-";
+		mes "-E conta a ele sobre as viagens-";
+		mes "-Aventuras, alegria, tristeza e perda-";
+		mes "-Um por um para o menino-";
+		next;
+		mes "-Lutando contra monstros e vencendo-";
+		mes "-Encontrando muitas pessoas, e-";
+		mes "-deixando-os, e conta muitas outras coisas-";
+		mes "-Tanto quanto possível, para o garoto.-";
+		next;
+		mes "-Muita coisa aconteceu, e-";
+		mes "-Havia muitos perigos, mas no final-";
+		mes "-As coisas felizes superam as ruins,-";
+		mes "-O que recebi é mais do que o que perdi.-";
+		mes "-Eu me esforço ao máximo para transmitir esta mensagem ao Iromo.-";
+		next;
+		mes "[Iromo]";
+		mes "...";
+		next;
+		mes "[Iromo]";
+		mes "...Então no final...";
+		mes "Você só quer que eu... vá lá fora...";
+		mes "Estou certo...";
+		next;
+		select("É verdade, você receberá mais do que paga.");
+		mes "[Iromo]";
+		mes "...";
+		next;
+		mes "[Iromo]";
+		mes "...Mas agora... eu não vou sair.";
+		mes "ainda estou com medo...";
+		next;
+		mes "[Iromo]";
+		mes "Mesmo se eu não sair agora,";
+		mes "Ainda farei um esforço para fazê-lo.";
+		mes "Um dia, certamente me tornarei...";
+		mes "..Um aventureiro... e faz muitas, muitas coisas.";
+		next;
+		set ep13_2_hiki,13;
+		completequest 10089;
+		getexp (checkre(3))?8000:80000,0;
+		mes "[Iromo]";
+		mes "O mundo é grande, tem muitas coisas...";
+		mes "Ainda não vi. ";
+		mes "... veja todos eles.";
+		close;
+	}
+	if ((ep13_2_hiki == 11) && (friendship > 14)) {
+		mes "[Iromo]";
+		mes "Para embarcar em uma aventura com meus amigos,";
+		mes "Eu ainda preferiria ficar aqui.";
+		mes "Eu ainda preferiria ficar aqui em silêncio e em segurança.";
+		next;
+		mes "[Iromo]";
+		mes "Tudo bem... vá embora. ";
+		mes "Eu sei o que você quer dizer... que aborrecimento...";
+		next;
+		mes "-Você não desiste e continua-";
+		mes "-contar as histórias-";
+		mes "-compartilhado com amigos.-";
+		mes "-Você fala a verdade.-";
+		next;
+		mes "-Alguém que conheceu há muito tempo,-";
+		mes "-De repente sai,-";
+		mes "-e finalmente reunidos, mas-";
+		mes "-por causa do destino cruel-";
+		mes "-ele morre nesta tragédia.-";
+		mes "-No final, é tudo uma tragédia...-";
+		next;
+		mes "-Mas você enfatiza -";
+		mes "-Mesmo que o final seja trágico,-";
+		mes "-Uma linda amizade-";
+		mes "-Não desaparecerá por causa disso.-";
+		next;
+		mes "[Iromo]";
+		mes "...";
+		next;
+		mes "[Iromo]";
+		mes "...Obrigado por me dizer...";
+		mes "Eles são grandes amigos...";
+		next;
+		if (Sex == SEX_FEMALE) {
+			mes "[Iromo]";
+			mes "...E? ";
+			mes "Quer me dizer desta vez...";
+			mes "Você me contou muitas histórias...";
+			mes "...Que tal um de sua preferência?";
+			next;
+		}
+		else {
+			mes "[Iromo]";
+			mes "...E? ";
+			mes "Quer me dizer desta vez...";
+			mes "Você me contou muitas histórias...";
+			mes "...Que tal um de sua preferência?";
+			next;
+		}
+		select("A amizade não pode ser esquecida.");
+		mes "[Iromo]";
+		mes "...";
+		next;
+		select("Ter esse tipo de amigos e esse tipo de amizade...");
+		select("Você precisa sair de casa e conhecer o mundo.");
+		mes "[Iromo]";
+		mes "Embora você tenha mudado uma história... mas...";
+		mes "Você ainda está falando sobre isso...";
+		next;
+		select("Para ser honesto, as outras crianças sentem sua falta.");
+		mes "[Iromo]";
+		mes "...Ele? ";
+		mes "Algo de muito tempo atrás...";
+		next;
+		select("Há muitas coisas que você ainda não sabe.");
+		mes "[Iromo]";
+		mes "...";
+		next;
+		select("Você não acha um desperdício ficar em casa?");
+		mes "[Iromo]";
+		mes "...";
+		next;
+		select("Para encontrar segurança, você abriria mão de aventuras divertidas?");
+		select("Isso é ruim. ");
+		mes "[Iromo]";
+		mes "...Mudar...";
+		mes "É divertido...?";
+		next;
+		select("Fora desta cidade e deste reino, existe um mundo maior.");
+		mes "[Iromo]";
+		mes "...";
+		next;
+		select("Por ser tão grande, há muitas coisas divertidas.");
+		mes "[Iromo]";
+		mes "Realmente...? ";
+		mes "Existem outros lugares...?";
+		next;
+		set ep13_2_hiki,12;
+		changequest 10088,10089;
+		mes "[Iromo]";
+		mes "Mas... também haverá muitos problemas...";
+		mes "Não é verdade... não consigo relaxar...";
+		mes "Eu... não gosto disso...";
+		close;
+	}
+	if (ep13_2_hiki == 11) {
+		mes "[Iromo]";
+		mes "Para embarcar em uma aventura com meus amigos,";
+		mes "Eu ainda preferiria ficar aqui.";
+		mes "Eu ainda preferiria ficar aqui em silêncio e em segurança.";
+		next;
+		mes "[Iromo]";
+		mes "Tudo bem... vá embora. ";
+		mes "Eu sei o que você quer dizer... que aborrecimento...";
+		close;
+	}
+	if (ep13_2_hiki == 10) {
+		set .@cooltime,checkquest(10087,PLAYTIME);
+		if (.@cooltime == 2) {
+			mes "[Iromo]";
+			mes "...Você realmente é chato...";
+			mes "O que exatamente você quer de mim...?";
+			next;
+			mes "[Iromo]";
+			mes "Há muito tempo... eu tinha um amigo como você.";
+			mes "Eu o conheci quando saí para brincar...";
+			mes "Mas...";
+			mes "Ele deve ter esquecido completamente de mim...";
+			next;
+			set ep13_2_hiki,11;
+			changequest 10087,10088;
+			getexp (checkre(3))?6700:67000,0;
+			mes "[Iromo]";
+			mes "Deixa pra lá... não é inesperado...";
+			mes "Para embarcar em uma aventura com meus amigos,";
+			mes "Eu ainda preferiria ficar aqui.";
+			mes "Eu ainda preferiria ficar aqui em silêncio e em segurança.";
+			close;
+		}
+		mes "[Iromo]";
+		mes "...O que... Agora mesmo, eu...";
+		mes "Eu não quero... ouvir nada...";
+		mes "Vá embora...";
+		close;
+	}
+	if ((ep13_2_hiki == 9) && (lhz_rekenber > 21)) {
+		mes "[Iromo]";
+		mes "...O que é desta vez...?";
+		next;
+		select("Uma história sobre um par de irmãos.");
+		mes "-Conte a ele sobre Kazien e Lyozien.-";
+		mes "-Por causa do mau destino,-";
+		mes "-Eles nasceram para fazer tarefas ilegais-";
+		mes "-Mas o inocente Lyozien-";
+		mes "-Confiou no irmão dele...-";
+		next;
+		mes "-E mesmo que Kazien tenha se tornado-";
+		mes "-um criminoso, mas como um irmão mais velho-";
+		mes "-Ele espera cuidar bem de seu irmão mais novo.-";
+		next;
+		mes "-Esta é uma história de longe,-";
+		mes "-Mas porque você viu com seus próprios olhos,-";
+		mes "-Você pode expressar claramente-";
+		mes "-Seus sentimentos.-";
+		next;
+		mes "-Esta história deve ser capaz de-";
+		mes "-Desperte o interesse de-";
+		mes "-Iromo, que sempre quis um irmão.-";
+		next;
+		mes "[Iromo]";
+		mes "Entendo... Eles eram ótimos irmãos...";
+		mes "Trágico... mas também lindo.";
+		mes "Se ao menos... eu pudesse ser o protagonista...";
+		mes "..em tal história...";
+		next;
+		mes "[Iromo]";
+		mes "...Mas...eu sou filho único...";
+		mes "...Então não há nada que eu possa fazer...";
+		next;
+		select("Você não precisa ser parente de sangue para ser irmão.");
+		mes "[Iromo]";
+		mes "...";
+		next;
+		select("Você pode encontrar a marca desses irmãos lá fora.");
+		mes "[Iromo]";
+		mes "...Fora?...";
+		next;
+		select("Mas se você ficar em casa, nada mudará.");
+		mes "[Iromo]";
+		mes "...";
+		next;
+		mes "[Iromo]";
+		mes "...O que... Então é tudo culpa minha...";
+		mes "O que você quer dizer...";
+		mes "...é sempre o mesmo...";
+		mes "Saia... não estou com disposição...";
+		next;
+		set ep13_2_hiki,10;
+		changequest 10086,10087;
+		getexp (checkre(3))?5700:57000,0;
+		mes "[Iromo]";
+		mes "...Não estou de bom humor, saia...";
+		close;
+	}
+	if ((ep13_2_hiki == 8) || (ep13_2_hiki == 9)) {
+		set .@cooltime,checkquest(10085,PLAYTIME);
+		if (.@cooltime == 2) {
+			mes "[Iromo]";
+			mes "Você nunca desiste, não é?";
+			mes "O que você está tentando dizer?";
+			next;
+			mes "[Iromo]";
+			mes "Isso é frustante. ";
+			mes "Por que você se preocupa tanto comigo?";
+			next;
+			if (Sex == SEX_FEMALE) {
+				mes "[Iromo]";
+				mes "Realmente, não é tão ruim assim...";
+				mes "Eu gostaria de poder ter uma irmã como você.";
+				next;
+			}
+			else {
+				mes "[Iromo]";
+				mes "Realmente, não é tão ruim assim...";
+				mes "Eu gostaria de poder ter um irmão como você.";
+				next;
+			}
+			mes "[Iromo]";
+			mes "Você tem alguma história sobre irmãos?";
+			next;
+			set ep13_2_hiki,9;
+			changequest 10085,10086;
+			mes "[Iromo]";
+			mes "O que? ";
+			mes "Seriamente!";
+			mes "Apenas me deixe em paz.";
+			close;
+		}
+		mes "[Iromo]";
+		mes "Obrigado pelo carinho...";
+		mes "Mas tudo bem... Não, obrigado...";
+		close;
+	}
+	if (ep13_2_hiki == 7) {
+		set .@goyang,checkquest(10084,HUNTING);
+		if (.@goyang == 2) {
+			mes "[Iromo]";
+			mes "Oh, você fez o gato furioso";
+			mes "sair da aldeia?";
+			mes "...Oh, você fez..Obrigado!";
+			next;
+			mes "[Iromo]";
+			mes "Mas ainda estou com medo";
+			mes "estar lá fora.";
+			mes "Prefiro ficar em casa.";
+			next;
+			set ep13_2_hiki,8;
+			changequest 10084,10085;
+			getexp (checkre(3))?4700:47000,0;
+			mes "[Iromo]";
+			mes "Obrigado por ser útil.";
+			mes "Mas não, obrigado.";
+			close;
+		}
+		mes "[Iromo]";
+		mes "Se eu sair, verei o gato assustador.";
+		next;
+		mes "[Iromo]";
+		mes "Ele vai me morder..e";
+		mes "me arranhe de novo.";
+		mes "Eu deveria ficar em casa.";
+		close;
+	}
+	if ((ep13_2_hiki == 6) && (countitem(528) > 0) && (countitem(501) > 0)) {
+		mes "[Iromo]";
+		mes "...Huh? ";
+		mes "Este é o que eu mais gosto.";
+		mes "Ha Ha!";
+		next;
+		mes "[Iromo]";
+		mes "Mas..minha mãe está ao meu lado.";
+		mes "(piscadela, piscadela)";
+		next;
+		mes "[Iromo]";
+		mes "...Obrigado! ";
+		mes "De qualquer forma, obrigado!";
+		next;
+		mes "[Iromo]";
+		mes "Cheira tão bem.";
+		next;
+		mes "[Iromo]";
+		mes "Huh?? ";
+		mes "então posso conseguir essas coisas?";
+		next;
+		mes "[Iromo]";
+		mes "......";
+		next;
+		mes "[Iromo]";
+		mes "Mas estou com medo...";
+		next;
+		mes "[Iromo]";
+		mes "Estou assustado. ";
+		mes "Não, não quero me machucar novamente.";
+		next;
+		select("De novo?");
+		mes "[Iromo]";
+		mes "...há um gato estranho que pode andar com duas patas.";
+		mes "Eu gosto de gatos, então me aproximei dele.";
+		mes "Então, de repente, ele me arranhou e me mordeu.";
+		next;
+		delitem 528,1; //Monster's_Feed
+		delitem 501,1; //Red_Potion
+		set ep13_2_hiki,7;
+		changequest 10083,10084;
+		getexp (checkre(3))?3750:37500,0;
+		mes "[Iromo]";
+		mes "Não quero ver o gato novamente.";
+		mes "Se eu sair, vou vê-lo. ";
+		close;
+	}
+	if ((ep13_2_hiki == 3) || (ep13_2_hiki == 4) || (ep13_2_hiki == 5) || (ep13_2_hiki == 5)) {
+		mes "[Iromo]";
+		mes "... Não gosto de ficar fora da aldeia.";
+		mes "Estar dentro de casa é o melhor.";
+		close;
+	}
+	if ((ep13_2_hiki == 1) || (ep13_2_hiki == 2)) {
+		mes "[Iromo]";
+		mes "Mamãe me disse isso";
+		mes "Eu deveria sair e brincar";
+		mes "com amigos. ";
+		mes "quero sair com eles.";
+		next;
+		mes "[Iromo]";
+		mes "É um pouco inconveniente isso";
+		mes "Não consigo comida deliciosa";
+		mes "que cresce fora da aldeia.";
+		mes "Eu posso aguentar.";
+		next;
+		if (ep13_2_hiki == 1) {
+			set ep13_2_hiki,2;
+			changequest 10079,10080;
+		}
+		mes "[Iromo]";
+		mes "Mas posso comer outra comida";
+		mes "em vez da comida externa.";
+		mes "Assim não preciso sair.";
+		close;
+	}
+	mes "[Iromo]";
+	mes "......";
+	next;
+	mes "[Iromo]";
+	mes "Gosto da minha casa e do meu quarto.";
+	mes "Eu não quero sair.";
+	close;
+}
+
+alberta_in,120,93,3	script	Iromo's Mother#ep3_2	53,{
+	if (ep13_2_hiki >= 8) {
+		mes "[Mãe]";
+		mes "Obrigado por ajudar meu filho.";
+		mes "Mas acho que não podemos fazer nada";
+		mes "mais sobre ele.";
+		next;
+		mes "[Mãe]";
+		mes "Iromo era muito ativo e";
+		mes "curioso sobre o mundo.";
+		mes "Ele queria ver todos os";
+		mes "pontos turísticos do mundo.";
+		next;
+		mes "[Mãe]";
+		mes "Mas olhe para ele agora.";
+		mes "Ele não sai mais.";
+		mes "Ele está preso dentro de seu quarto.";
+		next;
+		mes "[Mãe]";
+		mes "Ele se tornou uma pessoa tímida.";
+		mes "Se ele tiver uma discussão comigo,";
+		mes "ele não fala comigo por uma semana.";
+		next;
+		mes "[Mãe]";
+		mes "Você talvez tenha";
+		mes "é difícil conseguir";
+		mes "Iromo para falar com você.";
+		close;
+	}
+	if (ep13_2_hiki == 7) {
+		mes "[Mãe]";
+		mes "Ah, eu me lembro";
+		mes "o que aconteceu da última vez...";
+		mes "Um dia, Iromo chegou em casa";
+		mes "com lágrimas nos olhos";
+		mes "E ele parecia magoado.";
+		next;
+		mes "[Mãe]";
+		mes "Não foi uma lesão grande.";
+		mes "Eu estava muito preocupado com ele.";
+		mes "Mas ele nunca me conta o que aconteceu naquele dia.";
+		next;
+		mes "[Mãe]";
+		mes "Depois daquele dia, ele não conversou muito com as pessoas e nem sai mais.";
+		next;
+		mes "[Mãe]";
+		mes "Espero que ele me conte o que aconteceu naquele dia.";
+		mes "Iromo era um menino tão bom...";
+		close;
+	}
+	if ((ep13_2_hiki == 4) || (ep13_2_hiki == 5) || (ep13_2_hiki == 6)) {
+		mes "[Mãe]";
+		mes "Hum.. O favorito do Iromo?";
+		mes "Deixe-me pensar...";
+		mes "Na verdade ele gosta de todos os tipos de comida.";
+		mes "Ele não é exigente com comida.";
+		next;
+		mes "[Mãe]";
+		mes "Quando ele saía com amigos,";
+		mes "ele gastou todo o seu dinheiro de bolso,";
+		mes "mas não sei o que ele tem comido.";
+		next;
+		mes "[Mãe]";
+		mes "Oh, por que você não pergunta ao amigo de Iromo?";
+		mes "Acho que ele saberia sobre sua comida favorita.";
+		close;
+	}
+	if ((ep13_2_hiki == 2) || (ep13_2_hiki == 3)) {
+		mes "[Mãe]";
+		mes "Hum.. O favorito do Iromo?";
+		mes "Deixe-me pensar...";
+		mes "Na verdade ele gosta de todos os tipos de comida.";
+		mes "Ele não é exigente com comida.";
+		next;
+		mes "[Mãe]";
+		mes "Quando ele saía com amigos,";
+		mes "ele gastou todo o seu dinheiro de bolso,";
+		mes "mas não sei o que ele tem comido.";
+		next;
+		set ep13_2_hiki,3;
+		mes "[Mãe]";
+		mes "Oh, por que você não pergunta ao amigo de Iromo?";
+		mes "Acho que ele saberia sobre sua comida favorita.";
+		close;
+	}
+	mes "[Mãe]";
+	mes "Este garotinho é meu filho, Iromo.";
+	next;
+	mes "[Mãe]";
+	mes "Ele costumava sair o tempo todo.";
+	mes "Ele adorava brincar ao ar livre com os amigos.";
+	next;
+	mes "[Mãe]";
+	mes "Mas de alguma maneira...";
+	mes "ele não sai mais.";
+	next;
+	if (BaseLevel > 40 && checkquest(10079) == -1) {
+		set ep13_2_hiki,1;
+		setquest 10079;
+	}
+	mes "[Mãe]";
+	mes "Estou tão preocupada com ele...";
+	mes "O que aconteceu com ele..?";
+	close;
+}
+
+alberta,45,106,5	script	Little Boy#ep3_2	706,{
+	if (ep13_2_hiki == 6) {
+		mes "[Garotinho]";
+		mes "Iromo? ";
+		next;
+		mes "[Garotinho]";
+		mes "Ah, sim e mais uma coisa ~!";
+		mes "Eu gosto de bananas. ";
+		close;
+	}
+	if (ep13_2_hiki == 5) {
+		mes "[Garotinho]";
+		mes "......";
+		next;
+		mes "[Garotinho]";
+		mes "Delicioso! ";
+		mes "As bananas são as melhores frutas de todas!";
+		next;
+		mes "[Garotinho]";
+		mes "Obrigado pela banana...";
+		mes "Agora posso pensar";
+		mes "o que Iromo gosta de comer.";
+		next;
+		mes "[Garotinho]";
+		mes "Ele costumava gostar de junk food.";
+		mes "Você sabe, lanches baratos e de sabor estranho...";
+		mes "Então ele teve que se esconder quando os teve.";
+		next;
+		mes "[Garotinho]";
+		mes "Sua mãe não o deixou";
+		mes "tem esse tipo de lanche...";
+		mes "Então ele os escondeu dela.";
+		mes "Eu não sei por que ele gostou";
+		mes "essas junk food de qualquer maneira.";
+		next;
+		mes "[Garotinho]";
+		mes "Ele geralmente gostava de ter";
+		mes "Alimentação do Monstro.";
+		mes "Ele disse que é bom";
+		mes "com sopa Poção Vermelha.";
+		mes "Ele sempre comia uma Poção Vermelha e Ração de Monstro no almoço.";
+		next;
+		mes "[Garotinho]";
+		mes "Ele tem um apetite estranho.";
+		mes "Não consigo entender por que ele gostou";
+		mes "esses alimentos. ";
+		next;
+		set ep13_2_hiki,6;
+		changequest 10082,10083;
+		mes "[Garotinho]";
+		mes "De qualquer forma, eu já te disse";
+		mes "o que eu sei sobre ele.";
+		mes "Então, terminei agora.";
+		mes "Deixe-me saber se você tem mais bananas. ";
+		mes "Eu amo bananas~~!";
+		close;
+	}
+	if ((ep13_2_hiki == 4) && (countitem(513) > 0)) {
+		mes "[Garotinho]";
+		mes "Huh? ";
+		mes "Você me trouxe bananas!";
+		mes "Ah, muito obrigado!";
+		next;
+		mes "[Garotinho]";
+		mes "Deixe-me pegá-los primeiro.";
+		next;
+		mes "[Garotinho]";
+		mes "Mastigue, mastigue...";
+		next;
+		mes "[Garotinho]";
+		mes "Hum, hum...";
+		next;
+		delitem 513,1; //Banana
+		set ep13_2_hiki,5;
+		changequest 10081,10082;
+		mes "[Garotinho]";
+		mes "Espere. ";
+		mes "***Gole***";
+		mes "só um segundo...";
+		mes "Espere.";
+		close;
+	}
+	if (ep13_2_hiki == 4) {
+		mes "[Garotinho]";
+		mes "Banana~banana~";
+		mes "Eu amo bananas~";
+		next;
+		mes "[Garotinho]";
+		mes "Não se vendem bananas nesta aldeia...";
+		mes "Estou ansioso para comer bananas.";
+		next;
+		mes "[Garotinho]";
+		mes "Oh ~ você prometeu!";
+		mes "Traga bananas para mim~!! ";
+		close;
+	}
+	if (ep13_2_hiki == 3) {
+		mes "[Garotinho]";
+		mes "Estou com fome. ";
+		mes "muita lanchonete nesta vila.";
+		next;
+		mes "[Garotinho]";
+		mes "Huh? ";
+		mes "Ah, faz muito tempo que não o vejo...";
+		mes "Hum.. Onde ele está?";
+		mes "Ele se mudou?";
+		next;
+		mes "[Garotinho]";
+		mes "Huh? ";
+		mes "Hum.. O que foi..?";
+		next;
+		mes "[Garotinho]";
+		mes "Se eu me lembrar, você pode me comprar uma banana?";
+		next;
+		mes "[Garotinho]";
+		mes "Banana~banana~";
+		mes "Eu amo bananas~";
+		next;
+		mes "[Garotinho]";
+		mes "Não se vendem bananas nesta aldeia...";
+		mes "Estou ansioso para comer bananas.";
+		next;
+		set ep13_2_hiki,4;
+		changequest 10080,10081;
+		mes "[Garotinho]";
+		mes "Ah, você vai me comprar uma banana?";
+		mes "Vou tentar lembrar qual é a comida favorita do Iromo com certeza se você trouxer para mim.";
+		close;
+	}
+	mes "[Garotinho]";
+	mes "Estou com fome. ";
+	mes "muita lanchonete nesta vila.";
+	next;
+	mes "[Garotinho]";
+	mes "Espero que eles vendam bananas";
+	mes "nesta aldeia.";
+	mes "Como outras aldeias agradáveis.";
+	next;
+	mes "[Garotinho]";
+	mes "Essa vila é tão chata...";
+	mes "Que vila pequena.";
+	close;
+}
+

@@ -1,0 +1,372 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+prt_church,111,112,1	script	Irmã Lina	79,{
+	if (BaseJob == Job_Priest) {
+		if (PRIEST_SK == 100) {
+			if (getskilllv("PR_REDEMPTIO") == 0) {
+				mes "[Irmã Lina]";
+				mes "Hum? ";
+				mes "não é? ";
+				mes "todos os sacerdotes começam a olhar";
+				mes "o mesmo depois de um tempo. ";
+				mes "você foi um dos";
+				mes "a quem ensinei Redemptio?";
+				next;
+				mes "[Irmã Lina]";
+				mes "Ah, você esqueceu, tem";
+				mes "você? ";
+				mes "que eu te ensine novamente. ";
+				mes "Membros do Partido sacrificando";
+				mes "sua própria vida por eles.";
+				next;
+				mes "[Irmã Lina]";
+				mes "^3131FFOh, santo e venerável,";
+				mes "nós oramos a você. ";
+				mes "nos sua misericórdia e nos guie";
+				mes "com sua luz. ";
+				mes "força para trilhar o caminho de";
+				mes "amor e sacrifício. ";
+				skill "PR_REDEMPTIO",1,SKILL_PERM;
+				next;
+				mes "[Irmã Lina]";
+				mes "Lá...";
+				mes "Você deveria ser capaz";
+				mes "para realizar a Redenção";
+				mes "agora. ";
+				mes "bem em suas aventuras~";
+				close;
+			}
+			else {
+				mes "[Irmã Lina]";
+				mes "Estarei sempre orando";
+				mes "Para sua segurança. ";
+				mes "e espero que você possa trazer";
+				mes "amor e compaixão para todos";
+				mes "quem você conhece em suas viagens.";
+				close;
+			}
+		}
+		else if (PRIEST_SK == 0) {
+			set redemp,1014;
+			if (getskilllv("PR_REDEMPTIO")) {
+				mes "[Irmã Lina]";
+				mes "Estarei sempre orando";
+				mes "Para sua segurança. ";
+				mes "e espero que você possa trazer";
+				mes "amor e compaixão para todos";
+				mes "quem você conhece em suas viagens.";
+				set PRIEST_SK,100;
+				close;
+			}
+			mes "[Irmã Lina]";
+			mes "Por favor, tenha misericórdia e";
+			mes "espalhe sua luz através";
+			mes "o mundo. ";
+			mes "sua sabedoria benevolente...";
+			mes "Abençoe-a, e que ela";
+			mes "seja protegido por sua graça.";
+			next;
+			select("Por quem você está orando, irmã?");
+			mes "[Irmã Lina]";
+			mes "Oh! ";
+			mes "Por quem estou orando?";
+			mes "Bem, uma vez conheci um jovem,";
+			mes "freira brincalhona e alegre que era";
+			mes "também um pouco descarado. ";
+			mes "muitas lembranças alegres dela.";
+			next;
+			mes "[Irmã Lina]";
+			mes "Um dia, um grupo de aventureiros";
+			mes "veio para a Igreja de Prontera na esperança de contratar um padre para acompanhar";
+			mes "para ^3131DDGlast Heim^000000. ";
+			mes "Padre que estava disponível.";
+			next;
+			mes "[Irmã Lina]";
+			mes "Eu lembro que ela estava";
+			mes "tão determinado a se juntar a esses";
+			mes "aventureiros, e não tínhamos";
+			mes "escolha a não ser deixá-la ir.";
+			mes "Ainda assim, muitos de nós acreditávamos";
+			mes "que era muito perigoso...";
+			next;
+			mes "[Irmã Lina]";
+			mes "Ouvi dizer que, a princípio, eles";
+			mes "equipe desorganizada foi capaz de";
+			mes "exterminar com sucesso";
+			mes "um grande número de monstros.";
+			mes "Mas apoiá-los como sacerdote";
+			mes "deve ter sido difícil para ela...";
+			next;
+			mes "[Irmã Lina]";
+			mes "Então, a tragédia aconteceu.";
+			mes "Cercado por andarilhos,";
+			mes "os aventureiros caíram rapidamente";
+			mes "na derrota, um por um. ";
+			mes "a jovem freira era a única do grupo que ainda estava de pé.";
+			next;
+			mes "[Irmã Lina]";
+			mes "Sozinho contra o impossível";
+			mes "probabilidades, aquela pobre menina não tinha";
+			mes "escolha a não ser tentar um desesperado";
+			mes "jogar. ";
+			mes "o antigo feitiço sagrado...";
+			next;
+			select("Feitiço antigo...?");
+			mes "[Irmã Lina]";
+			mes "Sim! ";
+			mes "Uma habilidade que só o";
+			mes "sacerdotes mais talentosos";
+			mes "pode realizar! ";
+			mes "era, uma jovem freira com muito";
+			mes "pouca experiência, tentando!";
+			next;
+			mes "[Irmã Lina]";
+			mes "A redenção é a última";
+			mes "habilidade de resort que pode ser";
+			mes "usado para salvar nobremente o";
+			mes "vidas de outras pessoas às custas";
+			mes "de ^3131FF sacrificando sua própria vida^000000.";
+			next;
+			mes "[Irmã Lina]";
+			mes "Sim, eu me lembro dos dias";
+			mes "ela não estava muito interessada";
+			mes "no estudo do Padre e";
+			mes "Habilidades de acólito. ";
+			mes "ela aprendeu o suficiente para";
+			mes "tentativa de lançar Redemptio...";
+			next;
+			mes "[Irmã Lina]";
+			mes "Milagrosamente, ela conseguiu";
+			mes "em reviver os membros de seu partido.";
+			mes "Eles rapidamente usaram um Yggdrasil";
+			mes "Leaf para restaurar sua vida e eles derrotaram os Wanderers e";
+			mes "voltou para casa em segurança.";
+			next;
+			mes "[Irmã Lina]";
+			mes "Por causa desse sucesso, ela";
+			mes "foi promovido a Sumo Sacerdote";
+			mes "apesar dos muitos erros que ela";
+			mes "feito no passado. ";
+			mes "de qualquer maneira que ela puder.";
+			next;
+			mes "[Irmã Lina]";
+			mes "Mas, bem, ela vai";
+			mes "seja sempre tão corajoso";
+			mes "e alegre para mim.";
+			next;
+			mes "["+ strcharinfo(0) +"]";
+			mes "Espere, você ainda não";
+			mes "respondeu minha pergunta.";
+			mes "Você está orando por isso";
+			mes "freira? ";
+			mes "em algum tipo de perigo?";
+			next;
+			mes "[Irmã Lina]";
+			mes "Bem, há alguns meses,";
+			mes "ela saiu em missão para";
+			mes "^3131FFLighthalzen^000000, uma cidade no";
+			mes "República de Schwarzwald. ";
+			mes "só estou preocupado porque não";
+			mes "ouvi falar dela há algum tempo.";
+			next;
+			mes "[Irmã Lina]";
+			mes "Venho aqui orar por";
+			mes "ela todos os dias, e espero que";
+			mes "ela voltará em segurança e";
+			mes "compartilhe histórias de suas aventuras";
+			mes "Comigo. ";
+			next;
+			mes "[Irmã Lina]";
+			mes "Meu Deus, eu estive";
+			mes "correndo minha boca! ";
+			mes "desculpe por mantê-lo, você";
+			mes "tem algum lugar para ir? ";
+			mes "Estarei orando pela sua segurança~";
+			next;
+			mes "["+ strcharinfo(0) +"]";
+			mes "Antes de eu ir, você poderia";
+			mes "por favor me diga o nome";
+			mes "daquele Sumo Sacerdote que você era";
+			mes "falando sobre? ";
+			mes "Vou pedir a ela para entrar em contato com você.";
+			next;
+			mes "[Irmã Lina]";
+			mes "Ah, obrigado! ";
+			mes "é o Sumo Sacerdote Sorin. ";
+			mes "^3131FFMargareta Sorin^000000. ";
+			mes "acontecer de encontrá-la, por favor";
+			mes "deixe ela saber que eu sou";
+			mes "orando por sua segurança.";
+			set PRIEST_SK,1;
+			close;
+		}
+		else if (PRIEST_SK == 1) {
+			mes "[Irmã Lina]";
+			mes "Ah, olá ~";
+			mes "Como vai";
+			mes "fazendo hoje?";
+			next;
+			if (select("Por favor me ensine ^3131FFRedemptio^000000.:Cancelar") == 1) {
+				mes "[Irmã Lina]";
+				mes "Ooh, Redemptio seria";
+				mes "uma boa habilidade para você aprender ~";
+				mes "É difícil de lançar, mas quando você consegue, você pode reviver todos";
+				mes "dos membros do seu partido derrotados.";
+				next;
+				mes "[Irmã Lina]";
+				mes "Claro, a desvantagem";
+				mes "é que você deve ^3131FFsacrifício";
+				mes "sua própria vida^000000 para";
+				mes "use a habilidade. ";
+				mes "Redemptio, você deve primeiro";
+				mes "aprenda ^3131FFRessurreição Nível 1^000000.";
+				next;
+				mes "[Irmã Lina]";
+				mes "Ah, você deve";
+				mes "também me traga";
+				mes "^3131FF30 Águas Bentas e";
+				mes "20 pedras preciosas azuis ^ 000000";
+				mes "então você pode tentar";
+				mes "para aprender a habilidade.";
+				set PRIEST_SK,2;
+				next;
+				mes "[Irmã Lina]";
+				mes "Hum, mas se você não conseguir";
+				mes "aprenda Redemptio, você";
+				mes "perder 1 Água Benta e";
+				mes "1 pedra preciosa azul e";
+				mes "você terá que tentar de novo...";
+				close;
+			}
+			mes "[Irmã Lina]";
+			mes "Orar me dá uma";
+			mes "sensação de paz e";
+			mes "conforto. ";
+			mes "é um dos motivos";
+			mes "por que escolhi esse trabalho...";
+			close;
+		}
+		else if (PRIEST_SK == 2) {
+			if (getskilllv("ALL_RESURRECTION") > 0) {
+				if (countitem(523) > 29 && countitem(717) > 19) {
+					mes "[Irmã Lina]";
+					mes "Ooh, parece que você";
+					mes "trouxe tudo que você";
+					mes "preciso aprender Redenção.";
+					mes "Você está pronto para experimentar? ";
+					mes "falhar, você perderá 1 Água Benta";
+					mes "e 1 Gema Azul, ok?";
+					next;
+					mes "[Irmã Lina]";
+					mes "Agora por favor";
+					mes "concentrar e";
+					mes "repita este especial";
+					mes "oração depois de mim.";
+					next;
+					mes "[Irmã Lina]";
+					mes "^3131FFOh, santo e venerável,";
+					mes "nós oramos a você. ";
+					mes "nos sua misericórdia e nos guie";
+					mes "com sua luz. ";
+					mes "força para trilhar o caminho de";
+					mes "amor e sacrifício. ";
+					next;
+					set .@redem_s,JobLevel+getskilllv("ALL_RESURRECTION");
+					set .@red_suc,rand(1,100);
+					if( .@redem_s < 31 ) {
+						if( .@red_suc > 20 && .@red_suc < 41 )
+							set .@success,1;
+					} else if( .@redem_s < 41 ) {
+						if( .@red_suc > 10 && .@red_suc < 41 )
+							set .@success,1;
+					} else {
+						if( .@red_suc > 10 && .@red_suc < 51 )
+							set .@success,1;
+					}
+
+					if (.@success) {
+						specialeffect2 EF_HEALSP;
+						mes "[Irmã Lina]";
+						mes "Parabéns!";
+						mes "Você com sucesso";
+						mes "aprendi Redenção!";
+						mes "Lembre-se de apenas";
+						mes "use essa habilidade ao máximo";
+						mes "situações críticas.";
+						delitem 717,20; //Blue_Gemstone
+						delitem 523,30; //Holy_Water
+						set PRIEST_SK,100;
+						skill "PR_REDEMPTIO",1,SKILL_PERM;
+						close;
+					}
+					else {
+						specialeffect2 EF_POISONHIT;
+						mes "[Irmã Lina]";
+						mes "Oh não! ";
+						mes "mas você não conseguiu";
+						mes "aprenda Redenção. ";
+						mes "Estarei esperando aqui mesmo,";
+						mes "para que possamos tentar novamente quando";
+						mes "você está pronto, ok?";
+						delitem 717,1; //Blue_Gemstone
+						delitem 523,1; //Holy_Water
+						close;
+					}
+
+				}
+				else {
+					mes "[Irmã Lina]";
+					mes "Se você quiser tentar aprender";
+					mes "Redemptio, por favor traga";
+					mes "^3131FF20 Pedras Preciosas Azuis^000000 e";
+					mes "^3131FF30 Águas Bentas^000000. ";
+					mes "você precisa aprender ^3131FFNível 1";
+					mes "Ressurreição^000000 de antemão.";
+					close;
+				}
+			}
+			else {
+				mes "[Irmã Lina]";
+				mes "Se você quiser tentar aprender";
+				mes "Redemptio, por favor traga";
+				mes "^3131FF20 Pedras Preciosas Azuis^000000 e";
+				mes "^3131FF30 Águas Bentas^000000. ";
+				mes "você precisa aprender ^3131FFNível 1";
+				mes "Ressurreição^000000 de antemão.";
+				close;
+			}
+		}
+	}
+	else {
+		mes "[Irmã Lina]";
+		mes "Por favor, tenha misericórdia e";
+		mes "espalhe sua luz através";
+		mes "o mundo. ";
+		mes "sua sabedoria benevolente...";
+		mes "Abençoe-a, e que ela";
+		mes "seja protegido por sua graça.";
+		close;
+	}
+}
+
+//============================================================ 
+// Old changelog
+//============================================================ 
+//= 1.0 for fully working skills only [Lupus]
+//= 1.1 Added more new skill quests for more classes [Lupus]
+//= Somehow eA engine doesn't let you keep learn't skill V_V'
+//= 1.2 Added to correct locations, correct NPC's, fixed
+//= some of the items required and made them into real
+//= quests. [Reddozen] 
+//= 1.3 Fixed bugs and minor typos. Optimized [Lupus]
+//= 1.3a fixed an item ID typo, thx 2Spiritual Kid
+//= 1.3b Splitted into different files [DracoRPG]
+//============================================================
+

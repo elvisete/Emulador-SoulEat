@@ -1,0 +1,237 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+moc_fild11,57,138,0	script	Private Jeremy#hunt	707,{
+	if (#mobgole >= .consec) {
+		mes .npc$;
+		mes "Voce já fez 3 missões comigo hoje.";
+		mes "Volte amanhã";
+		close;
+	}
+	if (checkquest(60140) != -1) {
+		if (checkquest(60140, HUNTING) != 2) {
+			mes "[Soldado Jeremy]";
+			mes "Você terminou de caçar os 50 Golems?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Soldado Jeremy]";
+					mes "Hmm, acho que você ainda não caçou 50...";
+					close;
+				case 2:
+					mes "[Soldado Jeremy]";
+					mes "Lembre-se, eu preciso de ajuda para caçar Golems, então vá e caça 50 deles.";
+					close;
+				case 3:
+					mes "[Soldado Jeremy]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você tenha feito será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Soldado Jeremy]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60140;
+							close;
+						case 2:
+							mes "[Soldado Jeremy]";
+							mes "Por favor, mate 50 Golems.";
+							close;
+					}
+			}
+		} else {
+			mes "[Soldado Jeremy]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 14000, 9000;
+			erasequest 60140;
+			#mobgole++;
+			close;
+		}
+	}
+	if (checkquest(60141) != -1) {
+		if (checkquest(60141, HUNTING) != 2) {
+			mes "[Soldado Jeremy]";
+			mes "Você terminou de caçar os 100 Golems?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Soldado Jeremy]";
+					mes "Hmm, acho que você ainda não caçou 100...";
+					close;
+				case 2:
+					mes "[Soldado Jeremy]";
+					mes "Lembre-se, eu preciso de ajuda para caçar Golems, então vá e caça 100 deles.";
+					close;
+				case 3:
+					mes "[Soldado Jeremy]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você tenha feito será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Soldado Jeremy]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60141;
+							close;
+						case 2:
+							mes "[Soldado Jeremy]";
+							mes "Por favor, mate 100 Golems.";
+							close;
+					}
+			}
+		} else {
+			mes "[Soldado Jeremy]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 14000, 9000;
+			getexp 14000, 9000;
+			erasequest 60141;
+			#mobgole++;
+			close;
+		}
+	}
+	if (checkquest(60142) != -1) {
+		if (checkquest(60142, HUNTING) != 2) {
+			mes "[Soldado Jeremy]";
+			mes "Você terminou de caçar os 150 Golems?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Soldado Jeremy]";
+					mes "Hmm, acho que você ainda não caçou 150...";
+					close;
+				case 2:
+					mes "[Soldado Jeremy]";
+					mes "Lembre-se, eu preciso de ajuda para caçar Golems, então vá e caça 150 deles.";
+					close;
+				case 3:
+					mes "[Soldado Jeremy]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você tenha feito será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Soldado Jeremy]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60142;
+							close;
+						case 2:
+							mes "[Soldado Jeremy]";
+							mes "Por favor, mate 150 Golems.";
+							close;
+					}
+			}
+		} else {
+			mes "[Soldado Jeremy]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 14000, 9000;
+			getexp 14000, 9000;
+			getexp 14000, 9000;
+			erasequest 60142;
+			#mobgole++;
+			close;
+		}
+	}
+// Para nível mínimo e nível máximo
+	if (BaseLevel > 24) {
+		if (BaseLevel < 61) {
+			mes "[Soldado Jeremy]";
+			mes "Saudações, cidadão!";
+			mes "Diga, como você gostaria de me ajudar?";
+			next;
+			switch (select("Claro:Não")) {
+				case 1:
+					mes "[Soldado Jeremy]";
+					mes "Obrigado! Eu realmente aprecio isso.";
+					next;
+					switch (select("Recolher itens:Caçar Golems:Cancelar")) {
+						case 1:
+							// Entregar item
+							mes "[Soldado Jeremy]";
+							mes "A Guarda de Morroc precisa de ^FF0000Corações de Pedra^000000 para o nosso treinamento.";
+							next;
+							switch (select("Eu tenho Corações de Pedra:O que você precisa?")) {
+								case 1:
+									if (countitem(953) > 24) {
+										mes "[Soldado Jeremy]";
+										mes "A Guarda de Morroc agradece, cidadão.";
+										delitem 953, 25; //Coração_de_Pedra
+										getexp 14000, 9000;
+										#mobgole++;
+										close;
+									}
+									else {
+										mes "[Soldado Jeremy]";
+										mes "Parece que você não tem o suficiente.";
+										next;
+										mes "[Soldado Jeremy]";
+										mes "A Guarda de Morroc precisa de ^FF000025 Corações de Pedra^000000 para o nosso treinamento.";
+										close;
+									}
+								case 2:
+									mes "[Soldado Jeremy]";
+									mes "A Guarda de Morroc precisa de ^FF000025 Corações de Pedra^000000 para o nosso treinamento.";
+									close;
+							}
+						case 2:
+							// Quest de Contagem de Morte
+							mes "[Soldado Jeremy]";
+							mes "Ah, ok, acho que você pode me ajudar caçando alguns Golems.";
+							mes "Quantos você gostaria de caçar?";
+							next;
+							switch (select("50 Golems:100 Golems:150 Golems")) {
+								case 1:
+									mes "[Soldado Jeremy]";
+									mes "Volte quando terminar sua tarefa e eu te darei uma pequena recompensa.";
+									setquest 60140;
+									close;
+								case 2:
+									mes "[Soldado Jeremy]";
+									mes "Volte quando terminar sua tarefa e eu te darei uma pequena recompensa.";
+									setquest 60141;
+									close;
+								case 3:
+									mes "[Soldado Jeremy]";
+									mes "Volte quando terminar sua tarefa e eu te darei uma pequena recompensa.";
+									setquest 60142;
+									close;
+							}
+						case 3:
+							mes "[Soldado Jeremy]";
+							mes "Se mudar de ideia, por favor, volte.";
+							close;
+					}
+				case 2:
+					mes "[Soldado Jeremy]";
+					mes "Se mudar de ideia, por favor, volte.";
+					close;
+			}
+		} else {
+			mes "[Soldado Jeremy]";
+			mes "Saudações, cidadão!";
+			next;
+			mes "[Soldado Jeremy]";
+			mes "Por favor, não interrompa minha missão para a Guarda de Morroc.";
+			close;
+		}
+	}
+	else {
+		mes "[Soldado Jeremy]";
+		mes "É perigoso aqui, cidadão.";
+		close;
+	}
+OnClock0001:
+query_sql ("DELETE FROM `acc_reg_num` WHERE `key`='#mobgole'");
+end;
+
+OnInit:
+	.consec = 3;
+	end;
+}
+
+

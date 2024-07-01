@@ -1,0 +1,188 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+//callfunc "F_CoolEventCorp","<menu>","<location>","<save map>",<x>,<y>,"<warp map>";
+function	script	F_CoolEventCorp	{
+	cutin "zonda_01",2;
+	mes "[Funcionário Corp. Eventos Incríveis]";
+	mes "Bem-vindo à Corp. Eventos Incríveis.";
+	mes "Nossos funcionários estão sempre trabalhando";
+	mes "para superar suas expectativas";
+	mes "de qualidade dos serviços. Então,";
+	mes "como posso ajudá-lo hoje?";
+	next;
+	switch(select(getarg(0))) {
+	case 1:
+		mes "[Funcionário Corp. Eventos Incríveis]";
+		mes "Seu ponto de retorno";
+		mes "foi salvo aqui";
+		mes getarg(1)+".";
+		mes "Obrigado por usar a";
+		mes "Corp. Eventos Incríveis~";
+		savepoint getarg(2),getarg(3),getarg(4),1,1;
+		close2;
+		break;
+	case 2:
+		mes "[Funcionário Corp. Eventos Incríveis]";
+		if(!callfunc("F_CanOpenStorage")){
+			mes "Desculpe, mas você";
+			mes "precisa das Habilidades Básicas";
+			mes "de Aprendiz Nível 6 para";
+			mes "usar o Serviço de Armazém.";
+			close2;
+			break;
+		}
+		if(Zeny < 40){
+			mes "Desculpe, mas você não";
+			mes "possui zeny suficiente para";
+			mes "o Serviço de Armazém. Nosso";
+			mes "acesso ao armazém custa 40 zeny.";
+			close2;
+			break;
+		}
+		set Zeny, Zeny - 40;
+		mes "Deixe-me abrir seu armazém";
+		mes "particular nesse exato momento.";
+		mes "Obrigado por apoiar a Corp.";
+		mes "Eventos Incríveis usando nossos";
+		mes "serviços. Tenha um bom dia~";
+		callfunc("F_CheckKafCode");	// verifique sua senha de armazenamento, se configurada
+		close2;
+		openstorage;
+		break;
+	case 3:
+		mes "Por favor escolha";
+		mes "Seu destino.";
+		next;
+		if (VIP_SCRIPT && !vip_status(VIP_STATUS_ACTIVE))
+			set .@cost,4400;
+		else
+			set .@cost,2200;
+		.@destination$ = getarg(5);
+		if (select(.@destination$ +" -> "+ .@cost +" z:Cancel") == 1) {
+			if ((countitem(7060) != 0) || (Zeny >= .@cost)) {
+				if (countitem(7060) != 0) {
+					delitem 7060,1; //Ingresso grátis Warp
+				}
+				else {
+					set Zeny,Zeny-.@cost;
+				}
+				if (.@destination$ == "Veins") warp "veins",205,101;
+				else if (.@destination$ == "Rachel") warp "rachel",115,125;
+				cutin "",255;
+				end;
+			}
+			else {
+				mes "[Funcionário Corp. Eventos Incríveis]";
+				mes "Me desculpe, mas você não tem";
+				mes "zeny suficiente para o Serviço de teleporte.";
+				mes "A taxa de teletransporte";
+				mes "para "+ .@destination$ +" é "+.@cost+" zeny.";
+			}
+		}
+		close2;
+		break;
+	case 4:
+		mes "[Funcionário Corp. Eventos Incríveis]";
+		if(BaseClass != Job_Merchant){
+			mes "Me desculpe, mas o";
+			mes "serviço de aluguel de carrinho";
+			if (checkre(0))
+				mes "é disponível apenas para Mercadores,";
+			else {
+				mes "Ferreiros, Mestre-Ferreiros,";
+				mes "Alquimistas e Criadores.";
+			}
+			close2;
+			break;
+		}
+		if(getskilllv("MC_PUSHCART") == 0){
+			mes "Você só pode alugar carrinho";
+			mes "após possuir a habilidade Usar Carrinho.";
+			close2;
+			break;
+		}
+		if(checkcart() == 1){
+			mes "Você já está";
+			mes "com o carrinho equipado.";
+			mes "Infelizmente, nós não";
+			mes "alugamos mais de um";
+			mes "carrinho por vez.";
+			close2;
+			break;
+		}
+		if(countitem(7061)){
+			delitem 7061,1; // Ingresso grátis no carrinho
+			setcart;
+			close2;
+			break;
+		}
+		mes "O aluguel do carrinho";
+		mes "custa 800 zeny. Gostaria";
+		mes "de alugar um carrinho?";
+		next;
+		if(select("Rent a Pushcart:Cancel") == 1){
+			if(Zeny < 800){
+				mes "[Funcionário Corp. Eventos Incríveis]";
+				mes "Desculpe, mas você";
+				mes "não possui zeny suficiente";
+				mes "para pagar o aluguel";
+				mes "do carrinho que custa 800 zeny.";
+			} else {
+				set Zeny, Zeny - 800;
+				setcart;
+			}
+		}
+		close2;
+		break;
+	case 5:
+		callfunc("F_SetKafCode","[Funcionário Corp. Eventos Incríveis]","Cool Event Corp.");
+		// a função fecha msg e remove cutins
+	case 6:
+	default:
+		mes "[Funcionário Corp. Eventos Incríveis]";
+		mes "Corp. Eventos Incríveis está sempre";
+		mes "se esforçando para providenciar os melhores";
+		mes "serviços para nossos clientes.";
+		mes "Ajude-nos a ser os melhores";
+		mes "fornecendo-nos suas opiniões";
+		mes "e relato honesto. Obrigado.";
+		close2;
+	}
+	cutin "", 255;
+	end;
+}
+
+lighthalzen,94,248,3	script	Equipe da Event Corp::CoolEventCorpStaffLighthalzen	4_M_ZONDAMAN,{
+	callfunc "F_CoolEventCorp",
+		"Salvar:Usar armazém:Alugue um carrinho:Serviço de Senha para Armazém:Cancelar",
+		"na cidade de Lighthalzen","lighthalzen",95,240;
+	end;
+}
+
+hugel,88,168,4	script	Equipe da Event Corp::CoolEventCorpStaffHugel	4_M_ZONDAMAN,{
+	callfunc "F_CoolEventCorp",
+		"Salvar:Usar armazém:Alugue um carrinho:Serviço de Senha para Armazém:Cancelar",
+		"na aldeia de Hugel","hugel",96,155;
+	end;
+}
+
+rachel,109,138,5	script	Equipe da Event Corp::CoolEventCorpStaffRachel	4_M_ZONDAMAN,{
+	callfunc "F_CoolEventCorp",
+		"Salvar:Usar armazém:Serviço de teleporte:Alugue um carrinho:Serviço de Senha para Armazém:Cancelar",
+		"na cidade de Rachel","rachel",113,137,"Veins";
+	end;
+}
+
+veins,208,128,5	script	Equipe da Event Corp::CoolEventCorpStaffVeins	4_M_ZONDAMAN,{
+	callfunc "F_CoolEventCorp",
+		"Salvar:Usar armazém:Serviço de teleporte:Alugue um carrinho:Serviço de Senha para Armazém:Cancelar",
+		"na cidade de Veins","veins",204,103,"Rachel";
+	end;
+}

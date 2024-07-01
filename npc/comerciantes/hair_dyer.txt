@@ -1,0 +1,259 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+// Lighthalzen
+lhz_in02,100,134,3	script	Cabeleireiro#lich	850,{
+	mes "[Rossa]";
+	if (Sex == SEX_MALE) {
+		mes "Bem-vindo, entre~";
+		mes "Ah, vejo que você cuida";
+		mes "muito melhor do seu cabelo";
+		mes "do que aqueles outros rapazes.";
+		mes "Gostaria de tingir seu";
+		mes "cabelo de outra cor?";
+	}
+	else {
+		mes "Oh, wow~ Onde";
+		mes "você estilizou seu cabelo?";
+		mes "Eu amo isso! Mas... Seria";
+		mes "ainda mais bonito se você";
+		mes "tingisse seu cabelo. O que";
+		mes "você acha disso?";
+	}
+	while (.@escolha_sucesso != 2) {
+		next;
+		switch(select("Tingir Cabelo:Informações sobre Cores:Cancelar")) {
+		case 1:
+			mes "[Rossa]";
+			mes "Ho ho ho ho~";
+			mes "Então, qual cor";
+			mes "você gostaria de experimentar?";
+			mes "Algo vibrante ou escuro? Sexy ou fofo?";
+			next;
+			while (.@escolha_sucesso != 2) {
+				if (.@escolha_sucesso == 1) {
+					mes "[Rossa]";
+					mes "Oh, eu gosto dessa cor!";
+					mes "Mas você gostaria de";
+					mes "experimentar uma diferente?";
+					next;
+					switch(select("Sim:Não")) {
+					case 1:
+						mes "[Rossa]";
+						mes "Por favor, escolha";
+						mes "outra cor~";
+						next;
+						break;
+					case 2:
+						mes "[Rossa]";
+						mes "Uma escolha excelente~";
+						mes "Certo, obrigada por";
+						mes "usar meu serviço e";
+						mes "espero que volte novamente!";
+						close2;
+						set .@escolha_sucesso,2;
+						break;
+					}
+				}
+				while (.@escolha_sucesso != 2) {
+					switch(select("Vermelho, por favor.:Amarelo, por favor.:Roxo, por favor.:Laranja, por favor.:Verde, por favor.:Azul, por favor.:Branco, por favor.:Marrom Escuro, por favor.:Gosto da cor do meu cabelo.")) {
+					case 1:
+						set .@paleta_cabelo, 8;
+						break;
+					case 2:
+						set .@paleta_cabelo, 1;
+						break;
+					case 3:
+						set .@paleta_cabelo, 2;
+						break;
+					case 4:
+						set .@paleta_cabelo, 3;
+						break;
+					case 5:
+						set .@paleta_cabelo, 4;
+						break;
+					case 6:
+						set .@paleta_cabelo, 5;
+						break;
+					case 7:
+						set .@paleta_cabelo, 6;
+						break;
+					case 8:
+						set .@paleta_cabelo, 7;
+						break;
+					case 9:
+						if (.@escolha_sucesso != 0) {
+							mes "[Rossa]";
+							mes "Tem certeza?";
+							mes "Certo então, você";
+							mes "sabe o que é melhor";
+							mes "para a sua beleza e, para";
+							mes "dizer a verdade, eu concordo com você~";
+							close2;
+							set .@escolha_sucesso,2;
+						}
+						else {
+							mes "[Rossa]";
+							mes "Ah, entendi. Ainda assim,";
+							mes "não consigo deixar de me sentir";
+							mes "tão decepcionada.";
+							mes "Você ficaria tão bem se tingisse";
+							mes "seu cabelo com uma cor diferente~";
+							close2;
+							set .@escolha_sucesso,2;
+						}
+						break;
+					}
+					if (getlook(VAR_CABELO_PALETE) == .@paleta_cabelo) {
+						mes "[Rossa]";
+						mes "Hmm, a cor do seu cabelo";
+						mes "ainda está boa, então não há";
+						mes "necessidade de tingi-lo da mesma";
+						mes "cor novamente, se é isso que";
+						mes "você está preocupado.";
+						next;
+					}
+					else {
+						if ((.@paleta_cabelo == 8) && (countitem(975) == 0)) {
+							mes "[Rossa]";
+							mes "Ah, desculpe, querido,";
+							mes "mas não posso tingir seu";
+							mes "cabelo se você não trouxer";
+							mes "Scarlet Dyestuffs contigo...";
+							close2;
+							set .@escolha_sucesso,2;
+							break;
+						}
+						else if ((.@paleta_cabelo == 1) && (countitem(976) == 0)) {
+							mes "[Rossa]";
+							mes "Ah, desculpe, querido,";
+							mes "mas não posso tingir seu";
+							mes "cabelo se você não trouxer";
+							mes "Lemon Dyestuffs contigo...";
+							close2;
+							set .@escolha_sucesso,2;
+							break;
+						}
+						else if ((.@paleta_cabelo == 2) && (countitem(981) == 0)) {
+							mes "[Rossa]";
+							mes "Ah, desculpe, querido,";
+							mes "mas não posso tingir seu";
+							mes "cabelo se você não trouxer";
+							mes "Violet Dyestuffs contigo...";
+							close2;
+							set .@escolha_sucesso,2;
+							break;
+						}
+						else if ((.@paleta_cabelo == 3) && (countitem(980) == 0)) {
+							mes "[Rossa]";
+							mes "Ah, desculpe, querido,";
+							mes "mas não posso tingir seu";
+							mes "cabelo se você não trouxer";
+							mes "Orange Dyestuffs contigo...";
+							close2;
+							set .@escolha_sucesso,2;
+							break;
+						}
+						else if ((.@paleta_cabelo == 4) && (countitem(979) == 0)) {
+							mes "[Rossa]";
+							mes "Ah, desculpe, querido,";
+							mes "mas não posso tingir seu";
+							mes "cabelo se você não trouxer";
+							mes "Darkgreen Dyestuffs contigo.";
+							mes "Voltaria depois de conseguir alguns?";
+							close2;
+							set .@escolha_sucesso,2;
+							break;
+						}
+						else if ((.@paleta_cabelo == 5) && (countitem(978) == 0)) {
+							mes "[Rossa]";
+							mes "Ah, desculpe, querido,";
+							mes "mas não posso tingir seu";
+							mes "cabelo se você não trouxer";
+							mes "Cobaltblue Dyestuffs contigo.";
+							mes "Voltaria depois de conseguir alguns?";
+							close2;
+							set .@escolha_sucesso,2;
+							break;
+						}
+						else if ((.@paleta_cabelo == 6) && (countitem(982) == 0)) {
+							mes "[Rossa]";
+							mes "Ah, desculpe, querido,";
+							mes "mas não posso tingir seu";
+							mes "cabelo se você não trouxer";
+							mes "White Dyestuffs contigo...";
+							close2;
+							set .@escolha_sucesso,2;
+							break;
+						}
+						else if ((.@paleta_cabelo == 7) && (countitem(983) == 0)) {
+							mes "[Rossa]";
+							mes "Ah, desculpe, querido,";
+							mes "mas não posso tingir seu";
+							mes "cabelo se você não trouxer";
+							mes "Black Dyestuffs contigo...";
+							close2;
+							set .@escolha_sucesso,2;
+							break;
+						}
+						if (Zeny < 1000) {
+							mes "[Rossa]";
+							mes "Oh, desculpe, querido,";
+							mes "mas minha taxa de serviço é";
+							mes "1.000 zeny. Esqueceu de trazer";
+							mes "seu dinheiro?";
+							close2;
+							set .@escolha_sucesso,2;
+							break;
+						}
+						if (.@paleta_cabelo == 8) delitem 975,1; //Scarlet_Dyestuffs
+						else if (.@paleta_cabelo == 1) delitem 976,1; //Lemon_Dyestuffs
+						else if (.@paleta_cabelo == 2) delitem 981,1; //Violet_Dyestuffs
+						else if (.@paleta_cabelo == 3) delitem 980,1; //Orange_Dyestuffs
+						else if (.@paleta_cabelo == 4) delitem 979,1; //Darkgreen_Dyestuffs
+						else if (.@paleta_cabelo == 5) delitem 978,1; //Cobaltblue_Dyestuffs
+						else if (.@paleta_cabelo == 6) delitem 982,1; //White_Dyestuffs
+						else if (.@paleta_cabelo == 7) delitem 983,1; //Black_Dyestuffs
+						set Zeny, Zeny-1000;
+						setlook VAR_CABELO_PALETE,.@paleta_cabelo;
+						set .@escolha_sucesso,1;
+						break;
+					}
+				}
+			}
+			break;
+		case 2:
+			mes "[Rossa]";
+			mes "Quando você estiver se sentindo";
+			mes "para baixo, quando quiser";
+			mes "parecer bonito para aquele que";
+			mes "você ama, ou quando quiser";
+			mes "um visual diferente, por que";
+			mes "não tingir seu cabelo?";
+			next;
+			mes "[Rossa]";
+			mes "Tudo o que você precisa é de um";
+			mes "item Dyestuffs da cor que você";
+			mes "deseja tingir seu cabelo, além";
+			mes "de uma taxa de serviço de 1.000 zeny.";
+			mes "Estou aqui para suas necessidades de beleza~";
+			break;
+		case 3:
+			mes "[Rossa]";
+			mes "Você sabe, quando você";
+			mes "se dedica à sua";
+			mes "aparência, não apenas";
+			mes "você fica mais bonito, mas";
+			mes "também se sente melhor";
+			mes "consigo mesmo. Faz sentido, certo?";
+			close;
+		}
+	}
+	close;
+}

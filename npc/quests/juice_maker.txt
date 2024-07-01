@@ -1,0 +1,339 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+prt_in,49,172,3	script	Marianne#juice	53,{
+	if ((MISC_QUEST&1) || morison_meat == 15) {
+		mes "[Dona de casa Mariana]";
+		mes "Ufa...!";
+		mes "Ainda assim, ele não come nada, a menos que seja carne. ";
+		next;
+		set mother_marienu,0;
+		set morison_meat,0;
+		set MISC_QUEST,MISC_QUEST | 1;
+		mes "[Dona de casa Mariana]";
+		mes "Ah! ";
+		close;
+	}
+	if (mother_marienu == 1) {
+		mes "[Dona de casa Mariana]";
+		mes "Morrison!! ";
+		next;
+		if (select("Discussão: Cancelar") == 1) {
+			mes "[Dona de casa Mariana]";
+			mes "Hum? ";
+			mes "Foi você quem deu, meu pequeno Morrison, aquela Carne?! ";
+			next;
+			mes "[Dona de casa Mariana]";
+			mes "Vá embora, saia da minha casa AGORA!!";
+			close;
+		}
+		mes "[Dona de casa Mariana]";
+		mes "Morrison!! ";
+		close;
+	}
+	if (morison_meat > 0) {
+		set mother_marienu,1;
+		mes "[Dona de casa Mariana]";
+		mes "Ah!!.... Isso...";
+		mes "o que é isso...??";
+		mes "Como você pôde fazer algo assim com meu garoto?!";
+		next;
+		mes "[Dona de casa Mariana]";
+		mes "Argh! ";
+		close;
+	}
+	mes "[Dona de casa Mariana]";
+	mes "Morrison!! ";
+	next;
+	mes "[Dona de casa Marinaa]";
+	mes "Suspiro~!! ";
+	next;
+	switch(select("Discussão: Cancelar")) {
+		mes "[Dona de casa Mariana]";
+		mes "*Suspiro*... Este é Morrison...";
+		mes "Meu único filho.";
+		next;
+		mes "[Dona de casa Mariana]";
+		mes "Mas hoje em dia ele simplesmente não come frutas. ";
+		close;
+	}
+	mes "[Dona de casa Mariana]";
+	mes "Morrison!! ";
+	close;
+}
+
+prt_in,47,173,3	script	Morrison#juice	97,{
+	if ((MISC_QUEST&1) || morison_meat == 15) {
+		mes "[Pequeno Morrison]";
+		mes "Bleh... Esqueça.";
+		mes "Vou murchar até morrer só de comer frutas. ";
+		close;
+	}
+	if (morison_meat > 9) {
+		mes "[Pequeno Morrison]";
+		mes "Ah... tão cheio~";
+		mes "Acho que posso viver agora.";
+		mes "Você não precisa me dar mais carne. ";
+		if (morison_meat == 10) {
+			next;
+			set morison_meat,morison_meat+1;
+			mes "[Pequeno Morrison]";
+			mes "Ah... e... hum.";
+			mes "Pegue isso.";
+			next;
+			mes "[Pequeno Morrison]";
+			mes "É uma coisinha que tenho guardado para comer mais tarde, mas como você me deu Carne, acho que posso passar os doces.";
+			close;
+			getitem 529,3; //Candy
+			getitem 530,1; //Candy_Striper
+		}
+		close;
+	}
+	mes "[Pequeno Morrison]";
+	mes "Agh....Nããão!!!";
+	mes "Não, não me faça comê-lo! ";
+	next;
+	if (countitem(517) > 0) {
+		switch(select("Palestra:Mostre a Carne:Cancelar")) {
+		case 1:
+			mes "[Pequeno Morrison]";
+			mes "Aaaagh!! ";
+			next;
+			mes "[Pequeno Morrison]";
+			mes "E são todos escorregadios e azedos... Mesmo que eu coma, ainda sinto fome. ";
+			close;
+		case 2:
+			mes "[Pequeno Morrison]";
+			mes "Ah! ";
+			mes "Ah... hum... com fome...";
+			mes "O cheiro da carne...";
+			mes "Com licença...";
+			mes "Posso pegar um, por favor?";
+			next;
+			if (select("Dê Carne: Não Dê Carne") == 1) {
+				delitem 517,1; //Meat
+				set morison_meat,morison_meat+1;
+				mes "[Pequeno Morrison]";
+				mes "Uau~!!! ";
+				mes "Tão gostoso!";
+				mes "Obrigado,";
+				mes "Eu acho que eu posso";
+				mes "vive agora.";
+				mes "*Mastigar mastigar*";
+				close;
+			}
+			set morison_meat,15;
+			mes "[Pequeno Morrison]";
+			mes "Uau...!";
+			mes "Tudo bem, entendi agora.";
+			mes "Os adultos são todos iguais!";
+			close;
+		case 3:
+			mes "[Pequeno Morrison]";
+			mes "Aaaaah!!! ";
+			close;
+		}
+	}
+	if (select("Discussão: Cancelar") == 1) {
+		mes "[Pequeno Morrison]";
+		mes "Aah!! ";
+		next;
+		mes "[Pequeno Morrison]";
+		mes "Me recuso a comer mais frutas! ";
+		next;
+		mes "[Pequeno Morrison]";
+		mes "E são todos escorregadios e azedos... Mesmo que eu coma, ainda sinto fome.";
+		mes "Aaah~!";
+		mes "Dê-me carne!";
+		close;
+	}
+	mes "[Pequeno Morrison]";
+	mes "Aaaaah!!! ";
+	close;
+}
+
+payon_in03,188,146,5	script	Marx Hansen#juice	86,{
+	if (checkweight(1201,1) == 0) {
+		mes "- Espere um momento! ";
+		mes "- Atualmente você está carregando -";
+		mes "- muitos itens com você. ";
+		mes "- Por favor, volte mais tarde -";
+		mes "- depois de colocar alguns itens no armazenamento kafra. ";
+		close;
+	}
+	if (MISC_QUEST&1) {
+		mes "[Comerciante Marx Hansen]";
+		mes "Bem-vindo.";
+		mes "Você veio para";
+		mes "processar frutas também?";
+		next;
+		switch(select("Faça Suco.:Fale e obtenha informações sobre processamento de frutas.:Cancelar.")) {
+		case 1:
+			mes "[Comerciante Marx Hansen]";
+			mes "Que tipo de suco de fruta você gostaria de fazer?";
+			next;
+			switch(select("Suco de maçã:Suco de banana:Suco de cenoura:Suco de uva:Cancelar")) {
+			case 1:
+				set .@fruit,512;
+				set .@juice,531;
+				break;
+			case 2:
+				set .@fruit,513;
+				set .@juice,532;
+				break;
+			case 3:
+				set .@fruit,515;
+				set .@juice,534;
+				break;
+			case 4:
+				set .@fruit,514;
+				set .@juice,533;
+				break;
+			case 5:
+				mes "[Comerciante Marx Hansen]";
+				mes "Bem então...";
+				mes "Vejo você na próxima vez.";
+				close;
+			}
+			if (countitem(.@fruit) == 0 || countitem(713) == 0 || Zeny < 3) {
+				mes "[Comerciante Marx Hansen]";
+				mes "Oh não...";
+				mes "Você não tem todos os materiais necessários. "+getitemname(.@juice)+", preciso de 1"+getitemname(.@fruit)+"e 1 garrafa vazia. ";
+				next;
+				mes "[Comerciante Marx Hansen]";
+				mes "Quando você tiver preparado tudo, vou bater as frutas para lhe dar um suco delicioso.";
+				close;
+			}
+
+			mes "[Comerciante Marx Hansen]";
+			mes "Quantos quer?";
+			next;
+			switch(select("Quantos eu puder.:Quero uma certa quantia.:Cancelar.")) {
+			case 1:
+				set .@make,countitem(.@fruit);
+				if (countitem(713) < .@make) set .@make, countitem(713);
+				if (Zeny/3 < .@make) set .@make, Zeny/3;
+				break;
+			case 2:
+				mes "[Comerciante Marx Hansen]";
+				mes "Escolha um número menor que 100. Se não quiser, coloque '0'. " + countitem(.@fruit) + "garrafas de suco.";
+				next;
+				while(1) {
+					input .@input;
+					if (.@input == 0) {
+						mes "[Comerciante Marx Hansen]";
+						mes "Bem então...";
+						mes "Volte novamente.";
+						close;
+					}
+					else if (.@input > 100) {
+						mes "[Comerciante Marx Hansen]";
+						mes "Mais de 100 garrafas é impossível. ";
+						next;
+					}
+					else {
+						break;
+					}
+				}
+				set .@make,.@input;
+				break;
+			case 3:
+				mes "[Comerciante Marx Hansen]";
+				mes "Bem então...";
+				mes "Volte novamente.";
+				close;
+			}
+
+			set .@total_zeny,3 * .@make;
+
+			if (countitem(.@fruit) < .@make || countitem(713) < .@make || Zeny < .@total_zeny) {
+				mes "[Comerciante Marx Hansen]";
+				mes "Oh não...";
+				mes "Você não tem todos os materiais necessários. ";
+				close;
+			}
+			delitem .@fruit,.@make;
+			delitem 713,.@make;
+			set Zeny, Zeny-.@total_zeny;
+			getitem .@juice,.@make;
+
+			mes "[Comerciante Marx Hansen]";
+			mes "Aqui você vai! ";
+			next;
+			mes "[Comerciante Marx Hansen]";
+			mes "Bem então...";
+			mes "Volte novamente.";
+			close;
+		case 2:
+			mes "[Comerciante Marx Hansen]";
+			mes "Antes de os humanos serem capazes de desenvolver sociedades tão vastas, eles colhiam frutos das árvores para sobreviver. ";
+			next;
+			mes "[Comerciante Marx Hansen]";
+			mes "Desde que a vida se tornou tão próspera, a geração mais jovem parece não comer mais frutas. ";
+			next;
+			mes "[Comerciante Marx Hansen]";
+			mes "Percebi que quando você faz suco de fruta fica mais prático de comer e tem um sabor muito melhor.";
+			next;
+			mes "# Fruit Juice Information #";
+			mes "^CC4E5C- Suco de maçã -^000000";
+			mes "Maçã x 1 unidade, garrafa vazia x 1 unidade, 3 zeny.";
+			mes "^E3CF57- Suco de Banana -^000000";
+			mes "Banana x 1 unidade, garrafa vazia x 1 unidade, 3 zeny.";
+			mes "^ED9121- Suco de Cenoura -^000000";
+			mes "Cenoura x 1 unidade, garrafa vazia x 1 unidade, 3 zeny.";
+			mes "^CC00FF- Suco de Uva -^000000";
+			mes "Uva x 1 unidade, garrafa vazia x 1 unidade, 3 zeny.";
+			close;
+		case 3:
+			mes "[Comerciante Marx Hansen]";
+			mes "Ei!";
+			mes "Se você visitar";
+			mes "alguém, fale com eles!";
+			close;
+		}
+	}
+	else {
+		mes "[Comerciante Marx Hansen]";
+		mes "Bem-vindo.";
+		mes "Como posso ajudá-lo?";
+		next;
+		if (select("Discussão: Cancelar") == 1) {
+			mes "[Comerciante Marx Hansen]";
+			mes "Antes de os humanos serem capazes de desenvolver sociedades tão vastas, eles colhiam frutos das árvores para sobreviver. ";
+			next;
+			mes "[Comerciante Marx Hansen]";
+			mes "Desde que a vida se tornou tão próspera, a geração mais jovem parece não comer mais frutas. ";
+			next;
+			mes "[Comerciante Marx Hansen]";
+			mes "Percebi que quando você faz suco de fruta fica mais prático de comer e tem um sabor muito melhor.";
+			close;
+		}
+		mes "[Comerciante Marx Hansen]";
+		mes "Ei!";
+		mes "Se você visitar";
+		mes "alguém, fale com eles!";
+		close;
+	}
+}
+
+//============================================================ 
+// Old changelog
+//============================================================ 
+//= 1.1 fixed input number check [Lupus]
+//= 1.2 fixed misplaced Grape<->Carrot juices [Lupus]
+//= 1.3 added a loopless menu 'as many as possible' [Lupus]
+//= 1.3a Turned the juice making part of the Juicer npc into a
+//=     subfunc.  Changed fruit amount needed to 1.[kobra_k88]
+//=     Fixed exploits [Lupus]
+//= 1.6 fixed typo (where did @ipnut came from?) [Lance]
+//= 1.8 got rid of vars: 'MEAT',"MARIANA","MORRISON"
+//=     From now, all common quests start using bits of the
+//=     same variable MISC_QUEST [Lupus]
+//============================================================ 
+

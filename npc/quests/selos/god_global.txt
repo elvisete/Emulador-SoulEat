@@ -1,0 +1,106 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+sec_in02,15,170,0	script	Golbal var	817,{
+	callfunc "F_GM_NPC";
+	mes "[Verificar]";
+	mes "Por favor insira a senha.";
+	next;
+	if (callfunc("F_GM_NPC",68392411,0) == 1) {
+		mes "[Verificar]";
+		mes "Por favor, escolha um menu.";
+		next;
+		switch(select("Agora:No.1:No.2:No.3:No.4:Reset:god_sl_1:god_eremes:god_brising:god_mjo_0:god_mjo_1:god_mjo_2:god_mjo_3:god_mjo_4")) {
+		case 1:
+			mes "^0000FF$Deus1^000000 = ^FF0000" + $God1 + "^000000.";
+			mes "^0000FF$Deus2^000000 = ^FF0000" + $God2 + "^000000.";
+			mes "^0000FF$Deus3^000000 = ^FF0000" + $God3 + "^000000.";
+			mes "^0000FF$Deus4^000000 = ^FF0000" + $God4 + "^000000.";
+			close;
+		case 2: callsub L_Number,"$Deus1"; break;
+		case 3: callsub L_Number,"$Deus2"; break;
+		case 4: callsub L_Number,"$Deus3"; break;
+		case 5: callsub L_Number,"$Deus4"; break;
+		case 6:
+			mes "[Verificar]";
+			mes "Você tem certeza de que deseja redefinir toda a lista de God Globalvar?";
+			mes "Por favor insira a senha.";
+			next;
+			if (callfunc("F_GM_NPC",68392411,0) == 1) {
+				mes "[Verificar]";
+				mes "Agora, toda a lista de God Globalvar está sendo redefinida.";
+				next;
+				set $God1,0;
+				set $God2,0;
+				set $God3,0;
+				set $God4,0;
+				mes "^0000FF$Deus1^000000 = ^FF0000" + $God1 + "^000000.";
+				mes "^0000FF$Deus2^000000 = ^FF0000" + $God2 + "^000000.";
+				mes "^0000FF$Deus3^000000 = ^FF0000" + $God3 + "^000000.";
+				mes "^0000FF$Deus4^000000 = ^FF0000" + $God4 + "^000000.";
+				close;
+			} else {
+				mes "[Verificar]";
+				mes "O comando foi cancelado.";
+				close;
+			}
+		case 7: callsub L_Var,"deus_sl_1"; break;
+		case 8: callsub L_Var,"deus_eremes"; break;
+		case 9: callsub L_Var,"deus_brising"; break;
+		case 10: callsub L_Var,"deus_mjo_0"; break;
+		case 11: callsub L_Var,"deus_mjo_1"; break;
+		case 12: callsub L_Var,"deus_mjo_2"; break;
+		case 13: callsub L_Var,"deus_mjo_3"; break;
+		case 14: callsub L_Var,"deus_mjo_4"; break;
+		}
+	} else {
+		mes "[Verificar]";
+		mes "Senha incorreta.";
+		close;
+	}
+
+L_Number:
+	input .@input,0,$@god_check2;
+	mes "[Verificar]";
+	mes "Você gostaria de mudar para"+.@input+"?";
+	mes "Por favor insira a senha.";
+	next;
+	if (callfunc("F_GM_NPC",68392411,0) == 1) {
+		mes "[Verificar]";
+		mes "O comando"+.@input+"foi confirmado.";
+		next;
+		setd getarg(0),.@input;
+		mes getarg(0)+""+.@input;
+		close;
+	} else {
+		mes "[Verificar]";
+		mes "O comando foi cancelado.";
+		close;
+	}
+
+L_Var:
+	input .@input;
+	setd getarg(0),.@input;
+	next;
+	mes "[Verificar]";
+	mes "Feito.";
+	close;
+
+OnInit:
+	// Seals roll at 25/50 in Renewal and 50/100 in Pre-Renewal.
+	if (checkre(0)) {
+		set $@god_check1,25;
+		set $@god_check2,50;
+	} else {
+		set $@god_check1,50;
+		set $@god_check2,100;
+	}
+	end;
+}
+

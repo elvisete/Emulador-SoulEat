@@ -1,0 +1,105 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+rachel,138,146,5	script	Guia de Rachel	934,{
+	mes "[Guia Raquel]";
+	mes "Bem-vindo à capital do";
+	mes "Arunafeltz, Rachel onde um caloroso";
+	mes "sopro da deusa Freya alcança.";
+	mes "Se esta é a primeira vez para você";
+	mes "usar os serviços de guia, por que";
+	mes "você não verifica o \"Notice\"menu primeiro?";
+	set .@loop1,1;
+	while(.@loop1) {
+		next;
+		switch(select("Guia da Aldeia:Remover Marcas do Mini-Mapa:Aviso:Cancelar")) {
+		case 1:
+			mes "[Guia Raquel]";
+			mes "Posso lhe dizer qualquer localização de construção, desde que seja em Rachel.";
+			mes "Então, para onde você quer ir?";
+			if (.@compass_check == 0) {
+				mes "Você gostaria que eu";
+				mes "para marcar locais";
+				mes "no seu minimapa?";
+				next;
+				if (select("Sim não") == 1) set .@compass_check,1;
+			}
+			set .@loop2,1;
+			while(.@loop2) {
+				if (.@wait_button_chk == 0) set .@wait_button_chk,1;
+				else next;
+
+				switch(select("Cheshrumnir:Pousada:Loja de armas:Loja de ferramentas:Aeroporto:Cancelar")) {
+				case 1:
+					mes "[Guia Raquel]";
+					mes "Cheshrumnir é um local sagrado onde fica o papa, a encarnação da deusa Freya.";
+					mes "Pegue a estrada para o norte para encontrar o prédio.";
+					if (.@compass_check == 1) viewpoint 1,150,249,1,0xFF0000;
+					break;
+				case 2:
+					mes "[Guia Raquel]";
+					mes "Você pode aliviar o cansaço da viagem na pousada.";
+					mes "O prédio à esquerda ao meu lado é a Pousada da Raquel.";
+					if (.@compass_check == 1) viewpoint 1,115,149,2,0xFF00FF;
+					break;
+				case 3:
+					mes "[Guia Raquel]";
+					mes "Quer conferir as armas que são vendidas em Rachel?";
+					mes "A loja de armas está localizada perto do portão oeste.";
+					if (.@compass_check == 1) viewpoint 1,42,87,3,0x99FFFF;
+					break;
+				case 4:
+					mes "[Guia Raquel]";
+					mes "A loja de ferramentas Rachel vende poções da melhor qualidade.";
+					mes "Ele está localizado próximo ao portão oeste.";
+					if (.@compass_check == 1) viewpoint 1,83,78,4,0x0000FF;
+					break;
+				case 5:
+					mes "[Guia Raquel]";
+					mes "O aeroporto está localizado fora do portão leste.";
+					if (.@compass_check == 1) viewpoint 1,273,125,5,0x00FF00;
+					break;
+				case 6:
+					mes "[Guia Raquel]";
+					mes "Se você quiser se livrar de todas as marcas de localização no seu Minimapa,";
+					mes "basta me perguntar novamente e escolher \"Remove Marks from Mini-Map\"cardápio.";
+					set .@loop2,0;
+					break;
+				}
+			}
+			break;
+
+		case 2:
+			viewpoint 2,150,249,1,0xFF0000;
+			viewpoint 2,115,149,2,0xFF00FF;
+			viewpoint 2,42,87,3,0x99FFFF;
+			viewpoint 2,83,78,4,0x0000FF;
+			viewpoint 2,273,125,5,0x00FF00;
+			mes "[Guia Raquel]";
+			mes "Ok, eles se foram agora. ";
+			break;
+		case 3:
+			mes "[Guia Raquel]";
+			mes "Quando você estiver usando o menu ''Guia da Vila'',";
+			mes "certifique-se de que os locais de construção estejam marcados em seu minimapa no canto superior direito da tela.";
+			mes "Caso você não consiga visualizar seu minimapa, use a tecla de atalho ''ctrl tab'' ou pressione o botão ''Mapa'' na sua janela de informações básicas, ok?";
+			mes "E você também pode diminuir o zoom do seu minimapa usando o botão ''-'' caso não consiga visualizar o mapa completo da vila.";
+			break;
+		case 4:
+			mes "[Guia Raquel]";
+			mes "Espero que você tenha uma jornada maravilhosa";
+			mes "em Arunafeltz.";
+			close2;
+			set .@loop1,0;
+			break;
+		}
+	}
+	close;
+}
+

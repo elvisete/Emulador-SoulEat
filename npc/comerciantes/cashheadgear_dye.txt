@@ -1,0 +1,112 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+prt_in,253,168,4	script	Alora	862,{
+
+// Mysterious Dyestuff
+	set .@dyeID, 6220;
+// Headgear Choices
+	setarray .@hgn$[1], "Chapéu do Mestre Arcano","Gorro","Chapéu de Gatinho Dorminhoco","Chapéu de Deviruchi","Peruca Carnavalesca Feliz","Laço","Chifres Majestosos";
+// Mage Hats - Normal, Amarelo, Azul, Marrom, Cinza, Vermelho
+	setarray .@hg_1[1], 5027, 5242, 5241, 5240, 5239, 5238;
+// Beanies - Normal, Rosa, Azul, Marrom
+	setarray .@hg_2[1], 5076, 5237, 5236, 5235;
+// Drooping Cats - Normal, Azul, Marrom, Cinza, Rosa, Amarelo
+	setarray .@hg_3[1], 5058, 5233, 5231, 5230, 5232, 5234;
+// Deviruchi Hats - Normal, Vermelho, Cinza, Marrom
+	setarray .@hg_4[1], 5038, 5227, 5228, 5229;
+// Wigs - Feliz, Brilhante, Chamativa, Fantástica
+	setarray .@hg_5[1], 5273, 5274, 5275, 5276;
+// Ribbons - Normal, Black, Amarelo, Green, Rosa, Vermelho, Orange, Branco
+	setarray .@hg_6[1], 2208, 5191, 5192, 5193, 5194, 5195, 5196, 5197;
+// Magestic Goats - Normal, Evoluídos
+	setarray .@hg_7[1], 2256, 5217;
+
+	mes "[Alora]";
+	mes "Olá, eu posso mudar a cor do seu Chapéu se você me trouxer uma Tintura Misteriosa.";
+	next;
+	mes "[Alora]";
+	mes "Você tem um Chapéu que gostaria de tingir?";
+	next;
+	for(set .@i,1; .@i < getarraysize(.@hgn$); set .@i,.@i+1) {
+		if(.@i == 1)    set .@menu$, .@hgn$[.@i];
+		else            set .@menu$, .@menu$ +":"+ .@hgn$[.@i];
+	}
+	set .@menu$, .@menu$ +":Cancel";
+	set .@t, select(.@menu$);
+	if(.@t == getarraysize(.@hgn$)) {
+		mes "[Alora]";
+		mes "Tenha uma boa jornada, aventureiro!";
+		mes "Se você estiver curioso para experimentar uma nova cor em seu Chapéu Kafra ou naqueles que você encontrou em suas aventuras, por favor, venha até mim!";
+		close;
+	}
+	mes "[Alora]";
+	mes "Ok, para qual cor você deseja mudar?";
+	next;
+	for(set .@i,1; .@i < getarraysize(getd(".@hg_"+.@t+"")); set .@i,.@i+1) {
+		if(.@i == 1 && .@t != 5)
+			set .@menu$, "Normal";
+		else if(.@i == 1 && .@t == 5)
+			set .@menu$, getitemname(getd(".@hg_"+.@t+"["+.@i+"]"));
+		else {
+			sscanf(getitemname(getd(".@hg_"+.@t+"["+.@i+"]")),"%s "+ .@hgn$[.@t],.@colour$);
+			set .@menu$, .@menu$ +":"+ .@colour$;
+		}
+	}
+	set .@menu$, .@menu$ +":Cancel";
+	set .@c, select(.@menu$);
+	if(.@c == getarraysize(getd(".@hg_"+.@t+""))) {
+		mes "[Alora]";
+		mes "Oh, ok, não há problema!";
+		close;
+	}
+	set .@dyHG, getd(".@hg_"+.@t+"["+.@c+"]");
+	mes "[Alora]";
+	mes "Oh, estou tão animado, não é?";
+	mes "E só para ter certeza, qual é a cor do "+ .@hgn$[.@t] +" que você quer que eu use?";
+	next;
+	mes "[Alora]";
+	mes "Por favor, entenda que vou usar ^FF00001º "+ .@hgn$[.@t] +" dessa cor em seu inventário!^000000";
+	next;
+	mes "[Alora]";
+	mes "Quaisquer atualizações e cartas serão dissolvidas pela tinta misteriosa, então certifique-se de ter um ^0000FF+0 "+ getitemname(.@dyHG) +" sem nenhuma carta.^000000";
+	next;
+	mes "["+ strcharinfo(0) +"]";
+	mes "Ok, obrigado pelo aviso, acho que vou te dar o meu";
+	next;
+	set .@menu$, "Deixa pra lá";
+	for(set .@i,1; .@i < getarraysize(getd(".@hg_"+.@t+"")); set .@i,.@i+1) {
+		if(.@i == 1)    set .@menu$, .@menu$ +":Normal "+ getitemname(getd(".@hg_"+.@t+"["+.@i+"]"));
+		else            set .@menu$, .@menu$ +":"+ getitemname(getd(".@hg_"+.@t+"["+.@i+"]"));
+	}
+	set .@mine, select(.@menu$) - 1;
+	if(!.@mine) {
+		mes "[Alora]";
+		mes "É melhor ter certeza, e ter uma viagem segura.";
+		close;
+	}
+	set .@myHG, getd(".@hg_"+.@t+"["+.@mine+"]");
+	if(.@dyHG == .@myHG) {
+		mes "[Alora]";
+		mes "Uau, o que aconteceu?";
+		close;
+	}
+	if(!countitem(.@dyeID) || !countitem(.@myHG)) {
+		mes "[Alora]";
+		mes "Oh meu Deus, parece que está faltando alguma coisa.";
+		close;
+	}
+	mes "[Alora]";
+	mes "Parece ótimo, não é?!";
+	mes "Espero que você volte para pintar mais chapéus lindos!";
+	delitem .@dyeID,1; // Tintura
+	delitem .@myHG,1;  // Seu Chapéu
+	getitem .@dyHG,1;  // Novo Chapéu
+	close;
+}

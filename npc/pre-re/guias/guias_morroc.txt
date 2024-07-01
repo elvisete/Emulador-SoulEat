@@ -1,0 +1,154 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+morocc,153,286,6	script	Guia#moc::MocGuia	707,{
+	cutin "moc_soldier",2;
+	mes "[Guia de Marrocos]";
+	mes "Bem-vindo ao Marrocos,";
+	mes "a cidade fronteiriça do";
+	mes "Reino de Rune-Midgarts.";
+	mes "Por favor, peça-me ajuda se";
+	mes "você está tendo algum problema";
+	mes "encontrar qualquer coisa na cidade.";
+	set .@loop1,1;
+	while (.@loop1) {
+		next;
+		switch(select("Guia da cidade:Remover marcas do minimapa:Aviso:Cancelar")) {
+		case 1:
+			mes "[Guia de Marrocos]";
+			mes "Por favor selecione";
+			mes "um local de";
+			mes "o menu a seguir.";
+			if (.@compass_check == 0) {
+				mes "Você gostaria que eu";
+				mes "para marcar locais";
+				mes "no seu minimapa?";
+				next;
+				if (select("Sim não.") == 1) set .@compass_check,1;
+			}
+			set .@loop2,1;
+			while(.@loop2) {
+				if (.@wait_button_chk == 0) set .@wait_button_chk,1;
+				else next;
+				
+				switch(select("^FF0000Guilda dos Gatunos^000000:Loja de armas:Pousada:Pub:Guilda dos Mercenários:Forja:Cancelar")) {
+				case 1:
+					mes "[Guia de Marrocos]";
+					mes "A Guilda dos Gatunos é";
+					mes "responsável por todo o trabalho";
+					mes "Mudanças no Ladrão";
+					mes "Aula. ";
+					mes "você pode encontrá-los dentro";
+					mes "as pirâmides próximas...";
+					if (.@compass_check)
+						viewpoint 1,24,297,2,0xFF0000;
+					break;
+				case 2:
+					mes "[Guia de Marrocos]";
+					mes "A loja de armas";
+					mes "está no sudeste";
+					mes "fim de Marrocos.";
+					if (.@compass_check)
+						viewpoint 1,253,56,3,0xFF00FF;
+					break;
+				case 3:
+					mes "[Guia de Marrocos]";
+					mes "Existem pousadas";
+					mes "onde você pode descansar";
+					mes "no sudeste e";
+					mes "extremidades nordeste de Marrocos.";
+					if (.@compass_check) {
+						viewpoint 1,197,66,4,0xFF00FF;
+						viewpoint 1,273,269,5,0xFF00FF;
+					}
+					break;
+				case 4:
+					mes "[Guia de Marrocos]";
+					mes "Você pode encontrar o";
+					mes "Pub no nordeste de Marrocos.";
+					if (.@compass_check)
+						viewpoint 1,52,259,6,0xFF00FF;
+					break;
+				case 5:
+					mes "[Guia de Marrocos]";
+					mes "O mercenário";
+					mes "A guilda está localizada";
+					mes "no leste de Marrocos.";
+					if (.@compass_check)
+						viewpoint 1,284,171,7,0x00FF00;
+					break;
+				case 6:
+					mes "[Guia de Marrocos]";
+					mes "A Forja é";
+					mes "localizado apenas";
+					mes "sudoeste de";
+					mes "o centro de Marrocos.";
+					if (.@compass_check)
+						viewpoint 1,47,47,7,0xFF00FF;
+					break;
+				case 7:
+					mes "[Guia de Marrocos]";
+					mes "Por favor, peça-me para ''Remover";
+					mes "Marcas do Mini-Mapa'' se você";
+					mes "não deseja mais ter o";
+					mes "marcas de localização exibidas";
+					mes "no seu minimapa.";
+					set .@loop2,0;
+				}
+			}
+			break;
+		case 2:
+			viewpoint 2,237,41,2,0x00FF00;
+			viewpoint 2,237,41,3,0x0000FF;
+			viewpoint 2,46,345,4,0x00FF00;
+			viewpoint 2,175,220,5,0xFF0000;
+			viewpoint 2,175,220,6,0xFF0000;
+			viewpoint 2,175,220,7,0xFF0000;
+			set .@compass_check,0;
+			break;
+		case 3:
+			mes "[Guia de Marrocos]";
+			mes "Avanços na feitiçaria e";
+			mes "tecnologia permitiu";
+			mes "para atualizarmos nossas informações";
+			mes "sistema, permitindo até marcar";
+			mes "locais em seu minimapa";
+			mes "para uma navegação mais fácil.";
+			next;
+			mes "[Guia de Marrocos]";
+			mes "Seu Minimapa está localizado";
+			mes "no canto superior direito";
+			mes "da tela. ";
+			mes "vê-lo, pressione a guia Ctrl";
+			mes "ou clique no botão ''Mapa'' na janela de informações básicas.";
+			next;
+			mes "[Guia de Marrocos]";
+			mes "No seu minimapa,";
+			mes "clique no '' '' e ''-''";
+			mes "símbolos para ampliar e";
+			mes "nosso do seu Mini-Mapa. ";
+			mes "espero que você aproveite suas viagens";
+			mes "aqui na cidade de Marrocos.";
+			break;
+		case 4:
+			mes "[Guia de Marrocos]";
+			mes "Tudo bem então,";
+			mes "tente ficar fora";
+			mes "muitos problemas";
+			mes "lá fora, aventureiro.";
+			close2;
+			set .@loop1,0;
+		}
+	}
+	cutin "moc_soldier",255;
+	end;
+}
+
+morocc,54,97,0	duplicate(MocGuia)	Guia#2moc	707
+

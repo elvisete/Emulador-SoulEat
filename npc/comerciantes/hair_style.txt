@@ -1,0 +1,373 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+alberta,33,141,7	script	Cabeleireiro itinerante	87,{
+	mes "[Rui Vishop]";
+	mes "Essa Veronica...";
+	mes "Hah! Melhor cabeleireira do meu traseiro.";
+	mes "Ela não é a melhor cabeleireira...";
+	mes "...";
+	mes "Eu sou!";
+	next;
+	mes "[Rui Vishop]";
+	mes "Eu, Rui Vishop, o homem para quem";
+	mes "todos os couros cabeludos são telas";
+	mes "à espera de serem transformados em";
+	mes "obras de arte magníficas~!";
+	next;
+	switch(select("O que você é?:Faça meu cabelo, por favor!:.....")) {
+	case 1:
+		mes "[Rui Vishop]";
+		mes "Você não sabe que eu, Rui";
+		mes "Vishop, maestro das tesouras";
+		mes "e escultor de cabelos, sou um";
+		mes "artista muito à frente do meu tempo?!";
+		mes "Bem, eu suponho que um aventureiro";
+		mes "como você não saberia...";
+		next;
+		mes "[Rui Vishop]";
+		mes "Como escultor de cabelos, eu encontro";
+		mes "alegria em conceder aos outros o";
+		mes "supremo favor de fazer seu";
+		mes "penteado a um preço razoável.";
+		next;
+		mes "[Rui Vishop]";
+		mes "Recentemente, no entanto, ouvi dizer";
+		mes "que algum novato teve a audácia de";
+		mes "se chamar de cabeleireira.";
+		next;
+		mes "[Rui Vishop]";
+		mes "Então um dia eu fui lá,";
+		mes "fingindo ser um cliente.";
+		mes "Fiquei horrorizado ao ver os penteados";
+		mes "chatos e sem vida que ela estava";
+		mes "dando a todos os seus clientes...";
+		next;
+		mes "[Rui Vishop]";
+		mes "Não foi difícil perceber que suas";
+		mes "habilidades, ou falta delas, são uma";
+		mes "piada. Ela envergonha a nobre";
+		mes "e honrosa profissão de cabeleireira.";
+		mes "Uma completa e total desgraça!";
+		next;
+		mes "[Rui Vishop]";
+		mes "Mas a pior parte foi...";
+		mes "ela forçava seus clientes a";
+		mes "escolher um penteado antes de";
+		mes "estilizar o cabelo deles!";
+		next;
+		mes "[Rui Vishop]";
+		mes "Isso não é como cabeleireiros";
+		mes "talentosos fazem seu trabalho! Ela";
+		mes "deveria saber qual penteado vai";
+		mes "ficar bem para um cliente sem";
+		mes "nunca perguntar a eles!";
+		next;
+		mes "[Rui Vishop]";
+		mes "Se por acaso você decidir fazer";
+		mes "seu cabelo, nem pense em dar";
+		mes "patrocínio a ela.";
+		mes "Em vez disso, você pode pedir pelos";
+		mes "meus serviços. Eu garanto, sou";
+		mes "muito melhor do que ela.";
+		next;
+		mes "[Rui Vishop]";
+		mes "Você entende? Quero dizer, não";
+		mes "deixe ela estragar seu cabelo";
+		mes "desnecessariamente!";
+		mes "Você poderia chamar um Espadachim";
+		mes "para cortar seu cabelo se quiser";
+		mes "um penteado tão horrível~!";
+		close;
+	case 2:
+		if(BaseLevel < 60) {
+			mes "[Rui Vishop]";
+			mes "Hmm, devo dizer que seu estilo";
+			mes "atual combina melhor com você.";
+			mes "Confie em mim, eu sei o que estou dizendo.";
+			close;
+		} else if(Zeny < 199800) {
+			mes "[Rui Vishop]";
+			mes "Ah, vejo que você pode";
+			mes "reconhecer o gênio quando está";
+			mes "diante de você. Em vista de";
+			mes "seu bom gosto, vou";
+			mes "exigir apenas dinheiro pelos";
+			mes "meus serviços.";
+			next;
+			mes "[Rui Vishop]";
+			mes "Basta me pagar a pequena";
+			mes "taxa de 199.800 zeny. Você deve";
+			mes "saber que estou fazendo um favor";
+			mes "enorme cobrando tão pouco.";
+			mes "Minha arte é inestimável, afinal.";
+			close;
+		}
+		mes "[Rui Vishop]";
+		mes "Certo, vou pegar minha";
+		mes "taxa de serviço de 199.800 zeny agora.";
+		next;
+		mes "[Rui Vishop]";
+		mes "Se você não quiser fazer";
+		mes "isso agora, embora eu não";
+		mes "possa imaginar por quê, você pode";
+		mes "pedir para aquela cabeleireira estúpida";
+		mes "fazer o trabalho dela em você...";
+		next;
+		if(select("Não, por favor faça meu cabelo.:Hum, mudei de ideia.") ==1 ) {
+			mes "[Rui Vishop]";
+			mes "O~k~a~y!";
+			mes "Agora, vamos começar~!";
+			next;
+			mes "[Rui Vishop]";
+			mes "Wooooo~oooohhhh!! Toohhhhh~oooohhhh!!";
+			next;
+			mes "[Rui Vishop]";
+			mes "Woooooo~aaaaaaahhhhh!!";
+			next;
+			mes "[Rui Vishop]";
+			mes "Voilà!";
+			next;
+			mes "[Rui Vishop]";
+			mes "Oh, ótimo~ é incrível!";
+			mes "Outra obra-prima de Vishop~";
+			mes "Mais uma vez, me superei.";
+			mes "É um estilo tão único e talentoso!";
+			mes "Sim, eu sou o melhor! Wooohahahahahaha!";
+			set Zeny, Zeny-199800;
+			setlook 1,rand(1,19);
+			setlook 6,rand(1,8);
+			close;
+		}
+		mes "[Rui Vishop]";
+		mes "Bah! Certo! É a sua decisão.";
+		mes "Mas não me culpe depois!";
+		mes "Um dia você acordará, perceberá";
+		mes "que está feio e se arrependerá de não";
+		mes "ter meu gênio moldando cada fio";
+		mes "de cabelo em sua cabeça.";
+		close;
+	case 3:
+		mes "[Rui Vishop]";
+		mes "O que? Que vergonha!";
+		mes "Você vai deixar aquela...aquela";
+		mes "charlatã de cabeleireira estragar";
+		mes "seu penteado!? Tenho certeza de que";
+		mes "os céus estão chorando lágrimas de";
+		mes "pena pela ignorância da humanidade...";
+		close;
+	}
+}
+
+
+lhz_in02,91,155,5	script	Esteticista Assistente#li	862,{
+	mes "[Assistente de Cabeleireira]";
+	mes "Opa?! Puxa vida,";
+	mes "você me assustou!";
+	mes "O que você está fazendo?!";
+	emotion ET_HUK;
+	next;
+	mes "[Assistente de Cabeleireira]";
+	mes "Oh! Ah, um cliente!";
+	mes "O-lá! Posso";
+	mes "ajudar com alguma coisa?";
+	next;
+	switch(select("O que você faz?:Por favor, mude meu penteado.:Quem é o Príncipe Shammi?")) {
+	case 1:
+		mes "[Assistente de Cabeleireira]";
+		mes "Oh! Eu...? Eu sou";
+		mes "apenas uma";
+		mes "assistente";
+		mes "cabeleireira, mas eu estou";
+		mes "treinando todos os dias";
+		mes "para me tornar uma";
+		mes "profissional de verdade!";
+		next;
+		mes "[Assistente de Cabeleireira]";
+		mes "Sim, eu faço todo tipo de";
+		mes "trabalho pesado para o chefe enquanto";
+		mes "estou em treinamento. Às vezes, ele";
+		mes "me faz trabalhar bastante.";
+		mes "Na verdade, melhor eu voltar ao trabalho antes que ele fique zangado comigo!";
+		close;
+	case 2:
+		if (BaseLevel < 60) {
+			mes "[Assistente de Cabeleireira]";
+			mes "Eu...? Ah não,";
+			mes "não posso! Quer dizer,";
+			mes "eu adoraria, mas eu estou";
+			mes "ainda em treinamento e";
+			mes "não posso assumir a responsabilidade";
+			mes "se eu estragar o cabelo de alguém!";
+			close;
+		}
+		else if ((Zeny < 250000)) {
+			mes "[Assistente de Cabeleireira]";
+			mes "Bem... Eu sou apenas";
+			mes "uma assistente, mas tenho";
+			mes "estudado penteados após";
+			mes "o trabalho. Se quiser, é só trazer";
+			mes "250.000 zeny e vou fazer o meu";
+			mes "melhor para mudar seu cabelo~";
+			next;
+			mes "[Assistente de Cabeleireira]";
+			mes "Eu ficaria grata se";
+			mes "você me desse essa";
+			mes "chance! O chefe não acha";
+			mes "que estou pronta para fazer";
+			mes "penteados em pessoas reais ainda, então";
+			mes "não tive muita prática!";
+			next;
+			mes "[Assistente de Cabeleireira]";
+			mes "Eu sei que poderia";
+			mes "fazer um bom trabalho no";
+			mes "seu cabelo! Apenas... Apenas";
+			mes "entenda se eu errar.";
+			mes "Não será tão ruim, eu prometo~";
+			close;
+		}
+		else {
+			mes "[Assistente de Cabeleireira]";
+			mes "Você realmente vai me";
+			mes "dar uma chance para praticar?";
+			mes "Oh, eu te amo tanto! Ok,";
+			mes "vou precisar de 250.000 zeny para cobrir";
+			mes "os custos dos materiais.";
+			mes "Isso está ok para você?";
+			next;
+			switch(select("Claro~:Pensando bem...")) {
+			case 1:
+				mes "[Assistente de Cabeleireira]";
+				mes "Ótimo! Agora, por favor,";
+				mes "escolha um penteado";
+				mes "de ''1'' a ''23.''";
+				mes "Ah, se precisar";
+				mes "cancelar, é só digitar ''0''";
+				next;
+				input .@input;
+				if (.@input == 0) {
+					mes "[Assistente de Cabeleireira]";
+					mes "Awwww...";
+					mes "Acho que você não";
+					mes "confia em mim afinal...";
+					close;
+				}
+				else if ((.@input < 1) || (.@input > 23)) {
+					mes "[Assistente de Cabeleireira]";
+					mes "Hein? Eu pedi para";
+					mes "você digitar um número de";
+					mes "''1'' a ''23?'' O que eu fiz";
+					mes "de errado desta vez? Hmm...";
+					close;
+				}
+				else {
+					mes "[Assistente de Cabeleireira]";
+					mes "Então este é o";
+					mes "estilo que você quer que";
+					mes "eu tente fazer para você?";
+					if (Sex == SEX_MALE) {
+						if (.@input < 10)
+							cutin "hair_m_0"+.@input+".BMP",4;
+						else
+							cutin "hair_m_"+.@input+".BMP",4;
+					}
+					else {
+						if (.@input < 10)
+							cutin "hair_f_0"+.@input+".BMP",4;
+						else
+							cutin "hair_f_"+.@input+".BMP",4;
+					}
+					next;
+					switch(select("Sim, vamos tentar~:Cancelar.")) {
+					case 1:
+						break;
+					case 2:
+						mes "[Assistente de Cabeleireira]";
+						mes "Oooh, deve";
+						mes "haver algum estilo";
+						mes "que você goste, certo? Hmm...";
+						close;
+					}
+				}
+				mes "[Assistente de Cabeleireira]";
+				mes "Ótimo, você finalmente";
+				mes "escolheu um! O quê, qual";
+				mes "você escolheu mesmo?";
+				mes "Ah, achei, achei!";
+				mes "Haha! Sem problemas aqui!";
+				mes "Agora é hora de estilizar!";
+				next;
+				nude;
+				mes "[Assistente de Cabeleireira]";
+				mes "Bwwwwaaaahhhh!";
+				next;
+				mes "[Assistente de Cabeleireira]";
+				mes "Yap! Pwwwaaattt!";
+				next;
+				mes "[Assistente de Cabeleireira]";
+				mes "Waaaah!";
+				mes "Ah, droga!";
+				mes "Espera, eu posso...";
+				mes "Eu posso consertar isso!";
+				next;
+				set .@style_r,rand(1,23);
+				set .@color_r,rand(1,8);
+				mes "[Assistente de Cabeleireira]";
+				mes "^333333*Puf Puf Puf*^000000";
+				next;
+				set Zeny, Zeny-250000;
+				setlook VAR_HEAD,.@style_r;
+				setlook VAR_HEADPALETTE,.@color_r;
+				mes "[Assistente de Cabeleireira]";
+				mes "Bwahahaha! Sucesso!";
+				if (.@input == .@style_r) {
+					mes "Então... Como você";
+					mes "gosta do seu novo estilo? Eu amei!";
+				}
+				else {
+					mes "[Assistente de Cabeleireira]";
+					mes "O que...? Isso não é o que";
+					mes "você queria? Ah não... Um...";
+					mes "Bem, na próxima eu sei que posso";
+					mes "fazer um trabalho muito melhor! Certo!";
+				}
+				next;
+				mes "[Assistente de Cabeleireira]";
+				mes "Oh, você é um";
+				mes "fofo por me ajudar!";
+				mes "Obrigado por usar";
+				mes "meu serviço e volte sempre~";
+				emotion ET_CHUP;
+				close;
+			case 2:
+				mes "[Assistente de Cabeleireira]";
+				mes "Hein? Oh não, você";
+				mes "está desistindo? Bem, eu acho";
+				mes "que eu também não confiaria";
+				mes "em mim para estilizar meu próprio cabelo...";
+				mes "Você está... Você está certo.";
+				close;
+			}
+		}
+	case 3:
+		mes "[Assistente de Cabeleireira]";
+		mes "Príncipe Shammi?";
+		mes "Ele é um gênio quando";
+		mes "se trata de penteados!";
+		mes "Eu sou apenas aprendiz dele, mas";
+		mes "talvez um dia eu possa ser uma";
+		mes "força no mundo da moda também!";
+		close;
+	}
+}
+
+//===== Antigo Changelog: =================================
+//= 07/06/05 : Adicionada a 1ª versão. [Muad_Dib]
+//= Convertido para o formato rAthena por Dr.Evil Corrigidos erros de digitação [Nexon]
+//= 1.1 Removidas duplicatas [Silent]
+//============================================================

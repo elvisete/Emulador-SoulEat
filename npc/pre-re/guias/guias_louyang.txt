@@ -1,0 +1,226 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+louyang,213,213,3	script	Soldado#BA::LouGuide	825,{
+	mes "[Soldado]";
+	mes "Bem-vindo a Luoyang,";
+	mes "uma cidade com um longo";
+	mes "e história colorida.";
+	next;
+	mes "[Soldado]";
+	mes "Recentemente desenvolvemos";
+	mes "uma rota oceânica para acomodar";
+	mes "troca positiva com";
+	mes "nações estrangeiras.";
+	next;
+	mes "[Soldado]";
+	mes "Luoyang é conhecida por diversas especialidades, além de sua rica história. ";
+	next;
+	mes "[Soldado]";
+	mes "Por favor, não tenha pressa";
+	mes "e convidamos você a desfrutar";
+	mes "sua viagem aqui em Luoyang.";
+	next;
+	switch(select("Pergunte aos locais de construção.:Remova todas as marcas do minimapa.:Cancelar.")) {
+	case 1:
+		mes "[Soldado]";
+		mes "Onde você gostaria de ir?";
+		next;
+		switch(select("Castelo do Dragão:Consultório Médico:Prefeitura:Loja de Armas:Loja de Ferramentas:Taverna:Cancelar")) {
+		case 1:
+			mes "[Soldado]";
+			mes "O Castelo do Dragão está localizado em ^FF3355 ^000000. ";
+			next;
+			mes "[Soldado]";
+			mes "Como você é um estranho, acho que seria apropriado visitar nosso senhor primeiro.";
+			viewpoint 1,218,255,2,0xFF3355;
+			break;
+		case 2:
+			mes "[Soldado]";
+			mes "Temos um médico muito habilidoso.";
+			mes "Você pode encontrar o escritório dela em ^CE6300 ^000000.";
+			next;
+			mes "[Soldado]";
+			mes "Diz-se que há";
+			mes "não há doença que ela não possa curar. ";
+			viewpoint 1,263,94,3,0xCE6300;
+			break;
+		case 3:
+			mes "[Soldado]";
+			mes "Temos uma Prefeitura onde funciona o governo federal.";
+			mes "Ele está localizado em ^A5BAAD ^000000.";
+			next;
+			mes "[Soldado]";
+			mes "Se você tiver algum problema,";
+			mes "você deveria conversar com o";
+			mes "funcionários da Prefeitura.";
+			viewpoint 1,309,80,4,0xA5BAAD;
+			break;
+		case 4:
+			mes "[Soldado]";
+			mes "A Loja de Armas está localizada em ^55FF33 ^000000.";
+			next;
+			mes "[Soldado]";
+			mes "Você verá";
+			mes "armas maravilhosas forjadas";
+			mes "pelos bem experientes";
+			mes "ferreiros de Luoyang.";
+			viewpoint 1,145,174,5,0x55FF33;
+			break;
+		case 5:
+			mes "[Soldado]";
+			mes "A loja de ferramentas está localizada em ^3355FF ^000000.";
+			next;
+			mes "[Soldado]";
+			mes "Conhecendo seu inimigo";
+			mes "é metade da batalha!";
+			mes "Também é mais seguro se preparar do que se arrepender mais tarde. ";
+			viewpoint 1,135,98,6,0x3355FF;
+			break;
+		case 6:
+			mes "[Soldado]";
+			mes "Quando você se cansar durante a viagem, sugiro que visite a Taberna. ";
+			next;
+			mes "[Soldado]";
+			mes "A Taberna é um bom lugar";
+			mes "conhecer outros turistas, bem como saber de novidades que possam ser úteis para saber.";
+			viewpoint 1,280,167,7,0x00FF00;
+			break;
+		case 7:
+			mes "[Soldado]";
+			mes "Se você deseja remover todas as marcas";
+			mes "no seu minimapa, escolha 'Remover todas as marcas do minimapa'. ";
+		}
+		break;
+	case 2:
+		viewpoint 2,218,255,2,0xFF00FF;
+		viewpoint 2,263,94,3,0xFF00FF;
+		viewpoint 2,309,80,4,0xFF00FF;
+		viewpoint 2,145,174,5,0xFF00FF;
+		viewpoint 2,135,98,6,0xFF00FF;
+		viewpoint 2,280,167,7,0xFF00FF;
+		mes "[Soldado]";
+		mes "Pronto, apaguei todas as marcas do seu minimapa. ";
+		break;
+	case 3:
+		mes "[Soldado]";
+		mes "Eu acho que é divertido";
+		mes "às vezes para explorar";
+		mes "por si só. ";
+	}
+	close;
+}
+
+louyang,160,175,3	duplicate(LouGuide)	Soldado#BB	825
+
+louyang,224,104,3	script	Representative#lou	818,{
+	mes "[Representante]";
+	mes "Bem-vindo a Luoyang,";
+	mes "uma terra antiga com";
+	mes "uma história cheia de contos";
+	mes "de bravura.";
+	next;
+	mes "[Representante]";
+	mes "Agora oferecemos uma rota oceânica para acomodar viajantes estrangeiros e intercâmbio intercultural do qual todos podem se beneficiar.";
+	next;
+	mes "[Representante]";
+	mes "Luoyang é famosa por";
+	mes "sua elaborada história, bem como especialidades exclusivas desta nação. ";
+	next;
+	switch(select("Pergunte aos locais de construção.:Remova todas as marcas do minimapa.:Cancelar.")) {
+	case 1:
+		set .@compass_check,1;
+		mes "[Representante]";
+		mes "Onde você gostaria de ir?";
+		next;
+		switch(select("Castelo do Dragão:Consultório Médico:Prefeitura:Loja de Armas:Loja de Ferramentas:Taverna:Cancelar")) {
+		case 1:
+			mes "[Representante]";
+			mes "O Castelo do Dragão está localizado em ^FF3355 ^000000. ";
+			next;
+			mes "[Representante]";
+			mes "Como você é um estranho, acho que seria apropriado visitar nosso senhor primeiro.";
+			viewpoint 1,218,255,2,0xFFFF33;
+			break;
+		case 2:
+			mes "[Representante]";
+			mes "Temos um médico muito habilidoso.";
+			mes "Você pode encontrar o escritório dela em ^CE6300 ^000000.";
+			next;
+			mes "[Representante]";
+			mes "Diz-se que há";
+			mes "não há doença que ela não possa curar. ";
+			viewpoint 1,263,94,3,0xFFCE63;
+			break;
+		case 3:
+			mes "[Representante]";
+			mes "Temos uma Prefeitura onde funciona o governo federal.";
+			mes "Ele está localizado em ^A5BAAD ^000000.";
+			next;
+			mes "[Representante]";
+			mes "Se você tiver algum problema,";
+			mes "você deveria conversar com o";
+			mes "funcionários da Prefeitura.";
+			viewpoint 1,309,80,4,0xFF00FF;
+			break;
+		case 4:
+			mes "[Representante]";
+			mes "A Loja de Armas está localizada em ^55FF33 ^000000.";
+			next;
+			mes "[Representante]";
+			mes "Você verá";
+			mes "armas maravilhosas forjadas";
+			mes "pelos bem experientes";
+			mes "ferreiros de Luoyang.";
+			viewpoint 1,145,174,5,0xFF55FF;
+			break;
+		case 5:
+			mes "[Representante]";
+			mes "A loja de ferramentas está localizada em ^3355FF ^000000.";
+			next;
+			mes "[Representante]";
+			mes "Conhecendo seu inimigo";
+			mes "é metade da batalha!";
+			mes "Também é mais seguro se preparar do que se arrepender mais tarde. ";
+			viewpoint 1,135,98,6,0xFF3355;
+			break;
+		case 6:
+			mes "[Representante]";
+			mes "Quando você se cansar durante a viagem, sugiro que visite a Taberna. ";
+			next;
+			mes "[Soldado]";
+			mes "A Taberna é um bom lugar";
+			mes "conhecer outros turistas, bem como saber de novidades que possam ser úteis para saber.";
+			viewpoint 1,280,167,7,0xFF00FF;
+			break;
+		case 7:
+			mes "[Representante]";
+			mes "Se você deseja remover todas as marcas";
+			mes "no seu minimapa, escolha 'Remover todas as marcas do minimapa'. ";
+		}
+		break;
+	case 2:
+		viewpoint 2,218,255,2,0xFF00FF;
+		viewpoint 2,263,94,3,0xFF00FF;
+		viewpoint 2,309,80,4,0xFF00FF;
+		viewpoint 2,145,174,5,0xFF00FF;
+		viewpoint 2,135,98,6,0xFF00FF;
+		viewpoint 2,280,167,7,0xFF00FF;
+		mes "[Representante]";
+		mes "Feito! ";
+		break;
+	case 3:
+		mes "[Representante]";
+		mes "Entendo que você queira explorar Luoyang e ver o";
+		mes "pontos turísticos para você mesmo. ";
+		break;
+	}
+	close;
+}
+

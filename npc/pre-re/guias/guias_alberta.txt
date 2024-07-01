@@ -1,0 +1,144 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+alberta,23,238,4	script	Guia#alb::AlbGuia	105,{
+	cutin "prt_soldier",2;
+	mes "[Guia de Alberta]";
+	mes "Bem-vindo à  Alberta,";
+	mes "a cidade portuária.";
+	mes "pode me falar se você está tendo";
+	mes "dificuldade em encontrar qualquer coisa na";
+	mes "cidade, ou se você só precisa";
+	mes "orientação pela cidade.";
+	set .@loop1,1;
+	while (.@loop1) {
+		next;
+		switch(select("Guia da Cidade:Remover marcas do mini-mapa:Notícias:Cancelar")) {
+		case 1:
+			mes "[Guia de Alberta]";
+			mes "Por favor selecione";
+			mes "um local do";
+			mes "menu a seguir.";
+			if (.@compass_check == 0) {
+				mes "Por favor, selecione uma das";
+				mes "as indicações permaneçam";
+				mes "no seu minimapa?";
+				next;
+				if (select("Sim:Não") == 1) set .@compass_check,1;
+			}
+			set .@loop2,1;
+			while (.@loop2) {
+				if (.@wait_button_chk == 0) set .@wait_button_chk,1;
+				else next;
+				
+				switch(select("^FF0000Guilda dos Mercadores^000000:Loja de Armas:Loja de Ferramentas.:Estalagem:Forja:Cancelar")) {
+				case 1:
+					mes "[Guia de Alberta]";
+					mes "A Guilda dos Mercadores";
+					mes "lida com mudanças de trabalho";
+					mes "para a classe mercantil,";
+					mes "e está localizado no";
+					mes "canto sudoeste";
+					mes "de Alberta.";
+					if (.@compass_check)
+						viewpoint 1,33,41,2,0xFF0000;
+					break;
+				case 2:
+					mes "[Guia de Alberta]";
+					mes "A 'Loja de Armas";
+					mes "se encontra no";
+					mes "sul da cidade.";
+					if (.@compass_check)
+						viewpoint 1,117,37,3,0xFF00FF;
+					break;
+				case 3:
+					mes "[Guia de Alberta]";
+					mes "The Tool Shop";
+					mes "is kind of close";
+					mes "to the center of";
+					mes "Alberta. It shouldn't";
+					mes "be too hard to find.";
+					if (.@compass_check)
+						viewpoint 1,98,154,4,0xFF00FF;
+					break;
+				case 4:
+					mes "[Guia de Alberta]";
+					mes "There's an Inn";
+					mes "at the northern";
+					mes "end of Alberta";
+					mes "where you can rest.";
+					if (.@compass_check)
+						viewpoint 1,65,233,5,0xFF00FF;
+					break;
+				case 5:
+					mes "[Guia de Alberta]";
+					mes "The Forge in Alberta";
+					mes "is in the same building";
+					mes "as the Merchant Guild.";
+					mes "It's to the southwest.";
+					if (.@compass_check)
+						viewpoint 1,35,41,6,0xFF00FF;
+					break;
+				case 6:
+					mes "[Guia de Alberta]";
+					mes "Please ask me to ''Remove";
+					mes "Marks from Mini-Map'' if you";
+					mes "no longer wish to have the";
+					mes "location marks displayed";
+					mes "on your Mini-Map.";
+					set .@loop2,0;
+				}
+			}
+			break;
+		case 2:
+			viewpoint 2,237,41,2,0xFF0000;
+			viewpoint 2,237,41,3,0xFF00FF;
+			viewpoint 2,46,345,4,0xFF00FF;
+			viewpoint 2,175,220,5,0xFF00FF;
+			viewpoint 2,175,220,6,0xFF00FF;
+			set .@compass_check,0;
+			break;
+		case 3:
+			mes "[Guia de Alberta]";
+			mes "Advances in sorcery and";
+			mes "technology have allowed";
+			mes "us to update our information";
+			mes "system, enabling up to mark";
+			mes "locations on your Mini-Map";
+			mes "for easier navigation.";
+			next;
+			mes "[Guia de Alberta]";
+			mes "Your Mini-Map is located";
+			mes "in the upper right corner";
+			mes "of the screen. If you can't";
+			mes "see it, press the Ctrl + Tab";
+			mes "keys or click the ''Map'' button in your Basic Info Window.";
+			next;
+			mes "[Guia de Alberta]";
+			mes "On your Mini-Map,";
+			mes "click on the ''+'' and ''-''";
+			mes "symbols to zoom in and";
+			mes "our of your Mini-Map. We";
+			mes "hope you enjoy your travels";
+			mes "here in the city of Alberta.";
+			break;
+		case 4:
+			mes "[Guia de Alberta]";
+			mes "Be safe when you";
+			mes "travel and don't hesitate";
+			mes "to ask me if you have any";
+			mes "questions about Alberta.";
+			close2;
+			set .@loop1,0;
+		}
+	}
+	cutin "prt_soldier",255;
+	end;
+}
+
+alberta,120,60,3	duplicate(AlbGuia)	Guia#2alb	105

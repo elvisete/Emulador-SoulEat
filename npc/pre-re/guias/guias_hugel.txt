@@ -1,0 +1,149 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+hugel,98,56,3	script	Vovó Guia de Hugel#huge	863,0,0,{
+	mes "[Vovó Guia Hugel]";
+	mes "Oh, olá ~ você é um aventureiro enérgico.";
+	mes "Bem-vindo ao Hugel. ";
+	mes "Se esta é a primeira vez que você utiliza os serviços de guia, por que não verifica primeiro o menu ''Aviso''?";
+	while(1) {
+		next;
+		switch(select("Guia da Aldeia:Remover Marcas do Mini-Mapa:Aviso:Cancelar")) {
+		case 1:
+			mes "[Vovó Guia Hugel]";
+			mes "Posso lhe dizer qualquer localização de construção, desde que seja em Hugel.";
+			mes "Então, para onde você quer ir?";
+			if (.@compass_check == 0) {
+				mes "Você gostaria que eu";
+				mes "para marcar locais";
+				mes "no seu minimapa?";
+				next;
+				if (select("Sim não.") == 1) set .@compass_check,1;
+			}
+			set .@loop,1;
+			while(.@loop) {
+				if (.@wait_button_chk == 0) set .@wait_button_chk,1;
+				else next;
+				switch(select("Igreja:Pousada:Pub:Aeroporto:Loja de armas:Loja de ferramentas:Loja de artigos para festas:^3131FFHunter Local de mudança de emprego^000000:^3131FFShrine Expedition's Place^000000:Monster Race Arena:Sala de jogos de bingo:Cancelar")) {
+				case 1:
+					mes "[Vovó Guia Hugel]";
+					mes "Bem, para mim, esta Igreja é como um lugar para pessoas idosas como eu, você sabe...";
+					if (.@compass_check)
+						viewpoint 1,156,116,2,0xFF0000;
+					break;
+				case 2:
+					mes "[Vovó Guia Hugel]";
+					mes "Pudim em vez de elogio.";
+					mes "É melhor você desempacotar suas coisas antes de começar a dar uma olhada nesta vila.";
+					mes "É o prédio bem ao meu lado.";
+					if (.@compass_check)
+						viewpoint 1,104,79,3,0xFF00FF;
+					break;
+				case 3:
+					mes "[Vovó Guia Hugel]";
+					mes "Sim, quando você viaja, você quer passar em um pub e fazer novos amigos.";
+					mes "Vá para o leste daqui e você chegará ao pub.";
+					if (.@compass_check)
+						viewpoint 1,129,66,4,0x99FFFF;
+					break;
+				case 4:
+					mes "[Vovó Guia Hugel]";
+					mes "Há algum tempo atrás, estranhos chegaram à aldeia e construíram aquele tipo de aeroporto estranho...";
+					mes "Como eles chamam isso? ";
+					if (.@compass_check)
+						viewpoint 1,178,146,5,0x0000FF;
+					break;
+				case 5:
+					mes "[Vovó Guia Hugel]";
+					mes "Bem, temos uma loja de armas no centro da vila.";
+					mes "Mas não sei se existe alguma arma que você considere útil.";
+					if (.@compass_check)
+						viewpoint 1,70,158,6,0x00FF00;
+					break;
+				case 6:
+					mes "[Vovó Guia Hugel]";
+					mes "Sim, adoro Red Potions da marca Hugel. ";
+					mes "A oficina de ferramentas está localizada no centro da vila.";
+					if (.@compass_check)
+						viewpoint 1,93,167,7,0x00FF00;
+					break;
+				case 7:
+					mes "[Vovó Guia Hugel]";
+					mes "A loja de artigos para festas fica no centro da vila.";
+					mes "Tenha cuidado para não usar fogos de artifício perto de outras pessoas, porque é perigoso, sabia?";
+					if (.@compass_check)
+						viewpoint 1,91,105,8,0xFF99FF;
+					break;
+				case 8:
+					mes "[Vovó Guia Hugel]";
+					mes "Oh, você é um aspirante a caçador?";
+					mes "Em seguida, siga para nordeste seguindo a praia, então você encontrará o local de mudança de emprego do Hunter.";
+					if (.@compass_check)
+						viewpoint 1,206,228,9,0xFF9900;
+					break;
+				case 9:
+					mes "[Vovó Guia Hugel]";
+					mes "Ouvi dizer que a expedição ao santuário está hospedada em uma casa a oeste.";
+					mes "Eles colocaram uma espécie de placa no meio da vila, então acho que estão contratando pessoas para alguma coisa...";
+					mes "Eu me pergunto o que eles estão fazendo aqui...hmmm.";
+					if (.@compass_check)
+						viewpoint 1,52,91,10,0xFFFFFF;
+					break;
+				case 10:
+					mes "[Vovó Guia Hugel]";
+					mes "Também gosto de jogar jogos Monster Race. ";
+					mes "Ah, você ainda não experimentou? ";
+					if (.@compass_check)
+						viewpoint 1,58,72,11,0xFF9900;
+					break;
+				case 11:
+					mes "[Vovó Guia Hugel]";
+					mes "Você gosta de jogos de bingo? ";
+					if (.@compass_check)
+						viewpoint 1,55,209,12,0x66FFFF;
+					break;
+				case 12:
+					mes "[Vovó Guia Hugel]";
+					mes "Se você quiser se livrar de todas as marcas de localização no seu Minimapa,";
+					mes "basta me perguntar novamente e escolher o menu ''Remover marcas do minimapa''.";
+					set .@loop,0;
+				}
+			}
+			break;
+		case 2:
+			viewpoint 2,156,116,2,0xFF0000;
+			viewpoint 2,104,79,3,0xFF00FF;
+			viewpoint 2,129,66,4,0x99FFFF;
+			viewpoint 2,178,146,5,0x0000FF;
+			viewpoint 2,70,158,6,0x00FF00;
+			viewpoint 2,93,167,7,0x00FF00;
+			viewpoint 2,91,105,8,0xFF99FF;
+			viewpoint 2,206,228,9,0xFF9900;
+			viewpoint 2,52,91,10,0xFFFFFF;
+			viewpoint 2,58,72,11,0xFF9900;
+			viewpoint 2,55,209,12,0x66FFFF;
+			set .@compass_check,0;
+			mes "[Vovó Guia Hugel]";
+			mes "Ok, eles se foram agora. ";
+			break;
+		case 3:
+			mes "[Vovó Guia Hugel]";
+			mes "Quando você estiver usando o menu ''Guia da Vila'',";
+			mes "certifique-se de que os locais de construção estejam marcados em seu minimapa no canto superior direito da tela.";
+			mes "Caso você não consiga visualizar seu minimapa, use a tecla de atalho ''ctrl tab'' ou pressione o botão ''Mapa'' na sua janela de informações básicas, ok?";
+			mes "E você também pode diminuir o zoom do seu minimapa usando o botão ''-'' caso não consiga visualizar o mapa completo da vila.";
+			break;
+		case 4:
+			mes "[Vovó Guia Hugel]";
+			mes "Este trabalho de guia é muito emocionante. ";
+			close;
+		}
+	}
+}
+

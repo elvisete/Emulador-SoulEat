@@ -1,0 +1,445 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+prt_monk,270,198,3	script	Apprentice Monk#qsk_mo	753,{
+	if (BaseJob == Job_Monk) {
+		if (MONK_SK == 7) {
+			mes "[Monge]";
+			mes "Para aproveitar o tempo para";
+			mes "contemple o que você mais";
+			mes "objetivo importante, seu maior";
+			mes "prioridade, nunca é um desperdício.";
+			mes "Nunca confunda seus meios";
+			mes "até o fim que você deseja alcançar.";
+			close;
+		}
+		if (MONK_SK == 6 && getskilllv("MO_KITRANSLATION") == 0) {
+			mes "[Monge]";
+			mes "Você esqueceu o";
+			mes "noções básicas por trás da performance";
+			mes "Doação Espiritual?";
+			mes "Como isso pode ser...?";
+			next;
+			mes "[Monge]";
+			mes "Ah, agora eu entendo.";
+			mes "Você transcendeu o";
+			mes "limitações que costumavam";
+			mes "te segurar, e ter";
+			mes "torne-se um campeão. ";
+			mes "desculpe por subestimar você.";
+			next;
+			mes "[Monge]";
+			mes "Muito bem. ";
+			mes "para eu ajudá-lo a reaprender o";
+			mes "Habilidade de Doação Espiritual. ";
+			mes "um efeito colateral, você provavelmente reaprenderá a Palma Excruciante também.";
+			next;
+			mes "[Monge]";
+			mes "Agora fique quieto e relaxe";
+			mes "enquanto eu realizo meu especial";
+			mes "tratamento de acupressão que";
+			mes "comprometerá essas habilidades";
+			mes "seu sistema nervoso e";
+			mes "memória motora...";
+			next;
+			mes "^3355FF*Toque-toque-toque-toque-toque-toque-toque-toque-toque-toque-toque-toque-toque-toque-toque-toque-toque-";
+			mes "tap-tap-tap-tap-tap-tap-tap-tap- tap-tap-tap-tap-tap-tap-tap-tap-";
+			mes "tap-tap-tap-tap-tap-tap-tap-tap- tap-tap-tap-tap-tap-tap-tap-tap-";
+			mes "tap-tap-tap-tap-tap-tap* *POKE*^000000";
+			set MONK_SK,7;
+			skill "MO_KITRANSLATION",1,SKILL_PERM;
+			skill "MO_BALKYOUNG",1,SKILL_PERM;
+			next;
+			mes "[Monge]";
+			mes "Está feito. ";
+			mes "continuar a usar estes";
+			mes "habilidades especiais para promover";
+			mes "paz e harmonia neste";
+			mes "mundo. ";
+			close;
+		}
+		if (MONK_SK > 2) {
+			mes "[Monge]";
+			mes "Para aproveitar o tempo para";
+			mes "contemple o que você mais";
+			mes "objetivo importante, seu maior";
+			mes "prioridade, nunca é um desperdício.";
+			mes "Nunca confunda seus meios";
+			mes "até o fim que você deseja alcançar.";
+			next;
+			mes "[Monge]";
+			mes "Ah, tenho um favor a pedir.";
+			mes "Por favor, não conte aos outros isso";
+			mes "Eu te ensinei espiritual";
+			mes "Doação. ";
+			mes "passar meu tempo ensinando também";
+			mes "muitas pessoas essa habilidade...";
+			close;
+		}
+		if (MONK_SK == 2) {
+			if (Weight == 0) {
+				mes "[Monge]";
+				mes "Ah. ";
+				mes "que você conseguiu aprender";
+				mes "a coisa mais importante,";
+				mes "altruísmo, por conta própria.";
+				mes "Agora eu confio que você não vai";
+				mes "abusar do que tenho para te ensinar.";
+				next;
+				mes "[Monge]";
+				mes "Meu teste pode parecer muito rigoroso,";
+				mes "mas é impossível aprender";
+				mes "Doação Espiritual sem a disciplina correta. ";
+				mes "coisas, a prontidão e a preparação precedem todas as formas de realização.";
+				next;
+				mes "[Monge]";
+				mes "Agora relaxe por um momento.";
+				mes "Vou usar acupressão para";
+				mes "treine seu sistema nervoso para";
+				mes "memorizar fisicamente a energia";
+				mes "fluxo e movimentos necessários";
+				mes "para Doação Espiritual.";
+				next;
+				mes "^3355FF*Toque...toque*";
+				mes "*Toque... Toque*";
+				mes "*Toque, toque, toque*^000000";
+				next;
+				mes "^3355FF*Toque, toque, toque*";
+				mes "*Toque, toque, toque*";
+				mes "*Toque... Toque, toque*^000000";
+				next;
+				mes "^3355FF*Toque-toque-toque-toque-toque-toque-toque-toque-toque-toque-toque-toque-toque-toque-toque-toque-toque-";
+				mes "tap-tap-tap-tap-tap-tap-tap-tap- tap-tap-tap-tap-tap-tap-tap-tap-";
+				mes "tap-tap-tap-tap-tap-tap-tap-tap- tap-tap-tap-tap-tap-tap-tap-tap-";
+				mes "tap-tap-tap-tap-tap-tap* *POKE*^000000";
+				next;
+				mes "[Monge]";
+				mes "Está feito. ";
+				mes "capaz de usar Espiritual";
+				mes "Doação. ";
+				mes "realmente nomeou essa habilidade, mas é assim que ela geralmente é chamada por";
+				mes "outros monges que o viram.";
+				next;
+				mes "[Monge]";
+				mes "Lembre-se que esta habilidade tem um";
+				mes "longo tempo de lançamento e atraso de habilidade,";
+				mes "então use-o com muito cuidado. ";
+				mes "habilidade permitirá que você dê uma Esfera Espiritual para alguém do seu grupo";
+				mes "Membros consumindo 40 SP.";
+				next;
+				mes "[Monge]";
+				mes "Você entenderá melhor";
+				mes "o uso desta habilidade se você";
+				mes "prática. ";
+				mes "a luta pode ser necessária em";
+				mes "vezes, mas é um meio para";
+				mes "fim, e não um fim em si mesmo.";
+				set MONK_SK,3;
+				skill "MO_KITRANSLATION",1,SKILL_PERM;
+				next;
+				mes "[Monge]";
+				mes "Nossas habilidades não deveriam ser";
+				mes "usado para derramar sangue. ";
+				mes "pode transcender o conflito, você";
+				mes "saberá que a luta tem";
+				mes "sem valor, sem valor. ";
+				mes "esteja com você, meu amigo.";
+				close;
+			}
+			else {
+				mes "[Monge]";
+				mes "Você aprendeu o";
+				mes "significado de altruísmo?";
+				mes "Quando você abandona a ganância";
+				mes "e os desejos do mundo,";
+				mes "você estará pronto para meus ensinamentos.";
+				close;
+			}
+		}
+		if (MONK_SK == 1) {
+			mes "[Monge]";
+			mes "Lutar não tem sentido.";
+			mes "Transcenda o conflito e";
+			mes "diferença através do";
+			mes "percepção de que todos são";
+			mes "um. ";
+			mes "e a verdade será revelada.";
+			next;
+			mes "[Monge]";
+			mes "Hum? ";
+			mes "você vem me visitar? ";
+			mes "você deseja aprender a habilidade que desenvolvi. ";
+			mes "estava certo: cada vez mais pessoas querem aprender isso.";
+			next;
+			mes "[Monge]";
+			mes "Não me entenda mal.";
+			mes "É verdade que o poder e";
+			mes "justiça, sabedoria e ação";
+			mes "deve ser equilibrado. ";
+			mes "Fui visitado por muitas pessoas sedentas de poder e sanguinárias.";
+			next;
+			mes "[Monge]";
+			mes "Com toda a justiça, irei";
+			mes "te dar uma chance. ";
+			mes "para mim que você usaria";
+			mes "as habilidades que eu ensino para você";
+			mes "paz e justiça. ";
+			mes "você está livre do egoísmo.";
+			set MONK_SK,2;
+			close;
+		}
+	}
+	mes "[Monge]";
+	mes "Lutar não tem sentido.";
+	mes "Transcenda o conflito e";
+	mes "diferença através do";
+	mes "percepção de que todos são";
+	mes "um. ";
+	mes "e a verdade será revelada.";
+	close;
+}
+
+monk_test,316,69,5	script	Monk#qsk_mo	823,{
+	if (BaseJob == Job_Monk) {
+		if (MONK_SK == 6) {
+			mes "[Monge]";
+			mes "Como você convenceu";
+			mes "aquele monge para te ensinar";
+			mes "Doação Espiritual? ";
+			mes "seria bom popularizar ambos";
+			mes "de nossas habilidades especializadas, mas o mundo pode ainda não estar pronto.";
+			close;
+		}
+		if (MONK_SK == 5) {
+			mes "[Monge]";
+			mes "Para começar, Palma Excruciante";
+			mes "é realizado tomando seu";
+			mes "força interior e torná-lo";
+			mes "em força exterior. ";
+			mes "concentre tudo isso na palma da mão. ";
+			next;
+			mes "[Monge]";
+			mes "Essa habilidade realmente causa";
+			mes "dor insuportável, consumindo";
+			mes "20 SP e até 10 HP. ";
+			mes "derrube monstros com o";
+			mes "chance de atordoá-los, mas apenas o monstro alvo sofre dano.";
+			next;
+			mes "[Monge]";
+			mes "Se você usar essa habilidade em";
+			mes "outros jogadores, isso causará";
+			mes "uma certa quantidade de dano,";
+			mes "mas não vai derrubar outros";
+			mes "jogadores perto do alvo original. ";
+			next;
+			mes "[Monge]";
+			mes "De qualquer forma, continue praticando";
+			mes "esses princípios e você";
+			mes "mestre Palma Excruciante.";
+			mes "Você definitivamente deveria ser capaz";
+			mes "fazer isso desde que você aprendeu";
+			mes "Dotação Espiritual.";
+			set MONK_SK,6;
+			skill "MO_BALKYOUNG",1,SKILL_PERM;
+			next;
+			mes "[Monge]";
+			mes "Bem, concluímos";
+			mes "a lição. ";
+			mes "use suas novas habilidades para";
+			mes "lutar por justiça e";
+			mes "combater o mal. ";
+			mes "por enquanto, meu amigo.";
+			close;
+		}
+		if (MONK_SK == 4 && countitem(905) > 19 && countitem(711) > 2) {
+			mes "[Monge]";
+			mes "O que é isso...?";
+			mes "Você aprendeu o";
+			mes "Doação Espiritual";
+			mes "habilidade? ";
+			mes "quero aprender Excruciante";
+			mes "Palma a seguir. ";
+			next;
+			mes "[Monge]";
+			mes "Hum. ";
+			mes "o suficiente para derrotar facilmente um";
+			mes "bom número de Mandrágoras.";
+			mes "Tudo bem. ";
+			mes "que posso terminar os preparativos.";
+			delitem 905,20; //Stem
+			delitem 711,3; //Shoot
+			set MONK_SK,5;
+			close;
+		}
+		if (MONK_SK == 4) {
+			mes "[Monge]";
+			mes "O que é isso...?";
+			mes "Você aprendeu o";
+			mes "Doação Espiritual";
+			mes "habilidade? ";
+			mes "quero aprender Excruciante";
+			mes "Palma a seguir. ";
+			next;
+			mes "[Monge]";
+			mes "Como eu mencionei para você";
+			mes "antes, você deve subjugar";
+			mes "Mandrágoras para provar isso";
+			mes "você está qualificado, em termos";
+			mes "de força e compaixão,";
+			mes "para aprender Palma Excruciante.";
+			next;
+			mes "[Monge]";
+			mes "Lute para proteger aqueles";
+			mes "inocentes aterrorizados por";
+			mes "as agressivas Mandrágoras.";
+			mes "Se você me trouxer ^FF000020 Hastes^000000 e";
+			mes "^FF00003 Atira^000000, ficarei satisfeito com esta prova de sua habilidade.";
+			next;
+			mes "[Monge]";
+			mes "Você entende agora?";
+			close;
+		}
+		if (MONK_SK == 3) {
+			mes "[Monge]";
+			mes "Você veio aprender";
+			mes "Palma excruciante? ";
+			mes "isso era possível. ";
+			mes "são dois obstáculos que enfrentamos";
+			mes "no cumprimento do seu pedido.";
+			next;
+			mes "[Monge]";
+			mes "Em primeiro lugar, você deve aprender";
+			mes "a Doação Espiritual";
+			mes "habilidade de antemão. ";
+			mes "difícil conseguir aquele monge";
+			mes "para ensiná-lo a você, se não";
+			mes "totalmente impossível.";
+			next;
+			mes "[Monge]";
+			mes "Em segundo lugar, você precisará";
+			mes "para passar no meu pequeno teste de";
+			mes "força, para que eu possa ser";
+			mes "use que seu corpo possa suportar";
+			mes "o incrível poder envolvido";
+			mes "no uso da Palma Excruciante.";
+			next;
+			mes "[Monge]";
+			mes "Milímetros. ";
+			mes "têm ameaçado os viajantes,";
+			mes "então se você puder me provar isso";
+			mes "você está caçando eles, você";
+			mes "será digno de aprender";
+			mes "Palma excruciante.";
+			next;
+			mes "[Monge]";
+			mes "Se você puder de alguma forma convencer";
+			mes "aquele monge para te ensinar como";
+			mes "realizar Doação Espiritual,";
+			mes "Pedirei então que você traga";
+			mes "^FF000020 Hastes^000000 e ^FF00003 Brotos^000000 de";
+			mes "caçando Mandrágoras.";
+			next;
+			mes "[Monge]";
+			mes "Claro, completando";
+			mes "meu teste não tem sentido";
+			mes "se você não aprender primeiro o";
+			mes "Habilidade de Doação Espiritual.";
+			mes "Desejo-lhe sorte com isso...";
+			set MONK_SK,4;
+			close;
+		}
+		if (MONK_SK == 1) {
+			mes "[Monge]";
+			mes "Há um monge pacifista";
+			mes "vivendo em reclusão que";
+			mes "pode ensinar o Espiritual";
+			mes "Habilidade de doação. ";
+			mes "ele é teimoso e recusou muitos que desejam aprender com ele.";
+			next;
+			mes "[Monge]";
+			mes "Seria bom se";
+			mes "você pode convencê-lo";
+			mes "para ensiná-lo a você, como é";
+			mes "impossível aprender como";
+			mes "para executar essa habilidade sozinho.";
+			mes "É realmente uma pena...";
+			close;
+		}
+		if (MONK_SK == 0) {
+			mes "[Monge]";
+			mes "Poder sem justiça";
+			mes "não por último. ";
+			mes "o poder não pode ser mantido.";
+			mes "Poder não é igual a";
+			mes "justiça, mas a verdadeira justiça pode";
+			mes "ser o meio para o poder.";
+			next;
+			mes "[Monge]";
+			mes "Lembre-se sempre desta verdade.";
+			mes "Justiça e poder, compaixão";
+			mes "e força, sabedoria e ação. ";
+			mes "andam de mãos dadas e devem sempre";
+			mes "ser harmoniosamente equilibrado.";
+			next;
+			mes "[Monge]";
+			mes "O mesmo acontece com algumas habilidades.";
+			mes "Eu desenvolvi uma habilidade";
+			mes "essa é a manifestação pura";
+			mes "de poder, Palma Excruciante!";
+			mes "No entanto, é inútil sem";
+			mes "seu complemento para equilibrá-lo.";
+			next;
+			mes "[Monge]";
+			mes "O complemento à minha habilidade";
+			mes "é uma habilidade conhecida como Espiritual";
+			mes "Doação, que só pode";
+			mes "ser ensinado por um monge. ";
+			mes "ele se recusa a ensiná-lo a outros, acreditando que eles são indignos.";
+			next;
+			mes "[Monge]";
+			mes "Embora eu tenha avisado ele";
+			mes "que ele deveria popularizar seu";
+			mes "ensino dessa habilidade, devo respeitar sua decisão. ";
+			mes "Você pode tentar conversar com ele se quiser aprender algumas habilidades novas.";
+			set MONK_SK,1;
+			next;
+			mes "[Monge]";
+			mes "Para encontrá-lo, basta procurar";
+			mes "fora o monge que sempre";
+			mes "prega o significado vazio";
+			mes "de lutar. ";
+			close;
+		}
+	}
+	mes "[Monge]";
+	mes "Poder sem justiça";
+	mes "não por último. ";
+	mes "o poder não pode ser mantido.";
+	mes "Poder não é igual a";
+	mes "justiça, mas a verdadeira justiça pode";
+	mes "ser o meio para o poder.";
+	close;
+}
+
+//============================================================ 
+// Old changelog
+//============================================================ 
+//= 1.0 for fully working skills only [Lupus]
+//= 1.1 Added more new skill quests for more classes [Lupus]
+//= Somehow eA engine doesn't let you keep learn't skill V_V'
+//= 1.2 Added to correct locations, correct NPC's, fixed
+//= some of the items required and made them into real
+//= quests. [Reddozen] 
+//= 1.3 Fixed bugs and minor typos. Optimized [Lupus]
+//= 1.3a fixed an item ID typo, thx 2Spiritual Kid
+//= 1.3b Splitted into different files [DracoRPG]
+//= 1.4 Updated to the official one. [Samuray22]
+//= 1.4a replaced item "nomes" with item id. [Lupus]
+//============================================================
+

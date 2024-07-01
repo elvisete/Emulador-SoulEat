@@ -1,0 +1,253 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+moc_fild17,66,273,5	script	Lemly#Frilldora_Hunt	725,{
+	if (#mobfilld >= .consec) {
+		mes .npc$;
+		mes "Voce já fez 3 missões comigo hoje.";
+		mes "Volte amanhã";
+		close;
+	}
+	if (checkquest(60134) != -1) {
+		if (checkquest(60134, HUNTING) != 2) {
+			mes "[Lemly]";
+			mes "Você terminou de caçar as 50 Frilldoras?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Lemly]";
+					mes "Hmm, acho que você não caçou 50 ainda...";
+					close;
+				case 2:
+					mes "[Lemly]";
+					mes "Lembre-se, eu preciso de ajuda para caçar Frilldoras, vá e caça 50 delas.";
+					close;
+				case 3:
+					mes "[Lemly]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você fez será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Lemly]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60134;
+							close;
+						case 2:
+							mes "[Lemly]";
+							mes "Por favor, mate 50 Frilldoras.";
+							close;
+					}
+			}
+		} else {
+			mes "[Lemly]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 30000, 23000;
+			erasequest 60134;
+			#mobfilld++;
+			close;
+		}
+	}
+	if (checkquest(60135) != -1) {
+		if (checkquest(60135, HUNTING) != 2) {
+			mes "[Lemly]";
+			mes "Você terminou de caçar as 100 Frilldoras?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Lemly]";
+					mes "Hmm, acho que você não caçou 100 ainda...";
+					close;
+				case 2:
+					mes "[Lemly]";
+					mes "Lembre-se, eu preciso de ajuda para caçar Frilldoras, vá e caça 100 delas.";
+					close;
+				case 3:
+					mes "[Lemly]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você fez será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Lemly]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60135;
+							close;
+						case 2:
+							mes "[Lemly]";
+							mes "Por favor, mate 100 Frilldoras.";
+							close;
+					}
+			}
+		} else {
+			mes "[Lemly]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 30000, 23000;
+			getexp 30000, 23000;
+			erasequest 60135;
+			#mobfilld++;
+			close;
+		}
+	}
+	if (checkquest(60136) != -1) {
+		if (checkquest(60136, HUNTING) != 2) {
+			mes "[Lemly]";
+			mes "Você terminou de caçar as 150 Frilldoras?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Lemly]";
+					mes "Hmm, acho que você não caçou 150 ainda...";
+					close;
+				case 2:
+					mes "[Lemly]";
+					mes "Lembre-se, eu preciso de ajuda para caçar Frilldoras, vá e caça 150 delas.";
+					close;
+				case 3:
+					mes "[Lemly]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você fez será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Lemly]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60136;
+							close;
+						case 2:
+							mes "[Lemly]";
+							mes "Por favor, mate 150 Frilldoras.";
+							close;
+					}
+			}
+		} else {
+			mes "[Lemly]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 30000, 23000;
+			getexp 30000, 23000;
+			getexp 30000, 23000;
+			erasequest 60136;
+			#mobfilld++;
+			close;
+		}
+	}
+// Verifica se o nível do jogador está dentro dos limites permitidos
+	if (BaseLevel > 29) {
+		if (BaseLevel < 66) {
+			// Mensagens iniciais
+			mes "[Lemly]";
+			mes "Ei, fofinho!";
+			next;
+			mes "[Lemly]";
+			mes "Acha que pode me dar uma mãozinha?";
+			next;
+			// Escolha do jogador
+			switch (select("Claro:Não")) {
+				case 1:
+					mes "[Lemly]";
+					mes "Sério?!";
+					mes "Isso é ótimo!";
+					next;
+					// Escolha entre coletar itens e caçar Frilldoras
+					switch (select("Recolher Itens:Caçar Frilldoras:Cancelar")) {
+						case 1:
+							// Entrega de itens
+							mes "[Lemly]";
+							mes "Estou procurando por ^FF0000Brasão^000000 de lagarto.";
+							next;
+							mes "[Lemly]";
+							mes "Os lagartos aqui têm um camuflagem natural, uma propriedade que a Guilda dos Assassinos quer estudar.";
+							next;
+							// Escolha entre entregar itens ou perguntar novamente
+							switch (select("Eu tenho Brasão:O que você precisa?")) {
+								case 1:
+									// Verifica se o jogador tem itens suficientes
+									if (countitem(1012) > 24) {
+										mes "[Lemly]";
+										mes "Ei, obrigado.";
+										mes "Essas são meio nojentas, porém.";
+										delitem 1012, 25; // Brasão
+										getexp 30000, 23000;
+										#mobfilld++;
+										close;
+									} else {
+										mes "[Lemly]";
+										mes "Suspiro,";
+										mes "Por favor, não perca meu tempo.";
+										next;
+										mes "[Lemly]";
+										mes "Eu preciso de ^FF000025 Brasão^000000 para a Guilda dos Assassinos.";
+										close;
+									}
+								case 2:
+									mes "[Lemly]";
+									mes "Eu preciso de ^FF000025 Brasão^000000 para a Guilda dos Assassinos.";
+									close;
+							}
+						case 2:
+							// Missão de Contagem de Morte
+							mes "[Lemly]";
+							mes "Ah, ok, acho que você pode me ajudar caçando algumas Frilldoras.";
+							mes "Quantas você gostaria de caçar?";
+							next;
+							// Escolha entre caçar 50, 100 ou 150 Frilldoras
+							switch (select("50 Frilldoras:100 Frilldoras:150 Frilldoras")) {
+								case 1:
+									mes "[Lemly]";
+									mes "Volte quando terminar sua tarefa e darei uma pequena recompensa.";
+									setquest 60134;
+									close;
+								case 2:
+									mes "[Lemly]";
+									mes "Volte quando terminar sua tarefa e darei uma pequena recompensa.";
+									setquest 60135;
+									close;
+								case 3:
+									mes "[Lemly]";
+									mes "Volte quando terminar sua tarefa e darei uma pequena recompensa.";
+									setquest 60136;
+									close;
+							}
+						case 3:
+							mes "[Lemly]";
+							mes "Se mudar de ideia, por favor, volte.";
+							close;
+					}
+				case 2:
+					mes "[Lemly]";
+					mes "Se mudar de ideia, por favor, volte.";
+					close;
+			}
+		} else {
+			// Nível muito alto
+			mes "[Lemly]";
+			mes "Oi.";
+			next;
+			mes "[Lemly]";
+			mes "Esses lagartos são nojentos.";
+			next;
+			mes "[Lemly]";
+			mes "Não acredito que estou preso fazendo isso.";
+			close;
+		}
+	} else {
+		// Nível muito baixo
+		mes "[Lemly]";
+		mes "O que você está fazendo aqui?";
+		mes "O deserto vai te matar aqui!";
+		close;
+	}
+OnClock0001:
+query_sql ("DELETE FROM `acc_reg_num` WHERE `key`='#mobfilld'");
+end;
+
+OnInit:
+	.consec = 3;
+	end;
+}

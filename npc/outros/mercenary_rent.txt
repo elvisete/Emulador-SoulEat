@@ -1,0 +1,318 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+-	script	Mercenary Manager#main	-1,{
+	setarray .@name$, 	"Lança", 			"Espada", 			"Arco";
+	setarray .@faith$, 	"SPEAR_MERC_GUILD",	"SWORD_MERC_GUILD",	"ARCH_MERC_GUILD";
+	setarray .@item, 	12182,				12172,				12162;
+	.@npc$ = strnpcinfo(2);
+	for (.@size = getarraysize(.@name$); .@type < .@size; .@type++)
+		if( compare( .@npc$,.@name$[.@type] ) ) break;
+	.@faith_merc = mercenary_get_faith(getd(.@faith$[.@type]));
+	mes "[Gerente Mercenário]";
+	mes "Bem vindo à";
+	mes .@name$[.@type] + "Guilda dos Mercenários.";
+	mes "O que posso fazer para você?";
+	next;
+	switch(select("Contratar Mercenário:Informações sobre Mercenários:Nada:Mercenários do 10º ano")) {
+		case 1:
+			mes "[Gerente Mercenário]";
+			mes "Você quer contratar um";
+			mes .@name$[.@type] + "Mercenário?";
+			mes "Em que série você estava";
+			mes "interessado em contratar?";
+			next;
+			for (.@i = 1; .@i <= 9; .@i++)
+				.@menu$ = .@menu$ + callfunc("F_GetNumSuffix",.@i) + " Grade " + .@name$[.@type] + " Mercenary:";
+			.@Grade = select(.@menu$);
+			.@BaseLevel = 5 + (.@Grade * 10);
+			.@BaseLevel = (.@val > 90)? 90 : .@BaseLevel;
+			.@ZenyCost = 7 * .@Grade;
+			setarray .@FaithCost[7], 50,100,300;
+			.@FaithCost = .@FaithCost[.@Grade];
+			mes "[Gerente Mercenário]";
+			mes "So you want to hire a " + callfunc("F_GetNumSuffix",.@Grade);
+			mes "Nota" + .@name$[.@type] + "Mercenário?";
+			mes "Você precisa ter alcançado";
+			mes "Nível base" + .@BaseLevel + "ou superior, e";
+			mes "deve pagar o" + .@ZenyCost + ".000 zeny de taxa.";
+			next;
+			if(select("Sim não") == 2) {
+				mes "[Gerente Mercenário]";
+				mes "Oh sério? ";
+				mes "pode não ser um bom momento";
+				mes "para você considerar contratar";
+				mes "um Mercenário, mas por favor sinta";
+				mes "livre para voltar se você";
+				mes "precisa de mudança. ";
+			}
+			else if(.@FaithCost && .@faith_merc < .@FaithCost) {
+				mes "[Gerente Mercenário]";
+				mes "Ah... Sua classificação de fidelidade";
+				mes "com o" + .@name$[.@type] + "Mercenário";
+				mes "A guilda não é alta o suficiente para";
+				mes "contrate este mercenário. ";
+				mes "volte depois de ganhar";
+				mes "" + .@FaithCost + "ou mais Fidelidade conosco.";
+			}
+			else if (BaseLevel < .@BaseLevel) {
+				mes "[Gerente Mercenário]";
+				mes "Sinto muito, mas sua Base";
+				mes "O nível não é alto o suficiente";
+				mes "para contratar este mercenário.";
+				mes "Por favor volte para mim";
+				mes "quando você atingir o nível básico" + .@BaseLevel + ".";
+			}
+			else if (Zeny < .@ZenyCost * 1000) {
+				mes "[Gerente Mercenário]";
+				mes "Me desculpe, mas você";
+				mes "não tenho zeny suficiente";
+				mes "para contratar este mercenário.";
+				mes "A taxa de contratação é" + .@ZenyCost + ".000 zeny.";
+			}
+			else {
+				mes "[Gerente Mercenário]";
+				mes "Ótimo! ";
+				mes "são sinceros e dedicados";
+				mes "para proteger seus clientes.";
+				mes "Mercenários convocados irão";
+				mes "oferecer seu apoio a você para";
+				mes "30 minutos. ";
+				Zeny = Zeny - (.@ZenyCost * 1000);
+				getitem .@item[.@type] - 10 + .@Grade, 1;
+			}
+			close;
+		case 2:
+			mes "[Gerente Mercenário]";
+			mes "Mercenários são soldados";
+			mes "que lutará ao seu lado";
+			mes "no campo de batalha, mas há";
+			mes "são alguns termos e condições";
+			mes "você deve cumprir para contratá-los.";
+			next;
+			mes "[Gerente Mercenário]";
+			mes "Você deve cumprir um nível";
+			mes "exigência e pague um zeny";
+			mes "taxa para contratar um mercenário.";
+			mes "Mercenários de nível superior";
+			mes "também exigirá que você";
+			mes "construa uma classificação de fidelidade conosco.";
+			next;
+			mes "[Gerente Mercenário]";
+			mes "Contratos mercenários não podem ser";
+			mes "transferido para outras pessoas,";
+			mes "e só permitimos uma diferença de 5 níveis básicos entre o Mercenário";
+			mes "e cliente, então você não pode contratar alguém muito mais forte que você.";
+			next;
+			mes "[Gerente Mercenário]";
+			mes "Bem, você pode descobrir";
+			mes "detalhes quando você realmente forma";
+			mes "um contrato com um de nossos";
+			mes "Mercenários e receba";
+			mes "o Pergaminho de Invocação que irá";
+			mes "chame um Mercenário para o seu lado.";
+			next;
+			mes "[Gerente Mercenário]";
+			mes "Você não pode dar este pergaminho";
+			mes "para qualquer outra pessoa, e o";
+			mes "Mercenário só permanecerá";
+			mes "com você por 30 minutos depois";
+			mes "você o convoca. ";
+			mes "sobre o limite de tempo, ok?";
+			close;
+		case 3:
+			mes "[Gerente Mercenário]";
+			mes "Não? ";
+			mes "ajuda? ";
+			mes "pergunte-me se você tem algum";
+			mes "perguntas sobre Mercenários.";
+			close;
+		case 4:
+			mes "[Gerente Mercenário]";
+			mes "Mercenários da 10ª série são";
+			mes "o melhor que temos para oferecer,";
+			mes "e usamos critérios diferentes";
+			mes "para que nossos clientes os contratem.";
+			mes "Não há taxa zeny, mas você";
+			mes "deve ter 500 Lealdade.";
+			next;
+			mes "[Gerente Mercenário]";
+			mes "Depois de fazer um contrato";
+			mes "com um mercenário do 10º ano,";
+			mes "sua classificação de fidelidade será";
+			mes "diminuiu em 400. Em outros";
+			mes "palavras, você paga 400 Lealdade";
+			mes "para contratar um mercenário de 10º ano.";
+			next;
+			mes "[Gerente Mercenário]";
+			mes "Você também deve estar em";
+			mes "Nível Base 90 ou superior para";
+			mes "contrate um mercenário de 10º ano.";
+			mes "Você ainda está interessado em";
+			mes "formando este contrato?";
+			next;
+			if (select("Sim não") == 2) {
+				mes "[Gerente Mercenário]";
+				mes "Eu entendo... É preciso";
+				mes "trabalho duro e sacrifício para";
+				mes "chegar até ao ponto em que";
+				mes "você pode contratar um aluno do 10º ano";
+				mes "Mercenário. ";
+				mes "contratar um mercenário de grau inferior?";
+			}
+			else if (.@faith_merc < 500) {
+				mes "[Gerente Mercenário]";
+				mes "Sinto muito, mas seu";
+				mes "A classificação de fidelidade também é";
+				mes "baixo para contratar um 10º ano";
+				mes "Mercenário. ";
+				mes "500 ou mais Lealdade a";
+				mes "firmar um contrato com um.";
+			}
+			else if (BaseLevel < 90) {
+				mes "[Gerente Mercenário]";
+				mes "Sinto muito, mas você deve";
+				mes "estar no Nível Base 90 ou";
+				mes "superior para formar um contrato";
+				mes "com um mercenário do 10º ano.";
+			}
+			else {
+				mes "[Gerente Mercenário]";
+				mes "Parabéns! ";
+				mes "como se você estivesse planejando tomar";
+				mes "em algum trabalho muito perigoso";
+				mes "já que você está contratando um décimo";
+				mes "Grau Mercenário. ";
+				mes "boa sorte com ele.";
+				mercenary_set_faith getd(.@faith$[.@type]),-400;
+				getitem .@item[.@type],1;
+			}
+			close;
+	}
+}
+prontera,41,337,5	duplicate(Mercenary Manager#main)	Mercenary Manager#Spear	8W_SOLDIER
+pay_arche,99,167,4	duplicate(Mercenary Manager#main)	Mercenary Manager#Bow	4_M_JOB_HUNTER
+
+// Mercenary Merchant NPCs
+//============================================================
+-	script	Mercenary Merchant#dummy::MercMerchant	-1,{
+	mes "[Comerciante de Mercadorias Mercenárias]";
+	mes "Olá, eu vendo mercadorias";
+	mes "que os Mercenários podem";
+	mes "usar. ";
+	mes "em especial que";
+	mes "você está procurando?";
+	next;
+	setarray .@item, 12184,	12185,	12241,	12242,	12243;
+	setarray .@cost, 1750,	3000,	560,	1050,	2100;
+	for (.@size = getarraysize(.@item); .@i < .@size; .@i++)
+		.@menu$ = .@menu$ + getitemname(.@item[.@i]) + ":";
+	.@m = select(.@menu$)-1;
+	.@str$ = .@cost[.@m] + "";
+	.@len = getstrlen(.@str$);
+	.@str_cost$ = (.@len <= 3)? .@str$ : insertchar(.@str$,",",.@len-3);
+	mes "[Comerciante de Mercadorias Mercenárias]";
+	mes getitemname(.@item[.@m]);
+	mes "cada custo" + .@str_cost$ + "Zeny.";
+	mes "Quantos quer?";
+	next;
+	input .@input;
+	if (!.@input) {
+		mes "[Comerciante de Mercadorias Mercenárias]";
+		mes "Você mudou de ideia?";
+		mes "Tudo bem, fique à vontade para vir";
+		mes "volte para mim sempre que quiser";
+		mes "para comprar qualquer Poção Mercenária.";
+		close;
+	}
+	else if (.@input < 0 || .@input > 10000) {
+		mes "[Comerciante de Mercadorias Mercenárias]";
+		mes "Me desculpe, mas você";
+		mes "só pode comprar até";
+		mes "10.000 dessas poções";
+		mes "de uma vez. ";
+		mes "um número de 1 a 10.000.";
+		close;
+	}
+	else if (set(.@total_po, .@input * .@cost[.@m]) > Zeny) {
+		mes "[Comerciante de Mercadorias Mercenárias]";
+		mes "Me desculpe, mas você não";
+		mes "tenha zeny suficiente para isso";
+		mes "muitas poções. ";
+		mes "esteja aqui quando estiver pronto";
+		mes "comprar algo";
+		mes "para seus Mercenários.";
+		close;
+	}
+	else if (!checkweight(.@item[.@m], .@input)) {
+		mes "[Comerciante de Mercadorias Mercenárias]";
+		mes "Se eu te desse tantos";
+		mes "poções, você não estaria";
+		mes "capaz de carregá-los com você.";
+		mes "Por favor volte depois";
+		mes "você libera algum espaço";
+		mes "em seu inventário.";
+		close;
+	}
+	mes "[Comerciante de Mercadorias Mercenárias]";
+	if (.@input == 1) 
+		mes "Aqui está o seu" + getitemname(.@item[.@m]) + ".";
+	else {
+		mes "Aqui está, isso é exatamente";
+		mes callfunc("F_InsertPlural",.@input,getitemname(.@item[.@m])) + ".";
+	}
+	mes "Obrigado e por favor venha";
+	mes "novamente quando você precisar de mais";
+	mes "poções para seus Mercenários.";
+	Zeny = Zeny - .@total_po;
+	getitem .@item[.@m], .@input;
+	close;
+}
+prontera,30,337,4	duplicate(MercMerchant)	Mercenary Merchant#Spear	8_F_GIRL
+pay_arche,102,167,5	duplicate(MercMerchant)	Mercenary Merchant#Bow	4_F_CAPEGIRL
+
+// Mercenary Switch NPCs
+//============================================================
+-	script	Mercenary_Switch	-1,{
+
+	setarray .@name$, "Lança","Espada","Arco";
+	.@npc$ = strnpcinfo(2);
+	for (.@size = getarraysize(.@name$); .@type < .@size; .@type++)
+		if (.@npc$ == .@name$[.@type]) break;
+
+	mes "[Verificador]";
+	mes "Por favor insira uma senha.";
+	next;
+	.@i = callfunc("F_GM_NPC",1854,0,0,10000);
+	mes "[Verificador]";
+	if (.@i == -2)
+		mes "Erro.";
+	else if (.@i == 0)
+		mes "Número errado";
+	else if (.@i == 1) {
+		mes "Por favor selecione.";
+		next;
+		switch( select( "Desligue o NPC Mercenário","Ative o NPC Mercenário" ) ) {
+		case 1:
+			mes "NPCs estão desligados.";
+			disablenpc "Mercenary Manager#" + .@name$[.@type];
+			disablenpc "Mercenary Merchant#" + .@name$[.@type];
+			break;
+		case 2:
+			mes "NPCs estão ativados.";
+			enablenpc "Mercenary Manager#" + .@name$[.@type];
+			enablenpc "Mercenary Merchant#" + .@name$[.@type];
+			break;
+		}
+	}
+	close;
+}
+prontera,299,379,5	duplicate(Mercenary_Switch)	Mercenary Switch#Spear	8W_SOLDIER
+pay_arche,170,185,5	duplicate(Mercenary_Switch)	Mercenary Switch#Bow	4_F_CAPEGIRL
+izlude,245,250,4	duplicate(Mercenary_Switch)	Mercenary Switch#Sword	4_F_HUWOMAN

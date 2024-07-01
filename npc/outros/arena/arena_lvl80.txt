@@ -1,0 +1,963 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+arena_room,147,42,1	script	Lv80 Waiting Room	124,{
+	end;
+
+OnInit:
+	waitingroom "Individual; " + MAX_LEVEL,50,"Sala de Espera Lv80::OnStartArena",1,1000,80;
+	enablewaitingroomevent;
+	end;
+
+OnStartArena:
+	warpwaitingpc "force_4-1",99,12;
+	donpcevent "arena#80::OnStart";
+	disablewaitingroomevent;
+	end;
+
+OnStart:
+	enablewaitingroomevent;
+	end;
+}
+
+force_4-1,99,20,4	script	Octus#arena	124,{
+	end;
+
+OnStart:
+	initnpctimer;
+	set $arena_min80st,gettime(DT_MINUTE);
+	set $arena_sec80st,gettime(DT_SECOND);
+	end;
+
+OnTimer3000:
+	mapannounce "força_4-1","Bom dia, meu nome é Octus, o guia do Time Force Battle para o nível 80!",0;
+	end;
+
+OnTimer4000:
+	mapannounce "força_4-1","Lembre-se de que sua decisão certa economizará muito do seu tempo!",0;
+	end;
+
+OnTimer8000:
+	mapannounce "força_4-1","Para completar este percurso de batalha, você deve começar da extremidade esquerda desta sala no sentido horário. ",0;
+	end;
+
+OnTimer60000:
+	if (getmapusers("força_4-1") == 0) {
+		donpcevent "Octus#arena::OnFailClearStage";
+	}
+	mapannounce "força_4-1","Tempo restante: 7 minutos",0;
+	end;
+
+OnTimer120000:
+	if (getmapusers("força_4-1") == 0) {
+		donpcevent "Octus#arena::OnFailClearStage";
+	}
+	mapannounce "força_4-1","Tempo restante: 6 minutos",0;
+	end;
+
+OnTimer180000:
+	if (getmapusers("força_4-1") == 0) {
+		donpcevent "Octus#arena::OnFailClearStage";
+	}
+	mapannounce "força_4-1","Tempo restante: 5 minutos",0;
+	end;
+
+OnTimer240000:
+	if (getmapusers("força_4-1") == 0) {
+		donpcevent "Octus#arena::OnFailClearStage";
+	}
+	mapannounce "força_4-1","Tempo restante: 4 minutos",0;
+	end;
+
+OnTimer300000:
+	if (getmapusers("força_4-1") == 0) {
+		donpcevent "Octus#arena::OnFailClearStage";
+	}
+	mapannounce "força_4-1","Tempo restante: 3 minutos",0;
+	end;
+
+OnTimer360000:
+	if (getmapusers("força_4-1") == 0) {
+		donpcevent "Octus#arena::OnFailClearStage";
+	}
+	mapannounce "força_4-1","Tempo restante: 2 minutos",0;
+	end;
+
+OnTimer420000:
+	if (getmapusers("força_4-1") == 0) {
+		donpcevent "Octus#arena::OnFailClearStage";
+	}
+	mapannounce "força_4-1","Tempo restante: 1 minuto",0;
+	end;
+
+OnTimer480000:
+	mapannounce "força_4-1","Seu tempo acabou. ",0;
+	end;
+
+OnTimer485000:
+OnTimer486000:
+OnTimer487000:
+OnTimer488000:
+OnTimer489000:
+OnTimer490000:
+OnTimer491000:
+OnTimer492000:
+OnTimer493000:
+OnTimer494000:
+	mapwarp "force_4-1","prt_are_in",178,190,0,0;
+	end;
+
+OnTimer495000:
+	mapwarp "force_4-1","prt_are_in",178,190,0,0;
+	donpcevent "Octus#arena::OnFailClearStage";
+	end;
+
+OnTimerOff:
+	stopnpctimer;
+	end;
+
+OnFailClearStage:
+	donpcevent "cast#80::OnTimeOver1";
+	mapwarp "force_4-1","prt_are_in",178,190,0,0;
+	donpcevent "Octus#arena::OnTimerOff";
+	donpcevent "arena#80::OnReset_All";
+	donpcevent "alloff#80::OnEnable";
+	donpcevent "Lv80 Waiting Room::OnStart";
+	end;
+
+On01_Start:
+	mapannounce "força_4-1","Para terminar esta batalha, você deve matar todos os Pesadelos!",0;
+	end;
+
+On01_End:
+	mapannounce "força_4-1","Uma porta para a sala norte se abriu!",0;
+	end;
+
+On02_Start:
+	mapannounce "força_4-1","Para terminar esta batalha, você deve matar todos os monstros!",0;
+	end;
+
+On02_End:
+	mapannounce "força_4-1","Uma porta para a sala norte se abriu!",0;
+	end;
+
+On03_Start:
+	mapannounce "força_4-1","Para terminar esta batalha, você deve matar todos os Assaltantes!",0;
+	end;
+
+On03_End:
+	mapannounce "força_4-1","Claro! ",0;
+	end;
+
+On04_Start:
+	mapannounce "força_4-1","Para terminar esta batalha, você deve matar todos os Nove Caudas!",0;
+	end;
+
+On04_End:
+	mapannounce "força_4-1","Uma porta para a sala leste se abriu!",0;
+	end;
+
+On05_Start:
+	mapannounce "força_4-1","Para terminar esta batalha, você deve matar todos os Walking Petites!",0;
+	end;
+
+On05_End:
+	mapannounce "força_4-1","Claro! ",0;
+	end;
+
+On06_Start:
+	mapannounce "força_4-1","Para terminar esta batalha, mate todos os monstros nesta sala!",0;
+	end;
+
+On06_End:
+	mapannounce "força_4-1","Uma porta para a sala sul se abriu!",0;
+	end;
+
+On07_Start:
+	mapannounce "força_4-1","Para terminar esta batalha, mate todos os lobos-marinhos enquanto desvia dos tritões!",0;
+	end;
+
+On07_End:
+	mapannounce "força_4-1","Claro! ",0;
+	end;
+
+On08_Start:
+	mapannounce "força_4-1","Por favor, fuja para a saída norte!",0;
+	end;
+
+On09_Start:
+	mapannounce "força_4-1","Para terminar esta batalha, você deve derrotar uma Múmia Antiga!",0;
+	end;
+
+On09_End:
+	mapannounce "força_4-1","Chefe claro! ",0;
+	end;
+}
+
+-	script	arena#80	-1,{
+OnReset_01:
+	donpcevent "force_01ex#80::OnReset";
+	donpcevent "force_02start#80::OnEnable";
+	enablenpc "force_01_02#80";
+	end;
+
+OnReset_02:
+	donpcevent "force_02mob#80::OnReset";
+	donpcevent "force_03start#80::OnEnable";
+	enablenpc "force_02_03#80";
+	end;
+
+OnReset_03:
+	enablenpc "force_03_04#80";
+	donpcevent "force_04start#80::OnEnable";
+	donpcevent "force_03ex#80::OnReset";
+	end;
+
+OnReset_04:
+	enablenpc "force_04_05#80";
+	donpcevent "force_05start#80::OnEnable";
+	donpcevent "force_04ex#80::OnReset";
+	end;
+
+OnReset_05:
+	enablenpc "force_05_06#80";
+	donpcevent "force_06start#80::OnEnable";
+	donpcevent "force_05ex#80::OnReset";
+	end;
+
+OnReset_06:
+	enablenpc "force_06_07#80";
+	donpcevent "force_07start#80::OnEnable";
+	//donpcevent "force_06ex#80::OnReset";
+	end;
+
+OnReset_07:
+	enablenpc "force_07_08#80";
+	donpcevent "force_07ex#80::OnReset";
+	donpcevent "force_08start#80::OnEnable";
+	end;
+
+OnReset_08:
+	donpcevent "force_09start#80::OnEnable";
+	enablenpc "force_08_09#80";
+	end;
+
+OnReset_09:
+	enablenpc "force_exit#80";
+	end;
+
+OnStart:
+	disablenpc "force_01_02#80";
+	disablenpc "force_02_03#80";
+	disablenpc "force_03_04#80";
+	disablenpc "force_04_05#80";
+	disablenpc "force_05_06#80";
+	disablenpc "force_06_07#80";
+	disablenpc "force_07_08#80";
+	disablenpc "force_08_09#80";
+	disablenpc "force_exit#80";
+	donpcevent "Octus#arena::OnTimerOff";
+	//donpcevent "force_09mob#80::OnTimerOff";
+	donpcevent "force_01mob#80::OnReset";
+	donpcevent "force_02mob#80::OnReset";
+	donpcevent "force_03mob#80::OnReset";
+	donpcevent "force_04mob#80::OnReset";
+	donpcevent "force_05mob#80::OnReset";
+	donpcevent "force_06mob#80::OnReset";
+	donpcevent "force_07mob#80::OnReset";
+	//donpcevent "force_08mob#80::OnReset";
+	donpcevent "force_09mob#80::OnReset";
+	donpcevent "force_01ex#80::OnReset";
+	donpcevent "force_03ex#80::OnReset";
+	donpcevent "force_04ex#80::OnReset";
+	donpcevent "force_05ex#80::OnReset";
+	donpcevent "force_07ex#80::OnReset";
+	//donpcevent "force_08ex#80::OnReset";
+	donpcevent "force_09ex#80::OnReset";
+	enablenpc "force_08_01#80";
+	donpcevent "force_01start#80::OnEnable";
+	donpcevent "Octus#arena::OnStart";
+	end;
+
+OnReset_All:
+	donpcevent "force_01mob#80::OnReset";
+	donpcevent "force_02mob#80::OnReset";
+	donpcevent "force_03mob#80::OnReset";
+	donpcevent "force_04mob#80::OnReset";
+	donpcevent "force_05mob#80::OnReset";
+	donpcevent "force_06mob#80::OnReset";
+	donpcevent "force_07mob#80::OnReset";
+	donpcevent "force_09mob#80::OnReset";
+	donpcevent "force_01ex#80::OnReset";
+	donpcevent "force_03ex#80::OnReset";
+	donpcevent "force_04ex#80::OnReset";
+	donpcevent "force_05ex#80::OnReset";
+	donpcevent "force_07ex#80::OnReset";
+	//donpcevent "force_08ex#80::OnReset";
+	donpcevent "force_09ex#80::OnReset";
+	end;
+}
+
+force_4-1,62,26,1	script	force_08_01#80	45,1,1,{
+OnTouch_:
+	donpcevent "Octus#arena::On01_Start";
+	warp "force_4-1",40,26;
+	end;
+}
+
+force_4-1,25,44,1	script	force_01_02#80	45,1,1,{
+OnTouch_:
+	donpcevent "Octus#arena::On02_Start";
+	warp "force_4-1",25,69;
+	end;
+}
+
+force_4-1,25,134,1	script	force_02_03#80	45,1,1,{
+OnTouch_:
+	donpcevent "Octus#arena::On03_Start";
+	warp "force_4-1",25,159;
+	end;
+}
+
+force_4-1,44,174,1	script	force_03_04#80	45,1,1,{
+OnTouch_:
+	donpcevent "Octus#arena::On04_Start";
+	warp "force_4-1",69,174;
+	end;
+
+}
+
+force_4-1,134,174,1	script	force_04_05#80	45,1,1,{
+OnTouch_:
+	donpcevent "Octus#arena::On05_Start";
+	warp "force_4-1",159,174;
+	end;
+}
+
+force_4-1,174,155,1	script	force_05_06#80	45,1,1,{
+OnTouch_:
+	donpcevent "Octus#arena::On06_Start";
+	warp "force_4-1",174,130;
+	end;
+}
+
+force_4-1,174,65,1	script	force_06_07#80	45,1,1,{
+OnTouch_:
+	donpcevent "Octus#arena::On07_Start";
+	warp "force_4-1",174,40;
+	end;
+}
+
+force_4-1,155,26,1	script	force_07_08#80	45,1,1,{
+OnTouch_:
+	donpcevent "Octus#arena::On08_Start";
+	warp "force_4-1",132,26;
+	enablenpc "force_08_09#80";
+	end;
+}
+
+force_4-1,99,54,1	script	force_08_09#80	45,1,1,{
+OnTouch_:
+	donpcevent "Octus#arena::On09_Start";
+	warp "force_4-1",99,82;
+	end;
+}
+
+force_4-1,99,124,1	script	force_exit#80	45,1,1,{
+OnTouch_:
+	donpcevent "Octus#arena::OnTimerOff";
+	donpcevent "#arn_timer_80::OnEnable";
+	mapwarp "force_4-1","prt_are_in",73,192,0,0;
+	end;
+}
+
+-	script	force_01start#80	-1,{
+OnEnable:
+	donpcevent "force_01mob#80::OnEnable";
+	end;
+}
+
+-	script	force_01ex#80	-1,{
+OnReset:
+	killmonster "force_4-1","force_01ex#80::OnMyMobDead";
+	end;
+
+OnSummonMob1:
+	monster "força_4-1",11,25,"Caçador Mosca",1422,1,"force_01ex";
+	monster "força_4-1",22,22,"Caçador Mosca",1422,1,"force_01ex";
+	monster "força_4-1",25,25,"Caçador Mosca",1422,1,"force_01ex";
+	monster "força_4-1",35,13,"Caçador Mosca",1422,1,"force_01ex";
+	monster "força_4-1",18,33,"Caçador Mosca",1422,1,"force_01ex";
+	end;
+
+OnMyMobDead:
+	end;
+}
+
+-	script	force_01mob#80	-1,{
+OnEnable:
+	monster "força_4-1",35,13,"Pesadelo",1427,1,"force_01mob";
+	monster "força_4-1",25,36,"Pesadelo",1427,1,"force_01mob";
+	monster "força_4-1",22,23,"Pesadelo",1427,1,"force_01mob";
+	monster "força_4-1",25,17,"Pesadelo",1427,1,"force_01mob";
+	monster "força_4-1",25,15,"Pesadelo",1427,1,"force_01mob";
+	donpcevent "force_01ex#80::OnSummonMob1";
+	end;
+
+OnReset:
+	killmonster "force_4-1","force_01mob#80::OnMyMobDead";
+	end;
+
+OnMyMobDead:
+	if (mobcount("força_4-1","force_01mob") < 1) {
+		donpcevent "Octus#arena::On01_End";
+		donpcevent "arena#80::OnReset_01";
+	}
+	end;
+}
+
+-	script	force_02start#80	-1,{
+OnEnable:
+	donpcevent "force_02mob#80::OnEnable";
+	end;
+}
+
+-	script	force_02mob#80	-1,{
+OnReset:
+	killmonster "force_4-1","force_02mob#80::OnMyMobDead";
+	end;
+
+OnEnable:
+	monster "força_4-1",24,80,"Marionete",1459,1,"force_02mob";
+	monster "força_4-1",23,110,"Marionete",1459,1,"force_02mob";
+	monster "força_4-1",26,90,"Marionete",1459,1,"force_02mob";
+	monster "força_4-1",28,75,"Zumbi",1394,1,"force_02mob";
+	monster "força_4-1",24,90,"Zumbi",1394,1,"force_02mob";
+	monster "força_4-1",28,85,"Zumbi",1394,1,"force_02mob";
+	monster "força_4-1",24,82,"Deviruchi",1433,1,"force_02mob";
+	monster "força_4-1",28,86,"Prisioneiro Skel",1479,1,"force_02mob";
+	monster "força_4-1",27,73,"Prisioneiro Skel",1479,1,"force_02mob";
+	monster "força_4-1",26,118,"Prisioneiro Skel",1479,1,"force_02mob";
+	monster "força_4-1",25,127,"Prisioneiro Skel",1479,1,"force_02mob";
+	monster "força_4-1",28,128,"Zumbi",1394,1,"force_02mob";
+	monster "força_4-1",27,100,"Zumbi",1394,1,"force_02mob";
+	monster "força_4-1",29,90,"Zumbi",1394,1,"force_02mob";
+	monster "força_4-1",28,128,"Arqueiro Raydric",1453,1,"force_02mob";
+	end;
+
+OnMyMobDead:
+	if (mobcount("força_4-1","force_02mob") < 1) {
+		donpcevent "Octus#arena::On02_End";
+		donpcevent "arena#80::OnReset_02";
+	}
+	end;
+}
+
+-	script	force_03start#80	-1,{
+OnEnable:
+	donpcevent "force_03mob#80::OnEnable";
+	end;
+}
+
+-	script	force_03ex#80	-1,{
+OnReset:
+	killmonster "force_4-1","force_03ex#80::OnMyMobDead";
+	end;
+
+OnSummonMob_03:
+	monster "força_4-1",26,173,"Guardião da Torre do Relógio",1527,1,"force_03ex";
+	monster "força_4-1",21,173,"Marionete",1459,1,"force_03ex";
+	monster "força_4-1",31,173,"Guardião da Torre do Relógio",1527,1,"force_03ex";
+	monster "força_4-1",26,178,"Marionete",1459,1,"force_03ex";
+	monster "força_4-1",21,178,"Marionete",1459,1,"force_03ex";
+	monster "força_4-1",31,178,"Marionete",1459,1,"force_03ex";
+	monster "força_4-1",26,186,"Sidewinder",1424,1,"force_03ex";
+	monster "força_4-1",26,161,"Sidewinder",1424,1,"force_03ex";
+	end;
+
+OnMyMobDead:
+	end;
+}
+
+-	script	force_03mob#80	-1,{
+OnEnable:
+	donpcevent "force_03ex#80::OnSummonMob_03";
+	monster "força_4-1",23,174,"Assaltante",1364,1,"force_03mob";
+	monster "força_4-1",18,173,"Assaltante",1364,1,"force_03mob";
+	end;
+
+OnReset:
+	killmonster "force_4-1","force_03mob#80::OnMyMobDead";
+	end;
+
+OnMyMobDead:
+	donpcevent "force_03ex#80::OnSummonMob_03";
+	if (mobcount("força_4-1","force_03mob") < 1) {
+		donpcevent "Octus#arena::On03_End";
+		donpcevent "arena#80::OnReset_03";
+	}
+	end;
+}
+
+-	script	force_04start#80	-1,{
+OnEnable:
+	donpcevent "force_04mob#80::OnEnable";
+	end;
+}
+
+-	script	force_04ex#80	-1,{
+OnReset:
+	killmonster "force_4-1","force_04ex#80::OnMyMobDead";
+	end;
+
+OnSummonMob_04:
+	monster "força_4-1",99,174,"Esqueleto de Arqueiro",1420,1,"force_04ex";
+	monster "força_4-1",101,174,"Esqueleto de Arqueiro",1420,1,"force_04ex";
+	monster "força_4-1",103,174,"Esqueleto de Arqueiro",1420,1,"force_04ex";
+	monster "força_4-1",105,174,"Esqueleto de Arqueiro",1420,1,"force_04ex";
+	monster "força_4-1",107,174,"Esqueleto de Arqueiro",1420,1,"force_04ex";
+	monster "força_4-1",109,177,"Pasana",1464,1,"force_04ex";
+	monster "força_4-1",99,170,"Menor",1461,1,"force_04ex";
+	monster "força_4-1",111,170,"Menor",1461,1,"force_04ex";
+	monster "força_4-1",110,170,"Golem de Lava",1549,1,"force_04ex";
+	end;
+
+OnMyMobDead:
+	end;
+
+}
+
+-	script	force_04mob#80	-1,{
+OnEnable:
+	donpcevent "force_04ex#80::OnSummonMob_04";
+	monster "força_4-1",80,172,"Nove Caldas",1471,1,"force_04mob";
+	monster "força_4-1",105,172,"Nove Caldas",1471,1,"force_04mob";
+	monster "força_4-1",90,172,"Nove Caldas",1471,1,"force_04mob";
+	monster "força_4-1",117,172,"Nove Caldas",1471,1,"force_04mob";
+	end;
+OnReset:
+	killmonster "force_4-1","force_04mob#80::OnMyMobDead";
+	end;
+
+OnMyMobDead:
+	if (mobcount("força_4-1","force_04mob") < 1) {
+		donpcevent "Octus#arena::On04_End";
+		donpcevent "arena#80::OnReset_04";
+	}
+	end;
+}
+
+-	script	force_05start#80	-1,{
+OnEnable:
+	donpcevent "force_05mob#80::OnEnable";
+	end;
+}
+
+-	script	force_05ex#80	-1,{
+OnReset:
+	killmonster "force_4-1","force_05ex#80::OnMyMobDead";
+	end;
+
+OnSummonMob_05:
+	monster "força_4-1",168,190,"Pequeno",1466,1,"force_05ex";
+	monster "força_4-1",173,166,"Pequeno",1466,1,"force_05ex";
+	monster "força_4-1",171,176,"Pequeno",1466,1,"force_05ex";
+	monster "força_4-1",188,167,"Pequeno",1466,1,"force_05ex";
+	end;
+
+OnMyMobDead:
+	end;
+}
+
+-	script	force_05mob#80	-1,{
+OnEnable:
+	monster "força_4-1",164,174,"Pequeno",1465,1,"force_05mob";
+	monster "força_4-1",169,159,"Pequeno",1465,1,"force_05mob";
+	monster "força_4-1",174,183,"Pequeno",1465,1,"force_05mob";
+	monster "força_4-1",177,170,"Pequeno",1465,1,"force_05mob";
+	end;
+
+OnReset:
+	killmonster "force_4-1","force_05mob#80::OnMyMobDead";
+	end;
+
+OnMyMobDead:
+	if (mobcount("força_4-1","force_05mob") < 1) {
+		donpcevent "Octus#arena::On05_End";
+		donpcevent "arena#80::OnReset_05";
+	}
+	else donpcevent "force_05ex#80::OnSummonMob_05";
+	end;
+
+}
+
+-	script	force_06start#80	-1,{
+OnEnable:
+	donpcevent "force_06mob#80::OnEnable";
+	end;
+}
+
+-	script	force_06ex#80	-1,{
+OnEnable:
+	donpcevent "Octus#arena::On06_start";
+	end;
+}
+
+-	script	force_06mob#80	-1,{
+OnEnable:
+	monster "força_4-1",173,118,"Baphomet Jr.",1431,1,"force_06mob";
+	monster "força_4-1",173,90,"Baphomet Jr.",1431,1,"force_06mob";
+	monster "força_4-1",177,72,"Baphomet Jr.",1431,1,"force_06mob";
+	monster "força_4-1",171,108,"Deviruchi",1433,1,"force_06mob";
+	monster "força_4-1",171,85,"Deviruchi",1433,1,"force_06mob";
+	monster "força_4-1",171,79,"Alice",1521,1,"force_06mob";
+	monster "força_4-1",175,118,"Alice",1521,1,"force_06mob";
+	monster "força_4-1",175,99,"Alice",1521,1,"force_06mob";
+	end;
+
+OnReset:
+	killmonster "force_4-1","force_06mob#80::OnMyMobDead";
+	end;
+
+OnMyMobDead:
+	if (mobcount("força_4-1","force_06mob") < 1) {
+		donpcevent "Octus#arena::On06_End";
+		donpcevent "arena#80::OnReset_06";
+	}
+	end;
+}
+
+-	script	force_07start#80	-1,{
+OnEnable:
+	donpcevent "force_07mob#80::OnEnable";
+	end;
+}
+
+-	script	force_07ex#80	-1,{
+OnReset:
+	killmonster "force_4-1","force_07ex#80::OnMyMobDead";
+	end;
+
+OnSummonMob_07:
+	monster "força_4-1",160,34,"Tritão",1451,1,"force_07ex";
+	monster "força_4-1",163,27,"Tritão",1451,1,"force_07ex";
+	monster "força_4-1",163,23,"Tritão",1451,1,"force_07ex";
+	end;
+
+OnMyMobDead:
+	end;
+}
+
+-	script	force_07mob#80	-1,{
+OnEnable:
+	donpcevent "force_07ex#80::OnSummonMob_07";
+	monster "força_4-1",165,27,"Lobo-marinho",1533,1,"force_07mob";
+	monster "força_4-1",184,23,"Lobo-marinho",1533,1,"force_07mob";
+	monster "força_4-1",174,19,"Lobo-marinho",1533,1,"force_07mob";
+	end;
+
+OnReset:
+	killmonster "force_4-1","force_07mob#80::OnMyMobDead";
+	end;
+
+OnMyMobDead:
+	if (mobcount("força_4-1","force_07mob") < 1) {
+		donpcevent "Octus#arena::On07_End";
+		donpcevent "arena#80::OnReset_07";
+	}
+	end;
+}
+
+-	script	force_08start#80	-1,{
+OnEnable:
+	donpcevent "force_08ex#80::OnEnable";
+	end;
+}
+
+-	script	force_08ex#80	-1,{
+OnEnable:
+	donpcevent "arena#80::OnReset_08";
+	end;
+}
+
+-	script	force_09start#80	-1,{
+OnEnable:
+	donpcevent "force_09mob#80::OnEnable";
+	end;
+}
+
+-	script	force_09ex#80	-1,{
+OnReset:
+	killmonster "force_4-1","force_09ex#80::OnMyMobDead";
+	end;
+
+OnSummonMob_09:
+	monster "força_4-1",91,99,"Argos",1430,1,"force_09ex";
+	monster "força_4-1",95,105,"Argos",1430,1,"force_09ex";
+	monster "força_4-1",122,99,"Argos",1430,1,"force_09ex";
+	monster "força_4-1",88,107,"Argos",1430,1,"force_09ex";
+	monster "força_4-1",85,104,"Argos",1430,1,"force_09ex";
+	end;
+
+OnMyMobDead:
+	end;
+}
+
+-	script	force_09mob#80	-1,{
+OnEnable:
+	monster "força_4-1",99,99,"Múmia Antiga",1522,1,"force_09mob";
+	donpcevent "force_09ex#80::OnSummonMob_09";
+	end;
+
+OnReset:
+	killmonster "force_4-1","force_09mob#80::OnMyMobDead";
+	end;
+
+OnMyMobDead:
+	if (mobcount("força_4-1","force_09mob") < 1) {
+		donpcevent "Octus#arena::On09_End";
+		donpcevent "arena#80::OnReset_09";
+		donpcevent "arena#80::OnReset_All";
+		set $arena_min80end,gettime(DT_MINUTE);
+		set $arena_sec80end,gettime(DT_SECOND);
+	}
+	end;
+}
+
+prt_are_in,181,188,3	script	Staff#80-1	67,{
+	mes "[Funcionários]";
+	mes "Você fez um bom trabalho.";
+	mes "Mesmo que você não tenha conseguido concluir uma batalha de contra-relógio, eu o recompensarei com uma pequena quantidade de pontos de arena.";
+	next;
+	if (arena_point == 30000) {
+		mes "[Funcionários]";
+		mes "Uh, hein!";
+		mes "Você já tem pontos de arena suficientes.";
+		mes "Por favor, gaste alguns pontos de arena mais tarde. ";
+		next;
+	}
+	else set arena_point, arena_point + 1;
+	mes "[Funcionários]";
+	mes "Deixe-me guiá-lo para fora. ";
+	close2;
+	specialeffect2 EF_EXIT;
+	warp "arena_room",100,75;
+	end;
+}
+
+prt_are_in,77,187,3	script	Staff#80-2	67,{
+	if($arena_min80end < $arena_min80st) {
+		if($arena_sec80end < $arena_sec80st) {
+			set @record_min80,60 - $arena_min80st + $arena_min80end -1;
+			set @record_sec80,60 - $arena_sec80st + $arena_sec80end;
+		} else {
+			set @record_min80,60 - $arena_min80st + $arena_min80end;
+			set @record_sec80,$arena_sec80end - $arena_sec80st;
+		}
+	} else {
+		if($arena_sec80end < $arena_sec80st) {
+			set @record_min80,$arena_min80end - $arena_min80st -1;
+			set @record_sec80,60 - $arena_sec80st + $arena_sec80end;
+		} else {
+			set @record_min80,$arena_min80end - $arena_min80st;
+			set @record_sec80,$arena_sec80end - $arena_sec80st;
+		}
+	}
+	set @gap80,(60 * $top_80min + $top_80sec) - (60 * @record_min80 + @record_sec80);
+	mes "[Funcionários]";
+	mes "Uau, você fez um bom trabalho ~";
+	mes "Seu nome é...^3131FF" + strcharinfo(0) +"^000000, não é?";
+	mes "^3131FF"+ strcharinfo(0) +"^000000, tempo total gasto para passar a batalha.";
+	next;
+	mes "[Funcionários]";
+	mes "é"+@record_min80+"minutos"+@record_sec80+"segundos.";
+	mes "Parabéns!";
+	next;
+	mes "[Funcionários]";
+	mes "O jogador mais rápido entre as pessoas que concluíram a batalha de força do tempo na arena Lv80 é ^3131FF"+$arena_80topn$+"^000000.";
+	next;
+	mes "[Funcionários]";
+	mes "^3131FF"+$arena_80topn$+"O tempo de execução de ^000000 foi de ^3131FF"+$top_80min+"^000000minutos ^3131FF"+$top_80sec+"^000000segundos.";
+	next;
+	if (@gap80 < 0) {
+		mes "[Funcionários]";
+		mes "Embora você não tenha conseguido fazer um novo disco, espero que tenha sucesso na próxima vez.";
+		next;
+		if (arena_point > 29980) {
+			mes "[Funcionários]";
+			mes "Então deixe-me recompensá-lo com alguns pontos de arena... eh?";
+			mes "Seus pontos de arena excederam o valor máximo. ";
+			next;
+			mes "[Funcionários]";
+			mes "Você pode verificar a quantidade de pontos de arena que possui na sala de espera da arena.";
+			next;
+			mes "[Funcionários]";
+			mes "Espero que você tenha se divertido e deixe-me guiá-lo até a entrada da arena.";
+			mes "Obrigado.";
+			close2;
+		} else {
+			set arena_point, arena_point + 20;
+			mes "[Funcionários]";
+			mes "Deixe-me recompensá-lo com alguns pontos de arena.";
+			mes "Se você quiser verificar a quantidade de pontos de arena que possui, fale com ^3131FFVendigos^000000 na entrada da arena.";
+			next;
+			mes "[Funcionários]";
+			mes "Deixe-me guiá-lo até a entrada da arena.";
+			mes "Te vejo mais tarde~";
+			close2;
+		}
+		specialeffect2 EF_EXIT;
+ 		donpcevent "cast#80::OnNomal1";
+		warp "arena_room",100,75;
+		donpcevent "#arn_timer_80::OnStop";
+		donpcevent "alloff#80::OnEnable";
+		donpcevent "Lv80 Waiting Room::OnStart";
+		end;
+	} else {
+		emotion ET_HUK;
+		mes "[Funcionários]";
+		mes "Uau! ";
+		mes "Que ótimo trabalho!";
+		next;
+		mes "[Funcionários]";
+		mes "Você foi registrado como o jogador mais rápido entre as pessoas que completaram ^FF0000Arena Time Force Battle nível 80s^000000, ^3131FF"+strcharinfo(0)+"^000000.";
+		set $top_80min, @record_min80;
+		set $top_80sec, @record_sec80;
+		set $arena_80topn$,strcharinfo(0);
+		donpcevent "Vendigos::OnLineRec_80";
+		next;
+		if (arena_point > 29980) {
+			mes "[Funcionários]";
+			mes "Então deixe-me recompensá-lo com alguns pontos de arena... eh?";
+			mes "Seus pontos de arena excederam o valor máximo. ";
+			next;
+			mes "[Funcionários]";
+			mes "Você pode verificar a quantidade de pontos de arena que possui na sala de espera da arena.";
+			next;
+			mes "[Funcionários]";
+			mes "Espero que você tenha se divertido e deixe-me guiá-lo até a entrada da arena.";
+			mes "Obrigado.";
+			close2;
+		} else {
+			mes "[Funcionários]";
+			mes "Deixe-me recompensá-lo com alguns pontos de arena.";
+			mes "Ao mesmo tempo, como você renovou o registro, desta vez receberá uma quantia extra de pontos.";
+			next;
+			set arena_point, arena_point + 50;
+			mes "[Funcionários]";
+			mes "Deixe-me recompensá-lo com alguns pontos de arena.";
+			mes "Se você quiser verificar a quantidade de pontos de arena que possui, fale com ^3131FFVendigos^000000 na entrada da arena.";
+			next;
+			mes "[Funcionários]";
+			mes "Deixe-me guiá-lo até a entrada da arena.";
+			mes "Te vejo mais tarde~";
+			close2;
+		}
+		specialeffect2 EF_HIT5;
+ 		donpcevent "cast#80::OnNomal2";
+		warp "arena_room",100,75;
+		donpcevent "#arn_timer_80::OnStop";
+		donpcevent "alloff#80::OnEnable";
+		donpcevent "Lv80 Waiting Room::OnStart";
+		end;
+	}
+}
+
+-	script	#arn_timer_80	-1,{
+OnEnable:
+	initnpctimer;
+	end;
+
+OnTimer2000:
+	mapannounce "prt_are_in","Esta transmissão informa sobre a restrição para arena nível 80.",0,0xFFCE00;
+	end;
+
+OnTimer3000:
+	mapannounce "prt_are_in","For a smooth game play, exit warp portal will be activated in 1 minute.",0,0xFFCE00;
+	end;
+
+OnTimer4000:
+	mapannounce "prt_are_in","Por favor, prossiga sua batalha o mais rápido possível para evitar desvantagens. ",0,0xFFCE00;
+	end;
+
+OnTimer60000:
+ 	donpcevent "cast#80::OnTimeOver2";
+	donpcevent "arn_warp_80::OnOut";
+	donpcevent "#arn_timer_80::OnStop";
+	donpcevent "alloff#80::OnEnable";
+	donpcevent "Lv80 Waiting Room::OnStart";
+	end;
+
+OnStop:
+	stopnpctimer;
+	end;
+}
+
+-	script	arn_warp_80	-1,{
+OnOut:
+	areawarp "prt_are_in",66,195,81,178,"arena_room",100,75;
+	end;
+}
+
+-	script	cast#80	-1,{
+OnTimeOver1:
+	mapannounce "força_4-1","A Arena será reativada devido a um erro ocorrido durante a batalha.",0,0xFFCE00;
+	end;
+OnTimeOver2:
+	mapannounce "força_4-1","A Arena será ativada devido a um erro ocorrido na sala de espera.",0,0xFFCE00;
+	end;
+OnNomal1:
+	mapannounce "força_4-1","Arena será reativada.",0,0xFFCE00;
+	end;
+OnNomal2:
+	mapannounce "força_4-1","Arena será reativada.",0,0xFFCE00;
+	end;
+}
+
+-	script	alloff#80	-1,{
+OnEnable:
+	mapwarp "force_4-1","prt_are_in",126,190,0,0;
+	donpcevent "force_01mob#80::OnReset";
+	donpcevent "force_02mob#80::OnReset";
+	donpcevent "force_03mob#80::OnReset";
+	donpcevent "force_04mob#80::OnReset";
+	donpcevent "force_05mob#80::OnReset";
+	donpcevent "force_06mob#80::OnReset";
+	donpcevent "force_07mob#80::OnReset";
+	//donpcevent "force_08mob#80::OnReset";
+	donpcevent "force_09mob#80::OnReset";
+	donpcevent "force_01ex#80::OnReset";
+	donpcevent "force_03ex#80::OnReset";
+	donpcevent "force_04ex#80::OnReset";
+	donpcevent "force_05ex#80::OnReset";
+	donpcevent "force_07ex#80::OnReset";
+	//donpcevent "force_08ex#80::OnReset";
+	donpcevent "force_09ex#80::OnReset";
+	donpcevent "Octus#arena::OnTimerOff";
+	disablenpc "Octus#arena";
+	disablenpc "force_01_02#80";
+	disablenpc "force_02_03#80";
+	disablenpc "force_03_04#80";
+	disablenpc "force_04_05#80";
+	disablenpc "force_05_06#80";
+	disablenpc "force_06_07#80";
+	disablenpc "force_07_08#80";
+	disablenpc "force_08_09#80";
+	disablenpc "force_exit#80";
+	disablenpc "arena#80";
+	donpcevent "#arn_timer_80::OnStop";
+	enablenpc "Octus#arena";
+	enablenpc "arena#80";
+	end;
+
+OnInit:
+	if(!$top_80min && !$top_80sec) set $top_80min,8;
+	end;
+}
+

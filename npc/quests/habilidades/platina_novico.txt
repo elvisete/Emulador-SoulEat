@@ -1,0 +1,114 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+prt_church,173,23,4	script	Cleric	79,{
+	mes "[Acólito Klift]";
+	mes "Ahh . ";
+	mes "cuidando do fardo das ovelhas perdidas";
+	mes "e cansar você?";
+	mes "Estou aqui para ajudá-lo.";
+	next;
+	switch (select("^3355FF' Sobre a habilidade oculta do acólito '^000000 ..:^3355FF' Luz sagrada '^000000 treinamento:Terminar conversa")) {
+	case 1:
+		mes "[Acólito Klift]";
+		mes "Nossos membros do clero";
+		mes "aprender naturalmente uma habilidade como";
+		mes "à medida que amadurecem. ";
+		mes "seus últimos anos como acólito";
+		mes "esta habilidade especial.";
+		next;
+		mes "[Acólito Klift]";
+		mes "Enfrentando grande perigo e";
+		mes "uma luta sem fim contra o mal,";
+		mes "nossos irmãos precisam muito de ajuda.";
+		mes "^3355FF 'Holy Light' ^000000 é essa habilidade.";
+		mes "Para obter essa habilidade para si mesmo,";
+		mes "dá algum trabalho.";
+		next;
+		mes "[Acólito Klift]";
+		mes "Para ganhar a habilidade, você deve encontrar esses itens.";
+		mes "^FF33551 Opala^000000";
+		mes "^FF33551 Azul Cristal^000000";
+		mes "^FF33551 Rosário^000000";
+		next;
+		mes "[Acólito Klift]";
+		mes "Para poder usar essa habilidade,";
+		mes "é preciso ter experiência suficiente.";
+		mes "^FF3355 Nível de trabalho 30^000000";
+		mes "é necessário para aprender essa habilidade.";
+		next;
+		mes "[Acólito Klift]";
+		mes "Quanto a um sacerdote, por causa de sua";
+		mes "já uma vasta experiência,";
+		mes "eles são capazes de adquirir essa habilidade a qualquer momento";
+		mes "nível de emprego.";
+		close;
+	case 2:
+		if (getskilllv("AL_HOLYLIGHT") == 1) {
+			mes "[Acólito Klift]";
+			mes "Irmão, você já possui";
+			mes "a habilidade de `Luz Sagrada'.";
+			mes "Você não pode adquirir uma habilidade que você";
+			mes "já possuo..";
+			mes "Eu rezo para que você esteja usando";
+			mes "esta habilidade para o trabalho do bem. ";
+			close;
+		}
+		if ((countitem(727) > 0) && (countitem(991) > 0) && (countitem(2608) > 0) && (JobLevel > 29 || (BaseJob == Job_Priest || BaseJob == Job_Monk)) && (BaseClass == Job_Acolyte)) {
+			mes "[Acólito Klift]";
+			mes "Sua fé provou ser digna";
+			mes "para você ganhar a habilidade 'Luz Sagrada'.";
+			mes "Sua habilidade é adequada";
+			mes "para usar essa habilidade.";
+			mes "Use-o com sabedoria. ";
+			next;
+			delitem 727,1; //White_Jewel
+			delitem 991,1; //Crystal_Blue
+			delitem 2608,1; //Rosary
+			skill "AL_HOLYLIGHT",1,SKILL_PERM;
+			mes "[Acólito Klift]";
+			mes "Agora você conhece 'Luz Sagrada'";
+			mes "Você pode usar essa habilidade apenas no";
+			mes "melhor conduta. ";
+			close;
+		}
+		mes "[Acólito Klift]";
+		mes "Ah, está claro. ";
+		mes "Você ainda não está pronto para";
+		mes "receber a habilidade 'Luz Sagrada'.";
+		next;
+		mes "[Acólito Klift]";
+		mes "Você deve ouvir atentamente o que";
+		mes "é necessário para esta habilidade.";
+		mes "Se você ouvir com atenção,";
+		mes "você pode aprender o que lhe falta.";
+		mes "Para que você possa melhorar a si mesmo.";
+		close;
+	case 3:
+		mes "[Acólito Klift]";
+		mes ". ";
+		mes "Eu entendo seu zelo.";
+		mes "Você ainda tem muito tempo para";
+		mes "praticar e ganhar experiência.";
+		mes "Bênçãos para você. ";
+		close;
+	}
+}
+
+//============================================================ 
+// Old changelog
+//============================================================ 
+//= 1.0a Now using functions found in "Global_Functions.txt"
+//=     for class checks.
+//= 1.2 Added Baby Class Support [Lupus]
+//= 1.3 Removed callfunc Is_####_Class in favor of baseClass [Silentdragon]
+//= 1.4 Fixed an exploit [Lupus]
+//= 1.4a changed perm. variables to temp ones [Lupus]
+//============================================================
+

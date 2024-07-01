@@ -1,0 +1,49 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+pvp_y_room,77,85,4	script	Guia de Batalha	105,{
+
+	setarray .@map1X[1],7,9,16,8,20;
+	setarray .@map2X[1],91,90,83,91,79;
+	setarray .@mapY[1],49,49,50,49,50;
+
+	mes "[Guia de Batalha da Guilda]";
+	mes "Como você está?";
+	mes "Eu sou o Guia de Batalha da Guilda";
+	mes "para os novos mapas PvP.";
+	mes "Deixe-me saber para qual mapa";
+	mes "você quer que eu mova você.";
+	next;
+	set .@i, select("Mapa 1:Mapa 2:Mapa 3:Mapa 4:Mapa 5");
+	mes "[Guia de Batalha da Guilda]";
+	mes "Você escolheu o Mapa "+.@i+".";
+	mes "Agora, a qual Equipe";
+	mes "você está ligado? Você pode escolher";
+	mes "Equipe 1 ou Equipe 2.";
+	next;
+	set .@j, select("Equipe 1:Equipe 2");
+	mes "[Guia de Batalha da Guilda]";
+	mes "Tudo bem, eu vou mover você";
+	mes "para o mapa "+.@i+" como um membro";
+	mes "da Equipe "+.@j+". Você está pronto para";
+    mes "ser transportado para lá agora?";
+	next;
+	if(select("Sim:Não") == 2) {
+		mes "[Guia de Batalha da Guilda]";
+		mes "Tudo bem, espero";
+		mes "vejo você de novo";
+		mes "nos campos do PvP!";
+		close;
+	}
+	mes "[Guia de Batalha da Guilda]";
+	mes "Ótimo! Tenha um bom tempo ~";
+	close2;
+	warp "guild_vs"+.@i,getd(".@map"+.@j+"X["+.@i+"]"),.@mapY[.@i];
+	end;
+}

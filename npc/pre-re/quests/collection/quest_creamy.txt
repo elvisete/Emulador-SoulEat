@@ -1,0 +1,258 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+prt_fild04,356,148,3	script	Laertes#Creamy_Hunt	798,{
+	if (#mobcream >= .consec) {
+		mes .npc$;
+		mes "Voce já fez 3 missões comigo hoje.";
+		mes "Volte amanhã";
+		close;
+	}
+	if (checkquest(60122) != -1) {
+		if (checkquest(60122, HUNTING) != 2) {
+			mes "[Laertes]";
+			mes "Você terminou de caçar os 50 Creamys?";
+			next;
+			switch(select("Sim:Não:Quero desistir")) {
+			case 1:
+				mes "[Laertes]";
+				mes "Hmm, eu não acho que você tenha caçado 50 ainda...";
+				close;
+			case 2:
+				mes "[Laertes]";
+				mes "Lembre-se, eu preciso de ajuda caçando Creamys, então vá e caça 50 deles.";
+				close;
+			case 3:
+				mes "[Laertes]";
+				mes "Você tem certeza de que quer parar de caçar?";
+				mes "Qualquer progresso que você fez será apagado";
+				next;
+				switch(select("Sim:Não")) {
+				case 1:
+					mes "[Laertes]";
+					mes "Ok então, volte aqui se mudar de ideia.";
+					erasequest 60122;
+					close;
+				case 2:
+					mes "[Laertes]";
+					mes "Por favor, mate 50 Creamys.";
+					close;
+				}
+			}
+		}
+		else {
+			mes "[Laertes]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 2950,1125;
+			erasequest 60122;
+			#mobcream++;
+			close;
+		}
+	}
+	if (checkquest(60123) != -1) {
+		if (checkquest(60123, HUNTING) != 2) {
+			mes "[Laertes]";
+			mes "Você terminou de caçar os 100 Creamys?";
+			next;
+			switch(select("Sim:Não:Quero desistir")) {
+			case 1:
+				mes "[Laertes]";
+				mes "Hmm, eu não acho que você tenha caçado 100 ainda...";
+				close;
+			case 2:
+				mes "[Laertes]";
+				mes "Lembre-se, eu preciso de ajuda caçando Creamys, então vá e caça 100 deles.";
+				close;
+			case 3:
+				mes "[Laertes]";
+				mes "Você tem certeza de que quer parar de caçar?";
+				mes "Qualquer progresso que você fez será apagado";
+				next;
+				switch(select("Sim:Não")) {
+				case 1:
+					mes "[Laertes]";
+					mes "Ok então, volte aqui se mudar de ideia.";
+					erasequest 60123;
+					close;
+				case 2:
+					mes "[Laertes]";
+					mes "Por favor, mate 100 Creamys.";
+					close;
+				}
+			}
+		}
+		else {
+			mes "[Laertes]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 2950,1125;
+			getexp 2950,1125;
+			erasequest 60123;
+			#mobcream++;
+			close;
+		}
+	}
+	if (checkquest(60124) != -1) {
+		if (checkquest(60124, HUNTING) != 2) {
+			mes "[Laertes]";
+			mes "Você terminou de caçar os 150 Creamys?";
+			next;
+			switch(select("Sim:Não:Quero desistir")) {
+			case 1:
+				mes "[Laertes]";
+				mes "Hmm, eu não acho que você tenha caçado 150 ainda...";
+				close;
+			case 2:
+				mes "[Laertes]";
+				mes "Lembre-se, eu preciso de ajuda caçando Creamys, então vá e caça 150 deles.";
+				close;
+			case 3:
+				mes "[Laertes]";
+				mes "Você tem certeza de que quer parar de caçar?";
+				mes "Qualquer progresso que você fez será apagado";
+				next;
+				switch(select("Sim:Não")) {
+				case 1:
+					mes "[Laertes]";
+					mes "Ok então, volte aqui se mudar de ideia.";
+					erasequest 60124;
+					close;
+				case 2:
+					mes "[Laertes]";
+					mes "Por favor, mate 150 Creamys.";
+					close;
+				}
+			}
+		}
+		else {
+			mes "[Laertes]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 2950,1125;
+			getexp 2950,1125;
+			getexp 2950,1125;
+			erasequest 60124;
+			#mobcream++;
+			close;
+		}
+	}
+// Para o nível mínimo
+	if (BaseLevel > 14) {
+		// Para o nível máximo
+		if (BaseLevel < 45) {
+			mes "[Laertes]";
+			mes "Bom dia!";
+			mes "Será que você poderia me ajudar?";
+			next;
+			switch(select("Claro:No")) {
+			case 1:
+				mes "[Laertes]";
+				mes "Trabalho para um boticário em Prontera.";
+				mes "Venho aqui para coletar materiais para remédios.";
+				next;
+				switch(select("Coletar Itens:Caçar Creamys:Cancelar")) {
+				case 1:
+					// Entrega de item
+					mes "[Laertes]";
+					mes "Preciso ter um bom estoque de ^FF0000Pó de Borboleta^000000";
+					next;
+					switch(select("Eu tenho Pó de Borboleta:O que você precisa?")) {
+					case 1:
+						/*
+						if (checkweight(502,5) == 0) {
+							mes "[Laertes]";
+							mes "Ei, parece que o peso em suas costas";
+							mes "irá te esmagar. Volte";
+							mes "depois de ter perdido algum peso.";
+							close;
+						}
+						*/
+						if (countitem(924) > 24) {
+							mes "[Laertes]";
+							mes "Hey, obrigado novamente.";
+							mes "Aqui está, como prometido.";
+							delitem 924,25; //Pó_De_Borboleta
+							getexp 2950,1125;
+							//getitem 502,5; //Poção_Laranja
+							#mobcream++;
+							close;
+						}
+						else {
+							mes "[Laertes]";
+							mes "Não parece que você tem o suficiente.";
+							next;
+							mes "[Laertes]";
+							mes "Se você me trouxer ^FF000025 Pó de Borboleta^000000,";
+							mes "eu lhe darei alguns suprimentos médicos.";
+							close;
+						}
+					case 2:
+						mes "[Laertes]";
+						mes "Se você me trouxer ^FF000025 Pó de Borboleta^000000,";
+						mes "eu lhe darei alguns suprimentos médicos.";
+						close;
+					}
+				case 2:
+					// Missão de Contagem de Abates
+					mes "[Laertes]";
+					mes "Ah, ok, acho que você pode me ajudar caçando alguns Creamys.";
+					mes "Quantos você gostaria de caçar?";
+					next;
+					switch(select("50 Creamys:100 Creamys:150 Creamys")) {
+					case 1:
+						mes "[Laertes]";
+						mes "Volte quando terminar sua tarefa e eu lhe darei uma pequena recompensa.";
+						setquest 60122;
+						close;
+					case 2:
+						mes "[Laertes]";
+						mes "Volte quando terminar sua tarefa e eu lhe darei uma pequena recompensa.";
+						setquest 60123;
+						close;
+					case 3:
+						mes "[Laertes]";
+						mes "Volte quando terminar sua tarefa e eu lhe darei uma pequena recompensa.";
+						setquest 60124;
+						close;
+					}
+				case 3:
+					mes "[Laertes]";
+					mes "Se mudar de ideia, por favor, volte.";
+					close;
+				}
+			case 2:
+				mes "[Laertes]";
+				mes "Se mudar de ideia, por favor, volte.";
+				close;
+			}
+		}
+		else {
+			mes "[Laertes]";
+			mes "Bom dia!";
+			next;
+			mes "[Laertes]";
+			mes "Trabalho para um boticário em Prontera.";
+			mes "Venho aqui para coletar materiais para remédios.";
+			close;
+		}
+	}
+	else {
+		mes "[Laertes]";
+		mes "Seu nível é muito baixo!";
+		next;
+		mes "[Laertes]";
+		mes "Vá matar mais Porings!";
+		close;
+	}
+OnClock0001:
+query_sql ("DELETE FROM `acc_reg_num` WHERE `key`='#mobcream'");
+end;
+
+OnInit:
+	.consec = 3;
+	end;
+}

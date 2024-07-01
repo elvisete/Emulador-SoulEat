@@ -1,0 +1,236 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+alberta_in,16,28,4	script	Farmacêutico	61,{
+	if (checkweight(1201,1) == 0) {
+		mes "- Espere um momento! -";
+		mes "- Atualmente você está carregando -";
+		mes "- muitos itens consigo. -";
+		mes "- Por favor, volte mais tarde -";
+		mes "- depois de colocar alguns itens no armazém kafra. -";
+		close;
+	}
+	mes "[Velho Farmacêutico]";
+	mes "Ummmm...";
+	mes "O que traz você aqui...?";
+	next;
+	switch(select("Fazer Poção:Falar.:Informações de Mistura:Cancelar")) {
+	case 1:
+		if (MaxWeight - Weight < 5000) {
+			mes "[Velho Farmacêutico]";
+			mes "Por que você está carregando tantos!";
+			mes "Não seja ganancioso, carregue apenas o necessário!";
+			next;
+			mes "[Velho Farmacêutico]";
+			mes "Você está muito pesado para receber poções de mim...";
+			mes "Vá armazenar alguns itens em seu armazém primeiro!";
+			close;
+		} else {
+			mes "[Velho Farmacêutico]";
+			mes "Você tem todos os materiais prontos, certo? Qual você gostaria?";
+			next;
+			switch(select("Poção Vermelha.:Poção Laranja.:Poção Amarela.:Poção Branca.:Poção Azul.:Poção Verde.:Na verdade, eu não quero nada.")) {
+			case 1:
+				callsub L_Making,507,3,501;
+			case 2:
+				mes "[Velho Farmacêutico]";
+				if (countitem(507) < countitem(713)) {
+					set .@max,countitem(507);
+				}
+				else if (countitem(508) < countitem(713)) {
+					set .@max,countitem(508);
+				}
+				else {
+					set .@max,countitem(713);
+				}
+				if ((countitem(507) < 1) || (countitem(508) < 1) || (countitem(713) == 0)) {
+					mes "Você pestinha! O que você esperava?! Vindo aqui sem nada. Tsk!";
+					mes "Suma daqui!";
+					close;
+				}
+				if (Zeny < 3) {
+					mes "Você pestinha! O que você esperava?! Vindo aqui sem nada. Tsk!";
+					mes "Suma daqui!";
+					close;
+				}
+				mes "Quantas?";
+				next;
+				switch(select("Fazer o máximo que eu puder.:Quero escolher uma quantidade.:Na verdade, eu não quero nada.")) {
+				case 1:
+					if ((countitem(507) < .@max) || (countitem(508) < .@max) || (countitem(713) < .@max) || (Zeny < .@max*3)) {
+						mes "[Velho Farmacêutico]";
+						mes "Você pestinha! Você nem tem todos os materiais e quer que eu faça poções para você?!";
+						close;
+					}
+					set Zeny,Zeny-(.@max*5);
+					delitem 507,.@max; //Red_Herb
+					delitem 508,.@max; //Yellow_Herb
+					delitem 713,.@max; //Empty_Bottle
+					getitem 502,.@max; //Orange_Potion
+					break;
+				case 2:
+					mes "[Velho Farmacêutico]";
+					mes "Então escolha um número abaixo de 100. Se você não quiser nenhum, basta digitar '0'. Com os materiais que você tem, você pode fazer cerca de "+.@max+" poções.";
+					next;
+					input .@amount,0,101;
+					if (.@amount == 0) {
+						mes "[Velho Farmacêutico]";
+						mes "Decida-se, vai?!";
+						close;
+					}
+					if (.@amount > 100) {
+						mes "[Velho Farmacêutico]";
+						mes "Você é surdo? Eu disse menos de 100!";
+						close;
+					}
+					if ((countitem(507) < .@amount) || (countitem(508) < .@amount) || (countitem(713) < .@amount) || (Zeny < .@amount*3)) {
+						mes "[Velho Farmacêutico]";
+						mes "Você pestinha! Você nem tem todos os materiais e quer que eu faça poções para você?!";
+						close;
+					}
+					next;
+					set Zeny,Zeny-(.@amount*5);
+					delitem 507,.@amount; //Red_Herb
+					delitem 508,.@amount; //Yellow_Herb
+					delitem 713,.@amount; //Empty_Bottle
+					getitem 502,.@amount; //Orange_Potion
+					break;
+				case 3:
+					mes "[Velho Farmacêutico]";
+					mes "O quê?!";
+					mes "Grrr...";
+					mes "Bleh!";
+					mes "Suma daqui!";
+					close;
+				}
+				mes "[Velho Farmacêutico]";
+				mes "Aqui está. Está tudo pronto para que você possa pegar. Mas lembre-se! Abusar de medicamentos não é bom.";
+				close;
+			case 3:
+				callsub L_Making,508,10,503;
+			case 4:
+				callsub L_Making,509,20,504;
+			case 5:
+				callsub L_Making,510,30,505;
+			case 6:
+				callsub L_Making,511,3,506;
+			case 7:
+				mes "[Velho Farmacêutico]";
+				mes "O quê?!";
+				mes "Grrr...";
+				mes "Bleh!";
+				mes "Suma daqui!";
+				close;
+			}
+		}
+	case 2:
+		mes "[Velho Farmacêutico]";
+		mes "Com medicamentos, você pode aumentar a capacidade de regeneração de uma pessoa. Mas, eles são eficazes apenas até certo ponto. *Suspiro* Estou começando a lembrar dos dias em que eu era jovem. Devo estar ficando velho.";
+		next;
+		mes "[Velho Farmacêutico]";
+		mes "De qualquer forma, uma poção é apenas uma poção. Nada mais e nada menos.";
+		close;
+	case 3:
+		mes "[Velho Farmacêutico]";
+		mes "Hrrrmm...";
+		mes "Vocês jovens podem ser bastante irritantes. Mas, já que você perguntou, vou explicar.";
+		next;
+		mes "[Velho Farmacêutico]";
+		mes "As ervas funcionam bem por si só, mas se você usar minhas técnicas e habilidades especiais para fazer poções com elas, o efeito é muito, muito maior.";
+		next;
+		mes "[Velho Farmacêutico]";
+		mes "Se você pedir com entusiasmo e educação, eu farei para você. Mas, não é de graça... Não se preocupe, eu só cobro uma pequena taxa, então não é tão caro.";
+		next;
+		mes "[Velho Farmacêutico]";
+		mes "Poção Vermelha - ^0098E52 Ervas Vermelhas, 1 Frasco Vazio, Taxa de 2 zeny.^000000";
+		mes "Poção Laranja - ^0098E51 Erva Vermelha, 1 Erva Amarela, 1 Frasco Vazio, Taxa de 5 zeny.^000000";
+		mes "Poção Amarela - ^0098E52 Ervas Amarelas, 1 Frasco Vazio, Taxa de 10 zeny.^000000";
+		next;
+		mes "[Velho Farmacêutico]";
+		mes "Poção Branca - ^0098E52 Ervas Brancas, 1 Frasco Vazio, Taxa de 20 zeny.^000000";
+		mes "Poção Azul - ^0098E52 Ervas Azuis, 1 Frasco Vazio, Taxa de 30 zeny.^000000";
+		mes "Poção Verde - ^0098E52 Ervas Verdes, 1 Frasco Vazio, Taxa de 3 zeny.^000000";
+		close;
+	case 4:
+		mes "[Velho Farmacêutico]";
+		mes "Que pessoa entediante. Se você tem algo a dizer, por que não diz?!";
+		close;
+	}
+	
+L_Making:
+	.@item_req = getarg(0);
+	.@req_amount = getarg(1);
+
+	mes "[Velho Farmacêutico]";
+	if ((countitem(.@item_req)/2) < countitem(713)) {
+		.@max = countitem(.@item_req) /2;
+	} else {
+		.@max = countitem(713);
+	}
+	if (countitem(.@item_req) < 2 || countitem(713) == 0) {
+		mes "Você pestinha! O que você esperava?! Vindo aqui sem nada. Tsk!";
+		mes "Suma daqui!";
+		close;
+	}
+	if (Zeny < 3) {
+		mes "Você pestinha! O que você esperava?! Vindo aqui sem nada. Tsk!";
+		mes "Suma daqui!";
+		close;
+	}
+	mes "Quantas?";
+	next;
+	switch(select("Fazer o máximo que eu puder.:Quero escolher uma quantidade.:Na verdade, eu não quero nada.")) {
+	case 1:
+		if ((countitem(.@item_req) < .@max*2) || countitem(713) < .@max || (Zeny < .@max*.@req_amount)) {
+			mes "[Velho Farmacêutico]";
+			mes "Você pestinha! Você nem tem todos os materiais e quer que eu faça poções para você?!";
+			close;
+		}
+		Zeny = Zeny - (.@max*.@req_amount);
+		delitem .@item_req,.@max*2;
+		delitem 713,.@max; //Empty_Bottle
+		getitem getarg(2),.@max; 
+		break;
+	case 2:
+		mes "[Velho Farmacêutico]";
+		mes "Então escolha um número abaixo de 100. Se você não quiser nenhum, basta digitar '0'. Com os materiais que você tem, você pode fazer cerca de "+.@max+" poções.";
+		next;
+		input .@amount;
+		if (.@amount == 0) {
+			mes "[Velho Farmacêutico]";
+			mes "Decida-se, vai?!";
+			close;
+		}
+		if (.@amount > 100) {
+			mes "[Velho Farmacêutico]";
+			mes "Você é surdo? Eu disse menos de 100!";
+			close;
+		}
+		if ((countitem(.@item_req) < .@amount*2) || countitem(713) < .@amount || (Zeny < .@amount*.@req_amount)) {
+			mes "[Velho Farmacêutico]";
+			mes "Você pestinha! Você nem tem todos os materiais e quer que eu faça poções para você?!";
+			close;
+		}
+		Zeny = Zeny - (.@max*.@req_amount);
+		delitem .@item_req,.@amount*2;
+		delitem 713,.@amount; //Empty_Bottle
+		getitem getarg(2),.@amount; 
+		break;
+	case 3:
+		mes "[Velho Farmacêutico]";
+		mes "O quê?!";
+		mes "Grrr...";
+		mes "Bleh!";
+		mes "Suma daqui!";
+		close;
+	}
+	mes "[Velho Farmacêutico]";
+	mes "Aqui está. Está tudo pronto para que você possa pegar. Mas lembre-se! Abusar de medicamentos não é bom.";
+	close;
+}

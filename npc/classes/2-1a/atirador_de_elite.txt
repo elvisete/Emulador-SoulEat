@@ -1,0 +1,75 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+valkyrie,44,55,5	script	Atirador de Elite#Valkyrie	727,{
+	if (ADVJOB == 0 || Upper != 1) {
+		set .@karma_d,rand(1,10);
+		if (.@karma_d > 4) {
+			mes "[Atirador de Elite]";
+			mes "Parabéns.";
+			mes "Honra aos guerreiros!";
+			close;
+		}
+		mes "[Atirador de Elite]";
+		mes "Um tiro.";
+		mes "Uma morte.";
+		mes "Não é tão difícil";
+		mes "uma vez que você desenvolve";
+		mes "a visão para esse estilo";
+		mes "de combate.";
+		close;
+	}
+	else if (ADVJOB == Job_Sniper && Class == Job_Archer_High && JobLevel > 39) {
+		mes "[Atirador de Elite]";
+		mes "O mundo está";
+		mes "precisando de Arqueiros";
+		mes "poderosos como você. Está pronto";
+		mes "para a incrível responsabilidade?";
+		next;
+		mes "[Atirador de Elite]";
+		mes "Está disposto";
+		mes "a dar o próximo passo e";
+		mes "se tornar um Atirador de Elite?";
+		next;
+		if (select("Não.:Sim.") == 1) {
+			mes "[Atirador de Elite]";
+			mes "Quando estiver pronto,";
+			mes "sinta-se à vontade para voltar.";
+			mes "Honra aos guerreiros!";
+			close;
+		}
+		if (SkillPoint) {
+			mes "[Atirador de Elite]";
+			mes "Ainda é possível aprender mais habilidades. Por favor, utilize";
+			mes "todos os seus Pontos de Habilidade restantes antes de voltar para mim.";
+			close;
+		}
+		jobchange Job_Sniper;
+		set ADVJOB,0;
+		mes "[Atirador de Elite]";
+		mes "Parabéns!";
+		mes "Como um Atirador de Elite, espero";
+		mes "que os lacaios do mal";
+		mes "nunca estejam seguros";
+		mes "enquanto estiverem em";
+		mes "seu campo de visão!";
+		close;
+	}
+	mes "[Atirador de Elite]";
+	mes "Bem-vindo";
+	mes "a Valhalla,";
+	mes "o Salão da Honra.";
+	next;
+	mes "[Atirador de Elite]";
+	mes "Por favor, sinta-se";
+	mes "à vontade";
+	mes "enquanto estiver aqui.";
+	mes "Honra aos guerreiros!";
+	close;
+}

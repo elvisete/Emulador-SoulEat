@@ -1,0 +1,447 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+prt_church,184,41,4	script	Bispo Tomas Cerbantes#aco	60,{
+	if (Upper == 1) {
+		if (ADVJOB == Job_High_Priest || ADVJOB == Job_Champion) {
+			if (Class == Job_Novice_High) {
+				mes "[Tomas Cerbantes]";
+				mes "Ah, eu sinto que você suportou";
+				mes "uma experiência de vida anterior. Você deve ter aprendido muitas coisas antes de entrar em Valhalla.";
+				next;
+				if (!callfunc("F_CanChangeJob")) {
+					mes "[Tomas Cerbantes]";
+					mes "Infelizmente, eu não acho que você está pronto para se tornar um Acolyte ainda. Por favor, termine de aprender todas as Habilidades Básicas primeiro.";
+					next;
+					mes "[Tomas Cerbantes]";
+					mes "Enquanto isso,";
+					mes "vou esperar até que";
+					mes "você esteja pronto.";
+					mes "Que Deus esteja";
+					mes "com você.";
+					close;
+				}
+				mes "[Tomas Cerbantes]";
+				mes "Bem, dou-lhe as boas-vindas";
+				mes "de volta de Valhalla e";
+				mes "desejo-lhe sorte em sua";
+				mes "nova jornada de vida.";
+				next;
+				skill "NV_TRICKDEAD",0,SKILL_PERM;
+				jobchange Job_Acolyte_High;
+				skill "AL_HOLYLIGHT",1,SKILL_PERM;
+				mes "[Tomas Cerbantes]";
+				mes "Agora, avance e procure aqueles que precisam de sua ajuda. Que Deus ilumine seu caminho.";
+				close;
+				}
+				else {
+					mes "[Tomas Cerbantes]";
+					mes "Agora, avance para buscar pessoas que precisam de sua ajuda. Que Deus ilumine seu caminho.";
+					close;
+				}
+				}
+				else {
+					mes "[Tomas Cerbantes]";
+					mes "Sinto que você suportou uma experiência de vida anterior. Você deve ter aprendido muitas coisas antes de entrar em Valhalla.";
+					next;
+					mes "[Tomas Cerbantes]";
+					mes "No entanto, posso dizer que você não está adequado para ser um Noviço. Por favor, lembre-se de quem você foi em sua vida passada e encontre seu caminho.";
+					close;
+		}
+	}
+	mes "[Tomas Cerbantes]";
+	mes "O que você busca?";
+	next;
+	switch(select("Eu desejo me tornar um Noviço.:Como me torno um noviço?:Só dando uma olhada.")) {
+		case 1:
+			mes "[Tomas Cerbantes]";
+			if (BaseJob == Job_Acolyte) {
+				mes "Você está se sentindo bem hoje? Posso ver pela sua vestimenta que você já é um Noviço. Você não está brincando, está?";
+				close;
+			}
+			else if (BaseJob != Job_Novice) {
+				mes "Desculpe, mas só podemos aceitar Aprendizes como candidatos para a mudança de classe para Noviço.";
+				close;
+			}
+			if (job_acolyte_q == 0) {
+				mes "Você realmente";
+				mes "deseja se tornar";
+				mes "um servo de Deus?";
+				next;
+				if (select("Sim, Padre, desejo.:Não, menti.") == 1) {
+					mes "[Tomas Cerbantes]";
+					mes "Ótimo. Eu aceito a vontade de " + strcharinfo(0) + " de se tornar um Noviço. Você entende que deve fazer penitência antes de se tornar um servo de Deus, certo?";
+					next;
+					mes "[Tomas Cerbantes]";
+					mes "Bem, eu";
+					mes "lhe darei uma missão...";
+					switch(rand(3)) {
+						default:
+							set job_acolyte_q,2;
+							mes "Por favor, visite ^000077Padre Rubalkabara^000000, um membro da Paróquia de Prontera, e retorne aqui. Ele tem praticado a vida ascética na ^000077Abadia ao Nordeste da Cidade de Prontera^000000.";
+							setquest 1001;
+							break;
+						case 1:
+							set job_acolyte_q,3;
+							mes "Por favor, visite ^000077Irmã Mathilda^000000 e então retorne a mim. Ela tem praticado a vida ascética perto de ^000077Morocc, ao sudoeste de Prontera^000000.";
+							setquest 1002;
+							break;
+						case 2:
+							set job_acolyte_q,4;
+							mes "Por favor, visite ^000077Padre Yosuke^000000 e retorne aqui. Ele tem praticado a vida ascética por ^000077uma ponte em algum lugar ao noroeste de Prontera^000000.";
+							setquest 1003;
+							break;
+					}
+					next;
+					mes "[Tomas Cerbantes]";
+					mes "Que a graça de Deus ilumine seu caminho e o guie durante sua jornada de penitência.";
+					close;
+				}
+				mes "[Tomas Cerbantes]";
+				mes "Você mentiu?";
+				mes "É bom que você";
+				mes "tenha confessado seu";
+				mes "erro. Vá em";
+				mes "paz, meu filho.";
+				close;
+		}
+		mes "Ah, você voltou. Deixe-me verificar se você está pronto para servir a Deus. Vamos ver...";
+		next;
+		mes "[Tomas Cerbantes]";
+		if (!callfunc("F_CanChangeJob")) {
+			mes "Meu Deus! Você ainda não completou o Treinamento Básico?! É importante que você termine isso!";
+			next;
+			mes "[Tomas Cerbantes]";
+			mes "Você deveria ter treinado mais! Volte e certifique-se de atingir o Nível de Classe 9 como Aprendiz e aprender todas as Habilidades Básicas!";
+			close;
+		}
+		if (job_acolyte_q < 5) {
+			mes "Oh? Não encontro seu nome na Lista de Registro.";
+			next;
+			switch(job_acolyte_q) {
+				case 2:
+					mes "[Tomas Cerbantes]";
+					mes "Por favor, visite ^000077Padre Rubalkabara^000000, um membro da Paróquia de Prontera, e retorne aqui.";
+					next;
+					mes "[Tomas Cerbantes]";
+					mes "Ele tem praticado a vida ascética na ^000077Abadia ao Nordeste de Prontera^000000.";
+					break;
+				case 3:
+					mes "[Tomas Cerbantes]";
+					mes "Por favor, visite ^000077Irmã Mathilda^000000 e retorne aqui para mim.";
+					next;
+					mes "[Tomas Cerbantes]";
+					mes "Ela tem praticado a vida ascética perto de ^000077Morocc, localizado ao sudoeste de Prontera^000000.";
+					break;
+				case 4:
+					mes "[Tomas Cerbantes]";
+					mes "Por favor, visite ^000077Padre Yosuke^000000 e retorne aqui para mim.";
+					next;
+					mes "[Tomas Cerbantes]";
+					mes "Ele tem praticado a vida ascética perto de ^000077uma ponte em algum lugar ao noroeste de Prontera^000000.";
+					break;
+			}
+			next;
+			mes "[Tomas Cerbantes]";
+			mes "Que a graça de Deus ilumine seu caminho e o guie em sua jornada de penitência.";
+			close;
+		}
+			mes "Hmm...";
+			mes "Seu nome está na lista e você provou sua qualificação.";
+			next;
+			mes "[Tomas Cerbantes]";
+			mes "Estou orgulhoso em dizer que você está pronto para se tornar um Noviço!";
+			next;
+			skill "NV_TRICKDEAD",0,SKILL_PERM;
+			callfunc "Job_Change",Job_Acolyte;
+			callfunc "F_ClearJobVar";
+			if(checkquest(1001) != -1) {
+				completequest 1001;
+			}
+			else if(checkquest(1002) != -1) {
+				completequest 1002;
+			}
+			else {
+				completequest 1003;
+			}
+			mes "[Tomas Cerbantes]";
+			mes "Lembre-se sempre de ser grato a Deus, que cuida de nós o tempo todo.";
+			next;
+			mes "[Tomas Cerbantes]";
+			mes "Use sempre seus dons para servi-Lo ajudando os outros. Em meio ao caos e tempos de dificuldade, enfrente suas adversidades com fé inabalável.";
+			next;
+			mes "[Tomas Cerbantes]";
+			mes "Por último, quero parabenizá-lo sinceramente por perseverar em sua prova de penitência.";
+			close;
+			case 2:
+			mes "[Tomas Cerbantes]";
+			mes "Você deseja se tornar um Noviço? Você deve cumprir dois requisitos.";
+			next;
+			mes "[Tomas Cerbantes]";
+			mes "Primeiro, você precisa alcançar pelo menos o Nível de Classe 9 e aprender todas as Habilidades Básicas. Segundo, você receberá uma prova de penitência para superar.";
+			next;
+			mes "[Tomas Cerbantes]";
+			if (job_acolyte_q != 0) {
+				switch(job_acolyte_q) {
+					case 2:
+						mes "Para sua prova, por favor, visite ^000077Padre Rubalkabara^000000 e depois retorne aqui para mim.";
+						next;
+						mes "[Tomas Cerbantes]";
+						mes "Ele está praticando a vida ascética na ^000077Abadia ao Nordeste da Cidade de Prontera^000000.";
+						break;
+					case 3:
+						mes "Para sua prova, por favor, visite ^000077Irmã Mathilda^000000 e depois retorne aqui para mim.";
+						next;
+						mes "[Tomas Cerbantes]";
+						mes "Ela tem praticado a vida ascética perto de ^000077Morocc, localizada ao sudoeste de Prontera^000000.";
+						break;
+					default:
+						mes "Para sua prova, por favor, visite ^000077Padre Yosuke^000000 e depois retorne aqui para mim.";
+						next;
+						mes "[Tomas Cerbantes]";
+						mes "Ele tem praticado a vida ascética ao redor de uma ponte em algum lugar ^000077ao noroeste de Prontera^000000.";
+						break;
+				}
+				next;
+				mes "[Tomas Cerbantes]";
+				mes "Que a graça de Deus ilumine seu caminho e o guie em sua jornada de penitência.";
+			}
+			else {
+				mes "O destino para esta prova será decidido assim que você preencher o formulário de inscrição.";
+			}
+			next;
+			mes "[Tomas Cerbantes]";
+			mes "Por favor, volte depois de cumprir os dois requisitos que pedi a você. Contanto que seu desejo de servir a Deus e aos outros seja sincero, você conseguirá.";
+			close;
+		case 3:
+	close;
+	}
+}
+
+prt_fild03,365,255,2	script	Irmão Simão#aco	89,{
+	mes "[Simão]";
+	if (BaseJob == Job_Novice) {
+		if (job_acolyte_q == 6) {
+	mes "Por favor, cuide-se. Eles devem saber que você me encontrou quando chegar ao Santuário de Prontera.";
+	next;
+	mes "[Simão]";
+	mes "Eu enviei um pombo-correio com uma mensagem. Espero que chegue lá em segurança...";
+	close;
+	}
+	if (job_acolyte_q != 0) {
+		if (job_acolyte_q == 2) {
+			mes "Ah...? Você deve ser aquele que aspira a se tornar um Noviço. Já recebi notícias do Santuário de que você poderia estar vindo.";
+			next;
+			mes "[Simão]";
+			mes "Agora, seu nome era " + strcharinfo(0) + ", certo? Excelente, obrigado por me visitar.";
+			next;
+			mes "[Simão]";
+			mes "Acredito que Bispo Tomas tenha falado muito sobre Noviços para você. Além disso, há muitas pessoas prestativas no Santuário de Prontera.";
+			next;
+			mes "[Simão]";
+			mes "Acho que realmente não há necessidade de eu te ensinar muito. Além disso, tenho certeza de que alguém da sua geração pode ter dificuldade em ouvir um velho como eu. Hahaha~";
+			next;
+			mes "[Simão]";
+			mes "Ainda assim, lições podem vir de lugares onde você menos espera. Deus adora ensinar seus filhos de maneiras estranhas. Você verá.";
+			next;
+			mes "[Simão]";
+			mes "Bem, vou enviar a mensagem informando que você veio me visitar. Então, você pode retornar ao Santuário de Prontera.";
+			next;
+			mes "[Simão]";
+			mes "Adeus.";
+			close2;
+			savepoint "prt_fild03",361,255,1,1;
+			set job_acolyte_q,6;
+			end;
+		}
+		else {
+			mes "Ah...";
+			mes "Você é um dos";
+			mes "candidatos a Noviço...?";
+			mes "Vamos ver...";
+			next;
+			mes "[Simão]";
+			mes "Seu nome é " + strcharinfo(0) + "?";
+			mes "Eu não acho que seu nome";
+			mes "esteja na minha lista. Hmmm...";
+			next;
+			mes "[Simão]";
+			mes "Por que você não volta ao Santuário de Prontera e verifica novamente?";
+			close;
+		}
+	}
+	else {
+		mes "Hã? O que te traz aqui? Este é um lugar muito perigoso para um Aprendiz como você!";
+		close;
+	}
+	}
+	else if (BaseJob == Job_Acolyte) callfunc "F_FatherRub";
+	else {
+		if (BaseJob == Job_Priest) {
+			mes "Saudações.";
+			next;
+			mes "[Simão]";
+			mes "Bem-vindo. Sinta-se à vontade para sentar e contemplar a mensagem de Deus comigo. Este lugar é bonito, mesmo que o perigo acompanhe sua serenidade...";
+			close;
+		}
+		else {
+			mes "Ah ho...";
+			mes "Você veio aqui para treinar? Ou você é apenas um Andarilho?";
+			next;
+			mes "[Simão]";
+			mes "Quem quer que seja, por favor, cuide de si mesmo. Os monstros aqui dentro são surpreendentemente fortes, contrariando sua aparência fofa.";
+			close;
+		}
+	}
+}
+
+moc_fild07,41,355,4	script	Irmã Matilda#2aco	95,{
+	mes "[Irmã Matilda]";
+	if (BaseJob == Job_Novice) {
+		if (job_acolyte_q == 7) {
+	mes "Eu enviarei um pombo-correio para o Santuário de Prontera. Quando você retornar, o Padre já deve ter recebido minha mensagem.";
+	next;
+	mes "[Irmã Matilda]";
+	mes "Eu vou orar a Deus e esperar que você se torne um Noviço em breve.";
+	close;
+	}
+	if (job_acolyte_q != 0) {
+		if (job_acolyte_q == 3) {
+			mes "Ah, você deve ser um dos candidatos a Noviço. Eu sinceramente te dou as boas-vindas.";
+			next;
+			mes "[Irmã Matilda]";
+			mes "Qual é o seu nome? " + strcharinfo(0) + "? Vamos ver... Ah, você está na minha lista.";
+			next;
+			mes "[Irmã Matilda]";
+			mes "Vou enviar uma mensagem para o Santuário confirmando que você, " + strcharinfo(0) + ", me visitou e completou sua penitência.";
+			next;
+			mes "[Irmã Matilda]";
+			mes "Por favor, retorne ao Santuário de Prontera e fale com o responsável.";
+			close2;
+			savepoint "moc_fild07",35,355,1,1;
+			set job_acolyte_q,7;
+			end;
+		}
+		else {
+			mes "Ah...!";
+			mes "Você deve ser um";
+			mes "dos candidatos a Noviço.";
+			mes "Eu sinceramente te dou as boas-vindas.";
+			next;
+			mes "[Irmã Matilda]";
+			mes "Agora, qual é o seu nome?";
+			mes "" + strcharinfo(0) + "? Vamos ver...";
+			next;
+			mes "[Irmã Matilda]";
+			mes "Hmm...";
+			mes "Parece que o seu nome";
+			mes "não está na minha lista...";
+			next;
+			mes "[Irmã Matilda]";
+			mes "Talvez você devesse voltar ao Santuário de Prontera e verificar novamente o destino para sua prova de penitência.";
+			close;
+		}
+	}
+	else {
+		mes "...";
+		close;
+	}
+	}
+	else if (BaseJob == Job_Acolyte) callfunc "F_MotherMart";
+	else {
+		if (BaseJob == Job_Priest) {
+			mes "Olá~";
+			next;
+			mes "[Irmã Matilda]";
+			mes "Como está indo sua prática? Espero que esteja aproveitando viver na graça de Deus.";
+			close;
+		}
+		else {
+			mes "Que Deus";
+			mes "esteja com você...";
+			close;
+		}
+	}
+}
+
+prt_fild00,208,218,6	script	Irmão Bartolomeu#3aco	98,{
+	mes "[Irmão Bartolomeu]";
+	if (BaseJob == Job_Novice) {
+		if (job_acolyte_q == 8) {
+	mes "O quê?";
+	next;
+	mes "[Irmão Bartolomeu]";
+	mes "Você tem mais algum assunto comigo?! Não tem! Volte para o Santuário agora!";
+	close;
+	}
+	if (job_acolyte_q != 0) {
+		if (job_acolyte_q == 4) {
+			mes "Ei.";
+			mes "Seja o que você for,";
+			mes "você parece um";
+			mes "candidato a Noviço.";
+			mes "Certo?";
+			next;
+			mes "[Irmão Bartolomeu]";
+			mes "Nada mal, nada mal. Você suportou bem o julgamento da penitência.";
+			mes "Então qual é o seu nome?";
+			next;
+			mes "[Irmão Bartolomeu]";
+			mes "" + strcharinfo(0) + ", né?";
+			next;
+			mes "[Irmão Bartolomeu]";
+			mes "Okay. Vou enviar uma mensagem para o Santuário de que você, " + strcharinfo(0) + ", veio me visitar.";
+			next;
+			mes "[Irmão Bartolomeu]";
+			mes "Agora volte para o Santuário e termine de se tornar um Noviço, garoto.";
+			close2;
+			savepoint "prt_fild00",206,230,1,1;
+			set job_acolyte_q,8;
+			end;
+		}
+		else {
+			mes "Ei.";
+			mes "Você parece um candidato a Noviço. Estou certo?";
+			next;
+			mes "[Irmão Bartolomeu]";
+			mes "Nada mal, você chegou até aqui vindo de Prontera. Então qual é o seu nome, garoto?";
+			next;
+			mes "[Irmão Bartolomeu]";
+			mes "" + strcharinfo(0) + ", né? Por que seu nome não está na minha lista?";
+			next;
+			mes "[Irmão Bartolomeu]";
+			mes "Você provavelmente cometeu um erro. Volte para o Santuário e confira com o Bispo.";
+			close;
+		}
+	}
+	else {
+		mes "Você...";
+		mes "Aprendiz.";
+		mes "Tem algo";
+		mes "que quer me dizer?";
+		close;
+	}
+	}
+	else if (BaseJob == Job_Acolyte) callfunc "F_FatherYos";
+	else {
+		if (BaseJob == Job_Priest) {
+			mes "Ei...";
+			next;
+			mes "[Irmão Bartolomeu]";
+			mes "Se quiser, venha sentar aqui comigo e meditar sobre as grandes verdades. A majestade de Deus é verdadeiramente inspiradora...";
+			close;
+		}
+		else {
+			mes "Você tem algo a dizer? Porque infelizmente para você,";
+			mes "não tenho nenhuma resposta.";
+			close;
+		}
+	}
+}
+

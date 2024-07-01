@@ -1,0 +1,233 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+gef_fild07,321,193,4	script	Langry#Fabre_Hunt	754,{
+	if (#mobfabr >= .consec) {
+		mes .npc$;
+		mes "Voce já fez 3 missões comigo hoje.";
+		mes "Volte amanhã";
+		close;
+	}
+	if (checkquest(60107) != -1) {
+		if (checkquest(60107, HUNTING) != 2) {
+			mes("[Langry]");
+			mes("Você terminou de caçar os 50 Fabres?");
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes("[Langry]");
+					mes("Hmm, acho que você ainda não caçou 50...");
+					close;
+				case 2:
+					mes("[Langry]");
+					mes("Lembre-se, eu preciso de ajuda caçando Fabres, vá e caça 50 deles.");
+					close;
+				case 3:
+					mes("[Langry]");
+					mes("Você tem certeza de que quer parar de caçar?");
+					mes("Qualquer progresso que você fez será apagado");
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes("[Langry]");
+							mes("Ok então, volte aqui se mudar de ideia.");
+							erasequest(60107);
+							close;
+						case 2:
+							mes("[Langry]");
+							mes("Por favor, mate 50 Fabres.");
+							close;
+					}
+			}
+		} else {
+			mes("[Langry]");
+			mes("Incrível, você fez isso rapidinho.");
+			getexp(385, 30);
+			erasequest(60107);
+			#mobfabr++;
+			close;
+		}
+	}
+	if (checkquest(60108) != -1) {
+		if (checkquest(60108, HUNTING) != 2) {
+			mes("[Langry]");
+			mes("Você terminou de caçar os 100 Fabres?");
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes("[Langry]");
+					mes("Hmm, acho que você ainda não caçou 100...");
+					close;
+				case 2:
+					mes("[Langry]");
+					mes("Lembre-se, eu preciso de ajuda caçando Fabres, vá e caça 100 deles.");
+					close;
+				case 3:
+					mes("[Langry]");
+					mes("Você tem certeza de que quer parar de caçar?");
+					mes("Qualquer progresso que você fez será apagado");
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes("[Langry]");
+							mes("Ok então, volte aqui se mudar de ideia.");
+							erasequest(60108);
+							close;
+						case 2:
+							mes("[Langry]");
+							mes("Por favor, mate 100 Fabres.");
+							close;
+					}
+			}
+		} else {
+			mes("[Langry]");
+			mes("Incrível, você fez isso rapidinho.");
+			getexp(385, 30);
+			getexp(385, 30);
+			erasequest(60108);
+			#mobfabr++;
+			close;
+		}
+	}
+	if (checkquest(60109) != -1) {
+		if (checkquest(60109, HUNTING) != 2) {
+			mes("[Langry]");
+			mes("Você terminou de caçar os 150 Fabres?");
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes("[Langry]");
+					mes("Hmm, acho que você ainda não caçou 150...");
+					close;
+				case 2:
+					mes("[Langry]");
+					mes("Lembre-se, eu preciso de ajuda caçando Fabres, vá e caça 150 deles.");
+					close;
+				case 3:
+					mes("[Langry]");
+					mes("Você tem certeza de que quer parar de caçar?");
+					mes("Qualquer progresso que você fez será apagado");
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes("[Langry]");
+							mes("Ok então, volte aqui se mudar de ideia.");
+							erasequest(60109);
+							close;
+						case 2:
+							mes("[Langry]");
+							mes("Por favor, mate 150 Fabres.");
+							close;
+					}
+			}
+		} else {
+			mes("[Langry]");
+			mes("Incrível, você fez isso rapidinho.");
+			getexp(385, 30);
+			getexp(385, 30);
+			getexp(385, 30);
+			erasequest(60109);
+			#mobfabr++;
+			close;
+		}
+	}
+// Para nível mínimo
+	if (BaseLevel > 1) {
+		// Para nível máximo
+		if (BaseLevel < 21) {
+			mes("[Langry]");
+			mes("Você acha que pode me ajudar?");
+			mes("Por favor?");
+			next;
+			switch (select("Claro:Não")) {
+				case 1:
+					mes("[Langry]");
+					mes("Sério?! Isso é ótimo!");
+					next;
+					switch (select("Recolher Itens:Caçar Fabres:Cancelar")) {
+						case 1:
+							// Entrega de item
+							mes("[Langry]");
+							mes("Eu preciso coletar ^0000CE25 Felpa^000000 para");
+							mes("completar este projeto de serviço comunitário.");
+							mes("Sabe de uma coisa? Eu até posso te recompensar um pouco por me ajudar.");
+							next;
+							switch (select("Eu tenho alguns Felpas:O que era mesmo?")) {
+								case 1:
+									if (countitem(914) > 24) {
+										mes("[Langry]");
+										mes("Obrigado pelas Felpas. Isso me ajuda muito.");
+										mes("Ah, e aqui vai, isso deve te ajudar a ficar mais forte, mais rápido!");
+										delitem(914, 25); // Felpa
+										getexp(385, 30);
+										close;
+									} else {
+										mes("[Langry]");
+										mes("Não vejo Felpas, espere, sim vejo, são as mentiras saindo da sua boca.");
+										close;
+									}
+								case 2:
+									mes("[Langry]");
+									mes("Eu preciso de ^00CE0025 Felpas^000000.");
+									close;
+							}
+						case 2:
+							// Missão de Contagem de Morte
+							mes("[Langry]");
+							mes("Ah, ok. Acho que você pode me ajudar caçando alguns Fabres.");
+							mes("Quantos você gostaria de caçar?");
+							next;
+							switch (select("50 Fabres:100 Fabres:150 Fabres")) {
+								case 1:
+									mes("[Langry]");
+									mes("Volte quando terminar sua tarefa e darei uma pequena recompensa.");
+									setquest(60107);
+									close;
+								case 2:
+									mes("[Langry]");
+									mes("Volte quando terminar sua tarefa e darei uma pequena recompensa.");
+									setquest(60108);
+									close;
+								case 3:
+									mes("[Langry]");
+									mes("Volte quando terminar sua tarefa e darei uma pequena recompensa.");
+									setquest(60109);
+									close;
+							}
+						case 3:
+							mes("[Langry]");
+							mes("Se mudar de ideia, por favor, volte.");
+							close;
+					}
+				case 2:
+					mes("[Langry]");
+					mes("Se mudar de ideia, por favor, volte.");
+					close;
+			}
+		} else {
+			mes("[Langry]");
+			mes("Olá, meu nome é Langry.");
+			mes("Tenho que completar este serviço comunitário, mas estou com preguiça demais.");
+			close;
+		}
+	} else {
+		mes("[Langry]");
+		mes("Você pode ser a pessoa mais improvável de todas, recicle alguns Fabres e volte.");
+		close;
+	}
+OnClock0001:
+query_sql ("DELETE FROM `acc_reg_num` WHERE `key`='#mobpungus'");
+end;
+
+OnInit:
+	.consec = 3;
+	end;
+}
+
+

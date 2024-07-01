@@ -1,0 +1,1168 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+prt_in,162,11,2	script	Ghatu#magum	86,{
+	if (event_magum == 0) {
+		if ((dmdswrd_Q2 & 1) || (dmdswrd_Q2 & 2) || (dmdswrd_Q2 & 4) || (dmdswrd_Q2 & 8) || (dmdswrd_Q2 & 16) || (dmdswrd_Q2 & 32)) {
+			mes "[Ghatu]";
+			mes "Eu ouvi falar de um estranho";
+			mes "ferreiro que mora em";
+			mes "reclusão nas profundezas";
+			mes "Floresta Payon. ";
+			mes "já foi famoso por seu";
+			mes "habilidade de ferraria lendária...";
+			next;
+			mes "[Ghatu]";
+			mes "Há rumores de que ele é";
+			mes "escondido nas montanhas";
+			mes "já que muitas pessoas querem usar seus talentos para o mal";
+			mes "propósitos. ";
+			set event_magum,1;
+			close;
+		}
+		mes "[Ghatu]";
+		mes "Lembre-se daquele ferreiro";
+		mes "Eu te contei sobre a última vez? ";
+		mes "parece que suas armas eram";
+		mes "com tanta procura porque";
+		mes "ele os encantaria com";
+		mes "magia tremendamente poderosa.";
+		next;
+		mes "[Ghatu]";
+		mes "No entanto, o homem foi forçado";
+		mes "pelos famintos de poder e pelos";
+		mes "opressivo para criar armas";
+		mes "para fins egoístas e imorais.";
+		mes "Não é surpresa que ele tenha ido";
+		mes "se esconder no final...";
+		next;
+		mes "[Ghatu]";
+		mes "É triste, realmente.";
+		mes "Aquele ferreiro costumava ser";
+		mes "um cara muito tranquilo";
+		mes "até que ele foi forçado a trabalhar";
+		mes "contra sua vontade. ";
+		next;
+		mes "[Ghatu]";
+		mes "Mas suponho que ferreiros";
+		mes "nunca pode realmente desistir do";
+		mes "martelo. ";
+		mes "encontrá-lo, talvez você possa perguntar";
+		mes "ele forjar algo para você?";
+		set event_magum,5;
+		close;
+
+	}
+	else if (event_magum == 1) {
+		mes "[Ghatu]";
+		mes "Lembre-se daquele ferreiro";
+		mes "Eu te contei sobre a última vez? ";
+		mes "parece que suas armas eram";
+		mes "com tanta procura porque";
+		mes "ele os encantaria com";
+		mes "magia tremendamente poderosa.";
+		next;
+		mes "[Ghatu]";
+		mes "No entanto, o homem foi forçado";
+		mes "pelos famintos de poder e pelos";
+		mes "opressivo para criar armas";
+		mes "para fins egoístas e imorais.";
+		mes "Não é surpresa que ele tenha ido";
+		mes "se esconder no final...";
+		next;
+		mes "[Ghatu]";
+		mes "É triste, realmente.";
+		mes "Aquele ferreiro costumava ser";
+		mes "um cara muito tranquilo";
+		mes "até que ele foi forçado a trabalhar";
+		mes "contra sua vontade. ";
+		next;
+		mes "[Ghatu]";
+		mes "Mas suponho que ferreiros";
+		mes "nunca pode realmente desistir do";
+		mes "martelo. ";
+		mes "encontrá-lo, talvez você possa perguntar";
+		mes "ele forjar algo para você?";
+		set event_magum,5;
+		close;
+	}
+	mes "[Ghatu]";
+	mes "Aquele ferreiro misterioso...";
+	mes "Eu me pergunto como ele fez isso";
+	mes "armas encantadas dele.";
+	mes "Ouvi dizer que ele pode ter";
+	mes "tem se envolvido nas artes das trevas,";
+	mes "mas isso não parece certo...";
+	close;
+}
+
+prontera,197,188,2	script	Veeyop#magum	50,{
+	if (dmdswrd_Q2 & 1) {
+		mes "[Veeyop]";
+		mes "Você sabe, falando";
+		mes "sobre Mysteltainn e";
+		mes "a morte de Baldur apenas...";
+		mes "Isso não me ocorreu até";
+		mes "agora, quão mórbido é tudo isso";
+		mes "sons. ";
+		close;
+	}
+	mes "[Veeyop]";
+	mes "Você já ouviu o";
+	mes "lenda de Mysteltainn?";
+	mes "É uma árvore, conhecida por ser";
+	mes "a única coisa capaz de prejudicar";
+	mes "Baldur, deus da luz. ";
+	mes "apenas um galho dele o matou.";
+	next;
+	mes "[Veeyop]";
+	mes "Agora, não tenho certeza se isso";
+	mes "é verdade, mas já ouvi isso";
+	mes "alguém realmente forjou";
+	mes "uma espada tão poderosa, é";
+	mes "digno desse nome,";
+	mes "''Misteltainn.''";
+	next;
+	mes "[Veeyop]";
+	mes "Só há uma pessoa";
+	mes "no mundo quem pode forjar";
+	mes "aquela espada Mysteltainn. ";
+	mes "Acho que ele morava em";
+	mes "Prontera, mas depois ele se mudou";
+	mes "longe por algum motivo estranho.";
+	if (event_magum == 1)
+		set event_magum,5;
+	set dmdswrd_Q2,dmdswrd_Q2 | 1;
+	close;
+}
+
+morocc,281,178,2	script	Cetsu#magum	97,{
+	if (dmdswrd_Q2 & 2) {
+		mes "[Cetsu]";
+		mes "Eu fico pensando";
+		mes "Grimtooth, e isso ocorreu";
+		mes "para mim que o feitiço costumava";
+		mes "para dotar aquela adaga com seu";
+		mes "força provavelmente não é mágica";
+		mes "que estamos familiarizados.";
+		next;
+		mes "[Cetsu]";
+		mes "Há todo tipo de";
+		mes "histórias assustadoras acontecendo";
+		mes "em volta. ";
+		mes "que o Grimtooth";
+		mes "pode ter algum";
+		mes "tipo de maldição estranha?";
+		close;
+	}
+	mes "[Cetsu]";
+	mes "Você sabe, existem";
+	mes "histórias de um incrivelmente";
+	mes "adaga poderosa que é";
+	mes "mais forte que o aço.";
+	mes "acho que foi feito";
+	mes "com dentes de ogro?";
+	next;
+	mes "[Cetsu]";
+	mes "De qualquer forma, não foi só";
+	mes "os dentes de ogro que deram";
+	mes "a adaga é seu poder. ";
+	mes "tinha que ser encantado com";
+	mes "um feitiço especial ou algo assim.";
+	next;
+	mes "[Cetsu]";
+	mes "Esta adaga, a Grimtooth,";
+	mes "só pode ser feito por uma pessoa";
+	mes "no mundo inteiro. ";
+	mes "se mudou por algum motivo.";
+	next;
+	mes "[Cetsu]";
+	mes "Eu me pergunto...";
+	mes "Ele entrou";
+	mes "escondido? ";
+	mes "parecia ser bonito";
+	mes "muita procura naquela época...";
+	if (event_magum == 1)
+		set event_magum,5;
+	set dmdswrd_Q2,dmdswrd_Q2 | 2;
+	close;
+}
+
+izlude_in,173,88,2	script	Nain#magum	102,{
+	if (dmdswrd_Q2 == 4) {
+		mes "[Nain]";
+		mes "Não importa como";
+		mes "poderoso o Executor";
+		mes "é: se acabasse em";
+		mes "minhas mãos, eu me livraria";
+		mes "disso imediatamente. ";
+		close;
+	}
+	mes "[Nain]";
+	mes "Há muito tempo atrás, uma espada";
+	mes "foi usado para decapitar todos";
+	mes "os criminosos que foram";
+	mes "condenado à morte. ";
+	mes "lâmina amaldiçoada é conhecida";
+	mes "como o executor.";
+	next;
+	mes "[Nain]";
+	mes "Como o Executor matou";
+	mes "mais criminosos, a raiva e";
+	mes "a sede de sangue de suas vítimas começou";
+	mes "acumular-se na lâmina.";
+	mes "Embora a espada tenha ganhado grande força, ela foi contaminada pelo mal.";
+	next;
+	mes "[Nain]";
+	mes "A última pessoa a empunhar";
+	mes "o Carrasco quase perdeu";
+	mes "sua mente para a espada. ";
+	mes "ferreiro que iria destruí-lo para ele, salvando assim sua alma.";
+	next;
+	mes "[Nain]";
+	mes "Este misterioso ferreiro";
+	mes "nunca mais foi visto no";
+	mes "cidade de Prontera, mas há rumores";
+	mes "é que se você puder encontrá-lo, ele";
+	mes "pode forjar esse maldito";
+	mes "Carrasco de novo...";
+	if (event_magum == 1)
+		set event_magum,5;
+	set dmdswrd_Q2,dmdswrd_Q2 | 4;
+	close;
+}
+
+pay_fild08,218,283,2	script	Mysterious Man#magum	89,{
+	if (checkweight(1201,1) == 0) {
+		mes "[Homem misterioso]";
+		mes "Espere.";
+		mes "Você está carregando";
+		mes "muitos itens";
+		mes "com você. ";
+		mes "depois de colocar seu";
+		mes "mercadorias para o armazenamento Kafra.";
+		close;
+	}
+	if (event_magum == 0) {
+		if ((dmdswrd_Q2 & 1) || (dmdswrd_Q2 & 2) || (dmdswrd_Q2 & 4) || (dmdswrd_Q2 & 8) || (dmdswrd_Q2 & 16) || (dmdswrd_Q2 & 32)) {
+			mes "[Homem misterioso]";
+			mes "Bem...?";
+			mes "Que diabos";
+			mes "você está olhando?";
+			next;
+			if (select("Você já ouviu falar das Espadas Condenadas?:Eu... eu...") == 1) {
+				mes "[Homem misterioso]";
+				mes "...!";
+				mes "Como diabos seria";
+				mes "Eu sei disso?";
+				mes "Me deixe em paz!";
+				close;
+			}
+			mes "[Homem misterioso]";
+			mes "...";
+			next;
+			mes "[Homem misterioso]";
+			mes "...";
+			mes "......";
+			next;
+			mes "[Homem misterioso]";
+			mes "Se perder.";
+			close;
+		}
+		else {
+			mes "[Homem misterioso]";
+			mes "Bem...?";
+			mes "Que diabos";
+			mes "você está olhando?";
+			next;
+			if (select("Hum, er...:Nada, senhor.") == 1) {
+				mes "[Homem misterioso]";
+				mes "O que...?!";
+				next;
+				mes "^3355FFEsse cara é";
+				mes "realmente intimidante!^000000";
+				close;
+			}
+			mes "[Homem misterioso]";
+			mes "Nada, hein?";
+			mes "Bem, neste momento, estou";
+			mes "olhando para um incômodo";
+			mes "aventureiro! ";
+			mes "e me deixe em paz!";
+			close;
+		}
+	}
+	else if (event_magum == 1) {
+		mes "[Homem misterioso]";
+		mes "Bem...?";
+		mes "Que diabos";
+		mes "você está olhando?";
+		next;
+		if (select("Por acaso você é ferreiro?:Não-Nada!") == 1) {
+			mes "[Ferreiro Misterioso]";
+			mes "Hmpf. ";
+			mes "afinal, um idiota total. ";
+			mes "Eu costumava fazer ferraria, mas";
+			mes "Eu não faço o trabalho simples";
+			mes "que a maioria dos ferreiros";
+			mes "posso fazer hoje em dia...";
+			close;
+		}
+		mes "[Ferreiro Misterioso]";
+		mes "...";
+		mes "......";
+		next;
+		mes "[Ferreiro Misterioso]";
+		mes "Saia da minha frente.";
+		close;
+	}
+	else if (event_magum == 5) {
+		mes "[Ferreiro Misterioso]";
+		mes "Bem...?";
+		mes "Que diabos";
+		mes "você está olhando?";
+		next;
+		if (select("Eu quero que você me faça uma Espada Condenada.:Er, nada!") == 1) {
+			mes "[Ferreiro Misterioso]";
+			mes "Hum. ";
+			mes "diabos você pode ter ouvido";
+			mes "de mim, mas acho que um de vocês";
+			mes "aventureiros me encontrariam em breve";
+			mes "suficiente. ";
+			mes "espada você deseja possuir?";
+			next;
+			switch(select("Mysteltainn.:Grimtooth.:Carrasco.:Mudei de ideia!")) {
+			case 1:
+				if (dmdswrd_Q2 & 1) {
+					mes "[Ferreiro Misterioso]";
+					mes "Você quer...";
+					mes "aquela espada?";
+					mes "Não fale isso";
+					mes "nome tão levemente!";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Você entende a maldição";
+					mes "naquela espada? ";
+					mes "deriva seu poder sombrio do";
+					mes "galho que foi usado para matar Baldur, deus da luz. ";
+					mes "história o mais brevemente possível...";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Na era dos deuses,";
+					mes "o belo, puro e";
+					mes "alegre Baldur era amado por";
+					mes "todas as criaturas vivas, exceto";
+					mes "um: Loki, o deus da malandragem.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Quando Loki, por ciúme,";
+					mes "decidiu matar Baldur, o";
+					mes "deusa Freyja teve um sonho";
+					mes "sobre a morte de Baldur. ";
+					mes "a realização do seu sonho,";
+					mes "ela aconselhou os deuses.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Para proteger Baldur, os deuses";
+					mes "decidiu extrair um juramento";
+					mes "para nunca prejudicar Baldur de";
+					mes "toda criatura, objeto e";
+					mes "força natural. ";
+					mes "perguntou concordou em fazer este juramento.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "De todos os seres e objetos";
+					mes "no universo, Freya apenas";
+					mes "esqueci de pedir a uma árvore para";
+					mes "faça este juramento: o Mysteltainn. ";
+					mes "pequeno e insignificante para perguntar.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Acreditando que tudo";
+					mes "no universo havia jurado";
+					mes "para não prejudicar Baldur, os deuses";
+					mes "fizeram disso seu novo passatempo";
+					mes "atirar adagas e facas em";
+					mes "o agora quase invencível deus.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "No entanto, Loki estava determinado";
+					mes "matar Baldur e, disfarçando";
+					mes "ele mesmo, perguntou educadamente a Freyja";
+					mes "se houvesse algum objeto no";
+					mes "mundo que não tomou o";
+					mes "juramento de não prejudicar Baldur.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Freyja não suspeitou de nada e";
+					mes "contou a Loki sobre o segredo de";
+					mes "Mysteltainn. ";
+					mes "objetos em Baldur, Loki estava lá com um pequeno galho de Mysteltainn.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Então, para compor seu";
+					mes "traição, Loki enganado";
+					mes "Hod, gêmeo cego de Baldur";
+					mes "irmão, em jogar o";
+					mes "galho no coração de Baldur. ";
+					mes "então, o deus da luz foi morto.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Ao longo dos anos,";
+					mes "Mysteltainn foi";
+					mes "moldado na espada";
+					mes "que você pode estar familiarizado";
+					mes "com hoje. ";
+					mes "estritamente proibido pelos deuses.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "No entanto, se você estiver disposto";
+					mes "arriscar a maldição daquela espada";
+					mes "por causa do seu poder,";
+					mes "Eu vou forjá-lo para você se você";
+					mes "pode me trazer o seguinte";
+					mes "Unid. ";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "^0099FF1 Galho jovem^000000,";
+					mes "^0099FF1 Império ^ 000000,";
+					mes "^0099FF1 Sussurros de Loki^000000,";
+					mes "^0099FF1 Pesadelo da Mãe^000000 e";
+					mes "^0099FF1 Tolice dos Cegos^000000.";
+					mes "É disso que eu preciso.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Não estou pedindo muito.";
+					mes "Você está apenas trazendo o cru";
+					mes "materiais para forjar a espada,";
+					mes "e um Emperium para provar seu";
+					mes "merecimento para mim. ";
+					mes "pelo seu retorno, aventureiro.";
+					set dmdswrd_Q2,dmdswrd_Q2 | 8;
+					set event_magum,6;
+					close;
+				}
+				mes "[Ferreiro Misterioso]";
+				mes "Só de olhar para você,";
+				mes "Eu posso dizer que você não sabe";
+				mes "chega de falar do Mysteltainn";
+				mes "para entender completamente todos os";
+				mes "riscos que acompanham o uso dessa espada. ";
+				next;
+				mes "[Ferreiro Misterioso]";
+				mes "Eu não posso correr o risco";
+				mes "de criar aquele maldito";
+				mes "espada para você, se você não tiver";
+				mes "aprendi o suficiente sobre isso para";
+				mes "estar totalmente preparado para qualquer um dos";
+				mes "as consequências...";
+				close;
+			case 2:
+				if (dmdswrd_Q2 & 2) {
+					mes "[Ferreiro Misterioso]";
+					mes "Ah sim. ";
+					mes "me perguntando como é tão pequeno";
+					mes "adaga pode conter tal poder.";
+					mes "É simples. ";
+					mes "maldição mágica para incutir na adaga sua incrível capacidade destrutiva.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "A maldição que lancei é tão";
+					mes "poderoso que se eu usá-lo";
+					mes "uma adaga de metal, seria";
+					mes "derreter imediatamente. ";
+					mes "dente é o único material que";
+					mes "pode resistir à maldição mágica.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Claro, é só";
+					mes "justo avisar que";
+					mes "o poder da maldição";
+					mes "é tal que quanto mais você";
+					mes "use o Grimtooth, mais ele queimará sua alma...";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Estou disposto a forjar";
+					mes "o Grimtooth se você puder";
+					mes "provar digno de exercer seu";
+					mes "energia e fornecer todos os";
+					mes "materiais que preciso para criá-lo.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Eu vou precisar...";
+					mes "^0099FF1 Império ^ 000000,";
+					mes "^0099FF100 Dentes de Ogro^000000,";
+					mes "^0099FF10 Lâminas da Escuridão^000000,";
+					mes "^0099FF5 Rubis Amaldiçoados^000000 e";
+					mes "^0099FF1 Cabo de espada quebrado^000000.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Eu não preciso do";
+					mes "Império para criar";
+					mes "a espada amaldiçoada, mas eu faço";
+					mes "exigir que você prove que você";
+					mes "são dignos do Grimtooth";
+					mes "poder. ";
+					set dmdswrd_Q2,dmdswrd_Q2 | 16;
+					set event_magum,6;
+					close;
+				}
+				mes "[Ferreiro Misterioso]";
+				mes "Hmpf. ";
+				mes "sei o que você está perguntando";
+				mes "para, você? ";
+				mes "esse tipo de arma para qualquer";
+				mes "tolo ignorante. ";
+				mes "Grimtooth antes que você pergunte novamente!";
+				close;
+			case 3:
+				if (dmdswrd_Q2 & 4) {
+					mes "[Ferreiro Misterioso]";
+					mes "Então você está me dizendo isso";
+					mes "você quer uma espada que já foi";
+					mes "amaldiçoado por todas as almas que";
+					mes "morreu devido às milhares de sentenças de morte que executou?";
+					mes "Ha ha ha! ";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Sim... Cada vez que isso";
+					mes "espada cortou um culpado";
+					mes "criminoso, a lâmina foi";
+					mes "amaldiçoado pela raiva e";
+					mes "arrependimento dos mortos.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Com o tempo, o Executor";
+					mes "acumulou uma experiência verdadeiramente terrível";
+					mes "poder do ódio daqueles";
+					mes "ele havia matado. ";
+					mes "usa esta espada corre o risco de ser consumido pela insanidade e pelo ódio.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "A última pessoa para quem";
+					mes "Eu criei essa espada perguntou";
+					mes "eu para destruí-lo, temendo que";
+					mes "isso corromperia sua mente com";
+					mes "sua sede de sangue. ";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Apenas me traga...";
+					mes "^0099FF50 Amuletos^000000,";
+					mes "^0099FF1 Império ^ 000000,";
+					mes "^0099FF2 Luvas do Carrasco^000000,";
+					mes "^0099FF10 Bordas Sangrentas^000000 e";
+					mes "^0099FF3 Colares do Esquecimento^000000.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Esses são os itens que eu preciso";
+					mes "para criar uma espada imbuída de";
+					mes "poder maligno. ";
+					mes "são verdadeiramente capazes de empunhar";
+					mes "o maldito executor...";
+					set dmdswrd_Q2,dmdswrd_Q2 | 32;
+					set event_magum,6;
+					close;
+				}
+				mes "[Ferreiro Misterioso]";
+				mes "Você ao menos sabe o que";
+				mes "você está me perguntando...?";
+				mes "Enganar! ";
+				mes "sobre o Executor! ";
+				mes "talvez você entenda como";
+				mes "perigosa essa espada realmente é!";
+				close;
+			case 4:
+				mes "[Ferreiro Misterioso]";
+				mes "Hum...?";
+				mes "Isso é um fato?";
+				close;
+			}
+		}
+		close;
+	}
+	else if (event_magum == 6) {
+		mes "[Ferreiro Misterioso]";
+		mes "Hmmm...";
+		mes "Você trouxe";
+		mes "os itens necessários?";
+		mes "Ou você esqueceu o que";
+		mes "você precisava trazer para mim?";
+		next;
+		switch(select("Er, quais eram os itens mesmo?:Sim, trouxe todos os itens necessários.:Oh! ")) {
+		case 1:
+			mes "[Ferreiro Misterioso]";
+			mes "Hmpf. ";
+			mes "Agora, qual espada fez";
+			mes "você quer que eu forje?";
+			next;
+			switch(select("Mysteltainn.:Grimtooth.:Carrasco.:Espere! ")) {
+			case 1:
+				if ((dmdswrd_Q2 & 1) || (dmdswrd_Q2 & 8)) {
+					mes "[Ferreiro Misterioso]";
+					mes "^0099FF1 Galho jovem^000000,";
+					mes "^0099FF1 Império ^ 000000,";
+					mes "^0099FF1 Sussurros de Loki^000000,";
+					mes "^0099FF1 Pesadelo da Mãe^000000 e";
+					mes "^0099FF1 Tolice dos Cegos^000000.";
+					mes "É disso que eu preciso.";
+					close;
+				}
+				mes "[Ferreiro Misterioso]";
+				mes "Hum. ";
+				mes "o suficiente sobre Mysteltainn para";
+				mes "me arriscar a forjar aquela espada";
+				mes "para você. ";
+				mes "espada você me pediu para criar?";
+				close;
+			case 2:
+				if ((dmdswrd_Q2 & 2) || (dmdswrd_Q2 & 16)) {
+					mes "[Ferreiro Misterioso]";
+					mes "Eu vou precisar...";
+					mes "^0099FF1 Império ^ 000000,";
+					mes "^0099FF100 Dentes de Ogro^000000,";
+					mes "^0099FF10 Lâminas da Escuridão^000000,";
+					mes "^0099FF5 Rubis Amaldiçoados^000000 e";
+					mes "^0099FF1 Cabo de espada quebrado^000000.";
+					close;
+				}
+				mes "[Ferreiro Misterioso]";
+				mes "Hum. ";
+				mes "sobre o Grimtooth para mim";
+				mes "arriscar forjá-lo para você. ";
+				mes "mais sobre aquela adaga se você";
+				mes "realmente quero possuí-lo...";
+				close;
+			case 3:
+				if ((dmdswrd_Q2 & 4) || (dmdswrd_Q2 & 32)) {
+					mes "[Ferreiro Misterioso]";
+					mes "Apenas me traga...";
+					mes "^0099FF50 Amuletos^000000,";
+					mes "^0099FF1 Império ^ 000000,";
+					mes "^0099FF2 Luvas do Carrasco^000000,";
+					mes "^0099FF10 Bordas Sangrentas^000000 e";
+					mes "^0099FF3 Colares do Esquecimento^000000.";
+					close;
+				}
+				mes "[Ferreiro Misterioso]";
+				mes "Você não sabe de nada";
+				mes "sobre o Executor. ";
+				mes "mais sobre essa espada antes";
+				mes "você considera me pedir para";
+				mes "forjar essa monstruosidade.";
+				close;
+			case 4:
+				mes "[Ferreiro Misterioso]";
+				mes "Multar.";
+				mes "Então traga tudo";
+				mes "os itens que preciso";
+				mes "quando estiver pronto.";
+				close;
+			}
+		case 2:
+			mes "[Ferreiro Misterioso]";
+			mes "Então você pensa que está";
+			mes "preparar. ";
+			mes "você queria que eu criasse?";
+			next;
+			switch(select("Mysteltainn:Grimtooth:Executioner:Mudei de ideia!")) {
+			case 1:
+				if (dmdswrd_Q2 & 8) {
+					mes "[Ferreiro Misterioso]";
+					mes "Mysteltainn. ";
+					mes "Deixe-me ter certeza";
+					mes "que você trouxe";
+					mes "tudo que eu preciso";
+					mes "crie esta espada...";
+					next;
+					if (countitem(7018) < 1) {
+						mes "[Ferreiro Misterioso]";
+						mes "Bem bem.";
+						mes "Você esqueceu";
+						mes "para trazer ^0099FF1 Young Twig^000000,";
+						mes "a personificação do";
+						mes "O galho de Mysteltainn foi usado para matar Baldur. ";
+						close;
+					}
+					if (countitem(7019) < 1) {
+						mes "[Ferreiro Misterioso]";
+						mes "Hum. ";
+						mes "^0099FF1 Sussurros de Loki^000000. ";
+						mes "que para imbuir a espada com";
+						mes "imenso e maligno poder. ";
+						mes "descubra isso o mais rápido que puder!";
+						close;
+					}
+					if (countitem(7020) < 1) {
+						mes "[Ferreiro Misterioso]";
+						mes "Hm, você ainda precisa";
+						mes "traga ^0099FF1 Pesadelo da Mãe^000000";
+						mes "para incutir o poder da miséria";
+						mes "e grave presságio para esta lâmina...";
+						close;
+					}
+					if (countitem(7021) < 1) {
+						mes "[Ferreiro Misterioso]";
+						mes "Hm, você ainda precisa";
+						mes "traga ^0099FF1 Tolice";
+						mes "dos Cegos ^ 000000 para incutir o";
+						mes "energia do arrependimento trágico em";
+						mes "a maldição imbuída na lâmina...";
+						close;
+					}
+					if (countitem(714) < 1) {
+						mes "[Ferreiro Misterioso]";
+						mes "Você tem tudo";
+						mes "Eu preciso forjar o";
+						mes "Mysteltainn, mas você deve";
+						mes "ainda prove que você é capaz";
+						mes "de empunhá-lo. ";
+						close;
+					}
+					if (countitem(7018) > 0 && countitem(7019) > 0 && countitem(7020) > 0 && countitem(7021) > 0 && countitem(714) > 0) {
+						mes "[Ferreiro Misterioso]";
+						mes "Muito bem, aventureiro.";
+						mes "Tudo parece estar pronto.";
+						mes "Dê-me um minuto para convocar";
+						mes "o poder sombrio para forjar o";
+						mes "espada proibida, Mysteltainn.";
+						next;
+						mes "[Ferreiro Misterioso]";
+						mes "Eu... eu nunca pensei";
+						mes "Eu algum dia veria isso";
+						mes "espada novamente. ";
+						mes "rapidamente! ";
+						mes "tocá-lo se eu puder evitá-lo.";
+						delitem 7018,1; //Young_Twig
+						delitem 7019,1; //Loki's_Whispers
+						delitem 7020,1; //Mother's_Nightmare
+						delitem 7021,1; //Foolishness_Of_Blind
+						delitem 714,1; //Emperium
+						getitem 1138,1; //Mysteltainn_
+						next;
+						mes "[Ferreiro Misterioso]";
+						mes "Tenha muito cuidado.";
+						mes "Não se deixe";
+						mes "ser consumido pelo";
+						mes "poder dessa espada!";
+						mes "Por suposto, resista";
+						mes "A trágica maldição de Mysteltainn!";
+						close;
+					}
+				}
+				else if (dmdswrd_Q2 & 1) {
+					mes "[Ferreiro Misterioso]";
+					mes "Você quer...";
+					mes "aquela espada?";
+					mes "Não fale isso";
+					mes "nome tão levemente!";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Você entende a maldição";
+					mes "naquela espada? ";
+					mes "deriva seu poder sombrio do";
+					mes "galho que foi usado para matar Baldur, deus da luz. ";
+					mes "história o mais brevemente possível...";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Na era dos deuses,";
+					mes "o belo, puro e";
+					mes "alegre Baldur era amado por";
+					mes "todas as criaturas vivas, exceto";
+					mes "um: Loki, o deus da malandragem.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Quando Loki, por ciúme,";
+					mes "decidiu matar Baldur, o";
+					mes "deusa Freyja teve um sonho";
+					mes "sobre a morte de Baldur. ";
+					mes "a realização do seu sonho,";
+					mes "ela aconselhou os deuses.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Para proteger Baldur, os deuses";
+					mes "decidiu extrair um juramento";
+					mes "para nunca prejudicar Baldur de";
+					mes "toda criatura, objeto e";
+					mes "força natural. ";
+					mes "perguntou concordou em fazer este juramento.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "De todos os seres e objetos";
+					mes "no universo, Freya apenas";
+					mes "esqueci de pedir a uma árvore para";
+					mes "faça este juramento: o Mysteltainn. ";
+					mes "pequeno e insignificante para perguntar.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Acreditando que tudo";
+					mes "no universo havia jurado";
+					mes "para não prejudicar Baldur, os deuses";
+					mes "fizeram disso seu novo passatempo";
+					mes "atirar adagas e facas em";
+					mes "o agora quase invencível deus.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "No entanto, Loki estava determinado";
+					mes "matar Baldur e, disfarçando";
+					mes "ele mesmo, perguntou educadamente a Freyja";
+					mes "se houvesse algum objeto no";
+					mes "mundo que não tomou o";
+					mes "juramento de não prejudicar Baldur.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Freyja não suspeitou de nada e";
+					mes "contou a Loki sobre o segredo de";
+					mes "Mysteltainn. ";
+					mes "objetos em Baldur, Loki estava lá com um pequeno galho de Mysteltainn.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Então, para compor seu";
+					mes "traição, Loki enganado";
+					mes "Hod, gêmeo cego de Baldur";
+					mes "irmão, em jogar o";
+					mes "galho no coração de Baldur. ";
+					mes "então, o deus da luz foi morto.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Ao longo dos anos,";
+					mes "Mysteltainn foi";
+					mes "moldado na espada";
+					mes "que você pode estar familiarizado";
+					mes "com hoje. ";
+					mes "estritamente proibido pelos deuses.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "No entanto, se você estiver disposto";
+					mes "arriscar a maldição daquela espada";
+					mes "por causa do seu poder,";
+					mes "Eu vou forjá-lo para você se você";
+					mes "pode me trazer o seguinte";
+					mes "Unid. ";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "^0099FF1 Galho jovem^000000,";
+					mes "^0099FF1 Império ^ 000000,";
+					mes "^0099FF1 Sussurros de Loki^000000,";
+					mes "^0099FF1 Pesadelo da Mãe^000000 e";
+					mes "^0099FF1 Tolice dos Cegos^000000.";
+					mes "É disso que eu preciso.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Não estou pedindo muito.";
+					mes "Você está apenas trazendo o cru";
+					mes "materiais para forjar a espada,";
+					mes "e um Emperium para provar seu";
+					mes "merecimento para mim. ";
+					mes "pelo seu retorno, aventureiro.";
+					set dmdswrd_Q2,dmdswrd_Q2 | 8;
+					close;
+				}
+				mes "[Ferreiro Misterioso]";
+				mes "Hum. ";
+				mes "Mysteltainn, eu te aconselho";
+				mes "para saber mais sobre isso. ";
+				mes "deve conhecer os riscos envolvidos";
+				mes "em exercer esse tipo de poder...";
+				close;
+			case 2:
+				if (dmdswrd_Q2 & 16) {
+					mes "[Ferreiro Misterioso]";
+					mes "Você quer para mim";
+					mes "para forjar Grimtooth.";
+					mes "Primeiro, deixe-me verificar";
+					mes "se você trouxesse tudo";
+					mes "os itens que preciso.";
+					next;
+					if (countitem(7002) < 100) {
+						mes "[Ferreiro Misterioso]";
+						mes "Hum. ";
+						mes "^0099FF100 Dentes de Ogro^000000 a";
+						mes "crie uma lâmina que possa";
+						mes "resistir ao poder do";
+						mes "A maldição mágica de Grimtooth.";
+						mes "Vá e traga-os logo.";
+						close;
+					}
+					if (countitem(724) < 5) {
+						mes "[Ferreiro Misterioso]";
+						mes "Para colocar";
+						mes "a maldição que concede";
+						mes "o Grimtooth é imenso";
+						mes "poder, eu preciso que você traga";
+						mes "^0099FF5 Rubis Amaldiçoados^000000. ";
+						mes "e traga-os para mim logo.";
+						close;
+					}
+					if (countitem(7023) < 10) {
+						mes "[Ferreiro Misterioso]";
+						mes "Hum. ";
+						mes "^0099FF10 Lâminas da Escuridão^000000";
+						mes "para que eu forje";
+						mes "o Grimtooth. ";
+						mes "aqui assim que puder.";
+						close;
+					}
+					if (countitem(7022) < 1) {
+						mes "[Ferreiro Misterioso]";
+						mes "Hum. ";
+						mes "tudo pronto, mas";
+						mes "Vou precisar de ^0099FF1 Espada Quebrada";
+						mes "Lidar com^000000 para forjar";
+						mes "o Grimtooth. ";
+						mes "me traga um desses...";
+						close;
+					}
+					if (countitem(714) < 1) {
+						mes "[Ferreiro Misterioso]";
+						mes "Você tem tudo que eu preciso";
+						mes "para criar a espada, mas não vou forjá-la até que você prove que";
+						mes "são capazes de controlar seu";
+						mes "poder. ";
+						mes "como prova de seu valor.";
+						close;
+					}
+					if (countitem(7002) > 99 && countitem(724) > 4 && countitem(7023) > 9 && countitem(7022) > 0 && countitem(714) > 0) {
+						mes "[Ferreiro Misterioso]";
+						mes "Eu vejo que você tem";
+						mes "venha totalmente preparado.";
+						mes "Talvez você tenha um túmulo";
+						mes "necessidade do poder de Grimtooth.";
+						mes "Dê-me um momento enquanto eu forjo";
+						mes "esta espada amaldiçoada para você...";
+						next;
+						mes "[Ferreiro Misterioso]";
+						mes "Pronto, acabou!";
+						mes "Agora corra e pegue!";
+						mes "Eu, eu não quero lidar";
+						mes "o Grimtooth mais longo que";
+						mes "Eu tenho que! ";
+						mes "logo depois de usá-lo ...";
+						delitem 7002,100; //Ogre_Tooth
+						delitem 724,5; //Cardinal_Jewel_
+						delitem 7023,10; //Blade_Lost_In_Darkness
+						delitem 7022,1; //Old_Hilt
+						delitem 714,1; //Emperium
+						getitem 1237,1; //Grimtooth_
+						next;
+						mes "[Ferreiro Misterioso]";
+						mes "Eu sei que você pode";
+						mes "tem boas intenções para";
+						mes "O poder de Grimtooth, mas faça";
+						mes "não se superestime!";
+						mes "Sempre tenha cuidado com Grimtooth,";
+						mes "e não deixe que isso coma sua alma!";
+						close;
+					}
+				}
+				else if (dmdswrd_Q2 & 2) {
+					mes "[Ferreiro Misterioso]";
+					mes "Ah sim. ";
+					mes "me perguntando como é tão pequeno";
+					mes "adaga pode conter tal poder.";
+					mes "É simples. ";
+					mes "maldição mágica para incutir na adaga sua incrível capacidade destrutiva.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "A maldição que lancei é tão";
+					mes "poderoso que se eu usá-lo";
+					mes "uma adaga de metal, seria";
+					mes "derreter imediatamente. ";
+					mes "dente é o único material que";
+					mes "pode resistir à maldição mágica.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Claro, é só";
+					mes "justo avisar que";
+					mes "o poder da maldição";
+					mes "é tal que quanto mais você";
+					mes "use o Grimtooth, mais ele queimará sua alma...";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Estou disposto a forjar";
+					mes "o Grimtooth se você puder";
+					mes "provar digno de exercer seu";
+					mes "energia e fornecer todos os";
+					mes "materiais que preciso para criá-lo.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Eu vou precisar...";
+					mes "^0099FF1 Império ^ 000000,";
+					mes "^0099FF100 Dentes de Ogro^000000,";
+					mes "^0099FF10 Lâminas da Escuridão^000000,";
+					mes "^0099FF5 Rubis Amaldiçoados^000000 e";
+					mes "^0099FF1 Cabo de espada quebrado^000000.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Eu não preciso do";
+					mes "Império para criar";
+					mes "a espada amaldiçoada, mas eu faço";
+					mes "exigir que você prove que você";
+					mes "são dignos do Grimtooth";
+					mes "poder. ";
+					set dmdswrd_Q2,dmdswrd_Q2 | 16;
+					close;
+				}
+				mes "[Ferreiro Misterioso]";
+				mes "Hum. ";
+				mes "forjando Grimtooth para você";
+				mes "quando você sabe tão pouco";
+				mes "sobre isso. ";
+				mes "sobre aquela espada diante de você";
+				mes "pergunte-me sobre isso novamente.";
+				close;
+			case 3:
+				if (dmdswrd_Q2 & 32) {
+					mes "[Ferreiro Misterioso]";
+					mes "A espada do Executor.";
+					mes "Deixe-me ver se você veio";
+					mes "preparado para empunhar essa lâmina";
+					mes "com suas próprias mãos...";
+					next;
+					if (countitem(7017) < 2) {
+						mes "[Ferreiro Misterioso]";
+						mes "Hum. ";
+						mes "para forjar o Executor,";
+						mes "Eu preciso que você me traga";
+						mes "^0099FF2 Luvas do Carrasco^000000.";
+						close;
+					}
+					if (countitem(7024) < 10) {
+						mes "[Ferreiro Misterioso]";
+						mes "Para confeccionar o";
+						mes "lâmina, preciso de pelo menos";
+						mes "^0099FF10 Bordas sangrentas^000000. ";
+						mes "aqueles tão rapidamente quanto você";
+						mes "puder e traga-os para mim.";
+						close;
+					}
+					if (countitem(1008) < 3) {
+						mes "[Ferreiro Misterioso]";
+						mes "Para encantar";
+						mes "o executor com";
+						mes "seu poder sombrio, eu irei";
+						mes "preciso que você me traga";
+						mes "^0099FF3 Colares do Esquecimento^000000.";
+						mes "Vá, apresse-se e pegue-os!";
+						close;
+					}
+					if (countitem(609) < 50) {
+						mes "[Ferreiro Misterioso]";
+						mes "Hum. ";
+						mes "traga-me ^0099FF50 Amuletos^000000. ";
+						mes "aqueles para imbuir o";
+						mes "energias incríveis que";
+						mes "dê ao Executor seu";
+						mes "força monstruosa...";
+						close;
+					}
+					if (countitem(714) < 1) {
+						mes "[Ferreiro Misterioso]";
+						mes "Você tem tudo que eu preciso";
+						mes "para forjar o Executor, mas";
+						mes "Ainda não tenho certeza se você";
+						mes "são capazes de lidar com seus";
+						mes "poder. ";
+						mes "se você trouxer ^0099FF1 Emperium^000000.";
+						close;
+					}
+					if (countitem(7017) > 1 && countitem(7024) > 9 && countitem(1008) > 2 && countitem(609) > 49 && countitem(714) > 0) {
+						mes "[Ferreiro Misterioso]";
+						mes "Ótimo, vejo que você";
+						mes "preparou tudo que";
+						mes "Perguntei. ";
+						mes "enquanto eu invoco a escuridão";
+						mes "forças necessárias para forjar";
+						mes "o carrasco...";
+						next;
+						mes "[Ferreiro Misterioso]";
+						mes "Já faz muito tempo";
+						mes "desde que eu vi isso";
+						mes "espada aterrorizante. ";
+						mes "pegue! ";
+						mes "deixe sua sede de sangue consumir você!";
+						delitem 7017,2; //Executioner's_Mitten
+						delitem 7024,10; //Bloody_Edge
+						delitem 1008,3; //Frozen_Heart
+						delitem 609,50; //Amulet
+						getitem 1169,1; //Executioner_
+						close;
+					}
+				}
+				else if (dmdswrd_Q2 & 4) {
+					mes "[Ferreiro Misterioso]";
+					mes "Então você está me dizendo isso";
+					mes "você quer uma espada que já foi";
+					mes "amaldiçoado por todas as almas que";
+					mes "morreu devido às milhares de sentenças de morte que executou?";
+					mes "Ha ha ha! ";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Sim... Cada vez que isso";
+					mes "espada cortou um culpado";
+					mes "criminoso, a lâmina foi";
+					mes "amaldiçoado pela raiva e";
+					mes "arrependimento dos mortos.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Com o tempo, o Executor";
+					mes "acumulou uma experiência verdadeiramente terrível";
+					mes "poder do ódio daqueles";
+					mes "ele havia matado. ";
+					mes "usa esta espada corre o risco de ser consumido pela insanidade e pelo ódio.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "A última pessoa para quem";
+					mes "Eu criei essa espada perguntou";
+					mes "eu para destruí-lo, temendo que";
+					mes "isso corromperia sua mente com";
+					mes "sua sede de sangue. ";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Apenas me traga...";
+					mes "^0099FF50 Amuletos^000000,";
+					mes "^0099FF1 Império ^ 000000,";
+					mes "^0099FF2 Luvas do Carrasco^000000,";
+					mes "^0099FF10 Bordas Sangrentas^000000 e";
+					mes "^0099FF3 Colares do Esquecimento^000000.";
+					next;
+					mes "[Ferreiro Misterioso]";
+					mes "Esses são os itens que eu preciso";
+					mes "para criar uma espada imbuída de";
+					mes "poder maligno. ";
+					mes "são verdadeiramente capazes de empunhar";
+					mes "o maldito executor...";
+					set dmdswrd_Q2,dmdswrd_Q2 | 4;
+					close;
+				}
+				mes "[Ferreiro Misterioso]";
+				mes "Hmpf. ";
+				mes "você entende o suficiente";
+				mes "sobre o Executor para";
+				mes "peça-me para forjá-lo. ";
+				mes "saiba mais sobre esse maldito";
+				mes "espada se você realmente quiser...";
+				close;
+			case 4:
+				mes "[Ferreiro Misterioso]";
+				mes "Hum...?";
+				mes "Isso é um fato?";
+				close;
+			}
+		case 3:
+			mes "[Ferreiro Misterioso]";
+			mes "Hmpf...";
+			mes "Pois bem, venha";
+			mes "de volta quando você sabe";
+			mes "exatamente o que você quer";
+			mes "de mim, aventureiro.";
+			close;
+		}
+	}
+}
+

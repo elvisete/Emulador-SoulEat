@@ -1,0 +1,242 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+que_job01,68,84,1	script	Contrabandista#Comprando	881,{
+	if (checkweight(1201,1) == 0 || MaxWeight - Weight < 2400) {
+		mes "[Sr. Jass]";
+		mes "Você está sendo muito ganancioso, mesmo em comparação com alguém como eu!";
+		mes "Que tal aliviar sua carga primeiro?";
+		close;
+	}
+	if (getskilllv("ALL_Comprando_STORE") == 1) {
+		mes "[Sr. Jass]";
+		mes "Ei, você já fez um contrato com o Hugh.";
+		mes "Eu não tenho nenhum negócio com você.";
+		close;
+	}
+	mes "[Sr. Jass]";
+	mes "Você deve precisar de algo urgentemente para vir me procurar.";
+	mes "O que você quer?";
+	next;
+	switch(select("Licença de Loja a Granel:Quem é você?:Nada, nada!")) {
+	case 1:
+	mes "[Sr. Jass]";
+	mes "Eu sabia!";
+	mes "Claro, eu posso fazer isso para você.";
+	mes "A minha parece exatamente com a autêntica que os Mercadores recebem daquele bastardo do Sr. Hugh!";
+	next;
+	mes "[Sr. Jass]";
+	mes "E a minha licença é melhor porque você não precisa aprender nenhuma habilidade.";
+	mes "Quantas você quer?";
+	next;
+	mes "[Sr. Jass]";
+	mes "Só para você saber, eu só posso fazer em pequenas quantidades, até 10 de cada vez.";
+	mes "Vai custar 500 zenys cada uma.";
+	next;
+	while(1) {
+		input .@input;
+		mes "[Sr. Jass]";
+		if (.@input == 0) {
+			mes "Você não precisa dessas licenças?";
+			close;
+		} else if (.@input > 10) {
+			mes "Eu só posso fazer até 10 de cada vez, sabe.";
+			next;
+		} else {
+			mes "Vai custar "+(.@input*500)+" zenys.";
+			if (Zeny < (.@input*500)) {
+				mes "Mas você não tem dinheiro suficiente.";
+				next;
+				mes "[Sr. Jass]";
+				mes "Você não sabe o básico dos negócios? Tudo tem um preço.";
+				mes "Se você quer algo, tem que pagar por isso.";
+			} else {
+				mes "Ha... Ha ha ha!";
+				mes "Sr. Hugh, eu vou assumir o seu negócio de licenças. Você vai ver!";
+				mes "*Giggle Giggle*";
+				getitem 12548,.@input; //Buy_Market_Permit2
+				set Zeny,Zeny-(.@input*500);
+			}
+			close;
+		}
+	}
+	case 2:
+		mes "[Sr. Jass]";
+		mes "Eu deixei minha cidade natal há muito tempo.";
+		mes "É inútil perguntar quem sou eu, porque tudo o que resta para mim agora é o meu ódio.";
+		next;
+		mes "[Sr. Jass]";
+		mes "...";
+		mes "Hugh é um comerciante corrupto sem senso de ética nos negócios.";
+		mes "Meu único propósito de vida é destruir Hugh.";
+		next;
+		mes "[Sr. Jass]";
+		mes "Ah, bebi demais... (*Hic*)";
+		mes "Isso é apenas o álcool falando.";
+		mes "Por favor, esqueça qualquer coisa que eu disse.";
+		close;
+	case 3:
+		mes "[Sr. Jass]";
+		mes "Está bem, está bem! Você não precisa gritar.";
+		mes "Apenas me deixe em paz se você não tem negócios comigo.";
+		close;
+	}
+}
+
+// Equipe de Compras (Aprender Habilidade - Classes de Mercadores)
+//============================================================ 
+alberta_in,58,52,4	script	Equipe de compras#Comprando	59,{
+	if (checkweight(1201,1) == 0 || MaxWeight - Weight < 2400) {
+		mes "- Você não pode conversar ou realizar a missão porque está carregando muitos itens. -";
+		close;
+	}
+	mes "[Sr. Hugh]";
+	if (BaseClass == Job_Merchant && getskilllv("MC_VENDING") >= 1) {
+		if (getskilllv("ALL_Comprando_STORE") == 1) {
+			mes "Eu sou Hugh da Equipe de Compras.";
+			mes "Como posso ajudar você hoje?";
+			next;
+			if(select("Comprar Licença para Loja em Quantidade: Sair") == 2) {
+				mes "[Sr. Hugh]";
+				mes "Sinta-se à vontade para me perguntar se precisar de alguma Licença para Loja em Quantidade.";
+				mes "Volte sempre~";
+				close;
+			}
+			mes "[Sr. Hugh]";
+			mes "São 200 zenys por cada Licença para Loja em Quantidade, e você pode comprar até 50 de uma vez.";
+			mes "Quantas licenças você precisa?";
+			next;
+			while(1) {
+				input .@input;
+				mes "[Sr. Hugh]";
+				if (.@input == 0) {
+					mes "Você cancelou a negociação.";
+					mes "Tenha um bom dia.";
+					close;
+				} else if (.@input > 50) {
+					mes "Por favor, insira um valor de 50 ou menos.";
+					next;
+				} else {
+					mes "Custará "+(.@input*200)+" zenys por "+.@input+" licenças.";
+					if (Zeny < (.@input*200)) {
+						mes "mas parece que você não tem dinheiro suficiente.";
+					} else {
+						mes "Obrigado por sua preferência.";
+						getitem 6377,.@input; //Buy_Market_Permit
+						set Zeny,Zeny-(.@input*200);
+					}
+					close;
+				}
+			}
+		} else {
+			mes "Eu sou Hugh da Equipe de Compras na Alberta Merchant Guild.";
+			mes "Você é...";
+			next;
+			mes "[Sr. Hugh]";
+			mes "Você sabia? Nossa guilda emitiu uma licença que permite que indivíduos comprem mercadorias de outros.";
+			next;
+			select("Nunca tive problemas comprando itens...");
+			mes "[Sr. Hugh]";
+			mes "Você está certo, mas pense nisso:";
+			mes "Você nunca teve dificuldade em comprar em grande quantidade?";
+			mes "Você teria que encontrar e conversar com todos que têm um item que você quer.";
+			mes "Bem inconveniente, não é?";
+			next;
+			mes "[Sr. Hugh]";
+			mes "Como a compra em grande quantidade é um problema importante para nós, Mercadores,";
+			mes "propus um plano inovador para nossa guilda, com base nos meus 10 anos de experiência em compras.";
+			next;
+			mes "[Sr. Hugh]";
+			mes "'Permita que Indivíduos Abram";
+			mes "uma Loja de Compra em Quantidade!'";
+			mes "Esse é o título da minha proposta.";
+			mes "Você verá, quando ler...";
+			next;
+			mes "[Sr. Hugh]";
+			mes "...";
+			mes "...(Sr. Hugh fala sem parar com todos os detalhes.)";
+			next;
+			select("Tudo bem, qual é o seu ponto?");
+			mes "[Sr. Hugh]";
+			mes "Ah, sim. Em resumo,";
+			mes "você pode comprar certos itens em grande quantidade através da Vending.";
+			next;
+			mes "[Sr. Hugh]";
+			mes "Para abrir uma Loja de Compra em Quantidade, você precisa de uma licença emitida pela Merchant Guild.";
+			next;
+			mes "[Sr. Hugh]";
+			mes "Você precisa dela toda vez que abrir a loja. Estamos esperando um aumento significativo nos lucros através desse novo tipo de licenciamento.";
+			next;
+			mes "[Sr. Hugh]";
+			mes "Essa é a essência da minha proposta!";
+			mes "Nosso presidente ficou tão feliz ao ouvir que vamos ganhar muito dinheiro!";
+			next;
+			mes "["+strcharinfo(0)+"]";
+			mes "Por favor, vá direto ao ponto!";
+			next;
+			mes "[Sr. Hugh]";
+			mes "Não seja tão impaciente, certo?";
+			mes "Meu ponto é que podemos deixar você abrir a Loja de Compra em Quantidade se você aprendeu Vending.";
+			next;
+			mes "[Sr. Hugh]";
+			mes "Claro, cobramos 10.000 zenys como taxa de inscrição única.";
+			mes "Você precisará da ^4A4AFFLicença para Loja de Compra em Quantidade^000000 cada vez que abrir a loja.";
+			next;
+			mes "[Sr. Hugh]";
+			mes "Diga, você gostaria de se inscrever agora?";
+			mes "Se sim, eu vou te ensinar como abrir a Loja de Compra em Quantidade.";
+			next;
+			if(select("Aprender como abrir Loja de Compra em Quantidade: Cancelar") == 2) {
+				mes "[Sr. Hugh]";
+				mes "Caramba, isso é decepcionante!";
+				mes "Usar essa opção de compra em quantidade pode beneficiar seu negócio de muitas maneiras, mas a decisão é sua.";
+				mes "Estou sempre aberto para consultas!";
+				close;
+			}
+			mes "[Sr. Hugh]";
+			if (Zeny < 10000) {
+				mes "A taxa de inscrição é de 10.000 zenys.";
+				mes "Por favor, tenha a taxa pronta primeiro.";
+				close;
+			} else {
+				mes "Você tomou uma boa decisão.";
+				mes "Por favor, me entregue a taxa de inscrição e assine aqui....";
+				next;
+				input .@name$;
+				mes "[Sr. Hugh]";
+				mes .@name$+"....";
+				mes "Eu gosto da sua caligrafia.";
+				mes "Ok, agora você está aprovado para abrir a Loja de Compra em Quantidade.";
+				set Zeny,Zeny-10000;
+				getitem 6377,5; //Licença de Loja de Compra em Quantidade
+				skill "ALL_Comprando_STORE",1,SKILL_PERM_GRANT;
+				next;
+				mes "[Sr. Hugh]";
+				mes "Atualmente, apenas itens normais ^8C2121EXCETO^000000 equipamentos, certas poções e itens artesanais podem ser comprados em grande quantidade, mas isso ainda pode ser muito benéfico para você, dependendo de como você usa.";
+				next;
+				mes "[Sr. Hugh]";
+				mes "Ah, e você precisa ter pelo menos um dos itens que deseja comprar em seu inventário, pois precisa mostrá-lo aos outros por meio de sua loja.";
+				next;
+				mes "[Sr. Hugh]";
+				mes "Sua habilidade deve estar registrada agora em sua janela de habilidades. Se você não conseguir vê-la, provavelmente terá que minimizar sua Lista de Habilidades e verificar a aba de 3º Job.";
+				next;
+				mes "[Sr. Hugh]";
+				mes "Eu lhe dei 5 Licenças de Loja de Compra em Quantidade para o seu teste.";
+				mes "Divirta-se comprando!";
+				close;
+			}
+		}
+	}
+	mes "Eu sou Hugh da Equipe de Compras na Alberta Merchant Guild.";
+	mes "Eu adoraria conversar, mas estou muito ocupado no momento.";
+	next;
+	mes "[Sr. Hugh]";
+	mes "Meu tempo é dedicado exclusivamente aos nossos clientes na indústria de Mercadores.";
+	close;
+}

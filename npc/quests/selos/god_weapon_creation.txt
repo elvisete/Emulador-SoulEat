@@ -1,0 +1,867 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+gld_dun01,28,85,0	script	Grunburti#1::GodDwarf	826,{
+	mes "[Anão Grunburti]";
+	mes "Um humano?!";
+	mes "Esta terra está cheia";
+	mes "da sua espécie. ";
+	mes "traz você aqui?";
+	next;
+	mes "[Anão Grunburti]";
+	mes "Morando em Midgard e longe de";
+	mes "minha cidade natal já é dolorosa o suficiente, muito menos enfrentar um humano chorão. ";
+	next;
+	switch(select("Pergunte a ele sobre os Anões.:Pergunte o que ele está fazendo.:Solicite a criação de armas.:Cancelar.")) {
+	case 1:
+		mes "[Anão Grunburti]";
+		mes "O que há para saber sobre os anões?";
+		mes "Somos a corrida mais difícil. ";
+		mes "quão severo o ambiente pode ser.";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Duvido que sua mente débil possa compreender o quão insuportável";
+		mes "deve ser para você morar na minha terra natal, mas você pode tentar.";
+		mes "Tente imaginar.";
+		next;
+		mes "[Anão Grunburti]";
+		mes "A maior parte do conhecimento e das habilidades dos quais vocês, humanos, tanto se orgulham, provavelmente foram transmitidos pelos Anões.";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Isto é especialmente verdadeiro no";
+		mes "caso de ferraria. ";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Temos o maior conhecimento e habilidades, mas aceitamos nosso destino de viver nas terras frias e áridas dos Gigantes.";
+		close;
+	case 2:
+		mes "[Anão Grunburti]";
+		mes "Você acabou de perguntar o que estou fazendo aqui? ";
+		mes "aqui para que eu possa chutar a bunda deles!";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Ah, não se preocupe. ";
+		mes "uns aos outros.";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Como raça, seu povo está simplesmente desesperado. ";
+		next;
+		mes "[Anão Grunburti]";
+		mes "O caminho para minha cidade natal";
+		mes "desapareceu após a guerra, há 1.000 anos. ";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Estou preso aqui em Midgard.";
+		mes "Pelo menos tive a sorte de encontrar esta caverna. ";
+		close;
+	case 3:
+		set .@GID,getcharid(2);
+		if (($God1 < $@god_check2) || ($God2 < $@god_check2) || ($God3 < $@god_check2) || ($God4 < $@god_check2)){
+			if (($God1 >= $@god_check1) && ($God2 >= $@god_check1) && ($God3 >= $@god_check1) && ($God4 >= $@god_check1) && (is_guild_leader() == true)) {
+				mes "[Anão Grunburti]";
+				mes "Hum...";
+				mes "Vou precisar de algumas coisas para fazer uma arma para você. ";
+				next;
+				switch(select("Brisingamen:Megingjard:Sleipnir:Mjolnir")) {
+				case 1:
+					mes "[Anão Grunburti]";
+					mes "Eu vou precisar...";
+					mes "^0000FF4 Jóia de Freya";
+					mes "4 ornamento de prata";
+					mes "3 Cristal de Neve";
+					mes "3 ondulação";
+					mes "3 Ar à deriva";
+					mes "doisSafira";
+					mes "3 pérola";
+					mes "10 Opala";
+					mes "5 Rubi Amaldiçoado";
+					mes "20 ouro ^ 000000";
+					mes "1 colar^000000...";
+					next;
+					mes "[Anão Grunburti]";
+					mes "No entanto, o momento de criar este Brisingamen ainda não chegou. ";
+					close;
+				case 2:
+					mes "[Anão Grunburti]";
+					mes "Eu vou precisar...";
+					mes "^0000FF1 Gleipnir";
+					mes "20 ouro";
+					mes "10 Safira";
+					mes "10Oridecon";
+					mes "1 cinto ^ 000000";
+					next;
+					mes "[Anão Grunburti]";
+					mes "No entanto, os selos do Megingjard ainda não foram divulgados. ";
+					close;
+				case 3:
+					mes "[Anão Grunburti]";
+					mes "Eu vou precisar...";
+					mes "^0000FF3 Roda do Desconhecido";
+					mes "5 Pena de Asa de Anjo";
+					mes "3 Espírito de Peixe";
+					mes "4Amblema do Deus Sol";
+					mes "3 Sopro do Espírito";
+					mes "20 ouro";
+					mes "10Elunium";
+					mes "1 botas com fenda ^ 000000";
+					next;
+					mes "[Anão Grunburti]";
+					mes "Mas mesmo assim, não posso criar Sleipnir até que os selos sejam quebrados. ";
+					close;
+				case 4:
+					mes "[Anão Grunburti]";
+					mes "Eu vou precisar...";
+					mes "^0000FF2 Manoplas de Thor";
+					mes "4 Donzela de Ferro";
+					mes "5 Ira da Valquíria";
+					mes "5 Presságio da Tempestade";
+					mes "5 Onda";
+					mes "20Oridecon";
+					mes "5Elunium";
+					mes "40 ouro";
+					mes "1 Atordoador ^ 000000";
+					next;
+					mes "[Anão Grunburti]";
+					mes "Mas não posso nem criar uma réplica do Mjolnir se os selos ainda estiverem no lugar. ";
+					close;
+				}
+			} 
+			mes "[Anão Grunburti]";
+			mes "Nós, anões, temos muito orgulho para demonstrar nossas habilidades na frente de um humano humilde!";
+			next;
+			mes "[Anão Grunburti]";
+			mes "Pare de me incomodar e saia daqui! ";
+			close;
+		}
+		if (is_guild_leader() == false) {
+			mes "[Anão Grunburti]";
+			mes "vou apenas apresentar";
+			mes "minhas magníficas habilidades";
+			mes "para um ser humano incrivelmente";
+			mes "posição elevada!";
+			next;
+			mes "[Anão Grunburti]";
+			mes "Embora eu odeie";
+			mes "a maioria dos humanos, eu tenho";
+			mes "não há escolha a não ser respeitar os escolhidos pelo destino. ";
+			close;
+		}
+		mes "[Anão Grunburti]";
+		mes "Embora seja muito humilhante apresentar minhas valiosas habilidades a um ser humano...";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Todos os selos foram liberados e quem detém o Emperium é escolhido pelo destino. ";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Em primeiro lugar, confirmarei se você trouxe ou não todos os materiais necessários para forjar um item divino! ";
+		next;
+		if ((countitem(7073) > 3) && (countitem(7077) > 3) && (countitem(7088) > 2) && (countitem(7090) > 2) && (countitem(7092) > 2) && (countitem(726) > 1) && (countitem(722) > 2) && (countitem(727) > 9) && (countitem(724) > 4) && (countitem(969) > 19) && (countitem(2603) > 0)) {
+			mes "[Anão Grunburti]";
+			mes "Hum...";
+			mes "Eu acho que você";
+			mes "quer ter";
+			mes "^0000FFBrisingamen^000000!";
+			next;
+		}
+		else if ((countitem(7058) > 0) && (countitem(969) > 19) && (countitem(726) > 9) && (countitem(984) > 9) && (countitem(2627) > 0)){ //Gullraifnir Gold Blue_Jewel Oridecon Belt 
+			mes "[Anão Grunburti]";
+			mes "Hum...";
+			mes "Eu acho que você";
+			mes "quer ter";
+			mes "^0000FFMegingjard^000000!";
+			next;
+		}
+		else if ((countitem(7076) > 2) && (countitem(7079) > 4) && (countitem(7083) > 2) && (countitem(7086) > 3) && (countitem(7087) > 2) && (countitem(969) > 19) && (countitem(985) > 9) && (countitem(2406) > 0)) {
+			mes "[Anão Grunburti]";
+			mes "Hum...";
+			mes "Eu acho que você";
+			mes "quer ter";
+			mes "^0000FFSleipnir^000000!";
+			next;
+		}
+		else if ((countitem(7074) > 1) && (countitem(7075) > 3) && (countitem(7078) > 4) && (countitem(7089) > 4) && (countitem(7091) > 4) && (countitem(984) > 19) && (countitem(985) > 4) && (countitem(969) > 39) && (countitem(1522) > 0)) {
+			mes "[Anão Grunburti]";
+			mes "Hum...";
+			mes "Eu acho que você";
+			mes "quer ter";
+			mes "^0000FFMjolnir^000000!";
+			next;
+		}
+		else {
+			mes "[Anão Grunburti]";
+			mes "...";
+			mes "......";
+			next;
+			mes "[Anão Grunburti]";
+			mes "...";
+			mes "......";
+			mes ".........";
+			next;
+			mes "[Anão Grunburti]";
+			mes "...";
+			mes "......";
+			mes ".........";
+			mes ".............";
+			next;
+			mes "[Anão Grunburti]";
+			mes "Como você ousa vir aqui despreparado?! ";
+			next;
+			switch(select("Brisingamen:Megingjard:Sleipnir:Mjolnir")) {
+			case 1:
+				mes "[Anão Grunburti]";
+				mes "Eu vou precisar...";
+				mes "^0000FF4 Jóia de Freya";
+				mes "4 ornamento de prata";
+				mes "3 Cristal de Neve";
+				mes "3 ondulação";
+				mes "3 Ar à deriva";
+				mes "doisSafira";
+				mes "3 pérola";
+				mes "10 Opala";
+				mes "5 Rubi Amaldiçoado";
+				mes "20 ouro ^ 000000";
+				mes "1 colar^000000...";
+				next;
+				mes "[Anão Grunburti]";
+				mes "Hummm, mas agora";
+				mes "que os selos têm";
+				mes "foi libertado, você deve se apressar antes que outro humano possa reivindicar";
+				mes "um dos itens divinos...";
+				next;
+				mes "[Anão Grunburti]";
+				mes "Pressa...!";
+				mes "Uma vez que eu forjar";
+				mes "Brisingamen,";
+				mes "os selos vão";
+				mes "ative novamente!";
+				close;
+			case 2:
+				mes "[Anão Grunburti]";
+				mes "Eu vou precisar...";
+				mes "^0000FF1 Gleipnir";
+				mes "20 ouro";
+				mes "10 Safira";
+				mes "10Oridecon";
+				mes "1 cinto ^ 000000";
+				next;
+				mes "[Anão Grunburti]";
+				mes "Hummm, mas agora";
+				mes "que os selos têm";
+				mes "foi libertado, você deve se apressar antes que outro humano possa reivindicar";
+				mes "um dos itens divinos...";
+				next;
+				mes "[Anão Grunburti]";
+				mes "Pressa...!";
+				mes "Uma vez que eu forjar";
+				mes "Megingjard,";
+				mes "os selos vão";
+				mes "ative novamente!";
+				close;
+			case 3:
+				mes "[Anão Grunburti]";
+				mes "Eu vou precisar...";
+				mes "^0000FF3 Roda do Desconhecido";
+				mes "5 Pena de Asa de Anjo";
+				mes "3 Espírito de Peixe";
+				mes "4Amblema do Deus Sol";
+				mes "3 Sopro do Espírito";
+				mes "20 ouro";
+				mes "10Elunium";
+				mes "1 botas com fenda ^ 000000";
+				next;
+				mes "[Anão Grunburti]";
+				mes "Hummm, mas agora";
+				mes "que os selos têm";
+				mes "foi libertado, você deve se apressar antes que outro humano possa reivindicar";
+				mes "um dos itens divinos...";
+				next;
+				mes "[Anão Grunburti]";
+				mes "Pressa...!";
+				mes "Uma vez que eu forjar";
+				mes "Sleipnir,";
+				mes "os selos vão";
+				mes "ative novamente!";
+				close;
+			case 4:
+				mes "[Anão Grunburti]";
+				mes "Eu vou precisar...";
+				mes "^0000FF2 Manoplas de Thor";
+				mes "4 Donzela de Ferro";
+				mes "5 Ira da Valquíria";
+				mes "5 Presságio da Tempestade";
+				mes "5 Onda";
+				mes "20Oridecon";
+				mes "5Elunium";
+				mes "40 ouro";
+				next;
+				mes "[Anão Grunburti]";
+				mes "Hummm, mas agora";
+				mes "que os selos têm";
+				mes "foi libertado, você deve se apressar antes que outro humano possa reivindicar";
+				mes "um dos itens divinos...";
+				next;
+				mes "[Anão Grunburti]";
+				mes "Pressa...!";
+				mes "Uma vez que eu forjar";
+				mes "o Mjolnir,";
+				mes "os selos vão";
+				mes "ative novamente!";
+				close;
+			}
+		}
+		mes "[Anão Grunburti]";
+		mes "Hmpf.";
+		mes "Não consigo trabalhar aqui. ";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Agora se apresse! ";
+		close2;
+		warp "que_god01",214,63;
+		end;
+	case 4:
+		mes "[Anão Grunburti]";
+		mes "Muhahahahahaha!";
+		mes "Fora da minha vista,";
+		mes "você está sujo, imundo";
+		mes "humano...!";
+		close;
+	}
+}
+gld_dun02,85,84,0	duplicate(GodDwarf)	Grunburti#2	826
+gld_dun03,92,105,0	duplicate(GodDwarf)	Grunburti#3	826
+gld_dun04,268,230,0	duplicate(GodDwarf)	Grunburti#4	826
+
+que_god01,215,127,0	script	#god_hopewarp1	111,{
+	end;
+
+OnInit:
+	waitingroom "Entrada do Laboratório",2,"#god_hopewarp1::OnStartArena",1;
+	enablewaitingroomevent;
+	end;
+
+OnStartArena:
+	warpwaitingpc "que_god01",155,63;
+	donpcevent "Grunburti";
+	disablewaitingroomevent;
+	end;
+
+OnReset:
+	enablewaitingroomevent;
+	end;
+}
+
+que_god01,214,128,0	script	 #que_godnpc1::GodEntrance	111,{
+	mes "[Aviso de entrada]";
+	mes "Somente o mais";
+	mes "digno dos humanos";
+	mes "possuirá o";
+	mes "poder dos deuses.";
+	close;
+}
+que_god01,215,128,0	duplicate(GodEntrance)	 #que_godnpc2	111
+que_god01,213,128,0	duplicate(GodEntrance)	 #que_godnpc3	111
+
+que_god01,154,112,4	script	Grunburti#god	826,{
+	if (($God1 < $@god_check2) || ($God2 < $@god_check2) || ($God3 < $@god_check2) || ($God4 < $@god_check2)){
+		mes "[Anão Grunburti]";
+		mes "Um dos piedosos";
+		mes "itens foram criados,";
+		mes "e os selos foram";
+		mes "restaurado. ";
+		mes "espere até que todos estejam";
+		mes "liberado novamente...!";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Bwahahahahahaha!";
+		mes "Mesmo que você esteja";
+		mes "apenas um humano, eu sinto";
+		mes "pena de você ~";
+		close;
+	}
+	set .@GID,getcharid(2);
+	if (is_guild_leader() == false) {
+		mes "[Anão Grunburti]";
+		mes "Como no...";
+		mes "Saia daqui!";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Como um de vocês";
+		mes "humanos estúpidos entram";
+		mes "aqui?! ";
+		mes "segure o Emperium pode";
+		mes "sequer pensar em entrar";
+		mes "Esse lugar...!";
+		close;
+	}
+	mes "[Anão Grunburti]";
+	mes "É incrivelmente";
+	mes "humilhante trabalhar para um ser humano. ";
+	next;
+	mes "[Anão Grunburti]";
+	mes "Temos apenas";
+	mes "^FF000010 minutos^000000 para recriar um tesouro divino. ";
+	next;
+	mes "[Anão Grunburti]";
+	mes "^FF0000Não seja muito lento^000000,";
+	mes "caso contrário ^FF0000Eu darei";
+	mes "a chance para outro";
+	mes "humano ^ 000000 imediatamente!";
+	next;
+	mes "[Anão Grunburti]";
+	mes "Agora...!";
+	mes "Escolha o item";
+	mes "você deseja para mim";
+	mes "para criar!";
+	next;
+	switch(select("Brisingamen:Megingjard:Sleipnir:Mjolnir")) {
+	case 1:
+		mes "[Anão Grunburti]";
+		mes "B-Brisingamen?!";
+		mes "Eu nunca esperei";
+		mes "que insolência...!";
+		mes "Este colar nunca terá nenhum significado aos meus olhos, a menos que seja usado pela deusa Freya.";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Mas quem sou eu para julgar o seu valor? ";
+		mes "selecione seus proprietários por vontade própria. ";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Mais uma vez, preciso dos seguintes materiais para reproduzir";
+		mes "esse tesouro divino...";
+		next;
+		mes "[Anão Grunburti]";
+		mes "^0000FF4 Jóia de Freya";
+		mes "4 ornamento de prata";
+		mes "3 Cristal de Neve";
+		mes "3 ondulação";
+		mes "3 Ar à deriva";
+		mes "doisSafira";
+		mes "3 pérola";
+		mes "10 Opala";
+		mes "5 Rubi Amaldiçoado";
+		mes "20 ouro";
+		mes "1 colar ^ 000000";
+		next;
+		switch(select("Faça Brisingamen.:Cancelar.")) {
+		case 1:
+			if ((countitem(7073) > 3) && (countitem(7077) > 3) && (countitem(7088) > 2) && (countitem(7090) > 2) && (countitem(7092) > 2) && (countitem(726) > 1) && (countitem(722) > 2) && (countitem(727) > 9) && (countitem(724) > 4) && (countitem(969) > 19) && (countitem(2603) > 0)){ //Jewel_Of_Prayer Silver_Fancy Crystal_Of_Snow Slilince_Wave Air_Stream Blue_Jewel Scarlet_Jewel White_Jewel Cardinal_Jewel_ Gold Necklace 
+				mes "[Anão Grunburti]";
+				mes "Nunca no meu estado mais selvagem";
+				mes "imaginei que estaria criando esta obra-prima para um mero humano. ";
+				next;
+				if (($God1 < $@god_check2) || ($God2 < $@god_check2) || ($God3 < $@god_check2) || ($God4 < $@god_check2)){
+					mes "[Anão Grunburti]";
+					mes "Mas...";
+					mes "Os selos";
+					mes "acabei de ser";
+					mes "restaurado. ";
+					mes "espere até que todos estejam";
+					mes "liberado novamente...!";
+					next;
+					mes "[Anão Grunburti]";
+					mes "Bwahahahahahaha!";
+					mes "Mesmo que você esteja";
+					mes "apenas um humano, eu sinto";
+					mes "pena de você ~";
+					close;
+				}
+				delitem 7073,4;  //Jewel_Of_Prayer
+				delitem 7077,4;  //Silver_Fancy
+				delitem 7088,3;  //Crystal_Of_Snow
+				delitem 7090,3;  //Slilince_Wave
+				delitem 7092,3;  //Air_Stream
+				delitem 726,2;  //Blue_Jewel
+				delitem 722,3;  //Scarlet_Jewel
+				delitem 727,10;  //White_Jewel
+				delitem 724,5;  //Cardinal_Jewel_
+				delitem 969,20;  //Gold
+				delitem 2603,1;  //Necklace
+				getitem 2630,1; // Brysinggamen
+				set $God1,0;
+				set $God2,0;
+				set $God3,0;
+				set $God4,0;
+				announce "[Brisingamen] chegou às mãos de [" + strcharinfo(0) + "], mestre do [" + getguildname(.@GID) + "] guilda.",bc_all;
+				mes "[Anão Grunburti]";
+				mes "Ah, basta olhar para essa beleza deslumbrante. ";
+				close;
+			}
+			else {
+				mes "[Anão Grunburti]";
+				mes "Humano idiota!";
+				mes "Você não trouxe";
+				mes "tudo que eu preciso";
+				mes "recrie Brisingamen!";
+				mes "Pressa...!";
+				close;
+			}
+		case 2:
+			mes "[Anão Grunburti]";
+			mes "Muhahahaha~";
+			mes "De alguma forma, eu imaginei";
+			mes "você desistiria, humano!";
+			close;
+		}
+	case 2:
+		mes "[Anão Grunburti]";
+		mes "M-Megingjard?!";
+		mes "O cinto de poder?!";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Este cinto foi usado há muito tempo por Thor, o guerreiro mais poderoso de todos os tempos. ";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Mais uma vez, preciso dos seguintes materiais para reproduzir";
+		mes "esse tesouro divino...";
+		next;
+		mes "[Anão Grunburti]";
+		mes "^0000FF1 Gleipnir";
+		mes "20 ouro";
+		mes "10 Safira";
+		mes "10Oridecon";
+		mes "1 cinto^000000...";
+		next;
+		switch(select("Faça Megingjard.:Cancelar.")) {
+		case 1:
+			if ((countitem(7058) > 0) && (countitem(969) > 19) && (countitem(726) > 9) && (countitem(984) > 9) && (countitem(2627) > 0)) {
+				mes "[Anão Grunburti]";
+				mes "Há vinte anos,";
+				mes "Eu nunca acreditaria nisso";
+				mes "algo tão poderoso e perigoso como Megingjard acabaria nas mãos de um humano...";
+				next;
+				if (($God1 < $@god_check2) || ($God2 < $@god_check2) || ($God3 < $@god_check2) || ($God4 < $@god_check2)){
+					mes "[Anão Grunburti]";
+					mes "Mas...";
+					mes "Os selos";
+					mes "acabei de ser";
+					mes "restaurado. ";
+					mes "espere até que todos estejam";
+					mes "liberado novamente...!";
+					next;
+					mes "[Anão Grunburti]";
+					mes "Bwahahahahahaha!";
+					mes "Mesmo que você esteja";
+					mes "apenas um humano, eu sinto";
+					mes "pena de você ~";
+					close;
+				}
+				delitem 7058,1;  //Gullraifnir
+				delitem 969,20;  //Gold
+				delitem 726,10;  //Blue_Jewel
+				delitem 984,10;  //Oridecon
+				delitem 2627,1;  //Belt
+				getitem 2629,1; // Magingiorde
+				set $God1,0;
+				set $God2,0;
+				set $God3,0;
+				set $God4,0;
+				announce "[Megingjard] o item divino foi dado a [" + strcharinfo(0) + "], o mestre da guilda [" + getguildname(.@GID) + "].",bc_all;
+				mes "[Anão Grunburti]";
+				mes "Aqui...";
+				mes "Tenha cuidado com como";
+				mes "você usa a força";
+				mes "de um deus. ";
+				mes "aviso, humano...";
+				close;
+			}
+			else {
+				mes "[Anão Grunburti]";
+				mes "Humano idiota!";
+				mes "Você não trouxe";
+				mes "tudo que eu preciso";
+				mes "recrie Megingjard!";
+				mes "Pressa...!";
+				close;
+			}
+		case 2:
+			mes "[Anão Grunburti]";
+			mes "Muhahahaha~";
+			mes "De alguma forma, eu imaginei";
+			mes "você desistiria, humano!";
+			close;
+		}
+	case 3:
+		mes "[Anão Grunburti]";
+		mes "Sleipnir...";
+		mes "Agora entenda";
+		mes "que não consigo criar";
+		mes "o garanhão de oito patas";
+		mes "da lenda. ";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Posso criar um par";
+		mes "de sapatos que possuirão o poder de Sleipnir. ";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Mais uma vez, preciso dos seguintes materiais para reproduzir";
+		mes "esse tesouro divino...";
+		next;
+		mes "[Anão Grunburti]";
+		mes "^0000FF3 Roda do Desconhecido";
+		mes "5 Pena de Asa de Anjo";
+		mes "3 Espírito de Peixe";
+		mes "4Amblema do Deus Sol";
+		mes "3 Sopro do Espírito";
+		mes "20 ouro";
+		mes "10Elunium";
+		mes "1 botas com fenda ^ 000000...";
+		next;
+		switch(select("Faça Sleipnir.:Cancelar.")) {
+		case 1:
+			if ((countitem(7076) > 2) && (countitem(7079) > 4) && (countitem(7083) > 2) && (countitem(7086) > 3) && (countitem(7087) > 2) && (countitem(969) > 19) && (countitem(985) > 9) && (countitem(2406) > 0)) {
+				mes "[Anão Grunburti]";
+				mes "Eu nunca acreditei";
+				mes "que a velocidade de";
+				mes "Sleipnir seria";
+				mes "usado por um humano.";
+				mes "Me dê um momento...";
+				next;
+				if (($God1 < $@god_check2) || ($God2 < $@god_check2) || ($God3 < $@god_check2) || ($God4 < $@god_check2)){
+					mes "[Anão Grunburti]";
+					mes "Mas...";
+					mes "Os selos";
+					mes "acabei de ser";
+					mes "restaurado. ";
+					mes "espere até que todos estejam";
+					mes "liberado novamente...!";
+					next;
+					mes "[Anão Grunburti]";
+					mes "Bwahahahahahaha!";
+					mes "Mesmo que você esteja";
+					mes "apenas um humano, eu sinto";
+					mes "pena de você ~";
+					close;
+				}
+				delitem 7076,3;  //Mystery_Wheel
+				delitem 7079,5;  //Feather_Of_Angel
+				delitem 7083,3;  //Soul_Of_Fish
+				delitem 7086,4;  //Symbol_Of_Sun
+				delitem 7087,3;  //Breath_Of_Soul
+				delitem 969,20;  //Gold
+				delitem 985,10;  //Elunium
+				delitem 2406,1;  //Boots_
+				getitem 2410,1; // Sleipnir
+				set $God1,0;
+				set $God2,0;
+				set $God3,0;
+				set $God4,0;
+				announce "[Sleipnir] o item divino foi dado a [" + strcharinfo(0) + "], o mestre da guilda [" + getguildname(.@GID) + "].",bc_all;
+				mes "[Anão Grunburti]";
+				mes "Lá...";
+				mes "Use-os e";
+				mes "mover-se com a velocidade de";
+				mes "o lendário Sleipnir...";
+				close;
+			}
+			else {
+				mes "[Anão Grunburti]";
+				mes "Humano idiota!";
+				mes "Você não trouxe";
+				mes "tudo que eu preciso";
+				mes "recrie Sleipnir!";
+				mes "Pressa...!";
+				close;
+			}
+		case 2:
+			mes "[Anão Grunburti]";
+			mes "Muhahahaha~";
+			mes "De alguma forma, eu imaginei";
+			mes "você desistiria, humano!";
+			close;
+		}
+	case 4:
+		mes "[Anão Grunburti]";
+		mes "M-M-Mjolnir!?";
+		mes "Mesmo que a";
+		mes "o momento está próximo,";
+		mes "Mal posso acreditar...";
+		next;
+		mes "[Anão Grunburti]";
+		mes "^333333*Suspiro...*^000000";
+		mes "Isso é quase uma vergonha para os deuses e para a raça dos anões. ";
+		next;
+		mes "[Anão Grunburti]";
+		mes "Mais uma vez, preciso dos seguintes materiais para reproduzir";
+		mes "esse tesouro divino...";
+		next;
+		mes "[Anão Grunburti]";
+		mes "^0000FF2 Manoplas de Thor";
+		mes "4 Donzela de Ferro";
+		mes "5 Ira da Valquíria";
+		mes "5 Presságio da Tempestade";
+		mes "5 Onda";
+		mes "20Oridecon";
+		mes "5Elunium";
+		mes "40 ouro";
+		mes "1 Atordoador^000000...";
+		next;
+		switch(select("Faça Mjolnir.:Cancelar.")) {
+		case 1:
+			if ((countitem(7074) > 1) && (countitem(7075) > 3) && (countitem(7078) > 4) && (countitem(7089) > 4) && (countitem(7091) > 4) && (countitem(984) > 19) && (countitem(985) > 4) && (countitem(969) > 39) && (countitem(1522) > 0)) {
+				mes "[Anão Grunburti]";
+				mes "Não desonre";
+				mes "Thor, senhor do Trovão,";
+				mes "ou você vai se arrepender.";
+				mes "Marque minhas palavras...";
+				next;
+				if (($God1 < $@god_check2) || ($God2 < $@god_check2) || ($God3 < $@god_check2) || ($God4 < $@god_check2)){
+					mes "[Anão Grunburti]";
+					mes "Mas...";
+					mes "Os selos";
+					mes "acabei de ser";
+					mes "restaurado. ";
+					mes "espere até que todos estejam";
+					mes "liberado novamente...!";
+					next;
+					mes "[Anão Grunburti]";
+					mes "Bwahahahahahaha!";
+					mes "Mesmo que você esteja";
+					mes "apenas um humano, eu sinto";
+					mes "pena de você ~";
+					close;
+				}
+				delitem 7074,2;  //Iron_Glove
+				delitem 7075,4;  //Iron_Maiden
+				delitem 7078,5;  //Anger_Of_Valkurye
+				delitem 7089,5;  //Indication_Of_Tempest
+				delitem 7091,5;  //Rough_Billows
+				delitem 984,20;  //Oridecon
+				delitem 985,5;  //Elunium
+				delitem 969,40;  //Gold
+				delitem 1522,1;  //Stunner
+				getitem 1530,1; // Mjolnir
+				set $God1,0;
+				set $God2,0;
+				set $God3,0;
+				set $God4,0;
+				announce "[Mjolnir] foi concedido a [" + strcharinfo(0) + "], o mestre do [" + getguildname(.@GID) + "] guilda.",bc_all;
+				mes "[Anão Grunburti]";
+				mes "Está feito.";
+				mes "Pegue. ";
+				mes "como é ter a arma mais poderosa do mundo em suas mãos?";
+				close;
+			}
+			else {
+				mes "[Anão Grunburti]";
+				mes "Humano idiota!";
+				mes "Você não trouxe";
+				mes "tudo que eu preciso";
+				mes "para recriar o Mjolnir!";
+				mes "Pressa...!";
+				close;
+			}
+		case 2:
+			mes "[Anão Grunburti]";
+			mes "Muhahahaha~";
+			mes "De alguma forma, eu imaginei";
+			mes "você desistiria, humano!";
+			close;
+		}
+	}
+	end;
+
+OnEnable:
+	initnpctimer;
+	end;
+
+OnTimer10000:
+	mapannounce "que_god01","Lembre-se que você só tem 10 minutos para isso! ",bc_map;
+	end;
+
+OnTimer610000:
+	mapannounce "que_god01","Você é muito lento! ",bc_map;
+	end;
+
+OnTimer612000:
+	donpcevent "god_wep_warpmaster::OnEnable";
+	end;
+
+OnTimer615000:
+	donpcevent "god_wep_warpmaster::OnDisable";
+	donpcevent "#god_hopewarp1::OnReset";
+	stopnpctimer;
+	end;
+}
+
+que_god01,169,82,0	script	god_wep_warpmaster	-1,{
+OnEnable:
+	for(set .@i,1; .@i<=6; set .@i,.@i+1)
+		enablenpc "god_failwarp"+.@i;
+	end;
+OnDisable:
+	for(set .@i,1; .@i<=6; set .@i,.@i+1)
+		disablenpc "god_failwarp"+.@i;
+	end;
+}
+
+que_god01,154,67,0	script	god_failwarp#1	-1,4,7,{
+OnInit:
+	disablenpc();
+	end;
+OnTouch_:
+	warp "Prontera",156,324;
+	end;
+}
+que_god01,154,82,0	duplicate(god_failwarp#1)	god_failwarp#2	-1,4,7
+que_god01,145,99,0	duplicate(god_failwarp#1)	god_failwarp#3	-1,9,9
+que_god01,164,99,0	duplicate(god_failwarp#1)	god_failwarp#4	-1,9,9
+que_god01,145,118,0	duplicate(god_failwarp#1)	god_failwarp#5	-1,9,9
+que_god01,164,118,0	duplicate(god_failwarp#1)	god_failwarp#6	-1,9,9
+
+// Original name: "Missões de itens divinos relacionadas"
+que_god01,293,3,0	script	Godly Item Quests#god	90,{
+	callfunc "F_GM_NPC";
+	mes "[Use em caso de emergência]";
+	mes "Por favor insira a senha.";
+	mes "Se desejar cancelar, digite 0.";
+	next;
+	set .@i, callfunc("F_GM_NPC",1854,0,0,4000);
+	if (.@i == -2) {
+		mes "[Use em caso de emergência]";
+		mes "Senha é incorreta.";
+		close;
+	} else if (.@i == -1) {
+		mes "[Use em caso de emergência]";
+		mes "Você cancelou sua solicitação.";
+		close;
+	} else if (.@i == 0) {
+		close;
+	} else {
+		mes "[Use em caso de emergência]";
+		mes "Quais serviços você gostaria de usar?";
+		next;
+		switch(select("Desligue Warps.:Redefinir temporizador.:Redefinir sala de bate-papo.")) {
+		case 1:
+			mes "[Use em caso de emergência]";
+			mes "Pressione o botão 'Avançar' para desligar as distorções.";
+			next;
+			donpcevent "god_wep_warpmaster::OnDisable";
+			mes "[Use em caso de emergência]";
+			mes "Você desativou os warps com sucesso.";
+			close;
+		case 2:
+			mes "[Use em caso de emergência]";
+			mes "Pressione o botão 'Avançar' para zerar o cronômetro.";
+			next;
+			donpcevent "Grunburti";
+			mes "[Use em caso de emergência]";
+			mes "Você redefiniu o cronômetro com sucesso.";
+			close;
+		case 3:
+			mes "[Use em caso de emergência]";
+			mes "Por favor, pressione o botão 'Avançar' para reiniciar a sala de bate-papo da arena em que_god01.";
+			next;
+			donpcevent "#god_hopewarp1::OnReset";
+			mes "[Use em caso de emergência]";
+			mes "Você reinicializou com sucesso a sala de bate-papo da arena (Entrada do Laboratório 1/2).";
+			close;
+		}
+	}
+}
+

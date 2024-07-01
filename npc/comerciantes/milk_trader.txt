@@ -1,0 +1,70 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+prontera,73,140,0	script	Vendedor de leite	86,{
+	if (checkweight(1201,1) == 0) {
+		mes "^3355FFSó um momento!";
+		mes "Eu não posso oferecer";
+		mes "nenhum dos meus serviços";
+		mes "a você porque está";
+		mes "carregando muitas coisas.";
+		mes "Coloque seus itens extras";
+		mes "no Armazém Kafra e volte~";
+		close;
+	}
+	mes "[Vendedor de leite]";
+	mes "Ei, ei...";
+	mes "Se você me trouxer";
+	mes "1 Garrafa Vazia e";
+	mes "15 Zenys, eu troco";
+	mes "eles por 1 Leite. O que";
+	mes "acha disso?";
+	next;
+	if (select("Trocar todas as garrafas vazias.:Cancelar") == 1) {
+		if (countitem(713) <= 0) {
+			mes "[Vendedor de leite]";
+			mes "Ei...";
+			mes "Você não tem";
+			mes "nenhuma Garrafa Vazia.";
+			mes "Eu realmente não posso";
+			mes "te dar esse leite de";
+			mes "outra forma, sabe...";
+			close;
+		}
+		set .@garrafas,countitem(713);
+		set .@peso_total,.@garrafas * 50;
+		set .@custo_total,.@garrafas * 15;
+		if (Zeny < .@custo_total) {
+			mes "[Vendedor de leite]";
+			mes "Oh, whoa~!";
+			mes "Você não tem zenys";
+			mes "suficientes para trocar";
+			mes "todas essas Garrafas";
+			mes "Vazias por Leite. Você";
+			mes "precisa ter pelo menos";
+			mes .@custo_total + " zenys.";
+			close;
+		}
+		if (MaxWeight - Weight < .@peso_total) {
+			mes "[Vendedor de leite]";
+			mes "Hmm...";
+			mes "Você poderia fazer";
+			mes "um pouco mais de espaço";
+			mes "em seu inventário";
+			mes "antes de eu te dar";
+			mes "todo esse leite?";
+			close;
+		}
+		set Zeny, Zeny-.@custo_total;
+		delitem 713,.@garrafas; // Garrafas Vazias
+		getitem 519,.@garrafas; // Leite
+		close;
+	}
+	close;
+}

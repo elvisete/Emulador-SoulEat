@@ -1,0 +1,145 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+alberta,26,229,0	script	Kafra Employee#bunny	83,{
+	if (BUNYBND == 1) {
+		mes "[Funcionário da Kafra]";
+		mes "Olá ~!";
+		mes "Como você gostaria";
+		mes "participe do Kafra";
+		mes "especial da corporação";
+		mes "^529Evento da Banda DFFBunny^000000?";
+		next;
+		switch(select("Claro, eu trouxe os itens.:Informações do Evento:Cancelar")) {
+		case 1:
+			mes "[Funcionário da Kafra]";
+			mes "Tudo bem ~";
+			mes "Deixe-me verificar";
+			mes "veja se você trouxe";
+			mes "todos os itens...";
+			next;
+			setarray .@Items[0],949,100,706,1,722,1,2213,1;
+			for(set .@i,0; .@i<8; set .@i,.@i+2)
+				if (countitem(.@Items[.@i]) < .@Items[.@i+1]) {
+					mes "[Funcionário da Kafra]";
+					mes "Ah, me desculpe";
+					mes "mas você precisa";
+					mes "traga pelo menos";
+					mes callfunc("F_InsertPlural",.@Items[.@i+1],getitemname(.@Items[.@i]))+".";
+					close;
+				}
+			mes "[Funcionário da Kafra]";
+			mes "Ótimo, eu vejo isso";
+			mes "você reuniu";
+			mes "tudo que eu preciso";
+			mes "faça a Banda do Coelho.";
+			mes "Por favor espere um momento";
+			mes "enquanto eu ponho tudo junto...";
+			next;
+			for(set .@i,0; .@i<8; set .@i,.@i+2)
+				if (countitem(.@Items[.@i]) < .@Items[.@i+1]) {
+					mes "[Funcionário da Kafra]";
+					mes "Hum? ";
+					mes "mas na verdade não consigo";
+					mes "faça isso agora mesmo. ";
+					mes "need "+callfunc("F_InsertPlural",.@Items[.@i+1],getitemname(.@Items[.@i]));
+					mes "para eu colocar isso";
+					mes "Banda Coelhinhos juntos...";
+					close;
+				}
+			delitem 949,100; //Feather
+			delitem 706,1; //Four_Leaf_Clover
+			delitem 722,1; //Scarlet_Jewel
+			delitem 2213,1; //Cat_Hairband
+			mes "[Funcionário da Kafra]";
+			mes "Ah, aqui está ~";
+			mes "A banda de coelho perfeita!";
+			mes "Bem, espero que você goste.";
+			getitem 2214,1; //Bunny_Band
+			set BUNYBND,0;
+			next;
+			mes "[Funcionário da Kafra]";
+			mes "Obrigado por";
+			mes "participando deste";
+			mes "evento especial e seu";
+			mes "patrocínio contínuo";
+			mes "dos Serviços Kafra ~";
+			close;
+		case 2:
+			goto L_Info;
+		case 3:
+			close;
+		}
+	}
+	mes "[Funcionário da Kafra]";
+	mes "Olá ~! ";
+	mes "para participar do nosso especial ^529DFFBunny";
+	mes "Evento da Banda^000000 organizado pela Kafra";
+	mes "Corporação e patrocinado por";
+	mes "a Guilda Mercante de Alberta?";
+	next;
+	switch(select("Participe do Evento:Informações do Evento:Cancelar")) {
+	case 1:
+		set BUNYBND,1;
+		mes "[Funcionário da Kafra]";
+		mes "Ótimo! ";
+		mes "participando! ";
+		mes "ainda não ouvi,";
+		mes "você precisa coletar estes";
+		mes "itens se você quiser que eu coloque um";
+		mes "Banda Coelhinhos juntos para você...";
+		next;
+		mes "[Funcionário da Kafra]";
+		mes "100 penas,";
+		mes "1 trevo de quatro folhas,";
+		mes "1 banda de gatinho e";
+		mes "1 pérola. ";
+		mes "Boa sorte e estarei";
+		mes "esperando por você aqui ~";
+		close;
+	case 2:
+		break;
+	case 3:
+		close;
+	}
+L_Info:
+	mes "[Funcionário da Kafra]";
+	mes "Para agradecer aos nossos valiosos";
+	mes "clientes, Kafra Corporation";
+	mes "preparou um evento especial";
+	mes "onde o Funcionário da Kafra irá montar";
+	mes "Bandas de coelho para aventureiros";
+	mes "que trazem os itens necessários.";
+	next;
+	mes "[Funcionário da Kafra]";
+	mes "Para este especial,";
+	mes "item único,";
+	mes "traga 100 penas,";
+	mes "1 trevo de quatro folhas,";
+	mes "1 banda de gatinho e";
+	mes "1 pérola.";
+	next;
+	mes "[Funcionário da Kafra]";
+	mes "Quando você estiver pronto,";
+	mes "volte e traga";
+	mes "esses itens para mim.";
+	mes "(Patrocinado pelo";
+	mes "Guilda Mercante de Alberta).";
+	close;
+}
+
+//============================================================ 
+// Old changelog
+//============================================================ 
+//= 1.1 using duplicate command
+//= 1.2 Fixed NPC location, removed NPC dupes [Lupus]
+//= 1.3 RE-Fixed exploit V_V, also cleared used VAR [Lupus]
+//= 1.4 replaced BUNYBND with @BUNYBND [Lupus]
+//============================================================ 
+

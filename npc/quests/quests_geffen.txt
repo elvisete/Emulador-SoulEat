@@ -1,0 +1,421 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+// Blacksmith: 'Welding Mask' Quest
+//============================================================
+geffen_in,144,166,4	script	Blacksmith	63,{
+	mes "[Ferreiro]";
+	mes "Você nunca ouviu falar de mim? ";
+	next;
+	mes "[Ferreiro]";
+	mes "Mas...";
+	mes "Estou envelhecendo e minha habilidade começa a desaparecer com a idade. ";
+	next;
+	switch(select("O que é?:...")) {
+	case 1:
+		mes "[Ferreiro]";
+		mes "Nós, ferreiros, devemos sempre manipular o aço sob calor extremo, e o ar quente e os metais derretidos são mais do que a maioria das pessoas consegue suportar.";
+		next;
+		mes "[Ferreiro]";
+		mes "Pelo bem do nosso ofício, nossos rostos bonitos, mas masculinos, estão em risco...";
+		next;
+		mes "[Ferreiro]";
+		mes "Mas com esta maravilha da tecnologia, não há necessidade de se preocupar! ";
+		next;
+		mes "[Ferreiro]";
+		mes "Funciona cobrindo o rosto com uma placa de metal grossa. ";
+		next;
+		mes "[Ferreiro]";
+		mes "Então, que tal? ";
+		next;
+		switch(select("Hum... Nada mal. ")) {
+		case 1:
+			if ((countitem(999) > 49) && (Zeny > 1999)){
+				mes "[Ferreiro]";
+				mes "Ah, vejo que você aprecia o trabalho de um ferreiro! ";
+				next;
+				delitem 999,50;  //Steel
+				set Zeny,Zeny-2000;
+				getitem 2292,1; // Welding_Mask
+				mes "[Ferreiro]";
+				mes "Hahaha~! ";
+				close;
+			}
+			else {
+				mes "[Ferreiro]";
+				mes "Hmmm...";
+				mes "Você não tem os itens que preciso.";
+				next;
+				mes "[Ferreiro]";
+				mes "Um ferreiro comum interpretaria isso como um sinal de desrespeito, mas eu vou te perdoar. ";
+				close;
+			}
+		case 2:
+			mes "[Ferreiro]";
+			mes "A ^3355FFMáscara de Soldagem^000000 protege seu rosto cobrindo-o com uma placa de metal grossa. ";
+			close;
+		}
+	case 2:
+		mes "[Ferreiro]";
+		mes "Ah...!";
+		mes "Acho que esta é a primeira vez que você conhece um ferreiro tão bom quanto eu e fica sem palavras de admiração. ";
+		next;
+		mes "^3355FFEsse cara parece";
+		mes "um pouco cheio";
+		mes "de si mesmo.^000000";
+		close;
+	}
+}
+
+// Eric: 'Headset' Quest
+//============================================================
+geffen_in,30,71,4	script	Eric	83,{
+	mes "[Érico]";
+	mes "Por favor escute";
+	mes "para minha história";
+	mes "do meu abençoado";
+	mes "avô.";
+	next;
+	switch(select("Discussão:Pergunte sobre Itens necessários:Fabricação:Sair")) {
+	case 1:
+		mes "[Érico]";
+		mes "Meu avô, que faleceu há alguns anos, era especial para mim. ";
+		next;
+		mes "[Érico]";
+		mes "Para mim, a biblioteca do meu avô sempre foi como uma terra de fantasia onde eu poderia escapar. ";
+		next;
+		mes "[Érico]";
+		mes "Aprendi muitas coisas com seus livros na Biblioteca. ";
+		next;
+		mes "[Érico]";
+		mes "Um dia...";
+		mes "Como sempre, fui à Biblioteca e descobri um esquema interessante.";
+		next;
+		mes "[Érico]";
+		mes "Mostrava algum instrumento parecido com protetores de ouvido que, quando usados ??na cabeça, podiam transmitir música ou sussurros aos ouvidos através de um fio fino.";
+		next;
+		mes "[Érico]";
+		mes "Eu acho...";
+		mes "É o trabalho inacabado do meu avô. ";
+		next;
+		mes "[Érico]";
+		mes "No final, pensei 'Tenho que fazer isso sozinho'. ";
+		next;
+		mes "[Érico]";
+		mes "Se eu conseguir esses artigos, eu os construiria imediatamente. ";
+		next;
+		mes "[Érico]";
+		mes "Tudo o que quero fazer é construir esta coisa em homenagem ao meu avô e terminar o trabalho que ele começou. ";
+		close;
+	case 2:
+		mes "[Érico]";
+		mes "40 ^3355FFAço^000000";
+		mes "1 ^3355FFOridecon^000000";
+		mes "1 ^3355FFÁlcool^000000";
+		mes "1 ^3355FFCarvão^000000";
+		mes "Estas são as coisas que preciso para a obra-prima do avô.";
+		close;
+	case 3:
+		if ((countitem(999) > 39) && (countitem(984) > 0) && (countitem(970) > 0) && (countitem(1003) > 0)) {
+			delitem 999,40; //Steel
+			delitem 984,1; //Oridecon
+			delitem 970,1; //Alchol
+			delitem 1003,1; //Coal
+			getitem 5001,1; //Headset
+			mes "*Tocar! ";
+			next;
+			mes "[Érico]";
+			mes "Obrigado.";
+			mes "Por sua causa, pude realizar o desejo do meu avô. ";
+			next;
+			mes "[Érico]";
+			mes "Como eu disse, por favor, pegue isso. ";
+			close;
+		}
+		else {
+			mes "[Érico]";
+			mes "Obrigado por tentar me ajudar, mas você não trouxe todos os itens que preciso. ";
+			close;
+		}
+	case 4:
+		mes "[Érico]";
+		mes "N-não?";
+		mes "Bem...";
+		mes "Você tem o seu próprio";
+		mes "preocupações, suponho.";
+		mes "Até a próxima.";
+		close;
+	}
+}
+
+// Number Match Game :: gef_yagu
+//============================================================
+geffen,122,77,4	script	Nia#yagu	700,{
+	mes "[Nia]";
+	mes "Olá, sou Nia, a quinta";
+	mes "discípulo de Mawong, o";
+	mes "mentor dos jogos. ";
+	mes "como você gostaria de jogar um";
+	mes "Jogo de correspondência de números comigo?";
+	next;
+	switch(select("Jogo de correspondência de números?: Praticar correspondência de números: Jogar correspondência de números: Detentor do recorde: Cancelar")) {
+	case 1:
+		mes "[Nia]";
+		mes "Ah, bem, o objetivo de";
+		mes "o jogo Number Match é";
+		mes "adivinhe o número que estou pensando";
+		mes "de. ";
+		mes "regras que limitam os números";
+		mes "que posso escolher.";
+		next;
+		mes "[Nia]";
+		mes "Todos os números que eu faço";
+		mes "up deve ter 3 dígitos, não consigo";
+		mes "use 0 para qualquer um dos dígitos,";
+		mes "e não posso usar o mesmo";
+		mes "número para qualquer um dos dígitos";
+		mes "mais de uma vez.";
+		next;
+		mes "[Nia]";
+		mes "Então, por exemplo, não posso";
+		mes "use os números 103, 112,";
+		mes "252 ou 701. Esses números";
+		mes "ou têm um 0, ou eles usam";
+		mes "o mesmo número nos dígitos";
+		mes "mais de uma vez. ";
+		next;
+		mes "[Nia]";
+		mes "Agora, você só tem 5 palpites,";
+		mes "e depois de cada palpite, eu direi";
+		mes "você quantos dígitos você adivinhou";
+		mes "corretamente, seguido pelo número de dígitos adivinhados corretamente em";
+		mes "a posição correta do dígito.";
+		next;
+		mes "[Nia]";
+		mes "Por exemplo, digamos que o";
+		mes "o número que descobri é 168.";
+		mes "Se o seu primeiro palpite for 678, então você adivinhou dois dos dígitos,";
+		mes "6 e 8, corretamente. ";
+		mes "apenas 8 está no lugar correto.";
+		next;
+		mes "[Nia]";
+		mes "Você sabe, seria uma boa ideia";
+		mes "se você tentar o modo de prática";
+		mes "primeiro. ";
+		mes "confortável, jogue o real";
+		mes "Jogo de correspondência de números. ";
+		next;
+		mes "[Nia]";
+		mes "Ah, se acontecer de você";
+		mes "fazer um novo recorde no";
+		mes "Jogo Number Match, você vai";
+		mes "tenha seu nome registrado,";
+		mes "então não perca essa chance";
+		mes "fama e talvez até fortuna~";
+		close;
+	case 2:
+		mes "[Nia]";
+		mes "Ótimo, vamos praticar";
+		mes "Jogo de correspondência de números. ";
+		mes "tente adivinhar meu número, ok?";
+		mes "Se você deseja cancelar, insira um número maior que 1.000.";
+		set .@practice,1;
+		break;
+	case 3:
+		mes "[Nia]";
+		mes "Ótimo, vamos jogar Number Match!";
+		mes "Você terá 5 chances de adivinhar o número em que estou pensando.";
+		mes "Se você deseja cancelar, insira um número maior que 1.000.";
+		set .@practice,0;
+		break;
+	case 4:
+		set .@name_record$, $050908_minus1_yagu$;
+		if (.@name_record$ == "") //custom
+			set .@name_record$,"(nulo)";
+		set .@score_record, $050908_minus1_yagu;
+		set .@score_min, .@score_record / 60;
+		set .@score_sec, .@score_record % 60;
+		mes "[Nia]";
+		mes "^ff0000" + .@name_record$ + "^000000 é o";
+		mes "recordista do número";
+		mes "Combine o jogo com um tempo de";
+		mes "^ff0000" + .@score_min + "minutos," + .@score_sec + "segundos ^ 000000.";
+		close;
+	case 5:
+		mes "[Nia]";
+		mes "Cuide-se,";
+		mes "aventureiro. ";
+		mes "sinto vontade de jogar um número";
+		mes "Combine o jogo, venha conversar";
+		mes "para mim, certo? ";
+		close;
+	}
+	next;
+
+	// Generate 3 digits of a number.
+	while(1) {
+		set .@yagu100, rand(1,9);
+		set .@yagu10, rand(1,9);
+		set .@yagu1, rand(1,9);
+		if ((.@yagu100 != .@yagu10) && (.@yagu100 != .@yagu1) && (.@yagu10 != .@yagu1)) {
+			// Store the actual number (unofficial).
+			set .@yagu, (100*.@yagu100) + (10*.@yagu10) + .@yagu1;
+			break;
+		}
+	}
+
+	// The official time calculation is based on ServerTime,
+	// an int HHMMSS equivalent to atoi(gettimestr("%H%M%S",7)).
+	// UNIX time is really a better way to do this.
+	set .@start_time, gettimetick(2);
+
+	while(1) {
+
+		// Guess a number that meets all conditions.
+		while(1) {
+			if (input(.@input,100,999) != 0) {
+				mes "[Nia]";
+				mes "Você cancelou o";
+				mes "Jogo de correspondência de números.";
+				close;
+			}
+			set .@input100, .@input / 100;
+			set .@input10, (.@input % 100) / 10;
+			set .@input1, .@input % 10;
+			if ((.@input100 > 0) && (.@input10 > 0) && (.@input1 > 0)) {
+				if ((.@input100 != .@input10) && (.@input100 != .@input1) && (.@input10 != .@input1))
+					break;
+			}
+			mes "[Nia]";
+			mes "Você digitou um dos";
+			mes "dígitos como 0 ou insira o";
+			mes "mesmo valor numérico em";
+			mes "os dígitos mais de uma vez.";
+			mes "Por favor, insira outro palpite.";
+			next;
+		}
+
+		set .@retry, .@retry+1;
+		mes "[Nia]";
+		mes "^ff0000"+strcharinfo(0)+"^000000,";
+		mes "seu palpite é ^0000ff"+.@input+"^000000.";
+		mes "Dê-me um momento para";
+		mes "apresente seus resultados.";
+		next;
+
+		// Correct digits in correct locations.
+		set .@strike,0;
+		if (.@yagu100 == .@input100)
+			set .@strike, .@strike+1;
+		if (.@yagu10 == .@input10)
+			set .@strike, .@strike+1;
+		if (.@yagu1 == .@input1)
+			set .@strike, .@strike+1;
+
+		// Correct digits in incorrect locations.
+		set .@ball,0;
+		if ((.@yagu100 == .@input10) || (.@yagu100 == .@input1))
+			set .@ball, .@ball+1;
+		if ((.@yagu10 == .@input100) || (.@yagu10 == .@input1))
+			set .@ball, .@ball+1;
+		if ((.@yagu1 == .@input100) || (.@yagu1 == .@input10))
+			set .@ball, .@ball+1;
+
+		if (.@strike == 3) {
+			if (.@practice) {
+				mes "[Nia]";
+				mes "Sim, o número que";
+				mes "Achei que era ^ff0000"+.@yagu+"^000000!";
+				mes "Parabéns para você";
+				mes "acabei de ganhar esse treino";
+				mes "jogo! ";
+				mes "pronto para a coisa real ~";
+				close;
+			} else {
+
+				// Calculate final time and check against the previous record.
+				set .@end_time, gettimetick(2);
+				if (.@end_time < .@start_time)
+					set .@end_time, .@end_time + 3600;
+				set .@total_time, .@end_time - .@start_time;
+				set .@total_min, .@total_time / 60;
+				set .@total_sec, .@total_time % 60;
+				set .@name_record$, $050908_minus1_yagu$;
+				if (.@name_record$ == "") //custom
+					set .@name_record$,"(nulo)";
+				set .@score_record, $050908_minus1_yagu;
+				set .@score_min, .@score_record / 60;
+				set .@score_sec, .@score_record % 60;
+
+				if (.@score_record >= .@total_time || !.@score_record) { //custom (second condition)
+					set $050908_minus1_yagu$, strcharinfo(0);
+					set $050908_minus1_yagu, .@total_time;
+					mes "[Nia]";
+					mes "Ótimo! ";
+					mes "meu número, que era";
+					mes "^ff0000" + .@yagu + "^000000. ";
+					mes "^ff0000" + .@total_min + "minutos," + .@total_sec + "segundos ^ 000000,";
+					mes "quebrando o recorde anterior";
+					mes "de ^ff0000" + .@score_min + "minutos," + .@score_sec + "segundos ^ 000000.";
+					next;
+					mes "[Nia]";
+					mes "^ff0000" + .@name_record$ + "^000000";
+					mes "estabeleceu aquele recorde antigo,";
+					mes "mas agora você é o";
+					mes "nova pessoa para vencer no";
+					mes "Jogo de correspondência. ";
+					mes "por estabelecer um novo recorde!";
+					close;
+				}
+				mes "[Nia]";
+				mes "Bom trabalho, você adivinhou";
+				mes "meu numero! ";
+				mes "claro, foi ^ff0000" + .@yagu + "^000000. ";
+				mes "adivinhar esse número corretamente";
+				mes "em ^ff0000" + .@total_min + "minutos," + .@total_sec + "segundos ^ 000000.";
+				next;
+				mes "[Nia]";
+				mes "^ff0000" + .@name_record$ + "^000000 é";
+				mes "a correspondência numérica atual";
+				mes "recordista com um tempo";
+				mes "de ^ff0000" + .@score_min + "minutos," + .@score_sec + "segundos ^ 000000.";
+				mes "Boa sorte e espero que você";
+				mes "pode quebrar esse recorde algum dia~";
+				close;
+			}
+		} else {
+			if (.@practice) {
+				mes "[Nia]";
+				mes "Seu palpite tem ^ff0000" + .@ball + "^000000 do";
+				mes "números corretos. " + .@strike + "^000000 do";
+				mes "dígitos em seu palpite têm";
+				mes "o número correto no";
+				mes "colocação correta dos dígitos.";
+				mes "Tudo bem, tente novamente ~";
+				next;
+			} else {
+				mes "[Nia]";
+				mes "Seu último palpite foi ^ff0000" + .@ball + "^000000";
+				mes "dos números corretos,";
+				mes "e ^ff0000" + .@strike + "^000000 dígitos no seu palpite";
+				mes "tinha o número correto em";
+				mes "o posicionamento correto dos dígitos.";
+				switch(.@retry) {
+					case 1: mes "Você tem quatro palpites restantes."; break;
+					case 2: mes "Você ainda tem três palpites."; break;
+					case 3: mes "Você ainda tem dois palpites."; break;
+					case 4: mes "Você só tem um palpite..."; break;
+					case 5: mes "A resposta foi ^ff0000" + .@yagu + "^000000."; close;
+				}
+				next;
+			}
+		}
+	}
+}
+

@@ -1,0 +1,777 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+// Piano Quest :: nif_ryu
+//============================================================
+niflheim,224,243,3	script	Alreg#nif	795,{
+	if (nif_piano) set nif_piano,0;
+	mes "[Tudo bem]";
+	mes "Eu gosto de carne, muheh.";
+	mes "Você! ";
+	next;
+	mes "[Tudo bem]";
+	mes "Eu quero provar você.";
+	next;
+	mes "^FF3355*Crutura* Trituração*^000000";
+	if (nif_esc == 0 && (MISC_QUEST & 32) == 0) {
+		percentheal -60,0;
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Nãooooooo~!";
+		next;
+		mes "[Tudo bem]";
+		mes "Faz muito tempo que não como carne";
+		mes "tão Tão bom. ";
+		mes "bom. ";
+		mes "para vingança. ";
+		mes "*Burro*";
+		set nif_esc,rand(1,2);
+		getitem 7184,1; //Piano_Keyboard
+		close;
+	}
+	percentheal -30,0;
+	next;
+	mes "["+ strcharinfo(0) +"]";
+	mes "Ai~! ";
+	mes "tentando fazer, me matar?!";
+	next;
+	mes "[Tudo bem]";
+	mes "Hum? ";
+	mes "Eu estou tentando comer você.";
+	close;
+}
+
+nif_in,105,81,3	script	Crayu#nif	794,{
+	mes "[Crayu]";
+	mes "Vivendo um...";
+	mes "Ouça essa música...";
+	mes "Foi cantado por muitos por um";
+	mes "muito tempo, mas ninguém sabe";
+	mes "quando foi feito ou quem o escreveu.";
+	next;
+	mes "[Crayu]";
+	mes "^FF00001. ";
+	mes "^FF00002. ";
+	mes "^FF00003. ";
+	mes "^FF00004. ";
+	next;
+	if (nif_esc == 1 || nif_esc == 4) {
+		mes "[Crayu]";
+		mes "Ok, espere! ";
+		switch(rand(1,4)) {
+		case 1:
+			set .@songline$,"Pôr do sol na montanha a oeste";
+			mes "Escreva a primeira linha da música.";
+			break;
+		case 2:
+			set .@songline$,"Onde o crepúsculo roxo cai";
+			mes "Escreva a segunda linha da música.";
+			break;
+		case 3:
+			set .@songline$,"Cercado por uma bela melodia";
+			mes "Escreva a terceira linha da música.";
+			break;
+		case 4:
+			set .@songline$,"Você se torna a chave que ignora seu mestre";
+			mes "Escreva a quarta linha da música.";
+			break;
+		}
+		next;
+		input .@input$;
+		if (.@input$ == .@songline$) {
+			mes "[Crayu]";
+			mes "Excelente...!";
+			mes "Então você está ouvindo ~!";
+			mes "Isso faz de você um dos meus";
+			mes "convidados favoritos. ";
+			mes "pequena recompensa para você.";
+			next;
+			if (nif_esc == 1) set nif_esc,3;
+			else set nif_esc,6;
+			getitem 7184,1; //Piano_Keyboard
+			mes "[Crayu]";
+			mes "Por último, espero que você mostre o seu";
+			mes "respeito a outros Bardos, assim como";
+			mes "você fez por mim.";
+			close;
+		}
+		else {
+			mes "[Crayu]";
+			mes "*Suspiro*... Se você tivesse ao menos";
+			mes "me ouviu, seria";
+			mes "foram fáceis de responder.";
+			mes "Tente lembrar a linha";
+			mes "e tente novamente!";
+			close;
+		}
+	}
+	next;
+	mes "[Crayu]";
+	mes "Eu me pergunto o que a letra significa...";
+	mes "Eles parecem bastante profundos...";
+	mes "Tenho a sensação de que essa música";
+	mes "carrega algum segredo.";
+	close;
+}
+
+nif_in,31,20,3	script	Kuzkahina#nif	794,{
+	if (nif_esc == 2 || nif_esc == 3) {
+		mes "[Kuzkahina]";
+		mes "Eu não entendo";
+		mes "por que não consigo fazer nenhum";
+		mes "dinheiro com esta loja...";
+		mes "Mesmo quando eu estava vivo";
+		mes "Eu nunca poderia fazer nenhum";
+		mes "dinheiro com meus negócios...";
+		next;
+		mes "[Kuzkahina]";
+		mes "Ei você! ";
+		mes "e jogue isso fora quando sair.";
+		set nif_esc,nif_esc+2;
+		getitem 7184,1; //Piano_Keyboard
+		next;
+		mes "[Kuzkahina]";
+		mes "Nossa, o que há com essa loja?";
+		mes "Como acabei contratando funcionários tão inúteis...?";
+		mes "*murmúrio murmuro*";
+		mes "*murmúrio murmuro*";
+		close;
+	}
+	mes "[Kuzkahina]";
+	mes "Eu não entendo";
+	mes "por que não consigo fazer nenhum";
+	mes "dinheiro com esta loja...";
+	mes "Mesmo quando eu estava vivo";
+	mes "Eu nunca poderia fazer nenhum";
+	mes "dinheiro com meus negócios...";
+	close;
+}
+
+niflheim,208,103,1	script	#Graveyard1	111,1,1,{
+	end;
+
+OnTouch_:
+	if (nif_esc == 5 || nif_esc == 7 || nif_esc == 8 || nif_esc == 10) {
+		mes "^3355FFVocê encontrou algo";
+		mes "meio enterrado perto de um túmulo.";
+		mes "Parece muito bem formado.^000000";
+		next;
+		mes "^3355FFVocê gostaria de retirá-lo?^000000";
+		if (select("Sim não") == 1) {
+			if (nif_esc < 10)
+				set nif_esc,nif_esc+2;
+			else if (nif_esc == 10)
+				set nif_esc,11;
+			getitem 7184,1; //Piano_Keyboard
+		}
+		close;
+	}
+	end;
+}
+
+niflheim,169,71,1	script	#Graveyard2	111,1,1,{
+	end;
+
+OnTouch_:
+	if (nif_esc == 6 || nif_esc == 9) {
+		mes "^3355FFVocê encontrou algo";
+		mes "meio enterrado perto de um túmulo.";
+		mes "Parece muito bem formado.^000000";
+		next;
+		mes "^3355FFVocê gostaria de retirá-lo?^000000";
+		if (select("Sim não") == 1) {
+			set nif_esc,nif_esc+2;
+			getitem 7184,1; //Piano_Keyboard
+		}
+		close;
+	}
+	end;
+}
+
+nif_in,115,181,0	script	#Piano	111,1,1,{
+	end;
+
+OnTouch_:
+	if (nif_esc == 0 && (MISC_QUEST & 32) == 0) {
+		mes "^3355FFVocê vê um piano grande e pesado.";
+		mes "Você tem a sensação de que";
+		mes "sua música soaria magnífica.^000000";
+		next;
+		mes "^3355FFAo examinar o piano,";
+		mes "você descobre que 7 chaves";
+		mes "estão faltando no";
+		mes "meio do teclado.";
+		mes "Se você tivesse todas as chaves,";
+		mes "você poderia tocar música...^000000";
+		close;
+	}
+	if (nif_esc == 11 && countitem(7184) > 5) {
+		set nif_esc,12;
+		delitem 7184,6; //Piano_Keyboard
+		mes "^3355FFVocê pegou as chaves que encontrou";
+		mes "e inseri-los em";
+		mes "cada espaço vazio.^000000";
+		next;
+		mes "^3355FFMas então você percebe";
+		mes "que você está perdendo o último";
+		mes "chave para o espaço ao longe";
+		mes "esquerda do teclado...^000000";
+		close;
+	}
+	end;
+}
+
+-	script	Piano3	HIDDEN_NPC,{
+	end;
+
+OnTouch_:
+	if (nif_esc == 12 || nif_esc == 13 || (MISC_QUEST & 32)) {
+		mes "^3355FFComo você se inclina";
+		mes "o último espaço de chave vazio";
+		mes "para dar uma olhada melhor...^000000";
+		next;
+		soundeffect "complete.wav",0;
+		next;
+		if (nif_esc == 12) {
+			set MISC_QUEST,MISC_QUEST | 32;
+			set nif_piano, 0;
+		}
+		mes "^3355FFVocê começa a sentir tonturas e";
+		mes "seu corpo parece como se fosse";
+		mes "flutuando no ar. ";
+		mes "a visão começa a ficar embaçada...^000000";
+		close2;
+		warp "nif_in",179,163;
+		end;
+	}
+	end;
+}
+
+nif_in,188,168,3	script	Witch#nif	792,{
+	mes "[Kirkena]";
+	mes "Huh? ";
+	mes "Não tenho certeza de quanto mais de vocês são";
+	mes "capaz de chegar aqui e eu não";
+	mes "conheça seus motivos para vir,";
+	mes "mas este lugar é perigoso para";
+	mes "a vida.";
+	next;
+	mes "[Kirkena]";
+	mes "Estou te mandando de volta";
+	mes "fora desta cidade.";
+	mes "Se você puder ajudá-lo, você";
+	mes "é melhor não voltar para";
+	mes "Esse lugar.";
+	close2;
+	warp "umbala",138,208;
+	end;
+}
+
+// Message Delivery Quest :: nif_npc_lackee
+//============================================================
+prt_in,161,20,3	script	Erious#nif	92,{
+	if (MISC_QUEST & 16384) {
+		mes "[Erio]";
+		mes "Desejo-lhe segurança contra danos";
+		mes "em suas jornadas, aventureiro.";
+		close;
+	}
+	if (nif_revive == 0) {
+		mes "[Erio]";
+		mes "*Solo*Solo*";
+		mes "*Chora* Uau...!";
+		mes "Elly, como você pôde";
+		mes "me deixe assim...";
+		emotion ET_CRY;
+		next;
+		if (select("Conforte-o.:Negligencie-o.") == 1) {
+			mes "[Erio]";
+			mes "Ah, obrigado pela sua gentileza.";
+			mes "*Sobre* Minha esposa morreu enquanto eu estava no";
+			mes "uma viagem. ";
+			mes "não poderia estar com ela quando";
+			mes "chegou o fim...";
+			next;
+			mes "[Erio]";
+			mes "Eu gostaria de poder falar com minha Elly,";
+			mes "embora eu saiba que agora é tarde demais.";
+			mes "*Chora* Mas... há uma última";
+			mes "espero que sim. ";
+			mes "última chance...";
+			next;
+			mes "[Erio]";
+			mes "Me disseram isso em algum lugar";
+			mes "neste mundo, existe uma cidade";
+			mes "onde residem os mortos. ";
+			mes "poder encontrar minha esposa lá, mas";
+			mes "Não posso deixar meus filhos aqui";
+			mes "sem mim. ";
+			next;
+			if (select("Posso entregar sua mensagem a ela.:Lamento muito ouvir isso.") == 1) {
+				mes "[Erio]";
+				mes "Ah, você pode?";
+				mes "Muito obrigado pela sua";
+				mes "generosidade. ";
+				mes "isso para mim, eu seria";
+				mes "muito grato a você.";
+				next;
+				mes "[Erio]";
+				mes "Você é um aventureiro, não é?";
+				mes "Se suas viagens levam você a isso";
+				mes "cidade dos mortos, e se você";
+				mes "por acaso a conheci...";
+				next;
+				mes "[Erio]";
+				mes "Por favor, envie uma mensagem para Elly para mim,";
+				mes "deixe ela saber o que aconteceu";
+				mes "há um mês foi tudo culpa minha.";
+				mes "Obrigado pela ajuda,";
+				mes "e por favor tome cuidado.";
+				set nif_revive,1;
+				setquest 11038;
+				close;
+			}
+			mes "[Erio]";
+			mes "*Chora* Não tem como eu";
+			mes "pode vê-la novamente? ";
+			mes "fale com ela pelo menos mais uma vez,";
+			mes "mesmo que seja a última vez,";
+			mes "Eu faria qualquer coisa...";
+			close;
+		}
+		mes "[Erio]";
+		mes "*Chora* Eeeeelllllyyyy~~~~!";
+		mes "Eu nunca pensei que isso seria";
+		mes "a última vez que veríamos";
+		mes "uns aos outros...";
+		mes "*Soluço*...";
+		close;
+	}
+	else if (nif_revive == 1) {
+		mes "[Erio]";
+		mes "Esse lugar que me falaram...";
+		mes "A cidade dos mortos...";
+		mes "Pelo que me lembro, foi";
+		mes "localizado perto de alguma área de descanso.";
+		next;
+		mes "[Erio]";
+		mes "Durante todo o dia e noite, está cheio";
+		mes "com gritos intermináveis ??de";
+		mes "agonia e desespero. ";
+		mes "isso será útil em sua pesquisa.";
+		close;
+	}
+	else if (nif_revive == 5 || nif_revive == 6) {
+		mes "[Erio]";
+		mes "Oh meu Deus! ";
+		mes "você já? ";
+		mes "você suportou todas essas dificuldades";
+		mes "para mim... Hum... Então no final...";
+		mes "Você conseguiu conhecer minha Elly?";
+		next;
+		if (select("Sim.:Desculpe, não pude.") == 1) {
+			if (nif_revive == 6 && countitem(934) > 0) {
+				mes "[Erio]";
+				mes "Você está falando sério? ";
+				mes "Ela disse que vai me perdoar?";
+				next;
+				select("Sim. ");
+				delitem 934,1; //Mementos
+				mes "[Erio]";
+				mes "Ah...Nesta caixa estavam os presentes";
+				mes "Eu dei a ela quando começamos";
+				mes "vendo um ao outro. ";
+				mes "doença grave antes mesmo de";
+				mes "conheci, então prometi a ela que";
+				mes "curaria sua doença...";
+				next;
+				mes "[Erio]";
+				mes "Por isso fiz aquela viagem...";
+				mes "para encontrar uma cura ou remédio";
+				mes "por ela... Mas meus esforços se voltaram";
+				mes "parece ser um inútil.";
+				mes "...................";
+				mes ".........";
+				next;
+				mes "[Erio]";
+				mes "De qualquer forma, agradeço o seu";
+				mes "generosidade. ";
+				mes "você voltou para todos os problemas";
+				mes "Eu causei você, mas só tenho";
+				mes "o remédio que encontrei para ela";
+				mes "doença durante esta viagem.";
+				next;
+				mes "[Erio]";
+				mes "Espero que você tome este remédio";
+				mes "como prova da minha gratidão.";
+				next;
+				if (checkweight(610,26)) {
+					set MISC_QUEST,MISC_QUEST | 16384;
+					set nif_revive,0;
+					completequest 11043;
+					getitem 607,2; //Yggdrasilberry
+					getitem 608,2; //Seed_Of_Yggdrasil
+					getitem 610,10; //Leaf_Of_Yggdrasil
+					mes "[Erio]";
+					mes "Obrigado por tudo.";
+					mes "Desejo-lhe sorte e segurança";
+					mes "em suas aventuras.";
+					close;
+				}
+				mes "[Erio]";
+				mes "Eu tenho algo para te dar,";
+				mes "mas você está carregando muito";
+				mes "coisas para eu dar";
+				mes "agora mesmo. ";
+				mes "armazenar seus itens em algum lugar?";
+				close;
+			}
+			else if (nif_revive == 6 && countitem(934) < 1) {
+				mes "[Erio]";
+				mes "Hmm... isso é estranho. ";
+				close;
+			}
+			mes "[Erio]";
+			mes "Eu acho que você entendeu mal";
+			mes "alguma coisa ou você está tentando";
+			mes "enganar um homem em luto.";
+			close;
+		}
+		if (nif_revive == 5) {
+			mes "[Erio]";
+			mes "Entendo... você não conseguiu encontrar";
+			mes "ela... No entanto, eu também entendo";
+			mes "que atender ao meu pedido pode";
+			mes "ser impossível...";
+			next;
+			mes "[Erio]";
+			mes "Você realmente saiu do seu caminho";
+			mes "para me ajudar, então eu quero te dar";
+			mes "algo como um símbolo do meu";
+			mes "gratidão.";
+			next;
+			if (checkweight(610,10)) {
+				set MISC_QUEST,MISC_QUEST | 16384;
+				set nif_revive,0;
+				completequest 11042;
+				getitem 610,10; //Leaf_Of_Yggdrasil
+				mes "[Erio]";
+				mes "Obrigado por tudo.";
+				mes "Desejo-lhe sorte e segurança";
+				mes "de danos em suas jornadas.";
+				close;
+			}
+			mes "[Erio]";
+			mes "Eu tenho algo para te dar,";
+			mes "mas você está carregando muito";
+			mes "coisas para eu dar";
+			mes "agora mesmo. ";
+			mes "armazenar seus itens em algum lugar?";
+			close;
+		}
+		mes "[Erio]";
+		mes "Eu vejo...";
+		mes "...Espere! ";
+		mes "para minha esposa, Elly? ";
+		mes "tentando enganar um homem enlutado...?";
+		close;
+	}
+	end;
+}
+
+umbala,215,181,3	script	Billik	733,{
+	if (nif_revive > 1 || (MISC_QUEST & 16384)) {
+		mes "[Billik]";
+		mes "Bem, faz muito tempo que não nos vemos.";
+		mes "Se você tiver uma chance no";
+		mes "futuro, vamos nos encontrar no";
+		mes "cidade dos mortos mais tarde.";
+		mes "Hahahaha~";
+		emotion ET_BEST;
+		close;
+	}
+	if (nif_revive == 1) {
+		mes "[Billik]";
+		mes "A cidade dos mortos...";
+		mes "É um lugar muito perigoso.";
+		mes "Por que você iria querer ir para lá?";
+		next;
+		if (select("Tenho que encontrar alguém lá.:Faz parte da minha aventura.") == 1) {
+			mes "[Billik]";
+			mes "Alguém que você tem que encontrar lá...";
+			mes "Hmm... suponho que você queira";
+			mes "entre em contato com os mortos...";
+			mes "Também posso ver que você está";
+			mes "determinado a ir.";
+			next;
+			mes "[Billik]";
+			mes "*Suspiro* Ok, se você realmente quiser";
+			mes "vá, você deve encontrar um homem chamado";
+			mes "‘Feylin.’ ";
+			mes "deixe-o saber que eu apresentei";
+			mes "ele para você.";
+			next;
+			mes "[Billik]";
+			mes "Ele não é muito confiante, mas ele";
+			mes "gosta muito de rosas, então traga uma rosa";
+			mes "para ele. ";
+			mes "certeza que eu te enviei.";
+			set nif_revive,2;
+			changequest 11038,11039;
+			next;
+			mes "[Billik]";
+			mes "A cidade dos mortos está localizada";
+			mes "ao norte deste lugar. ";
+			mes "é muito perigoso ir para lá,";
+			mes "mesmo para bem experientes";
+			mes "aventureiros, então...";
+			mes "Tome cuidado.";
+			close;
+		}
+		mes "[Billik]";
+		mes "Hahaha~ Acho que você gosta de aventura";
+		mes "tanto quanto eu faço. ";
+		mes "lugar muito perigoso, você estará";
+		mes "recompensado pelo seu esforço depois";
+		mes "você chega lá. ";
+		close;
+	}
+	else if (nif_revive == 0) {
+		mes "[Billik]";
+		mes "O que te traz aqui? ";
+		mes "saia se você não tiver nenhum negócio.";
+		close;
+	}
+}
+
+niflheim,153,215,3	script	Feylin	794,{
+	if (nif_revive == 2) {
+		mes "[Feylin]";
+		mes "Pobre"+((Sex == SEX_MALE)?"cara":"garota")+"...";
+		mes "Morrendo tão jovem...";
+		mes "Sempre fico triste ao ver o";
+		mes "jovem falece.";
+		next;
+		mes "[Feylin]";
+		mes "............??";
+		mes "Oh, vejo que você ainda não está morto,";
+		mes "você é? ";
+		mes "ver outra pessoa viva";
+		mes "nesta cidade.";
+		next;
+		mes "[Feylin]";
+		mes "Você vem resgatar alguém,";
+		mes "ou você tem outro propósito?";
+		mes "Se você veio aqui para conhecer um";
+		mes "amigo seu falecido, você";
+		mes "venha para a pessoa errada.";
+		next;
+		mes "[Feylin]";
+		mes "Ninguém em Niflheim pode";
+		mes "realizar esse tipo de milagre...";
+		next;
+		mes "[Feylin]";
+		mes "Posso dizer que você já passou";
+		mes "muitas dificuldades, mas infelizmente,";
+		mes "você veio aqui por nada. ";
+		mes "você volta para onde você veio";
+		mes "de antes que seja tarde demais.";
+		set nif_revive,3;
+		changequest 11039,11040;
+		close;
+	}
+	else if (nif_revive == 3) {
+		mes "[Feylin]";
+		mes "Eu pedi para você deixar isso";
+		mes "cidade imediatamente. ";
+		mes "mas não sei nada sobre o que";
+		mes "você está perguntando.";
+		emotion ET_FRET;
+		next;
+		if (select("Mas...:Sinto muito.") == 1) {
+			mes "[Feylin]";
+			mes "Você deve saber de alguma coisa...";
+			mes "Caso contrário, você não estaria";
+			mes "tão teimoso. ";
+			mes "quem disse para você entrar em contato com o";
+			mes "morto pode ser possível...";
+			next;
+			mes "[Feylin]";
+			mes "Mas eu certamente não teria contado";
+			mes "você. ";
+			mes "essas coisas são tabu.";
+			set nif_revive,4;
+			changequest 11040,11041;
+			close;
+		}
+		mes "[Feylin]";
+		mes "Por favor, considere deixar isso";
+		mes "coloque o mais rápido possível.";
+		mes "Ninguém deveria ficar em";
+		mes "Niflheim por muito tempo.";
+		close;
+	}
+	else if (nif_revive == 4) {
+		if (countitem(748) > 0) {
+			mes "[Feylin]";
+			mes "Huh, Billik deve ter enviado você.";
+			mes "Como estou em dívida com ele, eu";
+			mes "suponha que eu vou ajudá-lo.";
+			mes "Mas deixe-me avisá-lo.";
+			mes "O preço que exijo pode ser";
+			mes "mais do que você espera...";
+			next;
+			if (select("Estou disposto a fazer isso.:Acho que não posso fazer isso.") == 1) {
+				if (BaseLevel > 79) {
+					mes "[Feylin]";
+					mes "Tudo bem, mas você deve prometer";
+					mes "mim que você não vai deixar outro";
+					mes "as pessoas sabem o que eu sou";
+					mes "para te dizer.";
+					next;
+					mes "[Feylin]";
+					mes "Esta feitiçaria requer grande";
+					mes "sacrifício. ";
+					mes "há uma chance de que este feitiço possa";
+					mes "falhar. ";
+					mes "10 folhas de Yggdrasil para lançar isto";
+					mes "soletrar. ";
+					next;
+					if (select("Sim não") == 1) {
+						if (countitem(610) > 9) {
+							mes "[Feylin]";
+							mes "Eu vejo. ";
+							mes "Woombahsokasabahah!";
+							mes "Woombah woombah hoombabah!";
+							mes "Sim!";
+							next;
+							set .@nif_revive1,rand(1,100);
+							if (.@nif_revive1 > 0) && (.@nif_revive1 < 88) {
+								mes "[Feylin]";
+								mes "...Sinto muito.";
+								mes "não consegui convocar";
+								mes "quem você deseja ver. ";
+								mes "realmente sinto muito por esse resultado.";
+								emotion ET_HUK;
+								delitem 748,1; //Witherless_Rose
+								delitem 610,10; //Leaf_Of_Yggdrasil
+								set nif_revive,5;
+								changequest 11041,11042;
+								percentheal -99,0;
+								next;
+								mes "[Feylin]";
+								mes "Infelizmente, pode ser";
+								mes "impossível convocar o";
+								mes "espírito da pessoa com";
+								mes "com quem você queria falar...";
+								close;
+							}
+							else if (.@nif_revive1 > 87) && (.@nif_revive1 < 101) {
+								delitem 748,1; //Witherless_Rose
+								delitem 610,10; //Leaf_Of_Yggdrasil
+								percentheal -50,0;
+								mes "[Feylin]";
+								mes "..........";
+								mes "..........";
+								next;
+								mes "[Elly]";
+								mes "..........";
+								mes ".....Umm...";
+								mes "...Eu não estava morto?";
+								mes "Hum, eu conheço você?";
+								next;
+								select("Trouxe uma mensagem do seu marido.");
+								mes "[Elly]";
+								mes "Oh... entendo... sinto muito por não poder conhecê-lo antes de morrer...";
+								mes "Então, qual é a mensagem dele para mim?";
+								next;
+								select("Perdoe-o pelo que aconteceu há um mês.");
+								mes "[Elly]";
+								mes "*Suspiro* Ele é um marido tão legal...";
+								mes "Ele presta tanta atenção, até mesmo para";
+								mes "as pequenas coisas. ";
+								mes "deveria ser o único a se desculpar";
+								mes "para ele...";
+								next;
+								mes "[Elly]";
+								mes "Por favor, dê a ele esta caixa e diga";
+								mes "ele se esqueça de mim. ";
+								mes "viver o resto de sua vida feliz";
+								mes "Com outra pessoa. ";
+								mes "ele saiba que eu o perdôo.";
+								set nif_revive,6;
+								changequest 11040,11043;
+								getitem 934,1; //Mementos
+								next;
+								mes "[Elly]";
+								mes "Fico feliz em ouvir do meu";
+								mes "marido mais uma vez. ";
+								mes "acho que tenho que ir agora.";
+								mes "Obrigado por se preocupar.";
+								mes "Até a próxima...";
+								next;
+								mes "[Elly]";
+								mes ".....................";
+								mes "....................";
+								next;
+								mes "[Feylin]";
+								mes "Eu acho que você conseguiu o que";
+								mes "você queria. ";
+								mes "quando você voltar...";
+								close;
+							}
+						}
+						else {
+							mes "[Feylin]";
+							mes "Se você não tem o";
+							mes "itens, não podemos prosseguir.";
+							mes "Lembre-se, preciso de 10 Yggdrasil";
+							mes "Sai para realizar este feitiço.";
+							mes "Por favor, traga-os o mais rápido";
+							mes "que possível.";
+							close;
+						}
+					}
+					mes "[Feylin]";
+					mes "Espero que você traga os itens";
+					mes "primeiro. ";
+					mes "confiança para prometer isso";
+					mes "este feitiço será lançado com sucesso.";
+					close;
+				}
+				mes "[Feylin]";
+				mes "Hmm... Você não parece ter";
+				mes "a força para suportar";
+				mes "lançamento deste feitiço. ";
+				mes "sua força atual, isso";
+				mes "feitiço vai te matar.";
+				mes "Não posso correr esse risco.";
+				close;
+			}
+			mes "[Feylin]";
+			mes "Você tomou uma boa decisão.";
+			mes "Não é uma boa ideia executar";
+			mes "esse tipo de feitiçaria no";
+			mes "primeiro lugar por causa do";
+			mes "riscos envolvidos...";
+			close;
+		}
+		mes "[Feylin]";
+		mes "Não importa quantas vezes você pergunte";
+		mes "mim, não posso ajudá-lo. ";
+		mes "saia deste lugar assim que puder.";
+		close;
+	}
+	mes "[Feylin]";
+	mes "O que faz você chegar a tal";
+	mes "uma cidade perigosa? ";
+	mes "este lugar assim que puder.";
+	close;
+}
+

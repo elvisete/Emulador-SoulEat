@@ -1,0 +1,213 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+moc_para01,44,38,3	script	Missões [71 - 85]	857,{
+	if (!callfunc("F_HasEdenGroupMark")) {
+		mes "- Você precisa ter -";
+		mes "- o ^4d4dff'emblema do Éden'^000000 -";
+		close;
+	}
+
+	// Clear the original quest data (no longer used).
+	if (slv_quest) set slv_quest,0;
+	if (checkquest(10102) > -1 || checkquest(10103) > -1 || checkquest(10104) > -1 || checkquest(10105) > -1 || checkquest(10106) > -1) {
+		for(set .@quest,10102; .@quest<=10106; set .@quest,.@quest+1) {
+			if (checkquest(.@quest) > -1)
+				erasequest .@quest;
+		}
+		mes "- Como o cliente se mudou -";
+		mes "- para outro lugar, -";
+		mes "- o formulário de inscrição foi removido. -";
+		next;
+	}
+
+	if (BaseLevel < 71) {
+		mes " - Você não tem nível suficiente - ";
+		mes " - para esse quadro de missões. - ";
+		close;
+	} else if (BaseLevel > 85) {
+		// Quest IDs: 10107-10123, 5055-5057
+		setarray .@quests[0],
+			10107,10108,10109,
+			10110,10111,10112,10113,
+			10114,10115,10116,10117,
+			10118,10119,10120,
+			10121,10122,10123,5055,5056;
+		for(set .@i,0; .@i<getarraysize(.@quests); set .@i,.@i+1) {
+			if (checkquest(.@quests[.@i],HUNTING) == 2)
+				set .@complete[getarraysize(.@complete)], .@quests[.@i];
+		}
+		if (checkquest(5057) > -1 && countitem(7187) >= 30)
+			set .@complete[getarraysize(.@complete)],5057;
+		if (getarraysize(.@complete)) {
+			mes "Você tem missões em andamento.";
+			mes "Deseja entregá-las?";
+			next;
+			if(select("» Sim, Por favor.:» Não, Obrigado.") == 2)
+				close;
+			for(set .@i,0; .@i<getarraysize(.@complete); set .@i,.@i+1)
+				callsub L_Quest,.@complete[.@i];
+			close;
+		}
+		mes " - Essas missões são muito - ";
+		mes " - fáceis para você. - ";
+		mes " - Procure uma missão mais - ";
+		mes " - adequada para o seu nível. - ";
+		close;
+	}
+	mes "- Escolha onde você -";
+	mes "- gostaria de caçar. -";
+	next;
+	switch(select("» Esfinge:» Glast Heim:» Juno:» Torre do Relógio:» Ilhas")) {
+	case 1:
+		mes "- Há várias solicitações -";
+		mes "- relacionadas ao Calabouço Esfinge -";
+		mes "- neste Quadro de Missões. -";
+		next;
+		set .@str1$,"Os moradores de Morroc estão preocupados com o aumento do número de monstros na Dungeon Esfinge. ";
+		set .@str2$,"- Meidi de Morroc -";
+		switch(select("» Caçar Requiem:» Caçar Marduk:» Caçar Pasana")) {
+			case 1: callsub L_Quest,10107,.@str1$+"Caçar 10 Requiem.",.@str2$;
+			case 2: callsub L_Quest,10108,.@str1$+"Caçar 10 Marduks.",.@str2$;
+			case 3: callsub L_Quest,10109,.@str1$+"Caçar 10 Pasanas.",.@str2$;
+		}
+	case 2:
+		mes "- Existem várias solicitações -";
+		mes "- relacionadas a Glast Heim -";
+		mes "- neste Quadro de Missões. -";
+		next;
+		set .@str1$,"Estou com muito medo de que os monstros de Glast Heim nos ataquem. ";
+		set .@str2$,"- Ancellia de Geffen -";
+		switch(select("» Caçar Moldura Maldita:» Caçar Druida Maligno:» Caçar Alma Penada:» Caçar Raydric Arqueiro")) {
+			case 1: callsub L_Quest,10110,.@str1$+"Caçar 10 Molduras Malditas.",.@str2$;
+			case 2: callsub L_Quest,10111,.@str1$+"Caçar 10 Druidas Malignos.",.@str2$;
+			case 3: callsub L_Quest,10112,.@str1$+"Caçar 10 Almas Penadas.",.@str2$;
+			case 4: callsub L_Quest,10113,.@str1$+"Caçar 10 Raydrics Arqueiros.",.@str2$;
+		}
+	case 3:
+		mes "- Existem várias solicitações -";
+		mes "- relacionadas à área -";
+		mes "- ao redor de Juno. -";
+		next;
+		set .@str1$,"Aqueles que não podem lutar, como eu, acham muito mais difícil viajar devido ao grande número de monstros. ";
+		set .@str2$,"- Jeanbai, viajante -";
+		switch(select("» Caçar Grand Peco:» Caçar Rochoso:» Caçar Bode:Caçar harpia")) {
+			case 1: callsub L_Quest,10114,.@str1$+"Caçar 20 Grand Pecos.",.@str2$;
+			case 2: callsub L_Quest,10115,.@str1$+"Caçar 20 Rochosos.",.@str2$;
+			case 3: callsub L_Quest,10116,.@str1$+"Caçar 20 Bodes.",.@str2$;
+			case 4: callsub L_Quest,10117,.@str1$+"Caçar 20 harpias.",.@str2$;
+		}
+	case 4:
+		mes "- Existem várias solicitações -";
+		mes "- relacionadas à Torre do Relógio -";
+		mes "- neste Quadro de Missões. -";
+		next;
+		set .@str1$,"Costumava ouvir a doce melodia da Torre do Relógio de Al De Baran, mas não consigo mais ouvir nada por causa de todos os barulhos que os monstros estão fazendo. ";
+		set .@str2$,"- Rizingsetter, Presidente da comunidade Love Clock -";
+		switch(select("» Caçar Relógio:» Caçar Punk:» Caçar Rideword")) {
+			case 1: callsub L_Quest,10118,.@str1$+"Caçar 15 Relógios.",.@str2$;
+			case 2: callsub L_Quest,10119,.@str1$+"Caçar 15 Punks.",.@str2$;
+			case 3: callsub L_Quest,10120,.@str1$+"Caçar 15 Ridewords.",.@str2$;
+		}
+	case 5:
+		mes "- Existem várias solicitações -";
+		mes "- relacionadas às Ilhas Localizadas -";
+		mes "- neste Quadro de Missões. -";
+		next;
+		set .@str1$,"Quero ir em uma aventura, mas há tantas coisas com as quais tenho que lidar. Se eu não puder, então outros também não podem! ";
+		set .@str2$,"- Funfy, quer ir em uma aventura -";
+		switch(select("» Caçar Kikimora:» Caçar Boneco de Miyabi:» Caçar Mi Gao:» Caçar Mula sem Cabeça:» Caçar Tamruan:» Recolher Máscaras do Festival")) {
+			case 1: callsub L_Quest,10121,.@str1$+"Caçar 15 Kikimoras em Moscovia!",.@str2$;
+			case 2: callsub L_Quest,10122,.@str1$+"Caçar 15 Boneco de Miyabi em Amatsu!",.@str2$;
+			case 3: callsub L_Quest,10123,.@str1$+"Caçar 15 Mi Gao em Luoyang!",.@str2$;
+			case 4: callsub L_Quest,5055,"Eu sei que há muitos monstros aterrorizantes fora da cidade, mas o que me aterroriza são essas Mula sem Cabeça rondando por aí. Espero que nunca se aventurem na cidade. Missão caçar 15 Mulas sem Cabeça!","- Mariana de Brasilis -";
+			case 5: callsub L_Quest,5056,"Os Tamruans fazem muito barulho. Não me importo de manhã, mas eles me impedem de dormir à noite. Quero dormir. Caçar 15 Tamruans!","- Xamã Pumo de Ayothaya -";
+			case 6: callsub L_Quest,5057,"Os Pirralho roubaram todas as máscaras que eu havia preparado para o festival. Tente conseguir 30 máscaras do Festival! Eu vou te dever~","- Chefe SaYumMoon de Kunlun -";
+		}
+	}
+	end;
+
+//callsub L_Quest,<quest ID>{,"<description1>","<description2>"};
+L_Quest:
+	set .@quest, getarg(0);
+	switch(.@quest) {
+		case 10107: set .@name$,"Caçar Requiem"; set .@exp,15000; break;
+		case 10108: set .@name$,"Caçar Marduk"; set .@exp,15000; break;
+		case 10109: set .@name$,"Caçar Pasana"; set .@exp,15000; break;
+		case 10110: set .@name$,"Caçar Moldura Maldita"; set .@exp,20000; break;
+		case 10111: set .@name$,"Caçar Druida Maligno"; set .@exp,20000; break;
+		case 10112: set .@name$,"Caçar Alma Penada"; set .@exp,20000; break;
+		case 10113: set .@name$,"Caçar Raydric Arqueiro"; set .@exp,20000; break;
+		case 10114: set .@name$,"Caçar Grand Peco"; set .@exp,30000; break;
+		case 10115: set .@name$,"Caçar Rochoso"; set .@exp,30000; break;
+		case 10116: set .@name$,"Caçar Bode"; set .@exp,30000; break;
+		case 10117: set .@name$,"Caçar harpia"; set .@exp,30000; break;
+		case 10118: set .@name$,"Caçar Relógio"; set .@exp,25000; break;
+		case 10119: set .@name$,"Caçar Punk"; set .@exp,25000; break;
+		case 10120: set .@name$,"Caçar Rideword"; set .@exp,25000; break;
+		case 10121: set .@name$,"Caçar Kikimora"; set .@exp,30000; break;
+		case 10122: set .@name$,"Caçar Boneco de Miyabi"; set .@exp,30000; break;
+		case 10123: set .@name$,"Caçar Mi Gao"; set .@exp,30000; break;
+		case 5055: set .@name$,"Caçar Mula sem Cabeça"; set .@exp,30000; break;
+		case 5056: set .@name$,"Caçar Tamruan"; set .@exp,30000; break;
+		case 5057: set .@name$,"Reúna máscaras do festival para o festival"; set .@exp,30000; break;
+	}
+	if (getargcount() == 1) {
+		mes "'"+.@name$+"' concluída. Você quer confirma-la receber sua recompensa?";
+		next;
+		if(select("» Sim, por favor.:» Não, faço isso depois.") == 1) {
+			if (.@quest == 5057) delitem 7187,30; //Máscara do Festival
+			erasequest .@quest;
+			getexp .@exp,0;
+			mes "Você recebeu EXP por terminar a missão.";
+			next;
+			return;
+		}
+		close;
+	} else {
+		if (.@quest == 5057) {
+			// Quest 5057 função separada por ser unica missão de coleta
+			if (checkquest(5057) == -1)
+				set .@hunting,-1;
+			else if (countitem(7187) >= 30)
+				set .@hunting,2;
+		} else
+			set .@hunting, checkquest(.@quest,HUNTING);
+		if (.@hunting == 0 || .@hunting == 1) {
+			mes getarg(1);
+			mes getarg(2);
+			next;
+			mes "Volte aqui quando tiver terminado a missão.";
+		} else if (.@hunting == 2) {
+			mes "Você completou a missão.";
+			next;
+			if(select("» Finalizar missão.:» Sair.") == 1) {
+				if (.@quest == 5057) delitem 7187,30; //Festival_Mask
+				erasequest .@quest;
+				getexp .@exp,0;
+				mes "Você recebeu EXP por terminar a missão.";
+			}
+		}/* else if (.@hunting == 3) {
+//			recall_completequest .@quest
+			erasequest .@quest;
+			mes "Você reaceitou a missão '"+.@name$+"'.";
+		}*/ else {
+			mes getarg(1);
+			mes getarg(2);
+			next;
+			mes "Você quer aceitar a missão?";
+			next;
+			if(select("Sim.:Não.") == 1) {
+				mes "Você recebeu a missão '"+.@name$+"'. Veja as informações da sua missão no 'ALT + U' para mais detalhes.";
+				setquest .@quest;
+			}
+		}
+		close;
+	}
+}

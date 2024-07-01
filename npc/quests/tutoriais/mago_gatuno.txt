@@ -1,0 +1,775 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+// Sign
+//============================================================
+geffen,61,174,4	script	Sign#M	HIDDEN_NPC,{
+	mes "- Mudança de emprego de mago -";
+	close;
+}
+
+// New Mage Manager
+//============================================================
+geffen,67,180,4	script	New Mage Manager#M	8_F,{
+	mes "[Mana]";
+	if(Class == Job_Novice){
+		mes "Você não está pronto para";
+		mes "qualquer um dos treinamentos que tenho";
+		mes "oferecer. ";
+		mes "um pouco mais e se tornar";
+		mes "um Mago primeiro. ";
+		close;
+	}
+	if(BaseClass != Job_Mage || (eaclass()&EAJL_BABY)){
+		mes "Você sabe, às vezes";
+		mes "outros empregos podem parecer um";
+		mes "um pouco melhor em alguma batalha";
+		mes "situações, mas sempre tenha";
+		mes "orgulho de si mesmo. ";
+		mes "qualquer um pode fazer o que você faz~";
+		close;
+	}
+	if(Class != Job_Mage && tu_magician01 < 7){
+		mes "Embora eu ofereça magia";
+		mes "treinamento, não é muito útil";
+		mes "se você já tem experiência";
+		mes "no uso da magia. ";
+		mes "mas você terá que confiar em seu";
+		mes "próprio para aprimorar suas habilidades.";
+		close;
+	}
+	switch(tu_magician01){
+	case 0:
+		mes "Ah, seja bem-vindo~";
+		mes "Meu nome é Maná,";
+		mes "um treinador responsável";
+		mes "de novos recrutas no";
+		mes "Guilda dos Magos. ";
+		mes "Eu sou responsável por você ~";
+		next;
+		mes "[Mana]";
+		mes "Eu só tenho feito";
+		mes "isso por pouco tempo,";
+		mes "mas estou aqui para ajudá-lo se";
+		mes "você quer aprender mais sobre";
+		mes "os fundamentos do trabalho de Mago.";
+		next;
+		switch(select("Você vai me ensinar?:Talvez mais tarde...")) {
+		case 1:
+			mes "[Mana]";
+			mes "Claro!";
+			mes "E não se preocupe,";
+			mes "todo mundo é iniciante";
+			mes "em um ponto ou outro.";
+			mes "Você só pode melhorar!";
+			next;
+			break;
+		case 2:
+			mes "[Mana]";
+			mes "Bem, eu acho";
+			mes "tudo vai dar certo.";
+			mes "Mas estou ansioso";
+			mes "para te encontrar novamente";
+			mes "se você decidir que você";
+			mes "quero alguma instrução ~";
+			close;
+		}
+		mes "[Mana]";
+		mes "Tudo bem, vamos começar com";
+		mes "uma descrição geral";
+		mes "do nosso trabalho, certo?";
+		mes "O que exatamente são magos?";
+		next;
+		mes "[Mana]";
+		mes "Em vez de força física,";
+		mes "Magos usam o poder do";
+		mes "elementos em batalha. ";
+		mes "^ff0000Fogo^000000, ^5C4033Terra^000000, ^93DB70Vento^000000, ^0000FFÁgua^000000.";
+		mes "Também temos acesso a feitiços";
+		mes "para feitiços com a propriedade ^CFB53BGhost^000000.";
+		next;
+		mes "[Mana]";
+		mes "Agora, quando um inimigo tem";
+		mes "uma propriedade elementar, será";
+		mes "será capaz de resistir a esse elemento, mas será suscetível a outros.";
+		mes "É por isso que conhecer as propriedades elementares é tão importante para nós.";
+		next;
+		mes "[Mana]";
+		mes "Ouça atentamente estes";
+		mes "relações elementares.";
+		mes "^FF0000Fogo^000000 é forte contra a Terra,";
+		mes "mas é fraco contra Água.";
+		mes "^5C4033Terra^000000 é forte contra o Vento,";
+		mes "mas é fraco contra o Fogo.";
+		next;
+		mes "[Mana]";
+		mes "^0000FFÁgua^000000 é forte contra";
+		mes "Fogo, mas fraco contra o Vento.";
+		mes "Finalmente, ^93DB70Wind^000000 é forte contra";
+		mes "Água, mas fraco contra a Terra.";
+		next;
+		mes "[Mana]";
+		mes "não consigo me lembrar";
+		mes "a última vez que eu";
+		mes "falei tanto em um";
+		mes "sentado! ";
+		mes "tempo para uma pausa. ";
+		mes "continue isso mais tarde, ok?";
+		tu_magician01 = 1;
+		if (checkre(3))
+			getexp BaseLevel*3,BaseLevel*2;
+		else
+			getexp BaseLevel*30,BaseLevel*15;
+		specialeffect2 EF_HIT5;
+		close;
+	case 1:
+		mes "Você está pronto";
+		mes "para continuar o nosso";
+		mes "discussão sobre o";
+		mes "propriedades elementares?";
+		next;
+		mes "[Mana]";
+		mes "Você deveria saber disso";
+		mes "cada monstro tem um";
+		mes "propriedade elementar e que";
+		mes "existem diferentes níveis para";
+		mes "todos esses elementos. ";
+		mes "importante entender isso...";
+		next;
+		mes "[Mana]";
+		mes "Deixe-me explicar para você";
+		mes "todas as nuances de";
+		mes "cada elemento. ";
+		mes "eu qual elemento específico";
+		mes "você gostaria de saber mais sobre.";
+		next;
+		mes "[Mana]";
+		mes "Em outras palavras, mesmo as mesmas propriedades";
+		mes "possuem características diferentes que devem ser consideradas.";
+		mes "Vou explicar as propriedades agora.";
+		while((1)){
+			next;
+			switch(select("^ff0000Fogo^000000", "^5C4033Terra^000000", "^93DB70Vento^000000", "^0000FFÁgua^000000", "^CFB53BGhost^000000", "Desistir.")){
+			case 1:
+				mes "[Mana]";
+				mes "Monstros com o ^ff0000Fogo^000000";
+				mes "propriedade tende a ter forte";
+				mes "ataques. ";
+				mes "fisicamente mais fraco, mesmo leve";
+				mes "os ataques desses monstros podem";
+				mes "ser extremamente prejudicial para nós.";
+				next;
+				mes "[Mana]";
+				mes "Então, se tivermos que lutar";
+				mes "monstros com ^FF0000Fogo^000000";
+				mes "propriedade por conta própria, nós";
+				mes "pode usar o Frost Diver para";
+				mes "congelá-los em suas trilhas.";
+				next;
+				mes "[Mana]";
+				mes "Mas se usarmos Fogo";
+				mes "habilidades de propriedade em chamas";
+				mes "monstros, faríamos pouco ou nenhum";
+				mes "danos e isso não é bom.";
+				next;
+				mes "[Mana]";
+				mes "Para referência, nosso Fogo";
+				mes "habilidades de propriedade são visão,";
+				mes "Raio de Fogo, Bola de Fogo e Fogo";
+				mes "Parede. ";
+				mes "um pouco mais sobre Fire Wall.";
+				next;
+				mes "[Mana]";
+				mes "Fire Wall é muito distinto";
+				mes "na medida em que pode ser usado até";
+				mes "3 vezes em uma tela. ";
+				mes "monstros que se depararem com ele irão";
+				mes "ficar danificado, então afaste-se";
+				mes "na direcção oposta.";
+				next;
+				mes "[Mana]";
+				mes "Mas se um monstro morto-vivo";
+				mes "bate em uma parede de fogo, é";
+				mes "apenas levemente ferido e o";
+				mes "Fire Wall não necessariamente";
+				mes "bloquear sua abordagem. ";
+				.@eread_1 = 1;
+				break;
+			case 2:
+				mes "[Mana]";
+				mes "Tudo bem, propriedade ^5C4033Terra^000000";
+				mes "monstros geralmente têm";
+				mes "boa segmentação, então mesmo";
+				mes "se sua taxa de esquiva for alta,";
+				mes "você pode achar difícil";
+				mes "escapar de todos os seus ataques.";
+				next;
+				mes "[Mana]";
+				mes "Ao lidar com estes";
+				mes "monstros, use a propriedade Fogo";
+				mes "feitiços. ";
+				mes "bastante eficaz, já que vai";
+				mes "pare o monstro e também";
+				mes "causar alguns bons danos.";
+				next;
+				mes "[Mana]";
+				mes "Também é útil saber";
+				mes "que quando você usa Stone";
+				mes "Maldição sobre um monstro, isso";
+				mes "monstro se torna Terra";
+				mes "propriedade enquanto o feitiço";
+				mes "está em vigor. ";
+				next;
+				mes "[Mana]";
+				mes "Então, se você usar Stone Curse,";
+				mes "uma boa estratégia seria";
+				mes "use as habilidades da propriedade Fogo corretamente";
+				mes "depois, como Fire Bolt e";
+				mes "Bola de fogo, para aproveitar";
+				mes "a propriedade Terra do monstro.";
+				.@eread_2 = 1;
+				break;
+			case 3:
+				mes "[Mana]";
+				mes "Agora, não fique muito surpreso";
+				mes "se você continuar faltando quando você";
+				mes "atacar ^93DB70Wind^000000 monstros de propriedade.";
+				mes "A maioria deles pode evitar atividades físicas";
+				mes "ataca muito bem por causa de";
+				mes "suas altas taxas de esquiva.";
+				next;
+				mes "[Mana]";
+				mes "Mas já que nós Magos";
+				mes "ataca principalmente com nossos";
+				mes "feitiços, não precisamos";
+				mes "se preocupe muito com isso.";
+				mes "Ainda assim, os monstros do Vento tendem a";
+				mes "seja bem rápido, então tome cuidado.";
+				next;
+				mes "[Mana]";
+				mes "Quando se trata de atacar";
+				mes "Monstros de vento, seria ideal";
+				mes "para usar habilidades de propriedade da Terra.";
+				mes "Mas como apenas os Wizards têm";
+				mes "acesso a ataques à propriedade da Terra,";
+				mes "devemos nos contentar com habilidades de Fogo.";
+				next;
+				mes "[Mana]";
+				mes "Habilidades de propriedade de fogo podem";
+				mes "não causar muitos danos,";
+				mes "mas elas terão um efeito maior do que as habilidades das propriedades Vento ou Água, que causariam muito pouco ou nenhum dano aos monstros do Vento.";
+				next;
+				mes "[Mana]";
+				mes "Só para você saber,";
+				mes "as habilidades de propriedade ^93DB70Wind^000000";
+				mes "que nós Magos podemos usar são";
+				mes "Relâmpago e Tempestade de Trovão.";
+				.@eread_3 = 1;
+				break;
+			case 4:
+				mes "[Mana]";
+				mes "^0000FFÁgua^000000 monstros de propriedade";
+				mes "tendem a ter muita saúde,";
+				mes "para que eles possam sofrer mais danos";
+				mes "do que outros monstros, fazendo";
+				mes "batalhas com eles por mais tempo.";
+				next;
+				mes "[Mana]";
+				mes "Agora, lembre-se de como eu disse";
+				mes "que existem níveis diferentes";
+				mes "para propriedades? ";
+				mes "sensível ao dano de seu elemento oponente em níveis mais altos.";
+				next;
+				mes "[Mana]";
+				mes "Em outras palavras, monstros";
+				mes "que são de nível mais alto para";
+				mes "a propriedade Água vai";
+				mes "para sofrer ainda mais danos";
+				mes "dos ataques da propriedade Vento.";
+				next;
+				mes "[Mana]";
+				mes "Habilidades de propriedade da água";
+				mes "no repertório do Mago";
+				mes "incluem Cold Bolt e Frost";
+				mes "Mergulhador. ";
+				mes "eficaz contra monstros de Fogo.";
+				next;
+				mes "[Mana]";
+				mes "Frost Diver é especial em";
+				mes "que tem a chance de";
+				mes "na verdade, congele monstros.";
+				mes "Enquanto os monstros são congelados por";
+				mes "Frost Diver, eles são considerados monstros aquáticos. ";
+				.@eread_4 = 1;
+				break;
+			case 5:
+				mes "[Mana]";
+				mes "Agora, não há muitos";
+				mes "^CFB53BGhost^000000 monstros de propriedade";
+				mes "em volta. ";
+				mes "eles, vá em frente e use seu";
+				mes "Habilidades de propriedade fantasma, que";
+				mes "deve ser eficaz.";
+				next;
+				mes "[Mana]";
+				mes "A propriedade Ghost ataca";
+				mes "que nós Magos podemos usar são";
+				mes "Napalm Beat e Soul Strike.";
+				mes "Essas habilidades geralmente tendem";
+				mes "funcionar muito bem, exceto em";
+				mes "monstros de alta propriedade sagrada.";
+				next;
+				mes "[Mana]";
+				mes "Agora, o feitiço Parede de Segurança";
+				mes "é uma espécie de propriedade do Ghost";
+				mes "habilidade, mas é difícil de classificar. ";
+				mes "uma barreira que protege contra";
+				mes "ataques físicos de curta distância.";
+				next;
+				mes "[Mana]";
+				mes "No entanto, esta barreira só";
+				mes "cabe em uma pessoa e não";
+				mes "escudo contra longo alcance";
+				mes "ataques ou propriedades fortes";
+				mes "ataques, então tenha muito cuidado!";
+				.@eread_5 = 1;
+				break;
+			case 6:
+				mes "[Mana]";
+				mes "Você tem certeza que você";
+				mes "ouvi o suficiente sobre o";
+				mes "nuances do elemental";
+				mes "propriedades? ";
+				mes "pronto, abordaremos algumas novidades";
+				mes "material para você aprender.";
+				next;
+				if(select("E-espere, ainda não!:Estou pronto para continuar.") == 2) {
+					mes "[Mana]";
+					mes "Tudo bem, vamos";
+					mes "passar para o próximo";
+					mes "assunto então. ";
+					tu_magician01 = 2;
+					specialeffect2 EF_HIT5;
+					.@total = .@eread_1 + .@eread_2 + .@eread_3 + .@eread_4 + .@eread_5;
+					if (.@total) getexp (.@total*150),(.@total*70);
+					close;
+				}
+				break;
+			}
+		}
+	case 2:
+		mes "Eu sei que o conceito";
+		mes "de propriedades pode ser";
+		mes "confuso agora, mas acabou";
+		mes "hora de você pegar o jeito";
+		mes "disso. ";
+		mes "sobre habilidades mágicas em profundidade ~";
+		next;
+		mes "[Mana]";
+		mes "Agora, a magia mais básica";
+		mes "feitiços de ataque são Fire Bolt,";
+		mes "Raio Frio, Raio e";
+		mes "Batida Napalm. ";
+		mes "permite que os Magos aprendam seus";
+		mes "habilidades mais avançadas.";
+		specialeffect2 EF_NAPALMBEAT;
+		next;
+		mes "[Mana]";
+		mes "Aumentando os níveis de";
+		mes "essas habilidades não apenas abrem";
+		mes "acesso a outros feitiços, mas";
+		mes "o dano daqueles básicos";
+		mes "habilidades de ataque também são aumentadas.";
+		specialeffect2 EF_LIGHTBOLT;
+		next;
+		mes "[Mana]";
+		mes "Outras habilidades que são";
+		mes "básico para a classe Mago";
+		mes "são Visão, Maldição de Pedra e";
+		mes "Aumente a recuperação de SP. ";
+		mes "não são realmente feitiços de ataque, mas são úteis em certas situações.";
+		next;
+		specialeffect2 EF_SIGHT;
+		mes "[Mana]";
+		mes "A visão é usada para";
+		mes "revelar inimigos que";
+		mes "estão se escondendo. ";
+		mes "lembre-se de que essa habilidade";
+		mes "alcance não vai muito longe.";
+		next;
+		specialeffect2 EF_STONECURSE;
+		mes "[Mana]";
+		mes "Stone Curse tem a chance";
+		mes "amaldiçoar um alvo, temporariamente";
+		mes "imobilizando-o e tornando-o";
+		mes "^5C4033Terra^000000 propriedade. ";
+		mes "tentativa de lançar Stone Curse";
+		mes "requer 1 Pedra Preciosa Vermelha.";
+		next;
+		mes "[Mana]";
+		mes "Aumentar a recuperação de SP é";
+		mes "uma habilidade passiva que ajuda";
+		mes "você recupera mais SP enquanto se senta para descansar. ";
+		next;
+		mes "[Mana]";
+		mes "Bem, eu sinto que";
+		mes "explicou os feitiços básicos";
+		mes "suficiente. ";
+		mes "sobre nossas habilidades avançadas,";
+		mes "há uma tarefa que eu quero";
+		mes "você deve preencher para o treinamento.";
+		next;
+		mes "[Mana]";
+		mes "Se você seguir para oeste de";
+		mes "aqui você encontrará uma grande ponte";
+		mes "ponte onde você pode encontrar";
+		mes "esses monstros chamados Pupa.";
+		mes "Pupa não se move e não pode";
+		mes "ataque para salvar suas vidas.";
+		next;
+		mes "[Mana]";
+		mes "Cace essas pupas";
+		mes "até que você tenha coletado";
+		mes "10 crisálidas deles.";
+		mes "Então traga-os para mim, ok?";
+		tu_magician01 = 3;
+		getexp 400,200;
+		specialeffect2 EF_HIT5;
+		close;
+	case 3:
+	case 4:
+		if (tu_magician01 == 3) {
+			mes "Ah, você voltou?";
+			mes "Vamos ver se você reuniu";
+			mes "todas as 10 crisálidas da caça";
+			mes "todos aqueles Pupa. ";
+		}
+		else {
+			mes "Então...";
+			mes "Você conseguiu";
+			mes "10Crisálida";
+			mes "de caçar Pupa";
+			mes "como eu perguntei? ";
+			mes "Porque eu vou verificar ~";
+		}
+		next;
+		mes "[Mana]";
+		if (countitem(915) < 10){// Chrysalis
+			if (tu_magician01 == 3) {
+				mes "Ah, você não";
+				mes "tenha o suficiente";
+				mes "eles ainda. ";
+				mes "daqui e caçar Pupa";
+				mes "para conseguir mais Crisálida, ok?";
+				mes "Por enquanto, vou apenas curar você.";
+				tu_magician01 = 4;
+				percentheal 100,100;
+			}
+			else {
+				mes "Uau, você precisa";
+				mes "mais do que apenas isso.";
+				mes "Eu sei que você consegue...";
+				mes "As pupas são completamente";
+				mes "monstros indefesos!";
+			}
+		}
+		else {
+			mes "...Nove dez.";
+			mes "Tudo bem, você passa!";
+			mes "Agora você deve estar mais";
+			mes "acostumado a usar suas habilidades, hein?";
+			mes "De qualquer forma, me avise quando estiver pronto para a próxima aula, ok?";
+			tu_magician01 = 5;
+			getexp 400,200;
+			specialeffect2 EF_HIT5;
+		}
+		close;
+	case 5:
+		mes "Agora eu vou te contar";
+		mes "o que eu sei sobre";
+		mes "Mago mais avançado";
+		mes "habilidades. ";
+		mes "você gosta que eu explique?";
+		while(1){
+			next;
+			switch(select("Soul Strike:Parede de Segurança:Bola de Fogo:Mergulhador de Gelo:Trovoada:Parede de Fogo:Revestimento de Energia:Desistir.")) {
+			case 1:
+				mes "[Mana]";
+				mes "Soul Strike é um ^CFB53BGhost^000000";
+				mes "habilidade de propriedade que você pode";
+				mes "aprender depois de aumentar o";
+				mes "Habilidade Napalm Beat até";
+				mes "um certo nível. ";
+				mes "com antigo poder espiritual ~";
+				next;
+				specialeffect2 EF_SOULSTRIKE;
+				next;
+				mes "[Mana]";
+				mes "À medida que você treina no uso";
+				mes "de Soul Strike e aumentar";
+				mes "o nível dessa habilidade, ela crescerá em força e você será capaz";
+				mes "para lançá-lo muito mais rapidamente.";
+				.@skill_e1 = 1;
+				break;
+			case 2:
+				mes "[Mana]";
+				mes "Você pode aprender Parede de Segurança";
+				mes "após o treinamento no uso de";
+				mes "Napalm Beat e Soul Strike.";
+				mes "A Parede de Segurança protege contra";
+				mes "a maioria dos ataques de curta distância.";
+				next;
+				specialeffect2 EF_GLASSWALL;
+				next;
+				mes "[Mana]";
+				mes "No entanto, o Muro de Segurança";
+				mes "tem uma duração de tempo e";
+				mes "só pode proteger de um";
+				mes "certo número de ataques,";
+				mes "dependendo do nível do";
+				mes "Habilidade de Parede de Segurança que você usa.";
+				.@skill_e2 = 1;
+				break;
+			case 3:
+				mes "[Mana]";
+				mes "Bola de Fogo é um ^FF0000Fogo^000000";
+				mes "habilidade de propriedade que você";
+				mes "pode aprender após o treinamento";
+				mes "no uso do Fire Bolt.";
+				next;
+				specialeffect2 EF_FIREBALL;
+				next;
+				mes "[Mana]";
+				mes "Bola de Fogo pode realmente";
+				mes "causar dano em vários";
+				mes "inimigos se eles estiverem dentro";
+				mes "o alcance da habilidade. ";
+				mes "bom uso do destrutivo";
+				mes "poder da Bola de Fogo!";
+				.@skill_e3 = 1;
+				break;
+			case 4:
+				mes "[Mana]";
+				mes "Frost Diver é um ^0000FFÁgua^000000";
+				mes "habilidade de propriedade que pode ser";
+				mes "aprendi depois de aumentar";
+				mes "a habilidade Cold Bolt para";
+				mes "um certo nível.";
+				specialeffect2 EF_FROSTDIVER;
+				next;
+				specialeffect2 EF_FROSTDIVER2;
+				mes "[Mana]";
+				mes "Frost Diver irá danificar";
+				mes "inimigos e tem a chance";
+				mes "para congelá-los também. ";
+				mes "congelado, o monstro será";
+				mes "considerada uma água";
+				mes "criatura de propriedade.";
+				next;
+				mes "[Mana]";
+				mes "Agora, à medida que você aumenta";
+				mes "o nível do Frost Diver";
+				mes "habilidade, seu dano e chance";
+				mes "de monstros congelados também";
+				mes "aumentar. ";
+				.@skill_e4 = 1;
+				break;
+			case 5:
+				mes "[Mana]";
+				mes "Tempestade é uma";
+				mes "^93DB70Wind^000000 habilidade de propriedade";
+				mes "que você pode aprender depois";
+				mes "aumentando o relâmpago";
+				mes "Aumente a habilidade até um certo nível.";
+				next;
+				specialeffect2 EF_THUNDERSTORM;
+				mes "[Mana]";
+				mes "Tempestade é semelhante";
+				mes "para Fire Ball, pois pode";
+				mes "atacar vários inimigos";
+				mes "dentro de um determinado intervalo.";
+				mes "É um incrivelmente potente";
+				mes "ataque direcionado ao solo.";
+				.@skill_e5 = 1;
+				break;
+			case 6:
+				mes "[Mana]";
+				mes "Fire Wall é um ^FF0000Fire^000000";
+				mes "habilidade de propriedade que pode";
+				mes "ser aprendido após o treinamento";
+				mes "no uso de Fire Ball e";
+				mes "Visão. ";
+				mes "Fire Wall tem como alvo uma área.";
+				next;
+				specialeffect2 EF_FIREWALL;
+				mes "[Mana]";
+				mes "Então você pode colocar";
+				mes "uma parede de fogo em locais";
+				mes "onde você acha que o inimigo";
+				mes "irá avançar em direção. ";
+				mes "especialmente útil quando";
+				mes "monstros se aproximam de você!";
+				next;
+				mes "[Mana]";
+				mes "Então, se você pode usar";
+				mes "Atire bem estrategicamente";
+				mes "e efetivamente, pode";
+				mes "ser uma habilidade muito poderosa ~";
+				.@skill_e6 = 1;
+				break;
+			case 7:
+				mes "[Mana]";
+				mes "Energy Coat é, bem,";
+				mes "uma habilidade única que você";
+				mes "não pode simplesmente aprender sozinho.";
+				mes "Você terá que perguntar a Blizardis";
+				mes "dentro da Guilda dos Magos para";
+				mes "ensiná-lo a usá-lo.";
+				next;
+				specialeffect2 EF_ENERGYCOAT;
+				next;
+				mes "[Mana]";
+				mes "Se você decidir";
+				mes "aprenda Energy Coat, estou";
+				mes "claro que Blizardis vai contar";
+				mes "você tudo que você precisa saber.";
+				.@skill_e7 = 1;
+				break;
+			case 8:
+				mes "[Mana]";
+				mes "Você entendeu";
+				mes "tudo isso? ";
+				mes "agora tenho uma missão a dar";
+				mes "você em nome do Mago";
+				mes "Guilda. ";
+				mes "briefing, fale comigo, ok?";
+				next;
+				mes "[Mana]";
+				mes "Ah, e por favor, pegue";
+				mes "esse. ";
+				mes "você para ajudá-lo em seu";
+				mes "treinamento. ";
+				mes "útil na hora de lutar...";
+				tu_magician01 = 6;
+				getitem 1604,1; //Wand
+				specialeffect2 EF_HIT5;
+				.@total = .@skill_e1 + .@skill_e2 + .@skill_e3 + .@skill_e4 + .@skill_e5;
+				if (.@total) getexp (.@total*300),(.@total*100);
+				close;
+			}
+		}
+		close;
+	case 6:
+		mes "Ah, que bom, você está de volta.";
+		mes "Deixe-me contar sobre";
+		mes "sua missão. ";
+		mes "algo aconteceu em";
+		mes "Marrocos e a Guilda dos Ladrões";
+		mes "está solicitando nossa ajuda.";
+		next;
+		mes "[Mana]";
+		mes "não é obrigatório";
+		mes "para você fazer isso, mas";
+		mes "você será compensado";
+		mes "por seus esforços e nós";
+		mes "te dar algum apoio.";
+		mes "Então, o que você acha?";
+		next;
+		switch(select("Eu farei isso.:Desculpe, mas...")) {
+		case 1:
+			mes "[Mana]";
+			mes "Ótimo! ";
+			mes "vou te mandar direto";
+			mes "para Marrocos, então. ";
+			mes "chegue lá, vá para a frente";
+			mes "da Pirâmide de Marrocos e";
+			mes "fale com Yierhan. ";
+			next;
+			mes "[Mana]";
+			mes "Ah, e quando você estiver";
+			mes "feito com o que Yierhan";
+			mes "você fez, volte";
+			mes "e me reporte, ok?";
+			tu_magician01 = 7;
+			emotion ET_SMILE;
+			warp "Marrocos",182,286;
+			close;
+		case 2:
+			mes "[Mana]";
+			mes "Hum...?";
+			mes "Oh, eu vejo. ";
+			mes "acontecer de você mudar";
+			mes "sua mente, volte";
+			mes "e me pergunte depois, ok?";
+			close;
+		}
+	case 7:
+		mes "Não sei";
+		mes "que tipo de trabalho";
+		mes "Yierhan tem em estoque";
+		mes "para você, mas espero";
+		mes "não será muito difícil.";
+		close;
+	case 27:
+		mes "Yierhan acabou de me enviar";
+		mes "uma mensagem, dizendo que";
+		mes "você fez um ótimo trabalho em";
+		mes "completando sua missão.";
+		mes "Muito bom trabalho,"+strcharinfo(0)+"~";
+		next;
+		mes "[Mana]";
+		mes "Parece que existem";
+		mes "duas organizações secretas";
+		mes "envolvido em toda essa sujeira";
+		mes "negócios. ";
+		mes "trabalhar juntos?";
+		next;
+		mes "[Mana]";
+		mes "Bem, em qualquer caso...";
+		mes "Isso é lindo";
+		mes "grande negócio que";
+		mes "Eu acho que os superiores";
+		mes "vai lidar, então você não";
+		mes "precisa se preocupar com isso por enquanto.";
+		next;
+		mes "[Mana]";
+		mes "Por favor, tome isso como";
+		mes "uma pequena recompensa por ajudar";
+		mes "ambas as nossas guildas. ";
+		mes "mais uma vez, muito obrigado~";
+		tu_magician01 = 28;
+		getitem 2321,1; //Silk_Robe
+		Zeny = Zeny + 3000;
+		getexp 3000,1000;
+		close;
+	default:
+		if(tu_magician01 < 27){
+			mes "Então...";
+			mes "Parece que algo está";
+			mes "acontecendo em Rune-Midgarts";
+			mes "Reino com certeza. ";
+			mes "todas as guildas estão tão ocupadas...";
+			next;
+			mes "[Mana]";
+			mes "De qualquer forma, por favor";
+			mes "continue com o bem";
+			mes "trabalhar. ";
+			mes "Yierhan está bem?";
+		} else {
+			mes "Você parece estar bem";
+			mes "experimentado de vez em quando";
+			mes "não há mais nada que eu possa";
+			mes "realmente te ensinar. ";
+			mes "para você encontrar maneiras de dominar";
+			mes "os caminhos da magia por conta própria.";
+		}
+		close;
+	}
+}
+

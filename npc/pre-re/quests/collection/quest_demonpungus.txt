@@ -1,0 +1,254 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+ein_fild01,43,249,0	script	Local Villager#hunt	898,{
+	if (#mobpungus >= .consec) {
+		mes .npc$;
+		mes "Voce já fez 3 missões comigo hoje.";
+		mes "Volte amanhã";
+		close;
+	}
+	if (checkquest(60125) != -1) {
+		if (checkquest(60125, HUNTING) != 2) {
+			mes "[Local Villager]";
+			mes "Você terminou de caçar os 50 Demon Pungus?";
+			next;
+			switch(select("Sim:Não:Quero desistir")) {
+			case 1:
+				mes "[Local Villager]";
+				mes "Hmm, eu não acho que você tenha caçado 50 ainda...";
+				close;
+			case 2:
+				mes "[Local Villager]";
+				mes "Lembre-se, eu preciso de ajuda caçando Demon Pungus, então vá e caça 50 deles.";
+				close;
+			case 3:
+				mes "[Local Villager]";
+				mes "Você tem certeza de que quer parar de caçar?";
+				mes "Qualquer progresso que você fez será apagado";
+				next;
+				switch(select("Sim:Não")) {
+				case 1:
+					mes "[Local Villager]";
+					mes "Ok então, volte aqui se mudar de ideia.";
+					erasequest 60125;
+					close;
+				case 2:
+					mes "[Local Villager]";
+					mes "Por favor, mate 50 Demon Pungus.";
+					close;
+				}
+			}
+		}
+		else {
+			mes "[Local Villager]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 250266,144452;
+			erasequest 60125;
+			#mobpungus++;
+			close;
+		}
+	}
+	if (checkquest(60126) != -1) {
+		if (checkquest(60126, HUNTING) != 2) {
+			mes "[Local Villager]";
+			mes "Você terminou de caçar os 100 Demon Pungus?";
+			next;
+			switch(select("Sim:Não:Quero desistir")) {
+			case 1:
+				mes "[Local Villager]";
+				mes "Hmm, eu não acho que você tenha caçado 100 ainda...";
+				close;
+			case 2:
+				mes "[Local Villager]";
+				mes "Lembre-se, eu preciso de ajuda caçando Demon Pungus, então vá e caça 100 deles.";
+				close;
+			case 3:
+				mes "[Local Villager]";
+				mes "Você tem certeza de que quer parar de caçar?";
+				mes "Qualquer progresso que você fez será apagado";
+				next;
+				switch(select("Sim:Não")) {
+				case 1:
+					mes "[Local Villager]";
+					mes "Ok então, volte aqui se mudar de ideia.";
+					erasequest 60126;
+					close;
+				case 2:
+					mes "[Local Villager]";
+					mes "Por favor, mate 100 Demon Pungus.";
+					close;
+				}
+			}
+		}
+		else {
+			mes "[Local Villager]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 250266,144452;
+			getexp 250266,144452;
+			erasequest 60126;
+			#mobpungus++;
+			close;
+		}
+	}
+	if (checkquest(60127) != -1) {
+		if (checkquest(60127, HUNTING) != 2) {
+			mes "[Local Villager]";
+			mes "Você terminou de caçar os 150 Demon Pungus?";
+			next;
+			switch(select("Sim:Não:Quero desistir")) {
+			case 1:
+				mes "[Local Villager]";
+				mes "Hmm, eu não acho que você tenha caçado 150 ainda...";
+				close;
+			case 2:
+				mes "[Local Villager]";
+				mes "Lembre-se, eu preciso de ajuda caçando Demon Pungus, então vá e caça 150 deles.";
+				close;
+			case 3:
+				mes "[Local Villager]";
+				mes "Você tem certeza de que quer parar de caçar?";
+				mes "Qualquer progresso que você fez será apagado";
+				next;
+				switch(select("Sim:Não")) {
+				case 1:
+					mes "[Local Villager]";
+					mes "Ok então, volte aqui se mudar de ideia.";
+					erasequest 60127;
+					close;
+				case 2:
+					mes "[Local Villager]";
+					mes "Por favor, mate 150 Demon Pungus.";
+					close;
+				}
+			}
+		}
+		else {
+			mes "[Local Villager]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 250266,144452;
+			getexp 250266,144452;
+			getexp 250266,144452;
+			erasequest 60127;
+			#mobpungus++;
+			close;
+		}
+	}
+//for minimum level
+	if (BaseLevel > 59) {
+		//for maximum level
+		if (BaseLevel < 75) {
+			mes "[Local Villager]";
+			mes "Ei, você aí. Sim, você!";
+			mes "Você acha que pode me ajudar com algo?";
+			next;
+			switch(select("Claro:Não")) {
+			case 1:
+				mes "[Local Villager]";
+				mes "Estou tentando seguir em frente, mas parece que não consigo passar por esses Demon Pungus.";
+				next;
+				switch(select("Recolher itens:Caçar Demon Pungus:Cancelar")) {
+				case 1:
+					// Item turn in
+					mes "[Local Villager]";
+					mes "Você pode ajudar coletando ^FF000050 Bactérias^000000?";
+					mes "Vou recompensá-lo por ajudar a limpar isso para mim.";
+					next;
+					switch(select("Eu tenho Bactérias:O que você precisa?")) {
+					case 1:
+						/*
+						if (checkweight(504,10) == 0) {
+							mes "[Local Villager]";
+							mes "Hey, parece que o peso em";
+							mes "suas costas vai te esmagar. Volte";
+							mes "depois de perder um pouco de peso.";
+							close;
+						}
+						*/
+						if (countitem(7119) > 49) {
+							mes "[Local Villager]";
+							mes "Eu tinha minhas dúvidas, mas você me provou errado.";
+							delitem 7119,50; //Bactérias
+							getexp 250266,144452;
+							//getitem 504,10; //White_Potion
+							#mobpungus++;
+							close;
+						}
+						else {
+							mes "[Local Villager]";
+							mes "Parece que você não tem o suficiente.";
+							next;
+							mes "[Local Villager]";
+							mes "Eu preciso ver que você reuniu ^FF000050 Bactérias^000000 e depois posso recompensá-lo.";
+							close;
+						}
+					case 2:
+						mes "[Local Villager]";
+						mes "Eu preciso ver que você reuniu ^FF000050 Bactérias^000000 e depois posso recompensá-lo.";
+						close;
+					}
+				case 2:
+					// Kill Count Quest
+					mes "[Local Villager]";
+					mes "Ah, ok, acho que você pode me ajudar caçando alguns Demon Pungus.";
+					mes "Quantos você gostaria de caçar?";
+					next;
+					switch(select("50 Demon Pungus:100 Demon Pungus:150 Demon Pungus")) {
+					case 1:
+						mes "[Local Villager]";
+						mes "Volte quando terminar sua tarefa e eu darei uma pequena recompensa.";
+						setquest 60125;
+						close;
+					case 2:
+						mes "[Local Villager]";
+						mes "Volte quando terminar sua tarefa e eu darei uma pequena recompensa.";
+						setquest 60126;
+						close;
+					case 3:
+						mes "[Local Villager]";
+						mes "Volte quando terminar sua tarefa e eu darei uma pequena recompensa.";
+						setquest 60127;
+						close;
+					}
+				case 3:
+					mes "[Local Villager]";
+					mes "Se mudar de ideia, por favor volte.";
+					close;
+				}
+			case 2:
+				mes "[Local Villager]";
+				mes "Se mudar de ideia, por favor volte.";
+				close;
+			}
+		}
+		else {
+			mes "[Local Villager]";
+			mes "Um, um. Eu não acho...";
+			next;
+			mes "[Local Villager]";
+			mes "Sim, desculpe, não posso falar agora.";
+			close;
+		}
+	}
+	else {
+		mes "[Local Villager]";
+		mes "É incrível, verdadeiramente é.";
+		mes "Eu só queria poder passar por tudo isso.";
+		close;
+	}
+OnClock0001:
+query_sql ("DELETE FROM `acc_reg_num` WHERE `key`='#mobpungus'");
+end;
+
+OnInit:
+	.consec = 3;
+	end;
+}
+
+

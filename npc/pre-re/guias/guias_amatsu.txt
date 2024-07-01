@@ -1,0 +1,112 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+amatsu,207,89,3	script	Guia de Amatsu#ama	758,{
+	mes "[Amachang]";
+	mes "Bem-vindo ao Amatsu,";
+	mes "a cidade dos moradores gentis";
+	mes "e lindas flores de cerejeira.";
+	next;
+	mes "[Amachang]";
+	mes "Eu sou Amachang,";
+	mes "a 13ª Senhorita Amatsu.";
+	mes "Eu vou te guiar pela cidade";
+	mes "como Senhorita Amatsu.";
+	mes "por favor, diga";
+	mes "se você quiser saber alguma coisa.";
+	next;
+	switch(select("Palácio: Loja de Ferramentas: Loja de Armas: Bar")) {
+	case 1:
+		viewpoint 1,85,235,0,0xFF3355;
+		mes "[Amachang]";
+		mes "No minimapa,";
+		mes "vá para ^FF3355 ^000000";
+		mes "para encontrar o Palácio.";
+		mes "Divirta-se";
+		mes "em Amatsu.";
+		close;
+	case 2:
+		viewpoint 1,96,118,1,0xCE6300;
+		mes "[Amachang]";
+		mes "No minimapa,";
+		mes "vá para ^CE6300 ^000000";
+		mes "para encontrar a Loja de Ferramentas.";
+		mes "Divirta-se";
+		mes "em Amatsu.";
+		close;
+	case 3:
+		viewpoint 1,132,117,2,0x55FF33;
+		mes "[Amachang]";
+		mes "No minimapa,";
+		mes "vá para ^55FF33 ^000000";
+		mes "para encontrar a Loja de Armas.";
+		mes "Divirta-se";
+		mes "em Amatsu.";
+		close;
+	case 4:
+		viewpoint 1,217,116,3,0x3355FF;
+		mes "[Amachang]";
+		mes "No minimapa,";
+		mes "vá para ^3355FF ^000000";
+		mes "para encontrar o Bar.";
+		mes "Divirta-se";
+		mes "em Amatsu.";
+		close;
+	}
+}
+	
+amatsu,251,283,4	script	Homem Guia#2ama	767,{
+	mes "[Homem Guia]";
+	mes "Bem-vindo, turista de Midgard.";
+	mes "Eu sou o guia de";
+	mes "nossa bela cidade, Amatsu.";
+	next;
+	mes "[Homem Guia]";
+	mes "O que você está procurando?";
+	next;
+	switch(select("Palácio: Loja de Ferramentas: Loja de Armas: Bar")) {
+	case 1:
+		viewpoint 1,85,235,0,0xFF3355;
+		mes "[Homem Guia]";
+		mes "No minimapa,";
+		mes "vá para ^FF3355 ^000000";
+		mes "para encontrar o Palácio.";
+		mes "Divirta-se";
+		mes "em Amatsu.";
+		close;
+	case 2:
+		viewpoint 1,96,118,1,0xCE6300;
+		mes "[Homem Guia]";
+		mes "No minimapa,";
+		mes "vá para ^CE6300 ^000000";
+		mes "para encontrar a Loja de Ferramentas.";
+		mes "Divirta-se";
+		mes "em Amatsu.";
+		close;
+	case 3:
+		viewpoint 1,132,117,2,0x55FF33;
+		mes "[Homem Guia]";
+		mes "No minimapa,";
+		mes "vá para ^55FF33 ^000000";
+		mes "para encontrar a Loja de Armas.";
+		mes "Divirta-se";
+		mes "em Amatsu.";
+		close;
+	case 4:
+		viewpoint 1,217,116,3,0x3355FF;
+		mes "[Homem Guia]";
+		mes "No minimapa,";
+		mes "vá para ^3355FF ^000000";
+		mes "para encontrar o Bar.";
+		mes "Divirta-se";
+		mes "em Amatsu.";
+		close;
+	}
+}
+

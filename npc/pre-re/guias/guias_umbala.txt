@@ -1,0 +1,115 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+umbala,128,94,4	script	Aventureiro#um	702,{
+	mes "[Aventureiro]";
+	mes "Este é um lugar muito estranho...";
+	mes "É subdesenvolvido e há";
+	mes "há uma série de caminhos complexos e sinuosos...";
+	next;
+	mes "[Aventureiro]";
+	mes "No entanto, desde que estou aqui";
+	mes "há meses, estou familiarizado com";
+	mes "a geografia e os pontos desta área";
+	mes "de interesse nesta aldeia.";
+	mes "Você pode me perguntar sobre o";
+	mes "localizações de edifícios.";
+	next;
+	switch(select("Locais de edifícios.:Remover marcas no minimapa.:Sair.")) {
+	case 1:
+		mes "[Aventureiro]";
+		mes "Então, qual você deseja verificar?";
+		next;
+		switch(select("Casa do Chefe:Casa do Xamã:Loja de Armas:Loja de Ferramentas:Bungee Jump Local:Cancelar")) {
+		case 1:
+			mes "[Aventureiro]";
+			mes "Eu fiz uma marca ^FF3355 ^000000";
+			mes "no seu minimapa.";
+			next;
+			mes "[Aventureiro]";
+			mes "Só o chefe conhece a língua";
+			mes "do mundo exterior. ";
+			mes "é melhor visitá-lo antes de qualquer coisa.";
+			viewpoint 1,66,250,2,0xFF3355;
+			break;
+		case 2:
+			mes "[Aventureiro]";
+			mes "Eu fiz uma marca ^CE6300 ^000000";
+			mes "no seu minimapa.";
+			next;
+			mes "[Aventureiro]";
+			mes "O Utan Shaman tem alguns";
+			mes "uma espécie de poder místico...";
+			mes "As pessoas dizem que ela pode criar coisas difíceis";
+			mes "pedras encantadas e dividir um";
+			mes "pedra encantada pura em pedras brutas.";
+			viewpoint 1,217,186,3,0xCE6300;
+			break;
+		case 3:
+			mes "[Aventureiro]";
+			mes "Eu fiz uma marca ^55FF33 ^000000";
+			mes "no seu minimapa.";
+			next;
+			mes "[Aventureiro]";
+			mes "Os Utans geralmente estão bem armados";
+			mes "em preparação para ataques de";
+			mes "seus inimigos. ";
+			mes "foram atacados de fora muitas vezes no passado.";
+			viewpoint 1,126,154,4,0x55FF33;
+			break;
+		case 4:
+			mes "[Aventureiro]";
+			mes "Eu fiz uma marca ^3355FF ^000000";
+			mes "no seu minimapa.";
+			next;
+			mes "[Aventureiro]";
+			mes "Existem muitas coisas úteis para";
+			mes "viajando na Loja de Ferramentas, então por que você não dá uma olhada?";
+			viewpoint 1,136,127,5,0x3355FF;
+			break;
+		case 5:
+			mes "[Aventureiro]";
+			mes "Eu fiz uma marca ^00FF00 ^000000";
+			mes "no seu minimapa.";
+			next;
+			mes "[Aventureiro]";
+			mes "Umbala tem um local único chamado";
+			mes "o 'Lugar de Bungee Jump'.";
+			mes "Se você estiver interessado em testar";
+			mes "sua coragem, por que você não vai";
+			mes "e participe deste Utan";
+			mes "ritual você mesmo?";
+			viewpoint 1,139,198,6,0x00FF00;
+			break;
+		case 6:
+			mes "[Aventureiro]";
+			mes "Se você deseja remover o local";
+			mes "marcas no seu minimapa, por favor";
+			mes "escolha o menu 'Remover marcas no minimapa'.";
+		}
+		break;
+	case 2:
+		viewpoint 2,66,250,2,0xFF3355;
+		viewpoint 2,217,186,3,0xCE6300;
+		viewpoint 2,126,154,4,0x55FF33;
+		viewpoint 2,136,127,5,0x3355FF;
+		viewpoint 2,139,198,6,0x00FF00;
+		mes "[Aventureiro]";
+		mes "Eu removi todas as marcas do seu";
+		mes "minimapa. ";
+		mes "novamente se você quiser que eu marque os locais dos edifícios.";
+		break;
+	case 3:
+		mes "[Aventureiro]";
+		mes "É divertido aprender a cultura Utan por conta própria. ";
+		break;
+	}
+	close;
+}
+

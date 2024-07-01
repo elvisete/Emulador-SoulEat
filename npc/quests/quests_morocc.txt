@@ -1,0 +1,4262 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+// Stop Post Quest
+// ============================================================
+-	script	William	89,{
+	mes "[William]";
+	mes "Bem-vindo ao";
+	mes "^3355FFPost^000000 Workshop de MacMillan.";
+	next;
+	mes "[William]";
+	mes "Minha família, o Clã MacMillan, produz postes profissionais de sinalização de trânsito há mais de 250 anos. ";
+	next;
+	switch(select("Posso encomendar um ^3355FFStop Post^000000?:Nah...")) {
+	case 1:
+		mes "[William]";
+		mes "Este enfeite exclusivo, ^3355FFStop Post^000000, é um sinal de trânsito na estrada e também funciona como enfeite de cabelo! ";
+		next;
+		mes "[William]";
+		mes "Para produzir um ^3355FFStop Post^000000, precisamos de ^3355FF91100 Zeny^000000, ^3355FF50 Trunk^000000 e ^3355FF1 Black Dyestuffs^000000.";
+		next;
+		if ((countitem(1019) > 49) && (countitem(983) > 0) && (Zeny > 91099)) {
+			delitem 1019,50;  //Wooden_Block
+			delitem 983,1;  //Black_Dyestuffs
+			set Zeny, Zeny-91100;
+			mes "[William]";
+			mes "Aqui está você ~!";
+			mes "Este ^3355FFStop Post^000000 tem";
+			mes "foi especialmente feito";
+			mes "apenas para você!";
+			mes "Obrigado pela visita!";
+			mes "... Entendeu a piada?";
+			getitem 2272,1; // Stop_Post
+			close;
+		}
+		else {
+			mes "[William]";
+			mes "Então...";
+			mes "Quando você conseguir esses itens, passe por aqui e nós lhe daremos um Stop Post.";
+			close;
+		}
+	case 2:
+		mes "[William]";
+		mes "De qualquer forma, obrigado por ter vindo ao 'Workshop MacMillan'. ";
+		close;
+	}
+}
+
+// Binoculars Quest
+// ============================================================
+-	script	Alchemist	64,{
+	mes "[Mário]";
+	mes "Olá, novo cliente!!";
+	mes "Eu sei sobre o que você vai falar. ";
+	next;
+	switch(select("O que é isso?:Fabricação:Ignore-o")) {
+	case 1:
+		mes "[Mário]";
+		mes "Hum~!";
+		mes "Bem, o nome oficial deles é ^3355FFBinóculos^000000! ";
+		next;
+		mes "[Mário]";
+		mes "Eles são compostos por dois pequenos telescópios unidos por um único dispositivo de focagem. ";
+		next;
+		mes "[Mário]";
+		mes "Então?";
+		mes "Não é isso";
+		mes "alguma coisa, hein?";
+		mes "Muhahahahahaha!";
+		mes ". ";
+		next;
+		mes "[Mário]";
+		mes "Hum? ";
+		mes "acredita no que acabei de dizer?";
+		mes "Ah, vamos, idiota. ";
+		next;
+		mes "[Mário]";
+		mes "Eu vou deixar você";
+		mes "sei os itens que preciso...";
+		mes "1 ^3355FFÓculos Geek^000000! ";
+		mes "E ^3355FF50000 Zeny^000000!";
+		close;
+	case 2:
+		if ((countitem(2243) > 0) && (countitem(999) > 99) && (Zeny > 49999)) {
+			mes "[Mário]";
+			mes "Perfeito, perfeito!";
+			mes "Agora minha obra-prima estará completa!";
+			mes "Muhahahaha!";
+			next;
+			delitem 2243,1;  //Spinning_Eyes
+			delitem 999,100;  //Steel
+			set Zeny, Zeny-50000;
+			mes "[Mário]";
+			mes "Olha Você aqui!";
+			mes "Binóculos!";
+			getitem 2296,1; // Binoculars
+			next;
+			mes "[Mário]";
+			mes "Apenas lembra-te...";
+			mes "Não espie algo que você não deveria olhar. ";
+			close;
+		}
+		else {
+			mes "[Mário]";
+			mes "Arggghhhhhh!!";
+			mes "Você não trouxe";
+			mes "itens suficientes!!!!";
+			mes "Como você ousa";
+			mes "me desonre!!!";
+			mes "Baaaadddd!!";
+			close;
+		}
+	case 3:
+		mes "[Mário]";
+		mes "Ei você ~!";
+		mes "Agora você está na frente de Marius, um Alquimista entre os Alquimistas. ";
+		close;
+	}
+}
+
+// Morocc Assassin Guild Bar [Disabled]
+// ============================================================
+/*
+morocc,43,108,5	script	Sharp-Looking Kid#dan_07	82,{
+	if (BaseClass == Job_Assassin) {
+		mes "[Jack]";
+		mes "Apesar da bagunça caótica em sua cidade,";
+		mes "ainda há alguns que visitam aqui.";
+		mes "Talvez a fortaleza em si seja realmente única.";
+		close;
+	}
+	else {
+		if (countitem(7416) > 0) {
+			mes "[Jack]";
+			mes "Uma carta de recomendação?";
+			mes "Oh garoto. ";
+			mes "Bem, acho que você deveria entrar e ver o mestre.";
+			close;
+		}
+		else {
+			mes "[Jack]";
+			mes "Ei, o que você está espiando?";
+			mes "Você não tem coisas melhores para fazer? ";
+			close;
+		}
+	}
+}
+
+morocc,45,110,0	script	que_job01#01	45,2,2,{
+OnTouch_:
+	if (BaseClass == Job_Assassin) {
+		warp "que_job01",9,94;
+		end;
+	}
+	else {
+		mes "[Jack]";
+		mes "Espere, essa é a área restrita....";
+		mes "......";
+		mes "Ah bem.";
+		next;
+		mes "[Jack]";
+		mes "As coisas mudaram.";
+		mes "Basta fazer o que quiser!";
+		close2;
+		warp "que_job01",9,94;
+		end;
+	}
+}
+
+que_job01,6,94,0	warp	morocc#01	2,2,morocc,45,103
+que_job01,17,48,0	warp	que_job01#02	2,2,que_job01,68,92
+que_job01,68,96,0	warp	que_job01#03	2,2,que_job01,17,53
+
+que_job01,80,77,0	script	que_job01#04	45,2,2,{
+OnTouch_:
+	if (BaseClass == Job_Assassin) {
+		warp "que_job01",61,50;
+		end;
+	}
+	else if (mao_request > 0) {
+		warp "que_job01",61,50;
+		end;
+	}
+	else {
+		mes "[Litheron]";
+		mes "Uau, você não está";
+		mes "permitido estar aqui.";
+		mes "Ei, mestre! ";
+		mes "conhece esse cara?";
+		next;
+		if (prt_curse == 24) {
+			mes "[" + strcharinfo(0) + "]";
+			mes "Não me importo com o que você diz, estou entrando!!!";
+			next;
+			mes "[Litheron]";
+			mes "Ei, mestre-! ";
+			mes "Ele com certeza parece durão!";
+			next;
+			mes "[Mestre]";
+			mes "Hum. ";
+			mes "Passar por uma porta não faz nenhuma diferença.";
+			next;
+			mes "[Litheron]";
+			mes "Hah! ";
+			mes "Tudo bem, que tal isso?";
+			mes "Deixo você entrar se me pagar uma bebida.";
+			mes "Além disso, você não pode arriscar criar problemas aqui: este lugar";
+			mes "está cheio de assassinos mortais.";
+			next;
+			switch(select("Claro: Por que eu deveria?!")) {
+			case 1:
+				if (Zeny > 999) {
+					mes "[Litheron]";
+					mes "Hehe, isso é o que";
+					mes "Estou falando sobre!";
+					mes "Ei, barman! ";
+					mes "o de sempre! ";
+					mes "estilo, aventureiro...";
+					set Zeny, Zeny-1000;
+					next;
+					mes "[Litheron]";
+					mes "Tudo bem, você pode vir";
+					mes "entre. Mas não se atreva";
+					mes "respire uma palavra sobre isso";
+					mes "bar para outra alma viva.";
+					close2;
+					warp "que_job01",61,50;
+					end;
+				}
+				else {
+					mes "[Litheron]";
+					mes "Huh...";
+					mes "Ah, você nem";
+					mes "tenha zeny suficiente para";
+					mes "compre água aqui. ";
+					mes "Se você realmente deseja entrar,";
+					mes "certifique-se de ter o dinheiro!";
+					close2;
+					warp "que_job01",85,77;
+					end;
+				}
+			case 2:
+				mes "[Litheron]";
+				mes "Não é do tipo saavy,";
+				mes "você é...? ";
+				mes "Se você não vai fazer";
+				mes "me algum favor, então por que";
+				mes "devo ajudá-lo? ";
+				close2;
+				warp "que_job01",85,77;
+				end;
+			}
+		}
+		else {
+			mes "[Mestre]";
+			mes "De jeito nenhum.";
+			mes "Certifique-se de que isso";
+			mes "um não é permitido";
+			mes "entrar.";
+			next;
+			mes "[Litheron]";
+			mes "Você ouviu o homem.";
+			mes "É melhor você recuar";
+			mes "deste lugar enquanto";
+			mes "você ainda tem pernas...";
+			close2;
+			warp "que_job01",85,77;
+			end;
+		}
+	}
+}
+
+que_job01,65,50,0	warp	que_job01#05	2,2,que_job01,84,77
+
+que_job01,81,79,5	script	Idle Knight#dan_08	733,{
+	mes "[Litheron]";
+	mes "Qual é o problema?";
+	mes "Ah, entendo... Você é";
+	mes "provavelmente se perguntando por que";
+	mes "um cavaleiro como eu está em um";
+	mes "pub secreto do Assassino.";
+	if (BaseClass == Job_Knight) {
+		mes "E você, hein?";
+	}
+	next;
+	mes "[Litheron]";
+	mes "Você sabe... só vim para respirar um pouco. ";
+	mes "É quase impossível encontrar um lugar para tomar uma bebida hoje em dia, se é que você me entende.";
+	close;
+}
+
+que_job01,82,95,3	script	Bar Master#moc_main01	46,{
+	if (checkweight(908,200) == 0) {
+		mes "^3355FFEspere um segundo!";
+		mes "Neste momento, você está carregando";
+		mes "muitas coisas com você.";
+		mes "Por favor volte depois";
+		mes "usando o serviço Kafra";
+		mes "para armazenar alguns de seus itens.^000000";
+		close;
+	}
+	if (BaseClass == Job_Assassin) {
+		mes "[Mestre]";
+		mes "Por favor entre.";
+		mes "Quer uma bebida?";
+	}
+	else if ((BaseJob == Job_Thief) && (BaseClass != Job_Assassin)) {
+		mes "[Mestre]";
+		mes "......Huh. ";
+		mes "Bem, acho que Jack não está fazendo o trabalho dele.";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Ei, mestre, não seja tão duro. ";
+		mes "Você não quer ferir os sentimentos do seu velho amigo ~";
+		next;
+		mes "[Mestre]";
+		mes "Qualquer coisa que você diga.";
+		mes "Então, o que você quer beber?";
+	}
+	else {
+		mes "[Mestre]";
+		mes "....Hum...";
+		mes "O que você quer beber?";
+	}
+	next;
+	switch(select("Peça uma bebida:Pergunte sobre a missão:Cancelar")) {
+	case 1:
+		mes "[Mestre]";
+		mes "Neste local só sirvo duas bebidas.";
+		mes "Você quer um Sograt Tropical ou";
+		mes "um vermelhão na praia?";
+		next;
+		switch(select("Tropical Sograt:Vermilion on the Beach:Você oferece alguma bebida grátis?")) {
+		case 1:
+			if (checkweight(908,200) == 0) {
+				mes "[Mestre]";
+				mes "Ei, por que você trouxe";
+				mes "tanta coisa com você?";
+				mes "Eu não posso te dar nada";
+				mes "beber se você não tiver";
+				mes "a sala para carregá-lo.";
+				mes "Limpe seu inventário!";
+				close;
+			}
+			else {
+				if (BaseClass == Job_Assassin) {
+					if (Zeny < 800) {
+						mes "[Mestre]";
+						mes "Você sabe...";
+						mes "eu ia te cobrar";
+						mes "800 zeny por esta bebida, mas";
+						mes "parece que você não pode pagar";
+						mes "isso agora. ";
+						mes "você tem o zeny, certo?";
+					}
+					else {
+						mes "[Mestre]";
+						mes "A maioria dos bartenders";
+						mes "geralmente cobra 1.000 zeny";
+						mes "para essas coisas, mas só vou";
+						mes "peço 800. Aproveite,";
+						mes "meu amigo, e beba como";
+						mes "profundamente como você faria com a vida.";
+						set Zeny, Zeny-800;
+						getitem 12112,1; //Tropical_Sograt
+					}
+					close;
+				}
+				else {
+					if (Zeny < 1000) {
+						mes "[Mestre]";
+						mes "Ei, você não tem";
+						mes "o zeny para esta bebida.";
+						mes "Certifique-se de voltar";
+						mes "com 1.000 zeny se quiser";
+						mes "me para consertar algo para você, ok?";
+						close;
+					}
+					else {
+						mes "[Mestre]";
+						mes "Para Assassinos, eu cobro";
+						mes "800 zeny, mas para você, eu estou";
+						mes "vou cobrar 1.000. ";
+						mes "ressentimentos, mas você é";
+						mes "já tenho sorte de estar aqui.";
+						mes "Ei, aproveite sua bebida ~";
+						set Zeny, Zeny-1000;
+						getitem 12112,1; //Tropical_Sograt
+						close;
+					}
+				}
+			}
+		case 2:
+			if (checkweight(908,200) == 0) {
+				mes "[Mestre]";
+				mes "Ei, por que você trouxe";
+				mes "tanta coisa com você?";
+				mes "Eu não posso te dar nada";
+				mes "beber se você não tiver";
+				mes "a sala para carregá-lo.";
+				mes "Limpe seu inventário!";
+				close;
+			}
+			else {
+				if (BaseClass == Job_Assassin) {
+					if (Zeny < 800) {
+						mes "[Mestre]";
+						mes "Você sabe...";
+						mes "eu ia te cobrar";
+						mes "800 zeny por esta bebida, mas";
+						mes "parece que você não pode pagar";
+						mes "isso agora. ";
+						mes "você tem o zeny, certo?";
+					}
+					else {
+						mes "[Mestre]";
+						mes "A maioria dos bartenders";
+						mes "geralmente cobra 1.000 zeny";
+						mes "para essas coisas, mas só vou";
+						mes "peço 800. Aproveite,";
+						mes "meu amigo, e beba como";
+						mes "profundamente como você faria com a vida.";
+						set Zeny, Zeny-800;
+						getitem 12113,1; //Vermilion_The_Beach
+					}
+					close;
+				}
+				else {
+					if (Zeny < 1000) {
+						mes "[Mestre]";
+						mes "Ei, você não tem";
+						mes "o zeny para esta bebida.";
+						mes "Certifique-se de voltar";
+						mes "com 1.000 zeny se quiser";
+						mes "me para consertar algo para você, ok?";
+						close;
+					}
+					else {
+						mes "[Mestre]";
+						mes "Para Assassinos, eu cobro";
+						mes "800 zeny, mas para você, eu estou";
+						mes "vou cobrar 1.000. ";
+						mes "ressentimentos, mas você é";
+						mes "já tenho sorte de estar aqui.";
+						mes "Ei, aproveite sua bebida ~";
+						set Zeny, Zeny-1000;
+						getitem 12113,1; //Vermilion_The_Beach
+						close;
+					}
+				}
+			}
+		case 3:
+			mes "[Mestre]";
+			mes "O que você está...?";
+			mes "Acabei de te falar";
+			mes "Eu só sirvo dois";
+			mes "bebidas. ";
+			mes "água, você deveria";
+			mes "vá para outro lugar.";
+			close;
+		}
+	case 2:
+		if (mao_request == 1) {
+			if (BaseClass == Job_Assassin) {
+				mes "[Mestre]";
+				mes "Uma missão...";
+				mes "Você não acha que é tarde demais?";
+				mes "Todos os pedidos foram cancelados e não há mais nada a fazer.";
+				mes "Além disso, as primeiras coisas primeiro. ";
+				close;
+			}
+			else {
+				mes "[Mestre]";
+				mes "Huh?";
+				next;
+				select("Mostre a ele a Carta de Recomendação.");
+				if (countitem(7416) > 0) {
+					mes "[Mestre]";
+					mes "Ah.. Acho que você chegou tarde demais.";
+					mes "Não tenho nada a dizer se se trata do pedido enviado a cada guilda.";
+					mes "Lamento que você tenha chegado até aqui por nada.";
+					close;
+				}
+				else {
+					mes "[Mestre]";
+					mes "O que você está falando?";
+					next;
+					mes "[Mestre]";
+					mes "................Você está parecendo muito suspeito agora.";
+					mes "";
+					mes "Meninos, mostrem a porta para esse cara!!";
+					next;
+					mes "[Meninos bebendo]";
+					mes "- Sim senhor!";
+					next;
+					mes "- Você foi expulso do lugar. ";
+					close2;
+					warp "morocc",45,106;
+					end;
+				}
+			}
+		}
+		else {
+			if (BaseClass == Job_Assassin) {
+				mes "[Mestre]";
+				mes "Deixe-me dar um palpite. ";
+				mes "A propósito, você gosta deste lugar?";
+				next;
+				mes "[Mestre]";
+				mes "Você sabe, eu meio que...";
+				mes "Acontece que eu realmente amo esse meu pequeno pub.";
+				mes "onde alguns negócios secretos acontecem.";
+				next;
+				mes "[Mestre]";
+				mes "Se você quiser eu recomendo";
+				mes "você para o mestre da guilda por";
+				mes "uma missão. ";
+				mes "tem que se concentrar em seu treinamento.";
+				mes "E até você treinar... Por que";
+				mes "você não gosta de uma bebida?";
+				close;
+			}
+			else {
+				mes "[Mestre]";
+				mes "Missão...?";
+				mes "Vamos lá, o que são";
+				mes "Você falando sobre?";
+				mes "Pare de falar maluco e";
+				mes "peça algo para beber.";
+				close;
+			}
+		}
+	case 3:
+		mes "[Mestre]";
+		mes "Hmmm.";
+		close;
+	}
+}
+
+que_job01,49,49,5	script	Tao#dan_09	877,{
+	if (BaseClass == Job_Assassin) {
+		mes "[Tao]";
+		mes "Bem vindo, miau~";
+		mes "Como vai, miau?";
+		next;
+		if (prt_curse == 24) {
+			switch(select("Marjana está?: Estou aqui para ver você, Tao.")) {
+			case 1:
+				mes "[Tao]";
+				mes "Ela está no quarto à sua esquerda, miau~";
+				mes "Mas então, como você sabe que ela está aqui, miau?";
+				close;
+			case 2:
+				mes "[Tao]";
+				mes "Este não é lugar para brincar, miau..";
+				mes "... Ei, é estranho você me olhar desse jeito, miau..";
+				close;
+			}
+		}
+		else {
+			mes "[Tao]";
+			mes "Isso tudo é por causa daquele cara chamado Raiyan Moore ou More.. ou.. blar?";
+			mes "... Miau..";
+			next;
+			mes "[Tao]";
+			mes "Ugh, você não tem nada para fazer, então se perde, miau?!";
+			mes "Você sabe que esse lugar é proibido, miau.";
+			mes "Você nem poderá entrar naquela sala, de qualquer maneira, miau~.";
+			next;
+			mes "[Tao]";
+			mes "Ou então.... Você poderia?.. Ah, quem sabe, miau..";
+			mes "Tao odeia mais ficar vigiando o portão, miau~ miau~";
+			close;
+		}
+	}
+	else {
+		mes "[Tao]";
+		mes "E aí, miau!";
+		next;
+		switch(select("Então é só você, pirralho?:O que deu em você?!:Ei, para de miar?!")) {
+		case 1:
+			mes "[Tao]";
+			mes "Do que você está falando, miau!";
+			mes "Tao é o maior guardião do portão!";
+			mes "Nunca faça estimativas baixas, miau!";
+			next;
+			mes "[Tao]";
+			mes "Parece que você veio por alguns motivos, mas nem sonhe em receber minha ajuda, miau!!";
+			mes "Você acha que sou estúpido o suficiente para te dizer isso";
+			mes "o Mestre e Marjana estão naquela sala à direita? ";
+			close;
+		case 2:
+			mes "[Tao]";
+			mes "Você está me desprezando porque sou um porteiro?!";
+			mes "Grrr...";
+			next;
+			mes "[Tao]";
+			mes "Saia daqui enquanto você tem chance!!!!";
+			close;
+		case 3:
+			mes "[Tao]";
+			mes "Miau, miau.";
+			mes "É uma longa história, miau.";
+			mes "Naquele dia, Tao queria muito uma fita grande, miau.";
+			next;
+			mes "[Tao]";
+			mes "Então saí à procura de Rosas Silvestres, miau...";
+			mes "...Miau? ";
+			next;
+			mes "[Tao]";
+			mes "Krrr!";
+			mes "Quem diabos é você!";
+			next;
+			mes "[Tao]";
+			mes "Sai daqui, miau!!!";
+			close;
+		}
+	}
+}
+
+que_job01,51,55,0	script	que_job01#room_1	45,1,1,{
+
+OnReset:
+	set $@maobar_room,0;
+	end;
+
+OnTouch_:
+	if (prt_curse == 24) {
+		if ($@maobar_room == 0) {
+			set $@maobar_room,1;
+			donpcevent " #room1timer::OnEnable";
+			donpcevent "Marjana#poison::OnEnable";
+			mes "[Tao]";
+			mes "Ah, esse lugar é protegido";
+			mes "pela magia da segurança, então você";
+			mes "só restam ^4D4DFF4 minutos^000000";
+			mes "lá. ";
+			close2;
+			warp "que_job01",11,7;
+			end;
+		}
+		else {
+			mes "[Tao]";
+			mes "Sinto muito, miau ~";
+			mes "Alguém já está";
+			mes "dentro. ";
+			mes "de novo mais tarde, miau?";
+			close2;
+			warp "que_job01",52,50;
+			end;
+		}
+	}
+	else if (mao_request > 0) {
+		if ($@maobar_room == 0) {
+			set $@maobar_room,1;
+			donpcevent " #room1timer::OnEnable";
+			donpcevent "Valdes#moc_master_1::OnEnable";
+			mes "[Tao]";
+			mes "Ah, esse lugar é protegido";
+			mes "pela magia da segurança, então você";
+			mes "só restam ^4D4DFF4 minutos^000000";
+			mes "lá. ";
+			close2;
+			warp "que_job01",11,7;
+			end;
+		}
+		else {
+			mes "[Tao]";
+			mes "Sinto muito, miau ~";
+			mes "Alguém já está";
+			mes "dentro. ";
+			mes "de novo mais tarde, miau?";
+			close2;
+			warp "que_job01",52,50;
+			end;
+		}
+	}
+	else {
+		mes "[Tao]";
+		mes "Quem é você?";
+		mes "Este é um acesso restrito";
+		mes "área, miau! ";
+		mes "tenha permissão, então obtenha";
+		mes "sai daí, miau!";
+		close2;
+		warp "que_job01",52,50;
+		end;
+	}
+}
+
+que_job01,1,1,0	script	 #room1timer	844,{
+OnEnable:
+	initnpctimer;
+	mapannounce "que_job01","Agora você entrará na Zona Mestre, Área 1.",bc_map,"0x70DBDB";
+	end;
+
+OnStop:
+	mapannounce "que_job01","A magia de segurança na Master Zone, Área 1 está desativada.",bc_map,"0x70DBDB";
+	donpcevent "#room1_warp::OnDisable";
+	donpcevent "Valdes#moc_master_1::OnDisable";
+	donpcevent "Marjana#poison::OnInit";
+	donpcevent "que_job01#room_1::OnReset";
+	stopnpctimer;
+	end;
+
+OnTimer240000:
+	donpcevent "#room1_warp::OnEnable";
+	end;
+
+OnTimer245000:
+	donpcevent "#room1_warp::OnDisable";
+	donpcevent "Valdes#moc_master_1::OnDisable";
+	donpcevent "Marjana#poison::OnInit";
+	end;
+
+OnTimer250000:
+	mapannounce "que_job01","A magia de segurança Master Zone, Área 1 agora está ativada.",bc_map,"0x70DBDB";
+	donpcevent "que_job01#room_1::OnReset";
+	stopnpctimer;
+	end;
+}
+
+que_job01,12,13,0	script	#room1_warp	-1,15,15,{
+OnInit:
+	disablenpc "#room1_warp";
+	end;
+
+OnEnable:
+	enablenpc "#room1_warp";
+	end;
+
+OnDisable:
+	disablenpc "#room1_warp";
+	end;
+
+OnTouch_:
+	warp "que_job01",52,50;
+	end;
+}
+
+que_job01,51,44,0	warp	que_job01#room_2	1,1,que_job01,80,23
+
+que_job01,11,4,0	script	que_job01#room1_out	45,1,1,{
+OnTouch_:
+	warp "que_job01",52,50;
+	donpcevent " #room1timer::OnStop";
+	end;
+}
+
+que_job01,80,27,0	warp	que_job01#room2_1_out	1,1,que_job01,52,50
+
+que_job01,16,21,5	script	Valdes#moc_master_1	55,{
+	if (BaseClass == Job_Assassin) {
+		mes "[Valdés]";
+		mes "O que é? ";
+		mes "Você poderia, por favor, me deixar em paz? ";
+		next;
+		mes "[Valdés]";
+		mes "Vou te pedir ajuda em outra hora.";
+		mes "Afinal, você parece muito apaixonado.";
+	}
+	else {
+		mes "[Valdez]";
+		mes "....Desculpe, mas você poderia ir embora?";
+		mes "Estou muito estressado agora.";
+		mes "Se você está aqui pelo pedido que fizemos anteriormente, pode simplesmente esquecê-lo.";
+	}
+	if (countitem(7417) > 0) {
+		delitem 7417,countitem(7417); //Mission_ScrollA
+	}
+	if (countitem(7418) > 0) {
+		delitem 7418,countitem(7418); //Mission_ScrollB
+	}
+	if (countitem(7416) > 0) {
+		delitem 7416,countitem(7416); //Letter_Of_Recommend
+	}
+	close;
+
+OnInit:
+	disablenpc "Valdes#moc_master_1";
+	end;
+
+OnEnable:
+	enablenpc "Valdes#moc_master_1";
+	end;
+
+OnDisable:
+	disablenpc "Valdes#moc_master_1";
+	end;
+}
+*/
+
+yuno_in04,180,106,3	script	Reading Girl#moc_girl1	73,{
+	mes "[" + strcharinfo(0) + "]";
+	mes "Com licença, mas posso perguntar";
+	mes "lhe uma pergunta?";
+	next;
+	mes "[Yúnia]";
+	mes "Eh? ";
+	mes "tão ocupado lendo este livro!";
+	mes "Então, uh, o que exatamente fez";
+	mes "você quer me perguntar?";
+	next;
+	select("O que você está lendo?");
+	mes "[Yúnia]";
+	mes "Ah! ";
+	mes "O personagem principal é um escritor, e é tão comovente que esse cara escreva uma história sobre sua amante...";
+	next;
+	mes "[Yúnia]";
+	mes "Oh .. mal posso esperar para ver Hoein Special ..";
+	mes "E isso, você pode dar uma olhada se quiser.";
+	next;
+	mes "[" + strcharinfo(0) + "]";
+	mes "Ah, agora, eu não deveria.";
+	mes "Parece que a capa é arredondada com uma tira vermelha,";
+	mes "qual..eu realmente acho que é apenas para adultos.";
+	mes "com licença ~!";
+	close;
+}
+
+morocc_in,46,125,5	script	Assistant#moc_ex1	729,{
+	mes "[Sephit]";
+	mes "Eu sempre acreditei em Satanás..";
+	mes "Haah... Acho que é bom estar vivendo, afinal.";
+	next;
+	mes "[Sephit]";
+	mes "Quem teria pensado em realmente ver o Satanás em vida.....?";
+	close;
+}
+
+que_job01,70,84,1	script	Girl#moc_ex002	882,{
+	mes "[Garota]";
+	mes "Oh, o mundo.. o mundo está condenado..";
+	mes "-soluçando-";
+	mes "Nada parece estar funcionando agora..";
+	emotion ET_CRY;
+	next;
+	mes "["+ strcharinfo(0) +"]";
+	mes "....Tsk..tsk...";
+	mes "Meu Deus.. Não acredito que essa jovem está bebendo de tristeza....";
+	close;
+}
+
+// Resurrection of Satan Morocc
+// ============================================================
+moc_fild20,354,183,3	script	Continental Guard#01::MocConGuard	707,3,3,{
+	if ((rebirth_moc_edq == 0) && (rebirth_moc_edq < 4)) {
+		mes "[Guarda Continental]";
+		mes "Nenhum plebeu é permitido na área além deste ponto.";
+		mes "Este lugar é extremamente perigoso, então você está proibido de entrar.";
+		next;
+		switch(select("Cancelar conversa: pergunte o que aconteceu")) {
+		case 1:
+			close;
+		case 2:
+			mes "[Guarda Continental]";
+			mes "Você não sabia? ";
+			next;
+			mes "[Guarda Continental]";
+			mes "Sua ressurreição causou danos irreparáveis ??à vila e ao deserto ao seu redor, e agora ele se mudou para o Deserto de Sograt.";
+			next;
+			mes "[Guarda Continental]";
+			mes "Estamos aqui para cumprir as ordens do Reino de Prontera, impedindo que plebeus, além dos membros da Subjugação Marroquina, acessem a área.";
+			next;
+			mes "[Guarda Continental]";
+			mes "Se quiser saber mais informações, sugiro que fale com a Guarda Continental responsável pelo local do acidente na Vila de Marrocos.";
+			next;
+			switch(select("Encerrar conversa:Pergunte sobre a localização do guarda")) {
+			case 1:
+				close;
+			case 2:
+				mes "[Guarda Continental]";
+				mes "O guarda com quem você quer falar está em um acampamento construído no centro da Vila Morocc.";
+				next;
+				mes "[Guarda Continental]";
+				mes "Se desejar, posso te enviar diretamente para lá.";
+				next;
+				switch(select("Não, obrigado.:Por favor, faça.")) {
+				case 1:
+					mes "[Guarda Continental]";
+					mes "Eu vejo. ";
+					close;
+				case 2:
+					mes "[Guarda Continental]";
+					mes "Ótimo. ";
+					close2;
+					warp "morocc",160,61;
+					end;
+				}
+			}
+		}
+	}
+	else if ((rebirth_moc_edq > 3) && (rebirth_moc_edq < 8)) {
+		mes "[Guarda Continental]";
+		mes "Nenhum plebeu é permitido na área além deste ponto.";
+		mes "Este lugar é extremamente perigoso, então você está proibido de entrar.";
+		next;
+		switch(select("Cancelar conversa:Entre no campo para investigar:Mover para o local do acidente de Marrocos")) {
+		case 1:
+			close;
+		case 2:
+			if ($@re_moc < 3) {
+				getpartymember getcharid(1), 1, .@partymembercid;
+				.@partymembercount = $@partymembercount;
+				for (.@i = 0; .@i < .@partymembercount; .@i++) {
+					if (convertpcinfo(.@partymembercid[.@i], CPC_ACCOUNT))
+						.@onlinemembers++;
+				}
+				if ((.@onlinemembers > 1) && (countitem(7826) > 0)) {
+					mes "[Guarda Continental]";
+					mes "......";
+					next;
+					mes "[Guarda Continental]";
+					mes "Sim, confirmei que você é membro da Guarda Continental. ";
+					next;
+					mes "[Guarda Continental]";
+					mes "I'll send you to the field shortly. Please use the warp at the field entrance to come back to this area.";
+					close2;
+					warp "moc_fild21",38,193;
+					end;
+				}
+				else if ((.@onlinemembers < 2) && (countitem(7826) > 0)) {
+					mes "[Guarda Continental]";
+					mes "Bem-vindos, membros da Guarda Continental. ";
+					next;
+					mes "[Guarda Continental]";
+					mes "'Devido aos perigos desta área, proíbo por este meio que os membros da Guarda Continental investiguem a área sozinhos. ";
+					next;
+					mes "[Guarda Continental]";
+					mes "...Você entende isso, certo? ";
+					close;
+				}
+				else if (countitem(7826) < 1) {
+					mes "[Guarda Continental]";
+					mes "Apenas os membros da Guarda Continental com Certificados de Guarda Continental estão autorizados a prosseguir além deste ponto.";
+					close;
+				}
+				else {
+					close;
+				}
+			}
+			else {
+				mes "[Guarda Continental]";
+				mes "Recebemos ordens da Sede para bloquear o acesso a esta área desde que um fenômeno espaço-temporal incomum foi detectado no campo de Marrocos.";
+				next;
+				mes "[Guarda Continental]";
+				mes "Precisamos esperar até que o fenômeno termine e então deixaremos que você prossiga com sua investigação.";
+				close;
+			}
+		case 3:
+			mes "[Guarda Continental]";
+			mes "Ótimo. ";
+			close2;
+			warp "morocc",160,61;
+			end;
+		}
+	}
+	else if (rebirth_moc_edq == 8) {
+		mes "[Guarda Continental]";
+		mes "Ah, você é um aventureiro que trabalha para a Guarda Continental. ";
+		next;
+		getpartymember getcharid(1), 1, .@partymembercid;
+		.@partymembercount = $@partymembercount;
+		for (.@i = 0; .@i < .@partymembercount; .@i++) {
+			if (convertpcinfo(.@partymembercid[.@i], CPC_ACCOUNT))
+				.@onlinemembers++;
+		}
+		switch(select("Insira o primeiro campo para investigar:Insira o segundo campo para investigar:Retornar ao local do acidente de Marrocos:Cancelar conversa")) {
+		case 1:
+			if ((.@onlinemembers > 1) && (countitem(7826) > 0)) {
+				mes "[Guarda Continental]";
+				mes "......";
+				next;
+				mes "[Guarda Continental]";
+				mes "Sim, confirmei que você é membro da Guarda Continental. ";
+				next;
+				mes "[Guarda Continental]";
+				mes "I'll send you to the field shortly. Please use the warp at the field entrance to come back to this area.";
+				close2;
+				warp "moc_fild21",38,193;
+				end;
+			}
+			else if ((.@onlinemembers < 2) && (countitem(7826) > 0)) {
+				mes "[Guarda Continental]";
+				mes "Bem-vindos, membros da Guarda Continental. ";
+				next;
+				mes "[Guarda Continental]";
+				mes "'Devido aos perigos desta área, proíbo por este meio que os membros da Guarda Continental investiguem a área sozinhos. ";
+				next;
+				mes "[Guarda Continental]";
+				mes "...Você entende isso, certo? ";
+				close;
+			}
+			else if (countitem(7826) < 1) {
+				mes "[Guarda Continental]";
+				mes "Apenas os membros da Guarda Continental com Certificados de Guarda Continental estão autorizados a prosseguir além deste ponto.";
+				close;
+			}
+			else {
+				close;
+			}
+		case 2:
+			if ((.@onlinemembers > 1) && (countitem(7826) > 0)) {
+				mes "[Guarda Continental]";
+				mes "......";
+				next;
+				mes "[Guarda Continental]";
+				mes "Sim, confirmei que você é membro da Guarda Continental. ";
+				next;
+				mes "[Guarda Continental]";
+				mes "I'll send you to the field shortly. Please use the warp at the field entrance to come back to this area.";
+				close2;
+				warp "moc_fild22",38,193;
+				end;
+			}
+			else if ((.@onlinemembers < 2) && (countitem(7826) > 0)) {
+				mes "[Guarda Continental]";
+				mes "Bem-vindos, membros da Guarda Continental. ";
+				next;
+				mes "[Guarda Continental]";
+				mes "'Devido aos perigos desta área, proíbo por este meio que os membros da Guarda Continental investiguem a área sozinhos. ";
+				next;
+				mes "[Guarda Continental]";
+				mes "...Então, por favor, volte ao site e volte em um grupo de pelo menos 2 membros. ";
+				close;
+			}
+			else if (countitem(7826) < 1) {
+				mes "[Guarda Continental]";
+				mes "Apenas os membros da Guarda Continental com Certificados de Guarda Continental estão autorizados a prosseguir além deste ponto.";
+				close;
+			}
+			else {
+				close;
+			}
+		case 3:
+			mes "[Guarda Continental]";
+			mes "Ótimo. ";
+			close2;
+			warp "morocc",160,61;
+			end;
+		case 4:
+			close;
+		}
+	}
+	else {
+		end;
+	}
+
+OnTouch:
+	mes "[Guarda Continental]";
+	mes "Nenhum plebeu é permitido na área além deste ponto.";
+	mes "Este lugar é extremamente perigoso, então você está proibido de entrar.";
+	close;
+	end;
+}
+
+moc_fild20,354,174,3	duplicate(MocConGuard)	Continental Guard#02	707,3,3
+moc_fild20,38,174,5	duplicate(MocConGuard)	Continental Guard#03	707,3,3
+moc_fild20,38,183,5	duplicate(MocConGuard)	Continental Guard#04	707,3,3
+moc_fild20,189,21,7	duplicate(MocConGuard)	Continental Guard#05	707,3,3
+moc_fild20,200,21,7	duplicate(MocConGuard)	Continental Guard#06	707,3,3
+moc_fild20,203,336,5	duplicate(MocConGuard)	Continental Guard#07	707,3,3
+moc_fild20,215,336,3	duplicate(MocConGuard)	Continental Guard#08	707,3,3
+
+-	script	Continental Messenger#00::ConMessenger	997,3,3,{
+	set .@area$,strnpcinfo(2);
+	if (.@area$ == "01") { set .@area$,"Prontera"; }
+	else if (.@area$ == "02") { set .@area$,"Geffen"; }
+	else if (.@area$ == "03") { set .@area$,"Payon"; }
+	else if (.@area$ == "04") { set .@area$,"Alberta"; }
+	else if (.@area$ == "05") { set .@area$,"Al De Baran"; }
+	if (BaseLevel > 79) {
+		mes "[Mensageiro da Guarda Continental]";
+		mes "Bom dia,"+ strcharinfo(0) +". ";
+		next;
+		mes "[Mensageiro da Guarda Continental]";
+		mes "Sou um mensageiro enviado aqui para" + .@area$ + "do Quartel-General da Guarda Continental de Marrocos. "+ strcharinfo(0) +".";
+		next;
+		select("Quartel-General da Guarda Continental de Marrocos?");
+		mes "[Mensageiro da Guarda Continental]";
+		mes "O tempo está se esgotando, então só posso dar uma breve explicação.";
+		next;
+		mes "[Mensageiro da Guarda Continental]";
+		mes "Satan Morocc, o demônio hediondo aprisionado nas profundezas do subsolo de Marrocos durante séculos, ressuscitou e se libertou.";
+		next;
+		mes "[Mensageiro da Guarda Continental]";
+		mes "O renascimento de Satan Morocc devastou completamente a vila de Morocc e a área ao seu redor.";
+		next;
+		mes "[Mensageiro da Guarda Continental]";
+		mes "Toda a morte e sofrimento... Qualquer outro lugar deve parecer o paraíso comparado com o que está acontecendo em Marrocos e arredores.";
+		next;
+		mes "[Mensageiro da Guarda Continental]";
+		mes "A Guarda Continental Marroquina foi imediatamente organizada para combater Satanás Morocc e trazer alívio a esta terrível situação. ";
+		next;
+		mes "[Mensageiro da Guarda Continental]";
+		mes "Nós precisamos da sua ajuda,"+ strcharinfo(0) +". ";
+		next;
+		mes "[Mensageiro da Guarda Continental]";
+		mes "Para mais informações, fale com o capitão da Guarda Continental Marroquina. "+ strcharinfo(0) +".";
+		next;
+		mes "[Mensageiro da Guarda Continental]";
+		mes "O Quartel-General da Guarda Continental está localizado perto do palácio central de Marrocos, por isso, fale com o chefe assim que puder.";
+		close;
+	}
+	else {
+		mes "[Mensageiro da Guarda Continental]";
+		mes "Sou um mensageiro do Quartel-General da Guarda Continental de Marrocos e vim aqui para" + .@area$ + "com uma mensagem urgente para todos aqui no Reino de Rune-Midgarts.";
+		next;
+		select("Quartel-General da Guarda Continental de Marrocos?");
+		mes "[Mensageiro da Guarda Continental]";
+		mes "O tempo está se esgotando, então só posso dar uma breve explicação.";
+		next;
+		mes "[Mensageiro da Guarda Continental]";
+		mes "Satan Morocc, o demônio hediondo aprisionado nas profundezas do subsolo de Marrocos durante séculos, ressuscitou e se libertou.";
+		next;
+		mes "[Mensageiro da Guarda Continental]";
+		mes "O renascimento de Satan Morocc devastou completamente a vila de Morocc e a área ao seu redor.";
+		next;
+		mes "[Mensageiro da Guarda Continental]";
+		mes "Toda a morte e sofrimento... Qualquer outro lugar deve parecer o paraíso comparado com o que está acontecendo em Marrocos e arredores.";
+		next;
+		mes "[Mensageiro da Guarda Continental]";
+		mes "A Guarda Continental Marroquina foi imediatamente organizada para combater Satanás Morocc e trazer alívio a esta terrível situação. ";
+		next;
+		mes "[Mensageiro da Guarda Continental]";
+		mes "Parte do meu dever é ajudar a recrutar aventureiros de todo o mundo para ajudar a expulsar Satan Morocc de volta ao confinamento. ";
+		next;
+		mes "[Mensageiro da Guarda Continental]";
+		mes "Pelo menos 70% da Vila Morocc foi destruída pelas consequências da ressurreição de Satanás Morocc.";
+		next;
+		mes "[Mensageiro da Guarda Continental]";
+		mes "O deserto ao redor de Marrocos também se transformou em uma terra de morte depois de ter sido reivindicado por Satan Morocc e seus poderosos sósias e subordinados.";
+		mes "Portanto, preste atenção ao meu aviso: fique longe da área de Marrocos, a menos que esteja em uma missão organizada pela Guarda Continental de Marrocos.";
+		close;
+	}
+
+OnTouch_:
+	if (BaseLevel > 79) {
+		mes "[Mensageiro da Guarda Continental]";
+		mes "Você é..."+ strcharinfo(0) +"?";
+		mes "Ah, muito bem. ";
+		next;
+		mes "[Mensageiro da Guarda Continental]";
+		mes "A situação é urgente, então, por favor, me escute com atenção.";
+		close;
+	}
+	end;
+}
+
+prontera,164,304,3	duplicate(ConMessenger)	Continental Messenger#01	997,3,3
+geffen,128,90,3	duplicate(ConMessenger)	Continental Messenger#02	997,3,3
+payon,200,113,3	duplicate(ConMessenger)	Continental Messenger#03	997,3,3
+alberta,127,64,3	duplicate(ConMessenger)	Continental Messenger#04	998,3,3
+aldebaran,135,128,3	duplicate(ConMessenger)	Continental Messenger#05	998,3,3
+
+-	script	Continental Official	-1,{
+	if (rebirth_moc_edq > 3) {
+		mes "[Oficial da Guarda Continental]";
+		mes "Em nome da Guarda Continental, agradeço os seus esforços. ";
+		next;
+		mes "[Oficial da Guarda Continental]";
+		mes "Hum...";
+		next;
+		mes "[Oficial da Guarda Continental]";
+		mes "Nada ainda. ";
+		close;
+	}
+	else if (rebirth_moc_edq == 0) {
+		mes "[Oficial da Guarda Continental]";
+		mes "Bem-vindo ao Centro de Informações sobre Subjugação de Marrocos. ";
+		next;
+		switch(select("Para que serve este lugar?:Estou aqui como voluntário.:Conte-me sobre a situação da aldeia.")) {
+		case 1:
+			mes "[Oficial da Guarda Continental]";
+			mes "Estou estacionado aqui para ajudar aventureiros que desejam se voluntariar e ajudar a Guarda Continental a combater Satanás Marrocos.";
+			next;
+			mes "[Oficial da Guarda Continental]";
+			mes "Tenho certeza de que você já está ciente de que o renascimento de Satan Morocc ameaça a paz do reino de Rune-Midgarts, e se Satanás Morocc puder vagar livremente, ele devorará o mundo inteiro.";
+			next;
+			mes "[Oficial da Guarda Continental]";
+			mes "A Guarda Continental está atualmente planejando uma série de contramedidas para suprimir Satanás Marrocos sob as ordens do reino.";
+			next;
+			mes "[Oficial da Guarda Continental]";
+			mes "Se você foi convidado pelo nosso mensageiro ou está confiante em suas habilidades, nós o encorajamos a se voluntariar para a Guarda Continental e trazer a paz de volta a este continente.";
+			close;
+		case 2:
+			if (BaseLevel > 79) {
+				mes "[Oficial da Guarda Continental]";
+				mes "Bem-vindo," + strcharinfo(0) + ". ";
+				next;
+				mes "[Oficial da Guarda Continental]";
+				mes "Deixe-me processar sua inscrição imediatamente. ";
+				next;
+				mes "[Oficial da Guarda Continental]";
+				mes "Agora, por favor, fale com o Chefe Balrog da Guarda Continental. ";
+				set rebirth_moc_edq,1;
+				setquest 3050;
+				close;
+			}
+			else {
+				mes "[Oficial da Guarda Continental]";
+				mes "Eu o aplaudo pela sua coragem, mas você precisará de mais do que apenas coragem para nos ajudar.";
+				next;
+				mes "[Oficial da Guarda Continental]";
+				mes "Satan Morocc é o mal mais poderoso que existe no mundo mortal. ";
+				next;
+				mes "[Oficial da Guarda Continental]";
+				mes "Eu recomendo fortemente que você pense apenas em sua própria segurança por enquanto. ";
+				close;
+			}
+		case 3:
+			mes "[Oficial da Guarda Continental]";
+			mes "Como você pode ver, a situação não pode ser pior. ";
+			next;
+			mes "[Oficial da Guarda Continental]";
+			mes "Como o reino despachou Mensageiros da Guarda Continental para todos os lugares, muitos aventureiros capazes se reuniram para este lugar, mas... temo que eles ainda possam não ser suficientes para derrotar o demônio.";
+			next;
+			mes "[Oficial da Guarda Continental]";
+			mes "Por favor, siga nossas instruções, pelo menos nesta área, e fique fora de perigo por enquanto.";
+			close;
+		}
+	}
+	else {
+		mes "[Oficial da Guarda Continental]";
+		mes "Sua inscrição já foi registrada. ";
+		close;
+	}
+}
+
+morocc,159,113,3	script	Chief Balrog	752,{
+	if (rebirth_moc_edq == 0) {
+		mes "[Chefe Balrog]";
+		mes "Você veio aqui em um momento ruim, mas é um prazer conhecê-lo. ";
+		next;
+		mes "[Chefe Balrog]";
+		mes "Sinto muito, mas estou muito ocupado verificando todas essas inscrições para futuros Guardas Continentais para cumprimentar vocês, aventureiros, um por um.";
+		next;
+		mes "[Chefe Balrog]";
+		mes "Ouça, pode ser mais útil se você conversar primeiro com outras pessoas. ";
+		close;
+	}
+	else if (rebirth_moc_edq == 1) {
+		mes "[Chefe Balrog]";
+		mes "Você veio aqui em um momento ruim, mas é um prazer conhecê-lo. ";
+		next;
+		mes "[Chefe Balrog]";
+		mes "Parece que você tem negócios comigo. ";
+		next;
+		switch(select("Pergunte sobre a Guarda Continental:Quero me juntar à Guarda Continental.:Fim da Conversa")) {
+		case 1:
+			mes "[Chefe Balrog]";
+			mes "O dano que a ressurreição de Satan Morocc causou é óbvio apenas olhando ao redor desta área.";
+			mes "O que é assustador é que tudo isso foi causado apenas pela fuga da prisão. ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "A vila de Morocc está completamente devastada e Satan Morocc agora reivindicou a posse do deserto de Sograt.";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Não tenho dúvidas de que, se não for controlado, Satan Morocc assumirá o controle de todo o continente Midgard. ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "É por isso que o reino ordenou que nós, soldados de elite, formássemos a Guarda Continental e recrutássemos aventureiros respeitáveis ??em todo o mundo para que possamos tomar uma posição unida contra Satanás Marrocos.";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Claro que será incrivelmente difícil... Precisaremos fazer sacrifícios... Nem tenho certeza se conseguiremos vencer. ";
+			close;
+		case 2:
+			mes "[Chefe Balrog]";
+			mes "Huh? ";
+			next;
+			if (BaseLevel > 79) {
+				mes "[Chefe Balrog]";
+				mes "Qual era seu nome?" + strcharinfo(0) + "? ";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Hmm, me ocorreu que você não entende o perigo envolvido em tudo isso. ";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Você não poderá nos ajudar se não compreender totalmente os riscos. ";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Estamos enfrentando uma ameaça que determinará o futuro do mundo, e os tolos que não conseguem trabalhar em equipe serão passivos, não ativos.";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Sinto muito, mas aventureiros inexperientes simplesmente atrapalhariam. ";
+				next;
+				switch(select("Encerrar conversa: perguntar novamente")) {
+				case 1:
+					close;
+				case 2:
+					mes "[Chefe Balrog]";
+					mes "Olha, entendo o seu entusiasmo, mas você está enganado se pensa que pode nos ajudar. ";
+					next;
+					mes "[Chefe Balrog]";
+					mes "Satan Morocc não se parece em nada com os monstros que você pode ter encontrado. ";
+					next;
+					mes "[Chefe Balrog]";
+					mes "Por favor, entenda que isso é para o seu próprio bem. ";
+					next;
+					switch(select("Fim da conversa:Você só precisa me deixar participar!")) {
+					case 1:
+						close;
+					case 2:
+						mes "[Chefe Balrog]";
+						mes "Suspiro... Por que você é tão persistente? ";
+						next;
+						mes "[Chefe Balrog]";
+						mes "Estamos muito ocupados lutando contra Satan Morocc para cuidar de novatos como você. ";
+						next;
+						mes "[Chefe Balrog]";
+						mes "Pare de me incomodar. ";
+						next;
+						switch(select("Desistir:Dê-me uma chance de provar meu valor!")) {
+						case 1:
+							close;
+						case 2:
+							mes "[Chefe Balrog]";
+							mes "Huh? ";
+							next;
+							mes "[" + strcharinfo(0) + "]";
+							mes "Sim, farei o que for preciso para me juntar à Guarda Continental!";
+							next;
+							mes "[Chefe Balrog]";
+							mes "Hum...";
+							next;
+							mes "[Chefe Balrog]";
+							mes "Interessante. ";
+							next;
+							mes "[Chefe Balrog]";
+							mes "A Guarda Continental está em alerta máximo em torno desta aldeia e do deserto. ";
+							next;
+							mes "[Chefe Balrog]";
+							mes "Os soldados precisam de lenha para manter as fogueiras acesas a noite toda, mas temos sofrido com a escassez de lenha.";
+							next;
+							mes "[Chefe Balrog]";
+							mes "Acontece que ouvi que os monstros no Calabouço de Lava têm chamas eternas que resolveriam nossos problemas de fogueira. ";
+							next;
+							switch(select("Isso é muito difícil! ")) {
+							case 1:
+								mes "[Chefe Balrog]";
+								mes "Hmpf, eu estava certo. ";
+								close;
+							case 2:
+								mes "[Chefe Balrog]";
+								mes "Excelente! ";
+								set rebirth_moc_edq,2;
+								changequest 3050,3051;
+								close;
+							}
+						}
+					}
+				}
+			}
+			else {
+				mes "[Chefe Balrog]";
+				mes "O que? ";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Garanto que você arrastaria meus soldados com você. ";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Você não poderá nos ajudar se não compreender totalmente os riscos. ";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Estamos enfrentando uma ameaça que determinará o futuro do mundo, e os tolos que não conseguem trabalhar em equipe serão passivos, não ativos.";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Sinto muito, mas aventureiros inexperientes simplesmente atrapalhariam. ";
+				close;
+			}
+		case 3:
+			close;
+		}
+	}
+	else if (rebirth_moc_edq == 2) {
+		mes "[Chefe Balrog]";
+		mes "Então, você encontrou ^0000FF30 Live Coals^000000? ";
+		next;
+		if (countitem(7098) > 29) {
+			mes "[Chefe Balrog]";
+			mes "Vejamos... Um, dois, três... Trinta, você trouxe todos. ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "De qualquer forma, obrigado por trazer os Live Coals. ";
+			next;
+			mes "[" + strcharinfo(0) + "]";
+			mes "Agora você vai me deixar entrar para a Guarda Continental?";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Não, reunir essas chamas é moleza comparado ao que vamos fazer.";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Ainda não estou convencido de que você seja bom o suficiente para se juntar a nós. ";
+			next;
+			mes "[" + strcharinfo(0) + "]";
+			mes "Não pensei que você me aceitaria tão facilmente. ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Ah, tive uma ideia. ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Esses mercenários nunca viram o deserto e estão tendo problemas para realizar operações no calor, no ar seco e nas tempestades de areia. ";
+			next;
+			mes "[" + strcharinfo(0) + "]";
+			mes "(Esse cara parece ameaçador, mas parece ter um bom coração.)";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Agora, lembro-me de ouvir que os monstros na Caverna de Gelo ao norte têm corações congelados. ";
+			next;
+			switch(select("Isso é muito difícil!:Sem problemas. ")) {
+			case 1:
+				mes "[Chefe Balrog]";
+				mes "Eu sabia que isso seria muito difícil para você. ";
+				next;
+				mes "[Chefe Balrog]";
+				mes "É melhor você fazer as malas e voltar para o lugar de onde veio. ";
+				close;
+			case 2:
+				mes "[Chefe Balrog]";
+				mes "Huh?! ";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Bem... Se você insiste em tentar, então... vou precisar de pelo menos 50 desses corações congelados.";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Por favor, traga-me ^0000FF50 Corações Glaciais^000000. ";
+				delitem 7098,30; //Live_Coal
+				set rebirth_moc_edq,3;
+				changequest 3051,3052;
+				close;
+			}
+		}
+		else {
+			mes "[Chefe Balrog]";
+			mes "Hum... Você não ouviu o que eu disse? ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Agora se apresse. ";
+			close;
+		}
+	}
+	else if (rebirth_moc_edq == 3) {
+		mes "[Chefe Balrog]";
+		mes "Então, você encontrou 50 Corações Glaciais?";
+		next;
+		if (countitem(7561) > 49) {
+			mes "[Chefe Balrog]";
+			mes "Obrigado. ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Bem... Parece que você mereceu isso.";
+			delitem 7561,50; //Ice_Heart
+			getitem 7826,1; //Continental_Guard_Paper
+			set rebirth_moc_edq,4;
+			changequest 3052,3053;
+			next;
+			mes "[" + strcharinfo(0) + "]";
+			mes "O que é isso?";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Você saberia se lesse. ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Bem-vindo à Guarda Continental, meu amigo. ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Sua missão daqui em diante será simples, mas extremamente difícil: você se juntará ao resto da Guarda Continental para impedir que Satan Morocc reviva totalmente seu verdadeiro poder.";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Meus soldados estão arriscando suas vidas para lutar contra os sósias e subordinados de Marrocos, a fim de tornar mais seguro para seus camaradas viajarem para o covil de Marrocos.";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Afinal, parece que sua ajuda pode ser útil. ";
+			close;
+		}
+		else {
+			mes "[Chefe Balrog]";
+			mes "Hum... Você não ouviu o que eu disse? ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Agora se apresse. ";
+			close;
+		}
+	}
+	else if (rebirth_moc_edq == 4) {
+		mes "[Chefe Balrog]";
+		mes "Acho que você se beneficiaria com um briefing situacional completo. ";
+		next;
+		switch(select("Sim não")) {
+		case 1:
+			mes "[Chefe Balrog]";
+			mes "Vou lhe contar algumas informações básicas sobre como combater Satanás Marrocos como membro da Guarda Continental.";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Você se lembra de como era Marrocos antes de isso acontecer? ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Neste momento, todas as entradas de Marrocos e os campos exteriores que levam a outras aldeias estão sob o nosso controlo.";
+			next;
+			mes "[Chefe Balrog]";
+			mes "A principal razão para isso é porque Satan Morocc foi avistado no deserto de Sograt, mas há outra razão importante.";
+			next;
+			mes "[Chefe Balrog]";
+			mes "O poder de Satan Morocc tem causado lacunas não naturais no nosso continuum espaço-tempo. ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Devido às lacunas tempo-espaço, o terreno do deserto de Sograt mudou e algumas partes do deserto desapareceram.";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Além disso, a situação piorou desde que os sósias de Satan Morocc começaram a aparecer, e outros monstros foram influenciados pelo seu poder.";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Isso é tudo que sabemos até agora. ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Por favor, faça o seu melhor para conter Satan Morocc. ";
+			close;
+		case 2:
+			mes "[Chefe Balrog]";
+			mes "Eu vejo. ";
+			close;
+		}
+	}
+	else if (rebirth_moc_edq == 5) {
+		mes "[Chefe Balrog]";
+		mes "Uau... O quê? ";
+		next;
+		mes "[Chefe Balrog]";
+		mes "Como? ";
+		next;
+		mes "[Chefe Balrog]";
+		mes "...Não, não posso simplesmente aceitar e confiar no seu relato verbal. ";
+		next;
+		mes "[Chefe Balrog]";
+		mes "Volte, traga a prova da sua vitória e depois volte.";
+		close;
+	}
+	else if (rebirth_moc_edq == 6) {
+		mes "[Chefe Balrog]";
+		mes "O que? ";
+		next;
+		mes "[Chefe Balrog]";
+		mes "Como? ";
+		next;
+		if (countitem(7820) > 0) {
+			mes "[Chefe Balrog]";
+			mes "É... Não é isso?";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Nossa... acho que essa é mesmo a pele do Satã Morocc. ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Eu acho que você feriu seriamente Satan Morocc, e ele recuou para uma lacuna no tempo-espaço. ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Só lamento que não possamos levar Marrocos para além desta dimensão. ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Nossos pesquisadores poderão aprender alguns fatos novos e importantes com esse pedaço de pele... Precisamos aprender tudo o que pudermos sobre esse monstro para que a paz seja possível no futuro do nosso mundo.";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Mais uma vez, agradeço o seu distinto serviço em nome da Guarda Continental e do Reino de Rune-Midgarts. ";
+			next;
+			delitem 7820,1; //Morocc_Skin
+			getexp (checkre(3))?200000:2000000,0;
+			set rebirth_moc_edq,7;
+			changequest 3055,3056;
+			mes "[Chefe Balrog]";
+			mes "Preparei algumas coisas para dar como recompensa para você. ";
+			next;
+			switch(select("1. Selo da Guarda Continental:2. ")) {
+			case 1:
+				mes "[Chefe Balrog]";
+				mes "O Selo da Guarda Continental é uma recompensa extremamente valiosa dada diretamente pela corte do reino. ";
+				next;
+				mes "[Chefe Balrog]";
+				mes "As opções do acessório são: ^0000FF MHP 50, 3% Velocidade de Ataque^000000.";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Você realmente quer o Selo da Guarda Continental?";
+				next;
+				switch(select("1. Sim.:2. ")) {
+				case 1:
+					mes "[Chefe Balrog]";
+					mes "Ótimo, então vou recompensá-lo com o Selo da Guarda Continental. ";
+					next;
+					getitem 2730,1; //Morocc_Seal
+					set rebirth_moc_edq,8;
+					completequest 3056;
+					mes "[Chefe Balrog]";
+					mes "Espero que você tenha em mente que nossa batalha está longe de terminar. ";
+					next;
+					mes "[Chefe Balrog]";
+					mes "Aproveite sua vitória, mas esteja sempre atento e vigilante. ";
+					next;
+					mes "[Chefe Balrog]";
+					mes "Você deveria ir descansar agora. ";
+					close;
+				case 2:
+					mes "[Chefe Balrog]";
+					mes "Sem problemas. ";
+					close;
+				}
+			case 2:
+				mes "[Chefe Balrog]";
+				mes "A Pedra Encantada de Marrocos é uma recompensa extremamente valiosa dada diretamente pela corte do reino e é um símbolo de prosperidade e mana.";
+				next;
+				mes "[Chefe Balrog]";
+				mes "As opções do acessório são: ^0000FF MSP 50, -1% Casting Speed^000000.";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Você realmente quer uma Pedra Charme Marroquina?";
+				next;
+				switch(select("1. Sim.:2. ")) {
+				case 1:
+					mes "[Chefe Balrog]";
+					mes "Ótimo, então vou recompensá-lo com uma Pedra Encantada Morocc. ";
+					next;
+					getitem 2731,1; //Morocc_Charm_Stone
+					set rebirth_moc_edq,8;
+					completequest 3056;
+					mes "[Chefe Balrog]";
+					mes "Espero que você tenha em mente que nossa batalha está longe de terminar. ";
+					next;
+					mes "[Chefe Balrog]";
+					mes "Aproveite sua vitória, mas esteja sempre atento e vigilante. ";
+					next;
+					mes "[Chefe Balrog]";
+					mes "Você deveria ir descansar agora. ";
+					close;
+				case 2:
+					mes "[Chefe Balrog]";
+					mes "Sem problemas. ";
+					close;
+				}
+			case 3:
+				mes "[Chefe Balrog]";
+				mes "O Anel Morocc é uma recompensa extremamente valiosa dada diretamente pela corte do reino que simboliza o poder crítico.";
+				next;
+				mes "[Chefe Balrog]";
+				mes "A opção do acessório é: ^0000FF CRI 5^000000.";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Você realmente quer um Anel Morocc?";
+				next;
+				switch(select("1. Sim.:2. ")) {
+				case 1:
+					mes "[Chefe Balrog]";
+					mes "Ótimo, então vou recompensá-lo com um Morocc Ring. ";
+					next;
+					getitem 2732,1; //Morocc_Ring
+					set rebirth_moc_edq,8;
+					completequest 3056;
+					mes "[Chefe Balrog]";
+					mes "Espero que você tenha em mente que nossa batalha está longe de terminar. ";
+					next;
+					mes "[Chefe Balrog]";
+					mes "Aproveite sua vitória, mas esteja sempre atento e vigilante. ";
+					next;
+					mes "[Chefe Balrog]";
+					mes "Você deveria ir descansar agora. ";
+					close;
+				case 2:
+					mes "[Chefe Balrog]";
+					mes "Sem problemas. ";
+					close;
+				}
+			}
+		}
+		else {
+			mes "[Chefe Balrog]";
+			mes "...Não, não posso simplesmente aceitar e confiar no seu relato verbal. ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Volte, traga a prova da sua vitória e depois volte.";
+			close;
+		}
+	}
+	else if (rebirth_moc_edq == 7) {
+		mes "[Chefe Balrog]";
+		mes "Preparei algumas coisas para dar como recompensa para você. ";
+		next;
+		switch(select("1. Selo da Guarda Continental:2. ")) {
+		case 1:
+			mes "[Chefe Balrog]";
+			mes "O Selo da Guarda Continental é uma recompensa extremamente valiosa dada diretamente pela corte do reino. ";
+			next;
+			mes "[Chefe Balrog]";
+			mes "As opções do acessório são: ^0000FF MHP 50, 3% Velocidade de Ataque^000000.";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Você realmente quer o Selo da Guarda Continental?";
+			next;
+			switch(select("1. Sim.:2. ")) {
+			case 1:
+				mes "[Chefe Balrog]";
+				mes "Ótimo, então vou recompensá-lo com o Selo da Guarda Continental. ";
+				next;
+				getitem 2730,1; //Morocc_Seal
+				set rebirth_moc_edq,8;
+				completequest 3056;
+				mes "[Chefe Balrog]";
+				mes "Espero que você tenha em mente que nossa batalha está longe de terminar. ";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Aproveite sua vitória, mas esteja sempre atento e vigilante. ";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Você deveria ir descansar agora. ";
+				close;
+			case 2:
+				mes "[Chefe Balrog]";
+				mes "Sem problemas. ";
+				close;
+			}
+		case 2:
+			mes "[Chefe Balrog]";
+			mes "A Pedra Encantada de Marrocos é uma recompensa extremamente valiosa dada diretamente pela corte do reino e é um símbolo de prosperidade e mana.";
+			next;
+			mes "[Chefe Balrog]";
+			mes "As opções do acessório são: ^0000FF MSP 50, -1% Casting Speed^000000.";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Você realmente quer uma Pedra Charme Marroquina?";
+			next;
+			switch(select("1. Sim.:2. ")) {
+			case 1:
+				mes "[Chefe Balrog]";
+				mes "Ótimo, então vou recompensá-lo com uma Pedra Encantada Morocc. ";
+				next;
+				getitem 2731,1; //Morocc_Charm_Stone
+				set rebirth_moc_edq,8;
+				completequest 3056;
+				mes "[Chefe Balrog]";
+				mes "Espero que você tenha em mente que nossa batalha está longe de terminar. ";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Aproveite sua vitória, mas esteja sempre atento e vigilante. ";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Você deveria ir descansar agora. ";
+				close;
+			case 2:
+				mes "[Chefe Balrog]";
+				mes "Sem problemas. ";
+				close;
+			}
+		case 3:
+			mes "[Chefe Balrog]";
+			mes "O Anel Morocc é uma recompensa extremamente valiosa dada diretamente pela corte do reino que simboliza o poder crítico.";
+			next;
+			mes "[Chefe Balrog]";
+			mes "A opção do acessório é: ^0000FF CRI 5^000000.";
+			next;
+			mes "[Chefe Balrog]";
+			mes "Você realmente quer um Anel Morocc?";
+			next;
+			switch(select("1. Sim.:2. ")) {
+			case 1:
+				mes "[Chefe Balrog]";
+				mes "Ótimo, então vou recompensá-lo com um Morocc Ring. ";
+				next;
+				getitem 2732,1; //Morocc_Ring
+				set rebirth_moc_edq,8;
+				completequest 3056;
+				mes "[Chefe Balrog]";
+				mes "Espero que você tenha em mente que nossa batalha está longe de terminar. ";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Aproveite sua vitória, mas esteja sempre atento e vigilante. ";
+				next;
+				mes "[Chefe Balrog]";
+				mes "Você deveria ir descansar agora. ";
+				close;
+			case 2:
+				mes "[Chefe Balrog]";
+				mes "Sem problemas. ";
+				close;
+			}
+		}
+	}
+	else if (rebirth_moc_edq == 8) {
+		mes "[Chefe Balrog]";
+		mes "Ouvi dizer que o reino está planejando enviar um grande grupo de pesquisadores para investigar o outro mundo para onde Satan Morocc escapou.";
+		next;
+		mes "[Chefe Balrog]";
+		mes "Isso significa que é hora de nós dois – você e eu – começarmos a trabalhar. ";
+		next;
+		mes "[Chefe Balrog]";
+		mes "Por favor, continuem o bom trabalho e não se esqueçam que o futuro do continente e do reino depende de nós.";
+		close;
+	}
+	else {
+		mes "[Chefe Balrog]";
+		mes "Você veio aqui em um momento ruim, mas é um prazer conhecê-lo. ";
+		next;
+		mes "[Chefe Balrog]";
+		mes "Sinto muito, mas estou muito ocupado verificando todas essas inscrições para futuros Guardas Continentais para cumprimentar vocês, aventureiros, um por um.";
+		next;
+		mes "[Chefe Balrog]";
+		mes "Ouça, pode ser mais útil se você conversar primeiro com outras pessoas. ";
+		close;
+	}
+}
+
+moc_fild21,38,193,0	script	Morocc Timer#edq	-1,6,6,{
+//OnInit:
+//	set $@re_moc,0;
+//	set $@re_moc_time$,"";
+//	end;
+
+OnTouch_:
+	if ($@re_moc == 0) {
+		set $@re_moc,1;
+		donpcevent "Satan Broadcast#edq::OnEnable";
+	}
+	end;
+}
+
+moc_fild21,1,1,0	script	Satan Broadcast#edq	844,{
+OnInit:
+	disablenpc "Satan Broadcast#edq";
+	end;
+
+OnEnable:
+	enablenpc "Satan Broadcast#edq";
+	initnpctimer;
+	end;
+
+OnTimer5000:
+	mapannounce "moc_fild21","Satan Morocc: Estou muito impressionado com vocês, fracos.",bc_map,"0xFFFF00";
+	end;
+
+OnTimer15000:
+	mapannounce "moc_fild21","Satan Morocc: Você também pode lidar com todos os seus arrependimentos agora. ",bc_map,"0xFFFF00";
+	end;
+
+OnTimer25000:
+	mapannounce "moc_fild21","Satan Morocc: É só uma questão de tempo até eu pegar vocês, seus insetos inúteis. ",bc_map,"0xFFFF00";
+	stopnpctimer;
+	end;
+
+OnDisable:
+	stopnpctimer;
+	disablenpc "Satan Broadcast#edq";
+	end;
+}
+
+moc_fild21,178,239,0	script	Group of Evil#edq	844,1,1,{
+	if (((rebirth_moc_edq == 4) || (rebirth_moc_edq == 7)) && ($@re_moc == 1)) {
+		mes "Impressionado com a lacuna de tempo-espaço onde a escuridão ganha vida, você instintivamente dá um passo para trás.";
+		next;
+		mes "Você pode sentir o poder das trevas surgir da lacuna onde a luz e as trevas se misturam.";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Uau...!";
+		close2;
+		if($@re_moc == 1) {
+			set $@re_moc,2;
+			donpcevent "Satan Summon#edq::OnEnable";
+		}
+		end;
+	}
+	else {
+		mes "Impressionado com a lacuna de tempo-espaço onde a escuridão ganha vida, você instintivamente dá um passo para trás.";
+		next;
+		mes "Você pode sentir o poder das trevas surgir da lacuna onde a luz e as trevas se misturam.";
+		close;
+	}
+
+OnEnable:
+	enablenpc "Group of Evil#edq";
+	set $@re_moc_time$,"";
+	end;
+}
+
+moc_fild21,177,239,0	script	Time-Space Gap#edq	844,1,1,{
+	if ((rebirth_moc_edq == 4) && ($@re_moc == 3)) {
+		mes "A escuridão assustadora da lacuna tempo-espaço parece se dissipar à medida que Satanás Morocc desaparece.";
+		next;
+		mes "Você pode ver os fragmentos flutuando na lacuna, e as luzes radiantes estão agora desacelerando seu movimento.";
+		next;
+		mes "Você estica a mão e pega um fragmento sem brilho.";
+		getitem 7820,1; //Morocc_Skin
+		set rebirth_moc_edq,6;
+		changequest 3053,3055;
+		close;
+	}
+	else {
+		mes "Lenta e erraticamente, a misteriosa cortina de escuridão cobre seus olhos enquanto você olha para a lacuna de tempo-espaço.";
+		next;
+		mes "Você sente que é muito perigoso chegar mais perto.";
+		close;
+	}
+
+OnInit:
+	disablenpc "Time-Space Gap#edq";
+	end;
+
+OnEnable:
+	initnpctimer;
+	enablenpc "Time-Space Gap#edq";
+	end;
+
+OnDisable:
+	stopnpctimer;
+	disablenpc "Time-Space Gap#edq";
+	donpcevent "Group of Evil#edq::OnEnable";
+	set $@re_moc,0;
+	end;
+
+OnTimer1800000:
+	set $@re_moc,4;
+	end;
+
+OnTimer21600000:
+	donpcevent "Time-Space Gap#edq::OnDisable";
+	end;
+}
+
+moc_fild21,3,1,0	script	Satan Summon#edq	844,{
+OnInit:
+	disablenpc "Satan Summon#edq";
+	end;
+
+OnEnable:
+	enablenpc "Satan Summon#edq";
+	initnpctimer;
+	monster "moc_fild21",177,217,"Satanás Marrocos",1916,1,"Invocação de Satanás";
+	end;
+
+OnDisable:
+	stopnpctimer;
+	killmonster "moc_fild21","Satan Summon#edq::OnMyMobDead";
+	set $@re_moc,0;
+	disablenpc "Satan Summon#edq";
+	end;
+
+OnMyMobDead:
+	set $@re_moc,3;
+	set $@re_moc_time$, gettimestr("%H%M%S",7);
+	mapannounce "moc_fild21","Vou deixar viver só mais um pouco. ",bc_map,"0xFFFF00";
+	donpcevent "Time-Space Gap#edq::OnEnable";
+	donpcevent "Satan Broadcast#edq::OnDisable";
+	disablenpc "Group of Evil#edq";
+	stopnpctimer;
+	killmonster "moc_fild21","Satan Summon#edq::OnMyMobDead";
+	disablenpc "Satan Summon#edq";
+	end;
+
+OnTimer5400000:
+	mapannounce "moc_fild21","Vocês, fracotes, não conseguem nem me arranhar!",bc_map,"0xFFFF00";
+	end;
+
+OnTimer5415000:
+	mapannounce "moc_fild21","Não tenho tempo para isso! ",bc_map,"0xFFFF00";
+	donpcevent "Satan Summon#edq::OnDisable";
+	end;
+}
+
+sec_in02,14,43,5	script	Morocc GlobalVar Admin::MoroccAdmin_sec	971,{
+	callfunc "F_GM_NPC";
+	mes "[Ajudante]";
+	mes "Por favor digite a senha e";
+	next;
+	if (callfunc("F_GM_NPC",1854,0) < 1) {
+		mes "[Ajudante]";
+		mes "Por favor, pressione os números sobre os quais sempre cantamos.";
+		close;
+	} else {
+		mes "[Ajudante]";
+		mes "Olá. ";
+		mes "No momento, estou verificando o status do Marrocos.";
+		next;
+		mes "=============";
+		mes "Estado atual";
+		mes "=============";
+		mes "^3131FF<Marrocos>^000000";
+		if ($@re_moc == 0) {
+			mes "Reiniciar. ";
+			mes "^3131FF<Guarda Continental>^000000";
+			mes "Habilite para entrar no campo moc_fild21.";
+		} else if ($@re_moc == 1) {
+			mes "^3131FF<Marrocos>^000000";
+			mes "Algum guerreiro entrou após o reset. ";
+			mes "O guerreiro que possui rebirth_moc_edq 4 e 7 agora está habilitado a invocar Morocc.";
+			mes "^3131FF<Guarda Continental>^000000";
+			mes "O guerreiro que possui rebirth_moc_edq 4 ~ 7 agora está habilitado para entrar no moc_fild21.";
+		} else if ($@re_moc == 2) {
+			mes "^3131FF<Marrocos>^000000";
+			mes "Marrocos foi convocado. ";
+			mes "^3131FF<Guarda Continental>^000000";
+			mes "O guerreiro que possui rebirth_moc_edq 4 ~ 7 agora está habilitado para entrar no moc_fild21.";
+		} else if ($@re_moc == 3) {
+			mes "^3131FF<Marrocos>^000000";
+			mes "Marrocos foi morto. "+$@re_moc_time$+"(00h/00min/00seg).";
+			mes "Após 6 horas desde a hora da morte, ele será reiniciado.";
+			mes "Os guerreiros que permaneceram no campo podem continuar a missão através do Time Space Gap.";
+			mes "^3131FF<Guarda Continental>^000000";
+			mes "Desabilitado para entrar em moc_fild21 de fora do campo.";
+		} else {
+			mes "^3131FF<Marrocos>^000000";
+			mes "Marrocos foi morto. "+$@re_moc_time$+"(00h/00min/00seg).";
+			mes "Após 6 horas desde a hora da morte, ele será reiniciado.";
+			mes "Já se passaram 30 minutos após a morte de Morocc, então os guerreiros não podem continuar a missão mesmo se clicarem no Time Space Gap.";
+			mes "^3131FF<Guarda Continental>^000000";
+			mes "Desabilitado para entrar em moc_fild21 de fora do campo.";
+		}
+		next;
+		mes "[Ajudante]";
+		mes "O que você quer?";
+		next;
+		switch(select("Cancelar.:Redefinir")) {
+		case 1:
+			mes "[Ajudante]";
+			mes "Tudo bem.";
+			close;
+		case 2:
+			if (strnpcinfo(4) == "sec_in02")
+				mes "Você pode redefinir em moc_fild21 5 5.";
+			else {
+				mes "A reinicialização é iniciada.";
+				next;
+				donpcevent "Group of Evil#edq::OnEnable";
+				mes "O NPC do Grupo do Mal apareceu.";
+				mes "O NPC Time-Space Gap desapareceu.";
+				mes "O temporizador de 6 horas está parado.";
+				donpcevent "Satan Summon#edq::OnDisable";
+				mes "O cronômetro de sobrevivência de 90 minutos de Marrocos foi interrompido.";
+				mes "Marrocos está sendo morto.";
+				mes "Agora, a Guarda Continental permitirá a entrada de jogadores.";
+			}
+			close;
+		}
+	}
+}
+moc_fild21,5,5,5	duplicate(MoroccAdmin_sec)	Morocc GlobalVar Admin::MoroccAdmin_moc	971
+
+// The Crow of the Fate
+// ============================================================
+moc_ruins,137,70,3	script	Book-Touching Man#garas	48,{
+	if (BaseLevel > 59) {
+		if (checkweight(703,3) == 0) {
+			mes "- Você tem muitos itens em seu inventário para prosseguir com esta missão. ";
+			close;
+		}
+		if (barmunt_crow == 0) {
+			mes "^660000Marrocos, a Cidade do Deserto, foi completamente devastada por Satanás Marrocos.^000000";
+			next;
+			mes "^660000O povo de Marrocos foi resiliente o suficiente para suportar o mau tempo da região, mas a sua resistência ao clima não os preparou o suficiente enquanto testemunhavam a destruição trazida sobre a cidade por Satanás Marrocos.^000000";
+			next;
+			mes "^660000Este homem, que parece seco e magro como um peixe seco ao sol, ainda tem um sorriso que lembra um deus benevolente e está tocando um livro na mão.^000000";
+			next;
+			mes "^660000Observá-lo faz você rir, ele não parece melhor do que os cadáveres secos na pirâmide, mas obviamente está vivo e não parece ser um monstro. ";
+			next;
+			emotion ET_THROB;
+			mes "[Homem que toca o livro]";
+			mes "Ah... mamãe...";
+			next;
+			mes "[Homem que toca o livro]";
+			mes "Sua pele dourada e saudável brilha sob a abençoada luz do sol de Marrocos.";
+			next;
+			emotion ET_CRY;
+			mes "[Homem que toca o livro]";
+			mes "Seu sorriso ofusca a aura dos deuses de Valhalla. ";
+			next;
+			mes "^660000Você passa a mão perto do rosto dele para chamar sua atenção. ";
+			next;
+			switch(select("Fale: Passe por ele")) {
+			case 1:
+				mes "["+ strcharinfo(0) +"]";
+				mes "Você está falando sozinho?";
+				next;
+				emotion ET_HUK;
+				mes "[Homem que toca o livro]";
+				mes "Uau! ";
+				mes "Eu não tenho medo de você, então vamos lá!";
+				next;
+				mes "^660000Surpreso com sua voz, ele gritou com você, o que pareceu bizarro.";
+				mes "Você se pergunta o que ele quis dizer com senti-la quando estava apenas observando e tocando um livro.^000000";
+				next;
+				mes "["+ strcharinfo(0) +"]";
+				mes "Quem é mamãe?";
+				next;
+				emotion ET_HUK;
+				mes "[Homem que toca o livro]";
+				mes "O que? ";
+				next;
+				emotion ET_OHNO;
+				mes "[Homem que toca o livro]";
+				mes "Cara, você não sabe de nada, não é?! ";
+				next;
+				mes "^660000Umm... Agora você se arrepende de ter falado com ele.^000000";
+				next;
+				mes "[Homem que toca o livro]";
+				mes "My Mammi é diferente daquelas outras celebridades que confiam apenas na beleza e carecem de substância real.";
+				mes "Ela sempre carrega livros com ela, apesar de sua agenda lotada. ";
+				next;
+				mes "[Homem que toca o livro]";
+				mes "Ela até mencionou em entrevista ao 'Morocc Times' que quer conhecer um homem que adora livros.";
+				next;
+				emotion ET_COOL;
+				mes "[Homem que toca o livro]";
+				mes "Isso significa... Ela está esperando por alguém como eu. ";
+				mes "Veja, todos os livros da Biblioteca de Rune-Midgarts têm o nome Benjamin escrito neles... Sou eu!";
+				next;
+				mes "^660000Este Benjamin parece ser um grande fã de uma celebridade feminina chamada Mammi. ";
+				next;
+				mes "[Benjamin]";
+				mes "Eu tenho um problema....";
+				next;
+				mes "[Benjamin]";
+				mes "Minha mãe disse que se apaixonou por um livro escrito por ^FF0000'Oliver Hilpert'^000000 de Schwarzwald: ^FF0000'O Corvo do Destino,'^000000 mas eu nem tive chance de olhar para ele!";
+				next;
+				mes "^660000O Corvo do Destino^000000?";
+				next;
+				mes "[Benjamin]";
+				mes "A menos que você seja cego, você sabe o quão terrível é o Marrocos hoje em dia.";
+				next;
+				mes "[Benjamin]";
+				mes "Preciso muito ler aquele livro e dizer a ela que estou aqui para ajudá-la, mas não tenho nem tempo de recuperar o fôlego por causa dessa situação em nossas mãos!";
+				next;
+				emotion ET_CRY;
+				mes "[Benjamin]";
+				mes "A capa do meu travesseiro Mammi está enterrada sob os escombros... Suspiro!";
+				mes "Mamãe, estou indo! ";
+				next;
+				mes "^660000Ele parece ver uma imagem de Mammi e gritou o nome dela, ofegante de ansiedade. ";
+				next;
+				mes "^660000Ele respirou fundo e, de repente, virou a cabeça em sua direção.^000000";
+				next;
+				emotion ET_AHA;
+				mes "[Benjamin]";
+				mes "....Sim... Sim, você!";
+				next;
+				mes "["+ strcharinfo(0) +"]";
+				mes "Huh?";
+				emotion ET_PROFUSELY_SWEAT, playerattached();
+				next;
+				mes "[Benjamin]";
+				mes "Você parece entediado. ";
+				mes "Ajude-me a me conectar com Mammi. ";
+				next;
+				mes "^660000Você não acabou de me chamar de aventureiro que faz tarefas sem sentido para os outros...?^000000";
+				next;
+				mes "[Benjamin]";
+				mes "Tudo o que peço é que pegue um livro da Biblioteca de Prontera para mim. ";
+				mes "Bem, você não parece alguém que adora ler, mas espero que pelo menos saiba como pegar um livro na biblioteca.";
+				next;
+				if (Sex == SEX_MALE) {
+					mes "[Benjamin]";
+					mes "Se você me ajudar, mostrarei uma edição limitada de livro ilustrado de Mammi... Uma vez. ";
+					mes "O que você diz? ";
+					next;
+				}
+				else {
+					mes "[Benjamin]";
+					mes "Se você me ajudar, mostrarei uma edição limitada de livro ilustrado de Mammi... Uma vez. ";
+					mes "Então, você não está interessado em ver as fotos de outra garota? ";
+					mes "O que você diz? ";
+					next;
+				}
+				mes "^660000O que você quer fazer?^000000";
+				next;
+				switch(select("Ajude-o: Não o ajude")) {
+				case 1:
+					mes "[Benjamin]";
+					mes "Uau, você realmente vai me ajudar?";
+					next;
+					mes "[Benjamin]";
+					mes "Muito obrigado! ";
+					mes "Hehehe, mamãe! ";
+					set barmunt_crow,1;
+					setquest 2063;
+					close;
+				case 2:
+					mes "[Benjamin]";
+					mes "O quê, você não sabe como retirar um livro de uma biblioteca? ";
+					close;
+				}
+			case 2:
+				mes "[Benjamin]";
+				mes "Oh... mamãe... minha mamãe...";
+				close;
+			}
+		}
+		else if (barmunt_crow == 1) {
+			mes "[Benjamin]";
+			mes "Não se esqueça deste título: 'O Corvo do Destino' escrito por 'Oliver Hilpert'. ";
+			close;
+		}
+		else if (barmunt_crow == 10) {
+			mes "[Benjamin]";
+			mes "Oh... mamãe... minha mamãe...";
+			next;
+			mes "^660000 Assim como da última vez que você o viu, Bejamin está vivendo seus sonhos, esfregando um livro no rosto.^000000";
+			next;
+			mes "^660000Você se aproximou dele com cuidado e depois lhe deu um tapinha no ombro.^000000";
+			next;
+			emotion ET_HUK;
+			mes "[Benjamin]";
+			mes "Grrr! ";
+			next;
+			mes "^660000...Umm... Obviamente você não foi cuidadoso o suficiente... ^000000";
+			next;
+			mes "[Benjamin]";
+			mes "Quem se atreve a impedir-me de sentir Mammi? ";
+			mes "Puxa, é você. ";
+			next;
+			mes "["+ strcharinfo(0) +"]";
+			mes "Ah! ";
+			specialeffect2 EF_VENOMDUST;
+			next;
+			mes "^660000Sentindo-se zangado com ele, você exagerou num ataque de espirros que já tem há algum tempo.^000000";
+			next;
+			mes "[Benjamin]";
+			mes "Ah... você fez?";
+			mes "Hehehe, você é mais confiável do que eu pensava. ";
+			next;
+			mes "[Benjamin]";
+			mes "...Não, posso fazer qualquer coisa desde que seja pela Mammi. ";
+			mes "Estava frio lá em cima? ";
+			next;
+			mes "["+ strcharinfo(0) +"]";
+			mes "..................";
+			next;
+			mes "[Benjamin]";
+			mes "Deixe-me pensar. ";
+			next;
+			mes "[Benjamin]";
+			mes "Grrr... Mamãe! ";
+			emotion ET_BIGTHROB;
+			next;
+			mes "[Benjamin]";
+			mes "Estou tão animado em pensar em ter uma conversa profunda com Mammi sobre literatura! ";
+			mes "Eu deveria ler este livro imediatamente. ";
+			emotion ET_DELIGHT;
+			next;
+			mes "[Benjamin]";
+			mes "Ops, não devo esquecer de retribuir. ";
+			next;
+			mes "[Benjamin]";
+			mes "Olha, é o livro ilustrado da Mammi de que lhe falei.";
+			next;
+			cutin "mami01",4;
+			mes "[Benjamin]";
+			mes "Ah... Olha essa foto dela com as orelhas de cachorrinho enroladas! ";
+			mes "Como ninguém derramou uma lágrima depois de ver essa foto triste dela?! ";
+			next;
+			cutin "mami02",4;
+			mes "["+ strcharinfo(0) +"]";
+			mes "'Ela parece diferente do que eu pensava com esses óculos e rabo de cavalo... Ela realmente parece alguém que adora literatura.";
+			mes "Espere, quando as pessoas começaram a chamar Comodo de Cidade dos Amantes? ";
+			next;
+			mes "[Benjamin]";
+			mes "Decidi dar a você este <Livro de imagens especiais de Angel Mammi: Em Comodo> que está cheio de lindas fotos dela em troca de seu favor. ";
+			next;
+			mes "^660000Ele está olhando para você com arrogância. ";
+			next;
+			switch(select("Eu aceito.:Não, obrigado.")) {
+			case 1:
+				mes "'^660000Bem, se for de graça e não houver mal nenhum em mantê-lo.'^000000";
+				next;
+				break;
+			case 2:
+				mes "["+ strcharinfo(0) +"]";
+				mes "Não, obrigado. ";
+				next;
+				mes "...^660000Era o que você ia dizer, mas não pôde recusar a oferta dele. ";
+				next;
+				break;
+			}
+			mes "^660000Piscando os olhos rapidamente, ele fez você pegar o livro ilustrado da Mammi nos braços";
+			mes "exigindo que você embrulhe o livro para que não seja danificado.^000000";
+			set barmunt_crow,11;
+			getitem 7795,1; //Mami_Photo_Album
+			next;
+			mes "[Benjamin]";
+			mes "Oh, certo. ";
+			next;
+			mes "[Benjamin]";
+			mes "Esse também foi um best-seller.";
+			next;
+			mes "[Benjamin]";
+			mes "Agora preciso começar a ler este livro no momento em que encontrarei minha Mammi, então, por favor, me deixe em paz.";
+			next;
+			mes "^660000Assim que terminou, ele voltou a escapar da realidade entregando-se aos seus sonhos com Mammi.^000000";
+			next;
+			mes "^660000O Rastro do Destino, hein?";
+			mes "Bem, não tenho mais nada para fazer. ";
+			next;
+			mes "["+ strcharinfo(0) +"]";
+			mes "Espere, isso significa que tenho que voltar para a Biblioteca Juno?";
+			next;
+			mes "^660000Pensar em viajar de volta para Juno fez você suspirar de frustração.^000000";
+			changequest 2067,2068;
+			close2;
+			cutin "",255;
+			end;
+		}
+		else if (barmunt_crow == 11) {
+			mes "^660000Você embarcou em uma viagem a Juno para ler a prequela de <The Crow of the Fate>: <The Trace of the Fate>.^000000";
+			close;
+		}
+		else if (barmunt_crow == 15) {
+			if ((countitem(7797) == 1) && (countitem(7796) == 1)) {
+				mes "["+ strcharinfo(0) +"]";
+				mes "Olá, Benjamim!";
+				mes "Tenho a coisa perfeita para ajudá-lo a apelar para Mammi. ";
+				next;
+				mes "[Benjamin]";
+				mes "O QUE... O QUE?!";
+				mes "O que são eles? ";
+				next;
+				mes "^660000Você mostrou a ele um autógrafo e uma nota escrita por Oliver Hilpert.^000000";
+				next;
+				mes "[Benjamin]";
+				mes "Oh meu Deus!";
+				mes "Isso certamente me ajudará a me aproximar da Mammi!";
+				mes "Dê-los para mim!";
+				next;
+				switch(select("Dê: Não dê")) {
+				case 1:
+					mes "[Benjamin]";
+					mes "Oh,"+ strcharinfo(0) +"!";
+					mes "Você é o melhor! ";
+					next;
+					mes "[Benjamin]";
+					mes "Maaaammiii!";
+					mes "Vou vê-la amanhã assim que amanhecer! ";
+					delitem 7797,1; //Author_Memo
+					delitem 7796,1; //Author_Autograph
+					set barmunt_crow,16;
+					if (checkre(3))
+						getexp 90000,90000;
+					else
+						getexp 900000,900000;
+					close;
+				case 2:
+					mes "[Benjamin]";
+					mes "Huh? ";
+					close;
+				}
+			}
+			else {
+				mes "[Benjamin]";
+				mes "Ah... mamãe... Ah...";
+				close;
+			}
+		}
+		else {
+			mes "[Benjamin]";
+			mes "Ah... mamãe... Ah...";
+			close;
+		}
+	}
+	else {
+		mes "Com olhos sonhadores, o homem olha para um livro em suas mãos.";
+		close;
+	}
+}
+
+prt_in,179,92,3	script	Library Curator#garas	57,{
+	if (barmunt_crow == 0) {
+		mes "[Curadores]";
+		mes "A Enciclopédia de Monstros da nossa biblioteca tem todos os monstros do Reino de Rune-Midgarts categorizados por masmorra, para ajudar nossos leitores a encontrá-los facilmente.";
+		mes "Também temos muitos livros essenciais para aventureiros. ";
+		next;
+		mes "[Curadores]";
+		mes "A outra biblioteca do outro lado da rua também tem Enciclopédias de Monstros.";
+		mes "Se você estiver interessado, sinta-se à vontade para visitar essa biblioteca também.";
+		close;
+	}
+	else if (barmunt_crow == 1) {
+		mes "[Curadores]";
+		mes "A Enciclopédia de Monstros da nossa biblioteca tem todos os monstros do Reino de Rune-Midgarts categorizados por masmorra, para ajudar nossos leitores a encontrá-los facilmente.";
+		mes "Também temos muitos livros essenciais para aventureiros. ";
+		next;
+		switch(select("Pesquise livros.:Olhe ao redor da biblioteca.")) {
+		case 1:
+			mes "[Curadores]";
+			mes "Você tem um livro específico em mente?";
+			mes "Não tem problema, estou aqui para te ajudar.";
+			mes "Que tipo de livro você está procurando?";
+			next;
+			switch(select("Diga o título.:Diga o autor.:Pesquise por palavra-chave.")) {
+			case 1:
+				mes "[Curadores]";
+				mes "Ah, você sabe o título?";
+				mes "Claro, agora qual é o nome?";
+				input .@input$;
+				next;
+				if (compare(.@input$,"O Corvo do Destino") == 1) {
+					mes "[Curadores]";
+					mes ""+.@input$+"...?";
+					mes "Tudo bem, deixe-me ver...";
+					next;
+				}
+				else {
+					mes "[Curadores]";
+					mes "Hum... me desculpe. ";
+					close;
+				}
+				break;
+			case 2:
+				mes "[Curadores]";
+				mes "Ah, você conhece o autor?";
+				mes "Claro, agora qual é o nome?";
+				input .@input$;
+				next;
+				if (compare(.@input$,"Oliver Hilpert") == 1) {
+					mes "[Curadores]";
+					mes ""+.@input$+"...?";
+					mes "Tudo bem, deixe-me ver...";
+					next;
+				}
+				else {
+					mes "[Curadores]";
+					mes "Hum... me desculpe. ";
+					close;
+				}
+				break;
+			case 3:
+				mes "[Curadores]";
+				mes "Você deve estar tendo dificuldade em lembrar o título ou o autor do livro.";
+				mes "Sem problemas; ";
+				next;
+				input .@input$;
+				if ((compare(.@input$,"Destino") == 1) || (compare(.@input$,"Corvo") == 1) || (compare(.@input$,"Oliver") == 1) || (compare(.@input$,"Hilpert") == 1)) {
+					mes "[Curadores]";
+					mes ""+.@input$+"...?";
+					mes "Tudo bem, deixe-me ver...";
+					next;
+				}
+				else {
+					mes "[Curadores]";
+					mes "Hum... me desculpe. ";
+					close;
+				}
+				break;
+			}
+			emotion ET_AHA;
+			mes "[Curadores]";
+			mes "Oh, certo! ";
+			next;
+			mes "[Curadores]";
+			mes "^3131FFOliver Hilpert's";
+			mes "<O Corvo do Destino>^000000!";
+			next;
+			mes "["+ strcharinfo(0) +"]";
+			mes "Isso mesmo! ";
+			next;
+			mes "[Curadores]";
+			mes "Haha... Mas tenho más notícias para você.";
+			mes "O livro se tornou tão popular que você nem consegue encontrá-lo em Schwarzwald, o país do autor.";
+			mes "Tentamos pegar o livro, mas já era tarde demais. ";
+			next;
+			mes "[Curadores]";
+			mes "Se você não está ocupado e quer muito ler o livro, tenho uma sugestão: experimente a Juno Library.";
+			mes "Você pode encontrar todos os livros publicados em Schwarzwald na biblioteca. ";
+			next;
+			mes "[Curadores]";
+			mes "Bem, Juno fica bem longe daqui, mas se você está realmente entusiasmado em ler um livro tão popular, valerá a pena.";
+			next;
+			mes "^660000O livro não é para você, mas você acredita na satisfação 100% do cliente. ";
+			set barmunt_crow,2;
+			changequest 2063,2064;
+			close;
+		case 2:
+			mes "[Curadores]";
+			mes "Cada livro conta uma história de vida, sabedoria, felicidade e sensação.";
+			mes "Olhar em volta! ";
+			close;
+		}
+	}
+	else if (barmunt_crow == 2) {
+		mes "[Curadores]";
+		mes "^3131FFThe Crow of the Fate^000000 estava esgotado antes mesmo de conseguirmos uma cópia. ";
+		mes "Se você realmente deseja ler o livro, experimente a Juno Library.";
+		close;
+	}
+	else {
+		mes "[Curadores]";
+		mes "A Enciclopédia de Monstros da nossa biblioteca contém todos os monstros do Reino de Rune-Midgarts, categorizados por masmorra para ajudar os leitores a encontrá-los facilmente.";
+		mes "Também temos muitos livros essenciais para aventureiros. ";
+		next;
+		mes "[Curadores]";
+		mes "A outra biblioteca do outro lado da rua também tem Enciclopédias de Monstros.";
+		mes "Se você estiver interessado, sinta-se à vontade para visitar essa biblioteca também.";
+		close;
+	}
+}
+
+yuno,333,210,5	script	Library Master#garas	57,{
+	if (barmunt_crow == 2) {
+		mes "[Cachorro]";
+		mes "Uau!";
+		mes "Grr... Uau!";
+		next;
+		mes "^660000Um cachorro está latindo alto na frente da biblioteca.^000000";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Seu maldito pássaro! ";
+		next;
+		mes "^660000Um homem também está gritando na frente da biblioteca.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "O que está acontecendo aqui?";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Não é nada, mas há um corvo gigante sentado no telhado desta biblioteca, cantando há pelo menos algumas horas.";
+		mes "Eu estava tentando afastá-lo porque... Parece ameaçador de alguma forma.";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Ir! ";
+		next;
+		mes "^660000Você olhou para cima e encontrou um enorme corvo pousado no telhado da biblioteca como se fosse o dono do lugar.^000000";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Deixar! ";
+		mes "Receio que aquele pássaro assustador assuste meus clientes!";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Hum... Ah, bem.";
+		mes "(pegando uma pedra)";
+		mes "Eu disse vá embora, seu pássaro estúpido!";
+		next;
+		mes "(WHIZZ-)";
+		next;
+		mes "(BAQUE!)";
+		specialeffect EF_PIERCE;
+		next;
+		mes "(Gush)";
+		next;
+		mes "^660000Atingido pela pedra que o homem jogou, o corvo voou rapidamente.^000000";
+		mes "^660000Mas então ele começou a voar acima do telhado em círculos e pareceu ainda mais assustador.^000000";
+		specialeffect EF_BAT;
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Grrr... Você não pode simplesmente ir embora?!";
+		next;
+		mes "^660000Ele começou a gritar com o corvo, mas ele não pareceu se importar. ";
+		mes "Eventualmente, ele virou a cabeça para longe do corvo e desistiu de afastá-lo. ";
+		next;
+		mes "^660000Você olhou para o chão e encontrou algumas penas caídas do corvo quando ele foi atingido pela pedra.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Nossa, olha o tamanho dessas penas. ";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Quando eu era jovem, ouvi dizer que penas de pássaros eram trazidas pelos servos de Odin para abençoar seu dono, e muitos poetas as usavam como marcadores de página.";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Eu costumava ter uma pequena pena. ";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Você conhece o velho ditado: 'você pode memorizar Edda depois de 3 anos trabalhando em uma biblioteca'.";
+		mes "Por que você não fica com uma das penas? ";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Eu acho que sim.";
+		next;
+		mes "^660000Você pegou uma das grandes penas escuras do chão.";
+		mes "Olhar para a pena brilhante de alguma forma fez você se sentir tão feliz, como se tivesse obtido um tesouro.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "...Ah!";
+		specialeffect2 EF_VENOMDUST;
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Deus o abençoe. ";
+		mes "Você deve cuidar bem de si mesmo, principalmente se for um aventureiro.";
+		next;
+		mes "^660000Você começou a sentir frio e a tremer.^000000";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Experimente beber caldo Jellopy quente misturado com mel. ";
+		mes "Garanto que você melhorará rapidamente.";
+		next;
+		mes "^660000Ele parecia sincero, mas não parece que esse tipo de caldo seria eficaz...^000000";
+		emotion ET_THINK, playerattached();
+		set barmunt_crow,3;
+		close;
+	}
+	else {
+		mes "[Mestre da Biblioteca]";
+		mes "Cuidado para não pegar resfriado!";
+		close;
+	}
+}
+
+yuno,336,203,0	script	#garas_catch	139,3,3,{
+OnTouch:
+	if (barmunt_crow == 2) {
+		mes "[Cachorro]";
+		mes "Uau!";
+		mes "Grr... Uau!";
+		next;
+		mes "^660000Um cachorro está latindo alto na frente da biblioteca.^000000";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Seu maldito pássaro! ";
+		next;
+		mes "^660000Um homem também está gritando na frente da biblioteca.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "O que está acontecendo aqui?";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Não é nada, mas há um corvo gigante sentado no telhado desta biblioteca, cantando há pelo menos algumas horas.";
+		mes "Eu estava tentando afastá-lo porque... Parece ameaçador de alguma forma.";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Ir! ";
+		next;
+		mes "^660000Você olhou para cima e encontrou um enorme corvo pousado no telhado da biblioteca como se fosse o dono do lugar.^000000";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Deixar! ";
+		mes "Receio que aquele pássaro assustador assuste meus clientes!";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Hum... Ah, bem.";
+		mes "(pegando uma pedra)";
+		mes "Eu disse vá embora, seu pássaro estúpido!";
+		next;
+		mes "(WHIZZ-)";
+		next;
+		mes "(BAQUE!)";
+		specialeffect EF_PIERCE;
+		next;
+		mes "(Gush)";
+		next;
+		mes "^660000Atingido pela pedra que o homem jogou, o corvo voou rapidamente.^000000";
+		mes "^660000Mas então ele começou a voar acima do telhado em círculos e pareceu ainda mais assustador.^000000";
+		specialeffect EF_BAT;
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Grrr... Você não pode simplesmente ir embora?!";
+		next;
+		mes "^660000Ele começou a gritar com o corvo, mas ele não pareceu se importar. ";
+		mes "Eventualmente, ele virou a cabeça para longe do corvo e desistiu de afastá-lo. ";
+		next;
+		mes "^660000Você olhou para o chão e encontrou algumas penas caídas do corvo quando ele foi atingido pela pedra.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Nossa, olha o tamanho dessas penas. ";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Quando eu era jovem, ouvi dizer que penas de pássaros eram trazidas pelos servos de Odin para abençoar seu dono, e muitos poetas as usavam como marcadores de página.";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Eu costumava ter uma pequena pena. ";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Você conhece o velho ditado: 'você pode memorizar Edda depois de 3 anos trabalhando em uma biblioteca'.";
+		mes "Por que você não fica com uma das penas? ";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Eu acho que sim.";
+		next;
+		mes "^660000Você pegou uma das grandes penas escuras do chão.";
+		mes "Olhar para a pena brilhante de alguma forma fez você se sentir tão feliz, como se tivesse obtido um tesouro.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "...Ah!";
+		specialeffect2 EF_VENOMDUST;
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Deus o abençoe. ";
+		mes "Você deve cuidar bem de si mesmo, principalmente se for um aventureiro.";
+		next;
+		mes "^660000Você começou a sentir frio e a tremer.^000000";
+		next;
+		mes "[Mestre da Biblioteca]";
+		mes "Experimente beber caldo Jellopy quente misturado com mel. ";
+		mes "Garanto que você melhorará rapidamente.";
+		next;
+		mes "^660000Ele parecia sincero, mas não parece que esse tipo de caldo seria eficaz...^000000";
+		emotion ET_THINK, playerattached();
+		set barmunt_crow,3;
+		close;
+	}
+	end;
+}
+
+yuno,343,204,1	script	#garas_eff	111,{
+	end;
+}
+
+yuno,335,208,5	script	Dog#garas	81,{
+	mes "[Cachorro]";
+	mes "Uau!";
+	close;
+}
+
+yuno_in04,111,57,3	script	Library Part-Timer#garas	862,{
+	if (barmunt_crow == 3) {
+		mes "[Biblioteca em meio período]";
+		mes "As pessoas deveriam aprender a guardar os livros depois de retirá-los.";
+		mes "Todos esses livros empilhados no carrinho me deixam muito frustrada, sabe? ";
+		next;
+		mes "[Biblioteca em meio período]";
+		mes "...Agora, como posso ajudá-lo?";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Estou procurando um livro chamado <O Corvo do Destino> escrito por Oliver Hilpert... Ahchoo!";
+		emotion ET_KEK, playerattached();
+		specialeffect2 EF_VENOMDUST;
+		next;
+		mes "[Biblioteca em meio período]";
+		mes "Ah, eu lembro desse... É o que fica com mais frequência no carrinho.";
+		mes "Por favor entre na sala ^3131FFlado direito^000000. ";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Obrigado.";
+		close;
+	}
+	else if (barmunt_crow == 7) {
+		mes "[Biblioteca em meio período]";
+		mes "Como posso ajudá-lo?";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Sim, hum... ahcho! ";
+		specialeffect2 EF_VENOMDUST;
+		next;
+		mes "[Biblioteca em meio período]";
+		mes "Ah, você pode encontrá-los em um canto da sala certa.";
+		mes "Tenha cuidado ao manuseá-los, pois a maioria deles é bastante antiga.";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Obrigado... Ah!";
+		specialeffect2 EF_VENOMDUST;
+		close;
+	}
+	else if (barmunt_crow == 11) {
+		mes "[Biblioteca em meio período]";
+		mes "As pessoas deveriam aprender a guardar os livros depois de retirá-los.";
+		mes "Todos esses livros empilhados no carrinho me deixam muito frustrada, sabe? ";
+		next;
+		mes "[Biblioteca em meio período]";
+		mes "...Como posso ajudá-lo?";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Tosse... Estou procurando um livro chamado <O Corvo do Destino> escrito por Oliver Hilpert.";
+		specialeffect2 EF_VENOMDUST;
+		next;
+		mes "[Biblioteca em meio período]";
+		mes "Ah, eu lembro desse... É o que fica com mais frequência no carrinho.";
+		mes "Vá ^3131FFacima^000000 e verifique a prateleira esquerda.";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Obrigado.";
+		next;
+		mes "[Biblioteca em meio período]";
+		mes "Oliver Hilpert alcançou grande fama apesar de sua tenra idade.";
+		mes "Eu li seu <The Trace of the Fate> pelo menos várias vezes. ";
+		next;
+		mes "[Biblioteca em meio período]";
+		mes "Hum... A cena mais impressionante foi... Err...";
+		next;
+		mes "[Biblioteca em meio período]";
+		mes "Certo! ";
+		specialeffect2 EF_BASH3D2;
+		close2;
+		warp "que_ba",264,186;
+		end;
+	}
+	else if (barmunt_crow == 12) {
+		mes "[Biblioteca em meio período]";
+		mes "Com licença, você está bem? ";
+		mes "Você parece um pouco pálido.";
+		next;
+		mes "[Biblioteca em meio período]";
+		mes "Por que você não entra e descansa? ";
+		mes "Você pode encontrar o livro na estante esquerda no andar de cima.";
+		close;
+	}
+	end;
+}
+
+yuno_in04,100,5,3	script	Hot Bestseller Corner	111,{
+	if (barmunt_crow == 3) {
+		mes "^660000O incontável número de livros que enchem esta sala explica por que este lugar é chamado de A Maior Biblioteca de Juno, a Cidade dos Estudiosos.^000000";
+		next;
+		mes "^660000Os livros marcados como 'Mais vendidos do mês' são armazenados no meio da estante, na altura dos seus olhos.^000000";
+		next;
+		mes "^660000Não foi tão difícil encontrar 'O Corvo do Destino'";
+		mes "porque era o único livro encostado na parede de uma estante vazia.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Ah, felizmente tem um... Ahchoo!";
+		specialeffect2 EF_VENOMDUST;
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Sniff... Então agora só preciso dar uma olhada nisso e entregá-lo àquele fanático por Mammi.";
+		next;
+		mes "^FF0000-- BEEP --^000000";
+		next;
+		mes "^660000Você estava prestes a pegar o livro, reclamando e resmungando, quando de repente sentiu como se seu cérebro tivesse explodido. ";
+		set barmunt_crow,4;
+		close2;
+		specialeffect2 EF_BASH3D2;
+		warp "que_ba",247,33;
+		end;
+	}
+	else if (barmunt_crow == 4) {
+		mes "^660000O incontável número de livros que enchem esta sala explica por que este lugar é chamado de A Maior Biblioteca de Juno, a Cidade dos Estudiosos.^000000";
+		next;
+		mes "^660000Os livros marcados como 'Mais vendidos do mês' são armazenados no meio da estante, na altura dos seus olhos.^000000";
+		next;
+		mes "^660000Não foi tão difícil encontrar 'O Corvo do Destino'";
+		mes "porque era o único livro encostado na parede de uma estante vazia.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Ah, felizmente tem um... Ahchoo!";
+		specialeffect2 EF_VENOMDUST;
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Sniff... Então agora só preciso dar uma olhada nisso e entregá-lo àquele fanático por Mammi.";
+		next;
+		mes "^FF0000-- BEEP --^000000";
+		next;
+		mes "^660000Você estava prestes a pegar o livro, reclamando e resmungando, quando de repente sentiu como se seu cérebro tivesse explodido. ";
+		close2;
+		specialeffect2 EF_BASH3D2;
+		warp "que_ba",247,33;
+		end;
+	}
+	else if (barmunt_crow == 5) {
+		mes "^660000O incontável número de livros que enchem esta sala explica por que este lugar é chamado de A Maior Biblioteca de Juno, a Cidade dos Estudiosos.^000000";
+		next;
+		mes "^660000Os livros marcados como 'Mais vendidos do mês' são armazenados no meio da estante, na altura dos seus olhos.^000000";
+		next;
+		mes "^660000Não foi tão difícil encontrar 'O Corvo do Destino'";
+		mes "porque era o único livro encostado na parede de uma estante vazia.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Ah, felizmente tem um... Ahchoo!";
+		specialeffect2 EF_VENOMDUST;
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Sniff... Então agora só preciso dar uma olhada nisso e entregá-lo àquele fanático por Mammi.";
+		next;
+		mes "^FF0000-- BEEP --^000000";
+		next;
+		mes "^660000Você estava prestes a pegar o livro, reclamando e resmungando, quando de repente sentiu como se seu cérebro tivesse explodido. ";
+		close2;
+		specialeffect2 EF_BASH3D2;
+		warp "que_ba",247,33;
+		end;
+	}
+	end;
+}
+
+yuno_in04,100,3,0	script	#garas_path	139,1,1,{
+OnTouch:
+	if (barmunt_crow == 6) {
+		mes "...................................";
+		next;
+		mes "...................................";
+		mes "...................................";
+		next;
+		mes "...................................";
+		mes "...................................";
+		mes "...................................";
+		next;
+		mes "^660000Você ainda está dentro da biblioteca,";
+		mes "mas você não sabe se isso é um sonho ou realidade.^000000";
+		next;
+		mes "^660000Você virou a cabeça em direção à estante e encontrou a estante com a estante vazia.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Ufa... Acho que tive um sonho ou algo assim... Ahchoo!";
+		specialeffect2 EF_VENOMDUST;
+		next;
+		mes "^660000Foi um sonho indescritível: um laboratório em chamas em um lugar desconhecido em Schwarzwald.";
+		mes "Você tentou pensar muito, mas não conseguiu descobrir o que o sonho significava.^000000";
+		next;
+		mes "^660000Você abriu o livro novamente com cuidado, mas nada aconteceu.^000000";
+		next;
+		mes "<....no final da névoa fuliginosa e dos gritos caóticos, havia uma criatura que parecia ultrajante demais para ser humana...>";
+		next;
+		mes "...................................";
+		next;
+		mes "<-Eva, o que você está fazendo? ";
+		mes "-Não posso deixá-lo aqui!-";
+		mes "Ignorando o teto desabado do laboratório, Eva se aproximou de um tubo de ensaio, tirou algo com cuidado e colocou-o sob a jaqueta. ";
+		next;
+		mes "^660000...................................^000000";
+		next;
+		mes "^660000Os livros contavam a cena exata que você viu em seu sonho.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Déjà Vu? ";
+		next;
+		mes "^660000Claro, foi apenas um sonho, mas ainda assim foi uma experiência muito misteriosa.^000000";
+		next;
+		mes "...................................";
+		next;
+		mes "...................................";
+		next;
+		mes "'^660000Agora me pergunto se a cena descreve um acidente que realmente aconteceu no passado. ";
+		mes "...Só quero saber por curiosidade...^000000'";
+		set barmunt_crow,7;
+		changequest 2064,2065;
+		close;
+	}
+	else if (barmunt_crow == 7) {
+		mes "["+ strcharinfo(0) +"]";
+		mes "Se eu quiser ler notícias sobre incêndios, a que seção devo ir?";
+		close;
+	}
+	end;
+}
+
+yuno_in04,117,102,3	script	Old News Scrapbook	844,{
+	if (barmunt_crow == 7) {
+		mes "^660000É uma pasta com moldura de madeira contendo uma pilha grossa de jornais velhos.^000000";
+		next;
+		mes "^660000Você folheou cuidadosamente os jornais para ver se conseguia encontrar algum artigo sobre acidentes de incêndio.^000000";
+		next;
+		while(1) {
+			mes "...................................";
+			next;
+			mes "...................................";
+			next;
+			set .@newspp,rand(1,10);
+			if ((.@newspp == 1) || (.@newspp == 2)) {
+				mes "- Página 1 -";
+				mes "Renomado Assassino Sieglinde: 'Eu sirvo apenas a você.'";
+				mes "";
+				mes "Sieglinde alcançou o título de Maior Assassino";
+				mes "pelo seu profissionalismo";
+				mes "e fama entre as mulheres,";
+				mes "por sua imagem de bad boy caracterizada por sua Katar afiada:";
+				mes "um homem bonito que vive uma vida de solidão romântica.";
+				mes "Recentemente, este assassino transformado em celebridade fez";
+				mes "uma confissão verdadeira com um sorriso no rosto:";
+				mes "ele está saindo secretamente com uma senhora,";
+				mes "e eles estão planejando se casar no próximo ano.";
+				mes "A senhora em questão é conhecida como Sacerdotisa M,";
+				mes "e ela trabalha na Igreja de Prontera, mas ele se recusou a nos dar mais informações";
+				mes "sobre sua noiva para o bem de sua segurança.";
+				mes "Assim que a notícia se espalhou,";
+				mes "suas fãs mostraram uma reação negativa";
+				mes "dizendo: 'Isso é ridículo.";
+				mes "Os assassinos devem viver sozinhos nas sombras.";
+				mes "Esperamos que a reação dos fãs não cause muita preocupação";
+				mes "para Siglinde e sua futura esposa.";
+				mes "";
+				next;
+			}
+			else if ((.@newspp == 3) || (.@newspp == 4)) {
+				mes "- Página 4 -";
+				mes "Cena de luta em Juno";
+				mes "";
+				mes "Ontem à noite, dois jovens foram testemunhados";
+				mes "lutando violentamente entre si em Juno Plaza.";
+				mes "Segundo o soldado Juno que os prendeu,";
+				mes "O Sr. B não ficou tão feliz com o Sr.";
+				mes "comportamento descuidado, e parece";
+				mes "que sua paciência finalmente acabou ontem à noite.";
+				mes "Parece que a briga começou quando o Sr. A colocou os pés descalços e suados na coxa do Sr.";
+				mes "dizendo que seus pés estão muito suados.";
+				mes "A culpa é do tempo quente, pessoal!";
+				mes "";
+				next;
+			}
+			else if (.@newspp == 5) {
+				mes "O aviso de Deus: um laboratório secreto reduzido a cinzas";
+				mes "";
+				mes "A fumaça nublando o céu de Juno na noite passada";
+				mes "acabou por ser de";
+				mes "um laboratório secreto incendiado.";
+				mes "Mais informações sobre o laboratório";
+				mes "ainda não foi liberado, mas segundo as testemunhas,";
+				mes "o laboratório foi encontrado vazio";
+				mes "sem ninguém ou nada dentro";
+				mes "exceto pedaços quebrados de tubos de ensaio";
+				mes "o que comprovou que o local era utilizado como laboratório.";
+				mes "O cientista Sion, o investigador da cena do acidente,";
+				mes "suspeitos dos restos de máquinas dentro";
+				mes "que o laboratório deve ter sido usado";
+				mes "para testar projetos de biotecnologia,";
+				mes "e expressou sua crença de que o fogo era a ira de Deus,";
+				mes "punição justa por brincar com suas criações.";
+				mes "";
+				next;
+				mes "["+ strcharinfo(0) +"]";
+				mes "...........................";
+				mes "...........................";
+				mes "Este é o lugar que vi no meu sonho!";
+				next;
+				mes "Espere, então e o lugar onde eles escaparam...?";
+				next;
+				mes "Você rapidamente verificou a data da notícia. ";
+				mes "para você encontrar mais informações pesquisando artigos de notícias.";
+				next;
+				mes "E se eles tiverem descendentes ou sucessores?";
+				next;
+				mes "Você sente seu coração batendo mais rápido de excitação.";
+				mes "Agora você está convencido de que isso não foi apenas seu sonho ou ilusão. ";
+				next;
+				mes "["+ strcharinfo(0) +"]";
+				mes "Não acredito que isso está acontecendo!";
+				mes "Pense bem... Era ^FF0000uma área conectada a uma caverna ao norte^000000.";
+				set barmunt_crow,8;
+				changequest 2065,2066;
+				close;
+			}
+			else if ((.@newspp == 6) || (.@newspp == 7)) {
+				mes "- Página de Cultura -";
+				mes "- Por favor, salve minha água -";
+				mes "";
+				mes "Um jovem autor recentemente aclamado,";
+				mes "Nova série de Jean Cadoc";
+				mes "'Please Save My Water' foi classificado no topo";
+				mes "para o livro mais procurado nas bibliotecas.";
+				mes "'Please Save My Water' é sobre uma garota chamada Ujer";
+				mes "que foi abençoado pela Mãe Natureza.";
+				mes "O pai dela deixou um testamento em seu leito de morte";
+				mes "para 'proteger a água' contra o mal,";
+				mes "e ela está lutando contra um grupo de vilões do mal";
+				mes "que estão contaminando a natureza para que ela possa purificar a água.";
+				mes "Este livro será em breve selecionado como um livro acadêmico essencial de";
+				mes "a República de Schwarzwald para";
+				mes "promover a moralidade e";
+				mes "promovendo a proteção ambiental em todo o país.";
+				mes "";
+				next;
+			}
+			else {
+				mes "Mina Einbech desabou (2)";
+				mes "";
+				mes "De acordo com um funcionário da Rekenber Corporation,";
+				mes "que lidera o negócio de mineração da Einbech,";
+				mes "três cadáveres foram descobertos,";
+				mes "mas um sobrevivente foi internado em um hospital.";
+				mes "Ele está em estado crítico,";
+				mes "e também nos informou que eles são";
+				mes "ainda em busca de sobreviventes,";
+				mes "e contrataram especialistas para investigar";
+				mes "a causa do acidente.";
+				mes "";
+				next;
+			}
+		}
+	}
+	else {
+		mes "^660000É uma pasta com moldura de madeira contendo uma pilha grossa de jornais velhos.^000000";
+		close;
+	}
+}
+
+yuno_in04,169,123,3	script	Suspicious Man#oliver_h	407,{
+	if (checkweight(617,3) == 0) {
+		mes "- Você tem muitos itens em seu inventário para prosseguir com esta missão. ";
+		close;
+	}
+	if (barmunt_crow > 14) {
+		mes "^660000O escritor estava escrevendo no caderno em um ritmo extremamente rápido.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Não vamos incomodá-lo, principalmente quando ele está cheio de ideias criativas. ";
+		close;
+	}
+	else if (barmunt_crow == 13) {
+		cutin "oliver_pre",2;
+		if (countitem(7795) < 1) {
+			mes "[Oliver Hilpert]";
+			mes "Senhora mamãe...";
+			close2;
+			cutin "",255;
+			end;
+		}
+		mes "[Oliver Hilpert]";
+		mes "Você mudou de ideia sobre me vender o livro ilustrado de Lady Mammi?";
+		next;
+		switch(select("Sim não")) {
+		case 1:
+			cutin "oliver_smile",2;
+			mes "[Oliver Hilpert]";
+			mes "Uau, obrigado!";
+			next;
+			mes "[Oliver Hilpert]";
+			mes "Hum... Ainda não recebi meu adiantamento de publicação, mas você se importa em aceitar isso?";
+			next;
+			break;
+		case 2:
+			mes "[Oliver Hilpert]";
+			mes "Ok, eu entendo...";
+			emotion ET_CRY;
+			close2;
+			cutin "",255;
+			end;
+		}
+		mes "[Oliver Hilpert]";
+		mes "Ainda não tive oportunidade de abri-lo, mas meu editor disse que tem algo muito raro dentro. ";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Haha, obrigado.";
+		mes "Você sabe, em Marrocos... Ahchoo! ";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Ganhei esse livro dele de presente. ";
+		next;
+		mes "[Oliver Hilpert]";
+		mes "Ah, muito obrigado por informações tão valiosas!";
+		next;
+		mes "[Oliver Hilpert]";
+		mes "Uau! ";
+		next;
+		mes "[Oliver Hilpert]";
+		mes "Espero que você também goste do meu próximo livro. ";
+		next;
+		cutin "oliver_smile",255;
+		mes "^660000Ele começou a correr como uma galinha com a cabeça decepada. ";
+		mes "No início, ele parecia muito bobo, mas agora ele parece um homem que leva muito a sério sua escrita.^000000";
+		next;
+		mes "^660000Você estava prestes a sair quando encontrou um pedaço de papel no chão.^000000";
+		next;
+		mes "^660000O pedaço de papel está coberto de rabiscos e tem o rótulo <O Corvo do Destino> no topo. ";
+		next;
+		mes "^3131FFArma antiga = Algum tipo de fonte de energia^000000";
+		mes "^3131FFSeclusão - Carta de uma discípula^000000";
+		mes "^3131FFA madrasta = Amante de uma vida passada?!^000000";
+		close2;
+		specialeffect2 EF_ENHANCE;
+		delitem 7795,1; //Mami_Photo_Album
+		set barmunt_crow,14;
+		getitem 7796,1; //Author_Autograph
+		getitem 7797,1; //Author_Memo
+		getitem 617,1; //Old_Violet_Box
+		warp "que_ba",270,270;
+		end;
+	}
+	else if (barmunt_crow == 14) {
+		mes "["+ strcharinfo(0) +"]";
+		mes "Este sonho parece bastante significativo de alguma forma.";
+		mes "É melhor devolver-lhe este bilhete.";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Com licença, Sr. Hilpert.";
+		next;
+		cutin "oliver_think",2;
+		mes "[Oliver Hilpert]";
+		mes ".................";
+		mes ".................";
+		mes "...........Huh?";
+		next;
+		cutin "oliver_think",255;
+		mes "Você sentiu pena de interrompê-lo de escrever.";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Acho que você abandonou isso.";
+		next;
+		mes "^660000Você vasculhou seu bolso para encontrar o memorando e então deixou cair a pena de corvo que pegou do lado de fora da biblioteca. ";
+		next;
+		mes "(WHACK)";
+		specialeffect EF_VENOMDUST;
+		specialeffect2 EF_DETOXICATION;
+		next;
+		mes "^660000Oliver pegou a pena mais rápido do que você poderia e a rasgou em pedaços antes que você pudesse dizer qualquer coisa.^000000";
+		next;
+		mes "^660000Você olhou para ele com raiva e descobriu que ele se transformou em uma pessoa completamente diferente; ";
+		next;
+		cutin "oliver_hum",2;
+		mes "[Oliver Hilpert]";
+		mes "Err?!";
+		mes "O que aconteceu com esta pena?";
+		next;
+		mes "[Oliver Hilpert]";
+		emotion ET_KEK;
+		mes "Uau! ";
+		mes "Oh meu Deus, me desculpe! ";
+		next;
+		mes "^660000Ele voltou a ser ele mesmo e começou a se desculpar com você por sua raiva repentina.^000000";
+		next;
+		emotion ET_CRY;
+		mes "[Oliver Hilpert]";
+		mes "Eu... eu não sei como me desculpar...";
+		mes "É que... fiquei com tanta raiva que...! ";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Bem, está tudo bem. ";
+		next;
+		mes "[Oliver Hilpert]";
+		mes "Se você diz isso, obrigado pela sua compreensão.";
+		mes "Ufa, me senti tão culpada...";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Aqui, leve seu memorando de volta.";
+		next;
+		mes "[Oliver Hilpert]";
+		mes "Ah, você pode simplesmente jogar fora. ";
+		mes "Ufa...";
+		next;
+		cutin "oliver_pre",2;
+		mes "[Oliver Hilpert]";
+		mes "Estou tendo ótimas ideias agora. ";
+		next;
+		cutin "oliver_pre",255;
+		mes "^660000Assim que falou com você, ele voltou a escrever e ficou completamente absorto em seu trabalho.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Ele tem uma concentração incrível.";
+		mes "Acho que nem todo mundo consegue fazer livros best-sellers, né?";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "...Espere, não estou mais espirrando...";
+		mes "A dor de cabeça e a sensação de peso no peito também desapareceram!";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "E se tudo fosse causado por aquela pena de corvo? ";
+		next;
+		switch(select("Foi amaldiçoado pela pedra.:O corvo tem algo a ver com Oliver.")) {
+		case 1:
+			mes "["+ strcharinfo(0) +"]";
+			mes "Ah, entendo.";
+			mes "Acho que quando o corvo foi atingido pela pedra, a sua sabedoria deve ter se transformado em desastre.";
+			next;
+			mes "["+ strcharinfo(0) +"]";
+			mes "Argh, isso foi tudo por causa do mestre da biblioteca!";
+			mes "Felizmente a pena sumiu, então espero não sofrer mais nenhum desastre.";
+			next;
+			break;
+		case 2:
+			mes "["+ strcharinfo(0) +"]";
+			mes "Lembro-me do Sr. Zid dizendo que Eva havia deixado uma pena preta atrás dela.";
+			next;
+			mes "["+ strcharinfo(0) +"]";
+			mes "Além disso, a assistente se transformou em um corvo voando para longe, e então a pena do corvo me fez espirrar e tossir.";
+			next;
+			mes "["+ strcharinfo(0) +"]";
+			mes "..................";
+			next;
+			mes "["+ strcharinfo(0) +"]";
+			mes "Sim, a alma do Sr. Hilpert foi amaldiçoada pelo Corvo!";
+			mes "Eu me pergunto se ele jogou pedras nos corvos como o mestre da biblioteca...";
+			next;
+			mes "["+ strcharinfo(0) +"]";
+			mes "..................";
+			mes "Acho que é uma ideia estúpida.";
+			next;
+			break;
+		}
+		mes "["+ strcharinfo(0) +"]";
+		mes "Ah, bem, tanto faz.";
+		mes "O que importa é que estou curado!";
+		mes "Se eu tiver outro sonho, então lidarei com isso ~";
+		next;
+		mes "^660000Ao sair da biblioteca, você pensou que pensar que o Sr. Oliver é sua metade seria uma ideia melhor.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Isso foi muito divertido, mas também muito cansativo. ";
+		set barmunt_crow,15;
+		completequest 2068;
+		close2;
+		cutin "",255;
+		end;
+	}
+	else {
+		mes "^660000Um jovem de aparência suspeita examina rostos que passam como se estivesse procurando por alguém.^000000";
+		close;
+	}
+}
+
+yuno_in04,167,120,3	script	Worn-out Book#garas	111,{
+	if (checkweight(617,3) == 0) {
+		mes "- Você tem muitos itens em seu inventário para prosseguir com esta missão. ";
+		close;
+	}
+	if (barmunt_crow == 12) {
+		if (countitem(7795) < 1) {
+			mes "- Você sentiu como se tivesse deixado algo importante para trás. ";
+			close;
+		}
+		mes "^660000A capa do livro foi seriamente danificada, considerando a data de publicação recente. ";
+		next;
+		mes "^660000Você virou a primeira página com cuidado, temendo que pudesse ter outro sonho maluco.^000000";
+		next;
+		mes ".........................";
+		mes ".........................";
+		mes ".........................";
+		next;
+		mes "<Desde que ele era jovem - isso antes mesmo de ele conseguir se lembrar exatamente de quão jovem ele era - seus sonhos encheram seu cérebro com um conhecimento imenso que ele nunca tinha visto ou aprendido em nenhum outro lugar.";
+		mes "Ele era um garotinho lá fora, mas mais sábio do que qualquer sábio adulto. ";
+		mes "Para ele, sua pequena e escura vila subterrânea era uma prisão que o impedia de satisfazer sua curiosidade e desejo de liberdade.";
+		mes "Ele expressou seu desejo de aprender mais sobre o mundo exterior para sua madrasta Eva, mas ela sempre ignorou seu desejo com um olhar severo.";
+		mes "Eventualmente, sua dissuasão irracional não poderia mais impedi-lo de escapar de sua realidade.";
+		mes "";
+		mes "- Suspiro! ";
+		mes "Ele correu pela escuridão que parecia não ter fim. ";
+		next;
+		mes ".........................";
+		mes ".........................";
+		mes ".........................";
+		next;
+		mes "<- Hum...-";
+		mes "-...Ele está acordado.-";
+		mes "- Olá, você pode me ver? ";
+		mes "Um velho entrou lentamente na sala. ";
+		mes "mas então ele se forçou a levantar da cama e olhou em volta.";
+		mes "";
+		mes "- Onde estou? ";
+		mes "- Eu estava andando de carruagem ontem à noite e encontrei você caído na rua. ";
+		mes "-.......-";
+		mes "- Qual o seu nome? ";
+		mes "-......Al.-";
+		mes "- Você sabe por que está na rua? ";
+		mes "O comentário de Haeji imediatamente trouxe a imagem monstruosa de Eva à mente de Al. ";
+		mes "- Não moro em lugar nenhum e não tenho pais. ";
+		mes "Al tinha que mentir, não importa quanto tempo, pensou. ";
+		mes "Mais tarde, após saber que Haeji era professor da Juno City University, Al se convenceu de que o destino estava do seu lado.>";
+		next;
+		mes ".........................";
+		mes ".........................";
+		mes ".........................";
+		next;
+		mes "^660000Você sentiu alguém olhando para você lendo o livro. ";
+		next;
+		cutin "oliver_pre",2;
+		mes "^660000O jovem se aproximou e apertou sua mão com um sorriso no rosto.^000000";
+		next;
+		mes "[Homem de aparência suspeita]";
+		mes "Ei, você está lendo <O Rastro do Destino>!";
+		mes "Hahaha, prazer em conhecê-lo. ";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Tosse, não, eu não sou fã...";
+		next;
+		mes "[Oliver Hilpert]";
+		mes "Oh, certo! ";
+		next;
+		mes "(Rabisco)";
+		next;
+		mes "[Oliver Hilpert]";
+		mes "^660000Ele tirou um grande pedaço de papel da bolsa, desenhou algo bem rápido e entregou para você.^000000";
+		next;
+		mes "Haha, olha. ";
+		next;
+		mes "[Oliver Hilpert]";
+		mes "Você sabe, acabei de escrever o que vi no meu sonho; ";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Sonhar?";
+		next;
+		cutin "oliver_think",2;
+		mes "[Oliver Hilpert]";
+		mes "Sim, tenho tido sonhos tão vívidos que parecem realidade.";
+		mes "Disseram-me que grandes escritores geralmente encontram inspiração em seus sonhos. ";
+		next;
+		mes "Você sentiu algo desconfortável com esse chamado sonho. ";
+		mes "Se Oliver estava sonhando exatamente as mesmas coisas que você, isso pode significar que ele e você estão compartilhando sonhos. ";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "O herói Al estava tendo sonhos...";
+		next;
+		cutin "oliver_pre",2;
+		mes "[Oliver Hilpert]";
+		mes "Uau!";
+		mes "Isso não é ali?!";
+		emotion ET_HUK;
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Huh?";
+		next;
+		mes "^660000Você rapidamente virou a cabeça seguindo os olhos dele. ";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Ah... Ah! ";
+		specialeffect2 EF_VENOMDUST;
+		next;
+		mes "[Oliver Hilpert]";
+		mes "Não não!";
+		next;
+		mes "[Oliver Hilpert]";
+		mes "Eu estava olhando para a coisa brilhando debaixo da capa da bolsa!";
+		next;
+		mes "^660000Você verificou o que era aquilo em sua bolsa e era...^000000";
+		next;
+		cutin "oliver_smile",2;
+		mes "[Oliver Hilpert]";
+		mes "Senhora Mammi!";
+		emotion ET_BIGTHROB;
+		next;
+		mes "^660000Sim, era o livro ilustrado de Mammi, um ídolo que Benjamin de Marrocos insiste ser um dos três maiores ídolos do Reino de Rune-Midgarts. ";
+		emotion ET_THINK, playerattached();
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Ah! ";
+		specialeffect2 EF_VENOMDUST;
+		next;
+		mes "[Oliver Hilpert]";
+		mes "Você está brincando?! ";
+		mes "Diga-me, onde você pode encontrar outra mulher inteligente e bonita como ela?";
+		mes "Acredito que ela seja a reencarnação da Deusa da Sabedoria que foi expulsa para o Continente Midgard por deusas ciumentas.";
+		next;
+		mes "^660000Mammi parece ter um nível estranho de popularidade que você nunca conseguirá entender.^000000";
+		next;
+		mes "[Oliver Hilpert]";
+		mes "Posso ver?";
+		next;
+		mes "^660000Você deu a ele o livro ilustrado da mamãe.^000000";
+		next;
+		mes "[Oliver Hilpert]";
+		mes ".................";
+		next;
+		mes "[Oliver Hilpert]";
+		mes "...Oh!";
+		cutin "mami01",4;
+		emotion ET_THROB;
+		next;
+		mes "[Oliver Hilpert]";
+		mes "...Ooooh!";
+		cutin "mami02",4;
+		emotion ET_THROB;
+		next;
+		cutin "oliver_smile",2;
+		mes "[Oliver Hilpert]";
+		mes "Ah... É por isso que estou apaixonado por Lady Mammi.";
+		mes "Aventureiro, você também deve ser um fã entusiasmado dela. ";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Não, ganhei de presente de alguém... Ahchoo!";
+		specialeffect2 EF_VENOMDUST;
+		next;
+		mes "[Oliver Hilpert]";
+		mes "O que? ";
+		mes "É chocante ver que você não se impressiona com a beleza de Lady Mammi,";
+		mes "mas é mais chocante que Deus tenha dado um livro ilustrado tão raro dela";
+		mes "para alguém como você que não aprecia seu valor!";
+		mes "Eu voei para o Reino de Rune-Midgarts na primeira aeronave";
+		mes "conseguir este livro no dia em que foi lançado, mas os livros estavam esgotados. ";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "...............";
+		mes "Eu... entendo...";
+		emotion ET_SWEAT, playerattached();
+		next;
+		mes "[Oliver Hilpert]";
+		mes "Hum...";
+		mes "Se você realmente não gosta desse livro, por que não o vende para mim?";
+		next;
+		mes "[Oliver Hilpert]";
+		mes "Como eu disse antes, é algo que estou disposto a cruzar continentes para conseguir. ";
+		mes "Quero muito comprar seu livro!";
+		next;
+		switch(select("Vender: não venda")) {
+		case 1:
+			mes "[Oliver Hilpert]";
+			mes "Uau, obrigado!";
+			next;
+			mes "[Oliver Hilpert]";
+			mes "Hum... Ainda não recebi meu adiantamento de publicação, mas você se importa em aceitar isso?";
+			next;
+			break;
+		case 2:
+			mes "[Oliver Hilpert]";
+			mes "Ok, eu entendo...";
+			emotion ET_CRY;
+			set barmunt_crow,13;
+			close2;
+			cutin "",255;
+			end;
+		}
+		mes "[Oliver Hilpert]";
+		mes "Ainda não tive oportunidade de abri-lo, mas meu editor disse que tem algo muito raro dentro. ";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Haha, obrigado.";
+		mes "Você sabe, em Marrocos... Ahchoo! ";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Ganhei esse livro dele de presente. ";
+		next;
+		mes "[Oliver Hilpert]";
+		mes "Ah, muito obrigado por informações tão valiosas!";
+		next;
+		mes "[Oliver Hilpert]";
+		mes "Uau! ";
+		next;
+		mes "[Oliver Hilpert]";
+		mes "Espero que você também goste do meu próximo livro. ";
+		cutin "oliver_smile",255;
+		next;
+		mes "^660000Ele começou a correr como uma galinha com a cabeça decepada. ";
+		mes "No início, ele parecia muito bobo, mas agora ele parece um homem que leva muito a sério sua escrita.^000000";
+		next;
+		mes "^660000Você estava prestes a sair quando encontrou um pedaço de papel no chão.^000000";
+		next;
+		mes "^660000O pedaço de papel está coberto de rabiscos e tem o rótulo <O Corvo do Destino> no topo. ";
+		next;
+		mes "^3131FFArma antiga = Algum tipo de fonte de energia^000000";
+		mes "^3131FFSeclusão - Carta de uma discípula^000000";
+		mes "^3131FFA madrasta = Amante de uma vida passada?!^000000";
+		close2;
+		specialeffect2 EF_ENHANCE;
+		delitem 7795,1; //Mami_Photo_Album
+		set barmunt_crow,14;
+		getitem 7796,1; //Author_Autograph
+		getitem 7797,1; //Author_Memo
+		getitem 617,1; //Old_Violet_Box
+		warp "que_ba",270,270;
+		cutin "",255;
+		end;
+	}
+	else {
+		mes "^660000A capa do livro foi seriamente danificada, considerando a data de publicação recente. ";
+		close;
+	}
+}
+
+que_ba,247,33,0	script	#bpast_1_1	-1,1,1,{
+OnTouch:
+	if (barmunt_crow < 4) {
+		warp "ama_dun03",119,110;
+	}
+	else {
+		sc_end SC_Blind;
+		mes "[???]";
+		mes "Waaaaah!";
+		next;
+		mes "^660000Assustado por um grito terrível, você recuperou a consciência. ";
+		next;
+		mes "^660000Você se esforçou para ficar de pé e seguiu o som do grito até um prédio antigo e abandonado.^000000";
+		next;
+		mes "^660000O prédio antigo, enorme e um tanto intimidador expelia uma fumaça vermelho-escura pelas janelas quebradas e abertas.^000000";
+		close;
+	}
+}
+
+que_ba,257,39,3	script	Female Researcher#bpast	744,{
+	if (barmunt_crow < 4) {
+		warp "ama_dun03",119,110;
+	}
+	else if (barmunt_crow == 4) {
+		mes "^660000Ao tentar lembrar o que aconteceu, você encontra uma mulher que passa por você. ";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Ah! ";
+		mes "Ei, onde estou...?";
+		specialeffect2 EF_VENOMDUST;
+		next;
+		mes "- Pzzzz -";
+		specialeffect EF_CLOAKING;
+		next;
+		mes "^660000Surpreendentemente, seu braço passou pelo corpo dela.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "...Onde diabos estou?";
+		close;
+	}
+	else {
+		warp "yuno_in04",100,3;
+	}
+	end;
+}
+
+que_ba,265,34,0	warp	#bpast_1to2	1,1,que_ba,156,37
+
+que_ba,176,43,7	script	Researcher#bpast_2_1	402,{
+	specialeffect EF_CLOAKING;
+	mes "[Investigador]";
+	mes "Fogo!";
+	mes "Todos, movam-se, movam-se!";
+	close;
+}
+
+que_ba,181,14,7	script	Researcher#bpast_2_2	865,{
+	specialeffect EF_CLOAKING;
+	mes "[Investigador]";
+	mes "COF cof!";
+	mes "Argh... não consigo respirar... tenho que sair...";
+	close;
+}
+
+que_ba,183,25,0	warp	#bpast_2to3_1	1,1,que_ba,72,25
+que_ba,183,52,0	warp	#bpast_2to3_2	1,1,que_ba,72,51
+
+que_ba,102,56,0	script	#3room_barmunt	-1,3,3,{
+OnTouch:
+	if (barmunt_crow < 4) {
+		warp "yuno_in04",100,3;
+	}
+	else {
+		mes "^660000Você caminhou pelo corredor envolto em chamas e terminou em uma sala que estava prestes a desabar, assim como qualquer outro lugar neste lugar.^000000";
+		next;
+		mes "^660000Você não conseguia ver claramente o que havia dentro da sala por causa de toda a fumaça, mas sabia que havia algo ali.^000000";
+		next;
+		mes "^660000Você semicerrou os olhos e ouviu. ";
+		next;
+		mes "[Fêmea]";
+		mes "Tosse! ";
+		mes "Malditos humanos... Tosse, tosse!";
+		next;
+		mes "^660000Sua tosse piorou à medida que o rugido das chamas ficava mais forte.^000000";
+		next;
+		mes "[Macho]";
+		mes "Eles fugiram e nos deixaram para trás para morrer!";
+		next;
+		mes "[Fêmea]";
+		mes "...Vamos morrer?";
+		next;
+		mes "[Macho]";
+		mes "Morrer? ";
+		mes "^3131FF'Eva'^000000, não vamos morrer... Para começar, nunca estivemos exatamente vivos.";
+		next;
+		mes "- Desmoronando -";
+		next;
+		mes "[Macho]";
+		mes "Argh!";
+		next;
+		mes "^660000A única saída estava bloqueada por barras de aço; ";
+		next;
+		mes "^660000A silhueta masculina rapidamente se aproximou da parede e começou a cavar no canto desmoronado.^000000";
+		next;
+		mes "[Macho]";
+		mes "...Está feito!";
+		next;
+		mes "[Macho]";
+		mes "Vamos, Eva!";
+		next;
+		mes "[Eva]";
+		mes "Espere, temos que levar as crianças conosco.";
+		next;
+		mes "^660000A silhueta feminina chamada Eva se aproximou dos tubos de ensaio enfileirados contra a parede.^000000";
+		next;
+		mes "[Macho]";
+		mes "Eva!! ";
+		if (barmunt_crow == 4) {
+			set barmunt_crow,5;
+		}
+		sc_start SC_Blind,600000,0,10000;
+		close2;
+		warp "que_ba",53,232;
+		end;
+	}
+	end;
+}
+
+que_ba,104,55,3	script	Grotesque Woman#eva1	980,{
+	specialeffect EF_CLOAKING;
+	end;
+}
+
+que_ba,99,51,7	script	Grotesque Man#zid1	999,{
+	specialeffect EF_CLOAKING;
+	end;
+}
+
+que_ba,53,232,0	script	#garas_f_yume	139,1,1,{
+OnTouch:
+	if (barmunt_crow == 5) {
+		//GetHEALTHSTATE VAR_HEALTHSTATENORMAL 0
+		mes "^660000De repente, um flash de luz atingiu seus olhos. ";
+		next;
+		mes "^660000E você não está sozinho: agora você pode ver claramente o homem e a mulher que escaparam do laboratório.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Hum...";
+		next;
+		mes "[Homem Grotesco]";
+		mes "Para onde devemos ir?";
+		mes "Ninguém vai nos receber... Parecemos monstros!";
+		next;
+		mes "[Eva]";
+		mes "...";
+		mes "Conheço uma caverna escondida no norte.";
+		mes "Podemos ficar lá por um tempo.";
+		next;
+		mes "^660000Eles pareciam completamente alheios à sua presença e seguiram para o norte.^000000";
+		next;
+		mes "^660000Você estava olhando para as costas deles quando eles saíram e então percebeu que estava segurando o livro que estava lendo. ";
+		set barmunt_crow,6;
+		specialeffect2 EF_FLASHER;
+		close2;
+		warp "yuno_in04",100,3;
+	}
+	else {
+		warp "yuno_in04",100,3;
+	}
+	end;
+}
+
+que_ba,50,238,1	script	Grotesque Woman#eva2	980,{
+	specialeffect EF_CLOAKING;
+	end;
+}
+
+que_ba,48,227,7	script	Grotesque Man#zid2	999,{
+	specialeffect EF_CLOAKING;
+	end;
+}
+
+que_ba,264,186,0	script	#barmut_room1	139,2,2,{
+OnTouch:
+	if (barmunt_crow == 11) {
+		mes "^660000Você acorda e olha ao seu redor. ";
+		next;
+		mes "^660000De repente, você sente uma dor aguda no peito, como se alguém estivesse apertando seu coração.^000000";
+		next;
+		mes "^660000Esta mansão parece muito elegante e cara, mas está em chamas, assim como o laboratório do seu primeiro sonho.^000000";
+		next;
+		mes "^660000Você está tendo problemas para pensar por causa da dor no peito e do incêndio, mas sabe que esta mansão não durará muito. ";
+		next;
+		mes "^660000Ele não parecia se importar com a possibilidade de morrer junto com a mansão e falava lentamente, em voz baixa e triste.^000000";
+		next;
+		mes "[Homem misterioso]";
+		mes ".....................";
+		mes "Afinal, Deus brincou comigo...";
+		mes "Este foi o plano dele o tempo todo...";
+		mes "Até meus melhores amigos eram seus fantoches...";
+		next;
+		mes "[Homem misterioso]";
+		mes "Eu me ressinto fortemente do meu destino...";
+		mes "Mas estou pronto para aceitar o fim... De tudo...";
+		next;
+		mes "^660000Ele não conseguiu terminar suas palavras antes que as chamas o engolissem. ";
+		specialeffect EF_METEORSTORM;
+		set barmunt_crow,12;
+		close2;
+		warp "yuno_in04",108,57;
+	}
+	else {
+		warp "yuno_in04",108,57;
+	}
+	end;
+}
+
+que_ba,270,181,3	script	#barmunt_fire	755,{
+	end;
+}
+
+que_ba,270,270,0	script	#barmunt_living	139,1,1,{
+OnTouch:
+	mes "..................";
+	mes "..................";
+	mes "..................";
+	mes "..................";
+	next;
+	mes "[Homem misterioso]";
+	mes "..................";
+	mes "..................";
+	mes "..................";
+	mes "E...Eva, não!";
+	next;
+	mes "[Homem misterioso]";
+	mes "Foi um sonho?";
+	mes "..................";
+	mes "...Nossa, isso foi estranho.";
+	next;
+	mes "[Homem misterioso]";
+	mes "A mãe era... Ela era uma humana normal.";
+	mes "Eu estava ao lado dela?";
+	mes "..................";
+	next;
+	mes "^660000Ele murmurou para si mesmo e penteou o cabelo suado para trás com a mão trêmula.^000000";
+	next;
+	mes "["+ strcharinfo(0) +"]";
+	mes "Um sonho novamente.";
+	mes "Acho que ele não será capaz de me ver ou ouvir, assim como os outros.";
+	next;
+	mes "^660000Você baixa a guarda e olha para ele.";
+	mes "De repente, seu rosto se distorceu de raiva quando ele olhou de volta para você.^000000";
+	next;
+	mes "[Homem misterioso]";
+	mes "Como diabos você me encontrou?!";
+	next;
+	mes "["+ strcharinfo(0) +"]";
+	mes "... Uau! ";
+	next;
+	enablenpc "#barmut_onna";
+	mes "[Mulher Misteriosa]";
+	mes "Você não precisa ficar tão bravo comigo, senhor.";
+	next;
+	mes "^660000Assim que você ouviu a voz dela,";
+	mes "você se virou e encontrou uma mulher parada ali.^000000";
+	next;
+	mes "[Mulher Misteriosa]";
+	mes "Estava quase pronto, mas então você quebrou todos eles - até ^FF00FFBEEP^000000 e ^FF00FFBEEP^000000 - e se escondeu aqui.";
+	next;
+	mes "[Homem misterioso]";
+	mes "Eles não deveriam existir neste mundo!";
+	next;
+	mes "[Mulher Misteriosa]";
+	mes "A decisão é dele. ";
+	next;
+	mes "[Homem misterioso]";
+	mes "Cale-se!";
+	next;
+	mes "^660000O homem furioso desembainhou uma espada e apontou para ela. ";
+	disablenpc "#barmut_onna";
+	specialeffect EF_BAT;
+	next;
+	mes "[Ecoando Voz]";
+	mes "Você está preso ao seu destino, não importa o quanto tente escapar...";
+	soundeffect "loli_ruri_stand.wav",0;
+	next;
+	mes "..................";
+	mes "..................";
+	mes "..................";
+	mes "..................";
+	next;
+	mes "..................";
+	mes "..................";
+	mes "..................";
+	mes "..................";
+	close2;
+	warp "yuno_in04",165,122;
+	end;
+}
+
+que_ba,263,276,3	script	#barmut_room2	755,{
+	end;
+}
+
+que_ba,266,268,3	script	#barmut_onna	982,{
+OnInit:
+	disablenpc "#barmut_onna";
+	end;
+}
+
+cave,82,97,3	script	Cave Settler#g1	996,3,3,{
+	if (barmunt_crow == 8) {
+		mes "[Colonizador da Caverna]";
+		mes "Nenhum estranho é permitido além deste ponto.";
+		next;
+		switch(select("Dê um passo para trás.:Não, me escute!")) {
+		case 1:
+			mes "[Colonizador da Caverna]";
+			mes "Hah, eu sabia que você teria medo de mim!";
+			close2;
+			warp "cave",81,92;
+			end;
+		case 2:
+			mes "["+ strcharinfo(0) +"]";
+			mes "Ah... Ah!";
+			mes "'Eu não sou como os outros estranhos... Ahchoo!";
+			mes "Eu tenho um objetivo a alcançar aqui... Ahchoo!";
+			specialeffect2 EF_VENOMDUST;
+			next;
+			mes "^660000Embora você esteja um pouco intimidado por esse guarda e seus espirros definitivamente não estejam ajudando, você continua.^000000";
+			next;
+			mes "["+ strcharinfo(0) +"]";
+			mes "Estou aqui para encontrar alguém!";
+			input .@input$;
+			mes "O nome dela é ^FF0000"+.@input$+"^000000!";
+			next;
+			if (compare(.@input$,"Eva") == 0) {
+				mes "[Colonizador da Caverna]";
+				mes "Você está brincando comigo? ";
+				close2;
+				warp "cave",81,92;
+				end;
+			}
+			else {
+				mes "[Colonizador da Caverna]";
+				mes "............!!!!";
+				next;
+				mes "[Colonizador da Caverna]";
+				mes "Você acabou de dizer Eva?";
+				mes "Hum...";
+				mes "Espere aqui.";
+				next;
+				emotion ET_COMEON;
+				mes "[Colonizador da Caverna]";
+				mes "Olá, Jaeda!";
+				enablenpc "Jaeda#garas1";
+				next;
+				mes "[Colonizador da Caverna]";
+				mes "Suba as escadas e diga a Eva que ela tem uma visita.";
+				disablenpc "Jaeda#garas1";
+				next;
+				mes "^660000Surpreendentemente, ele parecia saber quem é Eva. ";
+				next;
+				mes "^660000Você pode sentir a excitação e a expectativa dentro de você. ";
+				enablenpc "Jaeda#garas1";
+				next;
+				mes "[Colonizador da Caverna]";
+				mes "Hum... Sim? ";
+				next;
+				disablenpc "Jaeda#garas1";
+				mes "[Colonizador da Caverna]";
+				mes "Ei, você pode passar. ";
+				next;
+				mes "^660000O homem de aparência severa examinou você e depois deu um passo para o lado, permitindo que você passasse.";
+				mes "Você cerrou os punhos de nervosismo e começou a subir a escada escura.^000000";
+				set barmunt_crow,9;
+				close2;
+				warp "cave",82,105;
+				end;
+			}
+		}
+	}
+	else if (barmunt_crow < 8) {
+		mes "[Colonizador da Caverna]";
+		mes "Nenhum estranho é permitido além deste ponto.";
+		next;
+		mes "^660000Sua voz é tão severa e intimidadora quanto sua aparência.^000000";
+		close2;
+		warp "cave",81,92;
+		end;
+	}
+	else {
+		mes "[Colonizador da Caverna]";
+		mes "Você ainda tem negócios com Zid?";
+		mes "É melhor você terminar isso rapidamente porque não gostamos de estranhos correndo pela nossa aldeia.";
+		close;
+	}
+
+OnTouch:
+	if (barmunt_crow == 8) {
+		mes "[Colonizador da Caverna]";
+		mes "Nenhum estranho é permitido além deste ponto.";
+		next;
+		switch(select("Dê um passo para trás.:Não, me escute!")) {
+		case 1:
+			mes "[Colonizador da Caverna]";
+			mes "Hah, eu sabia que você teria medo de mim!";
+			close2;
+			warp "cave",81,92;
+			end;
+		case 2:
+			mes "["+ strcharinfo(0) +"]";
+			mes "Ah... Ah!";
+			mes "'Eu não sou como os outros estranhos... Ahchoo!";
+			mes "Eu tenho um objetivo a alcançar aqui... Ahchoo!";
+			specialeffect2 EF_VENOMDUST;
+			next;
+			mes "^660000Embora você esteja um pouco intimidado por esse guarda e seus espirros definitivamente não estejam ajudando, você continua.^000000";
+			next;
+			mes "["+ strcharinfo(0) +"]";
+			mes "Estou aqui para encontrar alguém!";
+			input .@input$;
+			mes "O nome dela é ^FF0000"+.@input$+"^000000!";
+			next;
+			if (compare(.@input$,"Eva") == 0) {
+				mes "[Colonizador da Caverna]";
+				mes "Você está brincando comigo? ";
+				close2;
+				warp "cave",81,92;
+				end;
+			}
+			else {
+				mes "[Colonizador da Caverna]";
+				mes "............!!!!";
+				next;
+				mes "[Colonizador da Caverna]";
+				mes "Você acabou de dizer Eva?";
+				mes "Hum...";
+				mes "Espere aqui.";
+				next;
+				emotion ET_COMEON;
+				mes "[Colonizador da Caverna]";
+				mes "Olá, Jaeda!";
+				enablenpc "Jaeda#garas1";
+				next;
+				mes "[Colonizador da Caverna]";
+				mes "Suba as escadas e diga a Eva que ela tem uma visita.";
+				disablenpc "Jaeda#garas1";
+				next;
+				mes "^660000Surpreendentemente, ele parecia saber quem é Eva. ";
+				next;
+				mes "^660000Você pode sentir a excitação e a expectativa dentro de você. ";
+				enablenpc "Jaeda#garas1";
+				next;
+				mes "[Colonizador da Caverna]";
+				mes "Hum... Sim? ";
+				next;
+				disablenpc "Jaeda#garas1";
+				mes "[Colonizador da Caverna]";
+				mes "Ei, você pode passar. ";
+				next;
+				mes "^660000O homem de aparência severa examinou você e depois deu um passo para o lado, permitindo que você passasse.";
+				mes "Você cerrou os punhos de nervosismo e começou a subir a escada escura.^000000";
+				set barmunt_crow,9;
+				close2;
+				warp "cave",82,105;
+				end;
+			}
+		}
+	}
+	else if (barmunt_crow < 8) {
+		mes "[Colonizador da Caverna]";
+		mes "Nenhum estranho é permitido além deste ponto.";
+		next;
+		mes "^660000Sua voz é tão severa e intimidadora quanto sua aparência.^000000";
+		close2;
+		warp "cave",81,92;
+	}
+	end;
+}
+
+cave,85,101,3	script	Jaeda#garas1	401,{
+OnInit:
+	disablenpc "Jaeda#garas1";
+	end;
+}
+
+ein_fild01,28,261,0	warp	cave_in1	1,1,cave,97,24
+cave,97,21,0	warp	case_out1	1,1,ein_fild01,28,255
+
+cave,86,167,0	warp	zid_in	1,1,cave,77,185
+cave,79,180,0	warp	zid_out	3,3,cave,90,162
+
+cave,22,186,3	script	Monsterous Man#zid	999,{
+	if (barmunt_crow == 9) {
+		mes "^660000Você está olhando para um homem que parece tão horrível quanto um monstro.";
+		mes "Ele era o homem com Eva que você viu em seu sonho. ";
+		next;
+		mes "(WHIZZ)";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Argh...";
+		next;
+		mes "^660000A dor no seu peito de repente bate em você...";
+		mes "E seus pulmões parecem muito mais fracos por causa de todas as tosses e espirros que você tem sofrido ultimamente.^000000";
+		next;
+		mes "^660000Esfregando o peito para aliviar a dor, você continua olhando para ele com surpresa.^000000";
+		next;
+		mes "^660000Felizmente, ele fala com você primeiro.^000000";
+		next;
+		mes "[Homem Monstruoso]";
+		mes "Minha aparência te incomoda?";
+		next;
+		mes "[Homem Monstruoso]";
+		mes "Então, você conhece Eva... Hein?";
+		next;
+		mes "^660000Ele parecia fraco, como se não tivesse energia suficiente para falar.^000000";
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Hum... Ah!";
+		specialeffect2 EF_VENOMDUST;
+		next;
+		mes "["+ strcharinfo(0) +"]";
+		mes "Você conhece um homem chamado Oliver Hilpert?";
+		next;
+		mes "[Homem Monstruoso]";
+		mes "Oliver? ";
+		mes "O que ele tem a ver com alguma coisa?";
+		next;
+		mes "^660000Você deu a ele o romance de Oliver, <O Corvo do Destino>, explicando acontecimentos estranhos que aconteceram com você.^000000";
+		next;
+		mes "....................";
+		next;
+		mes "....................";
+		mes "....................";
+		next;
+		mes "....................";
+		mes "....................";
+		mes "....................";
+		next;
+		mes "^660000Ele semicerrou os olhos com curiosidade e folheou algumas páginas do livro em silêncio. ";
+		next;
+		mes "[Homem Monstruoso]";
+		mes "Estou surpreso que a história deste livro seja... É semelhante à história da minha vida. ";
+		next;
+		while(1) {
+			mes "[Zid]";
+			mes "Meu nome é Zid. ";
+			next;
+			switch(select("Sobre a Cave Village:Sobre ele mesmo:Sobre Eva:Fim da conversa")) {
+			case 1:
+				mes "[Zid]";
+				mes "Você notou que nossos aldeões parecem diferentes?";
+				next;
+				mes "[Zid]";
+				mes "A curiosidade humana levou a grandes conquistas e contribuições, mas chega um ponto em que o conhecimento pode ser demais para lidar.";
+				mes "Todos nesta aldeia são fugitivos... Somos vítimas do que acontece quando as pessoas brincam de Deus, procuram conhecimentos proibidos e brincam com a vida.";
+				next;
+				mes "[Zid]";
+				mes "Não temos escolha a não ser nos esconder aqui porque eles são poderosos demais para que possamos falar contra eles... E sabemos que isso não está certo.";
+				next;
+				break;
+			case 2:
+				mes "[Zid]";
+				mes "Já fui um homem normal, mas a pobreza me fez perder o orgulho, a autoestima e a identidade.";
+				mes "Eu estava farto de me preocupar com comida todos os dias e me ofereci para ser cobaia em algum experimento.";
+				mes "Eu não precisava mais me preocupar em morrer de fome, mas minha vida como ‘humano’ terminou naquele dia.";
+				next;
+				mes "[Zid]";
+				mes "No início, Eva e eu éramos os únicos aqui, mas outros se juntaram a nós e formamos um pequeno povoado.";
+				mes "Agora sou o aldeão mais velho e sinto a pesada responsabilidade de proteger os outros.";
+				next;
+				break;
+			case 3:
+				mes "[Zid]";
+				mes "O laboratório onde Eva e eu estávamos sendo testados não era comum.";
+				mes "It was built to test and duplicate God's power of creation.";
+				next;
+				mes "[Zid]";
+				mes "Eles não conseguiram atingir seu objetivo e causaram uma série de eventos infelizes";
+				mes "tentando manipular materiais que eram difíceis até mesmo de examinar.";
+				mes "Eles acreditavam que sua pesquisa abriria um mundo totalmente novo para a humanidade...";
+				next;
+				mes "[Zid]";
+				mes "Eva era uma delas... Embora ela não fosse gentil, ela pelo menos simpatizou comigo porque eu me vendi para sair da pobreza.";
+				next;
+				mes "[Zid]";
+				mes "Ela tinha um homem que a amava tanto...";
+				mes "O nome dele era Sefakiest e ele sempre apoiou a pesquisa dela.";
+				next;
+				mes "[Zid]";
+				mes "Ele... se matou em desespero depois que Eva se transformou em uma mutante como eu... Ela queria que ele a usasse como cobaia.";
+				mes "Ninguém esperava que ele acabasse com a vida tão facilmente quando era o pesquisador mais entusiasmado de todos.";
+				next;
+				mes "[Zid]";
+				mes "Então alguém colocou fogo no laboratório. ";
+				next;
+				mes "[Zid]";
+				mes "Eva e eu conseguimos escapar antes que pudéssemos ser encontrados e então nos estabelecemos aqui. ";
+				next;
+				mes "[Zid]";
+				mes "Eva conseguiu salvar uma das cobaias, que na verdade cresceu e se tornou um ser humano de aparência normal, mas na verdade ele era perfeito.";
+				next;
+				mes "[Zid]";
+				mes "Aquele menino fugiu quando tinha uns 10 anos. Acho que ele atingiu a puberdade... Você conhece meninos e meninas dessa idade.";
+				next;
+				mes "[Zid]";
+				mes "Eva não conseguia esquecê-lo. ";
+				mes "Encontrei ^3131FFuma pena preta gigante^000000 no quarto dela depois que ela saiu.";
+				next;
+				mes "[Zid]";
+				mes "Não sei por que, mas... acredito que Eva não existe mais...";
+				next;
+				break;
+			case 4:
+				set .@exitloop,1;
+				break;
+			}
+			if (.@exitloop) break;
+		}
+		mes "[Zid]";
+		mes "Hum...";
+		mes "Talvez Oliver seja filho de Eva...";
+		next;
+		mes "[Zid]";
+		mes "Não, ele é muito jovem para ser ele porque aconteceu há muito tempo...";
+		next;
+		mes "[Zid]";
+		mes ".........................";
+		next;
+		mes "[Zid]";
+		mes "Acho que é apenas uma lembrança antiga... Por que eu deveria me importar? ";
+		next;
+		mes "^660000Zid parou de falar e abaixou a cabeça. ";
+		next;
+		mes "[Zid]";
+		mes "Agora estou velho demais para me lembrar de Eva ou do menino.";
+		mes "Meu propósito na vida é proteger os outros aldeões. ";
+		next;
+		mes "[Zid]";
+		mes "O livro foi interessante, mas tenho certeza que aquele cara, Oliver, passou pela mesma coisa que aconteceu com você.";
+		next;
+		mes "[Zid]";
+		mes "Mesmo que ele tenha algo a ver com Eva, é tarde demais para fazer qualquer coisa por ela.";
+		next;
+		mes "[Zid]";
+		mes "Pense nisso: quem pode nos salvar desta caverna escura, mesmo que Eva ou aquele menino ainda estejam vivos? ";
+		next;
+		mes "[Zid]";
+		mes ".................................";
+		next;
+		mes "[Zid]";
+		mes "Sinto muito por não ter ajudado muito.";
+		mes "É melhor você acordar do sonho e seguir em frente com sua vida.";
+		mes "...Infelizmente tudo não passa de um sonho...";
+		next;
+		mes "[Zid]";
+		mes "Se você realmente sente pena de nós, por favor, não deixe que outras pessoas saibam onde estamos.";
+		next;
+		mes "^660000Zid virou a cabeça para longe de você. ";
+		next;
+		mes "^660000Frustrado com a conversa com Zid, você decidiu voltar para Marrocos e esquecer tudo.^000000";
+		set barmunt_crow,10;
+		changequest 2066,2067;
+		close;
+	}
+	else if (barmunt_crow == 10) {
+		mes "Zid parecia ter perdido o interesse pelo livro.";
+		mes "Você decidiu entregar o livro a Benjamin de Marrocos.";
+		close;
+	}
+	else {
+		mes "[Homem Monstruoso]";
+		mes "Não olhe para a minha cara...";
+		close;
+	}
+}
+
+cave,91,43,3	script	Cave Settler#f_cave1	870,{
+	mes "[Colonizador da Caverna]";
+	mes "(Assustado)";
+	next;
+	mes "[Colonizador da Caverna]";
+	mes "Murmurar... Murmura...";
+	close;
+}
+
+cave,72,71,5	script	Cave Settler#m_cave2	981,{
+	mes "[Colonizador da Caverna]";
+	mes "Eh...";
+	mes "Você quer isso?";
+	next;
+	mes "- Ela te mostrou Monster's Feed. ";
+	close;
+}
+
+cave,134,62,1	script	Cave Settler#m_cave3	981,{
+	mes "[Colonizador da Caverna]";
+	mes "Acessório!";
+	mes "Meu lindo acessório!";
+	mes "Uau!";
+	mes "Meu acessório sumiu!";
+	close;
+}
+
+cave,113,74,5	script	Cave Settler#f_cave4	401,{
+	mes "[Colonizador da Caverna]";
+	mes "Ninguém nesta aldeia lhe dá as boas-vindas. ";
+	next;
+	mes "[Colonizador da Caverna]";
+	mes "Seus olhos são tão tentadores... eu quero comê-los! ";
+	close;
+}
+
+cave,76,39,5	shop	Cave Girl#f_cave5	62,712:-1
+
+cave,108,34,3	script	Cave Settler#f_cave6	979,{
+	mes "[Colonizador da Caverna]";
+	mes "Hoho, ele realmente disse isso ontem...?";
+	mes "Uau!";
+	next;
+	mes "[Colonizador da Caverna]";
+	mes "É um humano...";
+	next;
+	mes "(Sussurrar)";
+	mes "(Sussurrar)";
+	close;
+}
+
+cave,105,32,7	script	Cave Settler#f_cave7	979,{
+	mes "[Colonizador da Caverna]";
+	mes "Hoho, ele realmente disse isso ontem...?";
+	mes "Uau!";
+	next;
+	mes "[Colonizador da Caverna]";
+	mes "É um humano...";
+	next;
+	mes "(Sussurrar)";
+	mes "(Sussurrar)";
+	close;
+}
+

@@ -1,0 +1,117 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+comodo,322,178,4	script	Guia de Comodo#cmd::CmdGuia	700,{
+	callfunc "F_CmdGuia","Native Kokomo";
+}
+
+comodo,176,350,4	script	Guia de Comodo#2cmd	700,{
+	callfunc "F_CmdGuia","Native Nutcoco";
+}
+
+comodo,37,219,4	script	Guia#2cmd	700,{
+	callfunc "F_CmdGuia","Native Papaya";
+}
+
+function	script	F_CmdGuia	{
+	mes "["+getarg(0)+"]";
+	mes "Bem-vindo ao Comodo, o";
+	mes "cidade dos sonhos e da fantasia,";
+	mes "onde a vida noturna nunca acaba!";
+	mes "Conheço esta área muito bem,";
+	mes "então me avise se precisar";
+	mes "direções em qualquer lugar aqui.";
+	next;
+	switch(select("Cassino:Palco de dança Hula ^3355FF(Mudança de emprego de dançarino)^000000:Loja de armas e armaduras:Loja de ferramentas:Loja de turistas:Kafra Co. Filial ocidental:Casa do chefe:Pub:Acampamento:Fim da conversa")) {
+	case 1:
+		viewpoint 1,140,98,0,0xFF6633;
+		mes "Consulte a marca cruzada,";
+		mes "^FF6633 ^000000, no seu Minimapa para encontrar o";
+		mes "Cassino, um paraíso de descanso para";
+		mes "viajantes cansados ??e o coração";
+		mes "da vida noturna de Comodo.";
+		close;
+	case 2:
+		viewpoint 1,188,168,1,0x0000FF;
+		mes "Consulte a marca cruzada,";
+		mes "^0000FF ^000000, no seu Minimapa para encontrar o";
+		mes "Hula Dance Stage, o lugar";
+		mes "onde as arqueiras podem";
+		mes "mudar de emprego para dançarinos.";
+		close;
+	case 3:
+		viewpoint 1,266,70,2,0x00FFFF;
+		mes "Consulte a marca cruzada,";
+		mes "^00FFFF ^000000, no seu Minimapa para encontrar o";
+		mes "Loja de armas e armaduras. ";
+		mes "certifique-se de verificar essa loja para";
+		mes "quaisquer itens especiais que sejam";
+		mes "exclusivo para Comodo!";
+		close;
+	case 4:
+		viewpoint 1,86,128,3,0x515151;
+		mes "Consulte a marca cruzada,";
+		mes "^515151 ^000000, no seu minimapa para encontrar o";
+		mes "Loja de ferramentas. ";
+		mes "lá antes, então eu sugiro";
+		mes "você confere e estoca";
+		mes "em ferramentas que você pode precisar mais tarde.";
+		close;
+	case 5:
+		viewpoint 1,298,124,4,0x3355FF;
+		mes "Consulte a marca cruzada,";
+		mes "^3355FF ^000000, no seu minimapa para encontrar o";
+		mes "Loja Turística onde você pode";
+		mes "compre presentes que só podem ser encontrados na região de Comodo ~";
+		close;
+	case 6:
+		viewpoint 1,136,202,5,0xFF5555;
+		mes "Consulte a marca cruzada,";
+		mes "^FF5555 ^000000, no seu Minimapa para encontrar o";
+		mes "Ramo ocidental do Kafra";
+		mes "Corporação. ";
+		mes "serviços muito importantes que você pode querer verificar mais tarde.";
+		close;
+	case 7:
+		viewpoint 1,114,294,5,0xFF5555;
+		mes "Consulte a marca cruzada,";
+		mes "^FF5555 ^000000, no seu Minimapa para encontrar o";
+		mes "Casa do Chefe. ";
+		mes "visitá-lo, e ele geralmente está";
+		mes "feliz por receber visitantes.";
+		close;
+	case 8:
+		viewpoint 1,166,298,5,0xFF5555;
+		mes "Consulte a marca cruzada,";
+		mes "^FF5555 ^000000, no seu Minimapa para encontrar o";
+		mes "Bar. ";
+		mes "turistas, relaxar e socializar";
+		mes "em um ambiente agradável ~";
+		close;
+	case 9:
+		viewpoint 1,210,308,5,0xFF5555;
+		mes "Consulte a marca cruzada,";
+		mes "^FF5555 ^000000, no seu Minimapa para encontrar o";
+		mes "Área de camping. ";
+		mes "família e amigos e aproveite";
+		mes "o churrasco especial de";
+		mes "Área de acampamento de Comodo ~";
+		close;
+	case 10:
+		mes "["+getarg(0)+"]";
+		mes "Na verdade, sempre parece";
+		mes "como a noite em Comodo";
+		mes "porque é construído em um enorme";
+		mes "caverna. ";
+		mes "aqui, mas a escuridão aqui é";
+		mes "mais emocionante do que sombrio ~";
+		close;
+	}
+}
+

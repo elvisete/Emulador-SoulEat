@@ -1,0 +1,157 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+alde_alche,24,188,3	script	Revendedor da Guilda	740,{
+	if (checkweight(1201,1) == 0) {
+		mes "- Espere um minuto! -";
+		mes "- Atualmente você está carregando -";
+		mes "- muitos itens consigo. -";
+		mes "- Por favor, volte novamente -";
+		mes "- depois de armazenar alguns itens no depósito do Kafra. -";
+		close;
+	}
+	mes "[Gever Al Sharp]";
+	mes "Bem-vindo à";
+	mes "União de Alquimistas.";
+	mes "Como posso ajudar você hoje?";
+	next;
+	switch(select("Comprar materiais.:Comprar um manual de produção.:Sair.")) {
+	case 1:
+		mes "[Gever Al Sharp]";
+		mes "O que você gostaria?";
+		next;
+		if (select("Medicine Bowl - 8 Zeny:Cancelar.") == 1) {
+			mes "[Gever Al Sharp]";
+			mes "Quantos você quer?";
+			mes "Digite '0' se quiser cancelar.";
+			next;
+			while(1) {
+				input .@input,0,2001;
+				if (.@input == 0) {
+					mes "[Gever Al Sharp]";
+					mes "O acordo foi cancelado.";
+					mes "Volte na próxima vez.";
+					close;
+				}
+				else if (.@input < 1 || .@input > 2000) {
+					mes "[Gever Al Sharp]";
+					mes "O número deve";
+					mes "ser inferior a 2000.";
+					next;
+				}
+				else {
+					break;
+				}
+			}
+			set .@sell,.@input * 8;
+			set .@item_weight,.@input * 10;
+			if (Zeny < .@sell) {
+				mes "[Gever Al Sharp]";
+				mes "Você não tem";
+				mes "dinheiro suficiente.";
+				mes "Verifique quanto zeny";
+				mes "você tem primeiro.";
+				close;
+			}
+			if ((MaxWeight - Weight) < .@item_weight) {
+				mes "[Gever Al Sharp]";
+				mes "Não parece que";
+				mes "você pode carregar tudo.";
+				mes "Por favor, verifique o espaço";
+				mes "em seu inventário.";
+				close;
+			}
+			set Zeny, Zeny-.@sell;
+			getitem 7134,.@input; //Medicine_Bowl
+			mes "[Gever Al Sharp]";
+			mes "Obrigado.";
+			mes "Volte novamente.";
+			close;
+		}
+		mes "[Gever Al Sharp]";
+		mes "Bem, então,";
+		mes "volte quando";
+		mes "precisar comprar";
+		mes "materiais relacionados à";
+		mes "Alquimia, tudo bem?";
+		close;
+	case 2:
+		mes "[Gever Al Sharp]";
+		mes "O que você precisa?";
+		mes "Geralmente, os manuais custam 100.000 zeny. Mas há alguns manuais especiais que custarão mais.";
+		next;
+		switch(select("Guia de Criação de Poção:Guia de Criação de Álcool:Guia de Criação de Garrafa de Granada:Guia de Criação de Garrafa de Ácido:Guia de Criação de Garrafa de Planta:Guia de Criação de Garrafa de Esfera Marinha:Guia de Criação de Revestimento Brilhante:Guia de Criação de Poção Condensada:Cancelar.")) {
+		case 1:
+			callsub S_SellManual,7144,100000; //Normal_Potion_Book
+			break;
+		case 2:
+			callsub S_SellManual,7127,100000; //Alcol_Create_Book
+			break;
+		case 3:
+			callsub S_SellManual,7128,100000; //FireBottle_Create_Book
+			break;
+		case 4:
+			callsub S_SellManual,7129,100000; //Acid_Create_Book
+			break;
+		case 5:
+			callsub S_SellManual,7130,100000; //Plant_Create_Book
+			break;
+		case 6:
+			callsub S_SellManual,7131,100000; //Mine_Create_Book
+			break;
+		case 7:
+			callsub S_SellManual,7132,100000; //Coating_Create_Book
+			break;
+		case 8:
+			callsub S_SellManual,7133,240000; //Slim_Potion_Create_Book
+			break;
+		case 9:
+			mes "[Gever Al Sharp]";
+			mes "Bem, então...";
+			mes "Volte se precisar";
+			mes "comprar um";
+			mes "manual de produção.";
+			close;
+		}
+	case 3:
+		mes "[Gever Al Sharp]";
+		mes "Tudo bem então,";
+		mes "tenha um bom dia.";
+		close;
+	}
+
+S_SellManual:
+	.@item_id = getarg(0);
+	.@zeny_req = getarg(1);
+
+	if (Zeny < .@zeny_req) {
+		mes "[Gever Al Sharp]";
+		mes "Você não";
+		mes "tem zeny suficiente.";
+		mes "Verifique quanto zeny";
+		mes "você possui primeiro.";
+		close;
+	}
+	mes "[Gever Al Sharp]";
+	mes "Comprar " + getitemname(.@item_id) +"?";
+	mes "Isso custará "+ .@zeny_req +" zeny.";
+	next;
+	if (select("Comprar.:Sair.") == 1) {
+		Zeny = Zeny - .@zeny_req;
+		getitem .@item_id,1;
+		mes "[Gever Al Sharp]";
+		mes "Obrigado por";
+		mes "sua preferência.";
+		close;
+	}
+	mes "[Gever Al Sharp]";
+	mes "Volte novamente";
+	mes "da próxima vez.";
+	close;
+}

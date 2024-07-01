@@ -1,0 +1,1555 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+// Main Quest :: TutorialVer2
+//============================================================
+moc_para01,34,178,3	script	Instrutor	904,{
+	if (Class == Job_Novice) {
+		// Fall through
+	} else if (checkquest(9167) == -1) {
+	OnStartQuest:
+		if (@tutorial_restart) {
+			set .@tutorial_restart,1;
+			set @tutorial_restart,0;
+		}
+		mes "[Instrutor]";
+		mes "Ultimamente, tem sido dito que";
+		mes "eles estão desenvolvendo formas de adicionar opções";
+		mes "para colocar em soquetes ou adicionar status";
+		mes "em equipamentos que normalmente não têm.";
+		mes "Eles chamam isso de ^006400Encantamento^000000.";
+		next;
+		mes "[Instrutor]";
+		mes "Depois de ver isso sendo desenvolvido,";
+		mes "fiquei tão inspirado por isso";
+		mes "que trabalhei duro para descobrir";
+		mes "uma maneira de fazer isso e finalmente";
+		mes "criei minha própria forma de ^006400Encantar^000000!";
+		next;
+		mes "[Instrutor]";
+		mes "Mas para fazer isso";
+		mes "eu preciso de alguns materiais especiais.";
+		mes "Se você estiver de acordo...";
+		mes "Você acha que pode";
+		mes "me ajudar a reunir eles?";
+		next;
+	switch(select("Claro, posso ajudar!:Estou um pouco ocupado agora...")) {
+		case 1:
+			mes "[Instrutor]";
+			mes "No entanto, olhando para você";
+			mes "no seu estado atual me faz";
+			mes "duvidar da sua capacidade de reunir";
+			mes "os itens que preciso...";
+			next;
+			mes "[Instrutor]";
+			mes "Bem, eu suponho que se você contratar";
+			mes "um ^006400Mercenário^000000 para isso";
+			mes "então acho que posso confiar";
+			mes "em suas solicitações... certo?";
+			next;
+			mes "[Instrutor]";
+			mes "Para contratar um Mercenário,";
+			mes "procure a ^006400Guilda de Mercenários^000000";
+			mes "que fica perto da porta da frente de ^8B4513Prontera^000000.";
+			mes "Vá até o ^006400Agente de Informações^000000";
+			mes "e pergunte onde o ^006400Oficial da Guilda de Mercenários^000000";
+			mes "está localizado e eles irão te informar.";
+			next;
+			if (.@tutorial_restart) {
+				erasequest 9167;
+				erasequest 9168;
+				erasequest 9169;
+				erasequest 9170;
+				erasequest 9171;
+				erasequest 9172;
+				completequest 9173;
+				erasequest 9173;
+			}
+			mes "[Instrutor]";
+			mes "Agora... Apresse-se e contrate";
+			mes "um ^006400Mercenário^000000 e venha falar comigo!";
+			setquest 9167;
+			close;
+		case 2:
+			mes "[Instrutor]";
+			mes "Bem, já que você disse que está ocupado";
+			mes "não posso fazer nada...";
+			mes "Quando não estiver tão ocupado, estarei aqui.";
+			close;
+		}
+	} else if (checkquest(9167) == 0 || checkquest(9167) == 1) {
+		if (!getmercinfo(1)) {
+			mes "[Instrutor]";
+			mes "Você ainda não contratou um mercenário.";
+			next;
+			mes "[Instrutor]";
+			mes "Para contratar um Mercenário,";
+			mes "vá até a ^006400Guilda de Mercenários^000000";
+			mes "que fica perto da entrada de ^8B4513Prontera^000000.";
+			mes "Procure o ^006400Agente de Informações^000000";
+			mes "e pergunte onde está o ^006400Oficial da Guilda de Mercenários^000000";
+			mes "e eles vão lhe informar.";
+			next;
+			mes "[Instrutor]";
+			mes "Agora... Apresse-se e contrate";
+			mes "um ^006400Mercenário^000000 e venha falar comigo!";
+			close;
+		}
+		mes "[Instrutor]";
+		mes "Vendo você com um ^006400Mercenário^000000 definitivamente me faz confiar mais em você.";
+		next;
+		mes "[Instrutor]";
+		mes "Se um ^006400Mercenário^000000 lhe ajudar direto";
+		mes "lutando com você";
+		mes "então um ^006400Pet^000000 o ajuda indiretamente com suas";
+		mes "habilidades e aparências variadas,";
+		mes "e ele conquista seu coração.";
+		mes "Tente criar um ^006400Pet^000000 no futuro também.";
+		next;
+		mes "[Instrutor]";
+		mes "Agora, vamos ver... Para";
+		mes "fazer este ^006400Encantamento^000000 ter sucesso";
+		mes "você precisa reunir alguns materiais para mim...";
+		mes "O que eu preciso é...";
+		mes "..............";
+		next;
+		select("Acho que não ouvi claramente...");
+		mes "[Instrutor]";
+		mes "Eu realmente não gosto de repetir...";
+		mes "Se você me pedir de novo assim";
+		mes "você só vai cansar sua boca?";
+		mes "Nessas situações, abra sua ^006400Janela de Missões^000000";
+		mes "e você pode ver o que é solicitado";
+		mes "e os detalhes do meu pedido.";
+		next;
+		mes "[Instrutor]";
+		mes "Se você olhar no canto superior esquerdo";
+		mes "na área com as informações,";
+		mes "diz ^006400MISSÃO^000000";
+		mes "e se você clicar nisso";
+		mes "irá mostrar todas as informações";
+		mes "que dizem respeito ao pedido.";
+		next;
+		mes "[Instrutor]";
+		mes "Depois de verificar quais materiais";
+		mes "você precisa reunir";
+		mes "na ^006400Janela de Missões^000000,";
+		mes "venha me encontrar novamente.";
+		completequest 9167;
+		setquest 9168;
+		close;
+	} else if (checkquest(9168) == 0 || checkquest(9168) == 1) {
+		if (checkweight(607,1) == 0) {
+			if (MaxWeight - Weight < getiteminfo(607, ITEMINFO_WEIGHT)) {
+				mes "[Instrutor]";
+				mes "Você parece estar devagar com muitos itens";
+				mes "em seu inventário, te deixando pesado...";
+				mes "Será difícil atender ao meu pedido";
+				mes "quando você está carregado com toda essa tralha!";
+				mes "Vá esvaziar seu inventário e volte aqui.";
+				close;
+			} else {
+				mes "[Instrutor]";
+				mes "Parece que você tem";
+				mes "um item a mais com você...";
+				mes "Se você quiser me ajudar,";
+				mes "vai ter que guardar algumas";
+				mes "coisas e depois voltar.";
+				close;
+			}
+		}
+		mes "[Instrutor]";
+		mes "Você abriu sua ^006400Janela de Missões^000000";
+		mes "para verificar os materiais?";
+		next;
+		switch(select("Sim!:Não...:Onde está a Janela de Missões...")) {
+		case 1:
+			mes "[Instrutor]";
+			mes "Ah é? Então devo testá-lo para ver";
+			mes "se você realmente verificou?";
+			mes "Escreva qual material eu pedi para você obter.";
+			next;
+			input .@inputstr$;
+			if (.@inputstr$ == "10 Jellopy") {
+				mes "[Instrutor]";
+				mes "Bom, você sabe.";
+				mes "Agora, você se sente bastante familiarizado";
+				mes "com a ^006400Janela de Missões^000000?";
+				mes "Mas há um problema...";
+				mes "Você sabe qual material coletar,";
+				mes "mas coletá-lo não será fácil.";
+				next;
+				mes "[Instrutor]";
+				mes "Além disso, há uma coisa";
+				mes "que eu absolutamente acho que você precisa tentar.";
+				mes "E isso é...";
+				mes "o ^006400Catálogo de Vendas Prata^000000.";
+				next;
+				mes "[Instrutor]";
+				mes "O ^006400Catálogo de Vendas Prata^000000";
+				mes "pode ser obtido com";
+				mes "o ^0000FFMago do Catálogo^000000";
+				mes "que está localizado na Sede do Grupo Eden.";
+				next;
+				mes "[Instrutor]";
+				mes "Agora, vá e obtenha";
+				mes "um ^006400Catálogo de Vendas Prata^000000";
+				mes "e depois volte e fale comigo.";
+				completequest 9168;
+				setquest 9169;
+				close;
+			}
+			mes "[Instrutor]";
+			mes "Você... ainda parece";
+			mes "não saber muito sobre a";
+			mes "^006400Janela de Missões^000000.";
+			mes "Vou informá-lo novamente.";
+			next;
+			break;
+		case 2:
+			mes "[Instrutor]";
+			mes "Apressa-te e verifica para ver";
+			mes "quais materiais são necessários em";
+			mes "sua ^006400Janela de Missões^000000.";
+			close;
+		case 3:
+			break;
+		}
+		mes "[Instrutor]";
+		mes "Se você olhar no canto superior esquerdo";
+		mes "na área com as informações,";
+		mes "ele diz ^006400MISSÕES^000000";
+		mes "e se você clicar nisso";
+		mes "irá mostrar todas as informações";
+		mes "relacionadas ao pedido.";
+		next;
+		mes "[Instrutor]";
+		mes "Assim que verificar quais materiais";
+		mes "você precisa coletar da";
+		mes "^006400Janela de Missões^000000,";
+		mes "venha e falar comigo novamente.";
+		close;
+	} else if (checkquest(9169) == 0 || checkquest(9169) == 1) {
+		if (countitem(12580) == 0) {
+			mes "[Instrutor]";
+			mes "Hmm? Então eu notei que";
+			mes "você ainda não pegou um";
+			mes "^006400Catálogo de Vendas Prata^000000!";
+			next;
+			mes "[Instrutor]";
+			mes "Você pode obter o";
+			mes "^006400Catálogo de Vendas Prata^000000";
+			mes "do ^0000FFMago do Catálogo^000000";
+			mes "que está localizado na Sede do Grupo Eden.";
+			next;
+			mes "[Instrutor]";
+			mes "Então, vá e pegue o";
+			mes "^006400Catálogo de Vendas Prata^000000";
+			mes "e depois volte para falar comigo.";
+			close;
+		}
+		mes "[Instrutor]";
+		mes "Oh! Você conseguiu obter um";
+		mes "^006400Catálogo de Vendas Prata^000000!";
+		next;
+		mes "[Instrutor]";
+		mes "Isso permite que você navegue e pesquise";
+		mes "através de todas as várias lojas";
+		mes "que estão no mesmo mapa e";
+		mes "estão abertas para venda.";
+		next;
+		mes "[Instrutor]";
+		mes "Isso só custa 200 zenys.";
+		mes "E com ele você pode";
+		mes "pesquisar até 10 vezes.";
+		mes "Você pode dizer que é uma necessidade.";
+		next;
+		mes "[Instrutor]";
+		mes "Então, vá para a área que você deseja";
+		mes "e experimente o ^006400Catálogo de Vendas Prata^000000";
+		mes "e depois venha me encontrar.";
+		completequest 9169;
+		setquest 9170;
+		close;
+	} else if (checkquest(9170) == 0 || checkquest(9170) == 1) {
+		if (countitem(12580)) {
+			mes "[Instrutor]";
+			mes "Hmm... Parece que você ainda tem";
+			mes "o ^006400Catálogo de Vendas Prata^000000 em seu inventário.";
+			mes "Como... Você está dizendo que esqueceu como usar isso,";
+			mes "vou explicar para você novamente.";
+			next;
+			mes "[Instrutor]";
+			mes "Veja... o ^006400Catálogo de Vendas Prata^000000";
+			mes "permite que você navegue e pesquise";
+			mes "por todas as várias lojas";
+			mes "que estão no mesmo mapa e";
+			mes "estão abertas para venda.";
+			next;
+			mes "[Instrutor]";
+			mes "Então, vá para a área que você deseja";
+			mes "e experimente o ^006400Catálogo de Vendas Prata^000000";
+			mes "e depois venha me encontrar.";
+			close;
+		}
+		mes "[Instrutor]";
+		mes "Como você se sente depois de experimentar";
+		mes "o ^006400Catálogo de Vendas Prata^000000?";
+		mes "Parece muito mais fácil do que";
+		mes "passar por cada vendedor individual";
+		mes "e encontrar o item que você precisa, certo?";
+		next;
+		mes "[Instrutor]";
+		mes "Agora, saia e reúna";
+		mes "os materiais que eu preciso e";
+		mes "eu farei questão de lhe dar";
+		mes "um ^006400encantamento^000000 fantástico!";
+		mes "Estarei esperando!";
+		completequest 9170;
+		setquest 9171;
+		close;
+	} else if (checkquest(9171) == 0 || checkquest(9171) == 1) {
+		if (countitem(909) < 10) {
+			mes "[Instrutor]";
+			mes "Parece que você não trouxe";
+			mes "os materiais. Você esqueceu";
+			mes "o que precisava reunir?";
+			next;
+			switch(select("Sim...:Não!")) {
+			case 1:
+				mes "[Instrutor]";
+				mes "Me disseram que se você clicar na";
+				mes "coisa no canto superior esquerdo que diz";
+				mes "^006400MISSÕES^000000, irá mostrar todas";
+				mes "as informações que você precisa";
+				mes "relativas às suas solicitações.";
+				next;
+				mes "[Instrutor]";
+				mes "Assim que reunir todos os materiais";
+				mes "listados na sua ^006400Janela de Missões^000000";
+				mes "venha e fale comigo.";
+				close;
+			case 2:
+				mes "[Instrutor]";
+				mes "Quando você reunir os itens";
+				mes "venha até mim e eu lhe mostrarei";
+				mes "um ^006400ENCANTAMENTO^000000 incrível.";
+				mes "Estarei esperando!";
+				close;
+			}
+		}
+		if (checkweight(607,6) == 0) {
+			if (MaxWeight - Weight < getiteminfo(607, ITEMINFO_WEIGHT)) {
+				mes "[Instrutor]";
+				mes "Seu inventário parece estar realmente cheio";
+				mes "com várias itens... Você acha que";
+				mes "conseguirá fazer alguma coisa estando tão";
+				mes "sobrecarregado? Vá colocar algumas coisas no baú";
+				mes "e depois volte.";
+				close;
+			} else {
+				mes "[Instrutor]";
+				mes "Parece que você tem coisas demais";
+				mes "no seu inventário... Vá colocar algumas";
+				mes "coisas no báu e depois volte.";
+				close;
+			}
+		}
+		mes "[Instrutor]";
+		mes "Você conseguiu tudo que pedi!";
+		mes "Então~ Devemos começar com o incrível";
+		mes "encantamento que eu desenvolvi.";
+		next;
+		specialeffect EF_BASH3D2;
+		mes "[Instrutor]";
+		mes "Okay! Agora para a primeira habilidade!!";
+		mes "Para adicionar uma nova habilidade à sua armadura...";
+		mes "^006400ENCANTAMENTO DE ENCAIXE OCULTO^000000!!";
+		next;
+		specialeffect EF_BASH3D2;
+		mes "[Instrutor]";
+		mes "E para a segunda habilidade!!";
+		mes "Para adicionar um novo encaixe em sua";
+		mes "arma e escudo...";
+		mes "^006400ENCANTAMENTO DE ENCAIXE^000000!!";
+		next;
+		mes "[Instrutor]";
+		mes "Pronto. O encantamento está feito. Você não pode entender o processo apenas me observando, então vou deixar que você olhe para os itens pessoalmente.";
+		delitem 909,10; //Jellopy
+		completequest 9171;
+		setquest 9172;
+		getitem2 15033,1,1,0,0,0,0,0,4702; //Tutorial_Mattle[Strength3]
+		getitem 15033,1; //Capote do Tutorial
+		getitem 15034,1; //Capote do Tutorial
+		next;
+		mes "[Instrutor]";
+		mes "Esses itens não podem ser";
+		mes "usados ou trocados, então nem";
+		mes "pense em fugir com eles.";
+		mes "Quando terminar de olhar para eles,";
+		mes "devolva-os para mim.";
+		close;
+	} else if (checkquest(9172) == 0 || checkquest(9172) == 1) {
+		if (countitem(15033) == 0 || countitem(15034) == 0) {
+			mes "[Instrutor]";
+			mes "O que você fez com os";
+			mes "itens encantados que emprestei";
+			mes "para você olhar?";
+			mes "Até você trazer de volta os frutos";
+			mes "do meu trabalho, eu não quero falar";
+			mes "com você, muito menos ver sua cara.";
+			close;
+		}
+		mes "[Instrutor]";
+		mes "Você terminou de examinar";
+		mes "os itens que eu encantei?";
+		next;
+		switch(select("Sim, obrigado.:Ainda não.")) {
+		case 1:
+			mes "[Instrutor]";
+			mes "Então, o que você achou após inspecioná-los? Agora que você viu um item encantado de perto, você entende?";
+			// Deletions de item movidas abaixo para evitar erros.
+			next;
+			mes "[Instrutor]";
+			mes "Graças a você, pude ver ótimos resultados de minha pesquisa e estudo.";
+			next;
+			mes "[Instrutor]";
+			mes "Se tiver alguma dúvida sobre qualquer coisa que discuti com você, vou te contar tudo! Obrigado pelo seu trabalho duro!";
+			delitem 15033,2;
+			delitem 15034,1;
+			completequest 9172;
+			setquest 9173;
+			getexp 5000,2500;
+			close;
+		case 2:
+			mes "[Instrutor]";
+			mes "Leve o tempo que precisar para examiná-los";
+			mes "e depois traga-os de volta para mim.";
+			close;
+		}
+	} else if (checkquest(9173) == 0 || checkquest(9173) == 1) {
+		mes "[Instrutor]";
+		mes "Você tem alguma pergunta?";
+		next;
+		switch(select("Posso fazer a mesma missão novamente?:Sobre a Janela de Missão...:Sobre ENCANTAR...:Sobre Buscar Vendedores...:Sobre Mercenários e Pets...:Encerrar Conversa.")) {
+		case 1:
+			if (checkquest(9173,PLAYTIME) == 0 || checkquest(9173,PLAYTIME) == 1) {
+				mes "[Instrutor]";
+				mes "O único método para fazer as mesmas missões repetidamente é fazer as ^006400Missões Diárias^000000.";
+				next;
+				mes "[Instrutor]";
+				mes "Depois de completar uma ^006400Missão Diária^000000 e entregá-la, espere cerca de um dia e volte para pegar a solicitação e fazê-la novamente!";
+				mes "[Instrutor]";
+				mes "Se você recebeu uma missão diária, olhe no canto inferior direito da ^006400Janela de Missão^000000. Há uma seção chamada ^006400LIMITADA^000000. Nessa seção, ele dirá quanto tempo precisa passar antes de você poder pegar outra missão diária.";
+				next;
+				mes "[Instrutor]";
+				mes "Parece que ainda falta um pouco de tempo para esperar depois de terminar minha missão. Espere um pouco mais, então me encontre e você pode pegar a mesma missão novamente.";
+				close;
+			}
+			mes "[Instrutor]";
+			mes "Parece que passou cerca de um dia desde que você terminou minha missão. Tudo bem, como as ^006400Missões Diárias^000000, você pode pegar uma missão comigo. Você quer prosseguir?";
+			next;
+			switch(select("Sim:Não")) {
+			case 1:
+				set @tutorial_restart,1;
+				goto OnStartQuest;
+			case 2:
+				mes "[Instrutor]";
+				mes "Ok. Mas se mudar de ideia e quiser uma missão, me procure.";
+				close;
+			}
+		case 2:
+			mes "[Instrutor]";
+			mes "Dizem que a ^006400Janela de Missão^000000 detalha tudo o que você precisa saber sobre suas missões.";
+			next;
+			mes "[Instrutor]";
+			mes "Se você olhar no canto superior esquerdo";
+			mes "na área com as informações,";
+			mes "diz ^006400MISSÃO^000000";
+			mes "e se você clicar nisso";
+			mes "irá mostrar todas as informações";
+			mes "que dizem respeito à solicitação.";
+			next;
+			mes "[Instrutor]";
+			mes "Usar a ^006400Janela de Missão^000000 tornará sua vida mais fácil. Ela irá dizer onde ir, quais itens obter ou quem encontrar, e etc.";
+			close;
+		case 3:
+			mes "[Instrutor]";
+			mes "^006400ENCANTAR^000000, em geral, é dividido em duas partes: ^006400ENCANTAR DE SOQUETE^000000 e ^006400ENCANTAR DE SOQUETE OCULTO^000000.";
+			next;
+			mes "[Instrutor]";
+			mes "^006400ENCANTAR DE SOQUETE^000000 é usado para adicionar um SOQUETE aos equipamentos e ^006400ENCANTAR DE SOQUETE OCULTO^000000 é usado para inserir estatísticas em um soquete de uma armadura.";
+			next;
+			mes "[Instrutor]";
+			mes "É claro, para fazer isso, precisamos de alguns materiais e há uma chance de falhar, mas esse é o risco que você está correndo.";
+			next;
+			mes "[Instrutor]";
+			mes "As pessoas que fazem ^006400ENCANTAR DE SOQUETE^000000 podem ser encontradas em ^8B4513Prontera, Morroc, Payon,^000000. ^8B4513Rhitalzen^000000 está na Refinaria e ^0000FFSeiyablem^000000 e ^0000FFReiablem^000000 podem ser encontrados perto da entrada.";
+			next;
+			mes "[Instrutor]";
+			mes "A pessoa que faz ^006400ENCANTAR DE SOQUETE OCULTO^000000 é encontrada na posição das 6 horas de ^8B4513Prontera^000000. Procure pelo ^0000FFAprendiz de Artesão^000000.";
+			next;
+			mes "[Instrutor]";
+			mes "Você acha que deu para entender um pouco mais sobre ^006400ENCANTAR^000000?";
+			close;
+		case 4:
+			mes "[Instrutor]";
+			mes "^006400Busca de Vendedores^000000 pode ser utilizada pelo item ^006400Catálogo de Vendas Prata^000000. Com ele você busca pelos itens no mapa, tornará mais fácil encontrar o item que você está procurando.";
+			next;
+			mes "[Instrutor]";
+			mes "O ^006400Catálogo de Vendas Prata^000000";
+			mes "pode ser obtido com ";
+			mes "o ^0000FFMago do Catálogo^000000";
+			mes "que está localizado na Sede do Grupo Eden.";
+			next;
+			mes "[Instrutor]";
+			mes "Custa apenas 200 zenys";
+			mes "e com ele você pode";
+			mes "fazer até 10 buscas.";
+			mes "Pode-se dizer que é uma necessidade.";
+			next;
+			mes "[Instrutor]";
+			mes "Então, você está se familiarizando com a ^006400Busca de Vendedores^000000? Não fique apenas parado me ouvindo. Experimente por si mesmo!";
+			close;
+		case 5:
+			mes "[Instrutor]";
+			mes "Dependendo do que você precisa, ^006400Mercenários^000000 e ^006400Pets^000000 podem ser usados de várias maneiras.";
+			next;
+			mes "[Instrutor]";
+			mes "Se um ^006400Mercenário^000000 te dá efeito direto";
+			mes "lutando por você,";
+			mes "então um ^006400Pet^000000 te ajuda indiretamente com suas";
+			mes "habilidades e aparências variadas,";
+			mes "e eles na maioria das vezes são fofos.";
+			next;
+			mes "[Instrutor]";
+			mes "Para empregar um Mercenário,";
+			mes "vá até a ^006400Guilda de Mercenários^000000";
+			mes "que fica perto da porta principal de ^8B4513Prontera^000000.";
+			mes "Procure pelo ^006400Agente de Informações^000000";
+			mes "e pergunte onde está o ^006400Oficial da Guilda de Mercenários^000000";
+			mes "e eles te informarão.";
+			next;
+			mes "[Instrutor]";
+			mes "Para conseguir um ^006400Pet^000000, enquanto caça você obterá itens de doma. Use o item na criatura e você pode acabar conseguindo um pet.";
+			next;
+			mes "[Instrutor]";
+			mes "Porque há chance de falha, por favor, use o item de doma com muito cuidado.";
+			next;
+			mes "[Instrutor]";
+			mes "Além disso... você pode obter um ^006400Mercenário^000000 na Guilda de Mercenários e você pode conseguir um ^006400Pet^000000 trocando ou comprando de outro jogador.";
+			next;
+			mes "[Instrutor]";
+			mes "Agora, você entende um pouco mais sobre como usar um ^006400Mercenário^000000 e um ^006400Pet^000000? Espero que você tenha a chance de usá-los no futuro.";
+			close;
+		case 6:
+			mes "[Instrutor]";
+			mes "Se tiver alguma dúvida, me procure novamente.";
+			close;
+		}
+	}
+	mes "[Instrutor]";
+	mes "Soube da novidade para equipamentos sem suporte?";
+	mes "Pode-se aplicar um suporte para melhorar atributos.";
+	mes "Ouvi dizer que desenvolveram uma técnica para isso.";
+	close;
+}
+
+moc_para01,32,179,4	script	Instrutora	895,{
+	if (checkweight(608,7) == 0) {
+		if (MaxWeight - Weight < getiteminfo(608, ITEMINFO_WEIGHT)) {
+			mes "[Instrutora]";
+			mes "Parece que você está com excesso de itens. Vá guardar algumas coisas e depois volte.";
+			close;
+		} else {
+			mes "[Instrutora]";
+			mes "Você tem muitos itens com você. Vá guardar algumas coisas e depois volte.";
+			close;
+		}
+	}
+	if (checkquest(4161) == 0 || checkquest(4161) == 1) {
+		mes "[Instrutora]";
+		mes "Bem~ Vamos desafiar os especialistas, certo?";
+		mes "Vamos começar encontrando o ^006400Mestre de Batalha^000000!";
+		close;
+	} else if (checkquest(4162) == 0 || checkquest(4162) == 1) {
+		mes "[Instrutora]";
+		mes "Você passou no teste do ^006400Mestre de Batalha^000000! Parabéns!";
+		mes "Agora, vá encontrar o ^006400Mestre de Grupo^000000!";
+		close;
+	} else if (checkquest(4163) == 0 || checkquest(4163) == 1) {
+		mes "[Instrutora]";
+		mes "Ah! Você passou no teste do ^006400Mestre de Grupo^000000! Parabéns!";
+		mes "Agora, vá encontrar o ^006400Mestre de Guerra^000000!";
+		close;
+	} else if (checkquest(4164) == 0 || checkquest(4164) == 1) {
+		mes "[Instrutora]";
+		mes "Yay! Você passou no teste do ^006400Mestre de Guerra^000000! Parabéns!";
+		mes "Agora, vá encontrar o ^006400Mestre de Instâncias^000000!";
+		close;
+	} else if (checkquest(4165) == 0 || checkquest(4165) == 1) {
+		mes "[Instrutora]";
+		mes "Você passou no teste do ^006400Mestre das Instâncias^000000! Isso é ótimo!";
+		mes "Tente encontrar o ^006400Mestre de Mapeamento^000000!";
+		close;
+	} else if (checkquest(4166) == 0 || checkquest(4166) == 1) {
+		mes "[Instrutora]";
+		mes "Você passou no teste do ^006400Mestre de Mapeamento^000000! Parabéns!";
+		mes "Estou tão feliz que você tenha conseguido passar em todos os testes dos Especialistas! Você é melhor do que eu esperava!!";
+		next;
+		mes "[Instrutora]";
+		mes "Agora, até você é um ^006400Especialista^000000!! Um apelido tão adequado para você!";
+		mes "Muito obrigado pelo seu trabalho duro. Como prometido, aqui está uma pequena recompensa para você.";
+		next;
+		mes "[Instrutora]";
+		mes "Acredito que será útil para você em suas aventuras. Desejo sorte em suas futuras jornadas~";
+		completequest 4166;
+		getitem 510,5; //erva azul
+		getitem 511,5; //erva verde
+		getitem 504,5; //poção branca
+		getitem 608,1; //Semente de ygg
+		close;
+	} else if (checkquest(4166) == 2) {
+		mes "[Instrutora]";
+		mes "Agora, até você é um ^006400Especialista^000000!! Um apelido tão adequado para você!";
+		mes "Muito obrigado pelo seu trabalho duro.";
+		mes "Espero que suas futuras aventuras sejam repletas de boa sorte.";
+		close;
+	}
+	if (Class == Job_Novice) {
+		mes "[Instrutora]";
+		mes "Quem vai desafiar os mestres? Tem algum aventureiro esperto por aí?...";
+		close;
+	}
+	mes "[Instrutora]";
+	mes "Ei, você! Você parece um aventureiro... Embora pareça um pouco sem graça...";
+	next;
+	if(select("O que você disse? Eu sou inteligente!:Sim... sou sem graça.") == 1) {
+		mes "[Instrutora]";
+		mes "Sério? Embora eu não saiba se posso acreditar nisso. Olhe para o Mestre que está na minha frente! Ele se dedicou a apenas uma área de estudo por 16 anos e agora está tão digno quanto pode ser!";
+		next;
+		mes "[Instrutora]";
+		mes "Bem, se você conseguir passar em todos os testes deles, então vou acreditar em suas habilidades.";
+		next;
+		mes "[Instrutora]";
+		mes "E vou pedir desculpas por te chamar de sem graça. O que acha, Especialista Sem Graça?! Quer desafiá-los?";
+		next;
+		if(select("Desafio!!:Bem... outra hora...") == 1) {
+			mes "[Instrutora]";
+			mes "Você é mais corajoso do que parece. Você não pode voltar atrás agora que decidiu desafiar!";
+			next;
+			mes "[Instrutora]";
+			mes "Ok~ Comece falando com o ^006400Mestre de Batalha^000000 que está bem ali na frente.";
+			setquest 4161;
+			close;
+		}
+	}
+	mes "[Instrutora]";
+	mes "Bem, não desanime... Se mudar de ideia e quiser aceitar o desafio, venha me encontrar.";
+	close;
+}
+
+moc_para01,24,175,4	script	Mestre de Guerra	734,{
+	set .@checkquest, checkquest(4161);
+	if (.@checkquest == 2) {
+		mes "[Mestre de Guerra]";
+		mes "Como você veio novamente, presumo que esteja curioso sobre a ^006400Guerra^000000?";
+		next;
+		switch(select("Ouvir sobre a Guerra.:Encerrar Conversa.")) {
+		case 1:
+			callsub L_Info;
+			mes "[Mestre de Guerra]";
+			mes "Agora que você passou por tudo isso com um especialista, não é fácil de entender? Se quiser revisar alguma coisa, apenas venha conversar comigo.";
+			close;
+		case 2:
+			mes "[Mestre de Guerra]";
+			mes "Se quiser revisar alguma coisa, apenas venha conversar comigo.";
+			close;
+		}
+		
+		} else if (.@checkquest == 0 || .@checkquest == 1) {
+		mes "[Mestre de Guerra]";
+		mes "Eu sou alguém que estudou Guerra do Emperium por 16 anos! Isso me torna um especialista! Como você veio me procurar, presumo que queira aprender mais sobre a ^006400Guerra^000000.";
+		next;
+		mes "[Mestre de Guerra]";
+		mes "Você tem grande desejo e entusiasmo. Como o Especialista em ^006400Guerra^000000, você me motivou! E todos os outros Especialistas estão esperando por você! Vá visita-los!";
+		next;
+		mes "[Mestre de Guerra]";
+		mes "Se eu te dissesse que há um grande prêmio por conseguir passar em todos os testes dos Mestres~ você aceitaria o desafio?";
+		next;
+		mes "[Mestre de Guerra]";
+		mes "Como o primeiro Especialista, posso te ensinar sobre a ^006400Guerra^000000. O que acha? Você quer aprender sobre a ^006400Guerra^000000?";
+		next;
+		switch(select("Ouvir sobre a Guerra.:Encerrar Conversa.")) {
+		case 1:
+			callsub L_Info;
+		mes "[Mestre de Guerra]";
+		mes "Agora que você passou por tudo isso com um especialista, não é fácil de entender?";
+		mes "Agora eu te darei 3 perguntas~ acerte essas e você passou! Quer um desafio?";
+		while(1) {
+			set .@correct,0;
+			next;
+			switch(select("Me desafie!:Ouvir Novamente:Sair")) {
+			case 1:
+				switch(rand(1,3)) {
+				case 1:
+					mes "[Mestre de Guerra]";
+					mes "Um Guerra é realizado para tomar posse de um [].";
+					mes "É uma guerra que acontece entre uma [] e outra [].";
+					mes "Quais palavras preenchem os espaços vazios de []?";
+					next;
+					if(select("Castelo, Usuário, Guilda:Castelo, Guilda, Guilda:Cidade, Guilda, Guilda:Cidade, Usuário, Usuário") == 2)
+						set .@correct, .@correct+10;
+					mes "[Mestre de Guerra]";
+					mes "Qual é o horário errado para o Guerra?";
+					next;
+					if(select("WoE 1 Qua 20-21:WoE 1 Sáb 20-21:WoE 1 Ter 9-11") == 3)
+						set .@correct, .@correct+10;
+					mes "[Mestre de Guerra]";
+					mes "Quando você obtém um castelo, você deve aumentar [] para obter melhores benefícios.";
+					mes "Quais palavras preenchem os espaços vazios de []?";
+					next;
+					if(select("Desenvolvimento Comercial:Desenvolvimento Industrial:Desenvolvimento de Guilda:Desenvolvimento da Cidade") == 1)
+						set .@correct, .@correct+10;
+					break;
+				case 2:
+					mes "[Mestre de Guerra]";
+					mes "Existem 2 tipos de Guerra.";
+					mes "Existe a Guerra do Emperium normal";
+					mes "e então há [].";
+					mes "Quais palavras preenchem os espaços vazios de []?";
+					next;
+					if(select("Guerra do Emperium MO:Guerra do Emperium NE:Guerra do Emperium SK:Guerra do Emperium SE") == 4)
+						set .@correct, .@correct+10;
+					mes "[Mestre de Guerra]";
+					mes "Com a guilda que possui um castelo, você deve proteger o [].";
+					mes "Quais palavras preenchem os espaços vazios de []?";
+					next;
+					if(select("Emperial:Emperium:Emperiom:Imperial") == 2)
+						set .@correct, .@correct+10;
+					mes "[Mestre de Guerra]";
+					mes "Quais benefícios a guilda recebe por vencer a Guerra?";
+					next;
+					if(select("30% de desconto em compras:Aumentar a experiência ganha em 20%:Acesso ao Calabouço da Guilda:Pegar Armas todos os dias à meia-noite.") == 3)
+						set .@correct, .@correct+10;
+					break;
+				case 3:
+					mes "[Mestre de Guerra]";
+					mes "Quais benefícios a guilda recebe por vencer a Guerra?";
+					next;
+					if(select("Aumentar a experiência ganha em 20%:30% de desconto em compras:Acesso ao Campo da Guilda:Cofre de Tesouros diariamente à meia-noite") == 4)
+						set .@correct, .@correct+10;
+					mes "[Mestre de Guerra]";
+					mes "Quantas horas dura uma Guerra?";
+					next;
+					if(select("1 Hora:2 Horas:3 Horas:4 Horas") == 1)
+						set .@correct, .@correct+10;
+					mes "[Mestre de Guerra]";
+					mes "Quando você obtém um castelo, você deve aumentar [] para obter melhores benefícios.";
+					mes "Quais palavras preenchem os espaços vazios de []?";
+					next;
+					if(select("Desenvolvimento da Cidade:Desenvolvimento Industrial:Desenvolvimento de Guilda:Desenvolvimento Comercial") == 4)
+						set .@correct, .@correct+10;
+						break;
+					}
+					if (.@correct == 30) {
+						mes "[Mestre de Guerra]";
+						mes "Uau! Você acertou todas as 3 perguntas! Então, você se sente bem sobre a ^006400Guerra^000000? Certo?";
+						next;
+						mes "[Mestre de Guerra]";
+						mes "Se você quiser aprender mais sobre a ^006400Guerra^000000, venha me encontrar.";
+						next;
+						mes "[Mestre de Guerra]";
+						mes "Agora, vá e encontre o ^0000FFMestre de Grupo^000000. Ele está esperando por você.";
+						completequest 4161;
+						setquest 4162;
+						getexp 2000,1000;
+						close;
+						}
+						mes "[Mestre de Guerra]";
+						mes "Só há 3 perguntas e você não acertou todas! Desse jeito, você vai falhar em todos os testes dos Especialistas.";
+						next;
+						mes "[Mestre de Guerra]";
+						mes "Mas quando olho para você, sei que você tem potencial. Você quer tentar novamente?";
+						break;
+						case 2:
+							callsub L_Info;
+							mes "[Mestre de Guerra]";
+							mes "Agora que você passou por tudo isso com um especialista, não é fácil de entender?";
+							mes "Agora eu te darei 3 perguntas~ acerte essas e você passa! Quer um desafio?";
+							break;
+						case 3:
+							mes "[Mestre de Guerra]";
+							mes "Bah! Você não é divertido... desiste muito fácil! Se mudar de ideia, venha me encontrar.";
+							close;
+				}
+			}
+			close;
+		case 2:
+			mes "[Mestre de Guerra]";
+			mes "Você está desistindo? Se mudar de ideia, venha me encontrar.";
+			close;
+			}
+		}
+		mes "[Mestre de Guerra]";
+		mes "Se quiser aprender alguma coisa comigo, fale com a ^006400Instrutora^000000. Depois volte.";
+		close;
+
+L_Info:
+	mes "[Mestre de Guerra]";
+	mes "Uma ^006400Guerra^000000 é uma Batalha ^0000FFGuilda contra Guilda^000000 com o objetivo de ocupar um castelo!";
+	next;
+	mes "[Mestre de Guerra]";
+	mes "Existem 2 tipos diferentes de ^006400Guerra^000000.";
+	mes "^006400Guerra do Emperium^000000 padrão e um ligeiramente diferente conhecido como ^006400Guerra do Emperium 2^000000.";
+	next;
+	mes "[Mestre de Guerra]";
+	mes "Durante esse tempo, há dois lados da guerra.";
+	mes "A ^0000FFGuilda que Possui um Castelo^000000 tenta proteger o ^006400Emperium^000000 e a ^0000FFGuilda que Ataca um Castelo^000000 tenta quebrar o ^006400Emperium^000000.";
+	next;
+	mes "[Mestre de Guerra]";
+	mes "Você pode encontrar os horários da ^006400Guerra^000000 em nosso site.";
+	mes "E as guildas vencedoras também recebem algo especial.";
+	next;
+	mes "[Mestre de Guerra]";
+	mes "As guildas que vencem durante a Guerra";
+	mes "obtem acesso a um ^006400Calabouço da Guilda^000000";
+	mes "e o Mestre da Guilda pode abrir ^006400Cofres do Tesouro^000000 à ^0000FFMeia-noite todos os dias^000000.";
+	mes "Não é um ótimo benefício?";
+	next;
+	mes "[Mestre de Guerra]";
+	mes "Outra coisa que você deve fazer quando conquista um castelo é chamado de ^006400Desenvolvimento Comercial^000000. Quanto mais você fizer, melhores serão os benefícios.";
+	next;
+	return;
+}
+
+moc_para01,21,172,4	script	Mestre de Grupo	878,{
+	set .@checkquest, checkquest(4162);
+	if (.@checkquest == 2) {
+		mes "[Mestre de Grupo]";
+		mes "Como você veio me encontrar, parece que está curioso sobre ^006400Agência de Aventura^000000?";
+		next;
+		switch(select("Ouvir sobre Agência de Aventura.:Encerrar Conversa.")) {
+		case 1:
+			callsub L_Info;
+			mes "[Mestre de Grupo]";
+			mes "A explicação foi muito boa, não é? Se precisar de um lembrete, venha me visitar.";
+			close;
+		case 2:
+			mes "[Mestre de Grupo]";
+			mes "Bem, se tiver alguma dúvida, venha me visitar.";
+			close;
+		}
+	} else if (.@checkquest == 0 || .@checkquest == 1) {
+		mes "[Mestre de Grupo]";
+		mes "Eu sou o especialista em ^006400Agência de Aventura^000000 porque pesquisei sobre Recrutamento de Grupo por 16 anos! Parece que o ^006400Mestre de Guerra^000000 te enviou até mim.. Então você passou no teste dele, hmm?";
+		next;
+		mes "[Mestre de Grupo]";
+		mes "Você pode ter ouvido falar, mas se passar em todos os quizzes dos Especialistas, receberá um prêmio incrível!";
+		next;
+		mes "[Mestre de Grupo]";
+		mes "Como o segundo especialista, vou te contar tudo sobre ^006400Agência de Aventura^000000! O que acha?";
+		next;
+		switch(select("Ouvir sobre Agência de Aventura.:Encerrar Conversa.")) {
+		case 1:
+			callsub L_Info;
+			mes "[Mestre de Grupo]";
+			mes "Agora~ minhas explicações foram mais suaves do que um criminoso suave, certo? Agora vou te dar um quiz com 3 perguntas. Acerte todas e você passou. Quer encarar o desafio?";
+			while(1) {
+				set .@correct,0;
+				next;
+				switch(select("Vamos para o quiz!:Explicar novamente por favor?:Desistir.")) {
+				case 1:
+					switch(rand(1,3)) {
+					case 1:
+							mes "[Mestre de Grupo]";
+							mes "A Agência de Aventura é usado para ajudar";
+							mes "usuários que estão procurando []";
+							mes "e aqueles que estão procurando [].";
+							mes "Quais palavras preenchem os espaços vazios de []?";
+							next;
+							if(select("Guilda, Membro para Guilda:Clube, Membros para Clube:Paris, Membros para Grupo:Grupo, Membros para o Grupo") == 4)
+								set .@correct, .@correct+10;
+							mes "[Mestre de Grupo]";
+							mes "A janela que é usada para ajudar os usuários a procurar e buscar por uma Grupo é chamada de [].";
+							mes "Quais palavras preenchem os espaços vazios de []?";
+							next;
+							if(select("Lista de Grupo:Lista de Grupo Desejadas:Janela da Agência de Aventura:Lista de Grupo de Fantasias") == 3)
+								set .@correct, .@correct+10;
+							mes "[Mestre de Grupo]";
+							mes "Quais das opções não estão listadas como uma escolha ao criar uma sala de recrutamento de grupo?";
+							next;
+							if(select("NÍVEL:HABILIDADE:CLASSE:MAPA") == 2)
+							set .@correct, .@correct+10;
+						break;
+						case 2:
+							mes "[Mestre de Grupo]";
+							mes "Existem 2 tipos de Recrutamento de Grupo.";
+							mes "Registrar Recrutamento de Grupo é um";
+							mes "e o segundo é [].";
+							mes "Quais palavras preenchem os espaços vazios de []?";
+							next;
+							if(select("Procurar Grupos que estão Recrutando:Grupos que estão começando a caçar:Recrutamento de Grupo e Distribuição de Itens:Coisas de Grupo") == 1)
+								set .@correct, .@correct+10;
+							mes "[Mestre de Grupo]";
+							mes "Para começar o Recrutamento de Grupo, você tem que clicar no botão [] que está localizado na parte superior da janela.";
+							mes "Quais palavras preenchem os espaços vazios de []?";
+							next;
+							if(select("Grupo:guilda:Registrar seu Grupo na Agência:habilidade") == 3)
+								set .@correct, .@correct+10;
+							mes "[Mestre de Grupo]";
+							mes "Para registrar seu grupo na Agência de aventura, você tem que preencher um campo.";
+							mes "Qual área é essa que precisa preencher []?";
+							next;
+							if(select("Mapa:Objetivo:Level:Lider") == 2)
+								set .@correct, .@correct+10;
+							break;
+						case 3:
+							mes "[Mestre de Grupo]";
+							mes "Para fazer a";
+							mes "janela da Agência de aventura aparecer,";
+							mes "Você aperta este comando [].";
+							mes "Quais palavras preenchem os espaços vazios de []?";
+							next;
+							if(select("CRT + U:ALT + U:CRT + C:CRT + Z") == 4)
+								set .@correct, .@correct+10;
+							mes "[Mestre de Grupo]";
+							mes "Ao recrutar para um grupo, você pode definir 3 parâmetros. Esses 3 são";
+							mes "NÍVEL, CLASSE e [].";
+							mes "Quais palavras preenchem os espaços vazios de []?";
+							next;
+							if(select("HABILIDADE:GUILDA:MAPA:OPÇÃO") == 3)
+								set .@correct, .@correct+10;
+							mes "[Mestre de Grupo]";
+							mes "A Agência de Aventura é usado para ajudar";
+							mes "usuários que estão procurando []";
+							mes "e aqueles que estão procurando [].";
+							mes "Quais palavras preenchem os espaços vazios de []?";
+							next;
+							if(select("lojas, Membros para grupo:Clube, Membros do Clube:Grupo, Membros para Grupo:Guilda, Membros da Guilda") == 3)
+								set .@correct, .@correct+10;
+							break;
+					}
+					if (.@correct == 30) {
+								mes "[Mestre de Grupo]";
+								mes "Legal! Você acertou todas as 3 perguntas! Agora você se sente mais confiante sobre ^006400Agência de Aventura^000000?";
+								next;
+								mes "[Mestre de Grupo]";
+								mes "Se quiser ouvir mais sobre ^006400Agência de Aventura^000000, venha me encontrar a qualquer momento.";
+								next;
+								mes "[Mestre de Grupo]";
+								mes "Bem, agora vá até o ^0000FFMestre de Batalha^000000! Ele provavelmente está te esperando.";
+								completequest 4162;
+								setquest 4163;
+								getexp 2000,1000;
+								close;
+							}
+							mes "[Mestre de Grupo]";
+							mes "Só há 3 perguntas e você não acertou todas! Desse jeito, você vai falhar em todos os testes dos Especialistas.";
+							next;
+							mes "[Mestre de Grupo]";
+							mes "Mas se quiser tentar o quiz novamente! Vá em frente! Acho que você tem potencial! Quer tentar o quiz novamente?";
+							break;
+						case 2:
+							callsub L_Info;
+							mes "[Mestre de Grupo]";
+							mes "Agora~ minhas explicações foram mais suaves do que um criminoso suave, certo? Agora vou te dar um quiz com 3 perguntas. Acerte todas e você passa. Quer encarar o desafio?";
+							break;
+						case 3:
+							mes "[Mestre de Grupo]";
+							mes "Não desista! Você consegue! Se mudar de ideia, venha falar comigo!";
+							close;
+							}
+						}
+						close;
+				case 2:
+					mes "[Mestre de Grupo]";
+					mes "Você vai desistir sem nem me ouvir? Se mudar de ideia, venha falar comigo!";
+					close;
+		}
+	}
+	mes "[Mestre de Grupo]";
+	mes "Se quer aprender alguma coisa comigo, fale com o ^006400Mestre de Guerra^000000 e volte quando ele te aprovar.";
+	close;
+
+L_Info:
+	mes "[Mestre de Grupo]";
+	mes "^006400Agência de Aventura^000000 é bastante autoexplicativo. Ajuda as pessoas a encontrar membros para grupo e ajuda as pessoas a encontrar grupo.";
+	next;
+	mes "[Mestre de Grupo]";
+	mes "Existem 2 partes na Agência de Aventura.";
+	mes "O primeiro passo é ^0000FFRegistrar Recrutamento de Grupo^000000,";
+	mes "e o segundo passo é ^0000FFFazer Buscas de grupo^000000.";
+	next;
+	mes "[Mestre de Grupo]";
+	mes "Para procurar Grupo, na janela de informações no canto superior esquerdo, clique no botão que diz ^006400Agência de Aventura^000000. Então a ^006400Lista de Grupo recrutando^000000 aparecerá.";
+	next;
+	mes "[Mestre de Grupo]";
+	mes "A janela ^006400Agência de Aventura^000000 mostra os grupos que estão procurando membros que foram listadas por outros usuários. Você pode pesquisar através dela.";
+	next;
+	mes "[Mestre de Grupo]";
+	mes "No caso de você não querer se juntar a um grupo, mas quiser recrutar para um, aperte em ^0000FFRegistrar seu Grupo na Agência^000000 e, em seguida, na janela ^006400Registre seu Grupo na Agência^000000, você pode colocar requisitos!";
+	next;
+	mes "[Mestre de Grupo]";
+	mes "Depois de registrar o seu aviso de recrutamento para Grupo na janela ^006400Agência de Aventura^000000, os usuários podem procurar sua ^006400Lista de Recrutamento de Grupo^000000.";
+	next;
+	mes "[Mestre de Grupo]";
+	mes "Na ^006400Lista da Agência de Aventura^000000 e";
+	mes "NA ^006400Janela de criação de recrutamento^000000, você pode inserir informações básicas sobre o que você vai fazer, ou o que você está procurando, como ";
+	mes "^006400NÍVEL^000000, ^006400MAPA^000000, ^006400CLASSE^000000.";
+	mes "Então os usuários podem pesquisar usando esses parâmetros e utilizando o sistema de ^006400Recrutamento de Grupo^000000.";
+	next;
+	mes "[Mestre de Grupo]";
+	mes "Se quiser aprender mais comandos sobre ^006400Agência de Aventura^000000, clique no botão ^006400Ajuda^000000 no canto inferior direito da ^006400Janela de Agência de Aventura^000000.";
+	next;
+	return;
+}
+
+moc_para01,12,179,6	script	Mestre de Batalha	419,{
+	set .@checkquest, checkquest(4163);
+	if (.@checkquest == 2) {
+		mes "[Mestre de Batalha]";
+		mes "Vendo que você me procurou, acho que quer aprender sobre ^006400Campos de Batalha^000000, não é mesmo?";
+		next;
+		switch(select("Aprender sobre Campos de Batalha.:Encerrar Conversa.")) {
+		case 1:
+			callsub L_Info;
+			mes "[Mestre de Batalha]";
+			mes "Não há nada melhor do que ouvir diretamente do especialista! Se quiser revisar novamente, é só falar comigo.";
+			close;
+		case 2:
+			mes "[Mestre de Batalha]";
+			mes "Se quiser revisar algo, me avise.";
+			close;
+		}
+		} else if (.@checkquest == 0 || .@checkquest == 1) {
+			mes "[Mestre de Batalha]";
+			mes "Por 16 anos, eu vivi o calor intenso da ^Batalha Campal^000000... Eu sou o Especialista em ^006400Batalhas Campais^000000!";
+			mes "Parece que o ^006400Mestre de Grupo^000000 te enviou até mim, então você passou no quiz dele.";
+			next;
+			mes "[Mestre de Batalha]";
+			mes "Você já deve saber, mas se passar em todos os quizzes dos Especialistas, receberá um prêmio!";
+			next;
+			mes "[Mestre de Batalha]";
+			mes "Vou te contar sobre as ^006400Batalhas Campais^000000! Vou te contar tudo o que sei! O que acha? Quer ouvir sobre isso?";
+			next;
+			switch(select("Aprender sobre Batalha Campal.:Encerrar Conversa.")) {
+		case 1:
+			callsub L_Info;
+			mes "[Mestre de Batalha]";
+			mes "Não há nada melhor do que ouvir diretamente de um especialista! Agora, você quer fazer meu teste de 3 perguntas? Você precisa responder corretamente as 3 para passar!";
+			while(1) {
+				set .@correct,0;
+				next;
+				switch(select("Vamos para o teste!:Explique novamente, por favor?:Desistir.")) {
+				case 1:
+					switch(rand(1,3)) {
+					case 1:
+						mes "[Mestre de Batalha]";
+						mes "Para começar, você precisa escolher entre o lado [] ou o lado [] para participar da Batalha Campal.";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("Guillaume, Tierra:Rachel, KVM:Guillaume, Croix:Maroll, KVM") == 3)
+							set .@correct, .@correct+10;
+						mes "[Mestre de Batalha]";
+						mes "[] pode ser feito 6vs6 e você tem que atacar os cristais da equipe inimiga enquanto protege os seus.";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("Tierra:Flavius:KVM:Maroll") == 2)
+							set .@correct, .@correct+10;
+						mes "[Mestre de Batalha]";
+						mes "Quando você completa uma batalha, você pode receber uma recompensa! De uma batalha KVM, você recebe [].";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("Pontos KVM:Emblema de Valor:Emblema de Bravura:Emblema de Honra") == 1)
+							set .@correct, .@correct+10;
+						break;
+					case 2:
+						mes "[Mestre de Batalha]";
+						mes "O [], é 6vs6. Você precisa atacar o depósito de suprimentos dos inimigos enquanto protege o seu próprio.";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("Maroll:KVM:Flavius:Tierra") == 4)
+							set .@correct, .@correct+10;
+						mes "[Mestre de Batalha]";
+						mes "Para entrar nos campos de batalha, qual deles não é o recrutador que você precisa encontrar?";
+						next;
+						if(select("Recrutador Mercenário Maroll:Recrutador Mercenário KVM:Recrutador Mercenário Tierra:Recrutador Mercenário Flavius") == 1)
+							set .@correct, .@correct+10;
+						mes "[Mestre de Batalha]";
+						mes "Você pode obter [] participando das Batalhas Campais de Tierra.";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("Pontos KVM:Emblema de Bravura:Emblemas de Valor:Emblemas de Honra") == 2)
+							set .@correct, .@correct+10;
+						break;
+					case 3:
+						mes "[Mestre de Batalha]";
+						mes "Em cada cidade importante, você pode encontrar [] para entrar nos Campos de Batalha.";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("Emissária de Maroll:Recrutador da Maroll:Recrutador do Flavius:Recrutador do KVM") == 1)
+							set .@correct, .@correct+10;
+						mes "[Mestre de Batalha]";
+						mes "Para [], você participa de batalhas 5vs5 com a intenção de tentar reduzir o número de inimigos no lado oposto.";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("Maroll:Flavius:KVM:Tierra") == 3)
+							set .@correct, .@correct+10;
+						mes "[Mestre de Batalha]";
+						mes "Quando você completa uma batalha, você recebe um prêmio. O prêmio de Flavius é chamado de [].";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("Pontos KVM:Emblemas de Bravura:Emblemas de Valor:Emblemas de Honra") == 3)
+							set .@correct, .@correct+10;
+						break;
+						}
+						if (.@correct == 30) {
+							mes "[Mestre de Batalha]";
+							mes "Você acertou todas as 3 perguntas! Acho que você tem uma boa cabeça sobre seus ombros. Você sabe uma coisa ou outra sobre ^006400Batalha Campal^000000.";
+							next;
+							mes "[Mestre de Batalha]";
+							mes "Se você quiser discutir qualquer coisa sobre ^006400Batalha Campal^000000, sinta-se à vontade para conversar comigo!";
+							next;
+							mes "[Mestre de Batalha]";
+							mes "Vá em frente e encontre o ^0000FFMestre de Instâncias^000000!";
+							completequest 4163;
+							setquest 4164;
+							getexp 2000,1000;
+							close;
+					}
+					mes "[Mestre de Batalha]";
+		mes "Há apenas 3 perguntas e você não acertou todas! Dessa forma, você vai falhar em todos os testes dos especialistas.";
+		next;
+		mes "[Mestre de Batalha]";
+		mes "Mas se você quiser tentar novamente, deveria.";
+		break;
+		case 2:
+			callsub L_Info;
+			mes "[Mestre de Batalha]";
+			mes "Não há nada melhor do que ouvir diretamente do especialista! Agora, você quer fazer meu teste de 3 perguntas? Você precisa responder corretamente as 3 para passar!";
+			break;
+		case 3:
+			mes "[Mestre de Batalha]";
+			mes "Não me decepcione desistindo. Se mudar de ideia, venha me encontrar novamente.";
+			close;
+		}
+		}
+		close;
+		case 2:
+		mes "[Mestre de Batalha]";
+		mes "Você é um covarde se desistir antes mesmo de começar. Se mudar de ideia, venha me encontrar novamente.";
+		close;
+		}
+		close;
+		}
+		mes "[Mestre de Batalha]";
+		mes "Se quer aprender alguma coisa comigo, fale com o ^006400Mestre de Grupo...^000000 Volte quando ele te aprovar.";
+		close;
+
+L_Info:
+	mes "[Mestre de Batalha]";
+	mes "Para explicar as ^006400Batalhas Campais^000000 facilmente...";
+	mes "Você escolhe entre o Campo ^006400Guillaume^000000 ou o Campo ^006400Croix^000000 e então lutam entre si.";
+	next;
+	mes "[Mestre de Batalha]";
+	mes "Existem 3 tipos de ^006400Campos de Batalha^000000.";
+	mes "O primeiro é ^006400KVM^000000. É uma batalha 5vs5 com o objetivo de reduzir o número de pessoas em cada lado.";
+	next;
+	mes "[Mestre de Batalha]";
+	mes "O segundo é 6vs6. Você ataca os depósitos de suprimentos dos seus oponentes e, por sua vez, protege seus próprios depósitos. Isso é chamado de ^006400Tierra^000000.";
+	next;
+	mes "[Mestre de Batalha]";
+	mes "O terceiro e último é chamado de ^006400Flavius^000000. Este também é 6vs6. Para este, você ataca os cristais dos seus oponentes enquanto tenta proteger os seus.";
+	next;
+	mes "[Mestre de Batalha]";
+	mes "Para chegar aos ^006400Campos de Batalha^000000, encontre ^006400Emissária de Maroll^000000 que pode ser encontrado em todas as cidades principais.";
+	next;
+	mes "[Mestre de Batalha]";
+	mes "Depois de entrar, escolha se quer se aliar a Guillaume ou Croix e, em seguida, do lado deles, escolha entre...";
+	mes "^006400Recrutador Mercenário KVM^000000,";
+	mes "^006400Recrutador Mercenário Tierra^000000, ou";
+	mes "^006400Recrutador Mercenário Flavius^000000,";
+	mes "então você pode entrar nos ^006400Campos de Batalha^000000.";
+	next;
+	mes "[Mestre de Batalha]";
+	mes "Dependendo do resultado do ^006400Campo de Batalha^000000, você também pode obter um prêmio.";
+	mes "Você recebe Pontos KVM de ^006400KVM^000000,";
+	mes "de ^006400Tierra^000000 você obtém Emblemas de Bravura e";
+	mes "você recebe Emblemas de Valor de ^006400Flavius^000000.";
+	next;
+	mes "[Mestre de Batalha]";
+	mes "Com as recompensas da ^006400Batalha Campal^000000, você pode obter itens que normalmente não conseguiria em outro lugar.";
+	mes "Cada recompensa da ^006400Batalha Campal^000000 que você pode obter é diferente, então você terá que verificar.";
+	next;
+	return;
+}
+
+moc_para01,28,167,3	script	Mestre de Instâncias	868,{
+	set .@checkquest, checkquest(4164);
+	if (.@checkquest == 2) {
+		mes "[Mestre de Instâncias]";
+		mes "Já que você veio aqui, parece que quer aprender sobre o ^006400Instâncias^000000.";
+		next;
+		switch(select("Ouvir sobre as Instâncias.:Encerrar Conversa.")) {
+		case 1:
+			callsub L_Info;
+			mes "[Mestre de Instâncias]";
+			mes "Agora que você ouviu um especialista, ficou fácil de entender, certo? Se quiser ouvir sobre isso novamente, venha me encontrar.";
+			close;
+		case 2:
+			mes "[Mestre de Instâncias]";
+			mes " Se quiser ouvir sobre isso novamente, venha me encontrar.";
+			close;
+		}
+		} else if (.@checkquest == 0 || .@checkquest == 1) {
+		mes "[Mestre de Instâncias]";
+		mes "Eu sou o Especialista em ^006400Instâncias^000000! Eu estudei as ^006400Instâncias^000000 por 16 anos!";
+		mes "Já que você me procurou, eu suponho que tenha passado no teste do ^006400Mestre de Batalha^000000.";
+		next;
+		mes "[Mestre de Instâncias]";
+		mes "Como você já sabe, se passar em todos os testes dos especialistas, receberá um prêmio.";
+		next;
+		mes "[Mestre de Instâncias]";
+		mes "Como o 4º Especialista, eu vou explicar tudo sobre as ^006400Instâncias^000000 para você.";
+		mes "Quer ouvir sobre as ^006400Instâncias^000000?";
+		next;
+		switch(select("Ouvir sobre as Instâncias.:Encerrar Conversa.")) {
+		case 1:
+			callsub L_Info;
+			mes "[Mestre de Instâncias]";
+			mes "Agora que você ouviu de um especialista, ficou fácil de entender, certo? Se quiser ouvir sobre isso novamente, venha me encontrar.";
+			mes "Ok, agora vou te dar um teste. Você tem que acertar todas as perguntas para passar. Pronto?";
+			while(1) {
+				set .@correct,0;
+				next;
+		switch(select("Vamos para o teste!:Explicar novamente, por favor?:Desistir.")) {
+		case 1:
+			switch(rand(1,3)) {
+			case 1:
+				mes "[Mestre de Instâncias]";
+				mes "A ^006400Instância^000000 não é um Calabouço aberta a todos os usuários. Está disponível apenas para você e seu [].";
+				mes "Que palavras preenchem os espaços vazios de []?";
+				next;
+				if(select("Grupo:Membro da Guilda:Amigos:Família") == 1)
+					set .@correct, .@correct+10;
+				mes "[Mestre de Instâncias]";
+				mes "Se você for a [] e encontrar [], ele lhe dará informações sobre a Torre Sem Fim - que é uma calabouço enorme e alta.";
+				mes "Que palavras preenchem os espaços vazios de []?";
+				next;
+				if(select("Prontera, Seiyablem:Alberta, Leyablem:Alberta, Capitão Jansen:Prontera, Capitão Jansen") == 3)
+					set .@correct, .@correct+10;
+				mes "[Mestre de Instâncias]";
+				mes "Para entrar na Instância, o [] deve se inscrever e depois ficar em espera para entrar. Você entrará na ordem em que a inscrição foi feita.";
+				mes "Que palavras preenchem os espaços vazios de []?";
+				next;
+				if(select("Membro da Guilda:Líder da Guilda:Líder do Grupo:Membro do Grupo") == 3)
+					set .@correct, .@correct+10;
+				break;
+			case 2:
+				mes "[Mestre de Instâncias]";
+				mes "Quando você termina a [], você não pode entrar novamente na mesma Instância por um certo período de tempo.";
+				mes "Que palavras preenchem os espaços vazios de []?";
+				next;
+				if(select("Buff:Ritual:Exploração:Inspeção") == 3)
+					set .@correct, .@correct+10;
+				mes "[Mestre de Instâncias]";
+				mes "Se você for ao Mapa dos Orcs onde todos os orcs vivem, você será capaz de encontrar []. Provavelmente ele poderá lhe dar informações sobre a Intância Batalha dos Orcs.";
+				mes "Que palavras preenchem os espaços vazios de []?";
+				next;
+				if(select("Cientista maluco:Cientista Louco:Alquimista Insano:Alquimista Louco") == 1)
+					set .@correct, .@correct+10;
+				mes "[Mestre de Instâncias]";
+				mes "Para entrar a Instância, o [] deve se inscrever - então você poderá entrar na ordem em que sua inscrição foi entregue.";
+				mes "Você tem que estar em espera para isso.";
+				mes "Que palavras preenchem os espaços vazios de []?";
+				next;
+				if(select("Líder da Guilda:Membro da Guilda:Membro do Grupo:Líder do Grupo") == 4)
+							set .@correct, .@correct+10;
+						break;
+					case 3:
+						mes "[Mestre de Instâncias]";
+						mes "Se você for ao lugar onde pode se tornar um monge, o Monastério Capitolina, você pode encontrar []. Ele lhe falará sobre a calabouço com o Baphomet Selado.";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("Padre Patrick:Patrulheiro Patrick:Bêbado Patrick:Frei Patrick") == 4)
+							set .@correct, .@correct+10;
+						mes "[Mestre de Instâncias]";
+						mes "Quando você termina a [], você não pode entrar novamente na mesma Instância por um certo período de tempo.";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("Exploração:Inspeção:Buff:Ritual") == 1)
+							set .@correct, .@correct+10;
+						mes "[Mestre de Instâncias]";
+						mes "^006400Instância^000000 não é apenas aberta para todos os usuários. Está disponível apenas para você e seus [].";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("Amigos:Família:Membros do Grupo:Membros da Guilda") == 3)
+							set .@correct, .@correct+10;
+						break;
+						}
+						if (.@correct == 30) {
+							mes "[Mestre de Instâncias]";
+							mes "Você é bastante esperto~ vendo que acertou todas as 3 perguntas. Agora você entende sobre as ^006400Instâncias^000000?";
+							next;
+							mes "[Mestre de Instâncias]";
+							mes "Se você quiser discutir algo sobre as ^006400Instâncias^000000, venha conversar comigo a qualquer momento.";
+							next;
+							mes "[Mestre de Instâncias]";
+							mes "Agora, vá até o ^0000FFMestre de Mapeamento^000000!";
+						completequest 4164;
+						setquest 4165;
+						getexp 2000,1000;
+						close;
+					}
+					mes "[Mestre de Instâncias]";
+					mes "O teste não foi tão difícil...";
+					next;
+					mes "[Mestre de Instâncias]";
+					mes "Você parece ter potencial... você deveria tentar novamente.";
+					break;
+					case 2:
+						callsub L_Info;
+						mes "[Mestre de Instâncias]";
+						mes "É fácil entender vindo de um especialista como eu. Agora é hora do teste. Você tem que acertar todas as respostas para passar. Você está pronto?";
+						break;
+					case 3:
+						mes "[Mestre de Instâncias]";
+						mes "Desistir é covarde. Se mudar de ideia, venha falar comigo.";
+						close;
+					}
+				}
+				close;
+				case 2:
+					mes "[Mestre de Instâncias]";
+					mes "Desistir sem nem tentar é covarde. Se mudar de ideia, venha falar comigo.";
+					close;
+					}
+				close;
+				}
+			mes "[Mestre de Instâncias]";
+			mes "Se quer aprender alguma coisa comigo, fale com o ^006400mestre da guerra^000000 antes e volte quando ele te aprovar.";
+			close;
+
+L_Info:
+	mes "[Mestre de Instâncias]";
+	mes "A ^006400Instância^000000 não é um Calabouço aberta a todos. Ela só abre para ^0000FFVocê e os Membros do Grupo^000000.";
+	next;
+	mes "[Mestre de Instâncias]";
+	mes "Portanto, para entrar na ^006400Instância^000000, o Líder do Grupo deve se inscrever. Como você entra na ordem em que se inscreve, deve estar em espera para entrar.";
+	next;
+	mes "[Mestre de Instâncias]";
+	mes "Além disso, depois de explorar a Instância, você não pode entrar novamente na a ^006400Instância^000000 por um certo período de tempo.";
+	next;
+	mes "[Mestre de Instâncias]";
+	mes "Existem muitas ^006400Instâncias^000000, mas vamos lhe dar dicas para ajudá-lo a encontrar as Instâncias no mundo de Midgard.";
+	next;
+	mes "[Mestre de Instâncias]";
+	mes "Primeiro, vá para ^8B4513Alberta^000000 e encontre ^006400Capitão Jansen^000000.";
+	mes "Ele lhe dará informações sobre a calabouço realmente enorme e alta conhecida como ^006400Torre Sem Fim^000000.";
+	next;
+	mes "[Mestre de Instâncias]";
+	mes "Segundo, vá para o ^8B4513Mapa dos Orcs^000000 onde todos os orcs vivem e encontre o ^006400Cientista maluco^000000.";
+	mes "Você pode conseguir algumas informações sobre uma calabouço relacionada à ^006400Batalha dos Orc's^000000.";
+	next;
+	mes "[Mestre de Instâncias]";
+	mes "Terceiro e último, procure pelo lugar onde você pode se tornar um monge, que é o ^8B4513Mosteiro Capitolina^000000 e procure por ^006400Frei Patrick^000000.";
+	mes "Ele será capaz de lhe dar informações sobre a Instância com o ^006400Baphomet Selado^000000+.";
+	next;
+	mes "[Mestre de Instâncias]";
+	mes "Claro que existem outras localizações para as Instâncias, mas é melhor começar onde você pode encontrá-las facilmente.";
+	mes "À medida que você continua suas aventuras, será capaz de encontrá-las mais facilmente.";
+	next;
+	return;
+}
+
+moc_para01,14,168,6	script	Mestre de Mapeamento	743,{
+	set .@checkquest, checkquest(4165);
+	if (.@checkquest == 2) {
+		mes "[Mestre de Mapeamento]";
+		mes "Vendo que você veio até mim, suponho que tenha algumas perguntas sobre os ^006400MAPAS^000000?";
+		next;
+		switch(select("Listar sobre o Mapa.:Encerrar Conversa.")) {
+		case 1:
+			callsub L_Info;
+			mes "[Mestre de Mapeamento]";
+			mes "Se você acabar nessas áreas enquanto estiver se aventurando, não deixe de me contar tudo!";
+			mes "E agora, como você passou por todos os quizzes dos Especialistas, vá em frente e fale com ^006400Instrutor^000000.";
+			close;
+		case 2:
+			mes "[Mestre de Mapeamento]";
+			mes "Se tiver mais perguntas, venha me encontrar.";
+			close;
+		}
+		} else if (.@checkquest == 0 || .@checkquest == 1) {
+		mes "[Mestre de Mapeamento]";
+		mes "Pesquisei e estudei os ^006400MAPAS^000000 por 16 anos e agora sou o ^006400Especialista em MAPAS^000000!";
+		mes "Já que você me procurou, parece que você passou pelo quiz do ^006400Mestre de Instâncias^000000.";
+		next;
+		mes "[Mestre de Mapeamento]";
+		mes "Como você já sabe, se passar por todos os quizzes dos Especialistas, receberá um prêmio.";
+		next;
+		mes "[Mestre de Mapeamento]";
+		mes "Como último Especialista, tentarei explicar tudo sobre os ^006400MAPAS^000000 para facilitar para você. Pronto para começar?";
+		next;
+		switch(select("Ouvir sobre os Mapas.:Encerrar Conversa.")) {
+		case 1:
+			callsub L_Info;
+			mes "[Mestre de Mapeamento]";
+			mes "Como foi minha explicação? Agora vou lhe dar um quiz rápido! Você tem que acertar todas as respostas para passar. Pronto?";
+			while(1) {
+				set .@correct,0;
+				next;
+				switch(select("Vamos para o quiz!:Explicar novamente, por favor?:Desistir.")) {
+				case 1:
+					switch(rand(1,3)) {
+					case 1:
+						mes "[Mestre de Mapeamento]";
+						mes "Você pode ver o mapa clicando no botão [] que está localizado no canto superior esquerdo.";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("Habilidade:Guilda:Mapa-Múndi:Personagem") == 3)
+							set .@correct, .@correct+10;
+						mes "[Mestre de Mapeamento]";
+						mes "Ao olhar para o mapa, cada área oferece as informações [] e [] dos monstros. Isso eliminará qualquer dúvida sobre onde você deve caçar.";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("Nome, Idade:Atributos, Nível:Atributos, Tribo:Nome, Nível") == 4)
+							set .@correct, .@correct+10;
+						mes "[Mestre de Mapeamento]";
+						mes "Se você quiser parar de olhar para o mapa, basta pressionar a tecla de atalho [] ou ESC e ele fechará o mapa para você.";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("ALT + F4:CTRL + ASPAS:CTRL + M:ALT + ESC") == 2)
+							set .@correct, .@correct+10;
+						break;
+					case 2:
+						mes "[Mestre de Mapeamento]";
+						mes "Depois de abrir seu mapa e";
+						mes "passar o mouse sobre áreas específicas,";
+						mes "você pode ver o [] e [] da região.";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("Nome, Detalhes:Nome, Atributos do Monstro:Especialidades, Detalhes da Área:Especialidades, Nome") == 1)
+							set .@correct, .@correct+10;
+						mes "[Mestre de Mapeamento]";
+						mes "Se você olhar para o canto superior esquerdo do mapa, verá uma caixa e o nome []. Clique nele ou pressione a tecla de atalho TAB e você pode descobrir várias informações.";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("Lobo do Deserto:Mímico:Siroma:Monstro (Tab)") == 4)
+							set .@correct, .@correct+10;
+						mes "[Mestre de Mapeamento]";
+						mes "Enquanto olha para o mapa, ao pressionar a tecla de atalho TAB, você poderá encontrar e localizar vários calabouços e suas Localizações de Entrada.";
+						mes "Você também pode encontrar o [] dos monstros nessa área.";
+						mes "Que palavras preenchem os espaços vazios de []?";
+						next;
+						if(select("Nome:Nível:Atributo:Tamanho") == 2)
+							set .@correct, .@correct+10;
+						break;
+					case 3:
+							mes "[Mestre de Mapeamento]";
+							mes "Se você quiser parar de olhar para o mapa, tudo o que precisa fazer é pressionar o [] para voltar à tela normal.";
+							mes "Que palavras preenchem os espaços vazios de []?";
+							next;
+							if(select("O:X:SAÍDA:ALT") == 2)
+								set .@correct, .@correct+10;
+							mes "[Mestre de Mapeamento]";
+							mes "Enquanto olha para o mapa, ao pressionar a tecla de atalho TAB, você poderá encontrar e localizar vários calabouços e suas Localizações de Entrada.";
+							mes "Você também pode encontrar o [] dos monstros nessa área.";
+							mes "Que palavras preenchem os espaços vazios de []?";
+							next;
+							if(select("Nível:Nome:Tamanho:Atributo") == 1)
+								set .@correct, .@correct+10;
+							mes "[Mestre de Mapeamento]";
+							mes "Você pode ver o mapa clicando no botão [] que está localizado no canto superior esquerdo.";
+							mes "Que palavras preenchem os espaços vazios de []?";
+							next;
+							if(select("GUILD:SKILL:BOOKING:Mapa-múndi") == 4)
+							set .@correct, .@correct+10;
+						break;
+					}
+					if (.@correct == 30) {
+						mes "[Mestre de Mapeamento]";
+						mes "Bingo! Você acertou todas as 3 respostas corretamente! Agora, sente que entende mais sobre os ^006400MAPAS^000000?";
+						next;
+						mes "[Mestre de Mapeamento]";
+						mes "Se algum dia sentir vontade de aprender mais sobre os ^006400MAPAS^000000, venha falar comigo a qualquer momento.";
+						next;
+						mes "[Mestre de Mapeamento]";
+						mes "Parabéns por passar em todos os testes dos Especialistas! Agora, vá encontrar e falar com o ^006400Instrutora^000000!";
+						completequest 4165;
+						setquest 4166;
+						getexp 2000,1000;
+						close;
+					}
+					mes "[Mestre de Mapeamento]";
+					mes "As 3 perguntas não deveriam ter sido tão difíceis...";
+					next;
+					mes "[Mestre de Mapeamento]";
+					mes "Bem, você parece ser bastante inteligente, então por que não tenta o quiz novamente?";
+					break;
+				case 2:
+					callsub L_Info;
+					mes "[Mestre de Mapeamento]";
+					mes "Como estão as explicações deste Especialista? Agora vou te dar um quiz rápido. Você precisa acertar todas as respostas para passar. Quer tentar?";
+					break;
+				case 3:
+					mes "[Mestre de Mapeamento]";
+					mes "Eu sou o último Especialista! Não desista! Venha me encontrar novamente quando estiver pronto!";
+					close;
+				}
+			}
+			close;
+		case 2:
+			mes "[Mestre de Mapeamento]";
+			mes "Você vai desistir sem nem tentar? Mas eu sou o último Especialista! Não desista! Venha me encontrar novamente quando estiver pronto!";
+			close;
+		}
+		close;
+	}
+	mes "[Mestre de Mapeamento]";
+	mes "Se quer aprender alguma coisa comigo, fale primeiro com o mestre dos ^006400calabouços memoriais^000000 e volte quando ele te aprovar.";
+	close;
+
+L_Info:
+	mes "[Mestre de Mapeamento]";
+	mes "Um ^006400MAPA^000000 mostra coisas necessárias para viajar pelo mundo, como a geografia, principais cidades e campos e assim por diante. É uma ferramenta muito importante!";
+	next;
+	mes "[Mestre de Mapeamento]";
+	mes "Por causa disso, é mais importante do que tudo o que você sabe sobre ^006400MAPAS^000000.";
+	next;
+	mes "[Mestre de Mapeamento]";
+	mes "O mapa pode ser acessado clicando no botão que diz ^006400Mapa-Múndi^000000 no canto superior esquerdo da sua tela.";
+	next;
+	mes "[Mestre de Mapeamento]";
+	mes "Quando você clica no botão ^006400Mapa-Múndi^000000, um mapa de Midgard em tamanho completo ocupará toda a sua tela.";
+	mes "Quando você ^0000FFPassar o mouse sobre áreas específicas^000000, você pode descobrir mais coisas como ^006400NOME^000000 e Detalhes da Área.";
+	next;
+	mes "[Mestre de Mapeamento]";
+	mes "Se você olhar para o canto inferior direito do seu mapa, há um ^006400um nome Monstro (tab)^000000.";
+	mes "Se você clicar nele ou pressionar a tecla de atalho ^006400TAB^000000, você poderá ver várias informações.";
+	next;
+	mes "[Mestre de Mapeamento]";
+	mes "Primeiro, você pode descobrir o ^006400NOME^000000 e ^006400NÍVEL^000000 dos monstros em cada área. Isso vai eliminar grande parte do trabalho de adivinhação sobre onde você quer caçar.";
+	next;
+	mes "[Mestre de Mapeamento]";
+	mes "Segundo, você pode localizar vários ^006400Calabouços^000000 e sua";
+	mes "Localização de Entrada^000000. Além disso, também mostrará os monstros que residem naquela área";
+	mes "juntamente com seu ^006400NÍVEL^000000. Está em vermelho, então é fácil de encontrar.";
+	next;
+	mes "[Mestre de Mapeamento]";
+	mes "Se você quiser parar de olhar o mapa, há 2 maneiras de fazer isso.";
+	mes "Você pode pressionar as teclas de atalho que são ^006400CTRL + '^000000 ou ^006400ESC^000000";
+	mes "Ou no canto superior direito do mapa, há um botão ^006400X^000000. Clique nele e você voltará para a tela normal do jogo.";
+	next;
+	mes "[Mestre de Mapeamento]";
+	mes "Atualmente, não podemos ver lugares que estão além de Midgard, mas foi dito que existem muitos mundos desconhecidos que existem no além.";
+	next;
+	return;
+}

@@ -1,0 +1,52 @@
+// ===== Script rAthena ===========================================
+// = NPC de locação universal
+// ===== Por: =============================================== =========
+// = Euphy
+// ===== Traduzido Por: =============================================== =========
+// = Guru
+// ===== Versão Atual: ===========================================
+// = 1.0a
+// ===== Compatível com: =========================================
+// = Projeto rAthena
+// ===== Descrição: ===============================================
+// = Aluguel de montagem automática com um clique.
+//============================================================
+
+prontera,140,181,6	script	[Garota Negociante]	726,{
+	if (ismounting()) {
+			if (#language == 0) {
+		message strcharinfo(0),"Você deve remover sua montaria.";
+		} else {
+		message strcharinfo(0),"You must first remove your mount.";
+		}
+		end;
+	} else if (((eaclass()&EAJ_THIRDMASK)==EAJ_RANGER) && !countitem(6124)) {
+		if (!checkfalcon() && getskilllv("HT_FALCON") && !checkwug()) {
+			if(select(" ~ Falcon: ~ Warg")==1) setfalcon;
+			else getitem 6124,1; //Flauta de lobo
+		} else getitem 6124,1; //Flauta de lobo
+	} else if (((eaclass()&EAJ_THIRDMASK)==EAJ_MECHANIC) && !checkcart() && getskilllv("MC_PUSHCART")) {
+		if (!checkmadogear() && getskilllv("NC_MADOLICENCE")) {
+			if(select(" ~ Cart: ~ Mado")==1) setcart;
+			else setmadogear;
+		} else setcart;
+	} else if (!checkcart() && getskilllv("MC_PUSHCART")) setcart;
+	else if (!checkfalcon() && getskilllv("HT_FALCON") && !checkwug()) setfalcon;
+	else if (!checkriding() && !checkdragon() && getskilllv("KN_RIDING")) {
+		if ((eaclass()&EAJ_THIRDMASK)==EAJ_RUNE_KNIGHT) setdragon;
+		else setriding;
+	} else if (!checkmadogear() && getskilllv("NC_MADOLICENCE")) setmadogear;
+	else {
+		if (#language == 0) {
+		message strcharinfo(0),"Você não atende aos requisitos para alugar.";
+		} else {
+		message strcharinfo(0),"You do not meet requirements to rent.";
+		}
+		end;
+	}
+	specialeffect2 EF_TEIHIT3;
+OnInit:
+    setunittitle (getnpcid(0), "_ Universal Rental _");
+    end;
+	end;
+}

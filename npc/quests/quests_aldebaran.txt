@@ -1,0 +1,104 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+// 'Doctor Band', 'Feather Bonnet', 'Opera Masque', 'Sakkat Hat' Quest
+//============================================================
+aldeba_in,152,166,4	script	Trader#01	86,{
+	mes "[Comerciante]";
+	mes "Quem é esse homem misterioso?";
+	mes "Eu, o enigmático e jovial 'Comerciante?'";
+	next;
+	mes "[Comerciante]";
+	mes "Viajando pelo continente Midgard, com todos os seus chapéus maravilhosos? ";
+	next;
+	mes "[Comerciante]";
+	mes "Com que finalidade coleciono e troco esses chapéus de todo o mundo? ";
+	next;
+	mes "(1) ^3355FFDoctor Band^000000:";
+	mes "1 Bandana Vermelha 50 Ferros 1 Diamante Rachado 3500 Zeny";
+	mes "(2)^3355FFCapota de penas^000000:";
+	mes "1 Cavalheiro Romântico 300 Penas de Pássaros 500 Zeny";
+	mes "(3) ^3355FFFantasma da Ópera^000000:";
+	mes "20 Ferro 1 Planta Cantante 5000 Zeny";
+	mes "(4) ^3355FFSakkat^000000:";
+	mes "120 Troncos 10.000 Zeny";
+	next;
+	switch(select("Banda Médica: Feather Bonnet: Fantasma da Ópera: Sakkat")) {
+	case 1:
+		if ((countitem(2275) > 0) && (countitem(998) > 49) && (countitem(733) > 0) && (Zeny > 3499)) {
+			delitem 2275,1; //Red_Bandana
+			delitem 998,50; //Iron
+			delitem 733,1; //Crystal_Jewel___
+			set Zeny, Zeny-3500;
+			mes "[Comerciante]";
+			mes "Hum! ";
+			next;
+			mes "[Comerciante]";
+			mes "Ah, tanto faz. ";
+			getitem 2273,1; //Doctor_Cap
+			close;
+		}
+		else {
+			mes "[Comerciante]";
+			mes "Você cara ~";
+			mes "Verifique os requisitos novamente.";
+			mes "Você não parece um idiota. ";
+			close;
+		}
+	case 2:
+		if ((countitem(2247) > 0) && (countitem(916) > 299) && (Zeny > 499)) {
+			delitem 2247,1; //Oldman's_Romance
+			delitem 916,300; //Feather_Of_Birds
+			set Zeny, Zeny-500;
+			mes "[Comerciante]";
+			mes "Ahhh~! ";
+			getitem 5018,1; //Feather_Bonnet
+			close;
+		}
+		else {
+			mes "[Comerciante]";
+			mes "Você cara ~";
+			mes "Vá verificar meus requisitos novamente. ";
+			close;
+		}
+	case 3:
+		if ((countitem(998) > 19) && (countitem(707) > 0) && (Zeny > 4999)){ //Iron Singing_Plant 
+			delitem 998,20; //Iron
+			delitem 707,1; //Singing_Plant
+			set Zeny, Zeny-5000;
+			mes "[Comerciante]";
+			mes "Este? ";
+			getitem 2281,1; //Phantom_Of_Opera
+			close;
+		}
+		else {
+			mes "[Comerciante]";
+			mes "Palhaço. ";
+			close;
+		}
+	case 4:
+		if ((countitem(1019) > 119) && (Zeny > 9999)){ //Wooden_Block 
+			delitem 1019,120; //Wooden_Block
+			set Zeny, Zeny-10000;
+			mes "[Comerciante]";
+			mes "Se você tiver a oportunidade de visitar Uplander Village, Payon, vá conhecer o Sakkat Craftsman.";
+			next;
+			mes "[Comerciante]";
+			mes "Ele nunca vendeu Sakkat para outros comerciantes além de mim, pois só eu posso reconhecer sua qualidade. ";
+			getitem 2280,1; //Sahkkat
+			close;
+		}
+		else {
+			mes "[Comerciante]";
+			mes "MORON ~ Verifique meus requisitos novamente. ";
+			close;
+		}
+	}
+}
+

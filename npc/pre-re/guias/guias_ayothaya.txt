@@ -1,0 +1,106 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+ayothaya,203,169,3	script	Noi#ayo	839,{
+	mes "[Não]";
+	mes "Bem-vindo a Ayothaya.";
+	mes "Nossa bela vila é construída";
+	mes "acima da água, cercado";
+	mes "por uma floresta densa.";
+	next;
+	mes "[Não]";
+	mes "Existem muitas atrações turísticas nesta vila que você não encontrará em nenhum outro lugar. ";
+	next;
+	mes "[Não]";
+	mes "Por favor sinta-se livre";
+	mes "para dar uma olhada ao redor.";
+	next;
+	switch(select("Locais de construção.:Remover marcas do minimapa.:Cancelar.")) {
+	case 1:
+		mes "[Não]";
+		mes "Onde seria";
+		mes "você gosta de visitar?";
+		next;
+		switch(select("Loja de armas:Loja de ferramentas:Taverna:Santuário:Local de pesca:Cancelar")) {
+		case 1:
+			mes "[Não]";
+			mes "Em nossa loja de armas,";
+			mes "você encontrará ótimas armas";
+			mes "favorecido pelos bravos marinheiros de Ayothayan.";
+			next;
+			mes "[Não]";
+			mes "Nossa loja de armas";
+			mes "está localizado em ^55FF33 ^000000.";
+			viewpoint 1,165,90,2,0x55FF33;
+			close;
+		case 2:
+			mes "[Não]";
+			mes "Nós, Ayothayans, sempre nos certificamos de que temos tudo o que precisamos antes de viajar. ";
+			next;
+			mes "[Não]";
+			mes "Nossa loja de ferramentas";
+			mes "está localizado em ^3355FF ^000000.";
+			viewpoint 1,129,86,3,0x3355FF;
+			close;
+		case 3:
+			mes "[Não]";
+			mes "Um dos princípios básicos da aventura é coletar informações, ou pelo menos é o que dizem. ";
+			next;
+			mes "[Não]";
+			mes "Claro, você deve";
+			mes "passe pela nossa Taberna.";
+			mes "Ele está localizado em ^00FF00 ^000000.";
+			viewpoint 1,232,76,4,0x00FF00;
+			close;
+		case 4:
+			mes "[Não]";
+			mes "Se deseja rezar a Deus ou alcançar um estado de paz mental, porque não visita o nosso Santuário? ";
+			mes "bem-vindo aí.";
+			next;
+			mes "[Não]";
+			mes "Nosso Santuário";
+			mes "está localizado em ^00FF00 ^000000.";
+			viewpoint 1,208,283,5,0x00FF00;
+			close;
+		case 5:
+			mes "[Não]";
+			mes "Desde que Ayothaya foi construída acima da superfície da água e perto da praia, tem sido um local preferido dos pescadores. ";
+			next;
+			mes "[Não]";
+			mes "Nosso famoso";
+			mes "Local de pesca";
+			mes "está localizado em ^00FF00 ^000000";
+			viewpoint 1,253,99,6,0x00FF00;
+			close;
+		case 6:
+			mes "[Não]";
+			mes "Se você deseja remover marcas de localização em seu minimapa, selecione o comando ‘Remover marcas do minimapa’ no menu.";
+			close;
+		}
+	case 2:
+		viewpoint 2,165,90,2,0x55FF33;
+		viewpoint 2,129,86,3,0x3355FF;
+		viewpoint 2,232,76,4,0x00FF00;
+		viewpoint 2,208,283,5,0x00FF00;
+		viewpoint 2,253,99,6,0x00FF00;
+		mes "[Não]";
+		mes "Tudo bem...";
+		mes "Eu removi todos os";
+		mes "marcas de localização de";
+		mes "seu minimapa.";
+		mes "Obrigado.";
+		close;
+	case 3:
+		mes "[Não]";
+		mes "Por favor aproveite";
+		mes "suas viagens.";
+		close;
+	}
+}
+

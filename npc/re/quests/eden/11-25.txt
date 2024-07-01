@@ -1,0 +1,155 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+moc_para01,36,38,3	script	Missões [11 - 25]#Tuto	4_BOARD3,{
+	if (!callfunc("F_HasEdenGroupMark")) {
+		mes "- Você precisa ter -";
+		mes "- o ^4d4dff'emblema do Éden'^000000 -";
+		close;
+	}
+	for ( .@i = 11124; .@i < 11134; .@i++ )
+		if (checkquest(.@i,PLAYTIME) == 2) erasequest .@i;
+	for( .@i = 11114; .@i < 11124; .@i++ ) {
+		.@j = checkquest(.@i,HUNTING);
+		if (.@j == 2) {
+			mes " - Você deve coletar sua - ";
+			mes " - recompensa antes de começar - ";
+			mes " - uma nova missão. - ";
+			mes " ";
+			mes " - Gerente: Spike - ";
+			close;
+		}
+		else if (.@j >= 0) {
+			mes " - Você só pode solicitar - ";
+			mes " - uma missão por vez. - ";
+			mes " ";
+			mes " - Gerente: Spike - ";
+			close;
+		}
+	}
+	if (BaseLevel < 11) {
+		mes " - Você não tem nível suficiente - ";
+		mes " - para esse quadro de missões. - ";
+		close;
+	}
+	if (BaseLevel > 25) {
+		mes " - Essas missões são muito - ";
+		mes " - fáceis para você. - ";
+		mes " - Procure uma missão mais - ";
+		mes " - adequada para o seu nível. - ";
+		close;
+	}
+	mes " - Quadro de missões -";
+	mes " - para iniciantes. -";
+	mes " ";
+	mes " - Gerente: Spike -";
+	next;
+	switch(select("» Caçar Zangão:» Caçar Condor:» Caçar Rocker:» Caçar Rabo de Verme:» Caçar Esporo:» Caçar Ovo de Besouro-Ladrão:» Caçar Muka:» Caçar Familiar:» Caçar Peco Peco:» Caçar Esporo Venenoso:» Cancelar")) {
+		case 1: callsub L_Quest,11114,"Caça aos Zangões"," - Caçar 10 ^4d4dff'Zangões'^000000 - "," - arredores de Prontera. - ";
+		case 2: callsub L_Quest,11115,"Caça aos Condors"," - Caçar 20 ^4d4dff'Condors'^000000 - "," - arredores de Morocc. - ";
+		case 3: callsub L_Quest,11116,"Caça aos Rockers"," - Caçar 10 ^4d4dff'Rockers'^000000 - "," - arredores de Prontera e - "," - trazer 10 ^4d4dffPernas de Gafanhoto^000000. - ";
+		case 4: callsub L_Quest,11117,"Caça aos Caudas de Verme"," - Caçar 20 ^4d4dff'Caudas de Verme'^000000 - "," - arredores de Payon. - ";
+		case 5: callsub L_Quest,11118,"Caça aos Esporos"," - Caçar 30 ^4d4dff'Esporos'^000000 - "," - arredores de Payon. - ";
+		case 6: callsub L_Quest,11119,"Controle de Pragas"," - Caçar 20 ^4d4dffOvos de Besouro-Ladrão^000000 - "," - no Esgoto de Prontera - "," - e trazer 10 ^4d4dffCrisálidas^000000. - ";
+		case 7: callsub L_Quest,11120,"Caça aos Mukas"," - Caçar 20 ^4d4dff'Mukas'^000000 - "," - arredores de Prontera. - ";
+		case 8: callsub L_Quest,11121,"Caça aos Familiares"," - Caçar 20 ^4d4dffFamiliares^000000 - "," - no Esgoto - "," - de Prontera. - ";
+		case 9: callsub L_Quest,11122,"Caça aos Peco Pecos"," - Caçar 30 ^4d4dff'Peco Pecos'^000000 - "," - arredores de Prontera. - ";
+		case 10: callsub L_Quest,11123,"Caça aos Esporos Venenosos"," - Caçar 30 ^4d4dffEsporos Venenosos^000000 - "," - na Torre de Geffen e - "," - trazer 5 ^4d4dffEsporos Venenosos^000000. - ";
+		case 11:
+			mes " - Pare de ler o quadro de missões. - ";
+			close;
+	}
+
+L_Quest:
+	.@quest_status = checkquest(getarg(0)+10,PLAYTIME);
+	if (.@quest_status == 0 || .@quest_status == 1) {
+		mes " - A missão ^4d4dff"+ getarg(1) +"^000000 - ";
+		mes " - já foi concluída hoje. - ";
+		mes " ";
+		mes " - Gerente: Spike - ";
+		close;
+	}
+	mes " - Mission '"+ getarg(1) +"' - ";
+	for ( .@i = 2; .@i < getargcount(); .@i++ )
+		mes getarg(.@i);
+	mes " ";
+	mes " - Gerente: Spike - ";
+	next;
+	if (select("» Vou fazer.:» Procurar outras.") == 2) {
+		mes " - Vamos procurar -";
+		mes " - outras missões. - ";
+		close;
+	}
+	for ( .@i = 2; .@i < getargcount(); .@i++ )
+		mes getarg(.@i);
+	setquest getarg(0);
+	close;
+}
+
+moc_para01,32,30,6	script	Spike	4_F_CHILD,{
+	for( .@i = 11114; .@i < 11124; .@i++ ) {
+		.@j = checkquest(.@i,HUNTING);
+		if (.@j == 2) {
+			switch(.@i) {
+				case 11114: callsub L_Quest,.@i,"Caça aos Zangões",900;
+				case 11115: callsub L_Quest,.@i,"Caça aos Condors",1800;
+				case 11116: callsub L_Quest,.@i,"Caça aos Rockers",1400,940,10;
+				case 11117: callsub L_Quest,.@i,"Caça aos Caudas de Verme",2600;
+				case 11118: callsub L_Quest,.@i,"Caça aos Esporos",3900;
+				case 11119: callsub L_Quest,.@i,"Controle de Pragas",2900,915,10;
+				case 11120: callsub L_Quest,.@i,"Caça aos Mukas",3200;
+				case 11121: callsub L_Quest,.@i,"Caça aos Familiares",3200;
+				case 11122: callsub L_Quest,.@i,"Caça aos Peco Pecos",5400;
+				case 11123: callsub L_Quest,.@i,"Caça aos Esporos Venenosos",6000,7033,5;
+			}
+		}
+		else if (.@j >= 0) {
+			mes "[Spike]";
+			mes "Você ainda não terminou sua missão.";
+			mes "Continue o bom trabalho. Você está quase lá.";
+			close;
+		}
+	}
+	mes "[Spike]";
+	mes "Você está procurando uma missão?";
+	mes "Sempre temos muitas missões para fazer.";
+	next;
+	mes "[Spike]";
+	mes "Por que você não olha ao redor e encontra alguma interessante?";
+	close;
+
+L_Quest:
+	.@quest_id = getarg(0);
+	if (checkquest(.@quest_id,HUNTING) == 2) {
+		.@item_req = getarg(3,0);
+		.@req_amount = getarg(4,0);
+		if (.@item_req) {
+			if (countitem(.@item_req) < .@req_amount) {
+				mes "[Spike]";
+				mes "Você não tem "+getitemname(.@item_req)+" suficiente.";
+				mes "Você precisa trazer "+.@req_amount+" "+getitemname(.@item_req)+".";
+				close;
+			}
+		}
+		mes "[Spike]";
+		mes "Hmm... deixe-me ver~";
+		mes "Você completou a missão '"+getarg(1)+"'.";
+		next;
+		mes "[Spike]";
+		mes "Bom trabalho~!!";
+		mes "Nosso cliente está muito feliz com o seu trabalho.";
+		mes "Por favor, continue com o bom trabalho. Obrigado!";
+		if (.@item_req)
+			delitem .@item_req,.@req_amount;
+		erasequest .@quest_id;
+		setquest .@quest_id+10;
+		getexp getarg(2),0;
+		close;
+	}
+}

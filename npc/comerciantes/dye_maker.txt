@@ -1,0 +1,190 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+morocc_in,146,99,3	script	Java Dullihan	58,{
+	if ((MaxWeight-Weight) < 200 || checkweight(1201,1) == 0) {
+		mes "- Espere um momento! -";
+		mes "- Atualmente, você está carregando -";
+		mes "- muitos itens consigo. -";
+		mes "- Por favor, volte mais tarde -";
+		mes "- depois de colocar alguns itens no armazenamento Kafra. -";
+		close;
+	}
+	mes "[Fabricante de Corantes Java Dullihan]";
+	mes "Uau...";
+	mes "Um dia tão agradável. Dias assim são perfeitos para fazer corantes.";
+	next;
+	switch(select("Conversar:Fazer Corantes:Cancelar")) {
+	case 1:
+		mes "[Fabricante de Corantes Java Dullihan]";
+		mes "Erm, eu realmente não tenho muito o que dizer para você. Mas, se você quiser que eu conte sobre minha vida, eu posso fazer isso. É um pouco longa e entediante, mas você gostaria de ouvir?";
+		next;
+		if (select("Ouvir:Não Ouvir") == 1) {
+			mes "[Fabricante de Corantes Java Dullihan]";
+			mes "Desde que eu me lembro, meu pai faz corantes. Ele costumava passar horas incontáveis fazendo corantes de cores diferentes. Mesmo quando minha mãe faleceu, ele nunca parou.";
+			next;
+			mes "[Fabricante de Corantes Java Dullihan]";
+			mes "Em um ponto da minha vida, eu me tornei rebelde e fugi de casa. Eu não queria ficar preso ao negócio da família e queria experimentar outras coisas.";
+			next;
+			mes "[Fabricante de Corantes Java Dullihan]";
+			mes "De qualquer forma...";
+			mes "Eu eventualmente voltei para casa para seguir a tradição da família, fazendo corantes por 15 anos já. Acho que realmente estava no meu sangue.";
+			next;
+			mes "[Fabricante de Corantes Java Dullihan]";
+			mes "Algo que percebi nestes dias é que agora consigo entender meu pai. Por que meu pai dedicou tudo para fazer corantes...";
+			next;
+			mes "[Fabricante de Corantes Java Dullihan]";
+			mes "No meio de todo esse trabalho tedioso e difícil, ele provavelmente sentia a magia dessas cores passando tantos sonhos para outras pessoas.";
+			next;
+			mes "[Fabricante de Corantes Java Dullihan]";
+			mes "Foi provavelmente por esses sonhos que ele se esforçou tanto para fazer corantes para seus clientes...";
+			next;
+			mes "[Fabricante de Corantes Java Dullihan]";
+			mes "Heh... Como eu sei disso? Bem, é assim que eu me sinto agora. Desde alguns anos atrás, consigo ouvir o que as cores estão dizendo...";
+			next;
+			mes "[Fabricante de Corantes Java Dullian]";
+			mes "Apenas observe. Um dia, vou conseguir fazer a cor que meu pai queria fazer, mas nunca teve a chance de fazer.";
+			close;
+		}
+		mes "[Fabricante de Corantes Java Dullihan]";
+		mes "Ahahahaha...";
+		mes "Bem, eu acho que ninguém gostaria de ouvir a história de um simples fabricante de corantes de qualquer maneira. Hahaha....";
+		close;
+
+	case 2:
+		mes "[Fabricante de Corantes Java Dullihan]";
+		mes "Ótimo! Se você quiser, eu faço para você. Eu prometo fazer a cor que você deseja. Mas que cor de corante você gostaria de fazer? A taxa é diferente dependendo da cor.";
+		next;
+		mes "[Fabricante de Corantes Java Dullihan]";
+		mes "Por que, você pergunta? Apenas lembre-se de que existem cores fáceis de fazer e aquelas que exigem mais esforço e trabalho. Por favor, não pense que a taxa é muito cara.";
+		next;
+		mes "[Fabricante de Corantes Java Dullihan]";
+		mes "A cor do corante é especial, feita com todo o meu coração e alma.";
+		next;
+		switch(select("Tintura Vermelha:Tintura Amarela:Tintura Azul:Tintura Verde:Tintura Laranja:Tintura Violeta:Tintura Branco:Tintura Preto:Cancelar")) {
+		case 1: callsub S_MakeDye,1,1; break;
+		case 2: callsub S_MakeDye,2,1; break;
+		case 3: callsub S_MakeDye,3,2; break;
+		case 4: callsub S_MakeDye,4,3; break;
+		case 5: callsub S_MakeDye,5,4; break;
+		case 6: callsub S_MakeDye,6,4; break;
+		case 7: callsub S_MakeDye,7,4; break;
+		case 8: callsub S_MakeDye,8,4; break;
+		case 9:
+			mes "[Fabricante de Corantes Java Dullihan]";
+			mes "Eeeehhhh!! O que é isso? Mudou de ideia agora!? Que decepção...";
+			close;
+		}
+
+	case 3:
+		mes "[Fabricante de Corantes Java Dullihan]";
+		mes "Não estou me gabando ou algo assim. Mas eu tenho as habilidades para fazer corantes. Se você precisar de corantes, por favor, venha até mim. Eu vou fazê-los para você a um preço razoável.";
+		close;
+	}
+
+S_MakeDye:
+	mes "[Fabricante de Corantes Java Dullihan]";
+	switch(getarg(0)) {
+	case 1:
+		mes "Mmm... Eu preciso de 30 Ervas Vermelhas, 1 Contratante e 1 Frasco Vazio para fazer Corantes Vermelhos. A taxa é apenas 3000 zeny para fazer.";
+		setarray .@item[0], 507, 973, 713;
+		setarray .@count[0], 30,   1,   1;
+		set .@cost,3000;
+		set .@dyestuff,975;
+		break;
+	case 2:
+		mes "Mmm... Eu preciso de 30 Ervas Amarelas, 1 Contratante e 1 Frasco Vazio para fazer Corantes de Limão. A taxa é apenas 3000 zeny para fazer.";
+		setarray .@item[0], 508, 973, 713;
+		setarray .@count[0], 30,   1,   1;
+		set .@cost,3000;
+		set .@dyestuff,976;
+		break;
+	case 3:
+		mes "Mmm... Eu preciso de 20 Ervas Azuis, 1 Contratante e 1 Frasco Vazio para fazer Corante Azul Cobalto. É difícil usar a Erva Azul, então a taxa será de 3500 zeny.";
+		setarray .@item[0], 510, 973, 713;
+		setarray .@count[0], 20,   1,   1;
+		set .@cost,3500;
+		set .@dyestuff,978;
+		break;
+	case 4:
+		mes "Mmm... Eu preciso de 5 Ervas Azuis, 20 Ervas Verdes, 20 Ervas Amarelas, 1 Contratante, 1 Mistura e 1 Frasco Vazio para fazer Corantes Verde Escuro. Não confunda todos os materiais. A taxa é apenas 5000 zeny.";
+		setarray .@item[0], 510, 511, 508, 974, 973, 713;
+		setarray .@count[0],  5,  20,  20,   1,   1,   1;
+		set .@cost,5000;
+		set .@dyestuff,979;
+		break;
+	case 5:
+		mes "Mmm... Eu preciso de 20 Ervas Vermelhas, 20 Ervas Amarelas, 1 Contratante, 1 Mistura e 1 Frasco Vazio para fazer Corante Laranja. A taxa será de 5000 zeny.";
+		setarray .@item[0], 507, 508, 974, 973, 713;
+		setarray .@count[0], 20,  20,   1,   1,   1;
+		set .@cost,5000;
+		set .@dyestuff,980;
+		break;
+	case 6:
+		mes "Mmm... Eu preciso de 10 Ervas Azuis, 30 Ervas Vermelhas, 1 Contratante, 1 Mistura e 1 Frasco Vazio para fazer Corantes Violeta. A taxa será de 5000 zeny.";
+		setarray .@item[0], 510, 507, 974, 973, 713;
+		setarray .@count[0], 10,  30,   1,   1,   1;
+		set .@cost,5000;
+		set .@dyestuff,981;
+		break;
+	case 7:
+		mes "Mmm... Eu preciso de 30 Ervas Brancas, 1 Contratante e 1 Frasco Vazio para fazer Corantes Brancos. A taxa será de 3000 zeny.";
+		setarray .@item[0], 509, 973, 713;
+		setarray .@count[0], 30,   1,   1; 
+		set .@cost,3000;
+		set .@dyestuff,982;
+		break;
+	case 8:
+		mes "Mmm... Eu preciso de 30 de cada Erva Vermelha, Amarela e Verde, 5 Ervas Azuis, 1 Contratante, 1 Mistura e 1 Frasco Vazio. O processo leva mais tempo e esforço do que os outros, então será 7000 zeny.";
+		setarray .@item[0], 507, 508, 511, 510, 974, 973, 713;
+		setarray .@count[0], 30,  30,  30,   5,   1,   1,   1;
+		set .@cost,7000;
+		set .@dyestuff,983;
+		break;
+	}
+	next;
+	mes "[Fabricante de Corantes Java Dullihan]";
+	switch(getarg(1)) {
+	case 1: mes "Ah! Eu acho que você teria tudo pronto. Gostaria de começar o processo?"; break;
+	case 2: mes "Okay! Eu acredito que você teria tudo pronto. Gostaria de começar o processo?"; break;
+	case 3: mes "Okay! Eu acredito que você teria tudo pronto. Vamos começar o processo?"; break;
+	case 4: mes "Okay! Eu acredito que você teria tudo preparado. Gostaria de começar o processo?"; break;
+	}
+	next;
+	if (select("Fazer Corantes:Cancelar") == 1) {
+		set .@size, getarraysize(.@item);
+		// verificar requisitos
+		for( set .@i,0 ; .@i < .@size ; set .@i,.@i+1 )
+			if( countitem(.@item[.@i]) < .@count[.@i] )
+				break;
+		if( .@i < .@size || Zeny < .@cost ) {
+			mes "[Fabricante de Corantes Java Dullihan]";
+			mes "Hmm. Não o suficiente...";
+			mes "Eu não acho que conseguirei fazer a cor que você deseja com esses materiais. Que tal conseguir mais materiais...?";
+			close;
+		}
+		// excluir itens
+		for (set .@i, 0; .@i < .@size ; set .@i, .@i+1)
+			delitem .@item[.@i], .@count[.@i];
+		set Zeny, Zeny-.@cost;
+		// obter corante
+		getitem .@dyestuff,1;
+		
+		mes "[Fabricante de Corantes Java Dullihan]";
+		mes "Hmm... Ficou muito bem. Uma cor muito rica. Claro, vou continuar tentando fazer uma cor mais encantadora...";
+		next;
+		mes "[Fabricante de Corantes Java Dullihan]";
+		mes "Bem, então. Passe por aqui sempre que precisar de mais corantes.";
+		close;
+	}
+	mes "[Fabricante de Corantes Java Dullihan]";
+	mes "Eeeehhhh!! O que é isso?";
+	mes "Mudou de ideia agora!? Que decepção...";
+	return;
+}

@@ -1,0 +1,87 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+moscovia,161,76,4	script	Guia de Moscovia#mosk	959,{
+	mes "[Guia de Moscou]";
+	mes "Bem vindo a Moscóvia";
+	mes "Aqui está o paraíso se espalhando";
+	mes "os mares sem fim";
+	mes "Você ficará feliz com a bela";
+	mes "cenário e a luz do sol!";
+	next;
+	mes "[Guia de Moscou]";
+	mes "Fui enviado do Palácio de Moscóvia";
+	mes "orientar os turistas e dar-lhes";
+	mes "informações sobre esta cidade.";
+	mes "Se você tiver alguma dúvida, por favor me pergunte.";
+	next;
+	switch(select("Pergunte onde você pode ir.:Exclua todas as marcas do minimapa.:Cancelar.")) {
+		case 1:
+			mes "[Guia de Moscou]";
+			mes "Onde você gostaria de ir?";
+			next;
+			switch(select("O Palácio: Loja de Armaduras: Loja de Ferramentas: Uma Pousada: Cancelar")) {
+				case 1:
+					mes "[Guia de Moscou]";
+					mes "O Palácio pode ser encontrado ^ff0000 ^000000 no";
+					mes "final do mar do Norte a partir de";
+					mes "Rune-Midgarts.";
+					mes "Lá reside nosso Senhor, o Czar de";
+					mes "Moscóvia e seus retentores.";
+					close2;
+					viewpoint 1,257,138,1,0xFF0000;
+					end;
+				case 2:
+					viewpoint 1,185,187,2,0x00FF00;
+					mes "[Guia de Moscou]";
+					mes "A Loja de Armaduras está localizada no";
+					mes "canto sudoeste da cidade..";
+					mes "Você pode comprar armaduras feitas pelos melhores";
+					mes "artesãos de Moscóvia lá.";
+					close;
+				case 3:
+					mes "[Guia de Moscou]";
+					mes "A loja de ferramentas está localizada ao sul";
+					mes "do centro da cidade.";
+					mes "Você pode encontrar todos os tipos de coisas";
+					mes "você precisa para suas viagens.";
+					close2;
+					viewpoint 1,223,174,3,0x00FF00;
+					end;
+				case 4:
+					mes "[Guia de Moscou]";
+					mes "A pousada 'Sticky Herb Tree' fica a apenas";
+					mes "ao norte do centro da cidade.";
+					mes "Se você precisa descansar, não há";
+					mes "melhor lugar para ficar.";
+					close2;
+					viewpoint 1,229,208,4,0x3355FF;
+					end;
+				case 5:
+					close;
+			}
+		case 2:
+			mes "[Guia de Moscou]";
+			mes "Excluí todas as marcas do minimapa.";
+			mes "Sempre que você quiser colocar marcas";
+			mes "aí, você pode me perguntar.";
+			viewpoint 2,257,138,1,0xFF0000;
+			viewpoint 2,185,187,2,0x00FF00;
+			viewpoint 2,223,174,3,0x00FF00;
+			viewpoint 2,229,208,4,0x3355FF;
+			close;
+		
+		case 3:
+			mes "[Guia de Moscou]";
+			mes "Seria ótimo andar sozinho.";
+			mes "Tomar cuidado.";
+			close;
+	}
+}
+

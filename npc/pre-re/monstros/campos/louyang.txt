@@ -1,0 +1,29 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+//==================================================
+// lou_fild01 - Campos de Louyang
+//==================================================
+lou_fild01,224,315,100,50	monster	Pé-Grande	1060,7
+lou_fild01,203,225,110,35	monster	Pé-Grande	1060,4,60000,30000
+lou_fild01,273,128,75,50	monster	Pé-Grande	1060,4
+lou_fild01,224,315,100,50	monster	Caramelo	1103,7
+lou_fild01,203,225,110,35	monster	Caramelo	1103,7
+lou_fild01,273,128,75,50	monster	Caramelo	1103,7
+lou_fild01,224,315,100,50	monster	Louva-a-Deus	1139,10
+lou_fild01,203,225,110,35	monster	Louva-a-Deus	1139,10
+lou_fild01,273,128,75,50	monster	Louva-a-Deus	1139,10
+lou_fild01,224,315,100,50	monster	Mi Gao	1516,8
+lou_fild01,203,225,110,35	monster	Mi Gao	1516,15,60000,30000
+lou_fild01,273,128,75,50	monster	Mi Gao	1516,7
+lou_fild01,224,315,100,50	monster	Anaconda	1030,2
+lou_fild01,203,225,110,35	monster	Anaconda	1030,1
+lou_fild01,273,128,75,50	monster	Anaconda	1030,2
+lou_fild01,0,0	monster	Cogumelo Negro	1084,5
+lou_fild01,0,0	monster	Planta Amarela	1081,10

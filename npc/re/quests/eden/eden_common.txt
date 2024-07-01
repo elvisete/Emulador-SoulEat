@@ -1,0 +1,423 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+// Common NPCs :: lv_tre
+//============================================================
+moc_para01,27,35,5	script	Secretária Lenore	4_F_Eden_OFFICER,{
+	if (checkweight(1201,1) == 0 || (MaxWeight - Weight) < 2000) {
+		mes "- Espere um momento! -";
+		mes "- Você está carregando -";
+		mes "- muitos itens no momento. -";
+		mes "- Por favor, tente novamente -";
+		mes "- depois de liberar um pouco de espaço. -";
+		close;
+	}
+	if (countitem(6219) > 0) {
+		mes "[Lenore]";
+		mes "Graças a muitos aventureiros que visitam o Grupo Éden, recentemente preparamos uma nova versão do Símbolo do Grupo Éden para nossos membros.";
+		mes "E também é possível trocar a versão antiga por uma nova.";
+		next;
+		mes "[Lenore]";
+		mes "Embora tenha um pequeno atraso, esta nova versão do Símbolo, o enviará de volta para a localização salva atualmente.";
+		mes "Gostaria de trocar o seu?";
+		next;
+		if (select("Sim, Por favor.:Não, Obrigado.") == 2){
+			mes "[Lenore]";
+			mes "Qual motivo você teria... para não trocar?";
+			close;
+		}
+		delitem 6219,1;
+		getitem 22508,1;
+		mes "[Lenore]";
+		mes "Pronto.~";
+		close;
+	}
+	mes "[Lenore]";
+	mes "As pessoas que querem realizar sonhos e viver romances costumam me ouvir. Somos representantes de um paraíso chamado grupo Éden.";
+	mes "Ele é como o próprio 'Jardim do Éden'. Não existe outro lugar assim. Olá. Em que posso ajudar?";
+	next;
+	while (1) {
+		switch (select("O que é o grupo Éden?:Participar do Grupo Éden:Registrar nova missão:Buscar missões:Cancelar")) {
+		case 1:
+			mes "[Lenore]";
+			mes "O Grupo Éden ajuda as pessoas que passaram por alguma situação difícil e, Rune-Midgard.";
+			next;
+			mes "[Lenore]";
+			mes "Se alguém precisa de ajuda, publicamos o caso no quadro de avisos e o apresentamos aos nossos integrantes que queiram ajudar.";
+			next;
+			mes "[Lenore]";
+			mes "Os integrantes do Éden analisarão as missões e ajudarão aqueles que as publicaram.";
+			mes "Os integrantes cumprem essas missões em troca de recompensas.";
+			next;
+			mes "[Lenore]";
+			mes "Ao trabalhar para o Grupo Eden, os aventureiros novatos podem se familiarizar com este vasto mundo de mistérios,";
+			mes " aventureiros intermediários podem fazer amizade com novas pessoas, e aventureiros avançados podem continuar em busca de fortuna e aumentar suas honras.";
+			next;
+			break;
+		case 2:
+			if (!callfunc("F_HasEdenGroupMark")) {
+				mes "[Lenore]";
+				mes "Qualquer um pode se juntar ao Grupo Éden através de um simples procedimento..";
+				mes "Você gostaria de se juntar a nós?";
+				next;
+				switch (select("Sim, quero me juntar a vocês:Não, não quero me juntar a vocês")) {
+				case 1:
+					mes "[Lenore]";
+					mes "Certo. Excelente! Por favor, escreva seu nome aqui.";
+					input .@input$;
+					next;
+					mes "[Lenore]";
+					mes "Você terminou?";
+					mes "Deixe-me ver.";
+					next;
+					mes "[Lenore]";
+					mes "Seu nome é ^3131FFBo"+.@input$+"Ba^000000...? É isso mesmo?";
+					mes "Hã? Não é??";
+					next;
+					emotion ET_SWEAT;
+					mes "[Lenore]";
+					mes "Humm, não foi isso que você escreveu?";
+					mes "Ok, humm, está um pouco difícil de ler.";
+					next;
+					mes "[Lenore]";
+					mes "Você pode escrever seu nome de novo, por favor? Escreva-o com ^3131FFClareza^000000.";
+					input .@input$;
+					next;
+					mes "[Lenore]";
+					mes "Arrá. Você é ^3131FF"+strcharinfo(0)+"^000000.";
+					mes "Agora eu entendi.";
+					next;
+					emotion ET_BEST;
+					mes "[Lenore]";
+					mes "Já colocamos o seu nome na lista.";
+					mes "Bem-vindo ao Grupo Éden!";
+					next;
+					mes "[Lenore]";
+					mes "Agora você pode aceitar diversas solicitações, ajudando as pessoas e fazendo a diferença no mundo.";
+					getitem 22508,1; //Para_Team_Mark_
+					next;
+					break;
+				case 2:
+					mes "[Lenore]";
+					mes "Você ainda tem alguma pergunta sobre o grupo Éden?";
+					next;
+					break;
+				}
+			} else {
+				mes "[Lenore]";
+				mes "You are already a member of Éden Group.";
+				next;
+			}
+			break;
+		case 3:
+			mes "[Lenore]";
+			mes "Você quer registrar as missões que deseja que cumpramos?";
+			next;
+			if(select("Sim, quero registrá-las.:Não.") == 1) {
+				mes "[Lenore]";
+				mes "Certo. Por favor, escreva seu nome nisso.";
+				input .@input$;
+				next;
+				mes "[Lenore]";
+				mes "^3131FF"+strcharinfo(0)+"^000000.. É este seu nome?";
+				mes "Humm, a sua caligrafia não está clara. Não consigo ler.";
+				next;
+				mes "[Lenore]";
+				mes "^3131FF"+strcharinfo(0)+"^000000, me diga o que você quer registrar.";
+				mes "Para que mapa devemos ir?";
+				input .@input$;
+				next;
+				mes "[Lenore]";
+				mes "^Mapa da Missão: "+.@inputstr$+"^000000";
+				mes "hum, vou anotar isso.";
+				next;
+				mes "[Lenore]";
+				mes "Por favor, me diga o tipo de missão que você está procurando.";
+				mes "Deve ser algo breve, como 'Caçar 10 Porings'.";
+				input .@input$;
+				next;
+				mes "[Lenore]";
+				mes "Você terminou?";
+				mes "Deixe-me dar uma olhada.";
+				next;
+				mes "[Lenore]";
+				mes "Huh...";
+				next;
+				mes "[Lenore]";
+				mes "Hum... hã...??";
+				next;
+				emotion ET_THINK;
+				mes "[Lenore]";
+				mes "Acho que você deve concluir uma das nossas missões antes de começar outra.";
+				next;
+				emotion ET_HNG;
+				mes "[Lenore]";
+				mes "^3131FFCliente: Lenore^000000";
+				mes "^3131FFMissão: praticar a sua caligrafia por um mês.^000000";
+				mes "A sua letra é horrível!";
+				next;
+				mes "[Lenore]";
+				mes "^3131FFMissão:"+.@input$+"^000000";
+				mes "Bom, você já se registrou para uma nova missão.";
+				next;
+				mes "[Lenore]";
+				mes "As missões estão todas ocupadas. Você precisa esperar abrir uma vaga.";
+				mes "Por favor, espere a sua vez.";
+				next;
+			}
+			break;
+		case 4:
+			if (callfunc("F_HasEdenGroupMark")) {
+				mes "[Lenore]";
+				mes "Gostaria de fazer algumas missões como membro do Éden?";
+				next;
+				mes "[Lenore]";
+				mes "Confira o quadro de Solicitações, onde você encontrará uma variedade de missões disponíveis.";
+				mes "Por favor, leia atentamente a lista de missões e os requisitos e escolha uma delas.";
+				next;
+			}
+			else {
+				mes "[Lenore]";
+				mes "Se você quiser fazer missões, precisa se juntar ao Grupo Éden primeiro.";
+				close;
+			}
+			break;
+		case 5:
+			mes "[Lenore]";
+			mes "Se tiver alguma dúvida, estarei sempre disponível para ajudar.";
+			close;
+		}
+	}
+	close;
+}
+
+-	script	Oficial do Éden#0::eto	-1,{
+	mes "[Oficial do Éden]";
+	mes "Aqueles que estão vagando por este mundo sem um objetivo vêm até mim para ouvir o que tenho a dizer!";
+	mes "O grupo Éden está aqui para ajudar você e lhe mostrar o futuro.";
+	next;
+	mes "[Oficial do Éden]";
+	mes "Você não tem nada para fazer além de desperdiçar seu tempo?";
+	mes "Você está ansioso para fazer o bem, mas ninguém lhe oferece trabalho?";
+	mes "Você gostaria de solucionar problemas?";
+	mes "O grupo Éden está aqui para resolver isso.";
+	next;
+	switch (select("» ^097015Ir para o Grupo Éden^000000:» ^700000Não quero conversar mais^000000")) {
+	case 1:
+		mes "[Oficial do Éden]";
+		mes "Vamos nos dirigir à nossa base secreta!";
+		set nak_warp, strnpcinfo(2);
+		close2;
+		warp "moc_para01", 31, 14;
+		end;
+	case 2:
+		mes "[Oficial do Éden]";
+		mes "Se você não sabe o que quer para o seu futuro, não hesite. Apenas passe por aqui e fale comigo! Ok?";
+		close;
+	}
+}
+prontera,124,76,3	duplicate(eto)	Oficial do Éden#1	729
+moc_ruins,68,164,3	duplicate(eto)	Oficial do Éden#2	729
+geffen,132,66,3	duplicate(eto)	Oficial do Éden#3	729
+alberta,124,67,3	duplicate(eto)	Oficial do Éden#4	729
+aldebaran,133,119,5	duplicate(eto)	Oficial do Éden#5	729
+izlude_in,68,162,1	duplicate(eto)	Oficial do Éden#6	729
+prt_church,103,78,3	duplicate(eto)	Oficial do Éden#7	729
+geffen_in,160,104,5	duplicate(eto)	Oficial do Éden#8	729
+moc_prydb1,53,126,3	duplicate(eto)	Oficial do Éden#9	729
+alberta_in,75,39,3	duplicate(eto)	Oficial do Éden#10	729
+payon_in02,58,58,1	duplicate(eto)	Oficial do Éden#11	729
+payon,177,111,3	duplicate(eto)	Oficial do Éden#12	729
+que_ng,33,73,3	duplicate(eto)	Oficial do Éden#13	729
+que_ng,144,161,5	duplicate(eto)	Oficial do Éden#14	729
+yuno,144,189,5	duplicate(eto)	Oficial do Éden#15	729
+rachel,125,144,3	duplicate(eto)	Oficial do Éden#16	729
+comodo,202,151,4	duplicate(eto)	Oficial do Éden#17	729
+hugel,93,153,4	duplicate(eto)	Oficial do Éden#18	729
+veins,220,109,4	duplicate(eto)	Oficial do Éden#19	729
+einbroch,250,211,4	duplicate(eto)	Oficial do Éden#20	729
+lighthalzen,164,86,4	duplicate(eto)	Oficial do Éden#21	729
+amatsu,100,145,5	duplicate(eto)	Oficial do Éden#22	729
+ayothaya,221,191,3	duplicate(eto)	Oficial do Éden#23	729
+louyang,224,107,3	duplicate(eto)	Oficial do Éden#24	729
+gonryun,162,122,5	duplicate(eto)	Oficial do Éden#25	729
+moscovia,209,197,5	duplicate(eto)	Oficial do Éden#26	729
+brasilis,191,224,3	duplicate(eto)	Oficial do Éden#27	729
+dewata,192,193,5	duplicate(eto)	Oficial do Éden#28	729
+morocc,161,97,5	duplicate(eto)	Oficial do Éden#29	729
+izlude,131,148,4	duplicate(eto)	Oficial do Éden#30	729
+izlude_a,131,148,4	duplicate(eto)	Oficial do Éden#30::eto_iz_a	729
+izlude_b,131,148,4	duplicate(eto)	Oficial do Éden#30::eto_iz_b	729
+izlude_c,131,148,4	duplicate(eto)	Oficial do Éden#30::eto_iz_c	729
+izlude_d,131,148,4	duplicate(eto)	Oficial do Éden#30::eto_iz_d	729
+umbala,105,158,3	duplicate(eto)	Oficial do Éden#31	729
+malaya,225,218,1	duplicate(eto)	Oficial do Éden#32	729
+verus04,116,243,0	duplicate(eto)	Oficial do Éden#33	729
+
+moc_para01,30,10,0	script	#Eden_out	45,1,1,{
+OnTouch:
+	switch (nak_warp) {
+		case 1: warp "prontera",116,72; end;
+		case 2: warp "moc_ruins",64,161; end;
+		case 3: warp "geffen",120,39; end;
+		case 4: warp "alberta",117,56; end;
+		case 5: warp "aldebaran",168,112; end;
+		case 6: warp "izlude_in",73,165; end;
+		case 7: warp "prt_church",99,78; end;
+		case 8: warp "geffen_in",162,99; end;
+		case 9: warp "moc_prydb1",51,118; end;
+		case 10: warp "alberta_in",73,43; end;
+		case 11: warp "payon_in02",64,60; end;
+		case 12: warp "payon",161,58; end;
+		case 13: warp "que_ng",33,63; end;
+		case 14: warp "que_ng",144,166; end;
+		case 15: warp "yuno",158,125; end;
+		case 16: warp "rachel",115,125; end;
+		case 17: warp "comodo",192,145; end;
+		case 18: warp "hugel",88,148; end;
+		case 19: warp "veins",216,104; end;
+		case 20: warp "einbroch",246,204; end;
+		case 21: warp "lighthalzen",159,95; end;
+		case 22: warp "amatsu",110,150; end;
+		case 23: warp "ayothaya",217,178; end;
+		case 24: warp "louyang",217,103; end;
+		case 25: warp "gonryun",155,120; end;
+		case 26: warp "moscovia",218,198; end;
+		case 27: warp "brasilis",190,220; end;
+		case 28: warp "dewata",192,182; end;
+		case 29: warp "morocc",161,97; end;
+		case 30: warp "izlude",127,142; end;	// Old coordinates: (127,142)
+		case 31: warp "umbala",94,154; end;
+		case 32: warp "malaya",234,199; end;
+		case 33: warp "verus04",115,243; end;
+		default: warp "prontera",116,72; end;
+	}
+	end;
+}
+
+moc_para01,47,39,3	script	#warp_2_pass	111,{
+	if (callfunc("F_HasEdenGroupMark")) {
+		mes "[Lenore]";
+		mes "Oh, é um lugar exclusivo apenas para membros do Grupo Éden.";
+		mes "Se você é um membro, pode vir sempre que quiser!";
+		next;
+		switch (select("Entrar.:Não Entrar.")) {
+			case 1:
+				mes "Esta porta é lindamente decorada, mas parece um pouco pesada demais.";
+				close2;
+				warp "moc_para01", 106, 14;
+				end;
+			case 2:
+				mes "[Lenore]";
+				mes "Bem, se você não está interessado.";
+				close;
+		}
+	}
+	mes "[Lenore]";
+	mes "Ah, é um lugar exclusivo para os integrantes do  Éden.";
+	mes "Se quiser entrar, precisa se juntar ao grupo Éden.";
+	close;
+}
+
+moc_para01,16,22,7	script	Velho Aventureiro#Eden	900,{
+	mes "[Velho Aventureiro]";
+	mes "Argh, sou forte o suficiente, embora pareça velho! Qual é o nome dela? Lenore? Ela me ignora como se eu fosse senil.";
+	next;
+	mes "[Velho Aventureiro]";
+	mes "Vim aqui me juntar ao grupo Éden!";
+	mes "Não mereço isso!";
+	mes "Você também acha que estou senil?";
+	close;
+}
+
+moc_para01,182,48,3	script	Chef do Éden#Eden	886,{
+	set .@eggf,rand(1,118);
+	set .@eggf_1,.@eggf + 1;
+	set .@eggf_2,.@eggf + 2;
+	set .@eggf_6,.@eggf + 6;
+	mes "[Eden's Chief]";
+	mes ""+.@eggf+".. "+.@eggf_1+"... "+.@eggf_2+".... "+.@eggf_6+"..?";
+	next;
+	emotion ET_CRY;
+	mes "[Chef do Éden]";
+	mes "Ah, droga! Quantos ovos eu fiz?";
+	mes "Ah!!! Eu esqueci completamente! Tenho que contar de novo!";
+	next;
+	emotion ET_CRY;
+	mes "[Chef do Éden]";
+	mes "Por que você me pediu para fazer isso? Que tipo de missão é essa?";
+	next;
+	emotion ET_CRY;
+	mes "[Chef do Éden]";
+	mes "O que você vai fazer com todos esses ovos fritos? Tenho certeza de que não pode comer todos eles. Você só quer me incomodar, não é?";
+	close;
+}
+
+moc_para01,172,28,5	script	Estagiário do Éden#Eden	883,{
+	mes "[Eden's Intern]";
+	mes "Na verdade, eu notei isso.";
+	next;
+	mes "[Eden's Intern]";
+	mes "Precisamos nos esforçar muito se não quisermos falhar.";
+	next;
+	mes "[Eden's Intern]";
+	mes "Mas não sei nada sobre farmácia ainda.";
+	next;
+	mes "[Eden's Intern]";
+	mes "Eu vou falhar. Não posso fazer isso.";
+	close;
+}
+
+moc_para01,20,35,5	script	Assistente	814,{
+	mes "[Neede]";
+	mes "Tornei-me uma integrante do Éden há muitos anos, mas parece que foi ontem.";
+	mes "Estive bem ocupada, então nem percebi quantos anos passei aqui.";
+	next;
+	mes "[Neede]";
+	mes "Isso me lembra que todos os dias pareciam uma guerra.";
+	next;
+	mes "[Neede]";
+	mes "O chef ^3131FFdo restaurante à minha direita^000000";
+	mes "usa tempero demais quando cozinha. O cheiro se espalha por toda a sala de espera. Temos que abrir as janelas sempre porque não suportamos!";
+	next;
+	mes "[Neede]";
+	mes "E você está vendo a ^3131FFsala de ginástica^000000 no ^3131FFlado norte do salão de espera^000000? Eles sempre gritam quando se exercitam. Consigo ouvi-los daqui!";
+	next;
+	emotion ET_ANGER;
+	mes "[Neede]";
+	mes "Além disso, a garota esquisita ^3131FFdo segundo andar^000000 chora o tempo todo. Isso me deixa maluca.";
+	next;
+	mes "[Neede]";
+	mes "Ah, a garota esquisita é, na verdade, a nossa chefe...";
+	next;
+	mes "[Neede]";
+	mes "Não sei o que ela anda fazendo. Mas ela chora e grita o tempo todo. Ah, às vezes, ouço um 'Bang!', sons estrondosos... Não sei de onde está saindo isso.";
+	next;
+	emotion ET_HUK;
+	mes "[Neede]";
+	mes "Espere!";
+	mes "Shh! É segredo. Você não pode contar para ninguém!";
+	next;
+	mes "[Neede]";
+	emotion ET_OHNO;
+	mes "Não confio em Evenor. Ela nunca demonstra sentimentos... ela vai me dedurar para a minha chefe.";
+	next;
+	emotion ET_HNG, getnpcid(0, "Secretary Lenore");
+	mes "[Lenore]";
+	mes "Não sou esse tipo de pessoa.";
+	next;
+	emotion ET_KEK;
+	mes "[Neede]";
+	mes "Hã? Você ouviu isso? Que coisa!";
+	close;
+}
+
+function	script	F_HasEdenGroupMark	{
+	return (countitem(6219) > 0 || countitem(22508) > 0);
+}

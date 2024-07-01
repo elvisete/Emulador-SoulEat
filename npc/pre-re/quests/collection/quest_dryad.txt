@@ -1,0 +1,247 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+um_fild01,34,281,5	script	Lilla#Caça_Dryads	724,{
+	if (#mobdryad >= .consec) {
+		mes .npc$;
+		mes "Voce já fez 3 missões comigo hoje.";
+		mes "Volte amanhã";
+		close;
+	}
+	if (checkquest(60131) != -1) {
+		if (checkquest(60131, HUNTING) != 2) {
+			mes "[Lilla]";
+			mes "Você terminou de caçar as 50 Dryads?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Lilla]";
+					mes "Hmm, acho que você ainda não caçou 50...";
+					close;
+				case 2:
+					mes "[Lilla]";
+					mes "Lembre-se, eu preciso de ajuda para caçar Dryads, vá e caça 50 delas.";
+					close;
+				case 3:
+					mes "[Lilla]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você fez será apagado.";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Lilla]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60131;
+							close;
+						case 2:
+							mes "[Lilla]";
+							mes "Por favor, mate 50 Dryads.";
+							close;
+					}
+			}
+		} else {
+			mes "[Lilla]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 262485, 141835;
+			erasequest 60131;
+			#mobdryad++;
+			close;
+		}
+	}
+	if (checkquest(60132) != -1) {
+		if (checkquest(60132, HUNTING) != 2) {
+			mes "[Lilla]";
+			mes "Você terminou de caçar as 100 Dryads?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Lilla]";
+					mes "Hmm, acho que você ainda não caçou 100...";
+					close;
+				case 2:
+					mes "[Lilla]";
+					mes "Lembre-se, eu preciso de ajuda para caçar Dryads, vá e caça 100 delas.";
+					close;
+				case 3:
+					mes "[Lilla]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você fez será apagado.";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Lilla]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60132;
+							close;
+						case 2:
+							mes "[Lilla]";
+							mes "Por favor, mate 100 Dryads.";
+							close;
+					}
+			}
+		} else {
+			mes "[Lilla]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 262485, 141835;
+			getexp 262485, 141835;
+			erasequest 60132;
+			#mobdryad++;
+			close;
+		}
+	}
+	if (checkquest(60133) != -1) {
+		if (checkquest(60133, HUNTING) != 2) {
+			mes "[Lilla]";
+			mes "Você terminou de caçar as 150 Dryads?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Lilla]";
+					mes "Hmm, acho que você ainda não caçou 150...";
+					close;
+				case 2:
+					mes "[Lilla]";
+					mes "Lembre-se, eu preciso de ajuda para caçar Dryads, vá e caça 150 delas.";
+					close;
+				case 3:
+					mes "[Lilla]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você fez será apagado.";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Lilla]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60133;
+							close;
+						case 2:
+							mes "[Lilla]";
+							mes "Por favor, mate 150 Dryads.";
+							close;
+					}
+			}
+		} else {
+			mes "[Lilla]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 262485, 141835;
+			getexp 262485, 141835;
+			getexp 262485, 141835;
+			erasequest 60133;
+			#mobdryad++;
+			close;
+		}
+	}
+// Para o nível mínimo
+	if (BaseLevel > 59) {
+		// Para o nível máximo
+		if (BaseLevel < 86) {
+			mes "[Lilla]";
+			mes "Olá!";
+			mes "Você parece alguém disposto a ajudar uma coisinha como eu.";
+			next;
+			switch (select("Claro:Não")) {
+				case 1:
+					mes "[Lilla]";
+					mes "Sério?!";
+					mes "Isso é ótimo!";
+					next;
+					switch (select("Recolher Itens:Caçar Dryads:Cancelar")) {
+						case 1:
+							// Entrega de item
+							mes "[Lilla]";
+							mes "Eu realmente preciso reunir ^00CE0050 Folhas Afiadas^000000 para meu chá no jardim.";
+							mes "Você tem alguma?";
+							next;
+							switch (select("Eu tenho algumas Folhas Afiadas:O que você precisa?")) {
+								case 1:
+									/*
+									if (checkweight(504,10) == 0) {
+										mes "[Lilla]";
+										mes "Ei, parece que o peso nas";
+										mes "suas costas vai te esmagar. Volte";
+										mes "depois de perder algum peso.";
+										close;
+									}
+									*/
+									if (countitem(7100) > 49) {
+										mes "[Lilla]";
+										mes "Ei, você é uma coisinha fofa.";
+										mes "Muito obrigado por me ajudar!";
+										next;
+										mes "[Lilla]";
+										mes "Ah, eu quase esqueci. Tenho algo para você ^_^";
+										mes "Muito obrigado novamente pela ajuda.";
+										delitem 7100,50; // Sharp_Leaf
+										getexp 262485,141835;
+										//getitem 504,10; // White_Potion
+										#mobdryad++;
+										close;
+									}
+									else {
+										mes "[Lilla]";
+										mes "Bem, eu posso parecer fofa e boba, mas por favor, não brinque comigo.";
+										close;
+									}
+								case 2:
+									mes "[Lilla]";
+									mes "Eu preciso de ^00CE0050 Folhas Afiadas^000000.";
+									close;
+							}
+						case 2:
+							// Missão de Contagem de Morte
+							mes "[Lilla]";
+							mes "Ah, ok, acho que você pode me ajudar caçando algumas Dryads.";
+							mes "Quantas você gostaria de caçar?";
+							next;
+							switch (select("50 Dryads:100 Dryads:150 Dryads")) {
+								case 1:
+									mes "[Lilla]";
+									mes "Volte quando terminar sua tarefa e darei uma pequena recompensa.";
+									setquest 60131;
+									close;
+								case 2:
+									mes "[Lilla]";
+									mes "Volte quando terminar sua tarefa e darei uma pequena recompensa.";
+									setquest 60132;
+									close;
+								case 3:
+									mes "[Lilla]";
+									mes "Volte quando terminar sua tarefa e darei uma pequena recompensa.";
+									setquest 60133;
+									close;
+							}
+						case 3:
+							mes "[Lilla]";
+							mes "Se mudar de ideia, por favor, volte.";
+							close;
+					}
+				case 2:
+					mes "[Lilla]";
+					mes "Se mudar de ideia, por favor, volte.";
+					close;
+			}
+		} else {
+			mes "[Lilla]";
+			mes "Desculpe, mas você está um pouco velho e assustador para falar!";
+			close;
+		}
+	} else {
+		mes "[Lilla]";
+		mes "Você é muito pequeno para me ajudar.";
+		mes "Obrigado pela oferta, no entanto.";
+		close;
+	}
+OnClock0001:
+query_sql ("DELETE FROM `acc_reg_num` WHERE `key`='#mobdryad'");
+end;
+
+OnInit:
+	.consec = 3;
+	end;
+}

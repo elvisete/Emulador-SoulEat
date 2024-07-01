@@ -1,0 +1,49 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+//==================================================
+// Besouro-Ladrão Spawns da cidade
+//==================================================
+payon_in02,23,68,5,5	monster	Besouro-Ladrão	1051,7,1200000,600000
+jawaii_in,73,117,4,4	monster	Besouro-Ladrão	1051,1,5400000,3000000
+jawaii_in,83,117,5,5	monster	Besouro-Ladrão	1051,1,4800000,2400000
+
+//==================================================
+// Rosa Selvagem Spawns da cidade
+//==================================================
+prontera,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+morocc,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+alberta,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+aldebaran,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+geffen,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+payon,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+comodo,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+izlude,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+yuno,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+einbroch,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+lighthalzen,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+hugel,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+umbala,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+amatsu,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+gonryun,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+louyang,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+ayothaya,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+moscovia,0,0	monster	Rosa Selvagem	1261,1,7200000,3600000
+einbech,0,0	monster	Rosa Selvagem	1261,1,3600000,3000000
+
+//=== boneco de teste
+//==================================================
+// Prontera, Training Dummy Area (removed)
+//==================================================
+//prontera,251,77	monster	Dummy Lv50	2409,1,5000
+//prontera,259,77	monster	Dummy Lv50	2409,1,5000
+//prontera,251,66	monster	Dummy Lv100	2410,1,5000
+//prontera,259,66	monster	Dummy Lv100	2410,1,5000
+//prontera,251,55	monster	Dummy Lv150	2411,1,5000
+//prontera,259,55	monster	Dummy Lv150	2411,1,5000

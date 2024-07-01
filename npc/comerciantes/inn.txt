@@ -1,0 +1,200 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+//======================== Prontera ===================================
+// Pousada do Lado Oeste -------------------
+prt_in,244,135,2	script	Funcionária da pousada#Sammy	53,{
+
+	callfunc "F_InnMaid","[Funcionária Sammy]","Nenkaras","prt_in",238,130;
+	warp "prt_in",247,104; end;
+}
+// Pousada do Lado Leste ------------------
+prt_in,61,141,2	script	Funcionária da pousada#Ahlma	53,{
+
+	callfunc "F_InnMaid","[Funcionária Ahlma]","Nenkaras","prt_in",64,136;
+	warp "prt_in",60,166; end;
+}
+
+//======================== Alberta ====================================
+alberta_in,32,142,3	script	Funcionária da pousada#Jennie	53,{
+
+	callfunc "F_InnMaid","[Funcionária Jennie]","'Fisherman Inn'!","alberta_in",26,142;
+	warp "alberta_in",18,188; end;
+}
+
+//====================== Geffen ======================================
+geffen_in,70,64,5	script	Funcionária da pousada#Cena	53,{
+
+	callfunc "F_InnMaid","[Funcionária Cena]","'Ifrit,' a única pousada na cidade de Geffen.","geffen_in",70,59;
+	warp "geffen_in",31,31; end;
+}
+
+//======================= Payon ======================================
+payon_in01,132,62,5	script	Funcionária da pousada#Ahee	53,{
+
+	callfunc "F_InnMaid","[Funcionária Ahee]","Payon Inn","payon_in01",136,61;
+	warp "payon_in01",132,11; end;
+}
+
+//======================== Morocc ====================================
+// Nordeste --------------------------
+/*
+morocc_in,147,141,3	script	Funcionária da pousada#Hasna	53,{
+
+	callfunc "F_InnMaid","[Funcionária Hasna]","Morocc Inn","morocc_in",142,140;
+	warp "morocc_in",173,135; end;
+}
+// Sul --------------------------------
+morocc_in,80,100,5	script	Funcionária da pousada#Manar	53,{
+
+	callfunc "F_InnMaid","[Funcionária Manar]","Morocc Inn","morocc_in",78,95;
+	warp "morocc_in",79,123; end;
+}
+*/
+
+//====================== Aldebaran ===================================
+aldeba_in,92,58,5	script	Empregada doméstica#Rilim	53,{
+
+	callfunc "F_InnMaid","[Criada Rilim]","Al De Baran Inn","aldeba_in",92,50;
+	warp "aldeba_in",92,112; end;
+}
+
+//======================== Rachel ====================================
+ra_in01,376,69,4	script	Estalajadeiro#Annie	931,{
+
+	callfunc "F_InnMaid","[Guardiã Annie]","Rachel Inn","ra_in01",375,58;
+	warp "ra_in01",384,128; end;
+}
+
+//====================== Lighthalzen =================================
+lhz_in02,230,284,4	script	Hotel Employee#01	86,{
+	mes "[Funcionário do Hotel]";
+	mes "Bem-vindo ao";
+	mes "Royal Dragon,";
+	mes "onde você encontra as";
+	mes "melhores acomodações";
+	mes "e o melhor atendimento.";
+	next;
+	switch(select("Ponto de Salvamento:Descansar - 5.000 zeny:Cancelar")) {
+	case 1:
+		savepoint "lhz_in02",209,275,1,1;
+		mes "[Funcionário do Hotel]";
+		mes "Obrigado, seu";
+		mes "ponto de renascimento";
+		mes "foi salvo aqui no";
+		mes "Royal Dragon.";
+		close;
+	case 2:
+		if(Zeny < 5000) {
+			mes "[Funcionário do Hotel]";
+			mes "Desculpe, mas";
+			mes "você precisa de 5.000 zeny";
+			mes "para fazer o check-in.";
+			close;
+		}
+		set Zeny,Zeny - 5000;
+		mes "[Funcionário do Hotel]";
+		mes "Obrigado~";
+		mes "Espero que aproveite";
+		mes "sua estadia no";
+		mes "Royal Dragon.";
+		close2;
+		warp "lhz_in02",219,150;
+		percentheal 100,100;
+		npcskill "AL_BLESSING",10,99,99;
+		end;
+	case 3:
+		mes "[Funcionário do Hotel]";
+		mes "Obrigado e";
+		mes "tenha um bom dia.";
+		close;
+	}
+}
+
+//======================== Hugel ====================================
+hu_in01,246,107,3	script	Empregada doméstica#Recepcionista	53,{
+
+	callfunc "F_InnMaid","[Recepcionista]","Hugel Inn","hu_in01",263,95;
+	warp "hu_in01",267,5; end;
+}
+
+//======================== Veins ====================================
+ve_in,157,219,5	script	Mestre da Pousada#Recepcionista	709,{
+	mes "[Mestre da Pousada]";
+	mes "Bom dia~";
+	mes "Bem-vindo à";
+	mes "pousada mais confortável";
+	mes "aqui em Veins~";
+	next;
+	switch(select("Salvar:Tirar um Descanso -> 5000 zeny:Sair")) {
+	case 1:
+		mes "[Mestre da Pousada]";
+		mes "Seu ponto de";
+		mes "renascimento foi";
+		mes "salvo em Veins.";
+		mes "Aproveite sua estadia na cidade~";
+		savepoint "ve_in",157,209,1,1;
+		close;
+	case 2:
+		mes "[Mestre da Pousada]";
+		if(Zeny < 5000){
+			mes "Desculpe, mas eu acho que você";
+			mes "não tem dinheiro suficiente para";
+			mes "fazer o check-in. A taxa de serviço";
+			mes "é de 5.000 zeny.";
+			close;
+		}
+		mes "Aproveite sua estadia~";
+		close2;
+		set Zeny,Zeny - 5000;
+		percentheal 100,100;
+		warp "ve_in",184,228;
+		end;
+	case 3:
+		mes "[Mestre da Pousada]";
+		mes "Por favor, volte novamente.";
+		close;
+	}
+}
+
+//======================= Função da Pousada ==============================
+function	script	F_InnMaid	{
+	.@nome_npc$ = getarg(0);
+
+	mes .@nome_npc$;
+	mes "Bem-vindo(a) à";
+	mes getarg(1) + ".";
+	mes "Como posso ajudar você?";
+	next;
+	switch(select("Salvar:Tirar um Descanso -> 5000 zeny:Cancelar")) {
+	case 1:
+		mes .@nome_npc$;
+		mes "Seu ponto de renascimento";
+		mes "foi salvo.";
+		mes "Obrigado(a),";
+		mes "por favor, volte novamente.";
+		savepoint getarg(2),getarg(3),getarg(4),1,1;
+		close;
+	case 2:
+		mes .@nome_npc$;
+		if(Zeny < 5000){
+			mes "Desculpe, mas a taxa de serviço é de 5.000 zeny. Por favor, certifique-se de ter dinheiro suficiente para fazer o check-in na próxima vez, certo?";
+			close;
+		}
+		mes "Obrigado(a).";
+		mes "Espero que";
+		mes "aproveite seu descanso~";
+		close2;
+		set Zeny,Zeny - 5000;
+		percentheal 100,100;
+		return;
+	case 3:
+		close;
+	}
+}

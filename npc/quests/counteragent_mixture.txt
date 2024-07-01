@@ -1,0 +1,586 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+alberta_in,133,55,3	script	Louitz#cm	84,{
+	if (molgenstain == 2) {
+		mes "[Comerciante Louitz]";
+		mes "Ah, é você de novo.";
+		mes "Então você tentou encontrar";
+		mes "aquele cientista maluco";
+		mes "quem mora em Geffen?";
+		next;
+		if (select("Fale sobre Morgenstein: Cancelar") == 1) {
+			mes "[Comerciante Louitz]";
+			mes "Você sabe onde ele mora";
+			mes "mas não deu uma olhada? ";
+			mes "ele pode estar maluco, mas";
+			mes "Eu acho que a maioria dos gênios são";
+			mes "assim. ";
+			next;
+			mes "[Comerciante Louitz]";
+			mes "Quero dizer...";
+			mes "É apenas uma questão";
+			mes "de tempo até que um cara inteligente";
+			mes "assim cria algo";
+			mes "verdadeiramente milagroso, certo?";
+			close;
+		}
+		mes "[Comerciante Louitz]";
+		mes "...Olá?";
+		mes "Olá? ";
+		mes "Ei! ";
+		mes "para você! ";
+		mes "é quando vocês, aventureiros";
+		mes "apenas cale a boca e dê um tempo...";
+		close;
+	}
+	mes "[Comerciante Louitz]";
+	mes "Ei.";
+	mes "E aí?";
+	next;
+	if (countitem(971) > 0 && countitem(972) > 0) {
+		switch(select("Conversa:Fale sobre as soluções.:Cancelar")) {
+		case 1:
+			mes "[Comerciante Louitz]";
+			mes "Quando eu estava em Geffen";
+			mes "procurando por itens mágicos,";
+			mes "Eu ouvi rumores sobre isso realmente";
+			mes "cara cientista maluco. ";
+			mes "curioso, perguntou por aí e";
+			mes "finalmente encontrei esse cara.";
+			next;
+			mes "[Comerciante Louitz]";
+			mes "Cara, cara, esse cara era";
+			mes "maluco. ";
+			mes "Eu estava lá o tempo todo e";
+			mes "apenas continuei resmungando essa bobagem";
+			mes "jumbo enquanto trabalhava em seu";
+			mes "experimentos. ";
+			next;
+			mes "[Comerciante Louitz]";
+			mes "Sim, ele continuou resmungando";
+			mes "palavras como Karvodailnirol";
+			mes "e ''Detrimindexta''.";
+			mes "primeira vez que ouvi isso, pensei";
+			mes "foi só conversa maluca, sabe?";
+			next;
+			mes "[Comerciante Louitz]";
+			mes "Mas acontece que";
+			mes "este Karvodailnirol";
+			mes "e Detrimindexta na verdade";
+			mes "existir. ";
+			mes "líquidos que não funcionam bem";
+			mes "como qualquer líquido a que estamos acostumados.";
+			close;
+		case 2:
+			set molgenstain,1;
+			mes "[Comerciante Louitz]";
+			mes "Ei, este é um dos";
+			mes "aquelas soluções que";
+			mes "cientista continuou mencionando.";
+			mes "Você conseguiu um";
+			mes "destes? ";
+			mes "não tenho ideia do que fazer com eles...";
+			next;
+			mes "[Comerciante Louitz]";
+			mes "Ah, mas que loucura";
+			mes "cientista saberia.";
+			mes "não me lembro exatamente";
+			mes "onde ele mora, mas eu sei";
+			mes "ele está na Geffen e que seu";
+			mes "o nome é ^0000FFMorgenstein^000000.";
+			next;
+			mes "[Comerciante Louitz]";
+			mes "Hmm... é melhor você";
+			mes "contorne Geffen e";
+			mes "ao redor primeiro. ";
+			mes "pergunte primeiro. ";
+			mes "certeza que alguém sabe";
+			mes "onde você pode encontrar Morgenstein.";
+			close;
+		case 3:
+			mes "[Comerciante Louitz]";
+			mes "Hum...";
+			mes "Boa conversa";
+			mes "para você amigo. ";
+			mes "vejo você por aí. ";
+			mes "cuide-se, ok?";
+			close;
+		}
+	}
+	if (countitem(972) > 0) {
+		switch(select("Discussão:Fale sobre Karvodailnirol:Cancelar")) {
+		case 1:
+			mes "[Comerciante Louitz]";
+			mes "Quando eu estava em Geffen";
+			mes "procurando por itens mágicos,";
+			mes "Eu ouvi rumores sobre isso realmente";
+			mes "cara cientista maluco. ";
+			mes "curioso, perguntou por aí e";
+			mes "finalmente encontrei esse cara.";
+			next;
+			mes "[Comerciante Louitz]";
+			mes "Cara, cara, esse cara era";
+			mes "maluco. ";
+			mes "Eu estava lá o tempo todo e";
+			mes "apenas continuei resmungando essa bobagem";
+			mes "jumbo enquanto trabalhava em seu";
+			mes "experimentos. ";
+			next;
+			mes "[Comerciante Louitz]";
+			mes "Sim, ele continuou resmungando";
+			mes "palavras como Karvodailnirol";
+			mes "e ''Detrimindexta''.";
+			mes "primeira vez que ouvi isso, pensei";
+			mes "foi só conversa maluca, sabe?";
+			next;
+			mes "[Comerciante Louitz]";
+			mes "Mas acontece que";
+			mes "este Karvodailnirol";
+			mes "e Detrimindexta na verdade";
+			mes "existir. ";
+			mes "líquidos que não funcionam bem";
+			mes "como qualquer líquido a que estamos acostumados.";
+			close;
+		case 2:
+			set molgenstain,1;
+			mes "[Comerciante Louitz]";
+			mes "Ah, ei, é isso";
+			mes "Karvodailnirol que o";
+			mes "velho cientista estava falando";
+			mes "sobre, né? ";
+			mes "alguém como aquele cara faria";
+			mes "sabe o que fazer com isso...";
+			next;
+			mes "[Comerciante Louitz]";
+			mes "Ei, por que você não vai";
+			mes "e perguntar a ele sobre isso?";
+			mes "não me lembro exatamente";
+			mes "onde ele mora, mas eu sei";
+			mes "ele está na Geffen e que seu";
+			mes "o nome é ^0000FFMorgenstein^000000.";
+			next;
+			mes "[Comerciante Louitz]";
+			mes "Hmm... é melhor você";
+			mes "contorne Geffen e";
+			mes "ao redor primeiro. ";
+			mes "pergunte primeiro. ";
+			mes "certeza que alguém sabe";
+			mes "onde você pode encontrar Morgenstein.";
+			close;
+		case 3:
+			mes "[Comerciante Louitz]";
+			mes "Hum...";
+			mes "Boa conversa";
+			mes "para você amigo. ";
+			mes "vejo você por aí. ";
+			mes "cuide-se, ok?";
+			close;
+		}
+	}
+	if (countitem(971) > 0) {
+		switch(select("Discussão:Fale sobre Detrimindexta:Cancelar")) {
+		case 1:
+			mes "[Comerciante Louitz]";
+			mes "Quando eu estava em Geffen";
+			mes "procurando por itens mágicos,";
+			mes "Eu ouvi rumores sobre isso realmente";
+			mes "cara cientista maluco. ";
+			mes "curioso, perguntou por aí e";
+			mes "finalmente encontrei esse cara.";
+			next;
+			mes "[Comerciante Louitz]";
+			mes "Cara, cara, esse cara era";
+			mes "maluco. ";
+			mes "Eu estava lá o tempo todo e";
+			mes "apenas continuei resmungando essa bobagem";
+			mes "jumbo enquanto trabalhava em seu";
+			mes "experimentos. ";
+			next;
+			mes "[Comerciante Louitz]";
+			mes "Sim, ele continuou resmungando";
+			mes "palavras como Karvodailnirol";
+			mes "e ''Detrimindexta''.";
+			mes "primeira vez que ouvi isso, pensei";
+			mes "foi só conversa maluca, sabe?";
+			next;
+			mes "[Comerciante Louitz]";
+			mes "Mas acontece que";
+			mes "este Karvodailnirol";
+			mes "e Detrimindexta na verdade";
+			mes "existir. ";
+			mes "líquidos que não funcionam bem";
+			mes "como qualquer líquido a que estamos acostumados.";
+			close;
+		case 2:
+			set molgenstain,1;
+			mes "[Comerciante Louitz]";
+			mes "Ah, ei, é isso";
+			mes "Detrimindexta que o";
+			mes "velho cientista estava falando";
+			mes "sobre, né? ";
+			mes "alguém como aquele cara faria";
+			mes "sabe o que fazer com isso...";
+			next;
+			mes "[Comerciante Louitz]";
+			mes "Ei, por que você não vai";
+			mes "e perguntar a ele sobre isso?";
+			mes "não me lembro exatamente";
+			mes "onde ele mora, mas eu sei";
+			mes "ele está na Geffen e que seu";
+			mes "o nome é ^0000FFMorgenstein^000000.";
+			next;
+			mes "[Comerciante Louitz]";
+			mes "Hmm... é melhor você";
+			mes "contorne Geffen e";
+			mes "ao redor primeiro. ";
+			mes "pergunte primeiro. ";
+			mes "certeza que alguém sabe";
+			mes "onde você pode encontrar Morgenstein.";
+			close;
+		case 3:
+			mes "[Comerciante Louitz]";
+			mes "Hum...";
+			mes "Boa conversa";
+			mes "para você amigo. ";
+			mes "vejo você por aí. ";
+			mes "cuide-se, ok?";
+			close;
+		}
+	}
+	if (select("Discussão: Cancelar") == 1) {
+		mes "[Comerciante Louitz]";
+		mes "Quando eu estava em Geffen";
+		mes "procurando por itens mágicos,";
+		mes "Eu ouvi rumores sobre isso realmente";
+		mes "cara cientista maluco. ";
+		mes "curioso, perguntou por aí e";
+		mes "finalmente encontrei esse cara.";
+		next;
+		mes "[Comerciante Louitz]";
+		mes "Cara, cara, esse cara era";
+		mes "maluco. ";
+		mes "Eu estava lá o tempo todo e";
+		mes "apenas continuei resmungando essa bobagem";
+		mes "jumbo enquanto trabalhava em seu";
+		mes "experimentos. ";
+		next;
+		mes "[Comerciante Louitz]";
+		mes "Sim, ele continuou resmungando";
+		mes "palavras como Karvodailnirol";
+		mes "e ''Detrimindexta''.";
+		mes "primeira vez que ouvi isso, pensei";
+		mes "foi só conversa maluca, sabe?";
+		next;
+		mes "[Comerciante Louitz]";
+		mes "Mas acontece que";
+		mes "este Karvodailnirol";
+		mes "e Detrimindexta na verdade";
+		mes "existir. ";
+		mes "líquidos que não funcionam bem";
+		mes "como qualquer líquido a que estamos acostumados.";
+		close;
+	}
+	mes "[Comerciante Louitz]";
+	mes "Hum...";
+	mes "Boa conversa";
+	mes "para você amigo. ";
+	mes "vejo você por aí. ";
+	mes "cuide-se, ok?";
+	close;
+}
+
+geffen,181,114,3	script	Aure Dupon#cm	82,{
+	if (molgenstain == 2) {
+		mes "[Aure Dupon]";
+		mes "Parece que o nosso";
+		mes "caminhos ainda se cruzam novamente.";
+		mes "Coincidência? ";
+		mes "do que isso. ";
+		next;
+		if (select("Fale sobre Morgenstein: Cancelar") == 1) {
+			mes "[Aure Dupon]";
+			mes "Você não conheceu";
+			mes "Morgenstein ainda? ";
+			mes "mora no segundo andar";
+			mes "da Forja. ";
+			mes "acabei de conhecer, devo avisar que não";
+			mes "chegar muito perto dele...";
+			close;
+		}
+		mes "[Aure Dupon]";
+		mes "Vá então e";
+		mes "que as marés de";
+		mes "o destino leva você";
+		mes "para onde você deve ir.";
+		close;
+	}
+	mes "[Aure Dupon]";
+	mes "O tempo flui suavemente";
+	mes "e sutilmente, mas não";
+	mes "força neste mundo";
+	mes "possivelmente pode pará-lo.";
+	mes "A humanidade não é sequer um";
+	mes "mote no grande esquema.";
+	next;
+	if (molgenstain > 0) {
+		switch(select("Conversa:Pergunte sobre Morgenstein:Cancelar")) {
+		case 1:
+			mes "[Aure Dupon]";
+			mes "Ter objetivos e foco";
+			mes "é bom, mas ser obsessivo";
+			mes "sobre uma única coisa pode ser";
+			mes "bastante destrutivo. ";
+			mes "sua mente e deixe-se ser";
+			mes "levado pelas marés do destino.";
+			close;
+		case 2:
+			set molgenstain,2;
+			mes "[Aure Dupon]";
+			mes "Morgenstein...?";
+			mes "O homem está obcecado";
+			mes "com a conquista das forças";
+			mes "que controlam nosso mundo. ";
+			mes "você parece estar curioso sobre";
+			mes "ele por algum motivo. ";
+			next;
+			mes "[Aure Dupon]";
+			mes "Seria melhor se você";
+			mes "fossem ver Morgenstein";
+			mes "e julgar seu caráter por";
+			mes "você mesmo. ";
+			mes "o segundo andar da Geffen";
+			mes "Forja. ";
+			close;
+		case 3:
+			mes "[Aure Dupon]";
+			mes "Vá então e";
+			mes "que as marés de";
+			mes "o destino leva você";
+			mes "para onde você deve ir.";
+			close;
+		}
+	}
+	if (select("Discussão: Cancelar") == 1) {
+		mes "[Aure Dupon]";
+		mes "Ter objetivos e foco";
+		mes "é bom, mas ser obsessivo";
+		mes "sobre uma única coisa pode ser";
+		mes "bastante destrutivo. ";
+		mes "sua mente e deixe-se ser";
+		mes "levado pelas marés do destino.";
+		close;
+	}
+	mes "[Aure Dupon]";
+	mes "Vá então e";
+	mes "que as marés de";
+	mes "o destino leva você";
+	mes "para onde você deve ir.";
+	close;
+}
+
+geffen_in,141,140,3	script	Morgenstein#cm	121,{
+	if (checkweight(1201,1) == 0) {
+		mes "- Espere um minuto !! ";
+		mes "- Atualmente você está carregando -";
+		mes "- muitos itens com você. ";
+		mes "- Por favor, tente novamente -";
+		mes "- depois de perder algum peso. ";
+		close;
+	}
+	if (MISC_QUEST & 4) {
+		mes "[Químico Morgenstein]";
+		mes ".....";
+		mes "Bem-vindo.";
+		mes "Hehehehe....";
+		mes "Heeheheehee....";
+		next;
+		switch(select("Pergunte sobre sua pesquisa:Peça a ele para criar uma nova solução.:Cancelar")) {
+		case 1:
+			mes "[Químico Morgenstein]";
+			mes "Heehehehee...";
+			mes "Você deve ter ouvido os rumores sobre minha pesquisa. ";
+			next;
+			mes "[Químico Morgenstein]";
+			mes "Na verdade, você pode dizer que minha pesquisa está completa! ";
+			next;
+			mes "[Químico Morgenstein]";
+			mes "Você ainda está aqui? ";
+			next;
+			mes "[Químico Morgenstein]";
+			mes "Não é interessante? ";
+			next;
+			mes "[Químico Morgenstein]";
+			mes "Ainda não pode derreter tudo, mas descobri que você pode combinar coisas que nunca poderia misturar antes com minha invenção. ";
+			next;
+			mes "[Químico Morgenstein]";
+			mes "Você pode fazer muitas coisas que nunca imaginaria serem possíveis! ";
+			next;
+			mes "[Químico Morgenstein]";
+			mes "As endorfinas estão chegando ao meu rosto pelo menos 2,1 vezes mais rápido do que o normal! ";
+			close;
+		case 2:
+			mes "[Químico Morgenstein]";
+			mes "Então...";
+			mes "Você quer que eu faça algo totalmente novo, hein? ";
+			next;
+			switch(select("Contraagente: Mistura")) {
+			case 1:
+				mes "[Químico Morgenstein]";
+				mes "Ah...!";
+				mes "Você quer fazer um Contraagente? ";
+				next;
+				mes "[Químico Morgenstein]";
+				mes "Ah, eu me lembro, sim, de álcool e, hum, er, Detrimindexta e uma garrafa vazia para colocar tudo dentro. Apenas esses três itens e 3.000 zeny.";
+				next;
+				mes "[Químico Morgenstein]";
+				mes "Bwahahahah!";
+				mes "Ah, mal posso esperar para fazer isso! ";
+				next;
+				if (select("Fazer: Cancelar") == 1) {
+					if (countitem(970) == 0 || countitem(971) == 0 || countitem(713) == 0 || Zeny < 3000) {
+						mes "[Químico Morgenstein]";
+						mes "Heuheuheuheuh.... não é suficiente... não é suficiente.. Haah...Haah... Vá..... pegue o resto dos materiais!";
+						mes "Adiaremos a diversão até lá... Heuheuheuheuheuh.";
+						close;
+					}
+					mes "[Químico Morgenstein]";
+					mes "Ooooooooh...... heeheeheeheehee...... sim... assim...... sim... mais... mais... heeheeheehee.";
+					mes ".... Aaah.... ahah... ha....ahahoooooooohoh!";
+					next;
+					if (countitem(970) < 1 || countitem(971) < 1 || countitem(713) < 1) {
+						mes "[Químico Morgenstein]";
+						mes "Hohohoho.... não é suficiente... não é suficiente... haah...haah... vá..... vá buscar o resto dos materiais!!";
+						close;
+					}
+					delitem 970,1; //Alchol
+					delitem 971,1; //Detrimindexta
+					delitem 713,1; //Empty_Bottle
+					set Zeny, Zeny-3000;
+					getitem 973,1; //Counteragent
+					mes "[Químico Morgenstein]";
+					mes "Ei, ei, ei...";
+					mes "Haaaaah......";
+					mes "Oh? ";
+					close;
+				}
+				mes "[Químico Morgenstein]";
+				mes "Ei, ei, ei...!";
+				mes "Volte quando";
+				mes "você está pronto ~";
+				close;
+			case 2:
+				mes "[Químico Morgenstein]";
+				mes "Ah...!";
+				mes "Você quer fazer uma mistura? ";
+				next;
+				mes "[Químico Morgenstein]";
+				mes "Ooh, agora me lembro, sim, de álcool e, hum, er, Karvodailnirol e uma garrafa vazia para colocar tudo dentro. Apenas esses três itens e 4.000 zeny.";
+				next;
+				mes "[Químico Morgenstein]";
+				mes "Bwahahahah!";
+				mes "Ah, mal posso esperar para fazer isso! ";
+				next;
+				if (select("Fazer: Cancelar") == 1) {
+					if (countitem(970) == 0 || countitem(972) == 0 || countitem(713) == 0 || Zeny < 4000) {
+						mes "[Químico Morgenstein]";
+						mes "Hohohoho.... não é suficiente... não é suficiente... haah...haah... vá..... vá buscar o resto dos materiais!!";
+						mes "Teremos que adiar a diversão para depois... Hehehehe";
+						close;
+					}
+					mes "[Químico Morgenstein]";
+					mes "Ooooooooh... heehee...... sim... assim...... sim... mais... mais... heeheeheehee";
+					mes ".... Aaah.... ahah... ha....ahah...oooooooooooooooooh!!!...!!!!!!";
+					next;
+					if (countitem(970) < 1 || countitem(972) < 1 || countitem(713) < 1) {
+						mes "[Químico Morgenstein]";
+						mes "Hohohoho.... não é suficiente... não é suficiente... haah...haah... vá..... vá buscar o resto dos materiais!!";
+						close;
+					}
+					delitem 970,1; //Alchol
+					delitem 972,1; //Karvodailnirol
+					delitem 713,1; //Empty_Bottle
+					set Zeny, Zeny-4000;
+					getitem 974,1; //Mixture
+					mes "[Químico Morgenstein]";
+					mes "Ei, ei, ei...";
+					mes "Haaaaah......";
+					mes "Oh? ";
+					close;
+				}
+				mes "[Químico Morgenstein]";
+				mes "Ei, ei, ei...!";
+				mes "Volte quando";
+				mes "você está pronto ~";
+				mes "Heh... heuheuheuheh....";
+				close;
+			}
+		case 3:
+			mes "[Químico Morgenstein]";
+			mes "Heehee....heheheheh....";
+			close;
+		}
+	}
+	if (molgenstain == 2) {
+		set MISC_QUEST,MISC_QUEST | 4;
+		set molgenstain,0;
+		mes "[Químico Morgenstein]";
+		mes "Heeheehee.... bem-vindo. ";
+		next;
+		mes "[Químico Morgenstein]";
+		mes "Ah...?!";
+		mes "Sinto muito se eu te deixei estranho. ";
+		next;
+		if (select("Pergunte sobre sua pesquisa.:Cancelar.") == 1) {
+			mes "[Químico Morgenstein]";
+			mes "Heehehehee...";
+			mes "Você deve ter ouvido os rumores sobre minha pesquisa. ";
+			next;
+			mes "[Químico Morgenstein]";
+			mes "Na verdade, você pode dizer que minha pesquisa está completa! ";
+			next;
+			mes "[Químico Morgenstein]";
+			mes "Você ainda está aqui? ";
+			next;
+			mes "[Químico Morgenstein]";
+			mes "Não é interessante? ";
+			next;
+			mes "[Químico Morgenstein]";
+			mes "Ainda não pode derreter tudo, mas descobri que você pode combinar coisas que nunca poderia misturar antes com minha invenção.";
+			next;
+			mes "[Químico Morgenstein]";
+			mes "Posso fazer para você muitas coisas novas que você nunca imaginaria usando esse método... contanto que você queira!!";
+			next;
+			mes "[Químico Morgenstein]";
+			mes "As endorfinas estão chegando ao meu rosto pelo menos 2,1 vezes mais rápido do que o normal! ";
+			close;
+		}
+		close;
+	}
+	mes "[Químico Morgenstein]";
+	mes "Heehehehee...";
+	mes "Você não está aqui para ser uma cobaia, está? ";
+	close;
+}
+
+//============================================================ 
+// Old changelog
+//============================================================ 
+//= 1.0 Fully working
+//= 1.1 Update for Alchemist Quest.
+//= 1.2 added check for Empty Bottle [Lupus]
+//= 1.3 Fixed some lil thingys [Darkchild]
+//= 1.4 More li'l thing, added comments for items IDs [Lupus]
+//= 1.5 Fixed Spelling mistakes. [Nexon]
+//= 1.6 Fixed some bugs, also related to Alch Job quest [Lupus]
+//= 1,7 Fixed exploit
+//= 1.8 Got rid of 'al_morgen' var [Lupus]
+//= 2.1 now uses (MISC_QUEST & 4) bit instead of al_morgen [Lupus]
+//============================================================ 
+

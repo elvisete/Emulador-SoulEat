@@ -1,0 +1,57 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+// Dispensas :: pare_service
+//============================================================
+-	script	Dispensa#00::pggc	-1,{
+	mes "É um Armário de itens.";
+	mes "Há uma mensagem escrita em um pedaço de papel.";
+	next;
+	mes "+ O Armário é de uso exclusivo +";
+	mes "+ do grupo Éden +";
+	mes "Se quiser usar este";
+	mes "armário, verifique";
+	mes "o seguinte:";
+	next;
+	mes "1. Você é um membro do grupo Éden?";
+	mes "2. Você aprendeu um número suficiente de habilidades básicas?";
+	mes "3. A taxa de utilização do Armário é de";
+	mes "  ^4d4dff500 zeny^000000!";
+	next;
+	if (callfunc("F_HasEdenGroupMark")) {
+		mes "Você precisa inserir zenys para usar o armário.";
+		mes "Custo: 500 Zenys ";
+		mes "Gostaria de usar?";
+		next;
+		switch(select("» Usar o Armário.:» Cancelar.")) {
+			case 1:
+				if (Zeny > 499) {
+					if(!callfunc("F_CanOpenStorage")){
+						mes "O armário não está funcionando.";
+						mes "Talvez não esteja qualificado para usar o Armário.";
+						close;
+					}
+					set Zeny, Zeny - 500;
+					close2;
+					openstorage;
+					end;
+				}
+				mes "Dinheiro insuficiente.";
+				mes "Valor para usar armário é 500 Zenys.";
+				close;
+			case 2:
+				mes "Fechando Armário.";
+				close;
+		}
+	}
+	mes "Você preciso ser membro do Marca do Grupo Eden para usar este Armário.";
+	close;
+}
+moc_para01,173,120,0	duplicate(pggc)	Dispensa#01	111
+moc_para01,170,120,0	duplicate(pggc)	Dispensa#02	111

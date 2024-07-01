@@ -1,0 +1,213 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+moc_para01,48,177,3	script	Missões [91 - 99]	857,{
+	if (!callfunc("F_HasEdenGroupMark")) {
+		mes "- Você precisa ter -";
+		mes "- o ^4d4dff'emblema do Éden'^000000 -";
+		next;
+		switch(select("Apenas saia.:Missões do ^0000FFGrupo Éden^000000?:Como posso ser membro do ^0000FFGrupo Éden^000000?")) {
+		case 1:
+			close;
+		case 2:
+			mes "::As Missões do Grupo Éden";
+			mes "::basicamente são missões";
+			mes "::solicitadas por";
+			mes "::pessoas de todo o reino.";
+			mes "::Nós apenas as categorizamos.";
+			next;
+			mes "::No Grupo Éden,";
+			mes "::classificamos as missões";
+			mes "::de acordo com o nível de dificuldade.";
+			mes "::De acordo com esse nível,";
+			mes "::você pode encontrar";
+			mes "::missões que";
+			mes "::se adequam a você.";
+			next;
+			mes "::Quando você terminar,";
+			mes "::você pode voltar";
+			mes "::para o quadro de missões.";
+			next;
+			mes "::Então você será";
+			mes "::recompensado!!";
+			mes "::Simples, não é!!";
+			mes "::Nenhuma comissão necessária!!";
+			close;
+		case 3:
+			mes "::Você pode se tornar um membro";
+			mes "::do Grupo Éden";
+			mes "::basta falar com ^0000FFSecretaria Lenore^000000,";
+			mes "::que esta no 1º andar.";
+			next;
+			mes "::Se você se tornar um membro,";
+			mes "::Você receberá um";
+			mes "\"^006400Emblema do Éden^000000\".";
+			mes "::Então você sera capaz";
+			mes "::de ver o quadro de Missões.";
+			close;
+		}
+	}
+	if (BaseLevel < 91) {
+	mes " - Você nao tem nivel suficiente - ";
+	mes " - para esse quadro de Missões. - ";
+	close;
+	} else if (BaseLevel > 99) {
+		// Quest IDs: 4181-4196
+		// Quest cooldown IDs: 4212-4227
+		setarray .@names$[0],
+			"Solider","Freezer","Heater",
+			"Injustice","Rybio","Dark Priest",
+			"Stapo","Roween","Siroma",
+			"Shinobi","Evil Nymph",
+			"Deviruchi","Mineral","Kaho","Neraid","Disguise";
+		setarray .@exp[0],
+			90000,94000,114000,
+			96000,96000,146000,
+			96000,102000,110000,
+			102000,108000,
+			110000,138000,118000,96000,134000;
+			mes " - Essas Missões sao muito - ";
+			mes " - faceis para você. - ";
+			mes " - Procure uma missao mais - ";
+			mes " - adequada para o seu nivel. - ";
+		for(set .@quest,4181; .@quest<=4196; set .@quest,.@quest+1) {
+			set .@hunting, checkquest(.@quest,HUNTING);
+			if (.@hunting == 0 || .@hunting == 1) {
+				next;
+				mes ":: Você não pode prosseguir ";
+				mes ":: Caçando ^0000FF"+.@names$[.@quest-4167]+"^000000.";
+				mes ":: O registro para a missão";
+				mes ":: foi cancelada.";
+				erasequest .@quest;
+				close;
+			} else if (.@hunting == 2) {
+				next;
+				mes ":: Você adicionou informações";
+				mes ":: sobre a missão";
+				mes ":: Caçando ^0000FF"+.@names$[.@quest-4167]+"^000000";
+				mes ":: no quadro de missões.";
+				mes ":: Você obteve ";
+				mes ":: experiência.";
+				erasequest .@quest;
+				getexp .@exp[.@quest-4181],0;
+				close;
+			}
+		}
+		close;
+	}
+	mes "[Quadro de Missões]";
+	mes "Há várias solicitações neste quadro.";
+	next;
+	switch(select("» ^8B4513Ilha Tartaruga^000000:» ^8B4513Glast Heim^000000:» ^8B4513Rachel/Veins^000000:» ^8B4513Cidades de Expansão^000000:» ^8B4513Outras regiões^000000")) {
+	case 1:
+		mes "^8B4513Ilha Tartaruga^000000.";
+		mes "Qual monstro você caçará ou já terminou de caçar?";
+		next;
+		switch(select("» ^0000FFSoldado^000000:» ^0000FFCongelador^000000:» ^0000FFAquecedor^000000")) {
+			case 1: callsub L_Quest,4181,"Soldado",90000,"¼Ö¸®´õÄ«µå","Há um monstro que só pode ser encontrado na ^8B4513Ilha Tartaruga^000000.";
+			case 2: callsub L_Quest,4182,"Congelador",94000,"ÇÁ¸®ÀúÄ«µå","Há um monstro que só pode ser encontrado na ^8B4513Ilha Tartaruga^000000.";
+			case 3: callsub L_Quest,4183,"Aquecedor",114000,"È÷ÅÍÄ«µå","Há um monstro que só pode ser encontrado na ^8B4513Ilha Tartaruga^000000.";
+		}
+	case 2:
+		mes "^8B4513Glast Heim^000000.";
+		mes "Qual monstro você caçará ou já terminou de caçar?";
+		next;
+		switch(select("» ^0000FFInjustiçado^000000:» ^0000FFRybio^000000:» ^0000FFSacerdote Maldito^000000")) {
+			case 1: callsub L_Quest,4184,"Injustiçado",96000,"ÀÎÀú½ºÆ¼½ºÄ«µå","Há um monstro que só pode ser encontrado na prisão de ^8B4513Glast Heim^000000.";
+			case 2: callsub L_Quest,4185,"Rybio",96000,"¸®ºñ¿ÀÄ«µå","Há um monstro que só pode ser encontrado na prisão de ^8B4513Glast Heim^000000.";
+			case 3: callsub L_Quest,4186,"Sacerdote Maldito",146000,"´ÙÅ©ÇÁ¸®½ºÆ®Ä«µå","Há um monstro que só pode ser encontrado na prisão de ^8B4513Glast Heim^000000.";
+		}
+	case 3:
+		mes "^8B4513Rachel/Veins^000000.";
+		mes "Qual monstro você caçará ou já terminou de caçar?";
+		next;
+		switch(select("» ^0000FFStapo^000000:» ^0000FFRoween^000000:» ^0000FFSiroma^000000")) {
+			case 1: callsub L_Quest,4187,"Stapo",96000,"½ºÅÂÆ÷Ä«µå","Há um monstro que só pode ser encontrado em ^8B4513Veins^000000.";
+			case 2: callsub L_Quest,4188,"Roween",102000,"·Î¿ìÀ©Ä«µå","Há um monstro que só pode ser encontrado em ^8B4513Rachel^000000.";
+			case 3: callsub L_Quest,4189,"Siroma",110000,"½Ã·Î¸¶Ä«µå","Há um monstro que só pode ser encontrado no ^8B4513Calabouço de Ice^000000.";
+		}
+	case 4:
+		mes "^8B4513Cidades de Expansão^000000.";
+		mes "Qual monstro você caçará ou já terminou de caçar?";
+		next;
+		switch(select("» ^0000FFShinobi^000000:» ^0000FFNinfa Perversa^000000")) {
+			case 1: callsub L_Quest,4190,"Shinobi",102000,"½Ã³ëºñÄ«µå","Há um monstro que só pode ser encontrado no ^8B4513Calabouço de Amatsu^000000.";
+			case 2: callsub L_Quest,4191,"Ninfa Perversa",108000,"¿ä¼±³àÄ«µå","Há um monstro que só pode ser encontrado no ^8B4513Calabouço de Kunlun^000000.";
+		}
+	case 5:
+		mes "Outras Regiões.";
+		mes "Qual monstro você caçará ou já terminou de caçar?";
+		next;
+		switch(select("» ^0000FFDeviruchi^000000:» ^0000FFMineral^000000:» ^0000FFKaho^000000:» ^0000FFNeraida^000000:» ^0000FFMascarado^000000")) {
+			case 1: callsub L_Quest,4192,"Deviruchi",110000,"µ¥ºñ·çÄ¡Ä«µå","Há um monstro que só pode ser encontrado no ^8B4513Calabouço de Geffen^000000.";
+			case 2: callsub L_Quest,4193,"Mineral",138000,"¹Ì³×¶ö","Há um monstro que só pode ser encontrado no ^8B4513Calabouço de Einbech^000000.";
+			case 3: callsub L_Quest,4194,"Kaho",118000,"Ä«È£Ä«µå","Há um monstro encontrado no ^8B4513Nogg Road Magma 1^000000.";
+			case 4: callsub L_Quest,4195,"Neraida",96000,"³×·¹ÀÌµåÄ«µå","Há um monstro que só pode ser encontrado no ^8B4513Calabouço de Comodo^000000.";
+			case 5: callsub L_Quest,4196,"Mascarado",134000,"µð½º°¡ÀÌÁîÄ«µå","Há um monstro que só pode ser encontrado em ^8B4513Niflheim^000000.";
+		}
+	}
+	end;
+
+//callsub L_Quest,<quest ID>,"<monster name>",<reward EXP>,"<cutin image>","<description>"{,"s"};
+L_Quest:
+	set .@quest1, getarg(0);
+	set .@quest2, .@quest1+31;
+	.@cutin$ = getarg(3);
+	set .@playtime, checkquest(.@quest2,PLAYTIME);
+	if (.@playtime == 0 || .@playtime == 1) {
+		mes "[Quadro de Missões]";
+		mes "Você precisa esperar 3 horas antes de pegar esta missão novamente.";
+		close;
+	}
+	set .@hunting, checkquest(.@quest1,HUNTING);
+	if (.@hunting == 0 || .@hunting == 1) {
+		mes "[Quadro de Missões]";
+		mes "Você terminou de caçar todos os 30 "+getarg(1)+getarg(5,"")+"?";
+		close;
+	} else if (.@hunting == 2) {
+		mes "[Quadro de Missões]";
+		mes "Você completou a caçada.";
+		mes "Por favor, aceite esta recompensa como recompensa.";
+		erasequest .@quest1;
+		if (.@playtime > -1) erasequest .@quest2;
+		setquest .@quest2;
+
+		// Job Experience calculation.
+		if (JobLevel > 50 && JobLevel < 56) set .@jexp,67000;
+		else if (JobLevel > 55 && JobLevel < 61) set .@jexp,94000;
+		else if (JobLevel > 60 && JobLevel < 66) set .@jexp,141000;
+		else if (JobLevel > 65 && JobLevel < 69) set .@jexp,212000;
+		else if (JobLevel == 69) set .@jexp,311000;
+
+		getexp getarg(2),.@jexp;
+		close;
+	}/* else if (.@hunting == 3) {
+//		recall_completequest .@quest1
+		erasequest .@quest1;
+		mes "[Quadro de Missões]";
+		mes "Você aceitou a missão de caça "+getarg(1)+" novalmente.";
+		close;
+	}*/ else {
+		mes "[Quadro de Missões]";
+		mes getarg(4);
+		next;
+		if (.@cutin$ != "") cutin .@cutin$,3;
+		mes "[Quadro de Missões]";
+		mes "Cace 30 "+getarg(1)+" e poste seu sucesso neste quadro.";
+		next;
+		if (.@cutin$ != "") cutin .@cutin$,255;
+		if(select("Sim, aceitar.:Não, obrigado.") == 1) {
+			mes "[Quadro de Missões]";
+			mes "Quando você completar a missão, poste-a neste quadro e receba sua recompensa.";
+			if (.@playtime > -1) erasequest .@quest2;
+			setquest .@quest1;
+		}
+		close;
+	}
+}

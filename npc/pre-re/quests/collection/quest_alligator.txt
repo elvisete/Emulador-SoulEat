@@ -1,0 +1,252 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+cmd_fild01,362,256,3	script	Cuir#Gator_Hunt	106,{
+	if (#crocod >= .consec) {
+		mes .npc$;
+		mes "Voce já fez 3 missões comigo hoje.";
+		mes "Volte amanhã";
+		close;
+	}
+if (checkquest(60119) != -1) {
+		if (checkquest(60119, HUNTING) != 2) {
+			mes "[Cuir]";
+			mes "Você terminou de caçar os 50 Crocodilo?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+			case 1:
+				mes "[Cuir]";
+				mes "Hmm, eu não acho que você tenha caçado 50 ainda...";
+				close;
+			case 2:
+				mes "[Cuir]";
+				mes "Lembre-se, eu preciso de ajuda caçando Crocodilo, então vá e caça 50 deles.";
+				close;
+			case 3:
+				mes "[Cuir]";
+				mes "Você tem certeza de que quer parar de caçar?";
+				mes "Qualquer progresso que você fez será apagado";
+				next;
+				switch (select("Sim:Não")) {
+				case 1:
+					mes "[Cuir]";
+					mes "Ok então, volte aqui se mudar de ideia.";
+					erasequest 60119;
+					close;
+				case 2:
+					mes "[Cuir]";
+					mes "Por favor, mate 50 Crocodilo.";
+					close;
+				}
+			}
+		}
+		else {
+			mes "[Cuir]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 48950, 23300;
+			erasequest 60119;
+			#crocod++;
+			close;
+		}
+	}
+	if (checkquest(60120) != -1) {
+		if (checkquest(60120, HUNTING) != 2 ) {
+			mes "[Cuir]";
+			mes "Você terminou de caçar os 50 Crocodilo?";
+			next;
+			switch(select("Sim:Não:Quero desistir")) {
+			case 1:
+				mes "[Cuir]";
+				mes "Hmm, eu não acho que você tenha caçado 100 ainda...";
+				close;
+			case 2:
+				mes "[Cuir]";
+				mes "Lembre-se, eu preciso de ajuda caçando Crocodilo, então vá e caça 100 deles.";
+				close;
+			case 3:
+				mes "[Cuir]";
+				mes "Você tem certeza de que quer parar de caçar?";
+				mes "Qualquer progresso que você fez será apagado";
+				next;
+				switch(select("Sim:Não")) {
+				case 1:
+					mes "[Cuir]";
+					mes "Ok então, volte aqui se mudar de ideia.";
+					erasequest 60120;
+					close;
+				case 2:
+					mes "[Cuir]";
+					mes "Por favor, mate 100 Crocodilo.";
+					close;
+				}
+			}
+		}
+		else {
+			mes "[Cuir]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 48950,23300;
+			getexp 48950,23300;
+			erasequest 60120;
+			#crocod++;
+			close;
+		}
+	}
+	if (checkquest(60121) != -1) {
+		if (checkquest(60121, HUNTING) != 2 ) {
+			mes "[Cuir]";
+			mes "Você terminou de caçar os 150 Crocodilo?";
+			next;
+			switch(select("Sim:Não:Quero desistir")) {
+			case 1:
+				mes "[Cuir]";
+				mes "Hmm, eu não acho que você tenha caçado 150 ainda...";
+				close;
+			case 2:
+				mes "[Cuir]";
+				mes "Lembre-se, eu preciso de ajuda caçando Crocodilo, então vá e caça 150 deles.";
+				close;
+			case 3:
+				mes "[Cuir]";
+				mes "Você tem certeza de que quer parar de caçar?";
+				mes "Qualquer progresso que você fez será apagado";
+				next;
+				switch(select("Sim:Não")) {
+				case 1:
+					mes "[Cuir]";
+					mes "Ok então, volte aqui se mudar de ideia.";
+					erasequest 60121;
+					close;
+				case 2:
+					mes "[Cuir]";
+					mes "Por favor, mate 150 Crocodilo.";
+					close;
+				}
+			}
+		}
+		else {
+			mes "[Cuir]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 68950,43300;
+			getexp 68950,43300;
+			getexp 68950,43300;
+			erasequest 60121;
+			#crocod++;
+			close;
+		}
+	}
+// Para o nível mínimo
+if (BaseLevel > 44) {
+	// Para o nível máximo
+	if (BaseLevel < 81) {
+		mes "[Cuir]";
+		mes "Você parece ser um aventureiro resistente!";
+		next;
+		mes "[Cuir]";
+		mes "Fui enviado aqui para reduzir a população de Crocodilo, mas a tarefa está se mostrando bastante difícil apenas para mim completar.";
+		mes "Que tal me ajudar?";
+		next;
+		switch(select("Claro:No")) {
+		case 1:
+			mes "[Cuir]";
+			mes "Você pode me ajudar caçando Crocodilo ou coletando itens para mim.";
+			mes "O que você gostaria de fazer?";
+			next;
+			switch(select("Coletar Itens:Caçar Crocodilo:Cancelar")) {
+			case 1:
+				// Entrega de item
+				mes "[Cuir]";
+				mes "Se você puder me trazer ^00CC0040 Pele de Anolian^000000, eu o ajudarei a ficar mais forte.";
+				next;
+				switch(select("Eu tenho as Pele de Anolian:Os Crocodilos mordem!")) {
+				case 1:
+					/*
+					if (checkweight(503,10) == 0) {
+						mes "[Cuir]";
+						mes "Ei, parece que o peso em suas costas";
+						mes "irá te esmagar. Volte";
+						mes "depois de ter perdido algum peso.";
+						close;
+					}
+					*/
+					if (countitem(7003) > 19) {
+						mes "[Cuir]";
+						mes "Obrigado pelas ^00CE0040 Pele de Anolian^000000!";
+						mes "Espero que você continue me ajudando a coletar essas peles.";
+						mes "Os criadores de armaduras ao redor do mundo estão clamando por elas.";
+						delitem 7003,40; //Pele de Anolian
+						getexp 48950,23300;
+						//getitem 503,10; //Poção Amarela
+						#crocod++;
+						close;
+					}
+					else {
+						mes "[Cuir]";
+						mes "Eu reconheço uma Pele de Anolian quando vejo, e não vejo ^00CE0040 Pele de Anolian^000000.";
+						close;
+					}
+				case 2:
+					mes "[Cuir]";
+					mes "Eu preciso de ^00CE0040 Pele de Anolian^000000.";
+					close;
+				}
+				case 2:
+					// Missão de Contagem de Abates
+					mes "[Cuir]";
+					mes "Ah, ok, acho que você pode me ajudar caçando alguns Crocodilo.";
+					mes "Quantos você gostaria de caçar?";
+					next;
+					switch(select("50 Crocodilo:100 Crocodilo:150 Crocodilo")) {
+					case 1:
+						mes "[Cuir]";
+						mes "Volte quando terminar sua tarefa e eu lhe darei uma pequena recompensa.";
+						setquest 60119;
+						close;
+					case 2:
+						mes "[Cuir]";
+						mes "Volte quando terminar sua tarefa e eu lhe darei uma pequena recompensa.";
+						setquest 60120;
+						close;
+					case 3:
+						mes "[Cuir]";
+						mes "Volte quando terminar sua tarefa e eu lhe darei uma pequena recompensa.";
+						setquest 60121;
+						close;
+					}
+				case 3:
+					mes "[Cuir]";
+					mes "Se mudar de ideia, por favor, volte.";
+					close;
+				}
+			case 2:
+				mes "[Cuir]";
+				mes "Se mudar de ideia, por favor, volte.";
+				close;
+			}
+		}
+		else {
+			mes "[Cuir]";
+			mes "Você é poderoso demais para essa tarefa, eu preciso das peles em condições justas, não explodidas!";
+			next;
+			close;
+		}
+	}
+	else {
+		mes "[Cuir]";
+		mes "Certamente você é corajoso, mas a coragem se torna imprudência se você continuar indo para o leste.";
+		mes "Talvez quando você estiver mais forte, você e eu possamos fazer negócios.";
+		close;
+	}
+OnClock0001:
+query_sql ("DELETE FROM `acc_reg_num` WHERE `key`='#crocod'");
+end;
+
+OnInit:
+	.consec = 3;
+	end;
+}

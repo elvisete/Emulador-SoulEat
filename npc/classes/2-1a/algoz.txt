@@ -1,0 +1,92 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+valkyrie,44,58,5	script	Algoz#Valkyrie	725,{
+	if (ADVJOB == 0 || Upper != 1) {
+		set .@karma_d,rand(1,10);
+		if (.@karma_d > 4) {
+			mes "[Algoz]";
+			mes "Parabéns...";
+			next;
+			mes "[Algoz]";
+			mes "...";
+			next;
+			mes "[Algoz]";
+			mes "...";
+			mes "......";
+			next;
+			mes "[Algoz]";
+			mes "...";
+			mes "......";
+			mes "Honra aos";
+			mes "guerreiros.";
+			close;
+		}
+		mes "[Algoz]";
+		mes "Nós somos os guerreiros";
+		mes "do deserto. Ninguém";
+		mes "nos despreza.";
+		mes "Ninguém...";
+		close;
+	}
+	else if (ADVJOB == Job_Assassin_Cross && Class == Job_Thief_High && JobLevel > 39) {
+		mes "[Algoz]";
+		mes "Chegou a hora.";
+		mes "O mundo precisa de você...";
+		mes "Mais do que nunca.";
+		next;
+		mes "[Algoz]";
+		mes "Peço que continue a viver nas sombras, mas como um Assassino ainda maior com uma nova aparência.";
+		next;
+		mes "[Algoz]";
+		mes "Você vai se tornar";
+		mes "um Algoz?";
+		next;
+		if (select("Não.:Sim.") == 1) {
+			mes "[Algoz]";
+			mes "Quando estiver";
+			mes "pronto, volte.";
+			next;
+			mes "[Algoz]";
+			mes "Honra aos";
+			mes "guerreiros.";
+			close;
+		}
+		if (SkillPoint) {
+			mes "[Algoz]";
+			mes "Você ainda não";
+			mes "aprendeu tudo";
+			mes "que pode.";
+			next;
+			mes "[Algoz]";
+			mes "Use todos os seus";
+			mes "Pontos de Habilidade";
+			mes "e então volte.";
+			close;
+		}
+		jobchange Job_Assassin_Cross;
+		set ADVJOB,0;
+		mes "[Algoz]";
+		mes "Parabéns.";
+		mes "Como um Algoz,";
+		mes "espero que lute por um futuro mais brilhante dentro das trevas.";
+		close;
+	}
+	mes "[Algoz]";
+	mes "Bem-vindo";
+	mes "a Valhalla,";
+	mes "o Salão da Honra.";
+	next;
+	mes "[Algoz]";
+	mes "Por favor, sinta-se";
+	mes "à vontade";
+	mes "enquanto estiver aqui.";
+	mes "Honra aos guerreiros.";
+	close;
+}

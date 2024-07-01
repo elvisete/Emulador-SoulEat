@@ -1,0 +1,127 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+niflheim,107,156,6	script	Homem errante#nif	798,{
+	mes "[Ricael]";
+	mes "Você deve estar perdido...";
+	mes "Por que alguém viria";
+	mes "para este horrível, terrível";
+	mes "colocar de propósito...??";
+	next;
+	mes "[Ricael]";
+	mes "Desde que tropecei e caí nesta árvore gigante, sofri sem parar aqui. ";
+	next;
+	mes "[Ricael]";
+	mes "Mas na busca por um";
+	mes "rota de fuga, eu provavelmente sei";
+	mes "esta cidade melhor que ninguém";
+	mes "outro. ";
+	mes "layout pode ajudá-lo a escapar";
+	mes "se não fosse tão fútil.";
+	next;
+	switch(select("Pergunte a localização dos edifícios.:Remover marcas no minimapa.:Cancelar.")) {
+	case 1:
+		mes "[Ricael]";
+		mes "Então, hum, sobre qual lugar você quer conhecer?";
+		next;
+		switch(select("Castelo da bruxa:Loja de ferramentas:Loja de armas:Pub:Cancelar")) {
+		case 1:
+			mes "[Ricael]";
+			mes "Lá. ";
+			mes "em seu minimapa para que você possa";
+			mes "vá para o castelo onde isso";
+			mes "bruxa assustadora vive.";
+			next;
+			mes "[Ricael]";
+			mes "Eu fui lá uma vez, mas depois";
+			mes "fugi e decidi que eu";
+			mes "deveria tentar não morrer tanto";
+			mes "que possível. ";
+			mes "muito meu objetivo de vida aqui em";
+			mes "Niflheim.";
+			viewpoint 1,253,191,2,0xFF3355;
+			break;
+		case 2:
+			mes "[Ricael]";
+			mes "A loja de ferramentas está localizada";
+			mes "na marca ^CE6300 ^000000 que fiz";
+			mes "no seu minimapa.";
+			next;
+			mes "[Ricael]";
+			mes "Eles vendem alguns itens exclusivos que";
+			mes "você não pode encontrar fora disso";
+			mes "cidade. ";
+			mes "especial quando percebi que não";
+			mes "A poção pode aliviar a dor que sinto.";
+			mes "...Eu gostaria de estar na prisão.";
+			emotion ET_KEK;
+			viewpoint 1,217,196,3,0xCE6300;
+			break;
+		case 3:
+			mes "[Ricael]";
+			mes "A loja de armas está localizada";
+			mes "na marca ^55FF33 ^000000 que fiz";
+			mes "no seu minimapa.";
+			next;
+			mes "[Ricael]";
+			mes "Eles vendem alguns itens exclusivos que";
+			mes "você não pode encontrar fora disso";
+			mes "cidade... Claro, lutando";
+			mes "os monstros aqui vão apenas";
+			mes "deixá-los mais irritados. ";
+			mes "bem, deixe-os comer você.";
+			emotion ET_KEK;
+			viewpoint 1,216,171,4,0x55FF33;
+			break;
+		case 4:
+			mes "[Ricael]";
+			mes "O pub está localizado em";
+			mes "a marca ^3355FF ^000000 que fiz";
+			mes "no seu minimapa.";
+			next;
+			mes "[Ricael]";
+			mes "Às vezes vejo pessoas mortas no";
+			mes "Pub se divertindo, tomando um";
+			mes "bom tempo. ";
+			mes "me diverti uma vez, mas agora tudo que sinto";
+			mes "é o formigamento frio da solidão";
+			mes "e desespero... a cada momento de vigília.";
+			viewpoint 1,189,207,5,0x3355FF;
+			break;
+		case 5:
+			mes "[Ricael]";
+			mes "Se você deseja remover o local";
+			mes "marcas do seu minimapa, por favor";
+			mes "escolha 'Remover marcas no";
+			mes "minimapa' no menu.";
+		}
+		break;
+	case 2:
+		viewpoint 2,253,191,2,0xFF3355;
+		viewpoint 2,217,196,3,0xCE6300;
+		viewpoint 2,216,171,4,0x55FF33;
+		viewpoint 2,189,207,5,0x3355FF;
+		mes "[Ricael]";
+		mes "Eu removi as marcas de localização de";
+		mes "seu minimapa. ";
+		mes "eu se você quiser marcar o";
+		mes "construindo locais novamente. ";
+		mes "me ajuda a ignorar a depressão";
+		mes "isso me atormenta constantemente.";
+		break;
+	case 3:
+		mes "[Ricael]";
+		mes "Não é uma boa ideia pesquisar";
+		mes "Niflheim sozinho...";
+		mes "Pelo menos tente ter cuidado.";
+		break;
+	}
+	close;
+}
+

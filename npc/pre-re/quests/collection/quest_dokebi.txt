@@ -1,0 +1,241 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+pay_fild10,108,357,5	script	Li#Dokebi_Hunt	90,{
+	if (#mobdoke >= .consec) {
+		mes .npc$;
+		mes "Voce já fez 3 missões comigo hoje.";
+		mes "Volte amanhã";
+		close;
+	}
+	if (checkquest(60128) != -1) {
+		if (checkquest(60128,HUNTING) != 2 ) {
+			mes "[Li]";
+			mes "Você terminou de caçar os 50 Dokebis?";
+			next;
+			switch(select("Sim:Não:Quero desistir")) {
+			case 1:
+				mes "[Li]";
+				mes "Hmm, eu não acho que você tenha caçado 50 ainda...";
+				close;
+			case 2:
+				mes "[Li]";
+				mes "Lembre-se, preciso de ajuda para caçar Dokebis, então vá e caça 50 deles.";
+				close;
+			case 3:
+				mes "[Li]";
+				mes "Você tem certeza de que quer parar de caçar?";
+				mes "Qualquer progresso que você tenha feito será apagado";
+				next;
+				switch(select("Sim:Não")) {
+				case 1:
+					mes "[Li]";
+					mes "Ok então, volte aqui se mudar de ideia.";
+					erasequest 60128;
+					close;
+				case 2:
+					mes "[Li]";
+					mes "Por favor, mate 50 Dokebis.";
+					close;
+				}
+			}
+		}
+		else {
+			mes "[Li]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 42000,36000;
+			erasequest 60128;
+			#mobdoke++;
+			close;
+		}
+	}
+	if (checkquest(60129) != -1) {
+		if (checkquest(60129,HUNTING) != 2 ) {
+			mes "[Li]";
+			mes "Você terminou de caçar os 100 Dokebis?";
+			next;
+			switch(select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Li]";
+					mes "Hmm, eu não acho que você tenha caçado 100 ainda...";
+					close;
+				case 2:
+					mes "[Li]";
+					mes "Lembre-se, preciso de ajuda para caçar Dokebis, então vá e caça 100 deles.";
+					close;
+				case 3:
+					mes "[Li]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você tenha feito será apagado";
+					next;
+					switch(select("Sim:Não")) {
+						case 1:
+							mes "[Li]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60129;
+							close;
+						case 2:
+							mes "[Li]";
+							mes "Por favor, mate 100 Dokebis.";
+							close;
+					}
+			}
+		} else {
+			mes "[Li]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 42000,36000;
+			getexp 42000,36000;
+			erasequest 60129;
+			#mobdoke++;
+			close;
+		}
+	}
+	if (checkquest(60130) != -1) {
+		if (checkquest(60130,HUNTING) != 2 ) {
+			mes "[Li]";
+			mes "Você terminou de caçar os 150 Dokebis?";
+			next;
+			switch(select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Li]";
+					mes "Hmm, eu não acho que você tenha caçado 150 ainda...";
+					close;
+				case 2:
+					mes "[Li]";
+					mes "Lembre-se, preciso de ajuda para caçar Dokebis, então vá e caça 150 deles.";
+					close;
+				case 3:
+					mes "[Li]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você tenha feito será apagado";
+					next;
+					switch(select("Sim:Não")) {
+						case 1:
+							mes "[Li]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60130;
+							close;
+						case 2:
+							mes "[Li]";
+							mes "Por favor, mate 150 Dokebis.";
+							close;
+					}
+			}
+		} else {
+			mes "[Li]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 42000,36000;
+			getexp 42000,36000;
+			getexp 42000,36000;
+			erasequest 60130;
+			#mobdoke++;
+			close;
+		}
+	}
+//for minimum level
+	if (BaseLevel > 34) {
+		//for maximum level
+		if (BaseLevel < 71) {
+			mes "[Li]";
+			mes "Olá. Você acha que poderia me ajudar?";
+			next;
+			switch(select("Claro:Não")) {
+				case 1:
+					mes "[Li]";
+					mes "Há tantos Dokebis aqui... eu simplesmente não me sinto segura.";
+					next;
+					switch(select("Coletar itens:Caçar Dokebis:Cancelar")) {
+						case 1:
+							// Item turn in
+							mes "[Li]";
+							mes "Meu negócio de leitura de sorte precisa de uma boa quantidade de ^FF0000Chifres de Dokebi^000000 para dar boa sorte aos meus clientes.";
+							next;
+							switch(select("Eu tenho alguns Chifres de Dokebi:O que você precisa?")) {
+								case 1:
+									if (countitem(1021) > 49) {
+										mes "[Li]";
+										mes "Oh, ótimo!";
+										mes "Obrigada pelos chifres.";
+										delitem 1021,50; //Chifre de Dokebi
+										getexp 42000,36000;
+										#mobdoke++;
+										close;
+									}
+									else {
+										mes "[Li]";
+										mes "Parece que você não tem o suficiente.";
+										next;
+										mes "[Li]";
+										mes "Eu preciso de ^FF000050 Chifres de Dokebi^000000 para minha leitura de sorte.";
+										close;
+									}
+								case 2:
+									mes "[Li]";
+									mes "Se você me trouxer ^FF000050 Chifres de Dokebi^000000, posso te dar boa sorte.";
+									close;
+							}
+						case 2:
+							// Kill Count Quest
+							mes "[Li]";
+							mes "Ah, ok, acho que você pode me ajudar caçando alguns Dokebis.";
+							mes "Quantos você gostaria de caçar?";
+							next;
+							switch(select("50 Dokebis:100 Dokebis:150 Dokebis")) {
+								case 1:
+									mes "[Li]";
+									mes "Volte quando terminar sua tarefa e eu darei uma pequena recompensa.";
+									setquest 60128;
+									close;
+								case 2:
+									mes "[Li]";
+									mes "Volte quando terminar sua tarefa e eu darei uma pequena recompensa.";
+									setquest 60129;
+									close;
+								case 3:
+									mes "[Li]";
+									mes "Volte quando terminar sua tarefa e eu darei uma pequena recompensa.";
+									setquest 60130;
+									close;
+							}
+						case 3:
+							mes "[Li]";
+							mes "Se mudar de ideia, por favor, volte.";
+							close;
+					}
+				case 2:
+					mes "[Li]";
+					mes "Se mudar de ideia, por favor, volte.";
+					close;
+			}
+		}
+		else {
+			mes "[Li]";
+			mes "Olá";
+			mes "Eu faço leituras de sorte em Payon.";
+			close;
+		}
+	}
+	else {
+		mes "[Li]";
+		mes "Este lugar é perigoso!";
+		next;
+		mes "[Li]";
+		mes "Você deveria sair rapidamente!";
+		close;
+	}
+OnClock0001:
+query_sql ("DELETE FROM `acc_reg_num` WHERE `key`='#mobdoke'");
+end;
+
+OnInit:
+	.consec = 3;
+	end;
+}
+
+

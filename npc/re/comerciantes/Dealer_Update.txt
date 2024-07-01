@@ -1,0 +1,178 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+//= Quando o recurso Barter Shop está desativado
+//= Os Old Dealers serão usados ​​novamente!
+//============================================================
+-	script	Barter_Init	HIDDEN_NPC,{
+	end;
+	
+OnInit:
+	if ( getbattleflag("feature.barter") ) {
+		//= Especialista em armadilhas
+		unloadnpc "Trap Specialist#lhz";
+		unloadnpc "Trap Specialist#mid";
+		unloadnpc "Trap Specialist#pay";
+		unloadnpc "Trap Specialist#prt";
+		unloadnpc "Trap Specialist#ra";
+		
+		//= Mercador negro
+		unloadnpc "Black Marketeer#ein";
+		unloadnpc "Black Marketeer#lhz";
+		unloadnpc "Black Marketeer#mid";
+		unloadnpc "Black Marketeer#prt";
+		unloadnpc "Black Marketeer#ra";
+		
+		//= Johnny Waiker
+		unloadnpc "Johnny Waiker";
+		
+		//= Loja de Rebelião
+		unloadnpc "Rebellion Accessories";
+		unloadnpc "Rebellion Weapons";
+		
+		//= Evento Flecha Quiver
+		unloadnpc "Inventor Jaax";
+		
+		//= Loja de Munições
+		unloadnpc "Magazine Dealer Kenny#iz";
+		unloadnpc "Magazine Dealer Kenny#al";
+		
+		//= Máquina de venda automática de munições
+		unloadnpc "Prop Vending Machine";
+		
+		//= Itens não vendidos
+		npcshopdelitem "Trading Merchant#alb",13200,13221,13222;
+		npcshopdelitem "Trading Merchant#iz",13200,13221,13222;
+		npcshopdelitem "Weapon Dealer#gef2",1750,1751;
+		npcshopdelitem "Weapon Dealer#iz",1750,1751;
+		npcshopdelitem "Weapon Dealer#yuno",1750,1751;
+		npcshopdelitem "Weapon Dealer#moc1",1750,1751;
+		npcshopdelitem "Weapon Dealer#pay",1750,1751;
+		npcshopdelitem "Weapon Dealer#prt",1750,1751;
+		npcshopdelitem "Tool Dealer#mora",1773,1774;
+		
+		//= NPC mudou de lugar
+		movenpc "Trading Merchant#iz", 72,110,3;
+	
+		//= Lojas de Utilidades antes da atualização!
+		unloadnpc "Loja de Utilidades#alb";
+		unloadnpc "Loja de Utilidades#alb2";
+		unloadnpc "Loja de Utilidades#alde";
+		unloadnpc "Loja de Utilidades#ama";
+		unloadnpc "Loja de Utilidades#ayo";
+		unloadnpc "Loja de Utilidades#bra";
+		unloadnpc "Loja de Utilidades#cmd";
+		unloadnpc "Loja de Utilidades#cmd2";
+		unloadnpc "Loja de Utilidades#ein";
+		unloadnpc "Loja de Utilidades#gef";
+		unloadnpc "Loja de Utilidades#gef2";
+		unloadnpc "Loja de Utilidades#gon";
+		unloadnpc "Loja de Utilidades#hu";
+		unloadnpc "Loja de Utilidades#hu2";
+		unloadnpc "Loja de Utilidades#yuno";
+		unloadnpc "Loja de Utilidades#yuno1";
+		unloadnpc "Loja de Utilidades#yuno2";
+		unloadnpc "Loja de Utilidades#lhz";
+		unloadnpc "Loja de Utilidades#lhz2";
+		unloadnpc "Loja de Utilidades#lou";
+		unloadnpc "Loja de Utilidades#xmas";
+		unloadnpc "Loja de Utilidades#mosk";
+		unloadnpc "Loja de Utilidades#pay";
+		unloadnpc "Loja de Utilidades#pay2";
+		unloadnpc "Loja de Utilidades#prt";
+		unloadnpc "Loja de Utilidades#prt1";
+		unloadnpc "Loja de Utilidades#ra";
+		unloadnpc "Loja de Utilidades#tu";
+		unloadnpc "Loja de Utilidades#um";
+		unloadnpc "Loja de Utilidades#ve";
+		unloadnpc "Tool Dealer#moc1";
+		unloadnpc "Tool Dealer#moc2";
+		unloadnpc "Tool Dealer#moc3";
+		unloadnpc "Tool Dealer#moc4";
+	} else {
+		//= Sobre Lojas
+		unloadnpc "#over_arrow";
+		unloadnpc "#over_bullet";
+		unloadnpc "#over_kunai";
+		unloadnpc "#over_madogear";
+		unloadnpc "#over_talisman";
+		
+		//= Loja de Utilidades após atualização!
+		unloadnpc "Lojas de Utilidades#Extended_Alb";
+		unloadnpc "Lojas de Utilidades#Extended_Alb2";
+		unloadnpc "Lojas de Utilidades#Extended_Alde";
+		unloadnpc "Lojas de Utilidades#Extended_Ama";
+		unloadnpc "Lojas de Utilidades#Extended_Ayo";
+		unloadnpc "Lojas de Utilidades#Extended_Bra";
+		unloadnpc "Lojas de Utilidades#Extended_Cmd";
+		unloadnpc "Lojas de Utilidades#Extended_Cmd2";
+		unloadnpc "Lojas de Utilidades#Extended_Ein";
+		unloadnpc "Lojas de Utilidades#Extended_Gef";
+		unloadnpc "Lojas de Utilidades#Extended_Gef2";
+		unloadnpc "Lojas de Utilidades#Extended_Gon";
+		unloadnpc "Lojas de Utilidades#Extended_Hu2";
+		unloadnpc "Lojas de Utilidades#Extended_Yuno";
+		unloadnpc "Lojas de Utilidades#Extended_Yuno1";
+		unloadnpc "Lojas de Utilidades#Extended_Yuno2";
+		unloadnpc "Lojas de Utilidades#Extended_Lhz";
+		unloadnpc "Lojas de Utilidades#Extended_Lhz2";
+		unloadnpc "Lojas de Utilidades#Extended_Lou";
+		unloadnpc "Lojas de Utilidades#Extended_Xmas";
+		unloadnpc "Lojas de Utilidades#Extended_Mosk";
+		unloadnpc "Lojas de Utilidades#Extended_Pay";
+		unloadnpc "Lojas de Utilidades#Extended_Pay2";
+		unloadnpc "Lojas de Utilidades#Extended_Prt";
+		unloadnpc "Lojas de Utilidades#Extended_Prt1";
+		unloadnpc "Lojas de Utilidades#Extended_Ra";
+		unloadnpc "Lojas de Utilidades#Extended_Tu";
+		unloadnpc "Lojas de Utilidades#Extended_Um";
+		unloadnpc "Lojas de Utilidades#Extended_Ve";
+		unloadnpc "Lojas de Utilidades#Extended_Moc1";
+		unloadnpc "Lojas de Utilidades#Extended_Moc2";
+		unloadnpc "Lojas de Utilidades#Extended_Moc3";
+		unloadnpc "Lojas de Utilidades#Extended_Moc4";
+	}
+	end;
+}
+
+//= Lojas de Utilidades
+//============================================================
+alb2trea,87,65,5	shop	Lojas de Utilidades#Extended_Alb	83,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+alberta_in,182,97,0	shop	Lojas de Utilidades#Extended_Alb2	73,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+aldeba_in,94,56,5	shop	Lojas de Utilidades#Extended_Alde	83,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+ama_in01,24,30,5	shop	Lojas de Utilidades#Extended_Ama	763,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+ayo_in01,18,182,1	shop	Lojas de Utilidades#Extended_Ayo	840,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+brasilis,252,257,3	shop	Lojas de Utilidades#Extended_Bra	478,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+cmd_in01,79,182,5	shop	Lojas de Utilidades#Extended_Cmd	83,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+cmd_fild07,257,126,5	shop	Lojas de Utilidades#Extended_Cmd2	83,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+ein_in01,189,15,1	shop	Lojas de Utilidades#Extended_Ein	850,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+geffen_in,77,167,0	shop	Lojas de Utilidades#Extended_Gef	68,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+geffen_in,171,123,4	shop	Lojas de Utilidades#Extended_Gef2	64,1092:-1,1093:-1,713:-1
+gonryun,147,84,5	shop	Lojas de Utilidades#Extended_Gon	777,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+hu_in01,252,368,3	shop	Lojas de Utilidades#Extended_Hu2	90,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,1771:-1,717:-1
+yuno,218,97,5	shop	Lojas de Utilidades#Extended_Yuno	84,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+yuno,226,107,5	shop	Lojas de Utilidades#Extended_Yuno1	83,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+yuno_in01,25,34,5	shop	Lojas de Utilidades#Extended_Yuno2	83,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+lhz_in02,31,145,4	shop	Lojas de Utilidades#Extended_Lhz	90,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+lhz_in03,239,106,5	shop	Lojas de Utilidades#Extended_Lhz2	850,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+lou_in02,239,176,5	shop	Lojas de Utilidades#Extended_Lou	818,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+xmas_in,40,38,5	shop	Lojas de Utilidades#Extended_Xmas	83,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+mosk_in,21,254,5	shop	Lojas de Utilidades#Extended_Mosk	968,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+payon_in01,5,49,7	shop	Lojas de Utilidades#Extended_Pay	88,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+payon_in02,87,34,0	shop	Lojas de Utilidades#Extended_Pay2	75,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+prt_fild05,290,221,2	shop	Lojas de Utilidades#Extended_Prt	83,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+prt_in,126,76,0	shop	Lojas de Utilidades#Extended_Prt1	53,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+ra_in01,257,269,3	shop	Lojas de Utilidades#Extended_Ra	919,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+tur_dun01,158,54,6	shop	Lojas de Utilidades#Extended_Tu	99,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+um_in,104,124,3	shop	Lojas de Utilidades#Extended_Um	788,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+ve_in,243,303,5	shop	Lojas de Utilidades#Extended_Ve	943,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+moc_ruins,91,128,4	shop	Lojas de Utilidades#Extended_Moc1	93,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+moc_ruins,114,63,6	shop	Lojas de Utilidades#Extended_Moc2	99,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+morocc,146,103,6	shop	Lojas de Utilidades#Extended_Moc3	93,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1
+morocc,151,241,4	shop	Lojas de Utilidades#Extended_Moc4	93,611:-1,602:-1,601:-1,23280:-1,23288:-1,645:-1,656:-1,657:-1,501:-1,502:-1,503:-1,504:-1,506:-1,610:-1,713:-1,717:-1,1771:-1

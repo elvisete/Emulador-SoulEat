@@ -1,0 +1,159 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+nif_fild01,332,327,4	script	Deadman	795,{
+	if (#loli >= .consec) {
+		mes .npc$;
+		mes "Voce já fez 3 missões comigo hoje.";
+		mes "Volte amanhã";
+		close;
+	}
+	if (checkquest(60173) != -1) {
+		if (checkquest(60173, HUNTING) != 2) {
+			mes "[Deadman]";
+			mes "Você terminou de caçar os 50 Disguise?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Deadman]";
+					mes "Hmm, eu não acho que você tenha caçado 50 ainda.";
+					close;
+				case 2:
+					mes "[Deadman]";
+					mes "Lembre-se, eu preciso de ajuda para caçar Disguise, então vá e caçe 50 deles.";
+					close;
+				case 3:
+					mes "[Deadman]";
+					mes "Tem certeza de que deseja parar de caçar?";
+					mes "Qualquer progresso que você tenha feito será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Deadman]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60173;
+							close;
+						case 2:
+							mes "[Deadman]";
+							mes "Por favor, mate 50 Disguise para tornar este local um lugar onde as pessoas possam ir e obter experiência.";
+							close;
+					}
+			}
+		}
+		mes "[Deadman]";
+		mes "Incrível, você fez isso rapidamente.";
+		getexp 140600, 95800;
+		erasequest 60173;
+		#loli++;
+		close;
+	}
+	if (checkquest(60176) != -1) {
+		if (checkquest(60176, HUNTING) != 2) {
+			mes "[Deadman]";
+			mes "Você terminou de caçar as 50 Loli Ruri?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Deadman]";
+					mes "Hmm, eu não acho que você tenha caçado 50 ainda.";
+					close;
+				case 2:
+					mes "[Deadman]";
+					mes "Lembre-se, eu preciso de ajuda para caçar Loli Ruri, então vá e mate 50 delas.";
+					close;
+				case 3:
+					mes "[Deadman]";
+					mes "Tem certeza de que deseja parar de caçar?";
+					mes "Qualquer progresso que você tenha feito será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Deadman]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60176;
+							close;
+						case 2:
+							mes "[Deadman]";
+							mes "Por favor, mate 50 Loli Ruri para tornar este lugar um local onde as pessoas possam ir e obter experiência.";
+							close;
+					}
+			}
+		}
+		mes "[Deadman]";
+		mes "Incrível, você fez isso rapidamente.";
+		getexp 332000, 239500;
+		erasequest 60176;
+		#loli++;
+		close;
+	}
+	if ((BaseLevel > 59) && (BaseLevel < 99)) {
+		mes "[Deadman]";
+		mes "Oh, ótimo!";
+		mes "Você está aqui para me ajudar, certo?";
+		mes "Se não, eu não sei o que fazer com os monstros neste lugar!";
+		next;
+		switch (select("Claro:Não")) {
+			case 1:
+				mes "[Deadman]";
+				mes "Ótimo! Eu sabia no momento em que te vi que posso contar com você!";
+				mes "Preciso que você reduza a quantidade de monstros que estão atualmente causando estragos neste mapa!";
+				mes "Há muitos Disguise e Loli Ruri por aqui, o que torna impossível para os jogadores de níveis mais baixos ganharem boa experiência aqui.";
+				next;
+				mes "[Deadman]";
+				mes "Então, qual desses monstros você gostaria de caçar para mim?";
+				next;
+				switch (select("Disguise:Loli Ruri:Cancelar")) {
+					case 1:
+						if (BaseLevel > 90) {
+							mes "[Deadman]";
+							mes "Obrigado por sua grande ajuda com os Disguise!";
+							mes "Atualmente, a situação está estável e eu não preciso mais de sua ajuda para matá-los.";
+							close;
+						}
+						mes "[Deadman]";
+						mes "Mate 50 desses Disguise e me avise quando terminar. Vou recompensá-lo por seus esforços.";
+						setquest 60173;
+						close;
+					case 2:
+						if (BaseLevel > 98) {
+							mes "[Deadman]";
+							mes "Obrigado por sua grande ajuda com os Loli Ruri!";
+							mes "Atualmente, a situação está estável e eu não preciso mais de sua ajuda para matá-los.";
+							close;
+						}
+						mes "[Deadman]";
+						mes "Mate 50 desses Loli Ruri e me avise quando terminar. Vou recompensá-lo por seus esforços.";
+						setquest 60176;
+						close;
+					case 3:
+						mes "[Deadman]";
+						mes "Se mudar de ideia, por favor, volte.";
+						close;
+				}
+			case 2:
+				mes "[Deadman]";
+				mes "Se mudar de ideia, por favor, volte.";
+				close;
+		}
+	}
+	mes "[Deadman]";
+	mes "Oh garoto, oh garoto!";
+	next;
+	mes "[Deadman]";
+	mes "Desculpe, não posso falar agora. Estou em um mundo de dor aqui, esses malditos Disguise e Loli Ruri vão me matar.";
+	close;
+	
+OnClock0001:
+query_sql ("DELETE FROM `acc_reg_num` WHERE `key`='#loli'");
+end;
+
+OnInit:
+	.consec = 3;
+	end;
+}

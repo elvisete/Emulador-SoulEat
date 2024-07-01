@@ -1,0 +1,3224 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================// 
+
+// Floating NPCs to duplicate from.
+//============================================================
+-	script	RelayDummy1::GuildRelay1	754,{
+	set .@name$,strnpcinfo(1);
+	if (.@name$ == "Zumbido") {
+		set .@name2$,"Lenya";
+		set .@name3$,"Gealuve";
+		set .@name4$,"Paris";
+		set .@GID, GetCastleData("aldeg_cas"+strnpcinfo(2),1);
+	}
+	else if (.@name$ == "Jody") {
+		set .@name2$,"Ron Haware";
+		set .@name3$,"Versão";
+		set .@name4$,"Gen Garish";
+		set .@GID, GetCastleData("gefg_cas"+strnpcinfo(2),1);
+	}
+	else if (.@name$ == "Chungye") {
+		set .@name2$,"Dosuhlji";
+		set .@name3$,"Yayula";
+		set .@name4$,"Ashin";
+		set .@GID, GetCastleData("payg_cas"+strnpcinfo(2),1);
+	}
+	else if (.@name$ == "Hermod") {
+		set .@name2$,"Átila";
+		set .@name3$,"Cecílio";
+		set .@name4$,"Diligo";
+		set .@GID, GetCastleData("prtg_cas"+strnpcinfo(2),1);
+	}
+	if (checkweight(908,630) == 0) {
+		mes "^3355FFEspere um minuto! ";
+		mes "carregando muitos itens";
+		mes "agora mesmo: armazene alguns";
+		mes "suas coisas extras em Kafra";
+		mes "Armazenamento e depois volte.^000000";
+		close;
+	}
+	if (.@GID == 0) {
+		mes "^3355FFVocê não sabe por que, mas";
+		mes "esse cara parece ser bonito";
+		mes "depressivo. ";
+		mes "contato visual com você, mas então";
+		mes "interrompe. ";
+		mes "ele quer ficar sozinho.^000000";
+		next;
+		mes "^3355FFNão há razão para você";
+		mes "ficar perto de um sem dono";
+		mes "fortaleza. ";
+		mes "siga seu caminho.^000000";
+		close;
+	}
+	if (getcharid(2) == .@GID) {
+		if (is_guild_leader() == true) {
+			.@time = atoi( gettimestr("%H%M",5) );
+			if (guildrelay_q == 100) {
+				if (guildtime > 2299) {
+					if (.@time > 0101 && .@time < guildtime) {
+						mes "[" + .@name$ + "]";
+						mes "Ah, você está de volta. ";
+						mes "descansar o suficiente? ";
+						mes "outros membros da guilda são";
+						mes "sentindo-me revigorado agora.";
+						mes "Pelo que parece, você está";
+						mes "pronto para sua próxima missão.";
+						next;
+						mes "[" + .@name$ + "]";
+						mes "O próximo passo para";
+						mes "você deve pegar isso, o";
+						mes "''Espírito de Confiança.'' Se isso";
+						mes "a guilda será sólida,";
+						mes "você precisa pensar o quanto";
+						mes "confiança que existe na guilda.";
+						set guildrelay_q,8;
+						getitem 7240,1; //Soul_Of_Confidence
+						next;
+						mes "[" + .@name$ + "]";
+						mes "Seu segundo teste será";
+						mes "para dar aquele ^4D4DFFEspírito de Confiança^000000";
+						mes "para um sábio que pode manipular";
+						mes "atributos da natureza. ";
+						mes "palavras, um Sábio ou Erudito";
+						mes "deve realizar esta tarefa.";
+						next;
+						mes "[" + .@name$ + "]";
+						mes "O Espírito de Confiança deve";
+						mes "ser entregue em ^4D4DFF" + .@name3$ + "^000000,";
+						mes "então não se esqueça de retransmitir";
+						mes "essa informação para o seu";
+						mes "Sábio ou Erudito. ";
+						mes "Boa sorte em sua jornada.";
+						close;
+					}
+					else {
+						mes "[" + .@name$ + "]";
+						mes "Ah, você descansou nós... Oh.";
+						mes "Por que você está tão pálido?";
+						mes "Você não pode realizar grandes feitos";
+						mes "ações quando você está sobrecarregado!";
+						mes "Descansar. ";
+						mes "depender de sua força.";
+						emotion ET_SURPRISE;
+						next;
+						mes "[" + .@name$ + "]";
+						mes "Sua determinação e";
+						mes "espírito é louvável, mas";
+						mes "tenha paciência para lembrar";
+						mes "você mesmo quando precisar. ";
+						mes "estar esperando aqui, então por favor";
+						mes "volte para mim mais tarde.";
+						close;
+					}
+				}
+				else if (guildtime > 2200) {
+					if (.@time > 0001 && .@time < guildtime) {
+						mes "[" + .@name$ + "]";
+						mes "Ah, você está de volta. ";
+						mes "descansar o suficiente? ";
+						mes "outros membros da guilda são";
+						mes "sentindo-me revigorado agora.";
+						mes "Pelo que parece, você está";
+						mes "pronto para sua próxima missão.";
+						next;
+						mes "[" + .@name$ + "]";
+						mes "O próximo passo para";
+						mes "você deve pegar isso, o";
+						mes "''Espírito de Confiança.'' Se isso";
+						mes "a guilda será sólida,";
+						mes "você precisa pensar o quanto";
+						mes "confiança que existe na guilda.";
+						set guildrelay_q,8;
+						getitem 7240,1; //Soul_Of_Confidence
+						next;
+						mes "[" + .@name$ + "]";
+						mes "Seu segundo teste será";
+						mes "para dar aquele ^4D4DFFEspírito de Confiança^000000";
+						mes "para um sábio que pode manipular";
+						mes "atributos da natureza. ";
+						mes "palavras, um Sábio ou Erudito";
+						mes "deve realizar esta tarefa.";
+						next;
+						mes "[" + .@name$ + "]";
+						mes "O Espírito de Confiança deve";
+						mes "ser entregue em ^4D4DFF" + .@name3$ + "^000000,";
+						mes "então não se esqueça de retransmitir";
+						mes "essa informação para o seu";
+						mes "Sábio ou Erudito. ";
+						mes "Boa sorte em sua jornada.";
+						close;
+					}
+					else {
+						mes "[" + .@name$ + "]";
+						mes "Ah, você descansou nós... Oh.";
+						mes "Por que você está tão pálido?";
+						mes "Você não pode realizar grandes feitos";
+						mes "ações quando você está sobrecarregado!";
+						mes "Descansar. ";
+						mes "depender de sua força.";
+						emotion ET_SURPRISE;
+						next;
+						mes "[" + .@name$ + "]";
+						mes "Sua determinação e";
+						mes "espírito é louvável, mas";
+						mes "tenha paciência para lembrar";
+						mes "você mesmo quando precisar. ";
+						mes "estar esperando aqui, então por favor";
+						mes "volte para mim mais tarde.";
+						close;
+					}
+				}
+				else if ((.@time - guildtime) > 0200) {
+					mes "[" + .@name$ + "]";
+					mes "Ah, você está de volta. ";
+					mes "descansar o suficiente? ";
+					mes "outros membros da guilda são";
+					mes "sentindo-me revigorado agora.";
+					mes "Pelo que parece, você está";
+					mes "pronto para sua próxima missão.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "O próximo passo para";
+					mes "você deve pegar isso, o";
+					mes "''Espírito de Confiança.'' Se isso";
+					mes "a guilda será sólida,";
+					mes "você precisa pensar o quanto";
+					mes "confiança que existe na guilda.";
+					set guildrelay_q,8;
+					getitem 7240,1; //Soul_Of_Confidence
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Seu segundo teste será";
+					mes "para dar aquele ^4D4DFFEspírito de Confiança^000000";
+					mes "para um sábio que pode manipular";
+					mes "atributos da natureza. ";
+					mes "palavras, um Sábio ou Erudito";
+					mes "deve realizar esta tarefa.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "O Espírito de Confiança deve";
+					mes "ser entregue em ^4D4DFFY" + .@name3$ + "^000000,";
+					mes "então não se esqueça de retransmitir";
+					mes "essa informação para o seu";
+					mes "Sábio ou Erudito. ";
+					mes "Boa sorte em sua jornada.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Ah, você descansou nós... Oh.";
+					mes "Por que você está tão pálido?";
+					mes "Você não pode realizar grandes feitos";
+					mes "ações quando você está sobrecarregado!";
+					mes "Descansar. ";
+					mes "depender de sua força.";
+					emotion ET_SURPRISE;
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Sua determinação e";
+					mes "espírito é louvável, mas";
+					mes "tenha paciência para lembrar";
+					mes "você mesmo quando precisar. ";
+					mes "estar esperando aqui, então por favor";
+					mes "volte para mim mais tarde.";
+					close;
+				}
+			}
+			else if (guildrelay_q == 150) {
+				if ((guildtime > 2299 && .@time > 0101 && .@time < guildtime) || (guildtime > 2199 && .@time > 0001 && .@time < guildtime) || ((.@time - guildtime) > 0200)) {
+					mes "[" + .@name$ + "]";
+					mes "Ah, você parece bem descansado,";
+					mes "mestre. ";
+					mes "você prossiga com o terceiro";
+					mes "teste. ";
+					mes "esses espíritos são incrivelmente";
+					mes "precioso. ";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Como todos os outros espíritos,";
+					mes "por favor, mantenha este com segurança.";
+					mes "Este é o ^4D4DFFEspírito de Paz^000000.";
+					mes "Parece contraditório que";
+					mes "fortalezas e poder podem";
+					mes "trazer paz, mas é verdade.";
+					set guildrelay_q,15;
+					getitem 7246,1; //Soul_Of_Peace
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Se o poder não for usado para";
+					mes "proteja os fracos, então";
+					mes "algum agressor, de uma forma ou";
+					mes "outro, sempre virá";
+					mes "para explorá-los. ";
+					mes "Tristão III construiu as fortalezas.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Por favor, despache um Ladino";
+					mes "ou Stalker para trazer isso";
+					mes "Espírito de Paz para ^4D4DFF" + .@name4$ + "^000000.";
+					mes "Se você não conhece nenhum Rogue";
+					mes "ou Stalkers, então seria";
+					mes "prudente para você conhecer um.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Sim, não há substituto";
+					mes "para o subterfúgio e inteligência";
+					mes "descobrindo que um Rogue pode";
+					mes "fornecer. " + .@name4$ + "vai";
+					mes "orientá-lo em seu terceiro teste.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Ah, você descansou nós... Oh.";
+					mes "Por que você está tão pálido?";
+					mes "Você não pode realizar grandes feitos";
+					mes "ações quando você está sobrecarregado!";
+					mes "Descansar. ";
+					mes "depender de sua força.";
+					emotion ET_SURPRISE;
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Sua determinação e";
+					mes "espírito é louvável, mas";
+					mes "tenha paciência para lembrar";
+					mes "você mesmo quando precisar. ";
+					mes "estar esperando aqui, então por favor";
+					mes "volte para mim mais tarde.";
+					close;
+				}
+			}
+			else if (guildrelay_q == 25) {
+				if ((guildtime > 2299 && .@time > 0401 && .@time < guildtime)
+				|| (guildtime > 2199 && .@time > 0301 && .@time < guildtime)
+				|| (guildtime > 2059 && .@time > 0201 && .@time < guildtime)
+				|| (guildtime > 1999 && .@time > 0101 && .@time < guildtime)
+				|| (guildtime > 1899 && .@time > 0001 && .@time < guildtime)
+				|| ((.@time - guildtime) > 0500)) {
+					mes "[" + .@name$ + "]";
+					mes "Ah, você descansou bem,";
+					mes "mestre? ";
+					mes "boas maneiras há um tempo atrás. ";
+					mes "para relatar os resultados do seu teste,";
+					mes "e perdi a compostura por um";
+					mes "momento. ";
+					set guildrelay_q,999;
+					close;
+				}
+				else {
+					mes "................................";
+					mes "................................";
+					next;
+					mes "................................";
+					mes "................................";
+					mes "................................";
+					next;
+					mes "[" + .@name$ + "]";
+					emotion ET_HUK;
+					mes "Oh! ";
+					mes "você fez...? ";
+					mes "Eu estava ocupado trabalhando.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Faz apenas alguns dias";
+					mes "desde que você terminou os testes.";
+					mes "Por enquanto, você deve descansar e";
+					mes "cuide da sua guilda, ok?";
+					mes "Por favor, volte mais tarde.";
+					mes "Tenho muito o que fazer...";
+					close;
+				}
+			}
+			else if (guildrelay_q == 999) {
+				mes "[" + .@name$ + "]";
+				mes "Bom dia, mestre.";
+				mes "Algo está errado?";
+				mes "Você parece como se";
+				mes "algo está em sua mente.";
+				next;
+				switch(select("N-não, nada.:Quero fazer uma aula.")) {
+				case 1:
+					mes "[" + .@name$ + "]";
+					mes "Hum? ";
+					emotion ET_SWEAT;
+					mes "Você não queria levar";
+					mes "os testes novamente, não é?";
+					close;
+				case 2:
+					mes "[" + .@name$ + "]";
+					mes "Eu vejo. ";
+					mes "ser fácil, mas suponho que você";
+					mes "estão preparados. ";
+					mes "o ^4D4DFF Espírito da Guilda^000000, e";
+					mes "dê para quem você mais confia";
+					mes "Cavaleiro ou Senhor Cavaleiro.";
+					set guildrelay_q,1;
+					getitem 7234,1; //Soul_Of_Guild
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Este Cavaleiro deveria levar";
+					mes "o Espírito da Guilda acabou";
+					mes "para ^4D4DFF" + .@name2$ + "^000000. ";
+					mes "que os deuses estejam com você.";
+					close;
+				}
+			}
+			else if (guildrelay_q == 1) {
+				if (countitem(7234) > 0) {
+					mes "[" + .@name$ + "]";
+					mes "Você ainda tem o Espírito de";
+					mes "Guilda que eu te dei? ";
+					mes "você não encontrou um Cavaleiro ou";
+					mes "Lord Knight ao qual pode";
+					mes "ser confiado. ";
+					mes "que você encontre alguém em breve.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Para o bem da guilda,";
+					mes "será vantajoso ter";
+					mes "um Cavaleiro ou Lorde Cavaleiro em";
+					mes "seu lado: suas habilidades de combate";
+					mes "pode mudar o rumo das batalhas.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Quando você encontrar um Cavaleiro,";
+					mes "dê a ele o Espírito da Guilda";
+					mes "e peça a ele para encontrar" + .@name2$ + "";
+					mes "já que ele irá conduzir";
+					mes "o julgamento. ";
+					mes "para você, mestre.";
+					close;
+				}
+				else if (countitem(7239) > 0) {
+					mes "[" + .@name$ + "]";
+					mes "Ah, este é o Espírito";
+					mes "de Avanço? ";
+					mes "que você completou o primeiro";
+					mes "teste. ";
+					mes "Entregue-me o espírito e permita";
+					mes "me para lhe dar a recompensa da sua guilda.";
+					delitem 7239,1; //Soul_Of_Proceeding
+					set guildtime,.@time;
+					set guildrelay_q,100;
+					set .@incen_item,rand(1,100);
+					if ((.@incen_item > 0) && (.@incen_item < 25)) {
+						getitem 608,20; //Seed_Of_Yggdrasil
+						getitem 678,2; //Poison_Bottle
+					}
+					else if ((.@incen_item > 24) && (.@incen_item < 50)) {
+						getitem 607,10; //Yggdrasilberry
+						getitem 678,2; //Poison_Bottle
+					}
+					else if ((.@incen_item > 50) && (.@incen_item < 75)) {
+						getitem 644,5; //Gift_Box
+						getitem 678,2; //Poison_Bottle
+					}
+					else if ((.@incen_item > 74) && (.@incen_item < 101)) {
+						getitem 603,3; //Old_Blue_Box
+						getitem 678,2; //Poison_Bottle
+					}
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Você se saiu bem, mas";
+					mes "há mais testes";
+					mes "à sua frente. ";
+					mes "você deveria descansar antes";
+					mes "realizando o segundo teste.";
+					mes "Por favor, venha quando estiver pronto.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Se você não estiver ocupado, então";
+					mes "por que você não gasta seu";
+					mes "tempo aumentando o moral";
+					mes "entre os membros da sua guilda?";
+					mes "Talvez alguma formação de equipe";
+					mes "o exercício pode ajudar.";
+					close;
+				}
+			}
+			else if (guildrelay_q == 8) {
+				if (countitem(7240) > 0) {
+					mes "[" + .@name$ + "]";
+					mes "Você deve estar tendo";
+					mes "dificuldade em encontrar" + .@name3$ + ".";
+					mes "Certifique-se de que você tem";
+					mes "um amigo sábio ou estudioso";
+					mes "dê esse Espírito de Confiança para";
+					mes "ele depois de localizá-lo.";
+					close;
+				}
+				else if (countitem(7245) > 0) {
+					mes "[" + .@name$ + "]";
+					mes "Ah, então você já completou";
+					mes "o teste e ganhou o Espírito";
+					mes "da Amizade? ";
+					mes "Você deve agora reconhecer o";
+					mes "valor do trabalho em equipe. ";
+					mes "o Espírito de Amizade para mim.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Agora, por favor, pegue isso";
+					mes "recompense e compartilhe com";
+					mes "membros de sua guilda. ";
+					mes "pode ser útil no futuro";
+					mes "desafios que todos vocês";
+					mes "enfrentar juntos. ";
+					delitem 7245,1; //Soul_Of_Friendship
+					set guildtime, atoi( gettimestr("%H%M",5) );
+					set guildrelay_q,150;
+					set .@incen_item,rand(1,100);
+					if ((.@incen_item > 0) && (.@incen_item < 16)) {
+						getitem 607,10; //Yggdrasilberry
+						getitem 644,5; //Gift_Box
+						getitem 678,3; //Poison_Bottle
+					}
+					else if ((.@incen_item > 14) && (.@incen_item < 31)) {
+						getitem 607,10; //Yggdrasilberry
+						getitem 603,3; //Old_Blue_Box
+						getitem 678,3; //Poison_Bottle
+					}
+					else if ((.@incen_item > 29) && (.@incen_item < 46)) {
+						getitem 607,10; //Yggdrasilberry
+						getitem 617,3; //Old_Violet_Box
+						getitem 678,3; //Poison_Bottle
+					}
+					else if ((.@incen_item > 44) && (.@incen_item < 61)) {
+						getitem 644,4; //Gift_Box
+						getitem 603,2; //Old_Blue_Box
+						getitem 678,3; //Poison_Bottle
+					}
+					else if ((.@incen_item > 59) && (.@incen_item < 76)) {
+						getitem 644,3; //Gift_Box
+						getitem 617,2; //Old_Violet_Box
+						getitem 678,3; //Poison_Bottle
+					}
+					else if ((.@incen_item > 74) && (.@incen_item < 91)) {
+						getitem 603,2; //Old_Blue_Box
+						getitem 617,2; //Old_Violet_Box
+						getitem 678,3; //Poison_Bottle
+					}
+					else if ((.@incen_item > 89) && (.@incen_item < 101)) {
+						getitem 607,10; //Yggdrasilberry
+						getitem 644,3; //Gift_Box
+						getitem 603,2; //Old_Blue_Box
+						getitem 617,1; //Old_Violet_Box
+					}
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Você deveria descansar e";
+					mes "recupere-se antes de você";
+					mes "realizar o terceiro teste.";
+					mes "Eu também me beneficiaria";
+					mes "uma breve pausa. ";
+					mes "volte para mim quando estiver pronto.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Se você não estiver ocupado, então";
+					mes "por que você não gasta seu";
+					mes "tempo aumentando o moral";
+					mes "entre os membros da sua guilda?";
+					mes "Talvez alguma formação de equipe";
+					mes "o exercício pode ajudar.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Se for do seu agrado,";
+					mes "você pode simplesmente vir aqui";
+					mes "e junte-se a mim para uma xícara de chá.";
+					close;
+				}
+			}
+			else if (guildrelay_q == 15) {
+				if (countitem(7246) > 0) {
+					mes "[" + .@name$ + "]";
+					mes "Você ainda tem o";
+					mes "Espírito de Paz? ";
+					mes "não tem nenhum Rogue ou";
+					mes "Stalkers em sua guilda, agora";
+					mes "seria a hora de recrutar";
+					mes "eles. ";
+					close;
+				}
+				else if (countitem(7251) > 0) {
+					mes "[" + .@name$ + "]";
+					mes "Vejo que você completou";
+					mes "o último teste e recebeu";
+					mes "o Espírito da Vitória. ";
+					mes "A vitória é o resultado natural";
+					mes "quando sua guilda trabalha junta";
+					mes "em harmonia como uma equipe unida.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Parabéns";
+					mes "completando todas as provas.";
+					mes "Por favor, aceite esta recompensa,";
+					mes "dado em nome do rei";
+					mes "Tristan III, e compartilhe com";
+					mes "guilda. ";
+					delitem 7251,1; //Soul_Of_Victory
+					set guildtime, atoi( gettimestr("%H%M",5) );
+					set guildrelay_q,25;
+					set .@incen_item,rand(1,100);
+					if ((.@incen_item > 0) && (.@incen_item < 26)) {
+						getitem 608,10; //Seed_Of_Yggdrasil
+						getitem 607,5; //Yggdrasilberry
+						getitem 644,4; //Gift_Box
+					}
+					else if ((.@incen_item > 25) && (.@incen_item < 51)) {
+						getitem 608,10; //Seed_Of_Yggdrasil
+						getitem 607,5; //Yggdrasilberry
+						getitem 603,3; //Old_Blue_Box
+					}
+					else if ((.@incen_item > 50) && (.@incen_item < 76)) {
+						getitem 608,10; //Seed_Of_Yggdrasil
+						getitem 617,2; //Old_Violet_Box
+						getitem 607,5; //Yggdrasilberry
+					}
+					else if ((.@incen_item > 75) && (.@incen_item < 91)) {
+						getitem 608,10; //Seed_Of_Yggdrasil
+						getitem 644,4; //Gift_Box
+						getitem 603,2; //Old_Blue_Box
+						getitem 617,1; //Old_Violet_Box
+					}
+					else if ((.@incen_item > 90) && (.@incen_item < 101)) {
+						getitem 5074,1; //Ear_Of_Angel's_Wing
+					}
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Você e sua guilda devem estar";
+					mes "bastante cansado agora. ";
+					mes "estamos prontos para você se você decidir";
+					mes "descansar. ";
+					mes "se você deseja fazer os testes";
+					mes "de novo. ";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Se você não é particularmente";
+					mes "ocupado, então por que você não";
+					mes "passe algum tempo com seu";
+					mes "membros da guilda? ";
+					mes "camaradagem forte nunca";
+					mes "não compensa. ";
+					close;
+				}
+			}
+			else {
+				mes "[" + .@name$ + "]";
+				mes "Saudações, mestre.";
+				mes "Eu sou" + .@name$ + ", um dos quatro";
+				mes "Grandes Sábios, e eu estou aqui";
+				mes "para atendê-lo sob as ordens";
+				mes "de sábio e benevolente";
+				mes "Rei Tristão III.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Testamos guildas que possuem";
+				mes "fortalezas, e ver se eles";
+				mes "estão qualificados para serem considerados";
+				mes "guildas de elite. ";
+				mes "treinar guildas para fortalecer";
+				mes "nossas forças militares.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Embora sua guilda tenha o";
+				mes "força e coragem para conquistar";
+				mes "uma fortaleza, queremos que você";
+				mes "provar que sua guilda tem";
+				mes "um forte senso de justiça,";
+				mes "honra e compaixão.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "É com você. ";
+				mes "você faz o teste que eu tenho";
+				mes "para você? ";
+				mes "ajude sua guilda a ficar mais forte";
+				mes "para que você fique melhor";
+				mes "capaz de proteger os fracos.";
+				next;
+				switch(select("Quero fazer o teste.:Deixe-me pensar sobre isso.")) {
+				case 1:
+					mes "[" + .@name$ + "]";
+					mes "É assim mesmo? ";
+					mes "você receberá ordens";
+					mes "e espíritos especiais. ";
+					mes "espíritos só serão dados";
+					mes "uma vez: você não deve perdê-los.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Se você perder o espírito,";
+					mes "você será julgado como";
+					mes "irresponsável e será";
+					mes "incapaz de completar os testes.";
+					mes "Você deve encontrar qualquer espírito perdido para";
+					mes "Continuar. ";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Existem algumas coisas que você";
+					mes "deveria saber. ";
+					mes "só cuide de um espírito";
+					mes "de uma vez. ";
+					mes "fazer os testes em ordem e";
+					mes "siga as instruções do guia.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Em terceiro lugar, o espírito deve";
+					mes "ser dado ao tipo de pessoa";
+					mes "especificado no teste. ";
+					mes "são as regras. ";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Ok, este é o primeiro";
+					mes "espírito que será confiado";
+					mes "para você. ";
+					mes "para um Cavaleiro ou Lorde Cavaleiro.";
+					mes "O teste agora foi oficialmente";
+					mes "começou. ";
+					set guildrelay_q,1;
+					getitem 7234,1; //Soul_Of_Guild
+					close;
+				case 2:
+					mes "[" + .@name$ + "]";
+					mes "Suponho que seria";
+					mes "uma boa ideia para discutir";
+					mes "isso com sua guilda antes";
+					mes "você decide se comprometer";
+					mes "fazendo o teste. ";
+					mes "livre para me visitar novamente mais tarde.";
+					close;
+				}
+			}
+		}
+		else {
+			if (countitem(7234) > 0) {
+				if (BaseJob == Job_Knight) {
+					mes "[" + .@name$ + "]";
+					mes "Olá," + strcharinfo(0) + ".";
+					mes "Então você foi o escolhido";
+					mes "pelo seu mestre de guilda? ";
+					mes "Você deveria entregar esse Espírito";
+					mes "da Guilda para" + .@name2$ + ".";
+					mes "Ele irá instruí-lo melhor.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "O Espírito da Guilda é";
+					mes "inútil a menos que esteja no";
+					mes "mãos de um cavaleiro ou senhor";
+					mes "Cavaleiro. ";
+					mes "para" + .@name2$ + "aprender mais.";
+					close;
+				}
+			}
+			else if (countitem(7235) > 0) {
+				if ((guildrelay_q == 88) && (BaseJob == Job_Knight)) {
+					mes "[" + .@name$ + "]";
+					mes "Ah," + strcharinfo(0) + "";
+					mes "Parabéns. ";
+					mes "como se você tivesse feito um bom trabalho.";
+					mes "Por favor, dê o Espírito de";
+					mes "Cobrar para a próxima pessoa";
+					mes "para continuar os testes.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "" + .@name2$ + "deveria";
+					mes "explicou tudo, mas";
+					mes "se você esqueceu, então por favor";
+					mes "vá e pergunte a ele novamente.";
+					close;
+				}
+				else if (BaseJob == Job_Blacksmith) {
+					mes "[" + .@name$ + "]";
+					mes "Olá," + strcharinfo(0) + ".";
+					mes "Ah, vejo que você tem";
+					mes "o Espírito de Carga.";
+					mes "Heh heh, é sempre emocionante";
+					mes "atacar para a batalha, não é";
+					mes "isto? ";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Esse espírito não será muito";
+					mes "útil se não estiver no";
+					mes "mãos da pessoa certa.";
+					mes "" + .@name2$ + "sabe mais sobre o";
+					mes "Espírito de Carga, então você deveria";
+					mes "pergunte-lhe mais sobre esse espírito.";
+					close;
+				}
+			}
+			else if (countitem(7237) > 0) {
+				if ((guildrelay_q == 87) && (BaseJob == Job_Blacksmith)) {
+					mes "[" + .@name$ + "]";
+					mes "Olá," + strcharinfo(0) + ".";
+					mes "Eu o elogio pelo seu trabalho.";
+					mes "Por favor, dê esse espírito para";
+					mes "a próxima pessoa para que";
+					mes "os testes podem continuar.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "" + .@name2$ + "deveria";
+					mes "explicou tudo, mas";
+					mes "se você esqueceu, então por favor";
+					mes "vá e pergunte a ele novamente.";
+					close;
+				}
+				else if (BaseJob == Job_Alchemist) {
+					mes "[" + .@name$ + "]";
+					mes "Olá," + strcharinfo(0) + ".";
+					mes "Eu vejo que você possui";
+					mes "o Espírito de Associação.";
+					mes "Boa sorte no seu teste.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Esse espírito não será muito";
+					mes "útil se não estiver no";
+					mes "mãos da pessoa certa.";
+					mes "Falar com" + .@name2$ + "se você quiser";
+					mes "para saber mais sobre";
+					mes "Espírito de Associação.";
+					close;
+				}
+			}
+			else if (countitem(7238) > 0) {
+				if ((guildrelay_q == 86) && (BaseJob == Job_Alchemist)) {
+					mes "[" + .@name$ + "]";
+					mes "Olá," + strcharinfo(0) + ".";
+					mes "Eu o elogio pelo seu trabalho.";
+					mes "Por favor, dê esse espírito para";
+					mes "a próxima pessoa para que";
+					mes "os testes podem continuar.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "" + .@name2$ + "deveria";
+					mes "explicou tudo, mas";
+					mes "se você esqueceu, então por favor";
+					mes "vá e pergunte a ele novamente.";
+					close;
+				}
+				else if (BaseJob == Job_Hunter) {
+					mes "[" + .@name$ + "]";
+					mes "Olá," + strcharinfo(0) + ".";
+					mes "Eu vejo que você possui";
+					mes "o Espírito de Coordenação.";
+					mes "Boa sorte em seu teste.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Esse espírito não será muito";
+					mes "útil se não estiver no";
+					mes "mãos da pessoa certa.";
+					mes "" + .@name2$ + "saberá mais sobre";
+					mes "o Espírito de Coordenação";
+					mes "então você deve consultá-lo.";
+					close;
+				}
+			}
+			else if (countitem(7239) > 0) {
+				if ((guildrelay_q == 85) && (BaseJob == Job_Hunter)) {
+					mes "[" + .@name$ + "]";
+					mes "Olá," + strcharinfo(0) + ".";
+					mes "Parabéns, parece";
+					mes "como se você tivesse terminado o teste.";
+					mes "Você pode agora dar o Espírito de";
+					mes "Avance para o seu mestre de guilda.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Esse espírito não será muito";
+					mes "útil se não estiver no";
+					mes "mãos da pessoa certa.";
+					mes "" + .@name2$ + "saberá mais sobre";
+					mes "o Espírito de Avanço para que";
+					mes "você deveria consultá-lo.";
+					close;
+				}
+			}
+			else if (countitem(7240) > 0) {
+				if (BaseJob == Job_Sage) {
+					mes "[" + .@name$ + "]";
+					mes "Olá," + strcharinfo(0) + ".";
+					mes "Eu vejo que você possui";
+					mes "o Espírito de Confiança.";
+					mes "Boa sorte e não";
+					mes "falhar a confiança depositada em";
+					mes "você pela sua guilda.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Esse espírito não será muito";
+					mes "útil se não estiver no";
+					mes "mãos da pessoa certa.";
+					mes "" + .@name3$ + "saberá mais";
+					mes "sobre o Espírito de Confiança";
+					mes "então você deve consultá-lo.";
+					close;
+				}
+			}
+			else if (countitem(7241) > 0) {
+				if ((guildrelay_q == 71) && (BaseJob == Job_Sage)) {
+					mes "[" + .@name$ + "]";
+					mes "Olá," + strcharinfo(0) + ".";
+					mes "Eu o elogio pelo seu trabalho.";
+					mes "Por favor, dê esse espírito para";
+					mes "a próxima pessoa para que";
+					mes "os testes podem continuar.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Se você não se lembra";
+					mes "" + .@name3$ + "explicação,";
+					mes "então você pode querer";
+					mes "volte para ele e pergunte";
+					mes "ele para te contar novamente.";
+					close;
+				}
+				else if ((BaseJob == Job_Bard) || (BaseJob == Job_Dancer)) {
+					mes "[" + .@name$ + "]";
+					mes "Ah," + strcharinfo(0) + ",";
+					mes "Vejo que você tem o";
+					mes "Espírito de União. ";
+					mes "em mente que a força";
+					mes "sua guilda está diretamente";
+					mes "relacionado à sua unidade.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Esse espírito não será muito";
+					mes "útil se não estiver no";
+					mes "mãos da pessoa certa.";
+					mes "" + .@name3$ + "saberá mais";
+					mes "sobre o Espírito de União";
+					mes "então você deve consultá-lo.";
+					close;
+				}
+			}
+			else if (countitem(7242) > 0) {
+				if ((guildrelay_q == 72) && ((BaseJob == Job_Bard) || (BaseJob == Job_Dancer))) {
+					mes "[" + .@name$ + "]";
+					mes "Olá," + strcharinfo(0) + ".";
+					mes "Eu o elogio pelo seu trabalho.";
+					mes "Por favor, dê esse espírito para";
+					mes "a próxima pessoa para que";
+					mes "os testes podem continuar.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Se você não se lembra";
+					mes "" + .@name3$ + "explicação,";
+					mes "então você pode querer";
+					mes "volte para ele e pergunte";
+					mes "ele para te contar novamente.";
+					close;
+				}
+				else if (BaseJob == Job_Assassin) {
+					mes "[" + .@name$ + "]";
+					mes "Ah," + strcharinfo(0) + ",";
+					mes "Vejo que você tem o Espírito";
+					mes "de Combinação. ";
+					mes "trabalhando em conjunto, combinando";
+					mes "as habilidades e talentos da sua guilda,";
+					mes "realizará seu verdadeiro potencial.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Esse espírito não será muito";
+					mes "útil se não estiver no";
+					mes "mãos da pessoa certa.";
+					mes "" + .@name3$ + "saberá mais sobre";
+					mes "o Espírito de Combinação, então";
+					mes "você deveria consultá-lo.";
+					close;
+				}
+			}
+			else if (countitem(7244) > 0) {
+				if ((guildrelay_q == 74) && (BaseJob == Job_Assassin)) {
+					mes "[" + .@name$ + "]";
+					mes "Saudações," + strcharinfo(0) + ",";
+					mes "você descansou bem? ";
+					mes "dê esse espírito ao próximo";
+					mes "pessoa para que o teste";
+					mes "da sua guilda pode continuar.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Se você não se lembra";
+					mes "" + .@name3$ + "explicação,";
+					mes "então você pode querer";
+					mes "volte para ele e pergunte";
+					mes "ele para te contar novamente.";
+					close;
+				}
+				else if (BaseJob == Job_Wizard) {
+					mes "[" + .@name$ + "]";
+					mes "Olá," + strcharinfo(0) + ",";
+					mes "Vejo que você esteve";
+					mes "confiado pelo Espírito";
+					mes "da Solidariedade. ";
+					mes "neste teste por causa";
+					mes "da sua guilda, certo?";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Esse espírito não será muito";
+					mes "útil se não estiver no";
+					mes "mãos da pessoa certa.";
+					mes "" + .@name3$ + "saberá mais";
+					mes "sobre o Espírito de Solidariedade";
+					mes "então você deve consultá-lo.";
+					close;
+				}
+			}
+			else if (countitem(7245) > 0) {
+				if ((guildrelay_q == 75) && (BaseJob == Job_Wizard)) {
+					mes "[" + .@name$ + "]";
+					mes "Ah," + strcharinfo(0) + ",";
+					mes "parabéns pelo trabalho";
+					mes "bom trabalho. ";
+					mes "Espírito de Amizade para o seu";
+					mes "mestre da guilda para continuar";
+					mes "o teste da guilda.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Esse espírito não será muito";
+					mes "útil se não estiver no";
+					mes "mãos da pessoa certa.";
+					mes "" + .@name3$ + "saberá mais";
+					mes "sobre o Espírito de Amizade";
+					mes "então você deve consultá-lo.";
+					close;
+				}
+			}
+			else if (countitem(7246) > 0) {
+				if (BaseJob == Job_Rogue) {
+					mes "[" + .@name$ + "]";
+					mes "Ah," + strcharinfo(0) + ",";
+					mes "Vejo que você tem o";
+					mes "Espírito de Paz. ";
+					mes "faça o seu melhor por causa";
+					mes "da guilda, embora eu não";
+					mes "duvido que você passe neste teste.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Esse espírito não será muito";
+					mes "útil se não estiver no";
+					mes "mãos da pessoa certa.";
+					mes "" + .@name4$ + "saberá mais";
+					mes "sobre o Espírito da Paz";
+					mes "então você deve consultá-lo.";
+					close;
+				}
+			}
+			else if (countitem(7247) > 0) {
+				if ((guildrelay_q == 95) && (BaseJob == Job_Priest)) {
+					mes "[" + .@name$ + "]";
+					mes "Olá," + strcharinfo(0) + ".";
+					mes "Eu o elogio pelo seu trabalho.";
+					mes "Por favor, dê esse espírito para";
+					mes "a próxima pessoa para que";
+					mes "os testes podem continuar.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Se você não se lembra";
+					mes "" + .@name4$ + "explicação,";
+					mes "então você pode querer";
+					mes "volte para ele e pergunte";
+					mes "ele para te contar novamente.";
+					close;
+				}
+				else if (BaseJob == Job_Priest) {
+					mes "[" + .@name$ + "]";
+					mes "Ah," + strcharinfo(0) + ",";
+					mes "por favor cuide bem";
+					mes "aquele Espírito de Determinação.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Esse espírito não será muito";
+					mes "útil se não estiver no";
+					mes "mãos da pessoa certa.";
+					mes "" + .@name4$ + "saberá mais sobre";
+					mes "o Espírito de Determinação";
+					mes "então você deve consultá-lo.";
+					close;
+				}
+			}
+			else if (countitem(7249) > 0) {
+				if ((guildrelay_q == 98) && (BaseJob == Job_Priest)) {
+					mes "[" + .@name$ + "]";
+					mes "Olá," + strcharinfo(0) + ".";
+					mes "Eu o elogio pelo seu trabalho.";
+					mes "Por favor, dê esse espírito para";
+					mes "a próxima pessoa para que";
+					mes "os testes podem continuar.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Se você não se lembra";
+					mes "" + .@name4$ + "explicação,";
+					mes "então você pode querer";
+					mes "volte para ele e pergunte";
+					mes "ele para te contar novamente.";
+					close;
+				}
+				else if (BaseJob == Job_Crusader) {
+					mes "[" + .@name$ + "]";
+					mes "Ah," + strcharinfo(0) + ",";
+					mes "por favor tome bem cuidado";
+					mes "desse Espírito de Serviço.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Esse espírito não será muito";
+					mes "útil se não estiver no";
+					mes "mãos da pessoa certa.";
+					mes "" + .@name4$ + "saberá mais sobre";
+					mes "o Espírito de Serviço para que";
+					mes "você deveria consultá-lo.";
+					close;
+				}
+			}
+			else if (countitem(7250) > 0) {
+				if ((guildrelay_q == 96) && (BaseJob == Job_Crusader)) {
+					mes "[" + .@name$ + "]";
+					mes "Olá," + strcharinfo(0) + ".";
+					mes "Eu o elogio pelo seu trabalho.";
+					mes "Por favor, dê esse espírito para";
+					mes "a próxima pessoa para que";
+					mes "os testes podem continuar.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Se você não se lembra";
+					mes "" + .@name4$ + "explicação,";
+					mes "então você pode querer";
+					mes "volte para ele e pergunte";
+					mes "ele para te contar novamente.";
+					close;
+				}
+				else if (BaseJob == Job_Monk) {
+					mes "[" + .@name$ + "]";
+					mes "Ah," + strcharinfo(0) + ",";
+					mes "por favor tome bem cuidado";
+					mes "daquele Espírito de Glória.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Esse espírito não será muito";
+					mes "útil se não estiver no";
+					mes "mãos da pessoa certa.";
+					mes "" + .@name4$ + "saberá mais sobre";
+					mes "o Espírito de Glória para que você";
+					mes "deveria consultá-lo.";
+					close;
+				}
+			}
+			else if (countitem(7251) > 0) {
+				if ((guildrelay_q == 97) && (Class == Job_Monk)) {
+					mes "[" + .@name$ + "]";
+					mes "Ah," + strcharinfo(0) + ",";
+					mes "parabéns pelo trabalho";
+					mes "bom trabalho. ";
+					mes "o Espírito de Vitória para o seu";
+					mes "mestre da guilda. ";
+					mes "Boa sorte para voce no futuro.";
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Esse espírito não será muito";
+					mes "útil se não estiver no";
+					mes "mãos da pessoa certa.";
+					mes "" + .@name4$ + "saberá mais sobre";
+					mes "o Espírito de Vitória para que você";
+					mes "deveria consultá-lo.";
+					close;
+				}
+			}
+			else {
+				mes "[" + .@name$ + "]";
+				mes "Me desculpe, mas eu também";
+				mes "ocupado com meu trabalho para oferecer";
+				mes "você alguma ajuda agora.";
+				mes "Você terá que me perdoar.";
+				close;
+			}
+		}
+	}
+	else {
+		if (getcharid(2) == 0) {
+			mes "[" + .@name$ + "]";
+			mes "Você não aderiu";
+			mes "uma guilda ainda? ";
+			mes "você pensa em se juntar";
+			mes "um? ";
+			mes "mas eu não acho que você se arrependeria";
+			mes "fazer parte de uma guilda forte.";
+			close;
+		}
+		else {
+			mes "[" + .@name$ + "]";
+			mes "Ah, vejo que você está";
+			mes "afiliado a uma guilda.";
+			mes "Você veio aqui";
+			mes "como convidado?";
+			next;
+			switch(select("Não, na verdade não...:Fui convidado pelo mestre da guilda.")) {
+			case 1:
+				mes "[" + .@name$ + "]";
+				mes "Oh sério?";
+				mes "Isso é ruim...";
+				mes "Minhas desculpas, mas";
+				mes "Não posso permitir que estranhos";
+				mes "simplesmente ir e vir";
+				mes "por aqui. ";
+				next;
+				warp "alde_gld",186,157;
+				close;
+			case 2:
+				mes "[" + .@name$ + "]";
+				mes "Oh sério? ";
+				mes "Eu reconheço você, ^4d4dff" + strcharinfo(0) + "^000000.";
+				mes "Por favor, entre e faça";
+				mes "você mesmo confortável.";
+				close;
+			}
+		}
+	}
+}
+
+-	script	RelayDummy2::GuildRelay2	754,{
+	set .@name$,strnpcinfo(1);
+	getmapxy(.@m$,.@x,.@x,BL_NPC);
+	set .@GID, GetCastleData(.@m$,1);
+	if (checkweight(1201,1) == 0) {
+		mes "^3355FFEspere um minuto! ";
+		mes "carregando muitos itens";
+		mes "agora mesmo: armazene alguns";
+		mes "suas coisas extras em Kafra";
+		mes "Armazenamento e depois volte.^000000";
+		close;
+	}
+	if (.@GID == 0) {
+		mes "^3355FFVocê não sabe por que, mas";
+		mes "esse cara parece ser bonito";
+		mes "depressivo. ";
+		mes "contato visual com você, mas então";
+		mes "interrompe. ";
+		mes "ele quer ficar sozinho.^000000";
+		next;
+		mes "^3355FFNão há razão para você";
+		mes "ficar perto de um sem dono";
+		mes "fortaleza. ";
+		mes "siga seu caminho.^000000";
+		close;
+	}
+	if (getcharid(2) == .@GID) {
+		if (is_guild_leader() == true) {
+			if (countitem(7234) > 0) {
+				mes "[" + .@name$ + "]";
+				mes "Hum. ";
+				mes "esse espírito para si mesmo.";
+				mes "Dê para um ^FF0000Knight^000000 ou";
+				mes "a ^FF0000Senhor Cavaleiro^000000. ";
+				mes "Você precisa trabalhar rápido para";
+				mes "expanda sua guilda.";
+				close;
+			}
+			else {
+				mes "[" + .@name$ + "]";
+				mes "Hum. ";
+				mes "ocupado. ";
+				mes "fazer uma pausa e relaxar?";
+				mes "Está tudo bem se divertir";
+				mes "se você está sentindo muito";
+				mes "pressão. ";
+				close;
+			}
+		}
+		else {
+			if ((BaseJob == Job_Knight) && (countitem(7234) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Para seu primeiro teste,";
+				mes "Vou começar com você";
+				mes "algo bem simples.";
+				mes "Basta coletar alguns itens,";
+				mes "e traga-os para mim. ";
+				mes "sua guilda também pode ajudá-lo.";
+				next;
+				switch(rand(1,3)) {
+				case 1:
+					mes "[" + .@name$ + "]";
+					mes "^FF000030 Línguas^000000,";
+					mes "^FF000030 Máscaras escuras^000000 e";
+					mes "^FF000030 Protetores de ombro^000000.";
+					mes "Isso não deveria ser também";
+					mes "difícil agora, certo?";
+					delitem 7234,1; //Soul_Of_Guild
+					set guildrelay_q,2;
+					close;
+				case 2:
+					mes "[" + .@name$ + "]";
+					mes "^FF000030 Páginas gastas ^ 000000,";
+					mes "^FF000030 Conchas Redondas^000000, e";
+					mes "^FF000030 Bigodes de toupeira^000000.";
+					mes "Isso não deveria ser também";
+					mes "difícil agora, certo?";
+					delitem 7234,1; //Soul_Of_Guild
+					set guildrelay_q,3;
+					close;
+				case 3:
+					mes "[" + .@name$ + "]";
+					mes "^FF000030 Babados^000000,";
+					mes "^FF000030 Papéis afiados^000000 e";
+					mes "^FF000030 Bigodes do Ancião Pixie^000000.";
+					mes "Isso não deveria ser também";
+					mes "difícil agora, certo?";
+					delitem 7234,1; //Soul_Of_Guild
+					set guildrelay_q,89;
+					close;
+				}
+			}
+			if ((countitem(1015) > 29) && (countitem(7196) > 29) && (countitem(7157) > 29) && (guildrelay_q == 2)) {
+				mes "[" + .@name$ + "]";
+				mes "Huh. ";
+				mes "esperar que você colete";
+				mes "todos esses itens. ";
+				mes "Agora, pegue isso e dê para";
+				mes "um ferreiro ou mestre.";
+				mes "Sua guilda é muito boa...";
+				delitem 1015,30; //Thin_N'_Long_Tongue
+				delitem 7196,30; //Shoulder_Protection
+				delitem 7157,30; //Black_Mask
+				set guildrelay_q,88;
+				getitem 7235,1; //Soul_Of_Courage
+				close;
+			}
+			if ((BaseJob == Job_Knight) && (guildrelay_q == 2)) {
+				mes "[" + .@name$ + "]";
+				mes "Você esqueceu o que";
+				mes "para me trazer? ";
+				mes "^FF000030 Línguas^000000,";
+				mes "^FF000030 Máscaras escuras^000000 e";
+				mes "^FF000030 Protetores de ombro^000000.";
+				mes "Não se esqueça desta vez.";
+				close;
+			}
+			if ((countitem(1097) > 29) && (countitem(1017) > 29) && (countitem(1096) > 29) && (guildrelay_q == 3)) {
+				mes "[" + .@name$ + "]";
+				mes "Huh. ";
+				mes "esperar que você colete";
+				mes "todos esses itens. ";
+				mes "Agora, pegue isso e dê para";
+				mes "um ferreiro ou mestre.";
+				mes "Sua guilda é muito boa...";
+				delitem 1097,30; //Worn_Out_Page
+				delitem 1017,30; //Moustache_Of_Mole
+				delitem 1096,30; //Round_Shell
+				set guildrelay_q,88;
+				getitem 7235,1; //Soul_Of_Courage
+				close;
+			}
+			if ((BaseJob == Job_Knight) && (guildrelay_q == 3)) {
+				mes "[" + .@name$ + "]";
+				mes "Você esqueceu o que";
+				mes "para me trazer? ";
+				mes "^FF000030 Páginas gastas ^ 000000,";
+				mes "^FF000030 Conchas Redondas^000000, e";
+				mes "^FF000030 Bigodes de toupeira^000000.";
+				mes "Não se esqueça desta vez.";
+				close;
+			}
+			if ((countitem(7112) > 29) && (countitem(1012) > 29) && (countitem(1040) > 29) && (guildrelay_q == 89)) {
+				mes "[" + .@name$ + "]";
+				mes "Huh. ";
+				mes "esperar que você colete";
+				mes "todos esses itens. ";
+				mes "Agora, pegue isso e dê para";
+				mes "um ferreiro ou mestre.";
+				mes "Sua guilda é muito boa...";
+				delitem 7112,30; //Fright_Paper_Blade
+				delitem 1012,30; //Lizard_Scruff
+				delitem 1040,30; //Elder_Pixie's_Beard
+				set guildrelay_q,88;
+				getitem 7235,1; //Soul_Of_Courage
+				close;
+			}
+			if ((BaseJob == Job_Knight) && (guildrelay_q == 89)) {
+				mes "[" + .@name$ + "]";
+				mes "Você esqueceu o que";
+				mes "para me trazer? ";
+				mes "^FF000030 Babados^000000,";
+				mes "^FF000030 Papéis afiados^000000 e";
+				mes "^FF000030 Bigodes do Ancião Pixie^000000.";
+				mes "Não se esqueça desta vez.";
+				close;
+			}
+			if ((BaseJob == Job_Blacksmith) && (countitem(7235) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Uau, você trouxe o";
+				mes "itens mais cedo do que eu";
+				mes "esperado. ";
+				mes "sua próxima tarefa para mim será";
+				mes "ser para... Espere. ";
+				mes "matar algum tempo. ";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "^FF0000apenas esperando.^000000";
+				mes "Apenas espere e mate";
+				mes "às vezes. ";
+				mes "o que você quiser";
+				mes "fazer durante esse tempo.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Volte depois que você tiver";
+				mes "relaxado e se divertiu.";
+				mes "Podemos continuar os testes";
+				mes "quando for a hora certa, então";
+				mes "não se preocupe com isso.";
+				delitem 7235,1; //Soul_Of_Courage
+				set guildrelay_q,4;
+				set guildtime, atoi( gettimestr("%H%M",5) );
+				close;
+			}
+			.@time = atoi( gettimestr("%H%M",5) );
+			if ((guildtime > 2259) && (guildrelay_q == 4) && (BaseJob == Job_Blacksmith)) {
+				if ((.@time > 0201) && (.@time < guildtime)) {
+					mes "[" + .@name$ + "]";
+					mes "Acho que tempo suficiente";
+					mes "passou. ";
+					mes "retomar os testes?";
+					mes "Por favor, dê isso a um";
+					mes "Alquimista ou Bioquímico.";
+					mes "Seu trabalho aqui está concluído.";
+					set guildrelay_q,87;
+					getitem 7237,1; //Soul_Of_Partnership
+					close;
+				}
+			}
+			if ((guildtime > 2159) && (guildrelay_q == 4) && (BaseJob == Job_Blacksmith)) {
+				if ((.@time > 0101) && (.@time < guildtime)) {
+					mes "[" + .@name$ + "]";
+					mes "Acho que tempo suficiente";
+					mes "passou. ";
+					mes "retomar os testes?";
+					mes "Por favor, dê isso a um";
+					mes "Alquimista ou Bioquímico.";
+					mes "Seu trabalho aqui está concluído.";
+					set guildrelay_q,87;
+					getitem 7237,1; //Soul_Of_Partnership
+					close;
+				}
+			}
+			if ((guildtime > 2059) && (guildrelay_q == 4) && (BaseJob == Job_Blacksmith)) {
+				if ((.@time > 0001) && (.@time < guildtime)) {
+					mes "[" + .@name$ + "]";
+					mes "Acho que tempo suficiente";
+					mes "passou. ";
+					mes "retomar os testes?";
+					mes "Por favor, dê isso a um";
+					mes "Alquimista ou Bioquímico.";
+					mes "Seu trabalho aqui está concluído.";
+					set guildrelay_q,87;
+					getitem 7237,1; //Soul_Of_Partnership
+					close;
+				}
+			}
+			if ((.@time - guildtime > 0300) && (guildrelay_q == 4) && (BaseJob == Job_Blacksmith)) {
+				mes "[" + .@name$ + "]";
+				mes "Acho que tempo suficiente";
+				mes "passou. ";
+				mes "retomar os testes?";
+				mes "Por favor, dê isso a um";
+				mes "Alquimista ou Bioquímico.";
+				mes "Seu trabalho aqui está concluído.";
+				set guildrelay_q,87;
+				getitem 7237,1; //Soul_Of_Partnership
+				close;
+			}
+			if ((guildrelay_q == 4) && (BaseJob == Job_Blacksmith)) {
+				mes "[" + .@name$ + "]";
+				mes "Você deve estar chorando";
+				mes "para assumir o próximo";
+				mes "teste. ";
+				mes "matar algum tempo, e apenas";
+				mes "volte para mim mais tarde.";
+				close;
+			}
+			if ((BaseJob == Job_Alchemist) && (countitem(7237) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Ah, você entendeu, né?";
+				mes "Você pode não pensar isso";
+				mes "será tão difícil, mas estou";
+				mes "vou te dar muito";
+				mes "desafio diferente agora.";
+				mes "você está pronto para isto?";
+				next;
+				if ((BaseLevel > 1) && (BaseLevel < 58)) {
+					mes "[" + .@name$ + "]";
+					mes "Seu teste será";
+					mes "fique um pouco mais forte!";
+					mes "Você passará assim que";
+					mes "ganhe mais 3 níveis.";
+					mes "Que tal isso, hein?";
+					delitem 7237,1; //Soul_Of_Partnership
+					set guildrelay_q,5;
+					close;
+				}
+				if ((BaseLevel > 57) && (BaseLevel < 76)) {
+					mes "[" + .@name$ + "]";
+					mes "Seu teste será";
+					mes "fique um pouco mais forte!";
+					mes "Você passará assim que";
+					mes "ganhe mais 2 níveis.";
+					mes "Que tal isso, hein?";
+					delitem 7237,1; //Soul_Of_Partnership
+					set guildrelay_q,6;
+					close;
+				}
+				if ((BaseLevel > 75) && (BaseLevel < 94)) {
+					mes "[" + .@name$ + "]";
+					mes "Seu teste será";
+					mes "fique um pouco mais forte!";
+					mes "Você passará assim que";
+					mes "ganhe mais 1 nível.";
+					mes "Que tal isso, hein?";
+					delitem 7237,1; //Soul_Of_Partnership
+					set guildrelay_q,7;
+					close;
+				}
+				if (BaseLevel > 93) {
+					mes "[" + .@name$ + "]";
+					mes "Espere um minuto. ";
+					mes "eu ia te pedir";
+					mes "aumente seu nível base, mas";
+					mes "você já é durão o suficiente.";
+					mes "Bem bem. ";
+					mes "para um ^FF0000Hunter^000000 ou ^FF0000Sniper^000000 agora~";
+					delitem 7237,1; //Soul_Of_Partnership
+					set guildrelay_q,86;
+					getitem 7238,1; //Soul_Of_Correspondence
+					close;
+				}
+			}
+			if (((BaseLevel + 2) < (BaseLevel)) && (guildrelay_q == 5)) {
+				mes "[" + .@name$ + "]";
+				mes "Você ficou um pouco mais forte,";
+				mes "Eh? ";
+				mes "Aqui, agora pegue isso e";
+				mes "dê para um ^FF0000Hunter^000000 ou ^FF0000Sniper^000000";
+				mes "em sua guilda. ";
+				mes "e vejo você por aí.";
+				set guildrelay_q,86;
+				getitem 7238,1; //Soul_Of_Correspondence
+				close;
+			}
+			if (((BaseLevel + 1) < (BaseLevel)) && (guildrelay_q == 6)) {
+				mes "[" + .@name$ + "]";
+				mes "Você ficou um pouco mais forte,";
+				mes "Eh? ";
+				mes "Aqui, agora pegue isso e";
+				mes "dê para um ^FF0000Hunter^000000 ou ^FF0000Sniper^000000";
+				mes "em sua guilda. ";
+				mes "e vejo você por aí.";
+				set guildrelay_q,86;
+				getitem 7238,1; //Soul_Of_Correspondence
+				close;
+			}
+			if ((BaseLevel < (BaseLevel)) && (guildrelay_q == 7)) {
+				mes "[" + .@name$ + "]";
+				mes "Você ficou um pouco mais forte,";
+				mes "Eh? ";
+				mes "Aqui, agora pegue isso e";
+				mes "dê para um ^FF0000Hunter^000000 ou ^FF0000Sniper^000000";
+				mes "em sua guilda. ";
+				mes "e vejo você por aí.";
+				set guildrelay_q,86;
+				getitem 7238,1; //Soul_Of_Correspondence
+				close;
+			}
+			if ((guildrelay_q == 5) || (guildrelay_q == 6) || (guildrelay_q == 7)) {
+				mes "[" + .@name$ + "]";
+				mes "Você ainda não é forte";
+				mes "suficiente para passar neste teste.";
+				mes "Apresse-se, mate alguns monstros,";
+				mes "e ganhe alguns ^FF0000Níveis básicos^000000.";
+				mes "Você tem que se tornar mais forte!";
+				close;
+			}
+			if ((BaseJob == Job_Hunter) && (countitem(7238) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Ah, bom, você está aqui.";
+				mes "Agora, meu pedido para você";
+				mes "é isto: por favor doe";
+				mes "seu Falcão para o";
+				mes "bem da sua guilda.";
+				next;
+				switch(select("Doe Falcon: De jeito nenhum!")) {
+				case 1:
+					if (checkfalcon()) {
+						mes "[" + .@name$ + "]";
+						mes "Ótimo! ";
+						mes "seu Falcon estará seguro";
+						mes "sob nossos cuidados e";
+						mes "ser usado para explorar áreas e";
+						mes "entregar correspondência. ";
+						mes "Eu pedi isso a você.";
+						next;
+						mes "[" + .@name$ + "]";
+						mes "Agora, por favor, pegue isso";
+						mes "espírito, e dá-lo";
+						mes "seu mestre de guilda como";
+						mes "assim que puder, certo?";
+						setfalcon;
+						delitem 7238,1; //Soul_Of_Correspondence
+						set guildrelay_q,85;
+						getitem 7239,1; //Soul_Of_Proceeding
+						close;
+					}
+					else {
+						mes "[" + .@name$ + "]";
+						mes "Estou feliz que você esteja";
+						mes "disposto a se separar de seu";
+						mes "Falcão, mas não parece";
+						mes "estar com você agora.";
+						mes "Vá pegar um e volte.";
+						close;
+					}
+				case 2:
+					mes "[" + .@name$ + "]";
+					mes "Bem, eu não posso evitar se você";
+					mes "realmente quero manter o seu";
+					mes "Falcão, mas por favor venha";
+					mes "de volta se você mudar de ideia.";
+					mes "Eu não posso fazer nada por você";
+					mes "a menos que você coopere.";
+					close;
+				}
+			}
+			if ((guildrelay_q == 88) && (countitem(7235) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Por favor, dê o";
+				mes "Espírito de Carga para";
+				mes "a ^FF0000Ferreiro^000000 ou ^FF0000Mastersmith^000000.";
+				mes "Não vai adiantar nada no";
+				mes "mãos de qualquer outra pessoa.";
+				close;
+			}
+			if (guildrelay_q == 88) {
+				mes "[" + .@name$ + "]";
+				mes "Você não tem";
+				mes "alguma coisa para fazer?";
+				mes "Por que você não ajuda";
+				mes "sua guilda caça monstros?";
+				mes "Será uma boa oportunidade para";
+				mes "mostre a eles suas habilidades ~";
+				close;
+			}
+			if ((guildrelay_q == 87) && (countitem(7237) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Por favor, dê o";
+				mes "Espírito de Associação para";
+				mes "um ^FF0000Alquimista^000000 ou ^FF0000Bioquímico^000000.";
+				mes "Não vai adiantar nada no";
+				mes "mãos de qualquer outra pessoa.";
+				close;
+			}
+			if (guildrelay_q == 87) {
+				mes "[" + .@name$ + "]";
+				mes "Hum. ";
+				mes "alguma coisa para fazer? ";
+				mes "é melhor ficar entediado";
+				mes "do que ficar sobrecarregado.";
+				mes "Ah, bem, você vai descobrir";
+				mes "algo fora.";
+				close;
+			}
+			if ((guildrelay_q == 86) && (countitem(7238) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Por favor, dê o";
+				mes "Espírito de Coordenação";
+				mes "para um ^FF0000Hunter^000000 ou ^FF0000Sniper^000000.";
+				mes "Não vai adiantar nada no";
+				mes "mãos de qualquer outra pessoa.";
+				close;
+			}
+			if (guildrelay_q == 86) {
+				mes "[" + .@name$ + "]";
+				mes "Bom trabalho. ";
+				mes "vá em frente e descanse,";
+				mes "e depois volte para mim";
+				mes "mais tarde. ";
+				mes "para te dar até então.";
+				close;
+			}
+			if ((guildrelay_q == 85) && (countitem(7239) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Por favor, dê o";
+				mes "Espírito de Avanço";
+				mes "para o seu ^FF0000mestre da guilda^000000.";
+				mes "Não vai adiantar nada no";
+				mes "mãos de qualquer outra pessoa.";
+				close;
+			}
+			if (guildrelay_q == 85) {
+				mes "[" + .@name$ + "]";
+				mes "Seu falcão esteve";
+				mes "uma grande ajuda no";
+				mes "guilda. ";
+				mes "sente falta disso? ";
+				close;
+			}
+			mes "[" + .@name$ + "]";
+			mes "Hum? ";
+			mes "aqui? ";
+			mes "tem algum negócio para";
+			mes "conduta. ";
+			close;
+		}
+	}
+	else {
+		if (is_guild_leader(.@GID) == true) {
+			mes "[" + .@name$ + "]";
+			mes "Hum? ";
+			mes "aqui? ";
+			mes "seu tempo e olhe ao redor";
+			mes "se é isso que te agrada.";
+			close;
+		}
+		else {
+			mes "[" + .@name$ + "]";
+			mes "Não há muito para ver";
+			mes "por aqui, mas você está";
+			mes "bem-vindo para ficar e olhar";
+			mes "por aqui, se desejar.";
+			close;
+		}
+	}
+}
+
+-	script	RelayDummy3::GuildRelay3	754,{
+	set .@name$,strnpcinfo(1);
+	getmapxy(.@m$,.@x,.@x,BL_NPC);
+	set .@GID, GetCastleData(.@m$,1);
+	if (checkweight(1201,1) == 0) {
+		mes "^3355FFEspere um minuto! ";
+		mes "carregando muitos itens";
+		mes "agora mesmo: armazene alguns";
+		mes "suas coisas extras em Kafra";
+		mes "Armazenamento e depois volte.^000000";
+		close;
+	}
+	if (.@GID == 0) {
+		mes "^3355FFEste homem exausto";
+		mes "percebe que você está olhando";
+		mes "ele, mas opta por ir embora";
+		mes "você sozinho. ";
+		mes "mais nesta fortaleza, então";
+		mes "não há razão para estar aqui.^000000";
+		close;
+	}
+	if (getcharid(2) == .@GID) {
+		if (is_guild_leader() == true) {
+			if (countitem(7240) > 0) {
+				mes "[" + .@name$ + "]";
+				mes "Hum? ";
+				mes "Você não deveria";
+				mes "seja aquele que está segurando";
+				mes "esta alma. ";
+				mes "O professor deveria";
+				mes "vir aqui com isso.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Certifique-se de dar";
+				mes "aquela alma que você está segurando";
+				mes "para um ^FF0000Sage^000000 ou ^FF0000Professor^000000, e";
+				mes "então peça para ele trazer para mim.";
+				close;
+			}
+			else {
+				mes "[" + .@name$ + "]";
+				mes "Nosso negócio juntos";
+				mes "concluiu. ";
+				mes "não estou ocupado, por que você não tenta";
+				mes "ajudando sua guilda? ";
+				mes "Tenho certeza que eles apreciariam isso.";
+				close;
+			}
+		}
+		else {
+			if ((BaseJob == Job_Sage) && (countitem(7240) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Vejo que você trouxe";
+				mes "o ^42426FSírito de Confiança^000000. ";
+				mes "a primeira coisa que quero que você faça é";
+				mes "para construir a confiança entre vocês";
+				mes "e os membros da sua guilda.";
+				mes "Passe algum tempo com eles.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Eu quero que você construa";
+				mes "criar alguns laços amigáveis";
+				mes "dentro de sua guilda antes";
+				mes "voltando para mim. ";
+				mes "guilda deve ter solidariedade";
+				mes "para ter sucesso.";
+				delitem 7240,1; //Soul_Of_Confidence
+				set guildrelay_q,9;
+				set guildtime, atoi( gettimestr("%H%M",5) );
+				close;
+			}
+			.@time = atoi( gettimestr("%H%M",5) );
+			if ((guildtime > 2259) && (guildrelay_q == 9) && (BaseJob == Job_Sage)) {
+				if ((.@time > 0201) && (.@time < guildtime)) {
+					mes "[" + .@name$ + "]";
+					mes "Então você gastou algum";
+					mes "tempo de qualidade com seu";
+					mes "membros da guilda e obtenha";
+					mes "uma chance de realmente aprender";
+					mes "quem eles são? ";
+					mes "ame seus camaradas.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Agora você sabe como";
+					mes "vínculo importante verdadeiramente";
+					mes "é. ";
+					mes "para ^42426FBard^000000, ^42426FMinstrel^000000, ^42426FDancer^000000,";
+					mes "ou ^42426FGypsy^000000. ";
+					set guildrelay_q,81;
+					getitem 7241,1; //Soul_Of_Agreement
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Hum? ";
+					mes "Isso não foi suficiente";
+					mes "hora de você realmente se relacionar";
+					mes "com os membros da sua guilda.";
+					mes "Volte, pergunte a eles sobre seus";
+					mes "sonhos, paixões e objetivos!";
+					close;
+				}
+			}
+			else if ((guildtime > 2159) && (guildrelay_q == 9) && (BaseJob == Job_Sage)) {
+				if ((.@time > 0101) && (.@time < guildtime)) {
+					mes "[" + .@name$ + "]";
+					mes "Então você gastou algum";
+					mes "tempo de qualidade com seu";
+					mes "membros da guilda e obtenha";
+					mes "uma chance de realmente aprender";
+					mes "quem eles são? ";
+					mes "ame seus camaradas.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Agora você sabe como";
+					mes "vínculo importante verdadeiramente";
+					mes "é. ";
+					mes "para ^42426FBard^000000, ^42426FMinstrel^000000, ^42426FDancer^000000,";
+					mes "ou ^42426FGypsy^000000. ";
+					set guildrelay_q,71;
+					getitem 7241,1; //Soul_Of_Agreement
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Hum? ";
+					mes "Isso não foi suficiente";
+					mes "hora de você realmente se relacionar";
+					mes "com os membros da sua guilda.";
+					mes "Volte, pergunte a eles sobre seus";
+					mes "sonhos, paixões e objetivos!";
+					close;
+				}
+			}
+			else if ((guildtime > 2059) && (guildrelay_q == 9) && (BaseJob == Job_Sage)) {
+				if ((.@time > 0001) && (.@time < guildtime)) {
+					mes "[" + .@name$ + "]";
+					mes "Então você gastou algum";
+					mes "tempo de qualidade com seu";
+					mes "membros da guilda e obtenha";
+					mes "uma chance de realmente aprender";
+					mes "quem eles são? ";
+					mes "ame seus camaradas.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Agora você sabe como";
+					mes "vínculo importante verdadeiramente";
+					mes "é. ";
+					mes "para ^42426FBard^000000, ^42426FMinstrel^000000, ^42426FDancer^000000,";
+					mes "ou ^42426FGypsy^000000. ";
+					set guildrelay_q,71;
+					getitem 7241,1; //Soul_Of_Agreement
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Hum? ";
+					mes "Isso não foi suficiente";
+					mes "hora de você realmente se relacionar";
+					mes "com os membros da sua guilda.";
+					mes "Volte, pergunte a eles sobre seus";
+					mes "sonhos, paixões e objetivos!";
+					close;
+				}
+			}
+			else if ((.@time - guildtime > 0300) && (guildrelay_q == 9) && (BaseJob == Job_Sage)) {
+				mes "[" + .@name$ + "]";
+				mes "Então você gastou algum";
+				mes "tempo de qualidade com seu";
+				mes "membros da guilda e obtenha";
+				mes "uma chance de realmente aprender";
+				mes "quem eles são? ";
+				mes "ame seus camaradas.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Você fez";
+				mes "o que você tinha que fazer agora.";
+				mes "Por favor, entregue-o a um ^42426FBard^000000 ou ^42426FClown^000000";
+				mes "Você também pode dá-lo para ^42426FDancer^000000 ou ^42426FGypsy^000000";
+				mes "Boa sorte.";
+				set guildrelay_q,71;
+				getitem 7241,1; //Soul_Of_Agreement
+				close;
+			}
+			else if ((BaseJob == Job_Sage) && (guildrelay_q == 9)) {
+				mes "[" + .@name$ + "]";
+				mes "Hum? ";
+				mes "Isso não foi suficiente";
+				mes "hora de você realmente se relacionar";
+				mes "com os membros da sua guilda.";
+				mes "Volte, pergunte a eles sobre seus";
+				mes "sonhos, paixões e objetivos!";
+				close;
+			}
+			if (((BaseJob == Job_Bard) || (BaseJob == Job_Dancer)) && (countitem(7241) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Para promover";
+				mes "trabalho em equipe entre sua guilda,";
+				mes "meu teste será para você";
+				mes "reunir itens específicos para mim.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Esta é uma tarefa difícil";
+				mes "para completar sozinho, mas";
+				mes "será muito mais fácil se você";
+				mes "e sua guilda cooperam para";
+				mes "pegue todos os itens. ";
+				mes "é isso que eu quero que você consiga.";
+				next;
+				switch(rand(1,3)) {
+				case 1:
+					mes "[" + .@name$ + "]";
+					mes "^8C171730 Corações Ardentes^000000,";
+					mes "^8C171730 Garras de Lobo^000000, e";
+					mes "^8C171730 Garras de leopardo^000000.";
+					mes "Você pode querer escrever";
+					mes "estes para baixo para que você não";
+					mes "esquecer. ";
+					delitem 7241,1; //Soul_Of_Agreement
+					set guildrelay_q,10;
+					break;
+				case 2:
+					mes "[" + .@name$ + "]";
+					mes "^8C171730 Folhas macias de grama^000000,";
+					mes "^8C171730 Corações de madeira^000000, e";
+					mes "^8C171730 Peles de sapo venenoso^000000.";
+					mes "Você pode querer escrever";
+					mes "estes para baixo para que você não";
+					mes "esquecer. ";
+					delitem 7241,1; //Soul_Of_Agreement
+					set guildrelay_q,11;
+					break;
+				case 3:
+					mes "[" + .@name$ + "]";
+					mes "^8C171730 Chifres de antílope ^ 000000,";
+					mes "^8C171730 Potes de mel^000000, e";
+					mes "^8C171730 Penas de porco-espinho^000000.";
+					mes "Você pode querer escrever";
+					mes "estes para baixo para que você não";
+					mes "esquecer. ";
+					delitem 7241,1; //Soul_Of_Agreement
+					set guildrelay_q,80;
+					break;
+				}
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Você deveria estar se unindo";
+				mes "com sua guilda enquanto você";
+				mes "reúna os itens que eu pedi";
+				mes "você trazer. ";
+				mes "o tempo não passou para o seu";
+				mes "guilda para trabalhar juntos nisso.";
+				close;
+			}
+			if ((countitem(7097) > 29) && (countitem(7172) > 29) && (countitem(920) > 29) && (guildrelay_q == 10)) {
+				mes "[" + .@name$ + "]";
+				mes "Ah, perfeito! ";
+				mes "todos os itens. ";
+				mes "Eu acho que você está pronto para";
+				mes "tome este espírito agora. ";
+				mes "dê para um ^42426FAssassin^000000 ou um";
+				mes "^42426FACruz do Assassino^000000. ";
+				delitem 7097,30; //Burning_Heart
+				delitem 7172,30; //Leopard_Talon
+				delitem 920,30; //Claw_Of_Wolves
+				if (BaseJob == Job_Dancer) {
+					set guildrelay_q,72;
+				}
+				else {
+					set guildrelay_q,72;
+				}
+				getitem 7242,1; //Soul_Of_Harmony
+				close;
+			}
+			else if ((countitem(7189) > 29) && (countitem(7194) > 29) && (countitem(7155) > 29) && (guildrelay_q == 11)) {
+				mes "[" + .@name$ + "]";
+				mes "Ah, perfeito! ";
+				mes "todos os itens. ";
+				mes "Eu acho que você está pronto para";
+				mes "tome este espírito agora. ";
+				mes "dê para um ^42426FAssassin^000000 ou um";
+				mes "^42426FACruz do Assassino^000000. ";
+				delitem 7189,30; //Heart_Of_Tree
+				delitem 7194,30; //Soft_Leaf
+				delitem 7155,30; //Poison_Toad's_Skin
+				if (BaseJob == Job_Dancer) {
+					set guildrelay_q,72;
+				}
+				else {
+					set guildrelay_q,72;
+				}
+				getitem 7242,1; //Soul_Of_Harmony
+				close;
+			}
+			else if ((countitem(7106) > 29) && (countitem(7121) > 29) && (countitem(1027) > 29) && (guildrelay_q == 80)) {
+				mes "[" + .@name$ + "]";
+				mes "Ah, perfeito! ";
+				mes "todos os itens. ";
+				mes "Eu acho que você está pronto para";
+				mes "tome este espírito agora. ";
+				mes "dê para um ^42426FAssassin^000000 ou um";
+				mes "^42426FACruz do Assassino^000000. ";
+				delitem 7106,30; //Goat's_Horn
+				delitem 7121,30; //Honey_Jar
+				delitem 1027,30; //Porcupine_Spike
+				if (BaseJob == Job_Dancer) {
+					set guildrelay_q,72;
+				}
+				else {
+					set guildrelay_q,72;
+				}
+				getitem 7242,1; //Soul_Of_Harmony
+				close;
+			}
+			else if (guildrelay_q == 10) {
+				mes "[" + .@name$ + "]";
+				mes "Hum? ";
+				mes "reuniu todos os itens";
+				mes "com sua guilda ainda?";
+				mes "Deixe-me lembrá-lo do que";
+				mes "você precisa me trazer.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "^8C171730 Corações Ardentes^000000,";
+				mes "^8C171730 Garras de Lobo^000000, e";
+				mes "^8C171730 Garras de leopardo^000000.";
+				mes "Você pode querer escrever";
+				mes "estes para baixo para que você não";
+				mes "esquecer. ";
+				close;
+			}
+			else if (guildrelay_q == 11) {
+				mes "[" + .@name$ + "]";
+				mes "Hum? ";
+				mes "reuniu todos os itens";
+				mes "com sua guilda ainda?";
+				mes "Deixe-me lembrá-lo do que";
+				mes "você precisa me trazer.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "^8C171730 Folhas macias de grama^000000,";
+				mes "^8C171730 Corações de madeira^000000, e";
+				mes "^8C171730 Peles de sapo venenoso^000000.";
+				mes "Você pode querer escrever";
+				mes "estes para baixo para que você não";
+				mes "esquecer. ";
+				close;
+			}
+			else if (guildrelay_q == 80) {
+				mes "[" + .@name$ + "]";
+				mes "Hum? ";
+				mes "reuniu todos os itens";
+				mes "com sua guilda ainda?";
+				mes "Deixe-me lembrá-lo do que";
+				mes "você precisa me trazer.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "^8C171730 Chifres de antílope ^ 000000,";
+				mes "^8C171730 Potes de mel^000000, e";
+				mes "^8C171730 Penas de porco-espinho^000000.";
+				mes "Você pode querer escrever";
+				mes "estes para baixo para que você não";
+				mes "esquecer. ";
+				close;
+			}
+			if ((BaseJob == Job_Assassin) && (countitem(7242) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Você trouxe o";
+				mes "Espírito de Combinação?";
+				mes "Certifique-se de dar";
+				mes "isso para um ^2F4F2FWizard^000000 ou";
+				mes "a ^2F4F2FAssistente Alto^000000.";
+				delitem 7242,1; //Soul_Of_Harmony
+				set guildrelay_q,74;
+				getitem 7244,1; //Soul_Of_Unity
+				close;
+			}
+			if ((BaseJob == Job_Wizard) && (countitem(7244) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Para o seu bem";
+				mes "guilda, você deve se tornar";
+				mes "mais forte. ";
+				mes "seus feitiços farão o";
+				mes "diferença entre vitória";
+				mes "e derrota. ";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Ei," + strcharinfo(0) + ",";
+				mes "se você realmente quer se tornar";
+				mes "forte o suficiente para proteger seu";
+				mes "guilda, então você deve subir de nível.";
+				mes "Volte para mim quando você tiver";
+				mes "aumentou seu nível base.";
+				next;
+				if ((BaseLevel > 0) && (BaseLevel < 61)) {
+					mes "[" + .@name$ + "]";
+					mes "Você estará pronto";
+					mes "para sua tarefa depois de você";
+					mes "ganhe ^FF00003 Níveis básicos ^ 000000.";
+					mes "Não se desespere: eu sei";
+					mes "você será capaz de alcançar";
+					mes "este objetivo. ";
+					delitem 7244,1; //Soul_Of_Unity
+					set guildrelay_q,12;
+					close;
+				}
+				else if ((BaseLevel > 60) && (BaseLevel < 76)) {
+					mes "[" + .@name$ + "]";
+					mes "Você estará pronto";
+					mes "para sua tarefa depois de você";
+					mes "ganhe ^FF00002 Níveis básicos ^ 000000.";
+					mes "Não se desespere: eu sei";
+					mes "você será capaz de alcançar";
+					mes "este objetivo. ";
+					delitem 7244,1; //Soul_Of_Unity
+					set guildrelay_q,13;
+					close;
+				}
+				else if ((BaseLevel > 75) && (BaseLevel < 97)) {
+					mes "[" + .@name$ + "]";
+					mes "Você estará pronto";
+					mes "para sua tarefa depois de você";
+					mes "ganhe ^FF00001 Nível base^000000.";
+					mes "Não se desespere: eu sei";
+					mes "você será capaz de alcançar";
+					mes "este objetivo. ";
+					delitem 7244,1; //Soul_Of_Unity
+					set guildrelay_q,14;
+					close;
+				}
+				else if (BaseLevel > 96) {
+					mes "[" + .@name$ + "]";
+					mes "Hum. ";
+					mes "que eu esperava. ";
+					mes "preciso que eu encoraje";
+					mes "você desenvolva sua força.";
+					mes "Eu admito que você é forte.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Reconheça a extensão e";
+					mes "limites de sua força, mas";
+					mes "nunca permita que a presunção polua";
+					mes "seu coração. ";
+					mes "algeme seu poder se você";
+					mes "deixe-o. ";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Você se qualificou o suficiente";
+					mes "para eu confiar em você.";
+					mes "Por favor, dê esse espírito";
+					mes "para o seu ^FF0000Guild Master^000000.";
+					mes "Você terminou por agora.";
+					delitem 7244,1; //Soul_Of_Unity
+					set guildrelay_q,75;
+					getitem 7245,1; //Soul_Of_Friendship
+					close;
+				}
+			}
+			if ((BaseLevel + 2) < (BaseLevel) && (guildrelay_q == 12)) {
+				mes "[" + .@name$ + "]";
+				mes "Eu vejo que você";
+				mes "completou a tarefa";
+				mes "Eu te dei. ";
+				mes "tem sido difícil, mas";
+				mes "você verá que eu tive o seu";
+				mes "os melhores interesses da guilda em mente.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Você conquistou minha confiança.";
+				mes "Por favor, dê esse espírito";
+				mes "para o seu ^FF0000Guild Master^000000.";
+				mes "Você se saiu bem.";
+				set guildrelay_q,75;
+				getitem 7245,1; //Soul_Of_Friendship
+				close;
+			}
+			else if ((BaseLevel + 1) < (BaseLevel) && (guildrelay_q == 13)) {
+				mes "[" + .@name$ + "]";
+				mes "Eu vejo que você";
+				mes "completou a tarefa";
+				mes "Eu te dei. ";
+				mes "tem sido difícil, mas";
+				mes "você verá que eu tive o seu";
+				mes "os melhores interesses da guilda em mente.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Você conquistou minha confiança.";
+				mes "Por favor, dê esse espírito";
+				mes "para o seu ^FF0000Guild Master^000000.";
+				mes "Você se saiu bem.";
+				set guildrelay_q,75;
+				getitem 7245,1; //Soul_Of_Friendship
+				close;
+			}
+			else if ((BaseLevel < BaseLevel) && (guildrelay_q == 14)) {
+				mes "[" + .@name$ + "]";
+				mes "Eu vejo que você";
+				mes "completou a tarefa";
+				mes "Eu te dei. ";
+				mes "tem sido difícil, mas";
+				mes "você verá que eu tive o seu";
+				mes "os melhores interesses da guilda em mente.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Você conquistou minha confiança.";
+				mes "Por favor, dê esse espírito";
+				mes "para o seu ^FF0000Guild Master^000000.";
+				mes "Você se saiu bem.";
+				set guildrelay_q,75;
+				getitem 7245,1; //Soul_Of_Friendship
+				close;
+			}
+			if ((guildrelay_q == 12) && (BaseJob == Job_Wizard)) {
+				mes "[" + .@name$ + "]";
+				mes "Você não é forte o suficiente";
+				mes "ainda para que sua guilda seja totalmente";
+				mes "confiar em você em uma crise.";
+				mes "Você deve subir de nível!";
+				close;
+			}
+			else if ((guildrelay_q == 13) && (BaseJob == Job_Wizard)) {
+				mes "[" + .@name$ + "]";
+				mes "Você não é forte o suficiente";
+				mes "ainda para que sua guilda seja totalmente";
+				mes "confiar em você em uma crise.";
+				mes "Você deve subir de nível!";
+				close;
+			}
+			else if ((guildrelay_q == 14) && (BaseJob == Job_Wizard)) {
+				mes "[" + .@name$ + "]";
+				mes "Hmm... acho que você não";
+				mes "passou bastante tempo nivelando";
+				mes "ainda. ";
+				close;
+			}
+		}
+	}
+	else {
+		if (is_guild_leader(.@GID) == true) {
+			mes "[" + .@name$ + "]";
+			mes "Hum. ";
+			mes "de outra guilda, não são";
+			mes "você? ";
+			mes "para você. ";
+			mes "Saia deste lugar.";
+			close;
+		}
+		else {
+			mes "[" + .@name$ + "]";
+			mes "Hum? ";
+			mes "permanecer nesta fortaleza.";
+			mes "Por favor, deixe este lugar agora.";
+			close;
+		}
+	}
+	if ((guildrelay_q == 71) && (countitem(7241) > 0)) {
+		mes "[" + .@name$ + "]";
+		mes "Não há necessidade de você";
+		mes "para segurar esse Espírito";
+		mes "da União. ";
+		mes "um bardo, menestrel, dançarino";
+		mes "ou cigano em sua guilda.";
+		close;
+	}
+	else if (guildrelay_q == 71) {
+		mes "[" + .@name$ + "]";
+		mes "Quando você se aprimora,";
+		mes "você também estará fortalecendo";
+		mes "sua guilda. ";
+		mes "tempo para você e para o seu";
+		mes "equipe. ";
+		mes "sem o outro.";
+		next;
+		mes "[" + .@name$ + "]";
+		mes "Suponho que você realmente";
+		mes "não tem muita utilidade";
+		mes "para mim mais... Mas eu vou";
+		mes "sempre ofereça meu apoio.";
+		close;
+	}
+	if ((guildrelay_q == 72) && (countitem(7242) > 0)) {
+		mes "[" + .@name$ + "]";
+		mes "Não há necessidade de você";
+		mes "para manter esse Espírito de";
+		mes "Combinação. ";
+		mes "isso para um Assassino ou Assassino";
+		mes "Cruze em sua guilda.";
+		close;
+	}
+	else if (guildrelay_q == 72) {
+		mes "[" + .@name$ + "]";
+		mes "Suas músicas reforçam seu";
+		mes "moral da guilda, e irá";
+		mes "ajude-os a resistir e lutar,";
+		mes "não importa o quão desesperador";
+		mes "a situação pode parecer.";
+		mes "Sua voz pode fazer milagres.";
+		next;
+		mes "[" + .@name$ + "]";
+		mes "Suponho que você realmente";
+		mes "não tem muita utilidade";
+		mes "para mim mais... Mas eu vou";
+		mes "sempre ofereça meu apoio.";
+		close;
+	}
+	if ((guildrelay_q == 73) && (countitem(7242) > 0)) {
+		mes "[" + .@name$ + "]";
+		mes "Não há necessidade de você";
+		mes "para manter esse Espírito de";
+		mes "Combinação. ";
+		mes "isso para um Assassino ou Assassino";
+		mes "Cruze em sua guilda.";
+		close;
+	}
+	else if (guildrelay_q == 73) {
+		mes "[" + .@name$ + "]";
+		mes "Suas danças reforçam seu";
+		mes "moral da guilda, e irá";
+		mes "ajude-os a resistir e lutar,";
+		mes "não importa o quão desesperador";
+		mes "a situação pode parecer.";
+		mes "Sua voz pode fazer milagres.";
+		next;
+		mes "[" + .@name$ + "]";
+		mes "Suponho que você realmente";
+		mes "não tem muita utilidade";
+		mes "para mim mais... Mas eu vou";
+		mes "sempre ofereça meu apoio.";
+		close;
+	}
+	if ((guildrelay_q == 74) && (countitem(7244) > 0)) {
+		mes "[" + .@name$ + "]";
+		mes "Não há necessidade de você";
+		mes "para segurar esse Espírito";
+		mes "da Solidariedade. ";
+		mes "para um Mago ou Alto";
+		mes "Mago em sua guilda.";
+		close;
+	}
+	else if (guildrelay_q == 74) {
+		mes "[" + .@name$ + "]";
+		mes "Suponho que você realmente";
+		mes "não tem muita utilidade";
+		mes "para mim mais... Mas eu vou";
+		mes "sempre ofereça meu apoio.";
+		next;
+		mes "[" + .@name$ + "]";
+		mes "Saiba quem são seus inimigos.";
+		mes "Se alguém se opuser à sua guilda,";
+		mes "você deve esmagá-los sem";
+		mes "qualquer hesitação. ";
+		mes "deve ser atendido rapidamente!";
+		close;
+	}
+	if ((guildrelay_q == 75) && (countitem(7245) > 0)) {
+		mes "[" + .@name$ + "]";
+		mes "Não há necessidade de você";
+		mes "para manter esse Espírito de";
+		mes "Amizade. ";
+		mes "para o seu Mestre da Guilda.";
+		close;
+	}
+	else if (guildrelay_q == 75) {
+		mes "[" + .@name$ + "]";
+		mes "Posso dizer que você está";
+		mes "sempre tentando ajudar a todos";
+		mes "os membros da sua guilda.";
+		mes "Sua lealdade os trará";
+		mes "ao seu lado em tempos de";
+		mes "alegria e de tribulação.";
+		next;
+		mes "[" + .@name$ + "]";
+		mes "Suponho que você realmente";
+		mes "não tem muita utilidade";
+		mes "para mim mais... Mas eu vou";
+		mes "sempre ofereça meu apoio.";
+		close;
+	}
+	mes "[" + .@name$ + "]";
+	mes "Não temos nada a";
+	mes "fazer um com o outro.";
+	mes "Deixe-me em paz, e";
+	mes "apenas siga seu caminho.";
+	close;
+}
+
+-	script	GuildDummy4::GuildRelay4	754,{
+	set .@name$,strnpcinfo(1);
+	getmapxy(.@m$,.@x,.@x,BL_NPC);
+	set .@GID, GetCastleData(.@m$,1);
+	if (checkweight(1201,1) == 0) {
+		mes "^3355FFEspere um minuto! ";
+		mes "carregando muitos itens";
+		mes "agora mesmo: armazene alguns";
+		mes "suas coisas extras em Kafra";
+		mes "Armazenamento e depois volte.^000000";
+		close;
+	}
+	if (.@GID == 0) {
+		mes "^3355FFEste homem exausto";
+		mes "percebe que você está olhando";
+		mes "ele, mas opta por ir embora";
+		mes "você sozinho. ";
+		mes "mais nesta fortaleza, então";
+		mes "não há razão para estar aqui.^000000";
+		close;
+	}
+	if (getcharid(2) == .@GID) {
+		if (is_guild_leader() == true) {
+			if (countitem(7246) > 0) {
+				mes "[" + .@name$ + "]";
+				mes "Hum? ";
+				mes "você trouxe com você...";
+				mes "Sinto muito, mas é inútil";
+				mes "para você carregá-lo.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Por favor, dê isso para";
+				mes "um ^FF0000Rogue^000000 ou ^FF0000Stalker^000000";
+				mes "em sua guilda, e então";
+				mes "peça a ele que traga para mim.";
+				close;
+			}
+			else {
+				mes "[" + .@name$ + "]";
+				mes "Nosso negócio juntos";
+				mes "concluiu. ";
+				mes "não estou ocupado, por que você não tenta";
+				mes "ajudando sua guilda? ";
+				mes "Tenho certeza que eles apreciariam isso.";
+				close;
+			}
+		}
+		else {
+			if ((BaseJob == Job_Rogue) && (countitem(7246) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Então você é quem está";
+				mes "foi confiado o";
+				mes "Espírito de Paz? ";
+				mes "Minha tarefa para você é ^FF0000form";
+				switch(rand(1,3)) {
+				case 1:
+					mes "um grupo com 6 membros^000000.";
+					mes "Nem mais nem menos.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Este é um teste estranho,";
+					mes "mas se você puder fazer isso, será";
+					mes "demonstrará claramente";
+					mes "para mim que seu povo";
+					mes "as habilidades estão à altura.";
+					delitem 7246,1; //Soul_Of_Peace
+					set guildrelay_q,91;
+					close;
+				case 2:
+					mes "um grupo com 8 membros^000000.";
+					mes "Nem mais nem menos.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Este é um teste estranho,";
+					mes "mas se você puder fazer isso, será";
+					mes "demonstrará claramente";
+					mes "para mim que seu povo";
+					mes "as habilidades estão à altura.";
+					delitem 7246,1; //Soul_Of_Peace
+					set guildrelay_q,92;
+					close;
+				case 3:
+					mes "um grupo com 10 membros^000000.";
+					mes "Nem mais nem menos.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Este é um teste estranho,";
+					mes "mas se você puder fazer isso, será";
+					mes "demonstrará claramente";
+					mes "para mim que seu povo";
+					mes "as habilidades estão à altura.";
+					delitem 7246,1; //Soul_Of_Peace
+					set guildrelay_q,93;
+					close;
+				}
+			}
+			getpartymember(getcharid(1));
+			set .@partymembercount,$@partymembercount;
+			if (guildrelay_q == 91) {
+				if (.@partymembercount == 6) {
+					mes "[" + .@name$ + "]";
+					mes "Eu vejo que você";
+					mes "formou uma festa com";
+					mes "o número exato de";
+					mes "pessoas que eu perguntei. ";
+					mes "Eu acho que você pode ser confiável";
+					mes "para liderar quando for necessário.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Aqui. ";
+					mes "este espírito, e então dar";
+					mes "para um sacerdote ou sumo";
+					mes "Sacerdote em sua guilda.";
+					set guildrelay_q,95;
+					getitem 7247,1; //Soul_Of_Spirit
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Eu pensei que tinha te pedido";
+					mes "^FF0000forma um grupo de 6 membros^000000?";
+					mes "Nem mais nem menos. ";
+					mes "Volte para mim depois que você";
+					mes "terminei esta tarefa simples.";
+					close;
+				}
+			}
+			if (guildrelay_q == 92) {
+				if (.@partymembercount == 8) {
+					mes "[" + .@name$ + "]";
+					mes "Eu vejo que você";
+					mes "formou uma festa com";
+					mes "o número exato de";
+					mes "pessoas que eu perguntei. ";
+					mes "Eu acho que você pode ser confiável";
+					mes "para liderar quando for necessário.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Aqui. ";
+					mes "este espírito, e então dar";
+					mes "para um sacerdote ou sumo";
+					mes "Sacerdote em sua guilda.";
+					set guildrelay_q,95;
+					getitem 7247,1; //Soul_Of_Spirit
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Eu pensei que tinha te pedido";
+					mes "^FF0000forma um grupo de 8 membros^000000?";
+					mes "Nem mais nem menos. ";
+					mes "Volte para mim depois que você";
+					mes "terminei esta tarefa simples.";
+					close;				}
+			}
+			if (guildrelay_q == 93) {
+				if (.@partymembercount == 10) {
+					mes "[" + .@name$ + "]";
+					mes "Eu vejo que você";
+					mes "formou uma festa com";
+					mes "o número exato de";
+					mes "pessoas que eu perguntei. ";
+					mes "Eu acho que você pode ser confiável";
+					mes "para liderar quando for necessário.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Aqui. ";
+					mes "este espírito, e então dar";
+					mes "para um sacerdote ou sumo";
+					mes "Sacerdote em sua guilda.";
+					set guildrelay_q,95;
+					getitem 7247,1; //Soul_Of_Spirit
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Eu pensei que tinha te pedido";
+					mes "^FF0000formar um grupo de 10 membros^000000?";
+					mes "Nem mais nem menos. ";
+					mes "Volte para mim depois que você";
+					mes "terminei esta tarefa simples.";
+					close;
+				}
+			}
+			if ((BaseJob == Job_Priest) && (countitem(7247) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Bom trabalho conseguindo o";
+				mes "Espírito de Determinação,";
+				mes "mas eu quero que você trabalhe";
+				mes "ficando mais forte. ";
+				mes "pretende proteger os outros,";
+				mes "você não pode se dar ao luxo de perder.";
+				next;
+				if ((BaseLevel > 1) && (BaseLevel < 61)) {
+					mes "[" + .@name$ + "]";
+					mes "Eu quero que você ganhe";
+					mes "^FF00003 Níveis básicos^000000 para o";
+					mes "para fortalecer";
+					mes "você e sua guilda.";
+					mes "Este é o meu teste para você.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Tente não se preocupar";
+					mes "sobre esta tarefa tanto.";
+					mes "Tenho certeza que você pode fazer";
+					mes "esse. ";
+					mes "quando estiver pronto.";
+					delitem 7247,1; //Soul_Of_Spirit
+					set guildrelay_q,18;
+					close;
+				}
+				if ((BaseLevel > 60) && (BaseLevel < 76)) {
+					mes "[" + .@name$ + "]";
+					mes "Eu quero que você ganhe";
+					mes "^FF00002 Níveis básicos^000000 para o";
+					mes "para fortalecer";
+					mes "você e sua guilda.";
+					mes "Este é o meu teste para você.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Tente não se preocupar";
+					mes "sobre esta tarefa tanto.";
+					mes "Tenho certeza que você pode fazer";
+					mes "esse. ";
+					mes "quando estiver pronto.";
+					delitem 7247,1; //Soul_Of_Spirit
+					set guildrelay_q,19;
+					close;
+				}
+				if ((BaseLevel > 75) && (BaseLevel < 97)) {
+					mes "[" + .@name$ + "]";
+					mes "Eu quero que você ganhe";
+					mes "^FF00001 Nível base^000000 para o";
+					mes "para fortalecer";
+					mes "você e sua guilda.";
+					mes "Este é o meu teste para você.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Tente não se preocupar";
+					mes "sobre esta tarefa tanto.";
+					mes "Tenho certeza que você pode fazer";
+					mes "esse. ";
+					mes "quando estiver pronto.";
+					delitem 7247,1; //Soul_Of_Spirit
+					set guildrelay_q,20;
+					close;
+				}
+				if (BaseLevel > 96) {
+					mes "[" + .@name$ + "]";
+					mes "Hum, você é mais forte do que";
+					mes "Eu era esperado.";
+					mes "Você não precisa de mais missões";
+					mes "por se tornar mais forte.";
+					mes "Mas não fique tão orgulhoso de si mesmo.";
+					next;
+					mes "[" + .@name$ + "]";
+					mes "Tudo bem então...";
+					mes "Eu confio a você";
+					mes "esse espírito. ";
+					mes "certifique-se de entregá-lo a um";
+					mes "^4D4DFFCrusader^000000 ou ^4D4DFFPaladin^000000";
+					mes "em sua guilda.";
+					delitem 7247,1; //Soul_Of_Spirit
+					set guildrelay_q,98;
+					getitem 7249,1; //Soul_Of_Service
+					close;
+				}
+			}
+			if (((BaseLevel + 2) < (BaseLevel)) && (guildrelay_q == 18)) {
+				mes "[" + .@name$ + "]";
+				mes "Huh. ";
+				mes "ficar muito mais forte,";
+				mes "assim como eu perguntei. ";
+				mes "seus companheiros de guilda podem confiar";
+				mes "em você. ";
+				mes "em um trabalho bem feito.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Tudo bem então...";
+				mes "Eu confio a você";
+				mes "esse espírito. ";
+				mes "certifique-se de entregá-lo a um";
+				mes "^4D4DFFCrusader^000000 ou ^4D4DFFPaladin^000000";
+				mes "em sua guilda.";
+				set guildrelay_q,98;
+				getitem 7249,1; //Soul_Of_Service
+				close;
+			}
+			if (((BaseLevel + 1) < (BaseLevel)) && (guildrelay_q == 19)) {
+				mes "[" + .@name$ + "]";
+				mes "Huh. ";
+				mes "ficar muito mais forte,";
+				mes "assim como eu perguntei. ";
+				mes "seus companheiros de guilda podem confiar";
+				mes "em você. ";
+				mes "em um trabalho bem feito.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Tudo bem então...";
+				mes "Eu confio a você";
+				mes "esse espírito. ";
+				mes "certifique-se de entregá-lo a um";
+				mes "^4D4DFFCrusader^000000 ou ^4D4DFFPaladin^000000";
+				mes "em sua guilda.";
+				set guildrelay_q,98;
+				getitem 7249,1; //Soul_Of_Service
+				close;
+			}
+			if ((BaseLevel < BaseLevel) && (guildrelay_q == 20)) {
+				mes "[" + .@name$ + "]";
+				mes "Huh. ";
+				mes "ficar muito mais forte,";
+				mes "assim como eu perguntei. ";
+				mes "seus companheiros de guilda podem confiar";
+				mes "em você. ";
+				mes "em um trabalho bem feito.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Ok, pegue isso e dê para";
+				mes "Cruzado ou Paladino";
+				mes "quem está em nossa guilda.";
+				mes "Boa sorte!";
+				set guildrelay_q,98;
+				getitem 7249,1; //Soul_Of_Service
+				close;
+			}
+			if ((BaseJob == Job_Crusader) && (countitem(7249) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Eu vejo que você possui";
+				mes "o Espírito de Serviço. ";
+				mes "Bom trabalho. ";
+				mes "tarefa testará sua paciência.";
+				mes "Tudo que você precisa fazer é ^FF0000esperar^000000.";
+				mes "Espere até a hora certa.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Eu quero que você gaste isso";
+				mes "hora de olhar para dentro de si mesmo,";
+				mes "e examine seu relacionamento";
+				mes "com os membros da sua guilda.";
+				mes "Quando você sente que chegou a hora";
+				mes "está certo, venha falar comigo.";
+				next;
+				mes "[" + .@name$ + "]";
+				mes "Eu não vou te contar";
+				mes "quando você deveria voltar.";
+				mes "Vou apenas confirmar se";
+				mes "você chegou cedo ou na hora certa.";
+				mes "Você precisará realmente ouvir";
+				mes "aos seus sentimentos desta vez...";
+				delitem 7249,1; //Soul_Of_Service
+				set guildrelay_q,21;
+				set guildtime, atoi( gettimestr("%H%M",5) );
+				close;
+			}
+			.@time = atoi( gettimestr("%H%M",5) );
+			if ((guildtime > 2259) && (guildrelay_q == 21) && (BaseJob == Job_Crusader)) {
+				if ((.@time > 0201) && (.@time < guildtime)) {
+					mes "[" + .@name$ + "]";
+					mes "Sim. ";
+					mes "a hora certa. ";
+					mes "esse sentimento em seu coração,";
+					mes "e confie quando chegar";
+					mes "de novo. ";
+					mes "um ^FF0000Monk^000000 ou ^FF0000Champion^000000 para mim...";
+					set guildrelay_q,96;
+					getitem 7250,1; //Soul_Of_Glory
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Muito cedo.";
+					mes "Ainda é muito cedo.";
+					mes "Você tem ouvido";
+					mes "para o seu coração? ";
+					close;
+				}
+			}
+			if ((guildtime > 2159) && (guildrelay_q == 21) && (BaseJob == Job_Crusader)) {
+				if ((.@time > 0101) && (.@time < guildtime)) {
+					mes "[" + .@name$ + "]";
+					mes "Sim. ";
+					mes "a hora certa. ";
+					mes "esse sentimento em seu coração,";
+					mes "e confie quando chegar";
+					mes "de novo. ";
+					mes "um ^FF0000Monk^000000 ou ^FF0000Champion^000000 para mim...";
+					set guildrelay_q,96;
+					getitem 7250,1; //Soul_Of_Glory
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Muito cedo.";
+					mes "Ainda é muito cedo.";
+					mes "Você tem ouvido";
+					mes "para o seu coração? ";
+					close;
+				}
+			}
+			if ((guildtime > 2059) && (guildrelay_q == 21) && (BaseJob == Job_Crusader)) {
+				if ((.@time > 0001) && (.@time < guildtime)) {
+					mes "[" + .@name$ + "]";
+					mes "Sim. ";
+					mes "a hora certa. ";
+					mes "esse sentimento em seu coração,";
+					mes "e confie quando chegar";
+					mes "de novo. ";
+					mes "um ^FF0000Monk^000000 ou ^FF0000Champion^000000 para mim...";
+					set guildrelay_q,96;
+					getitem 7250,1; //Soul_Of_Glory
+					close;
+				}
+				else {
+					mes "[" + .@name$ + "]";
+					mes "Muito cedo.";
+					mes "Ainda é muito cedo.";
+					mes "Você tem ouvido";
+					mes "para o seu coração? ";
+					close;
+				}
+			}
+			if ((.@time - guildtime > 0300) && (guildrelay_q == 21) && (BaseJob == Job_Crusader)) {
+				mes "[" + .@name$ + "]";
+				mes "Sim. ";
+				mes "a hora certa. ";
+				mes "esse sentimento em seu coração,";
+				mes "e confie quando chegar";
+				mes "de novo. ";
+				mes "um ^FF0000Monk^000000 ou ^FF0000Champion^000000 para mim...";
+				set guildrelay_q,96;
+				getitem 7250,1; //Soul_Of_Glory
+				close;
+			}
+			if ((guildrelay_q == 21) && (BaseJob == Job_Crusader)) {
+				mes "[" + .@name$ + "]";
+				mes "Ainda não. ";
+				mes "um pouco mais. ";
+				mes "e volte mais tarde.";
+				close;
+			}
+			if ((BaseJob == Job_Monk) && (countitem(7250) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "A maioria das almas tem";
+				mes "foi compartilhado e há";
+				mes "mas uma coisa eu quero perguntar";
+				mes "você fazer. ";
+				mes "alguns itens. ";
+				mes "ajudá-lo a fazer isso é aceitável.";
+				next;
+				switch(rand(1,3)) {
+				case 1:
+					mes "[" + .@name$ + "]";
+					mes "Por favor, traga";
+					mes "^FF000030 Chifres Dokebi^000000,";
+					mes "^FF000030 Rabo de Peixe^000000, e";
+					mes "^FF000030 Vestes Celestiais^000000.";
+					mes "eu estarei esperando";
+					mes "para você aqui mesmo.";
+					delitem 7250,1; //Soul_Of_Glory
+					set guildrelay_q,23;
+					close;
+				case 2:
+					mes "[" + .@name$ + "]";
+					mes "Por favor, traga";
+					mes "^FF000030 Conchas Arco-Íris^000000,";
+					mes "^FF000030 Elásticos^000000 e";
+					mes "^FF000030 Cabelos horríveis^000000.";
+					mes "eu estarei esperando";
+					mes "para você aqui mesmo.";
+					delitem 7250,1; //Soul_Of_Glory
+					set guildrelay_q,24;
+					close;
+				case 3:
+					mes "[" + .@name$ + "]";
+					mes "Por favor, traga";
+					mes "^FF000030 Quimonos gastos^000000,";
+					mes "^FF000030 Peles Anolianas^000000, e";
+					mes "^FF000030 Penas PecoPeco^000000.";
+					mes "eu estarei esperando";
+					mes "para você aqui mesmo.";
+					delitem 7250,1; //Soul_Of_Glory
+					set guildrelay_q,94;
+					close;
+				}
+			}
+			if ((countitem(7165) > 29) && (countitem(1021) > 29) && (countitem(1023) > 29) && (guildrelay_q == 23)) {
+				mes "[" + .@name$ + "]";
+				mes "Bem bem. ";
+				mes "reuniu esses itens";
+				mes "mais rápido do que pensei";
+				mes "você poderia. ";
+				mes "por favor, dê isso para sua ^FF0000Guild";
+				mes "Domine^000000 assim que puder.";
+				delitem 7165,30; //Limpid_Celestial_Robe
+				delitem 1021,30; //Dokkaebi_Horn
+				delitem 1023,30; //Fish_Tail
+				set guildrelay_q,97;
+				getitem 7251,1; //Soul_Of_Victory
+				close;
+			}
+			if ((BaseJob == Job_Monk) && (guildrelay_q == 23)) {
+				mes "[" + .@name$ + "]";
+				mes "Você tem que dar ^FF0000Túnica Celestial Transparente ^00000030ea,";
+				mes "^FF0000Chifre de Dokebi ^00000030ea, ^FF0000Rabo de peixe ^00000030ea.";
+				mes "Você sabe disso, certo?";
+				mes "Boa sorte ~";
+				close;
+			}
+			if ((countitem(1048) > 29) && (countitem(1013) > 29) && (countitem(7200) > 29) && (guildrelay_q == 24)) {
+				mes "[" + .@name$ + "]";
+				mes "Bem bem. ";
+				mes "reuniu esses itens";
+				mes "mais rápido do que pensei";
+				mes "você poderia. ";
+				mes "por favor, dê isso para sua ^FF0000Guild";
+				mes "Domine^000000 assim que puder.";
+				delitem 1048,30; //Slender_Snake
+				delitem 1013,30; //Colorful_Shell
+				delitem 7200,30; //Flexible_String
+				set guildrelay_q,97;
+				getitem 7251,1; //Soul_Of_Victory
+				close;
+			}
+			if ((BaseJob == Job_Monk) && (guildrelay_q == 24)) {
+				mes "[" + .@name$ + "]";
+				mes "Por favor, traga";
+				mes "^FF000030 Conchas Arco-Íris^000000,";
+				mes "^FF000030 Elásticos^000000 e";
+				mes "^FF000030 Cabelos horríveis^000000.";
+				mes "eu estarei esperando";
+				mes "para você aqui mesmo.";
+				close;
+			}
+			if ((countitem(7003) > 29) && (countitem(7101) > 29) && (countitem(7153) > 29) && (guildrelay_q == 94)) {
+				mes "[" + .@name$ + "]";
+				mes "Bem bem. ";
+				mes "reuniu esses itens";
+				mes "mais rápido do que pensei";
+				mes "você poderia. ";
+				mes "por favor, dê isso para sua ^FF0000Guild";
+				mes "Domine^000000 assim que puder.";
+				delitem 7003,30; //Anolian_Skin
+				delitem 7101,30; //Peco_Wing_Feather
+				delitem 7153,30; //Old_Japaness_Clothes
+				set guildrelay_q,97;
+				getitem 7251,1; //Soul_Of_Victory
+				close;
+			}
+			if ((BaseJob == Job_Monk) && (guildrelay_q == 94)) {
+				mes "[" + .@name$ + "]";
+				mes "Por favor, traga";
+				mes "^FF000030 Quimonos gastos^000000,";
+				mes "^FF000030 Peles Anolianas^000000, e";
+				mes "^FF000030 Penas PecoPeco^000000.";
+				mes "eu estarei esperando";
+				mes "para você aqui mesmo.";
+				close;
+			}
+			if ((guildrelay_q == 95) && (countitem(7247) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Por favor, dê o";
+				mes "Espírito de Determinação";
+				mes "para um ^FF0000Priest^000000 ou ^FF0000Sumo Sacerdote^000000.";
+				mes "Você já sabia disso,";
+				mes "não foi? ";
+				mes "e entregá-lo em breve.";
+				close;
+			}
+			if (guildrelay_q == 95) {
+				mes "[" + .@name$ + "]";
+				mes "Por enquanto, seria";
+				mes "melhor para você descansar e";
+				mes "recupere suas forças. ";
+				mes "chance de ajudar sua guilda";
+				mes "chegará em breve, então";
+				mes "não há necessidade de pressa.";
+				close;
+			}
+			if ((guildrelay_q == 98) && (countitem(7249) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Por favor, dê o";
+				mes "Espírito de Serviço para";
+				mes "um ^FF0000Crusader^000000 ou ^FF0000Paladin^000000.";
+				mes "Você já sabia disso,";
+				mes "não foi? ";
+				mes "e entregá-lo em breve.";
+				close;
+			}
+			if (guildrelay_q == 98) {
+				mes "[" + .@name$ + "]";
+				mes "Hum. ";
+				mes "para o momento certo de agir.";
+				mes "Por que você não ajuda";
+				mes "sua guilda enquanto isso?";
+				close;
+			}
+			if ((guildrelay_q == 96) && (countitem(7250) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Por favor, dê o";
+				mes "Espírito de Glória para";
+				mes "um ^FF0000Monk^000000 ou ^FF0000Champion^000000.";
+				mes "Você já sabia disso,";
+				mes "não foi? ";
+				mes "e entregá-lo em breve.";
+				close;
+			}
+			if (guildrelay_q == 96) {
+				mes "[" + .@name$ + "]";
+				mes "Eu vejo que você tem";
+				mes "o potencial para se tornar";
+				mes "um grande líder. ";
+				mes "para não desperdiçá-lo e liderar";
+				mes "sua guilda o melhor que puder.";
+				close;
+			}
+			if ((guildrelay_q == 97) && (countitem(7251) > 0)) {
+				mes "[" + .@name$ + "]";
+				mes "Você precisa dar";
+				mes "o ^FF0000Espírito de Vitória^000000";
+				mes "para o seu Mestre da Guilda.";
+				mes "Por favor, certifique-se de que";
+				mes "será entregue em breve.";
+				close;
+			}
+			if (guildrelay_q == 97) {
+				mes "[" + .@name$ + "]";
+				mes "Você é um explorador conhecido,";
+				mes "e vejo em você o potencial";
+				mes "para realizar ainda mais";
+				mes "boas coisas. ";
+				mes "duvido que haja alguma coisa";
+				mes "mais que você pode fazer aqui.";
+				close;
+			}
+			mes "[" + .@name$ + "]";
+			mes "Hum. ";
+			mes "estar aqui. ";
+			mes "encontre algo produtivo";
+			mes "pendência? ";
+			mes "para você aqui, eu lhe garanto.";
+			close;
+		}
+	}
+	else {
+		if (is_guild_leader(.@GID) == true) {
+			mes "[" + .@name$ + "]";
+			mes "Você pode ser o mestre";
+			mes "de uma guilda, mas você e eu";
+			mes "Não tenho nada a ver com";
+			mes "uns aos outros. ";
+			next;
+			mes "[" + .@name$ + "]";
+			mes "Então, novamente, eu suponho";
+			mes "você veio aqui para ver";
+			mes "como uma guilda real funciona.";
+			mes "Se for esse o caso, você está";
+			mes "bem-vindo para ficar e observar.";
+			close;
+		}
+		else {
+			mes "[" + .@name$ + "]";
+			mes ".........................";
+			next;
+			mes "[" + .@name$ + "]";
+			mes ".........................";
+			next;
+			mes "[" + .@name$ + "]";
+			mes "O que te traz aqui?";
+			mes "Eu não acho que vi";
+			mes "você por perto antes. ";
+			close;
+		}
+	}
+}
+
+// Luina 1
+//============================================================
+aldeg_cas01,51,102,5	duplicate(GuildRelay1)	Buzz#01	754
+aldeg_cas01,75,39,3	duplicate(GuildRelay2)	Lenya#01	754
+aldeg_cas01,200,175,3	duplicate(GuildRelay3)	Gealuve#01	754
+aldeg_cas01,59,224,3	duplicate(GuildRelay4)	Pariz#01	754
+
+// Luina 2
+//============================================================
+aldeg_cas02,120,51,5	duplicate(GuildRelay1)	Buzz#02	754
+aldeg_cas02,180,184,3	duplicate(GuildRelay2)	Lenya#02	754
+aldeg_cas02,62,65,3	duplicate(GuildRelay3)	Gealuve#02	754
+aldeg_cas02,62,201,3	duplicate(GuildRelay4)	Pariz#02	754
+
+// Luina 3
+//============================================================
+aldeg_cas03,70,252,5	duplicate(GuildRelay1)	Buzz#03	754
+aldeg_cas03,72,115,3	duplicate(GuildRelay2)	Lenya#03	754
+aldeg_cas03,114,119,3	duplicate(GuildRelay3)	Gealuve#03	754
+aldeg_cas03,188,181,3	duplicate(GuildRelay4)	Pariz#03	754
+
+// Luina 4
+//============================================================
+aldeg_cas04,31,116,5	duplicate(GuildRelay1)	Buzz#04	754
+aldeg_cas04,66,117,3	duplicate(GuildRelay2)	Lenya#04	754
+aldeg_cas04,24,80,3	duplicate(GuildRelay3)	Gealuve#04	754
+aldeg_cas04,181,97,3	duplicate(GuildRelay4)	Pariz#04	754
+
+// Luina 5
+//============================================================
+aldeg_cas05,31,191,5	duplicate(GuildRelay1)	Buzz#05	754
+aldeg_cas05,140,196,3	duplicate(GuildRelay2)	Lenya#05	754
+aldeg_cas05,148,224,3	duplicate(GuildRelay3)	Gealuve#05	754
+aldeg_cas05,165,51,3	duplicate(GuildRelay4)	Pariz#05	754
+
+// Britoniah 1
+//============================================================
+gefg_cas01,85,47,4	duplicate(GuildRelay1)	Jody#01	754
+gefg_cas01,67,83,3	duplicate(GuildRelay2)	Ron Haware#01	754
+gefg_cas01,184,40,3	duplicate(GuildRelay3)	Vers#01	754
+gefg_cas01,35,34,6	duplicate(GuildRelay4)	Gen Garish#01	754
+
+// Britoniah 2
+//============================================================
+gefg_cas02,15,69,4	duplicate(GuildRelay1)	Jody#02	754
+gefg_cas02,23,22,3	duplicate(GuildRelay2)	Ron Haware#02	754
+gefg_cas02,178,38,3	duplicate(GuildRelay3)	Vers#02	754
+gefg_cas02,18,159,5	duplicate(GuildRelay4)	Gen Garish#02	754
+
+// Britoniah 3
+//============================================================
+gefg_cas03,257,41,4	duplicate(GuildRelay1)	Jody#03	754
+gefg_cas03,110,91,3	duplicate(GuildRelay2)	Ron Haware#03	754
+gefg_cas03,158,57,3	duplicate(GuildRelay3)	Vers#03	754
+gefg_cas03,124,24,3	duplicate(GuildRelay4)	Gen Garish#03	754
+
+// Britoniah 4
+//============================================================
+gefg_cas04,26,73,4	duplicate(GuildRelay1)	Jody#04	754
+gefg_cas04,34,16,1	duplicate(GuildRelay2)	Ron Haware#04	754
+gefg_cas04,55,70,5	duplicate(GuildRelay3)	Vers#04	754
+gefg_cas04,73,38,6	duplicate(GuildRelay4)	Gen Garish#04	754
+
+// Britoniah 5
+//============================================================
+gefg_cas05,47,47,4	duplicate(GuildRelay1)	Jody#05	754
+gefg_cas05,65,28,3	duplicate(GuildRelay2)	Ron Haware#05	754
+gefg_cas05,87,31,3	duplicate(GuildRelay3)	Vers#05	754
+gefg_cas05,46,28,3	duplicate(GuildRelay4)	Gen Garish#05	754
+
+// Greenwood Lake 1
+//============================================================
+payg_cas01,87,35,3	duplicate(GuildRelay1)	Chungye#01	106
+payg_cas01,129,29,3	duplicate(GuildRelay2)	Dosuhlji#01	754
+payg_cas01,13,146,5	duplicate(GuildRelay3)	Yayula#01	741
+payg_cas01,91,49,3	duplicate(GuildRelay4)	Ashin#01	59
+
+// Greenwood Lake 2
+//============================================================
+payg_cas02,34,253,3	duplicate(GuildRelay1)	Chungye#02	106
+payg_cas02,77,229,3	duplicate(GuildRelay2)	Dosuhlji#02	754
+payg_cas02,252,287,3	duplicate(GuildRelay3)	Yayula#02	741
+payg_cas02,289,264,3	duplicate(GuildRelay4)	Ashin#02	59
+
+// Greenwood Lake 3
+//============================================================
+payg_cas03,48,265,3	duplicate(GuildRelay1)	Chungye#03	106
+payg_cas03,7,265,5	duplicate(GuildRelay2)	Dosuhlji#03	754
+payg_cas03,16,16,5	duplicate(GuildRelay3)	Yayula#03	741
+payg_cas03,10,266,3	duplicate(GuildRelay4)	Ashin#03	59
+
+// Greenwood Lake 4
+//============================================================
+payg_cas04,24,285,3	duplicate(GuildRelay1)	Chungye#04	106
+payg_cas04,21,16,3	duplicate(GuildRelay2)	Dosuhlji#04	754
+payg_cas04,69,270,3	duplicate(GuildRelay3)	Yayula#04	741
+payg_cas04,18,239,3	duplicate(GuildRelay4)	Ashin#04	59
+
+// Greenwood Lake 5
+//============================================================
+payg_cas05,277,271,3	duplicate(GuildRelay1)	Chungye#05	106
+payg_cas05,273,15,3	duplicate(GuildRelay2)	Dosuhlji#05	754
+payg_cas05,283,24,3	duplicate(GuildRelay3)	Yayula#05	741
+payg_cas05,276,287,3	duplicate(GuildRelay4)	Ashin#05	59
+
+// Valkyrie Realms 1
+//============================================================
+prtg_cas01,96,205,5	duplicate(GuildRelay1)	Hermod#01	754
+prtg_cas01,157,117,3	duplicate(GuildRelay2)	Atila#01	728
+prtg_cas01,149,78,3	duplicate(GuildRelay3)	Cecil#01	92
+prtg_cas01,125,191,3	duplicate(GuildRelay4)	Diligo#01	754
+
+// Valkyrie Realms 2
+//============================================================
+prtg_cas02,73,35,5	duplicate(GuildRelay1)	Hermod#02	754
+prtg_cas02,43,41,5	duplicate(GuildRelay2)	Atila#02	728
+prtg_cas02,52,63,3	duplicate(GuildRelay3)	Cecil#02	92
+prtg_cas02,100,62,3	duplicate(GuildRelay4)	Diligo#02	754
+
+// Valkyrie Realms 3
+//============================================================
+prtg_cas03,5,68,5	duplicate(GuildRelay1)	Hermod#03	754
+prtg_cas03,18,109,3	duplicate(GuildRelay2)	Atila#03	728
+prtg_cas03,71,81,5	duplicate(GuildRelay3)	Cecil#03	92
+prtg_cas03,183,215,3	duplicate(GuildRelay4)	Diligo#03	754
+
+// Valkyrie Realms 4
+//============================================================
+prtg_cas04,39,263,3	duplicate(GuildRelay1)	Hermod#04	754
+prtg_cas04,259,251,3	duplicate(GuildRelay2)	Atila#04	728
+prtg_cas04,6,281,5	duplicate(GuildRelay3)	Cecil#04	92
+prtg_cas04,59,282,5	duplicate(GuildRelay4)	Diligo#04	754
+
+// Valkyrie Realms 5
+//============================================================
+prtg_cas05,52,70,5	duplicate(GuildRelay1)	Hermod#05	754
+prtg_cas05,253,91,3	duplicate(GuildRelay2)	Atila#05	728
+prtg_cas05,276,93,3	duplicate(GuildRelay3)	Cecil#05	92
+prtg_cas05,211,36,3	duplicate(GuildRelay4)	Diligo#05	754
+

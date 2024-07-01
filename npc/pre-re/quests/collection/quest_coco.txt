@@ -1,0 +1,249 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+mjolnir_01,293,20,3	script	Nutters#Coco_Hunt	779,{
+	if (#mobcoco >= .consec) {
+		mes .npc$;
+		mes "Voce já fez 3 missões comigo hoje.";
+		mes "Volte amanhã";
+		close;
+	}
+	if (checkquest(60113) != -1) {
+		if (checkquest(60113, HUNTING) != 2) {
+			mes "[Nutters]";
+			mes "Você terminou de caçar os 50 Cocos?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Nutters]";
+					mes "Hmm, acho que você ainda não caçou 50...";
+					close;
+				case 2:
+					mes "[Nutters]";
+					mes "Lembre-se, preciso de ajuda caçando Cocos, então vá e mate 50 deles.";
+					close;
+				case 3:
+					mes "[Nutters]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você fez será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Nutters]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60113;
+							close;
+						case 2:
+							mes "[Nutters]";
+							mes "Por favor, mate 50 Cocos.";
+							close;
+					}
+			}
+		} else {
+			mes "[Nutters]";
+			mes "Incrível, você fez isso rapidamente.";
+			getexp 3600, 3905;
+			erasequest 60113;
+			#mobcoco++;
+			close;
+		}
+	}
+	if (checkquest(60114) != -1) {
+		if (checkquest(60114, HUNTING) != 2) {
+			mes "[Nutters]";
+			mes "Você terminou de caçar os 100 Cocos?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Nutters]";
+					mes "Hmm, acho que você ainda não caçou 100...";
+					close;
+				case 2:
+					mes "[Nutters]";
+					mes "Lembre-se, preciso de ajuda caçando Cocos, então vá e mate 100 deles.";
+					close;
+				case 3:
+					mes "[Nutters]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você fez será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Nutters]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60114;
+							close;
+						case 2:
+							mes "[Nutters]";
+							mes "Por favor, mate 100 Cocos.";
+							close;
+					}
+			}
+		} else {
+			mes "[Nutters]";
+			mes "Incrível, você fez isso rapidamente.";
+			getexp 3600, 3905;
+			getexp 3600, 3905;
+			erasequest 60114;
+			#mobcoco++;
+			close;
+		}
+	}
+	if (checkquest(60115) != -1) {
+		if (checkquest(60115, HUNTING) != 2) {
+			mes "[Nutters]";
+			mes "Você terminou de caçar os 150 Cocos?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Nutters]";
+					mes "Hmm, acho que você ainda não caçou 150...";
+					close;
+				case 2:
+					mes "[Nutters]";
+					mes "Lembre-se, preciso de ajuda caçando Cocos, então vá e mate 150 deles.";
+					close;
+				case 3:
+					mes "[Nutters]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você fez será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Nutters]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60115;
+							close;
+						case 2:
+							mes "[Nutters]";
+							mes "Por favor, mate 150 Cocos.";
+							close;
+					}
+			}
+		} else {
+			mes "[Nutters]";
+			mes "Incrível, você fez isso rapidamente.";
+			getexp 3600, 3905;
+			getexp 3600, 3905;
+			getexp 3600, 3905;
+			erasequest 60115;
+			#mobcoco++;
+			close;
+		}
+	}
+// Verificação de nível mínimo
+	if (BaseLevel > 17) {
+		// Verificação de nível máximo
+		if (BaseLevel < 60) {
+			mes "[Nutters]";
+			mes "Eu... Eu simplesmente não consigo encontrar nenhum.";
+			mes "Esses malditos Cocos esconderam todas as Avelã.";
+			mes "Você poderia me ajudar?";
+			next;
+			switch (select("Claro:Não")) {
+				case 1:
+					mes "[Nutters]";
+					mes "Ah, isso é ótimo! Eu sabia que podia contar com você, só de olhar para você!";
+					next;
+					switch (select("Coletar Itens:Caçar Cocos:Cancelar")) {
+						case 1:
+							// Entregar item
+							mes "[Nutters]";
+							mes "Você pode me ajudar a encontrar ^00CE0025 Avelã^000000.";
+							mes "Vou recompensá-lo muito se conseguir.";
+							next;
+							switch (select("Eu tenho 25 Avelã:Volte outra vez?")) {
+								case 1:
+									/*
+									if (checkweight(502,5) == 0) {
+										mes "[Nutters]";
+										mes "Ei, parece que o peso nas suas costas vai te esmagar. Volte";
+										mes "depois de perder algum peso.";
+										close;
+									}
+									*/
+									if (countitem(1026) > 24) {
+										mes "[Nutters]";
+										mes "Ah, ótimo, você descobriu onde eles estavam escondendo.";
+										mes "Me dê! Me dê!!!";
+										next;
+										mes "[Nutters]";
+										mes "Ah, é verdade, desculpe, eu simplesmente adoro assar Avelã. Mmm.";
+										mes "Aqui está o que eu prometi a você.";
+										delitem 1026,25; // Avelã
+										getexp 3600,3905;
+										//getitem 502,5; // Poção Laranja
+										#mobcoco++;
+										close;
+									}
+									else {
+										mes "[Nutters]";
+										mes "Onde estão as minhas ^00CE00Avelã^000000?";
+										mes "Ei, eu não estou brincando, melhor não esconder de mim.";
+										close;
+									}
+								case 2:
+									mes "[Nutters]";
+									mes "Eu preciso de ^00CE0025 Avelã^000000.";
+									close;
+							}
+						case 2:
+							// Quest de Contagem de Mortes
+							mes "[Nutters]";
+							mes "Ah, ok, acho que você pode me ajudar caçando alguns Cocos.";
+							mes "Quantos você gostaria de caçar?";
+							next;
+							switch (select("50 Cocos:100 Cocos:150 Cocos")) {
+								case 1:
+									mes "[Nutters]";
+									mes "Volte quando terminar sua tarefa e eu lhe darei uma pequena recompensa.";
+									setquest 60113;
+									close;
+								case 2:
+									mes "[Nutters]";
+									mes "Volte quando terminar sua tarefa e eu lhe darei uma pequena recompensa.";
+									setquest 60114;
+									close;
+								case 3:
+									mes "[Nutters]";
+									mes "Volte quando terminar sua tarefa e eu lhe darei uma pequena recompensa.";
+									setquest 60115;
+									close;
+							}
+						case 3:
+							mes "[Nutters]";
+							mes "Se mudar de ideia, por favor, volte.";
+							close;
+					}
+				case 2:
+					mes "[Nutters]";
+					mes "Se mudar de ideia, por favor, volte.";
+					close;
+			}
+		}
+		else {
+			mes "[Nutters]";
+			mes "Você é muito forte para lutar contra essas coisas!";
+			close;
+		}
+	}
+	else {
+		mes "[Nutters]";
+		mes "Você é muito pequeno para lutar contra essas coisas para mim.";
+		mes "Pode ficar um pouco mais alto e depois voltar?";
+		close;
+	}
+OnClock0001:
+query_sql ("DELETE FROM `acc_reg_num` WHERE `key`='#mobcoco'");
+end;
+
+OnInit:
+	.consec = 3;
+	end;
+}

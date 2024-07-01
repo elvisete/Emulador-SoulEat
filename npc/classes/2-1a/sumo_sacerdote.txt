@@ -1,0 +1,74 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+valkyrie,44,42,5	script	Sumo sacerdote#Valkyrie	60,{
+	if (ADVJOB == 0 || Upper != 1) {
+		set .@karma_d,rand(1,10);
+		if (.@karma_d > 4) {
+			mes "[Sumo sacerdote]";
+			mes "Parabéns.";
+			mes "Honra aos guerreiros!";
+			close;
+		}
+		mes "[Sumo sacerdote]";
+		mes "Através do poder";
+		mes "da santidade, que possamos";
+		mes "encontrar paz, força";
+		mes "e proteção. Livra-nos";
+		mes "das forças do mal...";
+		close;
+	}
+	else if (ADVJOB == Job_High_Priest && Class == Job_Acolyte_High && JobLevel > 39) {
+		mes "[Sumo sacerdote]";
+		mes "Nosso mundo está";
+		mes "precisando de pessoas";
+		mes "com talento e convicção.";
+		mes "Por favor, continue com";
+		mes "seus bons feitos como";
+		mes "um herói ainda maior da santidade...";
+		next;
+		mes "[Sumo sacerdote]";
+		mes "Gostaria de";
+		mes "se tornar um Sumo sacerdote?";
+		next;
+		if (select("Não.:Sim.") == 1) {
+			mes "[Sumo sacerdote]";
+			mes "Quando estiver pronto,";
+			mes "sinta-se à vontade para voltar.";
+			mes "Honra aos guerreiros!";
+			close;
+		}
+		if (SkillPoint) {
+			mes "[Sumo sacerdote]";
+			mes "Ainda é possível aprender mais habilidades. Por favor, utilize";
+			mes "todos os seus Pontos de Habilidade restantes antes de voltar para mim.";
+			close;
+		}
+		jobchange Job_High_Priest;
+		set ADVJOB,0;
+		mes "[Sumo sacerdote]";
+		mes "Parabéns.";
+		mes "Como Sumo sacerdote,";
+		mes "espero que guie";
+		mes "outros pelo caminho";
+		mes "da santidade...";
+		close;
+	}
+	mes "[Sumo sacerdote]";
+	mes "Bem-vindo";
+	mes "a Valhalla,";
+	mes "o Salão da Honra.";
+	next;
+	mes "[Sumo sacerdote]";
+	mes "Por favor, sinta-se";
+	mes "à vontade";
+	mes "enquanto estiver aqui.";
+	mes "Honra aos guerreiros!";
+	close;
+}

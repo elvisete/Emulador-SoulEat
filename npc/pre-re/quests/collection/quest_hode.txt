@@ -1,0 +1,244 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+moc_fild17,208,346,5	script	Shone#Hode_Hunt	707,{
+	if (#mobhode >= .consec) {
+		mes .npc$;
+		mes "Voce já fez 3 missões comigo hoje.";
+		mes "Volte amanhã";
+		close;
+	}
+	if (checkquest(60104) != -1) {
+		if (checkquest(60104, HUNTING) != 2) {
+			mes "[Shone]";
+			mes "Você terminou de caçar os 50 Hodes?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Shone]";
+					mes "Hmm, acho que você ainda não caçou 50...";
+					close;
+				case 2:
+					mes "[Shone]";
+					mes "Lembre-se, eu preciso de ajuda para caçar Hodes, então vá e caça 50 deles.";
+					close;
+				case 3:
+					mes "[Shone]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você tenha feito será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Shone]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60104;
+							close;
+						case 2:
+							mes "[Shone]";
+							mes "Por favor, mate 50 Hodes.";
+							close;
+					}
+			}
+		} else {
+			mes "[Shone]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 15775, 1125;
+			erasequest 60104;
+			#mobhode++;
+			close;
+		}
+	}
+	if (checkquest(60105) != -1) {
+		if (checkquest(60105, HUNTING) != 2) {
+			mes "[Shone]";
+			mes "Você terminou de caçar os 100 Hodes?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Shone]";
+					mes "Hmm, acho que você ainda não caçou 100...";
+					close;
+				case 2:
+					mes "[Shone]";
+					mes "Lembre-se, eu preciso de ajuda para caçar Hodes, então vá e caça 100 deles.";
+					close;
+				case 3:
+					mes "[Shone]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você tenha feito será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Shone]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60105;
+							close;
+						case 2:
+							mes "[Shone]";
+							mes "Por favor, mate 100 Hodes.";
+							close;
+					}
+			}
+		} else {
+			mes "[Shone]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 15775, 1125;
+			getexp 15775, 1125;
+			erasequest 60105;
+			#mobhode++;
+			close;
+		}
+	}
+	if (checkquest(60106) != -1) {
+		if (checkquest(60106, HUNTING) != 2) {
+			mes "[Shone]";
+			mes "Você terminou de caçar os 150 Hodes?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Shone]";
+					mes "Hmm, acho que você ainda não caçou 150...";
+					close;
+				case 2:
+					mes "[Shone]";
+					mes "Lembre-se, eu preciso de ajuda para caçar Hodes, então vá e caça 150 deles.";
+					close;
+				case 3:
+					mes "[Shone]";
+					mes "Você tem certeza de que quer parar de caçar?";
+					mes "Qualquer progresso que você tenha feito será apagado";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Shone]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60106;
+							close;
+						case 2:
+							mes "[Shone]";
+							mes "Por favor, mate 150 Hodes.";
+							close;
+					}
+			}
+		} else {
+			mes "[Shone]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 15775, 1125;
+			getexp 15775, 1125;
+			getexp 15775, 1125;
+			erasequest 60106;
+			#mobhode++;
+			close;
+		}
+	}
+// Para nível mínimo e maximo
+	if (BaseLevel > 24) {
+		if (BaseLevel < 61) {
+			mes "[Shone]";
+			mes "Espera! Você pode me ver?";
+			mes "Bem, ainda não dominei minhas habilidades.";
+			next;
+			mes "[Shone]";
+			mes "Ei, você acha que pode me ajudar?";
+			next;
+			switch (select("Claro:Não")) {
+				case 1:
+					mes "[Shone]";
+					mes "Muito obrigado, parceiro!";
+					next;
+					switch (select("Recolher itens:Caçar Hodes:Cancelar")) {
+						case 1:
+							// Entregar item
+							mes "[Shone]";
+							mes "Estou tentando coletar ^00CE0025 Pele de Minhoca^000000.";
+							mes "Vou recompensar você se ajudar.";
+							next;
+							switch (select("Eu tenho 25 Pele de Minhoca:O que era mesmo?")) {
+								case 1:
+									/*
+									if (checkweight(502,10) == 0) {
+										mes "[Shone]";
+										mes "Ei, parece que o peso em";
+										mes "suas costas vai te esmagar. Volte";
+										mes "depois de perder um pouco de peso.";
+										close;
+									}
+									*/
+									if (countitem(1055) > 24) {
+										mes "Obrigado pelas 25 Pele de Minhoca!";
+										mes "Aqui está a recompensa que prometi a você. Espero que pegue essa sabedoria que passei e compartilhe com outros.";
+										delitem 1055, 25; //Pele de Minhoca
+										getexp 15775, 1125;
+										//getitem 502,10; //Poção Laranja
+										#mobhode++;
+										close;
+									}
+									else {
+										mes "[Shone]";
+										mes "Eu não vejo nenhuma ^00CE00Pele de Minhoca^000000.";
+										mes "Você está tentando me enganar?";
+										close;
+									}
+								case 2:
+									mes "[Shone]";
+									mes "Eu preciso de ^00CE0025 Pele de Minhoca^000000.";
+									close;
+							}
+						case 2:
+							// Quest de Contagem de Morte
+							mes "[Shone]";
+							mes "Ah, ok. Acho que você pode me ajudar caçando alguns Hodes.";
+							mes "Quantos você gostaria de caçar?";
+							next;
+							switch (select("50 Hodes:100 Hodes:150 Hodes")) {
+								case 1:
+									mes "[Shone]";
+									mes "Volte quando terminar sua tarefa e eu te darei uma pequena recompensa.";
+									setquest 60104;
+									close;
+								case 2:
+									mes "[Shone]";
+									mes "Volte quando terminar sua tarefa e eu te darei uma pequena recompensa.";
+									setquest 60105;
+									close;
+								case 3:
+									mes "[Shone]";
+									mes "Volte quando terminar sua tarefa e eu te darei uma pequena recompensa.";
+									setquest 60106;
+									close;
+							}
+						case 3:
+							mes "[Shone]";
+							mes "Se mudar de ideia, por favor, volte.";
+							close;
+					}
+				case 2:
+					mes "[Shone]";
+					mes "Se mudar de ideia, por favor, volte.";
+					close;
+			}
+		} else {
+			mes "[Shone]";
+			mes "Você é muito forte para lutar contra essas coisas!";
+			close;
+		}
+	} else {
+		mes "[Shone]";
+		mes "Você precisa de ajuda, mas eu não posso fornecer isso para você.";
+		mes "Volte quando estiver mais forte e tiver adquirido mais sabedoria.";
+		close;
+	}
+OnClock0001:
+query_sql ("DELETE FROM `acc_reg_num` WHERE `key`='#mobhode'");
+end;
+
+OnInit:
+	.consec = 3;
+	end;
+}

@@ -1,0 +1,382 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+prontera,123,102,5	script	Comerciante#pron	85,{
+	if (MaxWeight - Weight < 6301 || checkweight(1201,1) == 0) {
+		mes "[Mercador]";
+		mes "Haha!";
+		mes "O que é, um super-humano?";
+		mes "Você está carregando muitas coisas!";
+		mes "Melhor colocar algumas delas";
+		mes "no Armazém Kafra~";
+		close;
+	}
+	mes "[Mercador]";
+	mes "Bom dia!";
+	mes "Você coletou alguns";
+	mes "itens como Conchas ou Fluff?";
+	mes "E quanto a Jellopies? Ah sim,";
+	mes "preciso delas para algo.";
+	next;
+	mes "[Mercador]";
+	mes "É claro, não vou pedir";
+	mes "para você me dar essas coisas de graça. Que tal trocar uma Poção Vermelha por 5 Conchas, 10 Fluff,";
+	mes "ou 10 Jellopies?";
+	next;
+	switch(select("Claro!:Acho que é uma exploração!:Não, obrigado.")) {
+	case 1:
+		mes "[Mercador]";
+		mes "Então qual item";
+		mes "você quer me trazer?";
+		mes "Conchas, Fluff, ou Jellopies?";
+		next;
+		switch(select("Conchas:Jellopies:Fluff:Cancelar")) {
+		case 1: callfunc "F_PotExchange",935,5;
+		case 2: callfunc "F_PotExchange",909,10;
+		case 3: callfunc "F_PotExchange",914,10;
+		case 4:
+			mes "[Mercador]";
+			mes "Claro~";
+			mes "Sem problemas.";
+			close;
+		}
+	case 2:
+		mes "[Mercador]";
+		mes "Uma exploração...?";
+		mes "Se você verificar o valor de mercado";
+		mes "dos itens sendo trocados, sou eu que estou";
+		mes "sendo explorado aqui.";
+		close;
+	case 3:
+		mes "[Mercador]";
+		mes "Tudo bem,";
+		mes "sem problemas.";
+		mes "Mas volte para mim";
+		mes "se mudar de ideia.";
+		close;
+	}
+}
+
+morocc,180,259,3	script	Comerciante#Morocc	85,{
+	if (MaxWeight - Weight < 6301 || checkweight(1201,1) == 0) {
+		mes "[Mercador]";
+		mes "Haha!";
+		mes "O que é, um super-humano?";
+		mes "Você está carregando muitas coisas!";
+		mes "Melhor colocar algumas delas";
+		mes "no Armazém Kafra~";
+		close;
+	}
+	mes "[Mercador]";
+	mes "Bom dia!";
+	mes "Você coletou alguns";
+	mes "itens como Conchas ou Penas de Pássaro?";
+	mes "E quanto a Jellopies? Ah sim,";
+	mes "preciso delas para algo.";
+	next;
+	mes "[Mercador]";
+	mes "É claro, não vou pedir";
+	mes "para você me dar essas coisas de graça. Que tal trocar uma Poção Vermelha por 5 Conchas, 7 Penas de Pássaro";
+	mes "ou 10 Jellopies?";
+	next;
+	switch(select("Claro!:Acho que é uma exploração!:Não, obrigado.")) {
+	case 1:
+		mes "[Mercador]";
+		mes "Então qual item";
+		mes "você quer me trazer?";
+		mes "Conchas, Penas de Pássaro,";
+		mes "ou Jellopies?";
+		next;
+		switch(select("Conchas:Penhas de Pássaro:Jellopies:Cancelar")) {
+		case 1: callfunc "F_PotExchange",935,5;
+		case 2: callfunc "F_PotExchange",916,7;
+		case 3: callfunc "F_PotExchange",909,10;
+		case 4:
+			mes "[Mercador]";
+			mes "Claro~";
+			mes "Sem problemas.";
+			close;
+		}
+	case 2:
+		mes "[Mercador]";
+		mes "Uma exploração...?";
+		mes "Se você verificar o valor de mercado";
+		mes "dos itens sendo trocados, sou eu que estou";
+		mes "sendo explorado aqui.";
+		close;
+	case 3:
+		mes "[Mercador]";
+		mes "Tudo bem,";
+		mes "sem problemas.";
+		mes "Mas volte para mim";
+		mes "se mudar de ideia.";
+		close;
+	}
+}
+
+payon,200,134,5	script	Comerciante#pay	85,{
+	if (MaxWeight - Weight < 6301 || checkweight(1201,1) == 0) {
+		mes "[Mercador]";
+		mes "Haha!";
+		mes "O que é, um super-humano?";
+		mes "Você está carregando muitas coisas!";
+		mes "Melhor colocar algumas delas";
+		mes "no Armazém Kafra~";
+		close;
+	}
+	mes "[Mercador]";
+	mes "Bom dia!";
+	mes "Você coletou";
+	mes "itens como Raízes de Árvore?";
+	mes "E quanto a Jellopies? Ah sim,";
+	mes "preciso delas para algo.";
+	next;
+	mes "[Mercador]";
+	mes "É claro, não vou pedir";
+	mes "para você me dar essas coisas de graça. Que tal trocar uma Poção Vermelha por 6 Raízes de Árvore ou 10 Jellopies?";
+	next;
+	switch(select("Claro!:Acho que é uma exploração!:Não, obrigado.")) {
+	case 1:
+		mes "[Mercador]";
+		mes "Então qual item";
+		mes "você quer me trazer?";
+		mes "Raízes de Árvore, ou Jellopies?";
+		next;
+		switch(select("Raízes de Árvore:Jellopies:Cancelar")) {
+		case 1: callfunc "F_PotExchange",902,6;
+		case 2: callfunc "F_PotExchange",909,10;
+		case 3:
+			mes "[Mercador]";
+			mes "Claro~";
+			mes "Sem problemas.";
+			close;
+		}
+	case 2:
+		mes "[Mercador]";
+		mes "Uma exploração...?";
+		mes "Se você verificar o valor de mercado";
+		mes "dos itens sendo trocados, sou eu que estou";
+		mes "sendo explorado aqui.";
+		close;
+	case 3:
+		mes "[Mercador]";
+		mes "Tudo bem,";
+		mes "sem problemas.";
+		mes "Mas volte para mim";
+		mes "se mudar de ideia.";
+		close;
+	}
+}
+
+aldebaran,152,63,5	script	Comerciante#alde	85,{
+	if (MaxWeight - Weight < 6301 || checkweight(1201,1) == 0) {
+		mes "[Mercador]";
+		mes "Haha!";
+		mes "O que é, um super-humano?";
+		mes "Você está carregando muitas coisas!";
+		mes "Melhor colocar algumas delas";
+		mes "no Armazém Kafra~";
+		close;
+	}
+	mes "[Mercador]";
+	mes "Bom dia!";
+	mes "Você coletou algum";
+	mes "Worm Peeling ou Feather of Birds?";
+	mes "E quanto a Jellopies? Ah sim,";
+	mes "preciso delas para algo.";
+	next;
+	mes "[Mercador]";
+	mes "É claro, não vou pedir";
+	mes "para você me dar essas coisas de graça. Que tal trocar uma Poção Vermelha por 1 Worm Peeling, 7 Feather of Birds, ou 10 Jellopies?";
+	next;
+	switch(select("Claro!:Acho que é uma exploração!:Não, obrigado.")) {
+	case 1:
+		mes "[Mercador]";
+		mes "Então qual item";
+		mes "você quer me trazer?";
+		mes "Feather of Birds?";
+		mes "Worm Peeling?";
+		mes "Ou Jellopies?";
+		next;
+		switch(select("Worm Peeling:Feather of Birds:Jellopies:Cancelar")) {
+		case 1: callfunc "F_PotExchange",955,1;
+		case 2: callfunc "F_PotExchange",916,7;
+		case 3: callfunc "F_PotExchange",909,10;
+		case 4:
+			mes "[Mercador]";
+			mes "Claro~";
+			mes "Sem problemas.";
+			close;
+		}
+	case 2:
+		mes "[Mercador]";
+		mes "Uma exploração...?";
+		mes "Se você verificar o valor de mercado";
+		mes "dos itens sendo trocados, sou eu que estou";
+		mes "sendo explorado aqui.";
+		close;
+	case 3:
+		mes "[Mercador]";
+		mes "Tudo bem,";
+		mes "sem problemas.";
+		mes "Mas volte para mim";
+		mes "se mudar de ideia.";
+		close;
+	}
+}
+
+geffen,173,88,5	script	Comerciante#geff	85,{
+	if (MaxWeight - Weight < 6301 || checkweight(1201,1) == 0) {
+		mes "[Mercador]";
+		mes "Haha!";
+		mes "O que é, um super-humano?";
+		mes "Você está carregando muitas coisas!";
+		mes "Melhor colocar algumas delas";
+		mes "no Armazém Kafra~";
+		close;
+	}
+	mes "[Mercador]";
+	mes "Bom dia!";
+	mes "Você coletou alguns";
+	mes "itens como Conchas ou Chrysalises?";
+	mes "E quanto a Jellopies? Ah sim,";
+	mes "preciso delas para algo.";
+	next;
+	mes "[Mercador]";
+	mes "É claro, não vou pedir";
+	mes "para você me dar essas coisas de graça. Que tal trocar uma Poção Vermelha por 5 Conchas ou 6 Chrysalises, ou 10 Jellopies?";
+	next;
+	switch(select("Claro!:Acho que é uma exploração!:Não, obrigado.")) {
+	case 1:
+		mes "[Mercador]";
+		mes "Então qual item";
+		mes "você quer me trazer?";
+		mes "Conchas, Chrysalises, ou Jellopies?";
+		next;
+		switch(select("Conchas:Chrysalises:Jellopies:Cancelar")) {
+		case 1: callfunc "F_PotExchange",935,5;
+		case 2: callfunc "F_PotExchange",915,6;
+		case 3: callfunc "F_PotExchange",909,10;
+		case 4:
+			mes "[Mercador]";
+			mes "Claro~";
+			mes "Sem problemas.";
+			close;
+		}
+	case 2:
+		mes "[Mercador]";
+		mes "Uma exploração...?";
+		mes "Se você verificar o valor de mercado";
+		mes "dos itens sendo trocados, sou eu que estou";
+		mes "sendo explorado aqui.";
+		close;
+	case 3:
+		mes "[Mercador]";
+		mes "Tudo bem,";
+		mes "sem problemas.";
+		mes "Mas volte para mim";
+		mes "se mudar de ideia.";
+		close;
+	}
+}
+
+function	script	F_PotExchange	{
+	.@item_req = getarg(0);
+	.@req_amount = getarg(1);
+
+	if (countitem(.@item_req) < .@req_amount) {
+		mes "[Mercador]";
+		mes "Ei, onde estão";
+		mes "todos aqueles "+ getitemname(.@item_req) +"";
+		mes "que você prometeu?";
+		mes "Me dê "+ getitemname(.@item_req) +"!";
+		close;
+	}
+	else {
+		mes "[Mercador]";
+		mes "Ok, deixe-me verificar";
+		mes "quantos "+ getitemname(.@item_req) +" você";
+		mes "tem. Hmm...";
+		next;
+		mes "[Mercador]";
+		mes "Você tem";
+		mes "um total de "+ countitem(.@item_req) +" "+ getitemname(.@item_req) +".";
+		mes "Posso lhe dar um total";
+		mes "de "+ (countitem(.@item_req)/.@req_amount) +" Poções Vermelhas por esses.";
+		next;
+		mes "[Mercador]";
+		mes "O que você acha?";
+		mes "Temos um acordo?";
+		next;
+		if (select("Acordo.:Sem acordo.") == 1) {
+			mes "[Mercador]";
+			mes "Você conhece o número exato";
+			mes "de Poções Vermelhas";
+			mes "que deseja receber por";
+			mes "essas "+ getitemname(.@item_req) +", não é?";
+			next;
+			mes "[Mercador]";
+			mes "Agora, posso trocar";
+			mes "um mínimo de 1 Poção Vermelha";
+			mes "e um máximo de 100 Poções Vermelhas";
+			mes "de uma vez. Se mudar de ideia,";
+			mes "apenas digite '0' para cancelar.";
+			next;
+			while(1) {
+				input .@input,0,101;
+				if (.@input == 0) {
+					mes "[Mercador]";
+					mes "O quê...?";
+					mes "Por que diabos você";
+					mes "se daria ao trabalho de";
+					mes "falar comigo? Bem indeciso, não é?";
+					close;
+				}
+				else if (.@input > 100) {
+					mes "[Mercador]";
+					mes "Não posso lhe dar mais";
+					mes "do que 100 Poções Vermelhas";
+					mes "de uma vez. Vamos tentar";
+					mes "isso de novo.";
+					next;
+				}
+				else {
+					break;
+				}
+			}
+			.@put_out_item = .@input * .@req_amount;
+			if (countitem(.@item_req) < .@put_out_item) {
+				mes "[Mercador]";
+				mes "Ops, o número que você digitou parece incorreto. Melhor verificar novamente o número de Poções Vermelhas que pode trocar.";
+				close;
+			}
+			mes "[Mercador]";
+			mes "Aqui está!";
+			mes "Verifique quantas Poções Vermelhas";
+			mes "lhe dei, deve estar certo. Obrigado, foi um bom negócio~";
+			delitem .@item_req,.@put_out_item; //Shell
+			getitem 501,.@input; //Red_Potion
+			close;
+		}
+		mes "[Mercador]";
+		mes "Huh~";
+		mes "Tudo bem.";
+		mes "Embora não sejam";
+		mes "Poções Vermelhas mais úteis";
+		mes "para um aventureiro como você?";
+		close;
+	}
+}
+
+//============================================== ================ ============
+// Registro de alterações antigo
+//============================================== ================ ============
+//= 1.1 Feito como uma função. Você pode adicionar seus próprios produtos [Lupus]
+//= 1.1a Corrigido seleção de item [KarLaeda]
+//============================================== ================ ============

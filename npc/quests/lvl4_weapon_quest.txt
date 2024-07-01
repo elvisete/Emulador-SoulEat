@@ -1,0 +1,3494 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+umbala,117,285,3	script	Bazo#lv4	85,{
+	if (checkweight(908,300) == 0) {
+		mes "^3355FFEspere um segundo! ";
+		close;
+	}
+	if (lv4_weapon == 0) {
+		mes "[Bazo]";
+		mes "Olá...";
+		mes "Não por aí";
+		mes "aqui está você?";
+		next;
+		mes "[Bazo]";
+		mes "Meu nome é Bazo Heburiech. ";
+		next;
+		mes "[Bazo]";
+		mes "Se você não se importa, deixe-me contar um pouco sobre esse lugar. ";
+		mes "esta aldeia.";
+		next;
+		mes "[Bazo]";
+		mes "Por um lado, Umbala está perto";
+		mes "para Niflheim, reino dos mortos. ";
+		next;
+		mes "[Bazo]";
+		mes "Não se preocupe, os moradores daqui só usam esse poder para produzir itens especiais. ";
+		next;
+		mes "[Bazo]";
+		mes "Se você quiser, estarei disposto a mostrar minhas habilidades. ";
+		next;
+		switch(select("Parece bom ~:Não, obrigado.")) {
+		case 1:
+			if (BaseLevel < 70) {
+				mes "[Bazo]";
+				mes "Hum. ";
+				mes "levante-se e fique mais forte primeiro. ";
+				next;
+				mes "[Bazo]";
+				mes "Como eu disse antes, esses";
+				mes "os bens têm algum poder maligno. ";
+				next;
+				mes "[Bazo]";
+				mes "Quando estiver pronto,";
+				mes "Eu terei prazer em fazer você";
+				mes "algo ótimo ~";
+				close;
+			}
+			mes "[Bazo]";
+			mes "Excelente! ";
+			next;
+			mes "[Bazo]";
+			mes "Primeiro, vou precisar";
+			mes "alguns materiais básicos.";
+			mes "10 ouro,";
+			mes "50 Aço e";
+			mes "10 Império.";
+			next;
+			mes "[Bazo]";
+			mes "Então, precisarei de algum minério raro para encantar este produto. ";
+			next;
+			mes "[Bazo]";
+			mes "Por favor, traga-me 30 de Citrin, Turquesa ou Ágata. ";
+			set lv4_weapon,1;
+			close;
+		case 2:
+			mes "[Bazo]";
+			mes "Oh, tudo bem.";
+			mes "Por mim tudo bem.";
+			mes "Mas estarei aqui se você";
+			mes "alguma vez mude de ideia.";
+			close;
+		}
+	}
+	if (lv4_weapon > 7) {
+		mes "[Bazo]";
+		mes "Hum...";
+		mes "Sinto algo diferente em você. ";
+		next;
+		mes "[Bazo]";
+		mes "De qualquer forma, desejo-lhe segurança em suas viagens, aventureiro.";
+		close;
+	}
+	if ((lv4_weapon >= 5) && (lv4_weapon <= 7)) {
+		mes "[Bazo]";
+		mes "Ótimo...!";
+		mes "Agora, vamos fazer isso!";
+		mes "Ah, e você deveria saber";
+		mes "agora que não sei dizer que tipo de coisa poderemos conseguir. ";
+		next;
+		mes "^3355FFVocê sente uma energia misteriosa se acumulando em torno dos materiais";
+		mes "e o ar ao redor deles começa a estalar. ";
+		mes "toda a energia ambiente.^000000";
+		next;
+		mes "^3355FFSem qualquer ação perceptível de Bazo, os materiais começaram a se fundir.^000000";
+		next;
+		mes "[Bazo]";
+		mes "Você pode sentir que? ";
+		next;
+		mes "^3355FFOs materiais terminam a fusão";
+		mes "e o ar fica calmo.^000000";
+		next;
+		mes "[Bazo]";
+		mes "Ooooooh! ";
+		mes "Conseguimos! ";
+		mes "isso é incrível! ";
+		mes "deve ter sido respondido!";
+		next;
+		mes "[Bazo]";
+		mes "Parece que todos esses materiais se transformaram em algum tipo de arma. ";
+		next;
+		mes "[Bazo]";
+		if (lv4_weapon == 5) {
+			mes "Espada Imaterial!";
+			mes "Esta espada nasceu para ser sua!";
+			mes "Parabéns e espero que seja útil para você.";
+			set lv4_weapon,0;
+			getitem 1141,1; //Immaterial_Sword
+		}
+		else if (lv4_weapon == 6) {
+			mes "Golpear!";
+			mes "Esta maça nasceu para ser sua!";
+			mes "Parabéns e espero que seja útil para você.";
+			set lv4_weapon,0;
+			getitem 1526,1; //Slash
+		}
+		else if (lv4_weapon == 7) {
+			mes "Quadrilha!";
+			mes "Esta maça nasceu para ser sua!";
+			mes "Parabéns e espero que seja útil para você.";
+			set lv4_weapon,0;
+			getitem 1527,1; //Quadrille
+		}
+		next;
+		mes "[Bazo]";
+		mes "Ah, estou muito satisfeito com esses resultados. ";
+		close;
+	}
+	if (((lv4_weapon == 2) && (countitem(7295) > 29)) || ((lv4_weapon == 3) && (countitem(7294) > 29)) || ((lv4_weapon == 4) && (countitem(7291) > 29))) {
+		if (lv4_weapon == 2) {
+			set .@itemreq,7295; // Citrine
+		}
+		else if (lv4_weapon == 3) {
+			set .@itemreq,7294; //Turqoise
+		}
+		else if (lv4_weapon == 4) {
+			set .@itemreq,7291; // Agate
+		}
+		mes "[Bazo]";
+		mes "Ok, parece que você está";
+		mes "pronto, então vamos começar. ";
+		next;
+		for( set .@i, 1; .@i <= 5; set .@i,.@i+1 ) {
+			setarray .@mons[.@i],rand(1,4);
+			mes "[Bazo]";
+			if (.@i == 1) {
+				mes "Aqui está a primeira pergunta.";
+				mes "Que monstro estou pensando";
+				mes "de agora?";
+			}
+			else if (.@i == 2) {
+				mes "Tudo bem...";
+				mes "Agora adivinhe qual monstro";
+				mes "Estou pensando né... Agora!";
+			}
+			else if (.@i == 3) {
+				mes "Agora, que monstro";
+				mes "estou pensando?";
+			}
+			else if (.@i == 4) {
+				mes "Qual monstro sou";
+				mes "Estou pensando agora?";
+			}
+			else if (.@i == 5) {
+				mes "Ok, uma última vez.";
+				mes "Adivinhe qual monstro eu sou";
+				mes "pensando agora.";
+			}
+			next;
+			set .@answer,select("Poring:Hode:Obeaune:Minoroso");
+			if (.@answer == .@mons[.@i]) {
+				set .@dap,.@dap + 1;
+			}
+		}
+		mes "[Bazo]";
+		mes "Ok, deixe-me dar as respostas para as perguntas na ordem em que estava pensando. ";
+		next;
+		mes "[Bazo]";
+		for( set .@i, 1; .@i <= 5; set .@i,.@i+1 ) {
+			if (.@mons[.@i] == 1) {
+				mes "Poring";
+			}
+			else if (.@mons[.@i] == 2) {
+				mes "Hode";
+			}
+			else if (.@mons[.@i] == 3) {
+				mes "Obeaune";
+			}
+			else if (.@mons[.@i] == 4) {
+				mes "Menor";
+			}
+		}
+		if (.@dap > 0) {
+			delitem .@itemreq,30;
+			set lv4_weapon,lv4_weapon+3;
+		}
+		else if (.@dap < 1) {
+			delitem .@itemreq,10;
+		}
+		next;
+		if (.@dap > 0) {
+			mes "[Bazo]";
+			mes "voce tem a resposta certa" + .@dap + "vezes! ";
+			close;
+		}
+		else if (.@dap < 1) {
+			mes "[Bazo]";
+			mes "Huh. ";
+			mes "leia mentes, ou você terá muito azar. ";
+			next;
+			mes "[Bazo]";
+			mes "Hm, precisamos de pelo menos";
+			mes "10"+getitemname(.@itemreq)+"para tentar isso";
+			mes "de novo, então vá em frente";
+			mes "e me dê isso.";
+			next;
+			mes "[Bazo]";
+			mes "Bem, se você quiser tentar este jogo de leitura de mentes novamente, basta vir";
+			mes "de volta com os materiais. ";
+			close;
+		}
+	}
+	if ((lv4_weapon == 2) || (lv4_weapon == 3) || (lv4_weapon == 4)) {
+		mes "[Bazo]";
+		mes "Hum. ";
+		mes "parece certo. ";
+		mes "algo. ";
+		mes "materiais que você trouxe de novo?";
+		close;
+	}
+	if ((lv4_weapon == 1) && (countitem(969) > 9) && (countitem(999) > 49) && (countitem(714) > 9)) {
+		mes "[Bazo]";
+		mes "Ah, você trouxe todos os materiais básicos. ";
+		next;
+		if ((countitem(7295) > 29) || (countitem(7294) > 29) || (countitem(7291) > 29)) {
+			if ((countitem(7295) > 29) && (countitem(7294) > 29) && (countitem(7291) > 29)) {
+				mes "[Bazo]";
+				mes "Hahaha, eu pedi para você";
+				mes "traga um tipo de minério, não todos. ";
+				mes "gosta de usar?";
+				next;
+				switch(select("Citrino:Turquesa:Ágata")) {
+				case 1:
+					set .@itemreq,7295; // Citrine
+					break;
+				case 2:
+					set .@itemreq,7294; //Turqoise
+					break;
+				case 3:
+					set .@itemreq,7291; // Agate
+					break;
+				}
+			}
+			else if ((countitem(7295) > 29) && (countitem(7294) > 29)) {
+				mes "Hahaha, eu pedi para você";
+				mes "trazer um tipo de minério, não";
+				mes "dois. ";
+				mes "você gosta de usar?";
+				switch(select("Citrino: Turquesa")) {
+				case 1:
+					set .@itemreq,7295; // Citrine
+					break;
+				case 2:
+					set .@itemreq,7294; //Turqoise
+					break;
+				}
+			}
+			else if ((countitem(7295) > 29) && (countitem(7291) > 29)) {
+				mes "Hahaha, eu pedi para você";
+				mes "trazer um tipo de minério, não";
+				mes "dois. ";
+				mes "você gosta de usar?";
+				switch(select("Citrino: Ágata")) {
+				case 1:
+					set .@itemreq,7295; // Citrine
+					break;
+				case 2:
+					set .@itemreq,7291; // Agate
+					break;
+				}
+			}
+			else if ((countitem(7294) > 29) && (countitem(7291) > 29)) {
+				mes "Hahaha, eu pedi para você";
+				mes "trazer um tipo de minério, não";
+				mes "dois. ";
+				mes "você gosta de usar?";
+				switch(select("Turquesa: Ágata")) {
+				case 1:
+					set .@itemreq,7294; //Turqoise
+					break;
+				case 2:
+					set .@itemreq,7291; // Agate
+					break;
+				}
+			}
+			else {
+				if (countitem(7295) > 29) {
+					set .@itemreq,7295; // Citrine
+				}
+				if (countitem(7294) > 29) {
+					set .@itemreq,7294; //Turqoise
+				}
+				if (countitem(7291) > 29) {
+					set .@itemreq,7291; // Agate
+				}
+			}
+			mes "[Bazo]";
+			mes getitemname(.@itemreq)+", huh?";
+			mes "Tudo bem então. ";
+			next;
+			mes "[Bazo]";
+			mes "Mas se fizermos isso num momento em que a sua sorte está alta, teremos uma boa chance de conseguir criar algo grandioso. ";
+			next;
+			mes "[Bazo]";
+			mes "Agora, testaremos sua sorte fazendo uma simples leitura mental";
+			mes "jogo. ";
+			mes "adivinhe o que é dentre";
+			mes "meus favoritos.";
+			next;
+			mes "[Bazo]";
+			mes "Vou lhe dar cinco chances diferentes e, se você acertar uma vez, iremos em frente e criaremos o item. ";
+			next;
+			mes "[Bazo]";
+			mes "Para afastar a má sorte, levarei 10 do minério especial que você trouxe. ";
+			next;
+			mes "[Bazo]";
+			mes "Ok, agora eu preciso";
+			mes "algum tempo para se preparar...";
+			mes "Falo com você mais tarde!";
+			delitem 969,10; //Gold
+			delitem 999,50; //Steel
+			delitem 714,10; //Emperium
+			if (.@itemreq == 7295) {
+				set lv4_weapon,2;
+			}
+			else if (.@itemreq == 7294) {
+				set lv4_weapon,3;
+			}
+			else if (.@itemreq == 7291) {
+				set lv4_weapon,4;
+			}
+			close;
+		}
+		else {
+			mes "[Bazo]";
+			mes "Por favor, traga-me 30 citrinos, turquesas ou ágatas. ";
+			mes "esqueci de trazer algum desses, então, por favor, volte e pegue-os para que possamos começar.";
+			close;
+		}
+	}
+	if (lv4_weapon == 1) {
+		mes "[Bazo]";
+		mes "Se você quiser que eu faça um dos itens especiais de Umbala, preciso que você me traga algumas coisas para que eu possa fazer para você.";
+		next;
+		mes "[Bazo]";
+		mes "Primeiro, vou precisar";
+		mes "alguns materiais básicos.";
+		mes "10 ouro,";
+		mes "50 Aço e";
+		mes "10 Império.";
+		next;
+		mes "[Bazo]";
+		mes "Então, precisarei de algum minério raro para encantar este produto. ";
+		next;
+		mes "[Bazo]";
+		mes "Por favor, traga-me 30 de Citrin, Turquesa ou Ágata. ";
+		close;
+	}
+	mes "[Bazo]";
+	mes "Olá...";
+	mes "Não por aí";
+	mes "aqui está você?";
+	next;
+	mes "[Bazo]";
+	mes "Meu nome é Bazo Heburiech. ";
+	next;
+	mes "[Bazo]";
+	mes "Se você não se importa, deixe-me contar um pouco sobre esse lugar. ";
+	mes "esta aldeia.";
+	next;
+	mes "[Bazo]";
+	mes "Por um lado, Umbala está perto";
+	mes "para Niflheim, reino dos mortos. ";
+	next;
+	mes "[Bazo]";
+	mes "Não se preocupe, os moradores daqui só usam esse poder para produzir itens especiais. ";
+	next;
+	mes "[Bazo]";
+	mes "Se você quiser, estarei disposto a mostrar minhas habilidades. ";
+	next;
+	switch(select("Parece bom ~:Não, obrigado.")) {
+	case 1:
+		if (BaseLevel < 70) {
+			mes "[Bazo]";
+			mes "Hum. ";
+			mes "levante-se e fique mais forte primeiro. ";
+			next;
+			mes "[Bazo]";
+			mes "Como eu disse antes, esses";
+			mes "os bens têm algum poder maligno. ";
+			next;
+			mes "[Bazo]";
+			mes "Quando estiver pronto,";
+			mes "Eu terei prazer em fazer você";
+			mes "algo ótimo ~";
+			close;
+		}
+		mes "[Bazo]";
+		mes "Excelente! ";
+		next;
+		mes "[Bazo]";
+		mes "Primeiro, vou precisar";
+		mes "alguns materiais básicos.";
+		mes "10 ouro,";
+		mes "50 Aço e";
+		mes "10 Império.";
+		next;
+		mes "[Bazo]";
+		mes "Então, precisarei de algum minério raro para encantar este produto. ";
+		next;
+		mes "[Bazo]";
+		mes "Por favor, traga-me 30 de Citrin, Turquesa ou Ágata. ";
+		set lv4_weapon,1;
+		close;
+	case 2:
+		mes "[Bazo]";
+		mes "Oh, tudo bem.";
+		mes "Por mim tudo bem.";
+		mes "Mas estarei aqui se você";
+		mes "alguma vez mude de ideia.";
+		close;
+	}
+}
+
+umbala,163,257,3	script	Hibilaithan#lv4	785,{
+	if (checkweight(908,300) == 0) {
+		mes "^3355FFEspere um segundo! ";
+		close;
+	}
+	if (event_umbala < 3) {
+		mes "[Hibilaithan]";
+		mes "Umbá! ";
+		mes "Umumumbababaumumbabaumba!";
+		mes "Umbaumbaumbaumbaumhah!";
+		mes "Umumumumumbababababab!";
+		close;
+	}
+	if (lv4_weapon == 0) {
+		mes "[Hibilaithan]";
+		mes "Eh, eh, eh...";
+		mes "Finalmente, isso";
+		mes "chegou o dia. ";
+		mes "Ganhei reconhecimento como";
+		mes "O maior artesão da Umbala!";
+		next;
+		mes "[Hibilaithan]";
+		mes "Sim, sim, sou ^802A2Athat^000000 Hibilaithan.";
+		mes "E se você me trouxer os materiais, eu me dignarei a criar uma de minhas obras-primas para você. ";
+		next;
+		mes "[Hibilaithan]";
+		mes "Hum? ";
+		mes "Nunca ouviu falar de mim?";
+		mes "Por favor, chega de brincadeira!";
+		mes "Quero dizer, mesmo que eu seja um maestro no meu ofício, não há necessidade de se sentir intimidado.";
+		next;
+		mes "[Hibilaithan]";
+		mes "Agora seja honesto...";
+		mes "Você quer ser";
+		mes "o destinatário do meu";
+		mes "inspirado e frequentemente imitado";
+		mes "trabalho manual ou não?";
+		next;
+		switch(select("Sim. ")) {
+		case 1:
+			if (BaseLevel < 70) {
+				mes "[Hibilaithan]";
+				mes "Ah...";
+				mes "Sua mente está fraca demais para lidar com o poder das minhas criações. ";
+				next;
+				mes "[Hibilaithan]";
+				mes "Eu sei que deve ser insuportável esperar para possuir uma de minhas criações. ";
+				close;
+			}
+			mes "[Hibilaithan]";
+			mes "Hahahaha!";
+			mes "Claro que você faz!";
+			mes "Essa foi uma pergunta retórica!";
+			mes "Mas gosto da sua atitude. ";
+			mes "para me trazer, então não se esqueça.";
+			next;
+			mes "[Hibilaithan]";
+			mes "Agora, vou precisar";
+			mes "10 ouro,";
+			mes "50 Aço e";
+			mes "10 Império";
+			mes "para os materiais básicos.";
+			next;
+			mes "[Hibilaithan]";
+			mes "Também precisarei de algum minério raro para dotar minha criação de poder. ";
+			next;
+			mes "[Hibilaithan]";
+			mes "Ok, desejo-lhe boa sorte! ";
+			set lv4_weapon,8;
+			close;
+		case 2:
+			mes "[Hibilaithan]";
+			mes "Hahahahaha~!";
+			mes "Não há necessidade";
+			mes "ser modesto!";
+			mes "Oh, vocês, aventureiros";
+			mes "pode ser tão bobo às vezes.";
+			next;
+			mes "[Hibilaithan]";
+			mes "Bem, se você tiver coragem de me pedir esse favor, volte a qualquer momento. ";
+			close;
+		}
+	}
+	if ((lv4_weapon < 8) || (lv4_weapon > 14)) {
+		mes "[Hibilaithan]";
+		mes "...";
+		mes "Ah... eu não sinto";
+		mes "como fazer ^820A2Aqualquer coisa^000000";
+		mes "agora mesmo. ";
+		close;
+	}
+	if ((lv4_weapon == 12) || (lv4_weapon == 13) || (lv4_weapon == 14)) {
+		mes "[Hibilaithan]";
+		mes "Ah, sinto que tudo está pronto. ";
+		mes "Eu posso começar! ";
+		mes "Não posso arriscar compartilhar meu";
+		mes "segredos incríveis!";
+		next;
+		mes "^3355FFHibilaithan pegou todos os materiais e virou as costas para você. ";
+		next;
+		mes "[Hibilaithan]";
+		mes "Umm~ umm~ umm~";
+		mes "Ah, ah, ah, ah,";
+		mes "Ufa~ ufa~ ufa~";
+		mes "Uau~ uau~ uau~";
+		mes "Ho~ ho~ ho~";
+		next;
+		mes "[Hibilaithan]";
+		mes "Haha, está feito!";
+		mes "^333333*Ufa*^000000 Foi muito difícil, mas tenho certeza que você mal pode esperar para ver o que fizemos. ";
+		next;
+		mes "[Hibilaithan]";
+		if (lv4_weapon == 12) {
+			mes "Uau, isso é um grande sucesso! ";
+			set lv4_weapon,0;
+			getitem 1225,1; //Mail_Breaker
+		}
+		else if (lv4_weapon == 13) {
+			mes "Uau, isso é um grande sucesso! ";
+			set lv4_weapon,0;
+			getitem 1224,1; //Sword_Breaker
+		}
+		else if (lv4_weapon == 14) {
+			mes "Uau, isso é um grande sucesso! ";
+			set lv4_weapon,0;
+			getitem 1367,1; //Slaughter
+		}
+		next;
+		mes "[Hibilaithan]";
+		mes "Ah, mais uma criação que é uma prova das minhas incríveis habilidades! ";
+		close;
+	}
+	if (((lv4_weapon == 9) && (countitem(7292) > 29)) || ((lv4_weapon == 10) && (countitem(7297) > 29)) || ((lv4_weapon == 11) && (countitem(7296) > 29))) {
+		if (lv4_weapon == 9) {
+			set .@itemreq,7292; //Muscovite
+		}
+		else if (lv4_weapon == 10) {
+			set .@itemreq,7297; // Biotite
+		}
+		else if (lv4_weapon == 11) {
+			set .@itemreq,7296; // Pyroxene
+		}
+		mes "[Hibilaithan]";
+		mes "Ok, vamos começar!";
+		mes "Primeiro, vamos ver como";
+		mes "sorte que você tem hoje. ";
+		mes "em qual monstro estou pensando.";
+		next;
+		mes "[Hibilaithan]";
+		mes "Não se preocupe, direi quais monstros são meus favoritos, então este jogo não é impossível. ";
+		next;
+		for( set .@i, 1; .@i <= 5; set .@i,.@i+1 ) {
+			setarray .@mons[.@i],rand(1,4);
+			mes "[Hibilaithan]";
+			if (.@i == 1) {
+				mes "Tudo bem...";
+				mes "Meus monstros favoritos são";
+				mes "Zelotus, Alice, Munak e";
+				mes "Ísis. ";
+				mes "Estou pensando agora!";
+			}
+			else if (.@i == 2) {
+				mes "OK...";
+				mes "Agora estou pensando em um monstro diferente. ";
+			}
+			else if (.@i == 3) {
+				mes "Agora...";
+				mes "Qual monstro sou";
+				mes "estou pensando?";
+			}
+			else if (.@i == 4) {
+				mes "Você consegue adivinhar qual";
+				mes "monstro está em minha mente agora?";
+			}
+			else if (.@i == 5) {
+				mes "Mais uma vez!";
+				mes "Que monstro";
+				mes "estou pensando?";
+			}
+			next;
+			set .@answer,select("Zeloto:Alice:Munak:Isis");
+			if (.@answer == .@mons[.@i]) {
+				set .@dap,.@dap + 1;
+			}
+		}
+		mes "[Hibilaithan]";
+		mes "Tudo bem, é isso!";
+		mes "Agora, esta é a ordem";
+		mes "dos monstros que";
+		mes "Eu estava pensando sobre...";
+		next;
+		mes "[Hibilaithan]";
+		for( set .@i, 1; .@i <= 5; set .@i,.@i+1 ) {
+			if (.@mons[.@i] == 1) {
+				mes "Zeloto";
+			}
+			else if (.@mons[.@i] == 2) {
+				mes "Alice";
+			}
+			else if (.@mons[.@i] == 3) {
+				mes "Munak";
+			}
+			else if (.@mons[.@i] == 4) {
+				mes "Ísis";
+			}
+		}
+		if (.@dap > 0) {
+			delitem .@itemreq,30;
+			set lv4_weapon,lv4_weapon+3;
+		}
+		else if (.@dap < 1) {
+			delitem .@itemreq,10;
+		}
+		next;
+		mes "[Hibilaithan]";
+		if (.@dap > 0) {
+			mes "Incrível...";
+			mes "Você deve ter poderes mentais ou algo assim. ";
+			mes "" + .@dap + "vezes! ";
+			next;
+			mes "[Hibilaithan]";
+			mes "Nesse caso, não há razão";
+			mes "atrasar. ";
+			close;
+		}
+		else if (.@dap < 1) {
+			mes "Ahhh...";
+			mes "Isso não é bom.";
+			mes "Você acertou todos eles ^660000errado^000000.";
+			mes "É melhor afastarmos todo o seu azar com 10"+getitemname(.@itemreq)+".";
+			next;
+			mes "[Hibilaithan]";
+			mes "Não podemos começar até que sua sorte seja forte o suficiente, então precisaremos jogar este jogo novamente. ";
+			next;
+			mes "[Hibilaithan]";
+			mes "Eu não estou indo a lugar nenhum,";
+			mes "então não há pressa. ";
+			mes "sua hora, estarei esperando!";
+			close;
+		}
+	}
+	if ((lv4_weapon == 9) || (lv4_weapon == 10) || (lv4_weapon == 11)) {
+		mes "[Hibilaithan]";
+		mes "Hum. ";
+		mes "parece certo. ";
+		mes "algo. ";
+		mes "materiais que você trouxe de novo?";
+		close;
+	}
+	if ((lv4_weapon == 8) && (countitem(969) > 9) && (countitem(999) > 49) && (countitem(714) > 9)) {
+		mes "[Hibilaithan]";
+		mes "Ooh, você voltou mais cedo do que eu esperava. ";
+		next;
+		if ((countitem(7292) > 29) || (countitem(7297) > 29) || (countitem(7296) > 29)) {
+			if ((countitem(7292) > 29) && (countitem(7297) > 29) && (countitem(7296) > 29)) {
+				mes "[Hibilaithan]";
+				mes "Uau, você trouxe todos os três tipos de minério que eu pedi? ";
+				next;
+				switch(select("Moscovita: Biotita: Piroxênio")) {
+				case 1:
+					set .@itemreq,7292; //Muscovite
+					break;
+				case 2:
+					set .@itemreq,7297; // Biotite
+					break;
+				case 3:
+					set .@itemreq,7296; // Pyroxene
+					break;
+				}
+			}
+			else if ((countitem(7292) > 29) && (countitem(7297) > 29)) {
+				mes "[Hibilaithan]";
+				mes "Hahaha, você só precisava trazer um tipo de minério, não dois. ";
+				next;
+				switch(select("Moscovita: Biotita")) {
+				case 1:
+					set .@itemreq,7292; //Muscovite
+					break;
+				case 2:
+					set .@itemreq,7297; // Biotite
+					break;
+				}
+			}
+			else if ((countitem(7292) > 29) && (countitem(7296) > 29)) {
+				mes "[Hibilaithan]";
+				mes "Hahaha, você só precisava trazer um tipo de minério, não dois. ";
+				next;
+				switch(select("Moscovita: Piroxênio")) {
+				case 1:
+					set .@itemreq,7292; //Muscovite
+					break;
+				case 2:
+					set .@itemreq,7296; // Pyroxene
+					break;
+				}
+			}
+			else if ((countitem(7297) > 29) && (countitem(7296) > 29)) {
+				mes "[Hibilaithan]";
+				mes "Hahaha, você só precisava trazer um tipo de minério, não dois. ";
+				next;
+				switch(select("Biotita: Piroxênio")) {
+				case 1:
+					set .@itemreq,7297; // Biotite
+					break;
+				case 2:
+					set .@itemreq,7296; // Pyroxene
+					break;
+				}
+			}
+			else {
+				if (countitem(7292) > 29) {
+					set .@itemreq,7292; //Muscovite
+				}
+				else if (countitem(7297) > 29) {
+					set .@itemreq,7297; // Biotite
+				}
+				else if (countitem(7296) > 29) {
+					set .@itemreq,7296; // Pyroxene
+				}
+			}
+			mes "[Hibilaithan]";
+			mes getitemname(.@itemreq)+", né?";
+			mes "Tudo bem, antes de começarmos, precisamos minimizar ao máximo sua sorte negativa.";
+			next;
+			mes "[Hibilaithan]";
+			mes "Estamos investindo muito material e energia nisso, então seria uma pena se falharmos, certo?";
+			next;
+			mes "[Hibilaithan]";
+			mes "Agora, se eu puder criar algo para você em um dia em que sua fortuna seja forte, tudo bem. ";
+			next;
+			mes "[Hibilaithan]";
+			mes "É simples. ";
+			next;
+			mes "[Hibilaithan]";
+			mes "Estarei lhe dando cinco chances. ";
+			next;
+			mes "[Hibilaithan]";
+			mes "Claro, isso pode parecer ruim,";
+			mes "mas é um pequeno preço a pagar para garantir o sucesso na elaboração do seu item especial, certo?";
+			next;
+			mes "[Hibilaithan]";
+			mes "Ok, vou precisar de algum tempo para me preparar. ";
+			mes "sorte hoje~";
+			delitem 969,10; //Gold
+			delitem 999,50; //Steel
+			delitem 714,10; //Emperium
+			if (countitem(7292) > 29) {
+				set lv4_weapon,9;
+			}
+			else if (countitem(7297) > 29) {
+				set lv4_weapon,10;
+			}
+			else if (countitem(7296) > 29) {
+				set lv4_weapon,11;
+			}
+			close;
+		}
+		else {
+			mes "[Hibilaithan]";
+			mes "Hum...?";
+			mes "Parece que você não";
+			mes "traga algo especial";
+			mes "minério que eu pedi.";
+			next;
+			mes "[Hibilaithan]";
+			mes "Por favor, traga 30 de";
+			mes "também, Biotita, Moscovita";
+			mes "ou Piroxênio já que precisamos";
+			mes "um desses tipos de minério";
+			mes "para eu começar a criar.";
+			close;
+		}
+	}
+	if (lv4_weapon == 8) {
+		mes "[Hibilaithan]";
+		mes "Agora, vou precisar";
+		mes "10 ouro,";
+		mes "50 Aço e";
+		mes "10 Império";
+		mes "para os materiais básicos.";
+		next;
+		mes "[Hibilaithan]";
+		mes "Também precisarei de algum minério raro para dotar minha criação de poder. ";
+		next;
+		mes "[Hibilaithan]";
+		mes "Ok, desejo-lhe boa sorte! ";
+		close;
+	}
+	mes "[Hibilaithan]";
+	mes "Eh, eh, eh...";
+	mes "Finalmente, isso";
+	mes "chegou o dia. ";
+	mes "Ganhei reconhecimento como";
+	mes "O maior artesão da Umbala!";
+	next;
+	mes "[Hibilaithan]";
+	mes "Sim, sim, sou ^802A2Athat^000000 Hibilaithan.";
+	mes "E se você me trouxer os materiais, eu me dignarei a criar uma de minhas obras-primas para você. ";
+	next;
+	mes "[Hibilaithan]";
+	mes "Hum? ";
+	mes "Nunca ouviu falar de mim?";
+	mes "Por favor, chega de brincadeira!";
+	mes "Quero dizer, mesmo que eu seja um maestro no meu ofício, não há necessidade de se sentir intimidado.";
+	next;
+	mes "[Hibilaithan]";
+	mes "Agora seja honesto...";
+	mes "Você quer ser";
+	mes "o destinatário do meu";
+	mes "inspirado e frequentemente imitado";
+	mes "trabalho manual ou não?";
+	next;
+	switch(select("Sim. ")) {
+	case 1:
+		if (BaseLevel < 70) {
+			mes "[Hibilaithan]";
+			mes "Ah...";
+			mes "Sua mente está fraca demais para lidar com o poder das minhas criações. ";
+			next;
+			mes "[Hibilaithan]";
+			mes "Eu sei que deve ser insuportável esperar para possuir uma de minhas criações. ";
+			close;
+		}
+		mes "[Hibilaithan]";
+		mes "Hahahaha!";
+		mes "Claro que você faz!";
+		mes "Essa foi uma pergunta retórica!";
+		mes "Mas gosto da sua atitude. ";
+		mes "para me trazer, então não se esqueça.";
+		next;
+		mes "[Hibilaithan]";
+		mes "Agora, vou precisar";
+		mes "10 ouro,";
+		mes "50 Aço e";
+		mes "10 Império";
+		mes "para os materiais básicos.";
+		next;
+		mes "[Hibilaithan]";
+		mes "Também precisarei de algum minério raro para dotar minha criação de poder. ";
+		next;
+		mes "[Hibilaithan]";
+		mes "Ok, desejo-lhe boa sorte! ";
+		set lv4_weapon,8;
+		close;
+	case 2:
+		mes "[Hibilaithan]";
+		mes "Hahahahaha~!";
+		mes "Não há necessidade";
+		mes "ser modesto!";
+		mes "Oh, vocês, aventureiros";
+		mes "pode ser tão bobo às vezes.";
+		next;
+		mes "[Hibilaithan]";
+		mes "Bem, se você tiver coragem de me pedir esse favor, volte a qualquer momento. ";
+		close;
+	}
+}
+
+um_in,156,77,5	script	Tabezthan#lv4	788,{
+	if (checkweight(908,300) == 0) {
+		mes "^3355FFEspere um segundo! ";
+		close;
+	}
+	if (event_umbala < 3) {
+		mes "[Tabestã]";
+		mes "Umbá! ";
+		mes "Umumumbababaumumbabaumba!";
+		mes "Umbaumbaumbaumbaumhah!";
+		mes "Umumumumumbababababab!";
+		close;
+	}
+	if (lv4_weapon == 0) {
+		mes "[Tabestã]";
+		mes "Hum...";
+		mes "Sinto algo diferente de você. ";
+		next;
+		mes "[Tabestã]";
+		mes "Permita-me apresentar-me. ";
+		next;
+		mes "[Tabestã]";
+		mes "Tenho dois discípulos: Hibilaithan, que é um tolo, e Bazo, que é bastante inteligente e mostra potencial.";
+		next;
+		mes "[Tabestã]";
+		mes "Claro, ambos são muito talentosos e habilidosos, mas me preocupo com Hibilaithan. ";
+		next;
+		mes "[Tabestã]";
+		mes "Eu os ensinei como manipular a energia ambiente";
+		mes "aqui na Umbala para criar objetos. ";
+		next;
+		mes "[Tabestã]";
+		mes "Em qualquer caso, tem alguma utilidade";
+		mes "pelas minhas habilidades? ";
+		next;
+		switch(select("Sim, por favor.:Não, obrigado.")) {
+		case 1:
+			if (BaseLevel < 70) {
+				mes "[Tabestã]";
+				mes "Lamento dizer que você ainda não é capaz de lidar com meus trabalhos manuais. ";
+				close;
+			}
+			mes "[Tabestã]";
+			mes "Bom. ";
+			mes "lembre-se do que você precisa";
+			mes "para me trazer para que eu possa criar algo para você. ";
+			next;
+			mes "[Tabestã]";
+			mes "10 ouro,";
+			mes "50 Aço";
+			mes "e 10 Império";
+			mes "para os materiais básicos.";
+			mes "Também precisarei de um minério raro para encantar minha criação.";
+			next;
+			mes "[Tabestã]";
+			mes "Além disso, por favor, traga-me 30 unidades de Flogopita, Peridoto ou Quartzo Rosa. ";
+			next;
+			mes "[Tabestã]";
+			mes "Esteja ciente de que não sei exatamente qual item será produzido. ";
+			next;
+			mes "[Tabestã]";
+			mes "Em outras palavras, teremos que confiar na sorte. ";
+			set lv4_weapon,15;
+			close;
+		case 2:
+			mes "[Tabestã]";
+			mes "Oh, eu vejo.";
+			mes "É um pouco decepcionante ouvir isso, mas por favor retorne";
+			mes "se você acredita que eu posso ser";
+			mes "de serviço para você.";
+			close;
+		}
+	}
+	if ((lv4_weapon < 15) || (lv4_weapon > 21)) {
+		mes "[Tabestã]";
+		mes "Hum...?";
+		mes "Você não tem nenhum";
+		mes "negócios comigo, e você?";
+		next;
+		mes "[Tabestã]";
+		mes "Por favor, não me desconsidere como um mero velho tolo. ";
+		close;
+	}
+	if ((lv4_weapon == 19) || (lv4_weapon == 20) || (lv4_weapon == 21)) {
+		mes "[Tabestã]";
+		mes "Ótimo, estou pronto para começar. ";
+		next;
+		mes "^3355FFEle organizou os materiais em um círculo estranho e começou a cantar. ";
+		next;
+		mes "[Tabestã]";
+		mes "Por favor, entenda que esse poder não vem de mim. ";
+		next;
+		mes "[Tabestã]";
+		mes "Rezemos por bons resultados.";
+		mes "Tudo o que podemos fazer agora é deixar o";
+		mes "resultado final ao destino.";
+		next;
+		mes "^3355FFOs materiais se fundiram lentamente";
+		mes "uns nos outros, combinando-se em um objeto completamente novo. ";
+		mes "é uma questão de tempo antes de sabermos se você e Tabezthan tiveram sucesso ou falharam.^000000";
+		next;
+		mes "[Tabestã]";
+		if (lv4_weapon == 19) {
+			mes "Eu não acredito!";
+			mes "Esta é uma arma incrivelmente rara! ";
+			set lv4_weapon,0;
+			getitem 1134,1; //Scissores_Sword
+		}
+		else if (lv4_weapon == 20) {
+			mes "Eu não acredito!";
+			mes "Esta é uma arma incrivelmente rara! ";
+			set lv4_weapon,0;
+			getitem 1139,1; //Tale_Fing_
+		}
+		else if (lv4_weapon == 21) {
+			mes "Eu não acredito!";
+			mes "Esta é uma arma incrivelmente rara! ";
+			set lv4_weapon,0;
+			getitem 1365,1; //Sabbath
+		}
+		next;
+		mes "[Tabestã]";
+		mes "Esta arma poderosa é sua. ";
+		mes "se você acha que posso ajudá-lo mais uma vez.";
+		mes "Adeus por enquanto, corajoso aventureiro.";
+		close;
+	}
+	if (((lv4_weapon == 16) && (countitem(7290))) || ((lv4_weapon == 17) && (countitem(7289))) || ((lv4_weapon == 18) && (countitem(7293)))) {
+		if (lv4_weapon == 16) {
+			set .@itemreq,7290; //Phlogopite
+		}
+		else if (lv4_weapon == 17) {
+			set .@itemreq,7289; //Olivine
+		}
+		else if (lv4_weapon == 18) {
+			set .@itemreq,7293; //Rose_Quartz
+		}
+		mes "[Tabestã]";
+		mes "Começaremos?";
+		mes "Vou te contar os nomes de 4 monstros diferentes. ";
+		next;
+		mes "[Tabestã]";
+		mes "Este jogo de leitura de mentes é um método eficaz para determinar se sua sorte é boa ou ruim. ";
+		next;
+		for( set .@i, 1; .@i <= 5; set .@i,.@i+1 ) {
+			setarray .@mons[.@i],rand(1,4);
+			mes "[Tabestã]";
+			if (.@i == 1) {
+				mes "Meus monstros favoritos são";
+				mes "Baphomet, Lorde das Trevas, Sangrento";
+				mes "Cavaleiro e Cavaleiro Tempestuoso. ";
+				mes "tente adivinhar quem eu sou";
+				mes "pensando sobre.";
+			}
+			else if (.@i == 2) {
+				mes "Por favor, tente determinar";
+				mes "em qual monstro estou pensando";
+				mes "deste exato momento.";
+			}
+			else if (.@i == 3) {
+				mes "Agora, tente sentir";
+				mes "que monstro eu sou";
+				mes "visualizando em minha mente.";
+			}
+			else if (.@i == 4) {
+				mes "Mais uma vez, tente";
+				mes "e adivinhe que monstro";
+				mes "Estou pensando agora.";
+			}
+			else if (.@i == 5) {
+				mes "Tudo bem, isso é";
+				mes "sua última chance de";
+				mes "adivinhe corretamente qual";
+				mes "monstro em que estou pensando.";
+			}
+			next;
+			set .@answer,select("Baphomet: Lorde das Trevas: Cavaleiro Sangrento: Cavaleiro Tempestuoso");
+			if (.@answer == .@mons[.@i]) {
+				set .@dap,.@dap + 1;
+			}
+		}
+		mes "[Tabestã]";
+		mes "Esse é o fim do jogo. ";
+		next;
+		mes "[Tabestã]";
+		for( set .@i, 1; .@i <= 5; set .@i,.@i+1 ) {
+			if (.@mons[.@i] == 1) {
+				mes "Bafomé";
+			}
+			else if (.@mons[.@i] == 2) {
+				mes "Senhor das Trevas";
+			}
+			else if (.@mons[.@i] == 3) {
+				mes "Cavaleiro Sangrento";
+			}
+			else if (.@mons[.@i] == 4) {
+				mes "Cavaleiro Tempestuoso";
+			}
+		}
+		if (.@dap > 0) {
+			delitem .@itemreq,30;
+			set lv4_weapon,lv4_weapon+3;
+		}
+		else if (.@dap < 1) {
+			delitem .@itemreq,10;
+		}
+		next;
+		mes "[Tabestã]";
+		if (.@dap > 0) {
+			mes "Você respondeu" + .@dap + "vezes corretamente. ";
+			close;
+		}
+		else if (.@dap < 1) {
+			mes "Infelizmente, você não conseguiu adivinhar nenhum deles corretamente. ";
+			next;
+			mes "[Tabestã]";
+			mes "Não desanime. "+getitemname(.@itemreq)+"é muito melhor do que perder 30 em uma tentativa fracassada de fabricação.";
+			next;
+			mes "[Tabestã]";
+			mes "Por favor, volte com 30 Phologopita e tentaremos este jogo de leitura de mentes mais uma vez. ";
+			close;
+		}
+	}
+	if ((lv4_weapon == 16) || (lv4_weapon == 17) || (lv4_weapon == 18)) {
+		mes "[Tabestã]";
+		mes "Hum...";
+		mes "Você não parece";
+		mes "tenha quartzo rosa suficiente.";
+		mes "Por favor, tente se reunir em";
+		mes "pelo menos 30 deles e então";
+		mes "volte para mim.";
+		close;
+	}
+	if ((lv4_weapon == 15) && (countitem(969) > 9) && (countitem(999) > 49) && (countitem(714) > 9)) {
+		mes "[Tabestã]";
+		mes "Você voltou para mim mais cedo do que eu esperava. ";
+		next;
+		if ((countitem(7290) > 29) || (countitem(7289) > 29) || (countitem(7293) > 29)) {
+			if ((countitem(7290) > 29) && (countitem(7289) > 29) && (countitem(7293) > 29)) {
+				mes "[Tabestã]";
+				mes "Ah, você trouxe todos os três. ";
+				next;
+				switch(select("Flogopita: Peridoto: Quartzo Rosa")) {
+				case 1:
+					set .@itemreq,7290; //Phlogopite
+					break;
+				case 2:
+					set .@itemreq,7289; //Olivine
+					break;
+				case 3:
+					set .@itemreq,7293; //Rose_Quartz
+					break;
+				}
+			}
+			else if ((countitem(7290) > 29) && (countitem(7289) > 29)) {
+				mes "[Tabestã]";
+				mes "Hahaha, você não precisava";
+				mes "trazer mais de um tipo";
+				mes "de minério. ";
+				mes "você gosta de usar?";
+				next;
+				switch(select("Flogopita:Peridoto")) {
+				case 1:
+					set .@itemreq,7290; //Phlogopite
+					break;
+				case 2:
+					set .@itemreq,7289; //Olivine
+					break;
+				}
+			}
+			else if ((countitem(7290) > 29) && (countitem(7293) > 29)) {
+				mes "[Tabestã]";
+				mes "Hahaha, você não precisava";
+				mes "trazer mais de um tipo";
+				mes "de minério. ";
+				mes "você gosta de usar?";
+				next;
+				switch(select("Flogopita: Quartzo Rosa")) {
+				case 1:
+					set .@itemreq,7290; //Phlogopite
+					break;
+				case 2:
+					set .@itemreq,7293; //Rose_Quartz
+					break;
+				}
+			}
+			else if ((countitem(7289) > 29) && (countitem(7293) > 29)) {
+				mes "[Tabestã]";
+				mes "Hahaha, você não precisava";
+				mes "trazer mais de um tipo";
+				mes "de minério. ";
+				mes "você gosta de usar?";
+				next;
+				switch(select("Peridoto: Quartzo Rosa")) {
+				case 1:
+					set .@itemreq,7289; //Olivine
+					break;
+				case 2:
+					set .@itemreq,7293; //Rose_Quartz
+					break;
+				}
+			}
+			else {
+				if (countitem(7290) > 29) {
+					set .@itemreq,7290; //Phlogopite
+				}
+				else if (countitem(7289) > 29) {
+					set .@itemreq,7289; //Olivine
+				}
+				else if (countitem(7293) > 29) {
+					set .@itemreq,7293; //Rose_Quartz
+				}
+			}
+			mes "[Tabestã]";
+			mes "Bom,"+getitemname(.@itemreq)+".";
+			mes "Agora, antes de começar a criar,";
+			mes "Devo primeiro determinar se você tem ou não sorte suficiente para mim";
+			mes "para prosseguir.";
+			next;
+			mes "[Tabestã]";
+			mes "Vamos jogar um jogo de leitura de mentes";
+			mes "para que eu possa medir sua sorte e ver se ela é alta o suficiente para evitar a possibilidade de fracasso na elaboração.";
+			next;
+			mes "[Tabestã]";
+			mes "Você terá 5 chances de adivinhar em qual dos meus quatro monstros favoritos estou pensando. ";
+			next;
+			mes "[Tabestã]";
+			mes "Porém, se você responder incorretamente todas as cinco vezes, devo pegar 10 de seu minério especial para expulsar seu infortúnio.";
+			next;
+			mes "[Tabestã]";
+			mes "Agora, por favor, me dê um tempinho para terminar meus preparativos. ";
+			delitem 999,50; //Steel
+			delitem 969,10; //Gold
+			delitem 714,10; //Emperium
+			if (countitem(7290) > 29) {
+				set lv4_weapon,16;
+			}
+			else if (countitem(7289) > 29) {
+				set lv4_weapon,17;
+			}
+			else if (countitem(7293) > 29) {
+				set lv4_weapon,18;
+			}
+			close;
+		}
+		else {
+			mes "[Tabestã]";
+			mes "Hmmm...";
+			mes "Não parece. ";
+			close;
+		}
+	}
+	if (lv4_weapon == 15) {
+		mes "[Tabestã]";
+		mes "[Tabestã]";
+		mes "Traga-me...";
+		mes "10 ouro,";
+		mes "50 Aço";
+		mes "e 10 Império.";
+		mes "Também precisarei de um minério raro para encantar minha criação.";
+		next;
+		mes "[Tabestã]";
+		mes "Além disso, por favor, traga-me 30 unidades de Flogopita, Peridoto ou Quartzo Rosa. ";
+		close;
+	}
+	mes "[Tabestã]";
+	mes "Hum...";
+	mes "Sinto algo diferente de você. ";
+	next;
+	mes "[Tabestã]";
+	mes "Permita-me apresentar-me. ";
+	next;
+	mes "[Tabestã]";
+	mes "Tenho dois discípulos: Hibilaithan, que é um tolo, e Bazo, que é bastante inteligente e mostra potencial.";
+	next;
+	mes "[Tabestã]";
+	mes "Claro, ambos são muito talentosos e habilidosos, mas me preocupo com Hibilaithan. ";
+	next;
+	mes "[Tabestã]";
+	mes "Eu os ensinei como manipular a energia ambiente";
+	mes "aqui na Umbala para criar objetos. ";
+	next;
+	mes "[Tabestã]";
+	mes "Em qualquer caso, tem alguma utilidade";
+	mes "pelas minhas habilidades? ";
+	next;
+	switch(select("Sim, por favor.:Não, obrigado.")) {
+	case 1:
+		if (BaseLevel < 70) {
+			mes "[Tabestã]";
+			mes "Lamento dizer que você ainda não é capaz de lidar com meus trabalhos manuais. ";
+			close;
+		}
+		mes "[Tabestã]";
+		mes "Bom. ";
+		mes "lembre-se do que você precisa";
+		mes "para me trazer para que eu possa criar algo para você. ";
+		next;
+		mes "[Tabestã]";
+		mes "10 ouro,";
+		mes "50 Aço";
+		mes "e 10 Império";
+		mes "para os materiais básicos.";
+		mes "Também precisarei de um minério raro para encantar minha criação.";
+		next;
+		mes "[Tabestã]";
+		mes "Além disso, por favor, traga-me 30 unidades de Flogopita, Peridoto ou Quartzo Rosa. ";
+		next;
+		mes "[Tabestã]";
+		mes "Esteja ciente de que não sei exatamente qual item será produzido. ";
+		next;
+		mes "[Tabestã]";
+		mes "Em outras palavras, teremos que confiar na sorte. ";
+		set lv4_weapon,15;
+		close;
+	case 2:
+		mes "[Tabestã]";
+		mes "Oh, eu vejo.";
+		mes "É um pouco decepcionante ouvir isso, mas por favor retorne";
+		mes "se você acredita que eu posso ser";
+		mes "de serviço para você.";
+		close;
+	}
+}
+
+aldebaran,178,239,3	script	Bill Thayer#lv4	712,{
+	if (lv4_weapon == 55) {
+		mes "[Bill Thayer]";
+		mes "Hum...";
+		mes "Você precisará de 30 Piroxênio, Turquesa e Flogopita. ";
+		next;
+		mes "[Bill Thayer]";
+		mes "^333333*Farejar*^000000";
+		mes "Todos os meus filhos faleceram";
+		mes "antes que pudessem terminar sua pesquisa. ";
+		close;
+	}
+	if (lv4_weapon == 54) {
+		mes "[Bill Thayer]";
+		mes "Hum...";
+		mes "Você precisará de 30 Citrin, Ágata";
+		mes "e moscovita. ";
+		next;
+		mes "[Bill Thayer]";
+		mes "^333333*Farejar*^000000";
+		mes "Todos os meus filhos faleceram";
+		mes "antes que pudessem terminar sua pesquisa. ";
+		close;
+	}
+	if (lv4_weapon == 53) {
+		mes "[Bill Thayer]";
+		mes "O que...?";
+		mes "A pesquisa de Waltboughst?";
+		next;
+		mes "[Bill Thayer]";
+		mes "Como você o conhece?";
+		mes "Você era amigo dele enquanto";
+		mes "ele ainda estava vivo? ";
+		mes "um ato de providência...";
+		next;
+		if (rand(1,2) == 1) {
+			mes "[Bill Thayer]";
+			mes "Hum...";
+			mes "Você precisará de 30 Citrin, Ágata";
+			mes "e moscovita. ";
+			next;
+			mes "[Bill Thayer]";
+			mes "^333333*Farejar*^000000";
+			mes "Todos os meus filhos faleceram";
+			mes "antes que pudessem terminar sua pesquisa. ";
+			set lv4_weapon,54;
+			close;
+		}
+		else {
+			mes "[Bill Thayer]";
+			mes "Hum...";
+			mes "Você precisará de 30 Piroxênio, Turquesa e Flogopita. ";
+			next;
+			mes "[Bill Thayer]";
+			mes "^333333*Farejar*^000000";
+			mes "Todos os meus filhos faleceram";
+			mes "antes que pudessem terminar sua pesquisa. ";
+			set lv4_weapon,55;
+			close;
+		}
+	}
+	if ((lv4_weapon == 49) || (lv4_weapon == 50)) {
+		mes "[Bill Thayer]";
+		mes "Você não tem nada melhor para fazer? ";
+		next;
+		mes "[Bill Thayer]";
+		mes "^333333*Suspiro...*^000000";
+		mes "Ainda assim, tentando o seu";
+		mes "o melhor nem sempre resultará";
+		mes "no entanto, com sucesso.";
+		next;
+		mes "[Bill Thayer]";
+		mes "^660000Mas isso não é desculpa!^000000";
+		mes "Todo homem de sucesso em";
+		mes "a história deu o seu melhor!";
+		next;
+		mes "[Bill Thayer]";
+		mes "Espero que você se lembre disso. ";
+		set lv4_weapon,50;
+		close;
+	}
+	if (lv4_weapon == 45) {
+		mes "[Bill Thayer]";
+		mes "Hum...";
+		mes "Você precisará de 30 Turquesa,";
+		mes "Biotita e Quartzo Rosa. ";
+		next;
+		mes "[Bill Thayer]";
+		mes "^333333*Farejar*^000000";
+		mes "Todos os meus filhos faleceram";
+		mes "antes que pudessem terminar sua pesquisa. ";
+		set lv4_weapon,45;
+		close;
+	}
+	if (lv4_weapon == 46) {
+		mes "[Bill Thayer]";
+		mes "Hum...";
+		mes "Você precisará de 30 Flogopita,";
+		mes "Citrino e Piroxênio. ";
+		next;
+		mes "[Bill Thayer]";
+		mes "^333333*Farejar*^000000";
+		mes "Todos os meus filhos faleceram";
+		mes "antes que pudessem terminar sua pesquisa. ";
+		set lv4_weapon,46;
+		close;
+	}
+	if (lv4_weapon == 44) {
+		mes "[Bill Thayer]";
+		mes "O que...?";
+		mes "A pesquisa de Hein?";
+		next;
+		mes "[Bill Thayer]";
+		mes "Como você o conhece?";
+		mes "Você era amigo dele enquanto";
+		mes "ele ainda estava vivo? ";
+		mes "um ato de providência...";
+		next;
+		if (rand(1,2) == 1) {
+			mes "[Bill Thayer]";
+			mes "Hum...";
+			mes "Você precisará de 30 Turquesa,";
+			mes "Biotita e Quartzo Rosa. ";
+			next;
+			mes "[Bill Thayer]";
+			mes "^333333*Farejar*^000000";
+			mes "Todos os meus filhos faleceram";
+			mes "antes que pudessem terminar sua pesquisa. ";
+			set lv4_weapon,45;
+			close;
+		}
+		else {
+			mes "[Bill Thayer]";
+			mes "Hum...";
+			mes "Você precisará de 30 Flogopita,";
+			mes "Citrino e Piroxênio. ";
+			next;
+			mes "[Bill Thayer]";
+			mes "^333333*Farejar*^000000";
+			mes "Todos os meus filhos faleceram";
+			mes "antes que pudessem terminar sua pesquisa. ";
+			set lv4_weapon,46;
+			close;
+		}
+	}
+	if ((lv4_weapon == 40) || (lv4_weapon == 41)) {
+		mes "[Bill Thayer]";
+		mes "Não importa quanto você esteja disposto a me pagar, não vou forjar nenhuma arma para você.";
+		next;
+		mes "[Bill Thayer]";
+		mes "Mesmo durante meus dias de fabricação de armas,";
+		mes "Nunca aceitei dinheiro de nenhum";
+		mes "meus clientes. ";
+		next;
+		mes "[Bill Thayer]";
+		mes "Sempre disse aos meus filhos: ‘Nunca aceitem pagamento para forjar uma boa arma. ";
+		set lv4_weapon,41;
+		next;
+		mes "[Bill Thayer]";
+		mes "Mesmo que você me ofereça algo mais precioso que dinheiro, não farei nenhuma forja de armas para você. ";
+		close;
+	}
+	if (lv4_weapon == 37) {
+		mes "[Bill Thayer]";
+		mes "Hum...";
+		mes "Você precisará de 30 Biotita,";
+		mes "Ágata e Citrino. ";
+		next;
+		mes "[Bill Thayer]";
+		mes "^333333*Farejar*^000000";
+		mes "Todos os meus filhos faleceram";
+		mes "antes que pudessem terminar sua pesquisa. ";
+		close;
+	}
+	if (lv4_weapon == 36) {
+		mes "[Bill Thayer]";
+		mes "Hum...";
+		mes "Você precisará de 30 moscovitas,";
+		mes "Peridoto e Quartzo Rosa. ";
+		next;
+		mes "[Bill Thayer]";
+		mes "^333333*Farejar*^000000";
+		mes "Todos os meus filhos faleceram";
+		mes "antes que pudessem terminar sua pesquisa. ";
+		close;
+	}
+	if (lv4_weapon == 35) {
+		mes "[Bill Thayer]";
+		mes "O que...?";
+		mes "A pesquisa de Reyghema?";
+		next;
+		mes "[Bill Thayer]";
+		mes "Como você o conhece?";
+		mes "Você era amigo dele enquanto";
+		mes "ele ainda estava vivo? ";
+		mes "um ato de providência...";
+		next;
+		if (rand(1,2) == 1) {
+			mes "[Bill Thayer]";
+			mes "Hum...";
+			mes "Você precisará de 30 moscovitas,";
+			mes "Peridoto e Quartzo Rosa. ";
+			next;
+			mes "[Bill Thayer]";
+			mes "^333333*Farejar*^000000";
+			mes "Todos os meus filhos faleceram";
+			mes "antes que pudessem terminar sua pesquisa. ";
+			set lv4_weapon,36;
+			close;
+		}
+		else {
+			mes "[Bill Thayer]";
+			mes "Hum...";
+			mes "Você precisará de 30 Biotita,";
+			mes "Ágata e Citrino. ";
+			next;
+			mes "[Bill Thayer]";
+			mes "^333333*Farejar*^000000";
+			mes "Todos os meus filhos faleceram";
+			mes "antes que pudessem terminar sua pesquisa. ";
+			set lv4_weapon,37;
+			close;
+		}
+	}
+	if ((lv4_weapon == 31) || (lv4_weapon == 32)) {
+		mes "[Bill Thayer]";
+		mes "Todos os meus filhos partiram meu coração ao morrerem muito jovens. ";
+		set lv4_weapon,32;
+		next;
+		mes "[Bill Thayer]";
+		mes "Mas nunca suspeitei que suas vidas seriam tão abreviadas. ";
+		close;
+	}
+	if (lv4_weapon == 27) {
+		mes "[Bill Thayer]";
+		mes "Hum...";
+		mes "Você precisará de 30 Turquesa,";
+		mes "Peridoto e Ágata. ";
+		next;
+		mes "[Bill Thayer]";
+		mes "^333333*Farejar*^000000";
+		mes "Todos os meus filhos faleceram";
+		mes "antes que pudessem terminar sua pesquisa. ";
+		close;
+	}
+	if (lv4_weapon == 28) {
+		mes "[Bill Thayer]";
+		mes "Hum...";
+		mes "Você precisará de 30 Flogopita,";
+		mes "Piroxênio e Quartzo Rosa. ";
+		next;
+		mes "[Bill Thayer]";
+		mes "^333333*Farejar*^000000";
+		mes "Todos os meus filhos faleceram";
+		mes "antes que pudessem terminar sua pesquisa. ";
+		close;
+	}
+	if (lv4_weapon == 26) {
+		mes "[Bill Thayer]";
+		mes "O que...?";
+		mes "A pesquisa de Kayron?";
+		next;
+		mes "[Bill Thayer]";
+		mes "Como você o conhece?";
+		mes "Você era amigo dele enquanto";
+		mes "ele ainda estava vivo? ";
+		mes "um ato de providência...";
+		next;
+		if (rand(1,2) == 1) {
+			mes "[Bill Thayer]";
+			mes "Hum...";
+			mes "Você precisará de 30 Turquesa,";
+			mes "Peridoto e Ágata. ";
+			next;
+			mes "[Bill Thayer]";
+			mes "^333333*Farejar*^000000";
+			mes "Todos os meus filhos faleceram";
+			mes "antes que pudessem terminar sua pesquisa. ";
+			set lv4_weapon,27;
+			close;
+		}
+		else {
+			mes "[Bill Thayer]";
+			mes "Hum...";
+			mes "Você precisará de 30 Flogopita,";
+			mes "Piroxênio e Quartzo Rosa. ";
+			next;
+			mes "[Bill Thayer]";
+			mes "^333333*Farejar*^000000";
+			mes "Todos os meus filhos faleceram";
+			mes "antes que pudessem terminar sua pesquisa. ";
+			set lv4_weapon,28;
+			close;
+		}
+	}
+	if ((lv4_weapon == 22) || (lv4_weapon == 23)) {
+		mes "[Bill Thayer]";
+		mes "Escute, eu te disse...";
+		mes "Não há nada que eu possa fazer.";
+		mes "^333333Estou totalmente indefeso aqui.^000000";
+		set lv4_weapon,23;
+		next;
+		mes "[Bill Thayer]";
+		mes "Não adianta me pedir para fazer nada. ";
+		close;
+	}
+	mes "[Bill Thayer]";
+	mes "Me deixe em paz...";
+	mes "Sou apenas um velho quebrado.";
+	next;
+	mes "[Bill Thayer]";
+	mes "Não faço mais armas para ninguém. ";
+	close;
+}
+
+geffen,203,146,5	script	Citizen#lv4-1	97,{
+	mes "[Cidadão]";
+	mes "Houve um hábil";
+	mes "ferreiro em Al De Baran";
+	mes "que teve 4 filhos. ";
+	next;
+	mes "[Cidadão]";
+	mes "Tragicamente, todos os filhos morreram na tentativa de criar uma arma poderosa. ";
+	next;
+	mes "[Cidadão]";
+	mes "Por causa desse incidente, o armeiro se aposentou e se escondeu. ";
+	next;
+	mes "[Cidadão]";
+	mes "Eu não acho que seus filhos";
+	mes "foram capazes de entrar pacificamente na vida após a morte depois de sacrificar tanto e ter que deixar seu objetivo não realizado...";
+	close;
+}
+
+morocc,289,230,3	script	Citizen#lv4-2	92,{
+	mes "[Cidadão]";
+	mes "Encontrar uma pessoa no reino dos mortos é impossível. ";
+	next;
+	mes "[Cidadão]";
+	mes "Mas se você trouxesse algo que o lembrasse de sua vida, ele recuperaria suas memórias por um tempo. ";
+	next;
+	mes "[Cidadão]";
+	mes "Huh...";
+	mes "Eu sei que o que estou falando pode ser um pouco mórbido, mas mesmo as informações mais triviais podem ser úteis algum dia, certo?";
+	close;
+}
+
+niflheim,240,193,3	script	Kayron#lv4	794,{
+	if (checkweight(908,300) == 0) {
+		mes "^3355FFEspere um segundo! ";
+		close;
+	}
+	if (BaseLevel < 80) {
+		mes "[Kayron]";
+		mes "Ei...";
+		mes "Como alguém gostou";
+		mes "você veio até aqui?";
+		next;
+		mes "[Kayron]";
+		mes "Só de olhar para esse seu rosto terno, posso dizer que você está um pouco fraco. ";
+		close;
+	}
+	if (lv4_weapon == 0) {
+		mes "[Kayron]";
+		mes "Em vida, fui conhecido como Kayron.";
+		mes "Mas agora sou apenas mais um fantasma vagando por este reino de";
+		mes "o morto. ";
+		mes "tão inútil.";
+		next;
+		switch(select("Mostre interesse.:Ignore-o.")) {
+		case 1:
+			mes "[Kayron]";
+			mes "Huh...?";
+			mes "Não consigo lembrar o que ia dizer. ";
+			set lv4_weapon,22;
+			close;
+		case 2:
+			mes "[Kayron]";
+			mes "Inútil...";
+			mes "Absolutamente inútil...";
+			close;
+		}
+	}
+	if ((lv4_weapon < 22) || (lv4_weapon > 30)) {
+		mes "[Kayron]";
+		mes "Eu sinto algo de";
+		mes "você. ";
+		mes "aqui com algum tipo de objetivo.";
+		next;
+		mes "[Kayron]";
+		mes "Estou surpreso...";
+		mes "E um pouco de inveja.";
+		mes "Pode-se dizer que a maioria";
+		mes "em Niflheim venha aqui com";
+		mes "pouco ou nenhum propósito.";
+		close;
+	}
+	if ((lv4_weapon == 29) || (lv4_weapon == 30)) {
+		mes "[Kayron]";
+		mes "Heh heh heh...";
+		mes "Você chegou bem na hora.";
+		mes "Chegou a hora de";
+		mes "eu para revelar os resultados";
+		mes "do meu trabalho...";
+		next;
+		if (rand(1,2) == 1) {
+			mes "[Kayron]";
+			mes "É um sucesso!";
+			mes "Eu completei o experimento";
+			mes "isso me matou! ";
+			mes "não posso acreditar! ";
+			if (lv4_weapon == 29) {
+				mes "isso... Grande Machado!";
+				getitem 1364,1; //Great_Axe
+			}
+			else {
+				mes "esta... Lança de Longinus!";
+				getitem 1469,1; //Longinus's_Spear
+			}
+			set lv4_weapon,0;
+			next;
+			mes "[Kayron]";
+			mes "Estou tão feliz que meus anos de pesquisa não tenham sido desperdiçados.";
+			mes "Se ao menos meu pai pudesse ver isso, ele ficaria muito feliz por mim.";
+			next;
+			mes "[Kayron]";
+			mes "Oh não...";
+			mes "^333333*Suspiro*^000000 Posso sentir minhas memórias começando a desaparecer novamente. ";
+			mes "lembre-se do meu passado novamente.";
+			mes "Obrigado...";
+			close;
+		}
+		else {
+			mes "[Kayron]";
+			mes "É um sucesso!";
+			mes "Eu completei o experimento";
+			mes "isso me matou! ";
+			mes "não posso acreditar! ";
+			if (lv4_weapon == 29) {
+				mes "isso... Guilhotina!";
+				getitem 1369,1; //Guillotine
+			}
+			else {
+				mes "isso... Brionac!";
+				getitem 1470,1; //Brionac
+			}
+			set lv4_weapon,0;
+			next;
+			mes "[Kayron]";
+			mes "Estou tão feliz que meus anos de pesquisa não tenham sido desperdiçados.";
+			mes "Se ao menos meu pai pudesse ver isso, ele ficaria muito feliz por mim.";
+			next;
+			mes "[Kayron]";
+			mes "Oh não...";
+			mes "^333333*Suspiro*^000000 Posso sentir minhas memórias começando a desaparecer novamente. ";
+			mes "lembre-se do meu passado novamente.";
+			mes "Obrigado...";
+			close;
+		}
+	}
+	if (((lv4_weapon == 27) && (countitem(7289) > 29) && (countitem(7294) > 29) && (countitem(7291) > 29)) || ((lv4_weapon == 28) && (countitem(7290) > 29) && (countitem(7296) > 29) && (countitem(7293) > 29))) {
+		mes "[Kayron]";
+		mes "O que é isso?";
+		mes "As coisas que você está carregando";
+		mes "ao redor parece muito familiar.";
+		mes "Hm, deixe-me dar uma olhada, por favor...";
+		next;
+		mes "[Kayron]";
+		mes "Sim, eu estava certo!";
+		mes "Posso usá-los para forjar uma arma! ";
+		next;
+		mes "[Kayron]";
+		mes "Ah, mas primeiro precisamos testar sua sorte. ";
+		next;
+		mes "[Kayron]";
+		mes "Vamos jogar '^660000Pedra, Papel, Tesoura^000000.' ";
+		mes "faça o item se você vencer 2 de 3 partidas.";
+		next;
+		mes "[Kayron]";
+		mes "Mas se você perder 2 de 3, sua sorte não será forte o suficiente para eu tentar a ferraria. ";
+		next;
+		mes "[Kayron]";
+		mes "Aqui está um pedaço de papel.";
+		mes "Você escreverá 'Rock', 'Paper' ou 'Scissors' e eu farei o mesmo. ";
+		next;
+		set .@npchand1,rand(1,3);
+		set .@myhand1,select("Tesoura: Pedra: Papel");
+		if (((.@myhand1 == 1) && (.@npchand1 == 3)) || ((.@myhand1 == 2) && (.@npchand1 == 1)) || ((.@myhand1 == 3) && (.@npchand1 == 2))) {
+			set .@shobu,.@shobu+1;
+		}
+		mes "[Kayron]";
+		mes "Agora...";
+		mes "Vamos jogar";
+		mes "a segunda partida~";
+		next;
+		set .@npchand2,rand(1,3);
+		set .@myhand2,select("Tesoura: Pedra: Papel");
+		if (((.@myhand2 == 1) && (.@npchand2 == 3)) || ((.@myhand2 == 2) && (.@npchand2 == 1)) || ((.@myhand2 == 3) && (.@npchand2 == 2))) {
+			set .@shobu,.@shobu+1;
+		}
+		mes "[Kayron]";
+		mes "Tudo bem...";
+		mes "Uma última vez.";
+		mes "Escreva 'Rock',";
+		mes "'Papel' ou 'Tesoura'.";
+		next;
+		set .@npchand3,rand(1,3);
+		set .@myhand3,select("Tesoura: Pedra: Papel");
+		if (((.@myhand3 == 1) && (.@npchand3 == 3)) || ((.@myhand3 == 2) && (.@npchand3 == 1)) || ((.@myhand3 == 3) && (.@npchand3 == 2))) {
+			set .@shobu,.@shobu+1;
+		}
+		set .@aekddam,rand(1,3);
+		if (.@shobu > 1) {
+			if (lv4_weapon == 27) {
+				delitem 7289,30; //Olivine
+				delitem 7294,30; //Turquoise
+				delitem 7291,30; //Agate
+			}
+			else {
+				delitem 7290,30; //Phlogopite
+				delitem 7296,30; //Pyroxene
+				delitem 7293,30; //Rose_Quartz
+			}
+			set lv4_weapon,lv4_weapon+2;
+		}
+		else if (.@shobu < 2) {
+			if (.@aekddam == 1) {
+				if (lv4_weapon == 27) {
+					delitem 7289,30; //Olivine
+				}
+				else {
+					delitem 7290,30; //Phlogopite
+				}
+			}
+			else if (.@aekddam == 2) {
+				if (lv4_weapon == 27) {
+					delitem 7294,30; //Turquoise
+				}
+				else {
+					delitem 7296,30; //Pyroxene
+				}
+			}
+			else if (.@aekddam == 3) {
+				if (lv4_weapon == 27) {
+					delitem 7291,30; //Agate
+				}
+				else {
+					delitem 7293,30; //Rose_Quartz
+				}
+			}
+		}
+		mes "[Kayron]";
+		mes "Foram realizadas!";
+		mes "Agora, eu anotei...";
+		if (.@npchand1 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@npchand1 == 2) {
+			mes "Pedra";
+		}
+		else if (.@npchand1 == 3) {
+			mes "Papel";
+		}
+		if (.@npchand2 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@npchand2 == 2) {
+			mes "Pedra";
+		}
+		else if (.@npchand2 == 3) {
+			mes "Papel";
+		}
+		if (.@npchand3 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@npchand3 == 2) {
+			mes "Pedra";
+		}
+		else if (.@npchand3 == 3) {
+			mes "Papel";
+		}
+		next;
+		mes "[Kayron]";
+		mes "Você anotou...";
+		if (.@myhand1 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@myhand1 == 2) {
+			mes "Pedra";
+		}
+		else if (.@myhand1 == 3) {
+			mes "Papel";
+		}
+		if (.@myhand2 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@myhand2 == 2) {
+			mes "Pedra";
+		}
+		else if (.@myhand2 == 3) {
+			mes "Papel";
+		}
+		if (.@myhand3 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@myhand3 == 2) {
+			mes "Pedra";
+		}
+		else if (.@myhand3 == 3) {
+			mes "Papel";
+		}
+		next;
+		if (.@shobu > 1) {
+			mes "[Kayron]";
+			mes "Vamos ver...";
+			mes "Você ganhou" + .@shobu + "vezes.";
+			mes "Você deve estar realmente";
+			mes "Sem dúvida, você";
+			mes "tive muita sorte ~";
+			next;
+			mes "[Kayron]";
+			mes "Tudo bem, vou cumprir minha parte no trato. ";
+			mes "e algum tempo para terminar a preparação. ";
+			close;
+		}
+		else if (.@shobu < 2) {
+			mes "[Kayron]";
+			mes "Bem, lamento dizer que você perdeu. ";
+			mes "um pouco do minério que você trouxe!";
+			next;
+			mes "[Kayron]";
+			mes "Tudo bem, vamos tentar novamente. ";
+			mes "e volte para mim.";
+			close;
+		}
+	}
+	if ((lv4_weapon == 26) || (lv4_weapon == 27) || (lv4_weapon == 28)) {
+		mes "[Kayron]";
+		mes "Não consigo me lembrar do resto";
+		mes "dos materiais que preciso. ";
+		next;
+		mes "[Kayron]";
+		mes "Quer dizer, eu e meu pai sabíamos dessas coisas como se fosse uma segunda natureza. ";
+		close;
+	}
+	if ((lv4_weapon == 25) && (countitem(1005) > 1) && (countitem(989) > 0) && (countitem(710) > 0) && (countitem(969) > 19)) {
+		mes "[Kayron]";
+		mes "Oh...!";
+		mes "Eu não tinha ideia de que você era uma pessoa tão confiável! ";
+		next;
+		mes "[Kayron]";
+		mes "Mas ainda não consigo me lembrar do resto das coisas que vou precisar. ";
+		next;
+		mes "[Kayron]";
+		mes "Existe alguma maneira de recuperar mais da minha memória? ";
+		delitem 1005,2; //Hammer_Of_Blacksmith
+		delitem 989,1; //Emperium_Anvil
+		delitem 710,1; //Illusion_Flower
+		delitem 969,20; //Gold
+		set lv4_weapon,26;
+		close;
+	}
+	if (lv4_weapon == 25) {
+		mes "[Kayron]";
+		mes "Vou precisar de muitos materiais, mas deixe-me lembrá-los de alguns";
+		mes "as coisas necessárias que eu realmente consigo lembrar.";
+		next;
+		mes "[Kayron]";
+		mes "Até agora, eu sei que vou precisar";
+		mes "2 Martelo de Ferreiro";
+		mes "1 Bigorna do Império";
+		mes "1 Flor Ilusão e";
+		mes "20 ouro.";
+		next;
+		mes "[Kayron]";
+		mes "Eu sei que havia mais alguns";
+		mes "coisas que são cruciais para a construção desta arma, mas...";
+		mes "Não consigo me concentrar o suficiente para lembrar.";
+		close;
+	}
+	if (lv4_weapon == 24) {
+		mes "[Kayron]";
+		mes "Tudo bem...";
+		mes "acabei de lembrar";
+		mes "a maioria das coisas";
+		mes "Eu preciso fazer você";
+		mes "uma ótima arma.";
+		next;
+		mes "[Kayron]";
+		mes "Acredito que seja justo informar que não posso garantir que arma será produzida a partir deste trabalho, pois, francamente, não me lembro.";
+		next;
+		mes "[Kayron]";
+		mes "Até agora, eu sei que vou precisar";
+		mes "2 Martelo de Ferreiro";
+		mes "1 Bigorna do Império";
+		mes "1 Flor Ilusão e";
+		mes "20 ouro.";
+		next;
+		mes "[Kayron]";
+		mes "Traga esses itens para mim primeiro. ";
+		mes "meu está começando a me preocupar um pouco...";
+		next;
+		mes "[Kayron]";
+		mes "De qualquer forma, estarei esperando por você aqui enquanto você sai e recolhe essas coisas. ";
+		set lv4_weapon,25;
+		close;
+	}
+	if (lv4_weapon == 23) {
+		mes "[Kayron]";
+		mes "Em vida, fui conhecido como Kayron.";
+		mes "Mas agora sou apenas mais um fantasma vagando por este reino de";
+		mes "o morto. ";
+		mes "tão inútil.";
+		next;
+		mes "[Kayron]";
+		mes "Não há nada que eu possa fazer.";
+		mes "Eu estou... Hum... eu estou...?";
+		input .@input$;
+		next;
+		if (.@input$ == "Estou totalmente indefeso aqui.") {
+			mes "[Kayron]";
+			mes "Estou totalmente indefeso aqui.";
+			mes "Certo, certo! ";
+			next;
+			mes "[Kayron]";
+			mes "Minha mente está tão nebulosa.";
+			mes "esqueci que até usei";
+			mes "ser um ser humano vivo.";
+			mes "^333333*Suspiro...*^000000";
+			next;
+			mes "[Kayron]";
+			mes "Ainda assim, essa pequena lembrança me trouxe um pouco de paz de espírito";
+			mes "mente. ";
+			next;
+			mes "[Kayron]";
+			mes "Eu costumava ser um armeiro";
+			mes "quando eu estava vivo, então, se você quiser, posso criar algo legal para você. ";
+			next;
+			mes "[Kayron]";
+			mes "Você entende que ser";
+			mes "morto meio que restringe minha mobilidade. ";
+			next;
+			mes "[Kayron]";
+			mes "Mesmo sendo experimental";
+			mes "a ferraria me matou, não terei que me preocupar com isso desta vez. ";
+			next;
+			mes "[Kayron]";
+			mes "Tudo bem, só me dê um tempinho para que eu possa tentar lembrar das coisas que vou precisar, certo?";
+			set lv4_weapon,24;
+			close;
+		}
+		else {
+			mes "[Kayron]";
+			mes "Huh...?";
+			mes "O que você acabou de dizer?";
+			mes "Me desculpe, estou tentando lembrar de algo que meu pai sempre usou";
+			mes "dizer...";
+			close;
+		}
+	}
+	if (lv4_weapon == 22) {
+		mes "[Kayron]";
+		mes "Em vida, fui conhecido como Kayron.";
+		mes "Mas agora sou apenas mais um fantasma vagando por este reino de";
+		mes "o morto. ";
+		mes "tão inútil.";
+		next;
+		mes "[Kayron]";
+		mes "Huh...?";
+		mes "Não consigo lembrar o que ia dizer. ";
+		close;
+	}
+	mes "[Kayron]";
+	mes "Em vida, fui conhecido como Kayron.";
+	mes "Mas agora sou apenas mais um fantasma vagando por este reino de";
+	mes "o morto. ";
+	mes "tão inútil.";
+	next;
+	switch(select("Mostre interesse.:Ignore-o.")) {
+	case 1:
+		mes "[Kayron]";
+		mes "Huh...?";
+		mes "Não consigo lembrar o que ia dizer. ";
+		set lv4_weapon,22;
+		close;
+	case 2:
+		mes "[Kayron]";
+		mes "Inútil...";
+		mes "Absolutamente inútil...";
+		close;
+	}
+}
+
+niflheim,99,268,5	script	Reyghema#lv4	794,{
+	if (MaxWeight - Weight < 3000) {
+		mes "^3355FFEspere um segundo! ";
+		close;
+	}
+	if (BaseLevel < 80) {
+		mes "[Reyghema]";
+		mes "Como...";
+		mes "o inferno...?";
+		next;
+		mes "[Reyghema]";
+		mes "O que uma pessoa viva está fazendo aqui? ";
+		close;
+	}
+	if (lv4_weapon == 0) {
+		mes "[Reyghema]";
+		mes "Caramba...";
+		mes "Eu não queria morrer!";
+		next;
+		mes "[Reyghema]";
+		mes "Bem, nada que esteja vivo realmente quer morrer, mas eu estava tão perto de terminar o que queria fazer. ";
+		next;
+		mes "[Reyghema]";
+		mes "Juventude...";
+		mes "Aproveite sua juventude...";
+		mes "Eu lembro de ouvir";
+		mes "algo parecido,";
+		mes "mas havia mais do que isso...";
+		next;
+		switch(select("Mostre interesse.:Ignore-o.")) {
+		case 1:
+			mes "[Reyghema]";
+			mes "Aproveite sua juventude...";
+			mes "Aproveite sua juventude...";
+			mes "...O que veio depois disso?";
+			next;
+			mes "[Reyghema]";
+			mes "Argh!";
+			mes "Não consigo me lembrar!";
+			mes "Tudo em meu";
+			mes "a cabeça está tão nublada!";
+			set lv4_weapon,31;
+			close;
+		case 2:
+			mes "[Reyghema]";
+			mes "Aproveite sua juventude...";
+			mes "Aproveite sua juventude...";
+			mes "...O que veio depois disso?";
+			close;
+		}
+	}
+	if ((lv4_weapon < 31) || (lv4_weapon > 39)) {
+		mes "[Reyghema]";
+		mes "Ei...";
+		mes "Parece que você veio";
+		mes "aqui para terminar alguma coisa.";
+		mes "Sim, há uma total diferença entre alguém que não tem rumo e alguém com um propósito.";
+		next;
+		mes "[Reyghema]";
+		mes "Quase sinto pena de você, se você tem negócios para terminar em um lugar como Niflheim.";
+		close;
+	}
+	if ((lv4_weapon == 38) || (lv4_weapon == 39)) {
+		mes "[Reyghema]";
+		mes "...";
+		mes "...Finalmente.";
+		next;
+		if (rand(1,2) == 1) {
+			mes "[Reyghema]";
+			mes "Eu fiz isso!";
+			mes "Eu morri tentando fazer isso,";
+			mes "mas finalmente terminei!";
+			if (lv4_weapon == 38) {
+				mes "Isso é... Furioso!";
+				getitem 1814,1; //Berserk
+			}
+			else {
+				mes "Este é... Tjungkuletti!";
+				getitem 1416,1; //Tjungkuletti
+			}
+			set lv4_weapon,0;
+			next;
+			mes "[Reyghema]";
+			mes "^333333*Suspiro*^000000 Posso sentir isso acontecendo de novo. ";
+			next;
+			mes "[Reyghema]";
+			mes "Acho que os mortos não deveriam se lembrar do passado. ";
+			next;
+			mes "[Reyghema]";
+			mes "Se você tiver a chance, volte e me ajude a lembrar do meu";
+			mes "passado para que eu possa experimentar a alegria de fabricar armas novamente. ";
+			close;
+		}
+		else {
+			mes "[Reyghema]";
+			mes "Eu fiz isso!";
+			mes "Eu morri tentando fazer isso,";
+			mes "mas finalmente terminei!";
+			if (lv4_weapon == 38) {
+				mes "Este é... o Arco Rudra!";
+				getitem 1720,1; //Bow_Of_Rudra
+			}
+			else {
+				mes "Este é... Brocca! ";
+				getitem 1415,1; //Skewer
+			}
+			set lv4_weapon,0;
+			next;
+			mes "[Reyghema]";
+			mes "^333333*Suspiro*^000000 Posso sentir isso acontecendo de novo. ";
+			next;
+			mes "[Reyghema]";
+			mes "Acho que os mortos não deveriam se lembrar do passado. ";
+			next;
+			mes "[Reyghema]";
+			mes "Se você tiver a chance, volte e me ajude a lembrar do meu";
+			mes "passado para que eu possa experimentar a alegria de fabricar armas novamente. ";
+			close;
+		}
+	}
+	if (((lv4_weapon == 36) && (countitem(7292) > 29) && (countitem(7293) > 29) && (countitem(7289) > 29)) || ((lv4_weapon == 37) && (countitem(7297) > 29) && (countitem(7291) > 29) && (countitem(7295) > 29))) {
+		mes "[Reyghema]";
+		mes "Espere...";
+		mes "As coisas que você tem. ";
+		next;
+		mes "[Reyghema]";
+		mes "Sim, isso é perfeito!";
+		mes "Mas como você sabia exatamente quais materiais eu precisava? ";
+		next;
+		mes "[Reyghema]";
+		mes "Agora é hora do mais difícil,";
+		mes "ou mais fácil, parte. ";
+		next;
+		mes "[Reyghema]";
+		mes "Tudo bem, vamos jogar '^660000Pedra, Papel, Tesoura^000000.' ";
+		next;
+		mes "[Reyghema]";
+		mes "Se a sua sorte estiver ruim e você perder, precisaremos jogar fora um monte de um dos minérios que você trouxe para nos livrarmos do seu azar. ";
+		next;
+		mes "[Reyghema]";
+		mes "Tudo bem, aqui está um pedaço de papel. ";
+		next;
+		set .@npchand1,rand(1,3);
+		set .@myhand1,select("Tesoura: Pedra: Papel");
+		if (((.@myhand1 == 1) && (.@npchand1 == 3)) || ((.@myhand1 == 2) && (.@npchand1 == 1)) || ((.@myhand1 == 3) && (.@npchand1 == 2))) {
+			set .@shobu,.@shobu+1;
+		}
+		mes "[Reyghema]";
+		mes "Ok, agora vamos";
+		mes "tente novamente.";
+		next;
+		set .@npchand2,rand(1,3);
+		set .@myhand2,select("Tesoura: Pedra: Papel");
+		if (((.@myhand2 == 1) && (.@npchand2 == 3)) || ((.@myhand2 == 2) && (.@npchand2 == 1)) || ((.@myhand2 == 3) && (.@npchand2 == 2))) {
+			set .@shobu,.@shobu+1;
+		}
+		mes "[Reyghema]";
+		mes "Última vez.";
+		mes "Escreva 'Rock',";
+		mes "'Papel' ou 'Tesoura'.";
+		next;
+		set .@npchand3,rand(1,3);
+		set .@myhand3,select("Tesoura: Pedra: Papel");
+		if (((.@myhand3 == 1) && (.@npchand3 == 3)) || ((.@myhand3 == 2) && (.@npchand3 == 1)) || ((.@myhand3 == 3) && (.@npchand3 == 2))) {
+			set .@shobu,.@shobu+1;
+		}
+		set .@aekddam,rand(1,3);
+		if (.@shobu > 1) {
+			if (lv4_weapon == 36) {
+				delitem 7292,30; //Muscovite
+				delitem 7293,30; //Rose_Quartz
+				delitem 7289,30; //Olivine
+			}
+			else {
+				delitem 7297,30; //Biotite
+				delitem 7291,30; //Agate
+				delitem 7295,30; //Citrine
+			}
+			set lv4_weapon,lv4_weapon+2;
+		}
+		else if (.@shobu < 2) {
+			if (.@aekddam == 1) {
+				if (lv4_weapon == 36) {
+					delitem 7292,30; //Muscovite
+				}
+				else {
+					delitem 7297,30; //Biotite
+				}
+			}
+			else if (.@aekddam == 2) {
+				if (lv4_weapon == 36) {
+					delitem 7293,30; //Rose_Quartz
+				}
+				else {
+					delitem 7291,30; //Agate
+				}
+			}
+			else if (.@aekddam == 3) {
+				if (lv4_weapon == 36) {
+					delitem 7289,30; //Olivine
+				}
+				else {
+					delitem 7295,30; //Citrine
+				}
+			}
+		}
+		mes "[Reyghema]";
+		mes "Tudo bem, agora";
+		mes "Anotei...";
+		if (.@npchand1 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@npchand1 == 2) {
+			mes "Pedra";
+		}
+		else if (.@npchand1 == 3) {
+			mes "Papel";
+		}
+		if (.@npchand2 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@npchand2 == 2) {
+			mes "Pedra";
+		}
+		else if (.@npchand2 == 3) {
+			mes "Papel";
+		}
+		if (.@npchand3 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@npchand3 == 2) {
+			mes "Pedra";
+		}
+		else if (.@npchand3 == 3) {
+			mes "Papel";
+		}
+		next;
+		mes "[Reyghema]";
+		mes "Você anotou...";
+		if (.@myhand1 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@myhand1 == 2) {
+			mes "Pedra";
+		}
+		else if (.@myhand1 == 3) {
+			mes "Papel";
+		}
+		if (.@myhand2 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@myhand2 == 2) {
+			mes "Pedra";
+		}
+		else if (.@myhand2 == 3) {
+			mes "Papel";
+		}
+		if (.@myhand3 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@myhand3 == 2) {
+			mes "Pedra";
+		}
+		else if (.@myhand3 == 3) {
+			mes "Papel";
+		}
+		next;
+		if (.@shobu > 1) {
+			mes "[Reyghema]";
+			mes "Legal. " + .@shobu + "vezes. ";
+			next;
+			mes "[Reyghema]";
+			mes "Dê-me algum tempo para preparar algumas coisas. ";
+			mes "agora, e fale comigo um pouco mais tarde, certo?";
+			close;
+		}
+		else if (.@shobu < 2) {
+			mes "[Reyghema]";
+			mes "Droga...";
+			mes "Eu deveria estar feliz por ter vencido, mas isso significa apenas que sua sorte é ruim e";
+			mes "precisamos fazer isso de novo.";
+			next;
+			mes "[Reyghema]";
+			mes "Sinto muito, mas vou precisar pegar um monte de um dos seus minérios para me livrar do seu azar. ";
+			close;
+		}
+	}
+	if ((lv4_weapon == 35) || (lv4_weapon == 36) || (lv4_weapon == 37)) {
+		mes "[Reyghema]";
+		mes "Arrgh!";
+		mes "Eu ainda não consigo";
+		mes "lembre-se do que";
+		mes "Eu preciso ainda! ";
+		mes "Isso está me matando!";
+		next;
+		mes "[Reyghema]";
+		mes "...";
+		next;
+		mes "[Reyghema]";
+		mes "...";
+		mes "......";
+		next;
+		mes "[Reyghema]";
+		mes "Droga.";
+		mes "Droga droga droga!";
+		mes "'Me matando?!' ";
+		close;
+	}
+	if ((lv4_weapon == 34) && (countitem(1005) > 1) && (countitem(989) > 0) && (countitem(710) > 0) && (countitem(969) > 19)) {
+		mes "[Reyghema]";
+		mes "Bom trabalho, você trouxe tudo que eu pedi. ";
+		next;
+		mes "[Reyghema]";
+		mes "O plano original era que eu me lembrasse de tudo o mais que precisasse assim que você voltasse com essas coisas. ";
+		next;
+		mes "[Reyghema]";
+		mes "Apenas me dê algum tempo para pensar um pouco mais sobre isso. ";
+		mes "eu guardo as coisas que você trouxe. ";
+		delitem 1005,2; //Hammer_Of_Blacksmith
+		delitem 989,1; //Emperium_Anvil
+		delitem 710,1; //Illusion_Flower
+		delitem 969,20; //Gold
+		set lv4_weapon,35;
+		close;
+	}
+	if (lv4_weapon == 34) {
+		mes "[Reyghema]";
+		mes "é melhor eu lembrar";
+		mes "você que coisas eu vou";
+		mes "estar precisando. ";
+		mes "para, escreva tudo.";
+		next;
+		mes "[Reyghema]";
+		mes "1 Bigorna do Império,";
+		mes "2 Martelo do Ferreiro,";
+		mes "1 Flor Ilusão";
+		mes "e 20 ouro...";
+		next;
+		mes "[Reyghema]";
+		mes "Houve mais algumas coisas extremamente importantes, mas não consigo me lembrar delas agora...";
+		close;
+	}
+	if (lv4_weapon == 33) {
+		mes "[Reyghema]";
+		mes "Tudo bem, você está de volta. ";
+		next;
+		mes "[Reyghema]";
+		mes "1 Bigorna do Império,";
+		mes "2 Martelo do Ferreiro,";
+		mes "1 Flor Ilusão";
+		mes "e 20 ouro...";
+		next;
+		mes "[Reyghema]";
+		mes "Havia alguns outros";
+		mes "coisas importantes, mas não consigo lembrar o que eram. ";
+		next;
+		mes "[Reyghema]";
+		mes "Por enquanto, vá e traga de volta as coisas que pedi. ";
+		set lv4_weapon,34;
+		close;
+	}
+	if (lv4_weapon == 32) {
+		mes "[Reyghema]";
+		mes "Caramba...";
+		mes "Eu não queria morrer!";
+		next;
+		mes "[Reyghema]";
+		mes "Bem, nada que esteja vivo realmente quer morrer, mas eu estava tão perto de terminar o que queria fazer. ";
+		next;
+		mes "[Reyghema]";
+		mes "Juventude...";
+		mes "Aproveite sua juventude...";
+		mes "Eu lembro de ouvir";
+		mes "algo parecido,";
+		mes "mas havia mais do que isso...";
+		next;
+		input .@input$;
+		if (.@input$ == "Viva sem arrependimentos.") {
+			mes "[Reyghema]";
+			mes "...";
+			next;
+			mes "[Reyghema]";
+			mes "...";
+			mes ".......";
+			mes "Aproveite sua juventude.";
+			mes "Viva sem arrependimentos.";
+			next;
+			mes "[Reyghema]";
+			mes "Claro...";
+			mes "Meu pai, Bill Thayer, costumava dizer isso o tempo todo! ";
+			next;
+			mes "[Reyghema]";
+			mes "Ei você, obrigado por refrescar minha memória. ";
+			next;
+			mes "[Reyghema]";
+			mes "Você só precisa me ajudar a perceber";
+			mes "meu objetivo final. ";
+			mes "Eu realmente quero completar o experimento que me matou.";
+			next;
+			mes "[Reyghema]";
+			mes "Tudo o que você precisa fazer agora é me trazer as coisas que preciso. ";
+			next;
+			mes "[Reyghema]";
+			mes "Volte um pouco mais tarde.";
+			mes "A essa altura, devo me lembrar de que tipo de coisas vou precisar.";
+			set lv4_weapon,33;
+			close;
+		}
+		else {
+			mes "[Reyghema]";
+			mes "O que...?";
+			mes "Você está jogando";
+			mes "comigo ou o quê?";
+			mes "Saia da minha frente ~";
+			close;
+		}
+	}
+	if (lv4_weapon == 31) {
+		mes "[Reyghema]";
+		mes "Caramba...";
+		mes "Eu não queria morrer!";
+		next;
+		mes "[Reyghema]";
+		mes "Bem, nada que esteja vivo realmente quer morrer, mas eu estava tão perto de terminar o que queria fazer. ";
+		next;
+		mes "[Reyghema]";
+		mes "Juventude...";
+		mes "Aproveite sua juventude...";
+		mes "Eu lembro de ouvir";
+		mes "algo parecido,";
+		mes "mas havia mais do que isso...";
+		next;
+		mes "[Reyghema]";
+		mes "Aproveite sua juventude...";
+		mes "Aproveite sua juventude...";
+		mes "...O que veio depois disso?";
+		next;
+		mes "[Reyghema]";
+		mes "Argh!";
+		mes "Não consigo me lembrar!";
+		mes "Tudo em meu";
+		mes "a cabeça está tão nublada!";
+		close;
+	}
+	mes "[Reyghema]";
+	mes "Caramba...";
+	mes "Eu não queria morrer!";
+	next;
+	mes "[Reyghema]";
+	mes "Bem, nada que esteja vivo realmente quer morrer, mas eu estava tão perto de terminar o que queria fazer. ";
+	next;
+	mes "[Reyghema]";
+	mes "Juventude...";
+	mes "Aproveite sua juventude...";
+	mes "Eu lembro de ouvir";
+	mes "algo parecido,";
+	mes "mas havia mais do que isso...";
+	next;
+	switch(select("Mostre interesse.:Ignore-o.")) {
+	case 1:
+		mes "[Reyghema]";
+		mes "Aproveite sua juventude...";
+		mes "Aproveite sua juventude...";
+		mes "...O que veio depois disso?";
+		next;
+		mes "[Reyghema]";
+		mes "Argh!";
+		mes "Não consigo me lembrar!";
+		mes "Tudo em meu";
+		mes "a cabeça está tão nublada!";
+		set lv4_weapon,31;
+		close;
+	case 2:
+		mes "[Reyghema]";
+		mes "Aproveite sua juventude...";
+		mes "Aproveite sua juventude...";
+		mes "...O que veio depois disso?";
+		close;
+	}
+}
+
+niflheim,187,280,3	script	Hein#lv4	795,{
+	if (checkweight(908,300) == 0) {
+		mes "^3355FFEspere um segundo! ";
+		close;
+	}
+	if (lv4_weapon == 0) {
+		mes "[Hein]";
+		mes "Parece que você quer me perguntar uma coisa. ";
+		next;
+		mes "[Hein]";
+		mes "Naquela época,";
+		mes "Nunca aceitei dinheiro pelo meu trabalho. ";
+		next;
+		switch(select("Mostre interesse.:Ignore-o.")) {
+		case 1:
+			mes "[Hein]";
+			mes "Qual foi o resto?";
+			mes "Por que não consigo me lembrar do";
+			mes "resto disso dizendo?!";
+			next;
+			mes "[Hein]";
+			mes "Isto é tão estranho.";
+			mes "Como eu poderia esquecer";
+			mes "algo que eu costumava fazer";
+			mes "digo o tempo todo? ";
+			mes "Eu odeio estar morto!";
+			set lv4_weapon,40;
+			close;
+		case 2:
+			mes "[Hein]";
+			mes "Nozes! ";
+			mes "o resto disso dizendo?!";
+			close;
+		}
+	}
+	if ((lv4_weapon < 40) || (lv4_weapon > 48)) {
+		mes "[Hein]";
+		mes "Milímetros? ";
+		next;
+		mes "[Hein]";
+		mes "Faça-me um favor";
+		mes "e permanecer vivo.";
+		mes "Tire isso de mim,";
+		mes "não há prazer";
+		mes "absolutamente em estar morto.";
+		close;
+	}
+	if ((lv4_weapon == 47) || (lv4_weapon == 48)) {
+		mes "[Hein]";
+		mes "Você está aqui!";
+		mes "Acabei de terminar meu trabalho!";
+		mes "Você quer ver, não é?";
+		mes "Agora, respire fundo...";
+		next;
+		if (rand(1,2) == 1) {
+			mes "[Hein]";
+			mes "Haha~!";
+			mes "Isso é ótimo!";
+			mes "Finalmente, minha vida";
+			mes "o trabalho está concluído!";
+			mes "O nome desta arma";
+			if (lv4_weapon == 47) {
+				mes "é borda!";
+				getitem 1132,1; //Edge
+			}
+			else {
+				mes "é o Matador de Dragões!";
+				getitem 1166,1; //Dragon_Slayer
+			}
+			set lv4_weapon,0;
+			next;
+		}
+		else {
+			mes "[Hein]";
+			mes "Haha~!";
+			mes "Isso é ótimo!";
+			mes "Finalmente, minha vida";
+			mes "o trabalho está concluído!";
+			mes "O nome desta arma";
+			if (lv4_weapon == 47) {
+				mes "é Excalibur!";
+				getitem 1137,1; //Excalibur
+			}
+			else {
+				mes "é Schweizersabel!";
+				getitem 1167,1; //Schweizersabel
+			}
+			set lv4_weapon,0;
+			next;
+		}
+		mes "[Hein]";
+		mes "Bem...";
+		mes "Parece que isso é um adeus por enquanto. ";
+		next;
+		mes "[Hein]";
+		mes "Obrigado pela ajuda. ";
+		mes "minhas memórias novamente, tentarei ajudá-lo também. ";
+		close;
+	}
+	if (((lv4_weapon == 45) && (countitem(7294) > 29) && (countitem(7297) > 29) && (countitem(7293) > 29)) || ((lv4_weapon == 46) && (countitem(7295) > 29) && (countitem(7296) > 29) && (countitem(7290) > 29))) {
+		mes "[Hein]";
+		mes "Milímetros...?";
+		mes "As coisas que você trouxe parecem ser exatamente o que preciso para terminar meu trabalho. ";
+		next;
+		mes "[Hein]";
+		mes "Uau...";
+		mes "Como você conheceu os materiais";
+		mes "Eu precisei? ";
+		next;
+		mes "[Hein]";
+		mes "Ah, isso mesmo. ";
+		next;
+		mes "[Hein]";
+		mes "Vamos jogar '^660000Pedra, Papel, Tesoura^000000.' ";
+		next;
+		mes "[Hein]";
+		mes "Mas se você falhar neste jogo, terei que expulsar sua sorte negativa jogando fora muitos dos minérios que você trouxe.";
+		next;
+		mes "[Hein]";
+		mes "Aqui está um pedaço de papel.";
+		mes "Quando eu mandar, escreva 'Pedra', 'Papel' ou 'Tesoura'. ";
+		next;
+		set .@npchand1,rand(1,3);
+		set .@myhand1,select("Tesoura: Pedra: Papel");
+		if (((.@myhand1 == 1) && (.@npchand1 == 3)) || ((.@myhand1 == 2) && (.@npchand1 == 1)) || ((.@myhand1 == 3) && (.@npchand1 == 2))) {
+			set .@shobu,.@shobu+1;
+		}
+		mes "[Hein]";
+		mes "Ok, vamos brincar";
+		mes "a segunda rodada!";
+		next;
+		set .@npchand2,rand(1,3);
+		set .@myhand2,select("Tesoura: Pedra: Papel");
+		if (((.@myhand2 == 1) && (.@npchand2 == 3)) || ((.@myhand2 == 2) && (.@npchand2 == 1)) || ((.@myhand2 == 3) && (.@npchand2 == 2))) {
+			set .@shobu,.@shobu+1;
+		}
+		mes "[Hein]";
+		mes "OK...";
+		mes "Última rodada.";
+		mes "Depois disso, nós";
+		mes "compare nossos resultados.";
+		next;
+		set .@npchand3,rand(1,3);
+		set .@myhand3,select("Tesoura: Pedra: Papel");
+		set .@aekddam,rand(1,3);
+		if (((.@myhand3 == 1) && (.@npchand3 == 3)) || ((.@myhand3 == 2) && (.@npchand3 == 1)) || ((.@myhand3 == 3) && (.@npchand3 == 2))) {
+			set .@shobu,.@shobu+1;
+		}
+		if (.@shobu > 1) {
+			if (lv4_weapon == 45) {
+				delitem 7294,30; //Turquoise
+				delitem 7297,30; //Biotite
+				delitem 7293,30; //Rose_Quartz
+			}
+			else {
+				delitem 7295,30; //Citrine
+				delitem 7296,30; //Pyroxene
+				delitem 7290,30; //Phlogopite
+			}
+			set lv4_weapon,lv4_weapon+2;
+		}
+		else if (.@shobu < 2) {
+			if (.@aekddam == 1) {
+				if (lv4_weapon == 45) {
+					delitem 7294,30; //Turquoise
+				}
+				else {
+					delitem 7295,30; //Citrine
+				}
+			}
+			else if (.@aekddam == 2) {
+				if (lv4_weapon == 45) {
+					delitem 7297,30; //Biotite
+				}
+				else {
+					delitem 7296,30; //Pyroxene
+				}
+			}
+			else if (.@aekddam == 3) {
+				if (lv4_weapon == 45) {
+					delitem 7293,30; //Rose_Quartz
+				}
+				else {
+					delitem 7290,30; //Phlogopite
+				}
+			}
+		}
+		mes "[Hein]";
+		mes "Preparar? ";
+		mes "o que eu escrevi...";
+		if (.@npchand1 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@npchand1 == 2) {
+			mes "Pedra";
+		}
+		else if (.@npchand1 == 3) {
+			mes "Papel";
+		}
+		if (.@npchand2 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@npchand2 == 2) {
+			mes "Pedra";
+		}
+		else if (.@npchand2 == 3) {
+			mes "Papel";
+		}
+		if (.@npchand3 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@npchand3 == 2) {
+			mes "Pedra";
+		}
+		else if (.@npchand3 == 3) {
+			mes "Papel";
+		}
+		next;
+		mes "[Hein]";
+		mes "Você escreveu";
+		mes "essas respostas em";
+		mes "este pedido...";
+		if (.@myhand1 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@myhand1 == 2) {
+			mes "Pedra";
+		}
+		else if (.@myhand1 == 3) {
+			mes "Papel";
+		}
+		if (.@myhand2 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@myhand2 == 2) {
+			mes "Pedra";
+		}
+		else if (.@myhand2 == 3) {
+			mes "Papel";
+		}
+		if (.@myhand3 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@myhand3 == 2) {
+			mes "Pedra";
+		}
+		else if (.@myhand3 == 3) {
+			mes "Papel";
+		}
+		next;
+		if (.@shobu > 1) {
+			mes "[Hein]";
+			mes "Vamos ver...";
+			mes "Você ganhou" + shobu + "vezes.";
+			mes "Você é muito bom no jogo!";
+			mes "Sim, sua sorte está no auge!";
+			next;
+			mes "[Hein]";
+			mes "Como prometido, criarei uma arma para você. ";
+			close;
+		}
+		else if (.@shobu < 2) {
+			mes "[Hein]";
+			mes "Bem, você perdeu.";
+			mes "Sinto muito, mas nós";
+			mes "preciso expulsar o";
+			mes "infortúnio ao seu redor";
+			mes "com o minério que você trouxe...";
+			next;
+			mes "[Hein]";
+			mes "Ok, vou esperar aqui.";
+			mes "Volte com os materiais";
+			mes "Eu preciso e vamos tentar novamente.";
+			close;
+		}
+	}
+	if ((lv4_weapon == 44) || (lv4_weapon == 45) || (lv4_weapon == 46)) {
+		mes "[Hein]";
+		mes "Você me daria mais tempo para lembrar os materiais? ";
+		next;
+		mes "[Hein]";
+		mes "Eu tinha uma memória muito melhor quando estava vivo, tenho certeza. ";
+		close;
+	}
+	if ((lv4_weapon == 43) && (countitem(1005) > 1) && (countitem(989) > 0) && (countitem(710) > 0) && (countitem(969) > 19)) {
+		mes "[Hein]";
+		mes "Ei, você já trouxe tudo que eu pedi. ";
+		next;
+		mes "[Hein]";
+		mes "Infelizmente, não podemos começar até";
+		mes "Lembro-me do resto das coisas que precisamos. ";
+		next;
+		mes "[Hein]";
+		mes "Bem, por enquanto, deixe-me guardar as coisas que você trouxe para mim. ";
+		delitem 1005,2; //Hammer_Of_Blacksmith
+		delitem 989,1; //Emperium_Anvil
+		delitem 710,1; //Illusion_Flower
+		delitem 969,20; //Gold
+		set lv4_weapon,44;
+		close;
+	}
+	if (lv4_weapon == 43) {
+		mes "[Hein]";
+		mes "Com certeza vou precisar";
+		mes "2 Martelo do Ferreiro,";
+		mes "1 Bigorna do Império,";
+		mes "1 Flor Ilusão e";
+		mes "20 ouro...";
+		next;
+		mes "[Hein]";
+		mes "Então por agora,";
+		mes "vá em frente e";
+		mes "traga essas coisas";
+		mes "para mim, por favor.";
+		close;
+	}
+	if (lv4_weapon == 42) {
+		mes "[Hein]";
+		mes "Presumo que você";
+		mes "realmente quer que eu faça";
+		mes "você é uma arma. ";
+		mes "armeiro como eu, que em";
+		mes "em si é um grande elogio.";
+		next;
+		mes "[Hein]";
+		mes "Tudo bem, vou precisar...";
+		mes "1 Bigorna do Império,";
+		mes "2 Martelo do Ferreiro,";
+		mes "1 Flor Ilusão e";
+		mes "20 ouro...";
+		next;
+		mes "[Hein]";
+		mes "Havia 3 outras coisas,";
+		mes "mas não tenho muita certeza do que eram. ";
+		next;
+		mes "[Hein]";
+		mes "^333333*Suspiro*^000000 Lamento perguntar isso a você, mas você poderia, por favor, sair e descobrir o que são essas coisas? ";
+		next;
+		mes "[Hein]";
+		mes "Enquanto você faz isso, tentarei o meu melhor para lembrar o que mais preciso para fazer esta arma.";
+		set lv4_weapon,43;
+		close;
+	}
+	if (lv4_weapon == 41) {
+		mes "[Hein]";
+		mes "Parece que você quer me perguntar uma coisa. ";
+		next;
+		mes "[Hein]";
+		mes "Naquela época,";
+		mes "Nunca aceitei dinheiro pelo meu trabalho. ";
+		next;
+		input .@input$;
+		if (.@input$ == "Isso traz azar.") {
+			mes "[Hein]";
+			mes "Isso mesmo!";
+			mes "E você precisa de sorte quando cria armas de alta qualidade!";
+			next;
+			mes "[Hein]";
+			mes "Oh droga.";
+			mes "Sou um homem morto.";
+			mes "Acabei de perceber.";
+			mes "Ou lembrado.";
+			mes "Talvez eu seja cérebro";
+			mes "morto também, né?";
+			set lv4_weapon,42;
+			next;
+			mes "[Hein]";
+			mes "Bem, devo ser um morto de sorte por lembrar um pouco do meu passado, certo? ";
+			next;
+			mes "[Hein]";
+			mes "Certo, morri enquanto tentava terminar minha pesquisa de armas. ";
+			next;
+			mes "[Hein]";
+			mes "Ei, deixe-me pedir um favor. ";
+			next;
+			mes "[Hein]";
+			mes "Sem pressa";
+			mes "e pense sobre isso.";
+			mes "Não pode ser tão ruim";
+			mes "de um acordo... Certo?";
+			close;
+		}
+		else {
+			mes "[Hein]";
+			mes "Wha...?";
+			mes "O que você está falando?";
+			mes "O que eu ia dizer?";
+			mes "Ai... Minha cabeça está doendo!";
+			close;
+		}
+	}
+	if (lv4_weapon == 40) {
+		mes "[Hein]";
+		mes "Parece que você quer me perguntar uma coisa. ";
+		next;
+		mes "[Hein]";
+		mes "Naquela época,";
+		mes "Nunca aceitei dinheiro pelo meu trabalho. ";
+		next;
+		mes "[Hein]";
+		mes "Qual foi o resto?";
+		mes "Por que não consigo me lembrar do";
+		mes "resto disso dizendo?!";
+		next;
+		mes "[Hein]";
+		mes "Isto é tão estranho.";
+		mes "Como eu poderia esquecer";
+		mes "algo que eu costumava fazer";
+		mes "digo o tempo todo? ";
+		mes "Eu odeio estar morto!";
+		close;
+	}
+	mes "[Hein]";
+	mes "Parece que você quer me perguntar uma coisa. ";
+	next;
+	mes "[Hein]";
+	mes "Naquela época,";
+	mes "Nunca aceitei dinheiro pelo meu trabalho. ";
+	next;
+	switch(select("Mostre interesse.:Ignore-o.")) {
+	case 1:
+		mes "[Hein]";
+		mes "Qual foi o resto?";
+		mes "Por que não consigo me lembrar do";
+		mes "resto disso dizendo?!";
+		next;
+		mes "[Hein]";
+		mes "Isto é tão estranho.";
+		mes "Como eu poderia esquecer";
+		mes "algo que eu costumava fazer";
+		mes "digo o tempo todo? ";
+		mes "Eu odeio estar morto!";
+		set lv4_weapon,40;
+		close;
+	case 2:
+		mes "[Hein]";
+		mes "Nozes! ";
+		mes "o resto disso dizendo?!";
+		close;
+	}
+}
+
+niflheim,331,72,3	script	Waltboughst#lv4	795,{
+	if (checkweight(908,300) == 0) {
+		mes "^3355FFEspere um segundo! ";
+		close;
+	}
+	if (BaseLevel < 80) {
+		mes "[Waltbought]";
+		mes "Hah...!";
+		mes "Uma pessoa viva!";
+		mes "Mas não por muito!";
+		next;
+		mes "[Waltbought]";
+		mes "Espero que você tenha vindo aqui com alguns aliados fortes. ";
+		mes "o seu, você sabe.";
+		close;
+	}
+	if (lv4_weapon == 0) {
+		mes "[Waltbought]";
+		mes "É tão frustrante estar morto.";
+		mes "Não consigo fazer nada sem corpo, por mais que tente.";
+		next;
+		mes "[Waltbought]";
+		mes "É engraçado, você sabe. ";
+		next;
+		switch(select("Mostre interesse.:Ignore-o.")) {
+		case 1:
+			mes "[Waltbought]";
+			mes "Deixe-me tentar novamente.";
+			mes "'Tentar o seu melhor não vai";
+			mes "sempre resultam em sucesso...'";
+			mes "Tenho certeza que não é tudo...";
+			next;
+			mes "[Waltbought]";
+			mes "EU...";
+			mes "Eu não consigo pensar!";
+			mes "O que era suposto";
+			mes "vir depois dessa parte?";
+			set lv4_weapon,49;
+			close;
+		case 2:
+			mes "[Waltbought]";
+			mes "Deixe-me tentar novamente.";
+			mes "'Tentar o seu melhor não vai";
+			mes "sempre resultam em sucesso...'";
+			mes "Tenho certeza que não é tudo...";
+			close;
+		}
+	}
+	if ((lv4_weapon < 49) || (lv4_weapon > 57)) {
+		mes "[Waltbought]";
+		mes "Não parece que você está apenas vagando. ";
+		close;
+	}
+	if ((lv4_weapon == 56) || (lv4_weapon == 57)) {
+		mes "[Waltbought]";
+		mes "Dê uma olhada neste!";
+		mes "Em pouco tempo, fiz algo com os materiais que você me deu. ";
+		next;
+		if (rand(1,2) == 1) {
+			mes "[Waltbought]";
+			mes "Waltboughst nunca falha!";
+			if (lv4_weapon == 56) {
+				mes "Com minha habilidade e sua sorte, a probabilidade de fracasso era zero. ";
+				getitem 1140,1; //Byeorrun_Gum
+			}
+			else {
+				mes "Com minha habilidade e sua sorte, a probabilidade de fracasso era zero. ";
+				getitem 1233,1; //Exercise
+			}
+			set lv4_weapon,0;
+			next;
+			mes "[Waltbought]";
+			mes "Eu sou um gênio!";
+			mes "Hahahahahahahaha!";
+			mes "Eu consegui onde meus irmãos";
+			mes "não conseguia! ";
+			next;
+			mes "[Waltbought]";
+			mes "Droga, posso sentir aquela confusão na minha cabeça novamente. ";
+			next;
+			mes "[Waltbought]";
+			mes "Tenho certeza de que se você voltar e me ajudar a recuperar minhas memórias, poderei ser útil para você novamente. ";
+			next;
+			mes "[Waltbought]";
+			mes "Sim...";
+			mes "Será seu trabalho lembrar as realizações de Waltboughst e que ele foi um ferreiro à frente de seu tempo. ";
+			close;
+		}
+		else {
+			mes "[Waltbought]";
+			mes "Waltboughst nunca falha!";
+			if (lv4_weapon == 56) {
+				mes "Com minha habilidade e sua sorte, a probabilidade de fracasso era zero. ";
+				getitem 1228,1; //Combat_Knife
+			}
+			else {
+				mes "Com minha habilidade e sua sorte, a probabilidade de fracasso era zero. ";
+				getitem 1528,1; //Grand_Cross
+			}
+			set lv4_weapon,0;
+			next;
+			mes "[Waltbought]";
+			mes "Eu sou um gênio!";
+			mes "Hahahahahahahaha!";
+			mes "Eu consegui onde meus irmãos";
+			mes "não conseguia! ";
+			next;
+			mes "[Waltbought]";
+			mes "Droga, posso sentir aquela confusão na minha cabeça novamente. ";
+			next;
+			mes "[Waltbought]";
+			mes "Tenho certeza de que se você voltar e me ajudar a recuperar minhas memórias, poderei ser útil para você novamente. ";
+			next;
+			mes "[Waltbought]";
+			mes "Sim...";
+			mes "Será seu trabalho lembrar as realizações de Waltboughst e que ele foi um ferreiro à frente de seu tempo. ";
+			close;
+		}
+	}
+	if (((lv4_weapon == 54) && (countitem(7292) > 29) && (countitem(7291) > 29) && (countitem(7295) > 29)) || ((lv4_weapon == 55) && (countitem(7296) > 29) && (countitem(7294) > 29) && (countitem(7290) > 29))) {
+		mes "[Waltbought]";
+		mes "Espere, o que é isso que você está segurando?";
+		mes "Acho que essas são exatamente as coisas que precisamos para fazer de você uma arma...";
+		next;
+		mes "[Waltbought]";
+		mes "Sim...!";
+		mes "Isto é perfeito.";
+		mes "Parece que eu vou";
+		mes "poder começar a trabalhar";
+		mes "sobre isso muito em breve.";
+		next;
+		mes "[Waltbought]";
+		mes "Agora precisamos testar sua sorte. ";
+		next;
+		mes "[Waltbought]";
+		mes "Se a sua sorte for forte hoje, haverá menos risco de falhar no processo de criação de armas. ";
+		next;
+		mes "[Waltbought]";
+		mes "Mas se você perder...";
+		mes "Precisaremos expulsar seu azar nos livrando de uma boa quantidade de um dos minérios que você trouxe.";
+		next;
+		mes "[Waltbought]";
+		mes "Pegue este pedaço de papel.";
+		mes "Agora, quando eu mandar, escreva 'Pedra', 'Papel' ou 'Tesoura'. ";
+		next;
+		set .@npchand1,rand(1,3);
+		set .@myhand1,select("Tesoura: Pedra: Papel");
+		if (((.@myhand1 == 1) && (.@npchand1 == 3)) || ((.@myhand1 == 2) && (.@npchand1 == 1)) || ((.@myhand1 == 3) && (.@npchand1 == 2))) {
+			set .@shobu,.@shobu+1;
+		}
+		mes "[Waltbought]";
+		mes "Tudo bem...";
+		mes "Agora vamos brincar";
+		mes "uma segunda vez.";
+		next;
+		set .@npchand2,rand(1,3);
+		set .@myhand2,select("Tesoura: Pedra: Papel");
+		if (((.@myhand2 == 1) && (.@npchand2 == 3)) || ((.@myhand2 == 2) && (.@npchand2 == 1)) || ((.@myhand2 == 3) && (.@npchand2 == 2))) {
+			set .@shobu,.@shobu+1;
+		}
+		mes "[Waltbought]";
+		mes "Uma última vez.";
+		mes "Depois disso, nós";
+		mes "comparar resultados";
+		mes "e verifique sua sorte.";
+		next;
+		set .@npchand3,rand(1,3);
+		set .@myhand3,select("Tesoura: Pedra: Papel");
+		if (((.@myhand3 == 1) && (.@npchand3 == 3)) || ((.@myhand3 == 2) && (.@npchand3 == 1)) || ((.@myhand3 == 3) && (.@npchand3 == 2))) {
+			set .@shobu,.@shobu+1;
+		}
+		set .@aekddam,rand(1,3);
+		if (.@shobu > 1) {
+			if (lv4_weapon == 54) {
+				delitem 7292,30; //Muscovite
+				delitem 7295,30; //Citrine
+				delitem 7291,30; //Agate
+			}
+			else {
+				delitem 7296,30; //Pyroxene
+				delitem 7294,30; //Turquoise
+				delitem 7290,30; //Phlogopite
+			}
+			set lv4_weapon,lv4_weapon+2;
+		}
+		else if (.@shobu < 2) {
+			if (.@aekddam == 1) {
+				if (lv4_weapon == 54) {
+					delitem 7292,30; //Muscovite
+				}
+				else {
+					delitem 7296,30; //Pyroxene
+				}
+			}
+			else if (.@aekddam == 2) {
+				if (lv4_weapon == 54) {
+					delitem 7295,30; //Citrine
+				}
+				else {
+					delitem 7294,30; //Turquoise
+				}
+			}
+			else if (.@aekddam == 3) {
+				if (lv4_weapon == 54) {
+					delitem 7291,30; //Agate
+				}
+				else {
+					delitem 7290,30; //Phlogopite
+				}
+			}
+		}
+		mes "[Waltbought]";
+		mes "OK...";
+		mes "Anotei...";
+		if (.@npchand1 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@npchand1 == 2) {
+			mes "Pedra";
+		}
+		else if (.@npchand1 == 3) {
+			mes "Papel";
+		}
+		if (.@npchand2 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@npchand2 == 2) {
+			mes "Pedra";
+		}
+		else if (.@npchand2 == 3) {
+			mes "Papel";
+		}
+		if (.@npchand3 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@npchand3 == 2) {
+			mes "Pedra";
+		}
+		else if (.@npchand3 == 3) {
+			mes "Papel";
+		}
+		next;
+		mes "[Waltbought]";
+		mes "Agora você escreveu...";
+		if (.@myhand1 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@myhand1 == 2) {
+			mes "Pedra";
+		}
+		else if (.@myhand1 == 3) {
+			mes "Papel";
+		}
+		if (.@myhand2 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@myhand2 == 2) {
+			mes "Pedra";
+		}
+		else if (.@myhand2 == 3) {
+			mes "Papel";
+		}
+		if (.@myhand3 == 1) {
+			mes "Tesoura";
+		}
+		else if (.@myhand3 == 2) {
+			mes "Pedra";
+		}
+		else if (.@myhand3 == 3) {
+			mes "Papel";
+		}
+		next;
+		if (.@shobu > 1) {
+			mes "[Waltbought]";
+			mes "Excelente. " + shobu + "vezes,";
+			mes "então sua sorte deve ser muito alta.";
+			mes "Isso significa que podemos começar ~!";
+			next;
+			mes "[Waltbought]";
+			mes "Deixe os minérios aqui e dê";
+			mes "algum tempo para completar meus preparativos. ";
+			close;
+		}
+		else if (.@shobu < 2) {
+			mes "[Waltbought]";
+			mes "Você perdeu...";
+			mes "Sinto muito, mas nós";
+			mes "preciso repelir o mal";
+			mes "sorte jogando fora";
+			mes "alguns de seus minérios...";
+			next;
+			mes "[Waltbought]";
+			mes "Reúna os minérios necessários novamente,";
+			mes "e volte para mim para que possamos testar sua sorte. ";
+			close;
+		}
+	}
+	if ((lv4_weapon == 53) || (lv4_weapon == 54) || (lv4_weapon == 55)) {
+		mes "[Waltbought]";
+		mes "Por que não consigo me lembrar...?!";
+		mes "Supõe-se que um bom armeiro";
+		mes "saber essas coisas de cor!";
+		mes "Quando eu estava vivo, não tive esses problemas de memória...";
+		next;
+		mes "[Waltbought]";
+		mes "Se o pai fosse";
+		mes "para me ver agora, estou";
+		mes "claro que ele teria vergonha...";
+		close;
+	}
+	if ((lv4_weapon == 52) && (countitem(1005) > 1) && (countitem(989) > 0) && (countitem(710) > 0) && (countitem(969) > 19)) {
+		mes "[Waltbought]";
+		mes "Você já trouxe tudo que eu precisava? ";
+		next;
+		mes "[Waltbought]";
+		mes "É o seguinte. ";
+		delitem 1005,2; //Hammer_Of_Blacksmith
+		delitem 989,1; //Emperium_Anvil
+		delitem 710,1; //Illusion_Flower
+		delitem 969,20; //Gold
+		set lv4_weapon,53;
+		close;
+	}
+	if (lv4_weapon == 52) {
+		mes "[Waltbought]";
+		mes "Por enquanto, traga";
+		mes "as coisas básicas...";
+		mes "1 Bigorna do Império,";
+		mes "2 Martelo do Ferreiro,";
+		mes "1 Flor Ilusão e";
+		mes "20 ouro...";
+		close;
+	}
+	if (lv4_weapon == 51) {
+		mes "[Waltbought]";
+		mes "Acabei de lembrar alguns dos materiais mais básicos que precisamos para fazer uma arma para você.";
+		next;
+		mes "[Waltbought]";
+		mes "Por enquanto, traga";
+		mes "as coisas básicas...";
+		mes "1 Bigorna do Império,";
+		mes "2 Martelo do Ferreiro,";
+		mes "1 Flor Ilusão e";
+		mes "20 ouro...";
+		next;
+		mes "[Waltbought]";
+		mes "Havia alguns outros materiais necessários, mas preciso de algum tempo para me concentrar e lembrar quais eram.";
+		set lv4_weapon,52;
+		close;
+	}
+	if (lv4_weapon == 50) {
+		mes "[Waltbought]";
+		mes "É tão frustrante estar morto.";
+		mes "Não consigo fazer nada sem corpo, por mais que tente.";
+		next;
+		mes "[Waltbought]";
+		mes "É engraçado, você sabe. ";
+		next;
+		input .@input$;
+		if (.@input$ == "Mas isso não é desculpa!") {
+			mes "[Waltbought]";
+			mes "Sim! ";
+			mes "Mas isso não é desculpa!";
+			mes "Todo homem de sucesso em";
+			mes "a história deu o seu melhor!";
+			set lv4_weapon,51;
+			next;
+			mes "[Waltbought]";
+			mes "Eu me lembro agora...";
+			mes "Eu morri tentando fazer algum tipo de arma especial.";
+			mes "Heh heh, mas não desta vez!";
+			next;
+			mes "[Waltbought]";
+			mes "Devíamos estar destinados a nos encontrar. ";
+			next;
+			mes "[Waltbought]";
+			mes "Empreste-me seu poder.";
+			mes "Ajude-me a concluir o experimento";
+			mes "Deixei a vida inacabada e vou deixar você ficar com o produto acabado. ";
+			next;
+			mes "[Waltbought]";
+			mes "Parece que o fato de ter falecido prejudicou minhas faculdades rentáveis. ";
+			close;
+		}
+		else {
+			mes "[Waltbought]";
+			mes "O que...?";
+			mes "Não não. ";
+			mes "não foi mesmo...";
+			mes "Hmmm.";
+			close;
+		}
+	}
+	if (lv4_weapon == 49) {
+		mes "[Waltbought]";
+		mes "É tão frustrante estar morto.";
+		mes "Não consigo fazer nada sem corpo, por mais que tente.";
+		next;
+		mes "[Waltbought]";
+		mes "É engraçado, você sabe. ";
+		next;
+		mes "[Waltbought]";
+		mes "Deixe-me tentar novamente.";
+		mes "'Tentar o seu melhor não vai";
+		mes "sempre resultam em sucesso...'";
+		mes "Tenho certeza que não é tudo...";
+		next;
+		mes "[Waltbought]";
+		mes "EU...";
+		mes "Eu não consigo pensar!";
+		mes "O que era suposto";
+		mes "vir depois dessa parte?";
+		close;
+	}
+	mes "[Waltbought]";
+	mes "É tão frustrante estar morto.";
+	mes "Não consigo fazer nada sem corpo, por mais que tente.";
+	next;
+	mes "[Waltbought]";
+	mes "É engraçado, você sabe. ";
+	next;
+	switch(select("Mostre interesse.:Ignore-o.")) {
+	case 1:
+		mes "[Waltbought]";
+		mes "Deixe-me tentar novamente.";
+		mes "'Tentar o seu melhor não vai";
+		mes "sempre resultam em sucesso...'";
+		mes "Tenho certeza que não é tudo...";
+		next;
+		mes "[Waltbought]";
+		mes "EU...";
+		mes "Eu não consigo pensar!";
+		mes "O que era suposto";
+		mes "vir depois dessa parte?";
+		set lv4_weapon,49;
+		close;
+	case 2:
+		mes "[Waltbought]";
+		mes "Deixe-me tentar novamente.";
+		mes "'Tentar o seu melhor não vai";
+		mes "sempre resultam em sucesso...'";
+		mes "Tenho certeza que não é tudo...";
+		close;
+	}
+}
+

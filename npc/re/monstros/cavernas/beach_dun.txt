@@ -1,0 +1,145 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+//==================================================
+// beach_dun - Karu, Caverna do Oeste
+//==================================================
+beach_dun,0,0	monster	Medusa	1148,60,5000,0,0
+beach_dun,0,0	monster	Nereid	1255,20,5000,0,0
+beach_dun,0,0	monster	Pest	1256,20,5000,0,0
+beach_dun,0,0	monster	Tritão	1264,3,5000,0,0
+beach_dun,0,0,0,0	boss_monster	Tao Gunka	1583,1,18000000,600000,0
+
+//==================================================
+// beach_dun2 - Karu, Caverna do Oeste
+//==================================================
+beach_dun2,0,0	monster	Golem Estalactítico	1278,65,5000,0,0
+beach_dun2,0,0	monster	Trilobita	1279,20,5000,0,0
+beach_dun2,0,0	monster	Megalith	1274,15,5000,0,0
+beach_dun2,0,0	monster	Hydra	1068,10,5000,0,0
+beach_dun2,0,0	monster	Nereid	1255,3,5000,0,0
+
+//==================================================
+// beach_dun3 - Mao, Caverna do Leste
+//==================================================
+beach_dun3,0,0	monster	Sapo de Thara	1034,50,5000,0,0
+beach_dun3,0,0	monster	Megalodon	1064,30,5000,0,0
+beach_dun3,0,0	monster	Hydra	1068,30,5000,0,0
+beach_dun3,0,0	monster	Nereid	1255,1,5000,0,0
+
+//==================================================
+// Illusion of Luanda
+//==================================================
+// Todo: a contagem deve começar após o término do tempo de espera?
+-	script	illusion_luanda	-1,{
+	end;
+OnMob20270: callsub( S_Mob, 20270, 5 );	// ILL_TRI_JOINT
+OnMob20271: callsub( S_Mob, 20271, 5 );	// ILL_STALACTIC_GOLEM
+OnMob20272: callsub( S_Mob, 20272, 5 );	// ILL_MEGALITH
+OnMob20274: callsub( S_Mob, 20274, 4 );	// ILL_STONE_SHOOTER
+OnMob20275: callsub( S_Mob, 20275, 4 );	// ILL_WOOTAN_SHOOTER
+OnMob20276: callsub( S_Mob, 20276, 4 );	// ILL_WOOTAN_FIGHTER
+S_Mob:
+	.@group = getarg(1);
+	if (.@group != .group)
+		end;
+	if (playerattached()) {
+		if (.count < 1500)
+			.count++;
+		if (.count == 1500 && !.boss_spawn && !.cooldown) {
+			getunitdata( killedgid, .@data );
+			callsub( S_Boss, (20273 + .swap), .@group, .@data[UMOB_X], .@data[UMOB_Y] );
+		}
+	}
+	.@mob_id = getarg(0);
+	sleep 5000;
+	if (.@group == .group) {
+		monster "com_d02_i",0,0,"--ja--",.@mob_id,1,"illusion_luanda::OnMob" + .@mob_id;
+		// setunittitle for the title, setunitdata
+		setunitdata $@mobid[0], UMOB_GROUP_ID, getarg(1);
+	}
+	end;
+
+S_Boss:
+	killmonster "com_d02_i", "illusion_luanda::OnBossDeath";
+	.boss_spawn = true;
+	monster "com_d02_i",getarg(2),getarg(3),"--ja--",getarg(0),1,"illusion_luanda::OnBossDeath";
+	setunitdata $@mobid[0], UMOB_GROUP_ID, getarg(1);
+	if (.swap == 0)	// ILL_TAO_GUNKA
+		mapannounce "com_d02_i", "Tao Gunka: É hora de mostrar seu poder megalítico?", bc_map, 0x70DBDB;
+	else	// ILL_WOOTAN_DEFENDER
+		mapannounce "com_d02_i", "Defensor Wootan: Acho que terei que intervir depois de todos esses caras inúteis.", bc_map, 0x70DBDB;
+	end;
+
+OnBossDeath:
+	killmonster "com_d02_i", "illusion_luanda::OnBossDeath";
+	.boss_spawn = false;
+	.cooldown = true;
+
+	if (.swap == 0) {	// ILL_TAO_GUNKA
+		mapannounce "com_d02_i", "Tao Gunka: Megálitos, é hora de se agachar e prender a respiração.", bc_map, 0x70DBDB;
+		sleep 2000;
+		mapannounce "com_d02_i", "Tao Gunka: Ficaremos mais fortes à medida que nos libertarmos e sairmos para o mundo.", bc_map, 0x70DBDB;
+		sleep 2000;
+		mapannounce "com_d02_i", "Tao Gunka: Agache-se. Quando você se agacha, seu megálito.", bc_map, 0x70DBDB;
+	}
+	else {	// ILL_WOOTAN_DEFENDER
+		mapannounce "com_d02_i", "Defensor Wootan: Ugh.. Um ferimento bastante perigoso..", bc_map, 0x70DBDB;
+		sleep 2000;
+		mapannounce "com_d02_i", "Defensor Wootan: Você me empurrou, um guerreiro da tribo Wootan, até aqui. É muito bom. É uma pena, mas vou renunciar agora.", bc_map, 0x70DBDB;
+		sleep 2000;
+		mapannounce "com_d02_i", "Defensor Wootan: Ouça todos os Wootans! Saia agora e comprometa-se com o próximo.", bc_map, 0x70DBDB;
+	}
+	sleep 1000;
+	.group = (.group == 4 ? 5 : 4);
+
+	// todos os mobs são mortos e imediatamente substituídos por novos mobs
+	for ( .@i = 0; .@i < 3; ++.@i ) {
+		.@mob_id = 20270 + .@i + .swap;
+		killmonster "com_d02_i", "illusion_luanda::OnMob" + .@mob_id;
+	}
+
+	.swap = .swap ^ 4;	// swap 0 -> 4, 4 -> 0 (used for mob ID)
+
+	callsub( S_SpawnInit,
+		(20270 + .swap),
+		(20271 + .swap),
+		(20272 + .swap)
+	);
+	initnpctimer;
+	end;
+
+OnTimer7200000:
+	.cooldown = false;
+	stopnpctimer;
+	end;
+
+S_SpawnInit:
+	.count = 0;
+	monster "com_d02_i",0,0,"--ja--",getarg(0),50,"illusion_luanda::OnMob" + getarg(0);
+	copyarray .@gid[0], $@mobid[0], 50;
+	monster "com_d02_i",0,0,"--ja--",getarg(1),50,"illusion_luanda::OnMob" + getarg(1);
+	copyarray .@gid[50], $@mobid[0], 50;
+	monster "com_d02_i",0,0,"--ja--",getarg(2),50,"illusion_luanda::OnMob" + getarg(2);
+	copyarray .@gid[100], $@mobid[0], 50;
+
+	for ( .@i = 0; .@i < 150; ++.@i )
+		setunitdata .@gid[.@i], UMOB_GROUP_ID, .group;
+	return;
+
+OnInit:
+	.group = 5;	// UMOB_GROUP_ID
+
+	callsub( S_SpawnInit,
+		20270,	// ILL_TRI_JOINT
+		20271,	// ILL_STALACTIC_GOLEM
+		20272	// ILL_MEGALITH
+	);
+	end;
+}

@@ -1,0 +1,120 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+moc_ruins,78,173,6	script	Guia do Leilão#moc	98,{
+	callfunc "F_AuctionWarper",1;
+}
+
+prontera,218,120,4	script	Guia do Leilão#prt	117,{
+	callfunc "F_AuctionWarper",2;
+}
+
+yuno,129,116,0	script	Guia do Leilão#yuno	90,{
+	callfunc "F_AuctionWarper",3;
+}
+
+lighthalzen,205,169,6	script	Guia do Leilão#lhz	833,{
+	callfunc "F_AuctionWarper",4;
+}
+
+function	script	F_AuctionWarper	{
+	mes "[Guia do Leilão]";
+    mes "Olá, você gostaria de entrar no";
+    mes "Salão de Leilões?";
+	next;
+	if (select("Yes:No") == 1) {
+		.@num = getarg(0);
+		if (.@num == 1 || .@num == 4) {
+			mes "[Guia do Leilão]";
+            mes "Ótimo! Bem, então,";
+            mes "Espero que você se divirta";
+            mes "e aproveite o leilão~";
+		} else {
+			mes "[Guia do Leilão]";
+			mes "Aproveite o leilão.";
+		}
+		close2;
+		switch(.@num) {
+		case 1:
+			warp "auction_01",179,53; end;
+		case 2:
+			warp "auction_01",21,43; end;
+		case 3:
+			warp "auction_02",151,23; end;
+		case 4:
+			warp "auction_02",43,24; end;
+		}
+	}
+	mes "[Guia do Leilão]";
+	mes "Muito bem, então.";
+    mes "Se você mudar de ideia,";
+    mes "mente, então por favor";
+    mes "venha e confira";
+    mes "fora dos leilões~";
+	close;
+}
+
+// Sign posts
+//============================================================
+-	script	Posto de Informação#dum::AuctionSign	-1,{
+	mes "[Information]";
+	mes "Guia do leilão";
+	close;
+}
+
+moc_ruins,76,176,6	duplicate(AuctionSign)	Posto de Informação#moc	837
+prontera,216,120,4	duplicate(AuctionSign)	Posto de Informação#prt	837
+yuno,131,116,0	duplicate(AuctionSign)	Posto de Informação#yuno	837
+lighthalzen,207,169,6	duplicate(AuctionSign)	Posto de Informação#lhz	837
+
+// Warps
+//============================================================
+auction_01,180,49,0	warp	auction_entrance_moc	1,1,moc_ruins,78,171
+auction_01,22,37,0	warp	auction_entrance_prt	1,1,prontera,214,120
+auction_02,151,17,0	warp	auction_enterance_juno	1,1,yuno,132,119
+auction_02,43,17,0	warp	auction_enterance_lhz	1,1,lighthalzen,209,169
+
+// Auction House NPCs
+//============================================================
+-	script	Corretor de Leilões#dum::AuctionBroker	-1,{
+	mes "[Corretor de Leilões]";
+	mes "Bem-vindo ao Salão de Leilões.";
+    mes "Você gostaria de ver as mercadorias?";
+	next;
+	if (select("Sim.:Não.") == 1) {
+		mes "[Corretor de Leilões]";
+		mes "Muito bem.";
+        mes "Por favor, pegue";
+        mes "olhe e veja";
+        mes "O que está sendo oferecido~";
+		OpenAuction;
+		close;
+	}
+	mes "[Corretor de Leilões]";
+	mes "Muito bem, então.";
+    mes "Se você mudar de ideia,";
+    mes "mente, então por favor";
+    mes "venha e confira";
+    mes "fora dos leilões~";
+	close;
+}
+
+auction_01,182,68,6	duplicate(AuctionBroker)	Corretor de Leilões#moc1	98
+auction_01,182,75,0	duplicate(AuctionBroker)	Corretor de Leilões#moc2	99
+auction_01,177,75,2	duplicate(AuctionBroker)	Corretor de Leilões#moc3	98
+auction_01,177,68,4	duplicate(AuctionBroker)	Corretor de Leilões#moc4	99
+auction_01,21,74,4	duplicate(AuctionBroker)	Corretor de Leilões#prt1	117
+auction_01,27,78,4	duplicate(AuctionBroker)	Corretor de Leilões#prt2	116
+auction_01,16,78,4	duplicate(AuctionBroker)	Corretor de Leilões#prt3	115
+auction_02,158,47,6	duplicate(AuctionBroker)	Corretor de Leilões#yuno1	90
+auction_02,145,47,2	duplicate(AuctionBroker)	Corretor de Leilões#yuno2	90
+auction_02,151,54,0	duplicate(AuctionBroker)	Corretor de Leilões#yuno3	90
+auction_02,152,41,4	duplicate(AuctionBroker)	Corretor de Leilões#yuno4	90
+auction_02,57,46,2	duplicate(AuctionBroker)	Corretor de Leilões#lhz1	874
+auction_02,31,46,6	duplicate(AuctionBroker)	Corretor de Leilões#lhz2	874
+auction_02,43,65,4	duplicate(AuctionBroker)	Corretor de Leilões#lhz3	833

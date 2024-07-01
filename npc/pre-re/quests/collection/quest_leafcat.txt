@@ -1,0 +1,244 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+ayo_fild01,44,241,5	script	Lella#LeafCat_Hunt	877,{
+	if (#mobleaf >= .consec) {
+		mes .npc$;
+		mes "Voce já fez 3 missões comigo hoje.";
+		mes "Volte amanhã";
+		close;
+	}
+	if (checkquest(60143) != -1) {
+		if (checkquest(60143, HUNTING) != 2) {
+			mes "[Lella]";
+			mes "Você terminou de caçar os 50 Gato de Folha?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Lella]";
+					mes "Hmm, acho que você ainda não caçou 50...";
+					close;
+				case 2:
+					mes "[Lella]";
+					mes "Lembre-se, preciso de ajuda para caçar Gato de Folha, então vá e caça 50 deles.";
+					close;
+				case 3:
+					mes "[Lella]";
+					mes "Tem certeza de que deseja parar de caçar?";
+					mes "Qualquer progresso que você tenha feito será apagado.";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Lella]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60143;
+							close;
+						case 2:
+							mes "[Lella]";
+							mes "Por favor, mate 50 Gato de Folha para que eu possa continuar minha jornada.";
+							close;
+					}
+			}
+		} else {
+			mes "[Lella]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 25740, 31512;
+			erasequest 60143;
+			#mobleaf++;
+			close;
+		}
+	}
+	if (checkquest(60144) != -1) {
+		if (checkquest(60144, HUNTING) != 2) {
+			mes "[Lella]";
+			mes "Você terminou de caçar os 100 Gato de Folha?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Lella]";
+					mes "Hmm, acho que você ainda não caçou 100...";
+					close;
+				case 2:
+					mes "[Lella]";
+					mes "Lembre-se, preciso de ajuda para caçar Gato de Folha, então vá e caça 100 deles.";
+					close;
+				case 3:
+					mes "[Lella]";
+					mes "Tem certeza de que deseja parar de caçar?";
+					mes "Qualquer progresso que você tenha feito será apagado.";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Lella]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60144;
+							close;
+						case 2:
+							mes "[Lella]";
+							mes "Por favor, mate 100 Gato de Folha para que eu possa continuar minha jornada.";
+							close;
+					}
+			}
+		} else {
+			mes "[Lella]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 25740, 31512;
+			getexp 25740, 31512;
+			erasequest 60144;
+			#mobleaf++;
+			close;
+		}
+	}
+	if (checkquest(60145) != -1) {
+		if (checkquest(60145, HUNTING) != 2) {
+			mes "[Lella]";
+			mes "Você terminou de caçar os 150 Gato de Folha?";
+			next;
+			switch (select("Sim:Não:Quero desistir")) {
+				case 1:
+					mes "[Lella]";
+					mes "Hmm, acho que você ainda não caçou 150...";
+					close;
+				case 2:
+					mes "[Lella]";
+					mes "Lembre-se, preciso de ajuda para caçar Gato de Folha, então vá e caça 150 deles.";
+					close;
+				case 3:
+					mes "[Lella]";
+					mes "Tem certeza de que deseja parar de caçar?";
+					mes "Qualquer progresso que você tenha feito será apagado.";
+					next;
+					switch (select("Sim:Não")) {
+						case 1:
+							mes "[Lella]";
+							mes "Ok então, volte aqui se mudar de ideia.";
+							erasequest 60145;
+							close;
+						case 2:
+							mes "[Lella]";
+							mes "Por favor, mate 150 Gato de Folha para que eu possa continuar minha jornada.";
+							close;
+					}
+			}
+		} else {
+			mes "[Lella]";
+			mes "Incrível, você fez isso rapidinho.";
+			getexp 25740, 31512;
+			getexp 25740, 31512;
+			getexp 25740, 31512;
+			erasequest 60145;
+			#mobleaf++;
+			close;
+		}
+	}
+// Para o nível mínimo
+	if (BaseLevel > 35) {
+		// Para o nível máximo
+		if (BaseLevel < 66) {
+			mes "[Lella]";
+			mes "Olá!";
+			mes "Você parece alguém disposto a ajudar alguém que está lentamente enlouquecendo.";
+			next;
+			mes "[Lella]";
+			switch(select("Claro:Não")) {
+				case 1:
+					mes "[Lella]";
+					mes "Obrigada! Você é um salva-vidas!";
+					next;
+					switch(select("Coletar itens:Caçar Gato de Folha:Cancelar")) {
+						case 1:
+							// Entregar item
+							mes "Eu realmente preciso reunir ^00CE0050 Folha Gigante^000000 para manter minha sanidade.";
+							mes "Você tem algumas?";
+							next;
+							switch(select("Eu tenho 50 Folha Gigante:O que? Desculpe, eu estava sonhando acordado")) {
+								case 1:
+									/*
+									if (checkweight(503,10) == 0) {
+										mes "[Lella]";
+										mes "Ei, parece que o peso nas";
+										mes "suas costas vai te esmagar. Volte";
+										mes "depois de perder um pouco de peso.";
+										close;
+									}
+									*/
+									if (countitem(7198) > 49) {
+										mes "[Lella]";
+										mes "Maravilhoso, posso sentir que está um pouco mais silencioso por aqui!";
+										next;
+										mes "[Lella]";
+										mes "Quanto mais folhas eu coleciono, mais silencioso parece por aqui.";
+										delitem 7198,50; //Folha Gigante
+										getexp 25740,31512;
+										//getitem 503,10; //Yellow_Potion
+										#mobleaf++;
+										close;
+									}
+									else {
+										mes "[Lella]";
+										mes "Meow meow meow meow meow...";
+										mes "NOOOOOOOOOOOO.";
+										close;
+									}
+								case 2:
+									mes "[Lella]";
+									mes "Eu preciso de ^00CE0050 Folha Gigante^000000.";
+									close;
+							}
+						case 2:
+							// Missão de contagem de mortes
+							mes "[Lella]";
+							mes "Ah, ok, acho que você pode me ajudar caçando alguns Gato de Folha.";
+							mes "Quantos você gostaria de caçar?";
+							next;
+							switch(select("50 Gato de Folha:100 Gato de Folha:150 Gato de Folha")) {
+								case 1:
+									mes "[Lella]";
+									mes "Volte quando terminar sua tarefa e eu lhe darei uma pequena recompensa.";
+									setquest 60143;
+									close;
+								case 2:
+									mes "[Lella]";
+									mes "Volte quando terminar sua tarefa e eu lhe darei uma pequena recompensa.";
+									setquest 60144;
+									close;
+								case 3:
+									mes "[Lella]";
+									mes "Volte quando terminar sua tarefa e eu lhe darei uma pequena recompensa.";
+									setquest 60145;
+									close;
+							}
+						case 3:
+							mes "[Lella]";
+							mes "Se mudar de ideia, por favor, volte.";
+							close;
+					}
+				case 2:
+					mes "[Lella]";
+					mes "Se mudar de ideia, por favor, volte.";
+					close;
+			}
+		} else {
+			mes "[Lella]";
+			mes "Não tenho certeza por que você está aqui, mas não posso oferecer uma recompensa, pois não haveria esforço para você!";
+			close;
+		}
+	} else {
+		mes "[Lella]";
+		mes "Fuja rapidamente antes que eles alcancem a sua sanidade!";
+		close;
+	}
+OnClock0001:
+query_sql ("DELETE FROM `acc_reg_num` WHERE `key`='#mobleaf'");
+end;
+
+OnInit:
+	.consec = 3;
+	end;
+}

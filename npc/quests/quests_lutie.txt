@@ -1,0 +1,348 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================// 
+
+xmas,117,295,4	script	Vending Machine Man	704,{
+	mes "[Titicupe]";
+	mes "Hum...?";
+	mes "Eu, Titicupe, estimado gerente da Fábrica de Brinquedos e genial inventor, consegui de novo! ";
+	next;
+	switch(select("Fale com ele sobre a Máquina de Vendas:Itens na Máquina de Vendas:Pare de falar")) {
+	case 1:
+		mes "[Titicupe]";
+		mes "Você consegue ver o pequeno boneco de neve ao meu lado esquerdo? ";
+		next;
+		mes "[Titicupe]";
+		mes "Veja, aquele boneco de neve é ??na verdade uma máquina de venda automática incrível que inventei com meu sangue, suor, lágrimas e neve.";
+		next;
+		mes "[Titicupe]";
+		mes "Você pode colocar todo tipo de coisa dentro da boca dele e, se inserir os itens certos, receberá alguns chapéus em troca...";
+		next;
+		mes "[Titicupe]";
+		mes "Chapéus da moda que você sempre sonhou em usar...! ";
+		next;
+		mes "[Titicupe]";
+		mes "Oh, esta minha criação é tão magnífica!";
+		emotion ET_CHUPCHUP;
+		next;
+		mes "[Titicupe]";
+		mes "E os capacetes--! ";
+		next;
+		mes "^3355FFO gerente da fábrica de brinquedos, Titicupe, pula e convulsiona de alegria. ";
+		emotion ET_SURPRISE;
+		close;
+	case 2:
+		mes "[Titicupe]";
+		mes "Oh, certo! ";
+		emotion ET_AHA;
+		next;
+		switch(select("Chapéu de guaxinim: Chapéu de esporo: Casca de noz maravilhosa: Casca de ovo de arco-íris: Blush: Chapéu de chef: Vela: Bolo Chapéu: Fim da conversa")) {
+		case 1:
+			mes "[Titicupe]";
+			mes "Chapéu de guaxinim?";
+			mes "1 faixa de gatinho";
+			mes "20Escama de Dragão";
+			mes "200 haste resistente em forma de escama";
+			mes "300 Peles de Lontra Marinha";
+			break;
+		case 2:
+			mes "[Titicupe]";
+			mes "Chapéu de esporo?";
+			mes "850 Esporo Venenoso";
+			mes "300 Árvore Queimada";
+			mes "1 língua";
+			break;
+		case 3:
+			mes "[Titicupe]";
+			mes "Maravilha em poucas palavras?";
+			mes "1 casca de noz";
+			mes "500 Asas de Libélula";
+			break;
+		case 4:
+			mes "[Titicupe]";
+			mes "Casca de ovo de arco-íris?";
+			mes "1 casca de ovo";
+			mes "1 Corantes Azul Cobalto";
+			mes "50 Garra do Lobo do Deserto";
+			break;
+		case 5:
+			mes "[Titicupe]";
+			mes "Corar?!";
+			mes "Você!";
+			mes "Você sabe algo...";
+			mes "Heh heh ~ De qualquer forma";
+			mes "100 Avental de Alice";
+			break;
+		case 6:
+			mes "[Titicupe]";
+			mes "Chapéu de Chef?";
+			mes "120 pedaço de bolo";
+			mes "1 corantes brancos";
+			mes "330 Pena";
+			mes "450 Escala de Dragão";
+			break;
+		case 7:
+			mes "[Titicupe]";
+			mes "Vela?";
+			mes "1 pavio de bomba";
+			mes "50 palitos de fósforo";
+			mes "100 Geléia Real";
+			break;
+		case 8:
+			mes "[Titicupe]";
+			mes "Chapéu de bolo?";
+			mes "10 doces";
+			mes "5 Bastão de Doces";
+			mes "15 Biscoito Bem Assado";
+			mes "20 pedaços de bolo";
+			mes "10 Aço";
+			break;
+		case 9:
+			mes "[Titicupe]";
+			mes "Pergunte-me a qualquer hora. ";
+		}
+		next;
+		mes "[Titicupe]";
+		mes "Tão feliz!!";
+		mes "Eu sou um gênio ~!";
+		mes "Ho-ho-ho";
+		mes "Ho-ho-ho-ho!";
+		close;
+	case 3:
+		mes "[Titicupe]";
+		mes "Às vezes, não consigo acreditar o quão magnífica é esta minha invenção...!";
+		next;
+		mes "[Titicupe]";
+		mes "EU...";
+		mes "Eu te amo";
+		mes "Senhor boneco de neve";
+		mes "Maquina de vendas.";
+		emotion ET_CHUPCHUP;
+		next;
+		mes "^3355FFO gerente da fábrica de brinquedos, Titicupe, começa a pular e a emitir gritos de êxtase desenfreado. ";
+		close;
+	}
+}
+
+xmas,115,297,4	script	Vending Machine	111,{
+	mes "[Audi]";
+	mes "^555555Emocionante máquina de venda automática de itens. ";
+	next;
+	switch(select("^FF3355Aviso (deve ser lido)^000000:Chapéu de guaxinim:Chapéu de esporo:Casca de nozes maravilhosa:Casca de ovo de arco-íris:Blush:Chapéu de chef:Vela:Chapéu de bolo:Cancelar")) {
+	case 1:
+		mes "[Audi]";
+		mes "Olá ~!";
+		mes "Preciso te contar uma coisa importante. ";
+		next;
+		mes "[Audi]";
+		mes "Portanto, se você usar um item que foi ^FF3355atualizado, ou que tenha um cartão composto por ele^000000, quaisquer cartões ou atualizações serão perdidos na criação do novo item.";
+		next;
+		mes "[Audi]";
+		mes "Portanto, quando você tentar trocar e gerar itens, coloque todos os itens valiosos que não usará no armazenamento Kafra.";
+		next;
+		mes "[Audi]";
+		mes "Tenha isso em mente porque esta máquina de venda automática não oferece devoluções, reembolsos ou trocas.";
+		next;
+		mes "[Audi]";
+		mes "Divirta-se!";
+		mes "Obrigado!";
+		close;
+	case 2:
+		if ((countitem(2213) > 0) && (countitem(1036) > 19) && (countitem(7012) > 199) && (countitem(7065) > 299)) {
+			mes "^3355FFVocê cuidadosamente coloca os itens na boca do boneco de neve.^000000";
+			next;
+			delitem 2213,1;  //Cat_Hairband
+			delitem 1036,20;  //Dragon_Scale
+			delitem 7012,200;  //Tough_Scalelike_Stem
+			delitem 7065,300;  //Sea_Otter_Leather
+			emotion ET_O;
+			mes "^3355FF*Vroooooom~~*";
+			mes "*Bzzzzt*";
+			mes "*choogachooga*";
+			mes "*Kapang!*^000000";
+			getitem 5033,1; // Smokie_Hat
+			next;
+			mes "[Audi]";
+			mes "^555555Obrigado por ter vindo.";
+			mes "Por favor, volte novamente!";
+			mes "Ah, e conte para um amigo!^000000";
+			close;
+		}
+		break;
+	case 3:
+		if ((countitem(7033) > 849) && (countitem(7068) > 299) && (countitem(1015) > 0)) {
+			mes "^3355FFVocê cuidadosamente coloca os itens na boca do boneco de neve.^000000";
+			next;
+			delitem 7033,850;  //Poison_Spore
+			delitem 7068,300;  //Burn_Tree
+			delitem 1015,1;  //Thin_N'_Long_Tongue
+			emotion ET_O;
+			mes "^3355FF*Vroooooom~~*";
+			mes "*Bzzzzt*";
+			mes "*choogachooga*";
+			mes "*Kapang!*";
+			mes "*Semana Semana*^000000";
+			getitem 5029,1; // Spore_Hat
+			next;
+			mes "^555555Obrigado por ter vindo.";
+			mes "Por favor, volte novamente!";
+			mes "Ah, e conte para um amigo!^000000";
+			close;
+		}
+		break;
+	case 4:
+		if ((countitem(5037) > 0) && (countitem(7064) > 499)) {
+			mes "^3355FFVocê cuidadosamente coloca os itens na boca do boneco de neve.^000000";
+			next;
+			delitem 5037,1;  //Fruit_Shell
+			delitem 7064,500;  //Dragon_Fly_Wing
+			mes "^3355FF*Vroooooom~~*";
+			mes "*Bzzzzt*";
+			mes "*choogachooga*";
+			mes "*Kapang!*";
+			mes "*BeepBoopBeepBoop*";
+			mes "*Beeeeeooop*^000000";
+			emotion ET_O;
+			getitem 5050,1; // Mystery_Fruit_Shell
+			next;
+			mes "[Audi]";
+			mes "^555555Obrigado por ter vindo.";
+			mes "Por favor, volte novamente!";
+			mes "Ah, e conte para um amigo!^000000";
+			close;
+		}
+		break;
+	case 5:
+		if ((countitem(5015) > 0) && (countitem(978) > 0) && (countitem(7030) > 49)){ 
+			mes "^3355FFVocê cuidadosamente coloca os itens na boca do boneco de neve.^000000";
+			next;
+			delitem 5015,1;  //Egg_Shell
+			delitem 978,1;  //Cobaltblue_Dyestuffs
+			delitem 7030,50;  //Claw_Of_Desert_Wolf
+			emotion ET_O;
+			mes "^3355FF*Vroooooom~~*";
+			mes "*Bzzzzt*";
+			mes "*choogachooga*";
+			mes "*OoooEeeeeee~*^000000";
+			getitem 5039,1; // Mottled_Egg_Shell
+			next;
+			mes "[Audi]";
+			mes "^555555Obrigado por ter vindo.";
+			mes "Por favor, volte novamente!";
+			mes "Ah, e conte para um amigo!^000000";
+			close;
+		}
+		break;
+	case 6:
+		if (countitem(7047) > 99) {
+			mes "^3355FFVocê cuidadosamente coloca todos os 100 aventais na boca do boneco de neve.^000000";
+			next;
+			delitem 7047,100;  //Alice's_Apron
+			emotion ET_O;
+			mes "^3355FF*Vroooooom~~*";
+			mes "*Bzzzzt*";
+			mes "*choogachooga*";
+			mes "*Kapang!*";
+			mes "*ChoopChoop*";
+			mes "*Chaaawah!*^000000";
+			getitem 5040,1; // Blush
+			mes "[Audi]";
+			mes "^555555Obrigado por ter vindo.";
+			mes "Por favor, volte novamente!";
+			mes "Ah, e conte para um amigo!^000000";
+			next;
+			mes "[Titicupe]";
+			mes "Você tem Blush?! ";
+			close;
+		}
+		break;
+	case 7:
+		if ((countitem(539) > 119) && (countitem(982) > 0) && (countitem(949) > 329) && (countitem(1036) > 449)) {
+			mes "^3355FFVocê cuidadosamente coloca os itens na boca do boneco de neve.^000000";
+			next;
+			delitem 539,120;  //Piece_Of_Cake
+			delitem 982,1;  //White_Dyestuffs
+			delitem 949,330;  //Feather
+			delitem 1036,450;  //Dragon_Scale
+			emotion ET_O;
+			mes "^3355FF*Vroooooom~~*";
+			mes "*Bzzzzt*";
+			mes "*choogachooga*";
+			mes "*Kapang!*";
+			mes "*Muuuuuuugeeee*^000000";
+			getitem 5026,1; // Hat_Of_Cook
+			next;
+			mes "[Audi]";
+			mes "^555555Obrigado por ter vindo.";
+			mes "Por favor, volte novamente!";
+			mes "Ah, e conte para um amigo!^000000";
+			close;
+		}
+		break;
+	case 8:
+		if ((countitem(2279) > 0) && (countitem(7035) > 49) && (countitem(526) > 99)) {
+			mes "^3355FFVocê cuidadosamente coloca os itens na boca do boneco de neve.^000000";
+			next;
+			delitem 2279,1;  //Bomb_Wick
+			delitem 7035,50;  //Matchstick
+			delitem 526,100;  //Royal_Jelly
+			emotion ET_O;
+			mes "^3355FF*Vroooooom~~*";
+			mes "*Bzzzzt*";
+			mes "*choogachooga*";
+			mes "*Kapang!*^000000";
+			getitem 5028,1; // Candle
+			next;
+			mes "[Audi]";
+			mes "^555555Obrigado por ter vindo.";
+			mes "Por favor, volte novamente!";
+			mes "Ah, e conte para um amigo!^000000";
+			close;
+		}
+		break;
+	case 9:
+		if ((countitem(529) > 9) && (countitem(530) > 4) && (countitem(538) > 14) && (countitem(539) > 19) && (countitem(999) > 9)) { 
+			mes "^3355FFVocê cuidadosamente coloca os itens na boca do boneco de neve.^000000";
+			next;
+			delitem 529,10;  //Candy
+			delitem 530,5;  //Candy_Striper
+			delitem 538,15;  //Well_Baked_Cookie
+			delitem 539,20;  //Piece_Of_Cake
+			delitem 999,10;  //Steel
+			emotion ET_O;
+			mes "^3355FF*Vroooooom~~*";
+			mes "*Bzzzzt*";
+			mes "*choogachooga*";
+			mes "*Kapang!*^000000";
+			getitem 5024,1; // Hat_Of_Cake
+			next;
+			mes "[Audi]";
+			mes "^555555Obrigado por ter vindo.";
+			mes "Por favor, volte novamente!";
+			mes "Ah, e conte para um amigo!^000000";
+			close;
+		}
+		break;
+	case 10:
+		mes "[Audi]";
+		mes "^555555Por favor...";
+		mes "Inserir...";
+		mes "Itens.^000000";
+		close;
+	}
+	emotion ET_X;
+	mes "[Audi]";
+	mes "^555555Erro Erro!";
+	mes "Itens incorretos!^000000";
+	next;
+	mes "[Titicupe]";
+	mes "EU...";
+	mes "Acho que muitas pessoas fariam qualquer coisa para conseguir um Blush.";
+	close;
+}
+

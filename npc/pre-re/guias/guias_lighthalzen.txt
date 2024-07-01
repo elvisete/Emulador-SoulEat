@@ -1,0 +1,220 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+lighthalzen,207,310,5	script	Guia#lhz::LhzGuia	852,{
+	cutin "ein_soldier",2;
+	mes "[Guia Lighthalzen]";
+	mes "Bem vindo a Lighthalzen,";
+	mes "a Corporação Cidade-Estado.";
+	mes "Se você precisar de alguma orientação";
+	mes "pela cidade, fique à vontade";
+	mes "me pergunte e eu farei o meu";
+	mes "muito melhor para ajudá-lo.";
+	set .@loop1,1;
+	while (.@loop1) {
+		next;
+		switch(select("Guia da cidade:Remover marcas do minimapa:Aviso.:Cancelar")) {
+		case 1:
+			mes "[Guia Lighthalzen]";
+			mes "Por favor, esteja ciente de que estou";
+			mes "encarregado de fornecer informações";
+			mes "em relação ao Distrito Oeste";
+			mes "de Lighthalzen. ";
+			mes "selecione o local que você deseja";
+			mes "gostaria de aprender mais sobre.";
+			if (.@compass_check == 0) {
+				next;
+				mes "[Guia Lighthalzen]";
+				mes "Mas antes disso,";
+				mes "você gostaria que eu";
+				mes "para marcar locais";
+				mes "no seu minimapa?";
+				next;
+				if (select("Sim não.") == 1) set .@compass_check,1;
+			}
+			set .@loop2,1;
+			while(.@loop2) {
+				if (.@wait_button_chk == 0) set .@wait_button_chk,1;
+				else next;
+				switch(select("^FF0000Rekenber Corporation^000000: Estação de trem: Delegacia de polícia: Banco: Hotel: Aeroporto: Guilda de comerciantes: Joalheria: Loja de armas: Loja de departamentos: Cancelar")) {
+				case 1:
+					mes "[Guia Lighthalzen]";
+					mes "Corporação Rekenber,";
+					mes "a maior empresa do";
+					mes "a República Schwarzwald,";
+					mes "localizado no noroeste";
+					mes "Lighthalzen. ";
+					mes "o prédio da sede.";
+					if (.@compass_check)
+						viewpoint 1,102,247,2,0xFF0000;
+					break;
+				case 2:
+					mes "[Guia Lighthalzen]";
+					mes "A Estação Ferroviária é";
+					mes "localizado no centro de";
+					mes "a cidade onde temos";
+					mes "uma ferrovia direta para Einbroch.";
+					if (.@compass_check)
+						viewpoint 1,233,164,3,0xFF00FF;
+					break;
+				case 3:
+					mes "[Guia Lighthalzen]";
+					mes "Nossa Delegacia de Polícia é apenas";
+					mes "ao norte do centro da cidade.";
+					mes "Por favor, não hesite em denunciar";
+					mes "quaisquer pessoas suspeitas e";
+					mes "atividade ou se você tiver alguma";
+					mes "quaisquer problemas.";
+					if (.@compass_check)
+						viewpoint 1,236,276,4,0x99FFFF;
+					break;
+				case 4:
+					mes "[Guia Lighthalzen]";
+					mes "O Banco está localizado";
+					mes "justamente oposto ao";
+					mes "Delegacia de Polícia de Lighthalzen,";
+					mes "o que é uma boa ideia";
+					mes "quando penso sobre isso, na verdade. ";
+					if (.@compass_check)
+						viewpoint 1,198,257,5,0x0000FF;
+					break;
+				case 5:
+					mes "[Guia Lighthalzen]";
+					mes "Nosso Hotel está localizado em";
+					mes "no meio da Praça Sul.";
+					mes "Devido aos seus serviços de qualidade e";
+					mes "acomodações luxuosas, este";
+					mes "hotel é extremamente popular.";
+					if (.@compass_check)
+						viewpoint 1,159,133,6,0x00FF00;
+					break;
+				case 6:
+					mes "[Guia Lighthalzen]";
+					mes "O aeroporto fica ao longe";
+					mes "a oeste do Passeio Central.";
+					mes "Você pode viajar para qualquer lugar dentro";
+					mes "a República Schwarzwald por";
+					mes "andando em um dos dirigíveis.";
+					if (.@compass_check)
+						viewpoint 1,267,75,7,0x00FF00;
+					break;
+				case 7:
+					mes "[Guia Lighthalzen]";
+					mes "A Guilda dos Mercadores pode ser";
+					mes "encontrado no sudoeste";
+					mes "parte de Lighthalzen.";
+					if (.@compass_check)
+						viewpoint 1,74,53,8,0xFF99FF;
+					break;
+				case 8:
+					mes "[Guia Lighthalzen]";
+					mes "A joalheria é";
+					mes "localizado a oeste de";
+					mes "a Praça Sul.";
+					if (.@compass_check)
+						viewpoint 1,93,110,9,0xFF9900;
+					break;
+				case 9:
+					mes "[Guia Lighthalzen]";
+					mes "A Loja de Armas é";
+					mes "localizado no final de";
+					mes "o Passeio Central.";
+					mes "Pelo menos vale a pena dar uma olhada";
+					mes "se você está falando sério";
+					mes "se aventurando por aqui.";
+					if (.@compass_check)
+						viewpoint 1,196,46,10,0x330033;
+					break;
+				case 10:
+					mes "[Guia Lighthalzen]";
+					mes "A loja de departamentos é";
+					mes "localizado no meio de";
+					mes "Lighthalzen e é o maior";
+					mes "e o local mais conveniente para";
+					mes "comprando quase tudo.";
+					if (.@compass_check)
+						viewpoint 1,199,163,11,0xFFFF00;
+					break;
+				case 11:
+					mes "[Guia Lighthalzen]";
+					mes "Por favor, peça-me para ''Remover";
+					mes "Marcas do Mini-Mapa'' se você";
+					mes "não deseja mais ter o";
+					mes "marcas de localização exibidas";
+					mes "no seu minimapa.";
+					set .@loop2,0;
+				}
+			}
+			break;
+		case 2:
+			viewpoint 2,102,247,2,0xFF0000;
+			viewpoint 2,233,164,3,0xFF00FF;
+			viewpoint 2,236,276,4,0x99FFFF;
+			viewpoint 2,198,257,5,0x0000FF;
+			viewpoint 2,159,133,6,0x00FF00;
+			viewpoint 2,267,75,7,0x00FF00;
+			viewpoint 2,74,53,8,0xFF99FF;
+			viewpoint 2,93,110,9,0xFF9900;
+			viewpoint 2,196,46,10,0x330033;
+			viewpoint 2,199,163,11,0xFFFF00;
+			set .@compass_check,0;
+			break;
+		case 3:
+			mes "[Guia Lighthalzen]";
+			mes "Avanços na feitiçaria e";
+			mes "tecnologia permitiu";
+			mes "para atualizarmos nossas informações";
+			mes "sistema, permitindo até marcar";
+			mes "locais em seu minimapa";
+			mes "para uma navegação mais fácil.";
+			next;
+			mes "[Guia Lighthalzen]";
+			mes "Seu Minimapa está localizado";
+			mes "no canto superior direito";
+			mes "da tela. ";
+			mes "vê-lo, pressione a guia Ctrl";
+			mes "ou clique no botão ''Mapa'' na janela de informações básicas.";
+			next;
+			mes "[Guia Lighthalzen]";
+			mes "No seu minimapa,";
+			mes "clique no '' '' e ''-''";
+			mes "símbolos para ampliar e";
+			mes "nosso do seu Mini-Mapa. ";
+			mes "espero que você aproveite suas viagens";
+			mes "aqui em Lighthalzen.";
+			break;
+		case 4:
+			mes "[Guia Lighthalzen]";
+			mes "Lighthalzen está dividido";
+			mes "para o Oriente e o Ocidente";
+			mes "distritos por uma ferrovia que";
+			mes "passa direto pelo meio.";
+			mes "Sempre há guardas";
+			mes "vigiar para proteger a paz.";
+			next;
+			mes "[Guia Lighthalzen]";
+			mes "Por favor, não hesite";
+			mes "denunciar qualquer suspeita";
+			mes "atividade ou pessoas para nós.";
+			mes "Esperamos que você goste";
+			mes "nossa bela cidade, aventureiro.";
+			close2;
+			set .@loop1,0;
+		}
+	}
+	cutin "ein_soldier",255;
+	end;
+}
+
+lighthalzen,220,311,3	duplicate(LhzGuia)	Guia#2lhz	852
+
+lighthalzen,154,100,5	duplicate(LhzGuia)	Guia#3lhz	852
+
+lighthalzen,307,224,3	duplicate(LhzGuia)	Guia#4lhz	852
+

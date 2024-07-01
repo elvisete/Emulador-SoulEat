@@ -1,0 +1,178 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+prt_are_in,103,11,3	script	Arena Point Manager	732,{
+	mes "[Gerente de Ponto de Arena]";
+	mes "Espero que você esteja se divertindo";
+	mes "tempo na Arena. ";
+	mes "ganhou Turbo Track Points em";
+	mes "Turbo Track de Al De Baran, eu posso,";
+	mes "converta-os em Pontos de Arena.";
+	next;
+	switch(select("Verificação de pontos:Converter pontos:^660000Informações de conversão^000000")) {
+	case 1:
+		mes "[Gerente de Ponto de Arena]";
+		mes "" + strcharinfo(0) + ",";
+		mes "você tem atualmente";
+		mes "" + arena_point + "Pontos de Arena";
+		mes "e" + tt_point + "Pontos de trilha turbo.";
+		close;
+	case 2:
+		mes "[Gerente de Ponto de Arena]";
+		mes "" + strcharinfo(0) + ",";
+		mes "você tem atualmente";
+		mes "" + arena_point + "Pontos de Arena";
+		mes "e" + tt_point + "Pontos de trilha turbo.";
+		next;
+		mes "[Gerente de Ponto de Arena]";
+		mes "Por favor escolha entre";
+		mes "o ponto de rastreamento até o ponto Arena";
+		mes "conversões. ";
+		mes "quando você converte mais de 10";
+		mes "Rastrear pontos de uma vez, você só pode converter em ^4D4DFFmúltiplos de 10^000000.";
+		next;
+		switch(select("2 TP -> 1 AP:4 TP -> 2 AP:6 TP -> 3 AP:8 TP -> 4 AP:10 TP e mais:Cancelar")) {
+		case 1:
+			callsub S_ExchangePoints,28999,2,1;
+		case 2:
+			callsub S_ExchangePoints,28998,4,2;
+		case 3:
+			callsub S_ExchangePoints,28997,6,2;
+		case 4:
+			callsub S_ExchangePoints,28996,8,4;
+		case 5:
+			mes "[Gerente de Ponto de Arena]";
+			mes "Por favor insira o número";
+			mes "de vezes que você deseja converter";
+			mes "10 pontos Turbo Track em";
+			mes "Pontos de Arena. ";
+			mes "o valor que você pode inserir é 20.";
+			mes "Para cancelar, digite ''^3355FF0^000000.''";
+			next;
+			input .@input;
+			if (.@input <= 0) {
+				mes "[Gerente de Ponto de Arena]";
+				mes "Você tem";
+				mes "cancelado";
+				mes "este serviço.";
+				close;
+			}
+			else if (.@input > 20) {
+				mes "[Gerente de Ponto de Arena]";
+				mes "Sua solicitação excede";
+				mes "o limite máximo. ";
+				mes "insira um valor não superior a 20.";
+				close;
+			}
+			else {
+				set .@want_point1,10 * .@input;
+				set .@want_point,5 * .@input;
+				set .@my_arena_all,arena_point + .@want_point;
+				set .@my_turbo_all,tt_point - .@want_point1;
+				if (.@my_arena_all > 28999) {
+					mes "[Gerente de Ponto de Arena]";
+					mes "Você ultrapassará o";
+					mes "quantidade máxima de";
+					mes "Pontos de Arena se prosseguirmos";
+					mes "com esta conversão do seu";
+					mes "Pontos de trilha turbo. ";
+					mes "tem mais de 29.000 Arena Points.";
+					next;
+					mes "[Gerente de Ponto de Arena]";
+					mes "Por favor, gaste um pouco";
+					mes "seus Pontos de Arena antes";
+					mes "usando este serviço novamente.";
+					mes "Obrigado pelo seu patrocínio.";
+					close;
+				}
+				if (.@my_turbo_all < 0) {
+					mes "[Gerente de Ponto de Arena]";
+					mes "Eu sinto muito, mas";
+					mes "você não tem o suficiente";
+					mes "Turbo Track aponta para";
+					mes "realizar esta Arena";
+					mes "Conversão de pontos.";
+					close;
+				}
+				else {
+					mes "[Gerente de Ponto de Arena]";
+					mes "Você se converteu";
+					mes "10 pontos de trilha turbo";
+					mes "em 5 pontos de arena" + .@input + "vezes.";
+					mes "Um total de" + .@want_point1 + "Os Pontos Turbo Track foram convertidos em";
+					mes "" + .@want_point +"Pontos de Arena.";
+					set tt_point, .@my_turbo_all;
+					set arena_point, .@my_arena_all;
+					next;
+					mes "[Gerente de Ponto de Arena]";
+					mes "" + strcharinfo(0) + ",";
+					mes "você agora tem";
+					mes "^4682B4" + arena_point + "^000000 Pontos de Arena";
+					mes "e ^00688B" + tt_point + "^000000 pontos de trilha turbo.";
+					mes "Obrigado pelo seu patrocínio.";
+					close;
+				}
+			}
+		case 6:
+			mes "[Gerente de Ponto de Arena]";
+			mes "Você tem";
+			mes "cancelado";
+			mes "este serviço.";
+			close;
+		}
+	case 3:
+		// Again. no dialog for this option.
+		close;
+	}
+	close;
+
+S_ExchangePoints:
+	if (arena_point > getarg(0) ) {
+		mes "[Gerente de Ponto de Arena]";
+		mes "Você ultrapassará o";
+		mes "quantidade máxima de";
+		mes "Pontos de Arena se prosseguirmos";
+		mes "com esta conversão do seu";
+		mes "Pontos de trilha turbo. ";
+		mes "tem mais de 29.000 Arena Points.";
+		next;
+		mes "[Gerente de Ponto de Arena]";
+		mes "Por favor, gaste um pouco";
+		mes "seus Pontos de Arena antes";
+		mes "usando este serviço novamente.";
+		mes "Obrigado pelo seu patrocínio.";
+		close;
+	}
+	.@track_point = getarg(1);
+	if (tt_point >= .@track_point) {
+		.@arena_point = getarg(2);
+		mes "[Gerente de Ponto de Arena]";
+		mes "" + strcharinfo(0) + ",";
+		mes "você se converteu"+ .@track_point +"Acompanhar";
+		mes "Aponta para"+ .@arena_point +"Ponto Arena.";
+		tt_point = tt_point - .@track_point;
+		arena_point = arena_point + .@arena_point;
+		next;
+		mes "[Gerente de Ponto de Arena]";
+		mes "" + strcharinfo(0) + ",";
+		mes "você agora tem";
+		mes "^4682B4" + arena_point + "^000000 Pontos de Arena";
+		mes "e ^00688B" + tt_point + "^000000 pontos de trilha turbo.";
+		mes "Obrigado pelo seu patrocínio.";
+		close;
+	}
+	else {
+		mes "[Gerente de Ponto de Arena]";
+		mes "Sinto muito, mas você não tem";
+		mes "Pontos Turbo Track suficientes.";
+		mes "Você precisa de pelo menos 2 Turbo Track Points para este serviço de conversão.";
+		close;
+	}
+}
+

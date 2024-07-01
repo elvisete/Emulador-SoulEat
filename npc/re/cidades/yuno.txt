@@ -1,0 +1,16 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+yuno,150,283,4	duplicate(Soldado de Juno1)	Soldado de Juno#juno	852
+yuno,165,283,4	duplicate(Soldado de Juno2)	Soldado de Juno#2juno	852
+yuno,227,292,4	duplicate(Soldado de Juno3)	Soldado de Juno#3juno	852
+yuno,165,228,4	duplicate(Soldado de Juno4)	Soldado de Juno#4juno	852
+yuno,150,228,4	duplicate(Soldado de Juno5)	Soldado de Juno#5juno	852
+yuno,334,182,4	duplicate(Soldado de Juno6)	Soldado de Juno#6juno	852
+yuno,263,320,4	duplicate(Soldado de Juno7)	Soldado de Juno#7juno	852

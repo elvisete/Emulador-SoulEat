@@ -1,0 +1,341 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+einbroch,72,202,4	script	Guia#ein::EinGuia	852,{
+	cutin "ein_soldier",2;
+	mes "[Guia Einbroch]";
+	mes "Bem-vindo";
+	mes "para Einbroch,";
+	mes "a Cidade do Aço.";
+	mes "Por favor, pergunte-me se você";
+	mes "tem alguma pergunta.";
+	set .@loop1,1;
+	while (.@loop1) {
+		next;
+		switch(select("Guia da cidade.:Remover marcas do minimapa.:Aviso.:Cancelar.")) {
+		case 1:
+			mes "[Guia Einbroch]";
+			mes "Por favor selecione";
+			mes "um local de";
+			mes "o menu a seguir.";
+			if (.@compass_check == 0) {
+				mes "Você gostaria que eu";
+				mes "para marcar locais";
+				mes "no seu minimapa?";
+				next;
+				if (select("Sim não.") == 1) set .@compass_check,1;
+			}
+			set .@loop2,1;
+			while(.@loop2) {
+				if (.@wait_button_chk == 0) set .@wait_button_chk,1;
+				else next;
+				switch(select("^FF0000Aeroporto^000000:Estação ferroviária:Fábrica:Praça:Hotel:Loja de armas:Laboratório:Guilda dos Ferreiros:Torre Einbroch:Cancelar")) {
+				case 1:
+					mes "[Guia Einbroch]";
+					mes "O ^FF0000Aeroporto^000000 está localizado";
+					mes "na parte noroeste";
+					mes "da cidade. ";
+					mes "veja o orgulho e a alegria da nossa cidade, o Dirigível. ";
+					if (.@compass_check)
+						viewpoint 1,63,228,2,0xFF0000;
+					break;
+				case 2:
+					mes "[Guia Einbroch]";
+					mes "A Estação Ferroviária é";
+					mes "localizado no nordeste";
+					mes "parte de Einbroch. ";
+					mes "correndo entre aqui";
+					mes "e Einbech correm o dia todo";
+					mes "longo, todos os dias.";
+					if (.@compass_check)
+						viewpoint 1,236,279,3,0xFF00FF;
+					break;
+				case 3:
+					mes "[Guia Einbroch]";
+					mes "A Fábrica, talvez a";
+					mes "instalação mais importante em";
+					mes "Einbroch, está localizado no";
+					mes "zona sul da cidade.";
+					if (.@compass_check)
+						viewpoint 1,158,78,4,0xFF00FF;
+					break;
+				case 4:
+					mes "[Guia Einbroch]";
+					mes "The Plaza, nosso maior";
+					mes "bairro comercial, pode ser";
+					mes "encontrado logo a leste do";
+					mes "centro de Einbroch.";
+					if (.@compass_check)
+						viewpoint 1,232,190,5,0xFF00FF;
+					break;
+				case 5:
+					mes "[Guia Einbroch]";
+					mes "O hotel fica a leste de";
+					mes "o Plaza e oferece top";
+					mes "acomodações de calibre.";
+					mes "Lá você pode desfrutar do seu";
+					mes "fique em Einbroch com conforto ~";
+					if (.@compass_check)
+						viewpoint 1,260,201,6,0x00FF00;
+					break;
+				case 6:
+					mes "[Guia Einbroch]";
+					mes "A Loja de Armas é";
+					mes "localizado ao norte do";
+					mes "Praça. ";
+					mes "comprar armas para";
+					mes "seu uso pessoal.";
+					if (.@compass_check)
+						viewpoint 1,215,221,7,0x00FF00;
+					break;
+				case 7:
+					mes "[Guia Einbroch]";
+					mes "O Laboratório é um";
+					mes "anexo da Fábrica e";
+					mes "está localizado no sudoeste";
+					mes "setor de Einbroch.";
+					if (.@compass_check)
+						viewpoint 1,36,49,8,0x00FF;
+					break;
+				case 8:
+					mes "[Guia Einbroch]";
+					mes "A Guilda dos Ferreiros é";
+					mes "localizado no sudeste";
+					mes "parte de Einbroch. ";
+					mes "atualize seu equipamento";
+					mes "usando seus serviços.";
+					if (.@compass_check)
+						viewpoint 1,244,90,9,0x00FF00;
+					break;
+				case 9:
+					mes "[Guia Einbroch]";
+					mes "A Torre Einbroch é";
+					mes "localizado no centro de";
+					mes "a cidade. ";
+					mes "a torre, você pode ver";
+					mes "toda Einbroch.";
+					if (.@compass_check)
+						viewpoint 1,174,195,10,0xFFFF00;
+					break;
+				case 10:
+					mes "[Guia Einbroch]";
+					mes "Por favor, peça-me para ''Remover";
+					mes "Marcas do Mini-Mapa'' se você";
+					mes "não deseja mais ter o";
+					mes "marcas de localização exibidas";
+					mes "no seu minimapa.";
+					set .@loop2,0;
+				}
+			}
+			break;
+		case 2:
+			viewpoint 2,63,228,2,0xFF0000;
+			viewpoint 2,236,279,3,0xFF00FF;
+			viewpoint 2,158,78,4,0xFF00FF;
+			viewpoint 2,232,190,5,0xFF00FF;
+			viewpoint 2,260,201,6,0x00FF00;
+			viewpoint 2,215,221,7,0x00FF00;
+			viewpoint 2,36,49,8,0x00FF00;
+			viewpoint 2,244,90,9,0x00FF00;
+			viewpoint 2,174,195,10,0xFFFF00;
+			set .@compass_check,0;
+			mes "[Guia Einbroch]";
+			mes "Ok, as marcas de";
+			mes "seu minimapa foi";
+			mes "removido. ";
+			mes "orientação em torno de Einbroch,";
+			mes "por favor, deixe-me ou a um dos";
+			mes "outros Guias Einbroch sabem.";
+			break;
+		case 3:
+			mes "[Guia Einbroch]";
+			mes "Através da tecnologia de";
+			mes "a República Schwarzwald,";
+			mes "atualizamos para um digital";
+			mes "sistema de informação que permite";
+			mes "nós para marcar locais em seu";
+			mes "Minimapa para facilitar a navegação.";
+			next;
+			mes "[Guia Einbroch]";
+			mes "Seu Minimapa está localizado";
+			mes "no canto superior direito";
+			mes "da tela. ";
+			mes "vê-lo, pressione a guia Ctrl";
+			mes "ou clique no botão ''Mapa'' na janela de informações básicas.";
+			next;
+			mes "[Guia Einbroch]";
+			mes "No seu minimapa,";
+			mes "clique no '' '' e ''-''";
+			mes "símbolos para ampliar e";
+			mes "nosso do seu Mini-Mapa. ";
+			mes "espero que você aproveite suas viagens";
+			mes "aqui em Einbroch, aventureiro.";
+			break;
+		case 4:
+			mes "[Guia Einbroch]";
+			mes "Esperamos que você";
+			mes "aproveite suas viagens";
+			mes "aqui em Einbroch.";
+			mes "Ah, e por favor, seja";
+			mes "ciente dos Alertas de Smog.";
+			close2;
+			set .@loop1,0;
+		}
+	}
+	cutin "ein_soldier",255;
+	end;
+}
+
+einbroch,155,43,4	duplicate(EinGuia)	Guia#2ein	852
+einbroch,162,317,4	duplicate(EinGuia)	Guia#3ein	852
+
+einbech,67,37,4	script	Guia#4ein::EinGuia2	852,{
+	cutin "ein_soldier",2;
+	mes "[Guia Einbech]";
+	mes "Bem-vindo ao Einbech,";
+	mes "a Cidade Mineira. ";
+	mes "aqui para ajudar os turistas,";
+	mes "então se você tiver alguma dúvida,";
+	mes "sinta-se à vontade para nos perguntar.";
+	set .@loop1,1;
+	while (.@loop1) {
+		next;
+		switch(select("Guia da cidade.:Remover marcas do minimapa.:Aviso.:Cancelar.")) {
+		case 1:
+			mes "[Guia Einbech]";
+			mes "Por favor selecione";
+			mes "um local de";
+			mes "o menu a seguir.";
+			if (.@compass_check == 0) {
+				mes "Você gostaria que eu";
+				mes "para marcar locais";
+				mes "no seu minimapa?";
+				next;
+				if (select("Sim não.") == 1) set .@compass_check,1;
+			}
+			set .@loop2,1;
+			while (.@loop2) {
+				if (.@wait_button_chk == 0) set .@wait_button_chk,1;
+				else next;
+				switch(select("Estação de trem:Taverna:Loja de ferramentas:Guilda dos Espadachins:Mina:Cancelar")) {
+				case 1:
+					mes "[Guia Einbech]";
+					mes "As estações ferroviárias são";
+					mes "localizado no noroeste";
+					mes "e partes nordeste de";
+					mes "Einbech. ";
+					mes "pegue um trem para Einbroch.";
+					if (.@compass_check)
+						viewpoint 1,43,213,2,0xFF0000;
+					break;
+				case 2:
+					mes "[Guia Einbech]";
+					mes "A Taberna está localizada";
+					mes "na parte sul de";
+					mes "Einbech. ";
+					mes "para relaxar depois de um longo dia.";
+					if (.@compass_check)
+						viewpoint 1,142,112,3,0xFF00FF;
+					break;
+				case 3:
+					mes "[Guia Einbech]";
+					mes "Você pode encontrar a ferramenta";
+					mes "Loja no centro de";
+					mes "Einbech. ";
+					mes "compre qualquer ferramenta que você";
+					mes "pode precisar para suas viagens.";
+					if (.@compass_check)
+						viewpoint 1,176,136,4,0xFF00FF;
+					break;
+				case 4:
+					mes "[Guia Einbech]";
+					mes "A Guilda dos Espadachins";
+					mes "está localizado no leste";
+					mes "arredores de Einbech. ";
+					mes "em construção e eles";
+					mes "ainda não comecei a aceitar";
+					mes "formulários.";
+					if (.@compass_check)
+						viewpoint 1,250,110,5,0xFF00FF;
+					break;
+				case 5:
+					mes "[Guia Einbech]";
+					mes "A Mina, que é";
+					mes "A principal indústria de Einbech,";
+					mes "está localizado no norte";
+					mes "parte desta cidade. ";
+					mes "obtemos todos os nossos minérios, embora monstros atrapalhem os mineiros.";
+					if (.@compass_check)
+						viewpoint 1,138,251,6,0x00FF00;
+					break;
+				case 6:
+					mes "[Guia Einbech]";
+					mes "Por favor, peça-me para ''Remover";
+					mes "Marcas do Mini-Mapa'' se você";
+					mes "não deseja mais ter o";
+					mes "marcas de localização exibidas";
+					mes "no seu minimapa.";
+					set .@loop2,0;
+				}
+			}
+			break;
+		case 2:
+			viewpoint 2,43,213,2,0xFF0000;
+			viewpoint 2,142,112,3,0xFF00FF;
+			viewpoint 2,176,136,4,0xFF00FF;
+			viewpoint 2,250,110,5,0xFF00FF;
+			viewpoint 2,138,251,6,0x00FF00;
+			set .@compass_check,0;
+			mes "[Guia Einbech]";
+			mes "Ok, as marcas de";
+			mes "seu minimapa foi";
+			mes "removido. ";
+			mes "orientação em torno de Einbech,";
+			mes "por favor, deixe-me ou a um dos";
+			mes "outros Guias Einbech sabem.";
+			break;
+		case 3:
+			mes "[Guia Einbech]";
+			mes "Através da tecnologia de";
+			mes "a República Schwarzwald,";
+			mes "atualizamos para um digital";
+			mes "sistema de informação que permite";
+			mes "nós para marcar locais em seu";
+			mes "Minimapa para facilitar a navegação.";
+			next;
+			mes "[Guia Einbech]";
+			mes "Seu Minimapa está localizado";
+			mes "no canto superior direito";
+			mes "da tela. ";
+			mes "vê-lo, pressione a guia Ctrl";
+			mes "ou clique no botão ''Mapa'' na janela de informações básicas.";
+			next;
+			mes "[Guia Einbech]";
+			mes "No seu minimapa,";
+			mes "clique no '' '' e ''-''";
+			mes "símbolos para ampliar e";
+			mes "nosso do seu Mini-Mapa. ";
+			mes "espero que você aproveite suas viagens";
+			mes "aqui em Einbech, aventureiro.";
+			break;
+		case 4:
+			mes "[Guia Einbech]";
+			mes "Esperamos que você";
+			mes "aproveite suas viagens";
+			mes "aqui em Einbech.";
+			close2;
+			set .@loop1,0;
+		}
+	}
+	cutin "ein_soldier",255;
+	end;
+}
+
+einbech,48,214,4	duplicate(EinGuia2)	Guia#5ein	852
+

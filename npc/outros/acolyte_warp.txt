@@ -1,0 +1,137 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+prontera,98,121,4	script	Aprenziz#Prtclear	90,{
+	mes "[Keiki]";
+	mes "Olá, aventureiro.";
+    mes "Estive estudando magia por toda Rune-Midgard para aprimorar o que acredito ser uma das maiores habilidades disponíveis para a classe de aprendiz.";
+	next;
+
+	if (is_function("VIP_iRO_Acolyte"))
+		callfunc "VIP_iRO_Acolyte","[Keiki]","Juno";
+
+	mes "[Keiki]";
+	mes "Eu sou o único Aprendiz que atingiu o nível 10 da habilidade!";
+	emotion ET_THINK, playerattached();
+	next;
+	mes "[Keiki]";
+	mes "Isso mesmo! E...";
+    mes "Eu prometo a você que não esqueço locais que já memorizei.";
+    mes "Um dia eu irei melhorar minhas habilidades para me transportar para onde eu quiser~";
+	next;
+	mes "[Keiki]";
+	mes "Estou disposto a transportá-lo para os vários locais que memorizei por uma pequena taxa.";
+    mes "Você gostaria de usar este serviço?";
+	next;
+	switch(select("Claro!:Não, vou andando mesmo.")) {
+	case 1:
+		mes "[Keiki]";
+		mes "Para onde você gostaria de ir?";
+        mes "Desejo boa sorte em sua jornada.";
+		next;
+
+		setarray .@towns$[0], "Izlude", "Geffen", "Payon", "Morocc", "Alberta", "Al De Baran", "Comodo", "Umbala", "Juno";
+		setarray .@cost[0],        600,     1200,    1200,     1200,      1800,          2200,     2200,     2200,   1800;
+
+		set .@size, getarraysize(.@towns$);
+		for(set .@i,0; .@i<.@size; set .@i,.@i+1)
+			set .@menu$, .@menu$+.@towns$[.@i]+" -> "+.@cost[.@i]+"z:";
+		set .@i, select(.@menu$+"Cancel")-1;
+		if (.@i == .@size)
+			close;
+		if (Zeny < .@cost[.@i]) {
+			mes "[Keiki]";
+			mes "Sinto muito, mas você não tem";
+            mes "zeny suficiente para o serviço de teleporte";
+            mes "A taxa de teletransporte";
+			mes "para a "+.@towns$[.@i]+" é de "+.@cost[.@i]+" zeny.";
+			close;
+		}
+		specialeffect2 EF_READYPORTAL;
+		specialeffect2 EF_TELEPORTATION;
+		specialeffect2 EF_PORTAL;
+		next;
+		set Zeny, Zeny - .@cost[.@i];
+		switch(.@i) {
+			case 0: if (checkre(0)) warp "izlude",128,98; else warp "izlude",91,105; break;
+			case 1: warp "geffen",120,39; break;
+			case 2: warp "payon",161,58; break;
+			case 3: warp "morocc",156,46; break;
+			case 4: warp "alberta",117,56; break;
+			case 5: warp "aldebaran",168,112; break;
+			case 6: warp "comodo",209,143; break;
+			case 7: warp "umbala",100,154; break;
+			case 8: warp "yuno",158,125; break;
+		}
+		close;
+	case 2:
+		close;
+	}
+}
+
+yuno,142,184,6	script	Aprendiz#Junoclear	90,{
+	mes "[Isalei]";
+	mes "Olá, aventureiro.";
+    mes "Meu companheiro Keiki e eu descobrimos uma maneira de aumentar nossas habilidades de teleporte.";
+	next;
+
+	if (is_function("VIP_iRO_Acolyte"))
+		callfunc "VIP_iRO_Acolyte","[Isalei]","Prontera";
+
+	mes "[Isalei]";
+	mes "Embora eu não tenha dominado o nível que ela tem, consegui atingir o nível 5.";
+	emotion ET_THINK, playerattached();
+	next;
+	mes "[Isalei]";
+	mes "Talvez um dia eu possa aumentar minhas habilidades o suficiente para poder usar o teleporte para mais locais salvos.";
+	next;
+	mes "[Isalei]";
+	mes "Estou disposto a transportá-lo para os vários locais que memorizei por uma pequena taxa.";
+    mes "Você gostaria de usar este serviço?";
+	next;
+	switch(select("Com certeza!:Não, prefiro desbravar o mundo andando!")) {
+	case 1:
+		mes "[Isalei]";
+		mes "Para onde você gostaria de ir?";
+        mes "Desejo boa sorte em sua jornada.";
+		next;
+
+		setarray .@towns$[0], "Einbroch", "Lighthalzen", "Hugel", "Rachel", "Prontera";
+		setarray .@cost[0],         2200,          2200,    2200,     2200,       1800;
+
+		set .@size, getarraysize(.@towns$);
+		for(set .@i,0; .@i<.@size; set .@i,.@i+1)
+			set .@menu$, .@menu$+.@towns$[.@i]+" -> "+.@cost[.@i]+"z:";
+		set .@i, select(.@menu$+"Cancelar")-1;
+		if (.@i == .@size)
+			close;
+		if (Zeny < .@cost[.@i]) {
+			mes "[Isalei]";
+			mes "Sinto muito, mas você não tem";
+            mes "zeny suficiente para o serviço de teleporte";
+            mes "A taxa de teletransporte";
+			mes "para a cidade "+.@towns$[.@i]+" é de "+.@cost[.@i]+" zeny.";
+			close;
+		}
+		specialeffect2 EF_READYPORTAL;
+		specialeffect2 EF_TELEPORTATION;
+		specialeffect2 EF_PORTAL;
+		next;
+		set Zeny, Zeny - .@cost[.@i];
+		switch(.@i) {
+			case 0: warp "einbroch",67,195; break;
+			case 1: warp "lighthalzen",159,90; break;
+			case 2: warp "hugel",98,150; break;
+			case 3: warp "rachel",119,135; break;
+			case 4: warp "prontera",116,72; break;
+		}
+		close;
+	case 2:
+		close;
+	}
+}

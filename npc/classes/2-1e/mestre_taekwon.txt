@@ -1,0 +1,1635 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+payon,215,102,3	script	Moohyun#job_star	828,3,3,{
+	if (Class == Job_Taekwon) {
+		if (STGL_Q == 0) {
+			mes "[Moohyun]";
+			if (Sex == SEX_MALE)
+				mes "Ei, Garoto Taekwon!";
+			else
+				mes "Ei, Garota Taekwon!";
+			mes "Venha aqui por um minuto.";
+			mes "Tenho uma proposta";
+			mes "para você se estiver interessado!";
+			next;
+			if (select( "Claro.","Não, obrigado!") == 1) {
+				mes "[Moohyun]";
+				mes "Tudo bem, garoto.";
+				mes "Qual é o seu nome?";
+				next;
+				mes "[" + strcharinfo(0) + "]";
+				mes "" + strcharinfo(0) + ".";
+				next;
+				mes "[Moohyun]";
+				mes "Nossa, você é tão direto.";
+				mes "Um pouco de amor, e";
+				mes "de simpatia não te mataria,";
+				mes "agora, não é? De qualquer forma,";
+				mes "você já pensou sobre o que";
+				mes "quer ser?";
+				next;
+				mes "[Moohyun]";
+				mes "Se seu coração ainda não está";
+				mes "decidido, por que não se torna";
+				mes "um ^4D4DFFguerreiro do Sol, da Lua^FFFFFF ^4D4DFFe das Estrelas^000000? Apenas considere isso.";
+				next;
+				mes "[" + strcharinfo(0) + "]";
+				mes "Guerreiro do quê--?";
+				mes "Nunca ouvi falar dessa";
+				mes "classe. Mas eu sei que posso";
+				mes "mudar para Espiritualista";
+				mes "ou Mestre Taekwon.";
+				next;
+				mes "[Moohyun]";
+				mes "Sim. Sim, é isso mesmo.";
+				mes "Mestre Taekwon são guerreiros";
+				mes "do Sol, da Lua e das Estrelas, e empunham o poder do cosmos!";
+				mes "Legal, né? De qualquer forma, interessado";
+				mes "em ser um Mestre Taekwon?";
+				next;
+				if (select("Sim, eu estou!:Não, não muito.") == 1) {
+					if (JobLevel > 39) {
+						mes "[Moohyun]";
+						mes "Ótimo, ótimo~ Eu sabia que você";
+						mes "veria as coisas do meu jeito. Tudo bem,";
+						mes "você parece estar pronto o suficiente.";
+						mes "Tudo o que você precisa agora é de alguém";
+						mes "que possa te treinar para se tornar";
+						mes "um Mestre Taekwon.";
+						next;
+						mes "[Moohyun]";
+						mes "Você gostaria de ^4D4DFFmudar";
+						mes "sua classe para Mestre Taekwon^000000?";
+						mes "Se quiser, eu te apresentarei a alguém que pode te ajudar";
+						mes "a alcançar esse objetivo.";
+						next;
+						if (select("Sim, eu quero.","Deixe-me pensar sobre isso...") == 1) {
+							mes "[Moohyun]";
+							mes "Excelente! Agora, como você pode";
+							mes "ter adivinhado, Mestre Taekwon";
+							mes "não estão organizados em uma guilda oficial. Então é difícil para todos nós";
+							mes "nos reunirmos, mas também temos menos regras e maior liberdade.";
+							next;
+							mes "[Moohyun]";
+							mes "Quem está por aí agora...? Humm...";
+							mes "Ah, você deve visitar ^4D4DFFMoogang^000000.";
+							mes "Ele é um dos poucos Mestre Taekwon";
+							mes "interessados em receber";
+							mes "novos alunos, então ele certamente";
+							mes "guiará você em seu treinamento.";
+							next;
+							mes "[Moohyun]";
+							mes "Tudo bem, você pode encontrar Moogang";
+							mes "em Comodo, supostamente no";
+							mes "lugar mais próximo do céu. Enquanto isso, eu escreverei uma";
+							mes "carta de recomendação que";
+							mes "envierei para ele por você.";
+							set STGL_Q,1;
+							setquest 7007;
+							close;
+						}
+						mes "[Moohyun]";
+						mes "Tudo bem. Mudar de classe é uma decisão importante,";
+						mes "então você deve considerar tudo com cuidado. Mas deixe-me garantir";
+						mes "que você nunca se arrependerá de se tornar um incrível guerreiro do cosmos!";
+						close;
+					}
+					mes "[Moohyun]";
+					mes "Ótimo, ótimo~";
+					mes "Mas primeiro, você";
+					mes "precisa estar pelo menos no Nível de classe 40";
+					mes "antes de começar o treinamento para Mestre Taekwon.";
+					mes "Caso contrário,";
+					mes "isso será demais para você.";
+					next;
+					mes "[Moohyun]";
+					mes "Eu sei que você pode fazer isso,";
+					mes "e não deve demorar";
+					mes "muito. Prometa-me";
+					mes "que você voltará para que";
+					mes "eu possa te ajudar a se tornar";
+					mes "um grande Mestre Taekwon~";
+					close;
+				}
+				mes "[Moohyun]";
+				mes "Sério? Bem, ainda acho";
+				mes "que você é mais adequado";
+				mes "para ser um Mestre Taekwon";
+				mes "do que um Espiritualista. Mas a";
+				mes "decisão é sua.";
+				next;
+				mes "[Moohyun]";
+				mes "Bem, se você mudar de";
+				mes "ideia, apenas volte";
+				mes "para mim e me avise. Eu sei";
+				mes "que você se tornaria um ótimo Mestre Taekwon";
+				mes "se realmente tentasse.";
+				close;
+			}
+			mes "[Moohyun]";
+			mes "Ah, não seja assim.";
+			mes "Não custa um zeny";
+			mes "ouvir o que eu tenho a dizer. Vamos,";
+			mes "apenas me escute...";
+			close;
+		}
+		else if (STGL_Q == 1) {
+			mes "[Moohyun]";
+			mes "Eu já enviei para ele minha";
+			mes "carta de recomendação";
+			mes "sobre você, então vá em frente e";
+			mes "visite Moogang em Comodo.";
+			mes "Ele começará a treinar você para";
+			mes "se tornar um Mestre Taekwon.";
+			close;
+		}
+		else if (STGL_Q == 7) {
+			mes "[Moohyun]";
+			mes "Então, como está indo o teste?";
+			mes "Oh, você parece preocupado.";
+			mes "Você está com algum tipo";
+			mes "de problema?";
+			next;
+			if (select("Não, estou bem.:Sobre o enigma de Beeryu...") == 1) {
+				mes "[Moohyun]";
+				mes "Está tudo bem ser independente";
+				mes "e resolver problemas por conta";
+				mes "própria, mas você deve pedir ajuda";
+				mes "quando realmente precisar. Não";
+				mes "há vergonha em não conseguir";
+				mes "fazer algo sozinho...";
+				close;
+			}
+			mes "[Moohyun]";
+			mes "Ah, isso. Beeryu te deu";
+			mes "aquele enigma para resolver.";
+			mes "Bem, primeiro de";
+			mes "tudo, você tem que trazer para ele";
+			mes "algo muito importante,";
+			mes "mas não é um objeto material.";
+			next;
+			mes "[Moohyun]";
+			mes "Você tem que demonstrar";
+			mes "algo para ele. Agora me diga,";
+			mes "quando você enfrenta dificuldades na";
+			mes "vida, obstáculos aos seus objetivos,";
+			mes "como você reage? O que";
+			mes "seu coração sente?";
+			next;
+			mes "[Moohyun]";
+			mes "Eu sei que Beeryu pediu para você";
+			mes "provar sua paciência para ele,";
+			mes "mas este é o fator mais importante";
+			mes "por trás da paciência. O que";
+			mes "você diz a si mesmo quando";
+			mes "sua vida parece sem esperança?";
+			next;
+			if (select("Eu não vou desistir!:Eu... Eu não sei?") == 1) {
+				mes "[" + strcharinfo(0) + "]";
+				mes "Eu não vou desistir!";
+				mes "Eu realizarei meus sonhos";
+				mes "não importa";
+				mes "quanto tempo leve!";
+				next;
+				mes "[Moohyun]";
+				mes "Sim, é isso!";
+				mes "Quando sua resolução";
+				mes "é apoiada por uma vontade de ferro,";
+				mes "você terá a paciência";
+				mes "para superar todas as coisas.";
+				mes "Mostre a Beeryu sua determinação...";
+				next;
+				mes "[Moohyun]";
+				mes "Ótimo, acho que você está";
+				mes "pronto agora. Por favor, vá";
+				mes "falar com Moogang e volte";
+				mes "para a Sala da Lua. Em breve,";
+				mes "talvez possamos nos cumprimentar";
+				mes "como Mestres Taekwon!";
+				set STGL_Q,8;
+				close;
+			}
+			mes "[Moohyun]";
+			mes "Você... Você não sabe?";
+			mes "Se você enfrentasse obstáculos";
+			mes "de frente e confrontasse diretamente";
+			mes "seus medos, seus inimigos e";
+			mes "todos os desafios da vida, então a resposta viria naturalmente.";
+			next;
+			mes "[Moohyun]";
+			mes "Hmm...";
+			mes "Por que você não contempla";
+			mes "o valor da coragem por";
+			mes "um tempo? Sim, isso";
+			mes "pode ser útil por enquanto.";
+			close;
+		}
+		else if (STGL_Q == 8) {
+			mes "[Moohyun]";
+			mes "Ótimo, acho que você está";
+			mes "pronto agora. Por favor, vá";
+			mes "falar com Moogang e volte";
+			mes "para a Sala da Lua. Em breve,";
+			mes "talvez possamos nos cumprimentar";
+			mes "como Taekwon Masters!";
+			close;
+		}
+		mes "[Moohyun]";
+		mes "Então, como você";
+		mes "tem se saído? Tenho";
+		mes "fé que você se tornará";
+		mes "um grande Mestre Taekwon, então";
+		mes "estou esperando grandes coisas.";
+		close;
+	}
+	else if (BaseJob == Job_Star_Gladiator) {
+		mes "[Moohyun]";
+		mes "Ei, como você tem";
+		mes "se saído? Sintonizado";
+		mes "com a natureza e tudo";
+		mes "mais, eu vejo. Heh heh,";
+		mes "não é o cosmos uma coisa";
+		mes "maravilhosa?";
+		close;
+	}
+	else if (Class == Job_Novice) {
+		mes "[Moohyun]";
+		mes "Ei, garoto. Você quer";
+		mes "aprender Taekwon Do?";
+		mes "Se você aprender, então está";
+		mes "garantido que se tornará";
+		mes "muito mais forte!";
+		next;
+		mes "[Moohyun]";
+		mes "Vamos ver...";
+		mes "Há um homem chamado";
+		mes "Phoenix que pode te ensinar";
+		mes "Taekwon Do. Ele está";
+		mes "por aqui em algum lugar...";
+		next;
+		mes "[Moohyun]";
+		mes "De qualquer forma, uma vez que você";
+		mes "tenha aprendido Taekwon Do por";
+		mes "um tempo, volte para";
+		mes "mim se realmente quiser avançar seus estudos, para dominar";
+		mes "mais do que sua mente e corpo.";
+		close;
+	}
+	mes "[Moohyun]";
+	mes "Cara...";
+	mes "O que você quer?";
+	if (Sex == SEX_MALE) {
+		mes "Você quer se juntar";
+		mes "à minha escola de artes";
+		mes "marciais? É tarde demais";
+		mes "para você, desculpe, amigo~";
+	}
+	else {
+		mes "Oh, eu não percebi que--";
+		mes "V-você é uma dama tão";
+		mes "bonita! Acho que devo, você";
+		mes "sabe, pedir desculpas por ser rude.";
+	}
+	next;
+	mes "[Moohyun]";
+	mes "De qualquer forma, se você pensa que";
+	mes "eu sou só um delinquente, eu admito";
+	mes "que pareço e ajo como um.";
+	mes "Mas, na verdade, sou um guerreiro do";
+	mes "Sol, da Lua e das Estrelas.";
+	next;
+	mes "[Moohyun]";
+	mes "Pode ser um pouco tarde";
+	mes "para você, mas se você conhecer";
+	mes "alguém que queira se tornar";
+	mes "um Mestre Taekwon, mande-o";
+	mes "para mim. Eu vou garantir que";
+	mes "eles encontrem as pessoas certas~";
+	close;
+
+OnTouch_:
+	if (Class == Job_Taekwon) {
+		if (STGL_Q == 0) {
+			mes "[Moohyun]";
+			mes "Hm...? Oh, você é exatamente";
+			mes "o tipo de pessoa que estou";
+			mes "procurando. Venha, eu tenho";
+			mes "uma oferta para você se";
+			mes "estiver disposto a ouvir...";
+			close;
+		}
+	}
+	else if (BaseJob == Job_Star_Gladiator) {
+		mes "[Moohyun]";
+		mes "Como vai, guerreiro?";
+		mes "Por favor, continue a usar";
+		mes "suas habilidades para as causas";
+		mes "certas. Traga orgulho para todos";
+		mes "os Mestres Taekwon por aí!";
+		close;
+	}
+	mes "[Moohyun]";
+	mes "Whoa, whoa~";
+	mes "Saia da frente, pode ser?";
+	mes "Você está bloqueando meu sol!";
+	close;
+}
+	
+comodo,172,230,3	script	Mestre Errante#job_sta	730,{
+if (Class == Job_Taekwon) {
+    if (STGL_Q == 1) {
+        mes "[Moogang]";
+        mes ""+ strcharinfo(0) + "...";
+        mes "Eu estava esperando por você.";
+        mes "Moohyun me contou sobre";
+        mes "sua chegada e seu desejo";
+        mes "de se tornar um Mestre Taekwon.";
+        mes "Eu vou confiar no julgamento dele...";
+        next;
+        mes "[Moogang]";
+        mes "Sim, Moohyun é habilidoso em";
+        mes "discernir as forças internas";
+        mes "dos outros. Você deverá se sair bem.";
+        mes "Você está pronto para o primeiro teste, usar seus punhos e pernas em";
+        mes "serviço do grandioso cosmos?";
+        next;
+        if (select("Sim, deixe-me fazer o teste!:Espera, preciso pensar sobre isso!") == 1) {
+            if (SkillPoint) {
+                mes "[Moogang]";
+                mes "Hm? Você ainda tem Pontos de";
+                mes "Habilidade que não alocou.";
+                mes "Use-os, aprenda";
+                if (Sex == SEX_FEMALE)
+                    mes "e melhore suas habilidades de Garota Taekwon";
+                else
+                    mes "e melhore suas habilidades de Garoto Taekwon";
+                mes "Quando terminar, volte aqui para o seu treinamento.";
+                close;
+            }
+            mes "[Moogang]";
+            mes "Taekwon Do estabelece os fundamentos.";
+            mes "Mente, corpo, alma. Estas não são";
+            mes "partes separadas, mas um todo funcional. Você mesmo está em contato";
+            mes "consigo mesmo, mas está em contato";
+            mes "com o mundo exterior?";
+            next;
+            mes "[Moogang]";
+            mes "Feche os olhos. Procure";
+            mes "a sensação do vento.";
+            mes "Abra os braços e abrace";
+            mes "o céu. Você consegue sentir? O";
+            mes "fluir contínuo do";
+            mes "cosmos universal?";
+            next;
+            mes "[Moogang]";
+            mes "As leis da natureza não podem ser quebradas,";
+            mes "mas à medida que sua compreensão da natureza cresce, você será capaz de agarrar";
+            mes "a luz do sol, segurar a luz da lua e moldar a luz das estrelas. Este teste";
+            mes "irá ajudá-lo a sintonizar-se...";
+            next;
+            mes "[Moogang]";
+            mes "Vá e reúna";
+            mes "o poder da natureza espalhado";
+            mes "pelo mundo. Traga-me";
+            mes "pedaços do vento impetuoso,";
+            mes "terra sólida, gelo congelante,";
+            mes "e chama ardente.";
+            next;
+            mes "[Moogang]";
+            mes "Em outras palavras...";
+            mes "^4D4DFFVento Bruto^000000,";
+            mes "^4D4DFFNatureza Grandiosa^000000,";
+            mes "^Gelo Místico^000000 e";
+            mes "^4D4DFFCoração Flamejante^000000.";
+            mes "Agora vá...";
+            set STGL_Q,2;
+            changequest 7007,7008;
+            close;
+        }
+        mes "[Moogang]";
+        mes "Eu respeito sua decisão,";
+        mes "embora não veja motivo";
+        mes "para você hesitar. Mas como";
+        mes "as fases da lua, todas as";
+        mes "mudanças devem ocorrer de acordo";
+        mes "com o grande esquema das coisas.";
+        close;
+    }
+		else if (STGL_Q == 2) {
+			if (countitem(996) > 0 && countitem(997) > 0 && countitem(995) > 0 && countitem(994) > 0) {
+			mes "[Moogang]";
+			mes "Ah, você completou a";
+			mes "tarefa que eu te dei. Muito";
+			mes "bem. Agora, enquanto segurava esses";
+			mes "fragmentos do vento, terra, gelo";
+			mes "e chama, você sentiu a";
+			mes "conexão entre todos eles?";
+			next;
+			mes "[Moogang]";
+			mes "Os ventos fornecem brisas suaves e";
+			mes "aconchegantes ou trazem";
+			mes "furacões destrutivos. A terra";
+			mes "é o solo sólido em que";
+			mes "toda a vida vive, mas também pode";
+			mes "afundar e sacudir prédios.";
+			next;
+			mes "[Moogang]";
+			mes "A água dá vida e fornece";
+			mes "refrescos refrescantes, mas pode";
+			mes "também afogar e congelar a vida. O fogo pode trazer um calor reconfortante,";
+			mes "mas também pode reduzir a vida a";
+			mes "cinzas cinzentas. Tal é a natureza.";
+			next;
+			mes "[Moogang]";
+			mes "Este é o poder da natureza.";
+			mes "Qualquer força pode ser usada para fazer";
+			mes "o bem ou o mal, dependendo de";
+			mes "como você a maneja. Então você";
+			mes "entende agora? É assim que";
+			mes "o universo está entrelaçado.";
+			next;
+			mes "[Moogang]";
+			mes "No entanto, os elementos mais primordiais,";
+			mes "os mais puros do nosso";
+			mes "universo são equiparados ao";
+			mes "cosmos: o Sol, a Lua,";
+			mes "e as Estrelas. Contemple";
+			mes "essa verdade por um tempo...";
+			next;
+			mes "[Moogang]";
+			mes "Com a compreensão da";
+			mes "natureza do universo";
+			mes "vem o respeito pela natureza";
+			mes "e todas as coisas. Agora, quando você";
+			mes "estiver pronto para o próximo teste, então";
+			mes "eu te guiarei até o altar.";
+			delitem 996,1; //Vento Bruto
+			delitem 997,1; //Natureza Grandiosa
+			delitem 995,1; //Gelo Místico
+			delitem 994,1; //Coração Flamejante
+			set STGL_Q,3;
+			changequest 7008,7009;
+			close;
+			}
+			mes "[Moogang]";
+			mes "Para seu primeiro teste em sua";
+			mes "jornada para se tornar";
+			mes "um Mestre Taekwon, traga-me ";
+			mes "fragmentos dos elementos naturais.";
+			mes "Quero que você entenda a harmonia inata entre eles.";
+			next;
+			mes "[Moogang]";
+			mes "Traga...";
+			mes "^4D4DFFVento Bruto^000000,";
+			mes "^4D4DFFNatureza Grandiosa^000000,";
+			mes "^Gelo Místico^000000 e";
+			mes "^4D4DFFCoração Flamejante^000000.";
+			mes "Agora vá...";
+			close;
+		}
+		else if (STGL_Q == 3) {
+			mes "[Moogang]";
+			mes "Você está pronto para";
+			mes "o próximo teste para se tornar";
+			mes "um Mestre Taekwon? Então,";
+			mes "eu o guiarei até o altar.";
+			next;
+			if (select("Aguarde, preciso de mais tempo!:Sim, estou pronto.") == 1) {
+				mes "[Moogang]";
+				mes "Entendo. Bem, então, por favor,";
+				mes "me avise quando estiver";
+				mes "pronto para prosseguir.";
+				close;
+			}
+			mes "[Moogang]";
+			mes "No altar, fale";
+			mes "com Daru, que servirá";
+			mes "como seu guia para esse";
+			mes "teste. Depois de completar";
+			mes "o teste, venha falar comigo.";
+			close2;
+			warp "job_star",34,12;
+			end;
+		}
+		else if (STGL_Q > 3 && STGL_Q < 7) {
+			mes "[Moogang]";
+			mes "Que estranho...";
+			mes "Você não pode ter completado";
+			mes "esse teste até agora. Ah, algo";
+			mes "deve ter acontecido. Eu vou";
+			mes "te enviar de volta ao altar";
+			mes "para que Daru possa testá-lo.";
+			close2;
+			warp "job_star",34,12;
+			end;
+		}
+		else if (STGL_Q == 7) {
+			mes "[Moogang]";
+			mes "Hmm...";
+			mes "Você parece preocupado.";
+			mes "Ah, você deve estar pensando";
+			mes "na charada de Beeryu, não é?";
+			mes "Você é o único que";
+			mes "pode encontrar a resposta...";
+			next;
+			mes "[Moogang]";
+			mes "Hmm. Talvez seja melhor";
+			mes "você consultar com ^4D4DFFMoohyun^000000 em Payon";
+			mes "para que possa entender";
+			mes "o teste de Beeryu sobre o";
+			mes "valor da paciência.";
+			next;
+			mes "[Moogang]";
+			mes "Assim que descobrir o";
+			mes "significado da paciência que";
+			mes "Beeryu quer que você encontre,";
+			mes "volte para mim para que";
+			mes "eu possa te enviar de volta para a";
+			mes "Sala da Lua para testes.";
+			close;
+		}
+		else if (STGL_Q == 8) {
+			mes "[Moogang]";
+			mes "Ah, vejo que Moohyun";
+			mes "te ajudou a alcançar um";
+			mes "novo nível de entendimento.";
+			mes "Muito bem, muito bem. Deixe-me";
+			mes "te enviar para a Sala da Lua";
+			mes "onde Beeryu está esperando...";
+			close2;
+			warp "job_star",100,13;
+			end;
+		}
+		else if (STGL_Q == 9 || STGL_Q == 11) {
+			mes "[Moogang]";
+			mes "Você gostaria de";
+			mes "voltar para a Sala da Estrela";
+			mes "para completar o seu";
+			mes "teste e treinamento de Mestre Taekwon?";
+			next;
+			if (select("Sim, por favor.:Talvez mais tarde.") == 1) {
+				mes "[Moogang]";
+				mes "Não desanime...";
+				mes "Eu espero que você";
+				mes "alcance seu objetivo de";
+				mes "se tornar um Mestre Taekwon";
+				mes "muito em breve.";
+				close2;
+				warp "job_star",166,29;
+				end;
+			}
+			mes "[Moogang]";
+			mes "Entendo. Bem, quando";
+			mes "sua mente, corpo e";
+			mes "espírito estiverem preparados, por favor,";
+			mes "venha falar comigo novamente.";
+			close;
+		}
+		else if (STGL_Q == 10) {
+			mes "[Moogang]";
+			mes "Ah, você veio aqui para";
+			mes "falar com Cheehee.";
+			mes "Gostaria que eu te enviasse";
+			mes "para a Sala da Estrela agora?";
+			next;
+			if (select("Sim, por favor.:Talvez mais tarde.") == 1) {
+				mes "[Moogang]";
+				mes "Não desanime...";
+				mes "Eu espero que você";
+				mes "alcance seu objetivo de";
+				mes "se tornar um Mestre Taekwon";
+				mes "muito em breve.";
+				close2;
+				warp "job_star",166,29;
+				end;
+			}
+			mes "[Moogang]";
+			mes "Entendo. Bem, quando";
+			mes "sua mente, corpo e";
+			mes "espírito estiverem preparados, por favor,";
+			mes "venha falar comigo novamente.";
+			close;
+		}
+		else if (STGL_Q == 12) {
+			mes "[Moogang]";
+			mes "Ah, você retornou";
+			mes "mais sábio e mais sintonizado";
+			mes "com a natureza do que antes.";
+			mes "Sim, eu posso ver isso em seus olhos.";
+			mes "Então me diga, o que você aprendeu?";
+			next;
+			mes "[" + strcharinfo(0) + "]";
+			mes "Eu posso sentir o vínculo entre";
+			mes "o Sol, a Lua e as";
+			mes "Estrelas. Todos eles dão luz,";
+			mes "mas seus diferentes tons";
+			mes "concedem diferentes dons.";
+			next;
+			mes "[" + strcharinfo(0) + "]";
+			mes "O sol dá um calor glorioso";
+			mes "e é a fonte";
+			mes "da vida. A luz da lua é suave";
+			mes "e dá conforto. O brilho";
+			mes "das estrelas dá esperança até";
+			mes "mesmo nas noites mais escuras.";
+			next;
+			mes "[" + strcharinfo(0) + "]";
+			mes "Eu também conheço o calor";
+			mes "escaldante e destrutivo do Sol,";
+			mes "a solidão da Lua e a tristeza";
+			mes "das Estrelas. Agora eu entendo";
+			mes "o espectro do cosmos!";
+			next;
+			mes "[" + strcharinfo(0) + "]";
+			mes "A raiva combinada do";
+			mes "cosmos pode convocar um";
+			mes "demônio de escuridão total.";
+			mes "O amor combinado do";
+			mes "cosmos concede bênçãos infinitas";
+			mes "e luz...";
+			next;
+			mes "[Moogang]";
+			mes "Eu não posso pedir";
+			mes "mais nada. Você";
+			mes "já é um guerreiro";
+			mes "do Sol, da Lua e";
+			mes "das Estrelas. Bem-vindo ao nosso";
+			mes "caminho das artes marciais, amigo.";
+			completequest 7011;
+			callfunc "Job_Change",Job_Star_Gladiator;
+			callfunc "F_ClearJobVar";		//limpa todas as variáveis de trabalho para o jogador atual
+			next;
+			mes "[Moogang]";
+			mes "A partir de agora, por favor,";
+			mes "faça suas decisões com muito";
+			mes "cuidado. O que você decidir";
+			mes "determinará o curso";
+			mes "de toda a sua vida. Além disso,";
+			mes "nunca se esqueça dessa canção...";
+			next;
+			mes "[Moogang]";
+			mes "''^4D4DFFO Sol brilha nos dias pares.";
+			mes "A Lua brilha nos dias ímpares.";
+			mes "As Estrelas cintilam a cada";
+			mes "quinto dia sem falhar.^000000''";
+			next;
+			mes "[Moogang]";
+			mes "Isso é tudo o que posso";
+			mes "compartilhar com você. Nunca esqueça";
+			mes "que nós, como Mestres Taekwon,";
+			mes "não podemos existir separados do";
+			mes "Sol, da Lua e das Estrelas...";
+			close;
+		}
+		mes "[Moogang]";
+		mes "Oh, olá. Você é um";
+		mes "estudante de Taekwon Do,";
+		mes "não é? É um prazer";
+		mes "conhecê-lo. Por favor, me chame";
+		mes "de Moogang. Eu também costumava";
+		mes "estudar esse Tae Kwon Do.";
+		next;
+		mes "[Moogang]";
+		mes "Um...";
+		mes "Você já";
+		mes "considerou se tornar...";
+		mes "Um... Não. Espere. Hmmm...";
+		next;
+		mes "[" + strcharinfo(0) + "]";
+		mes "Huh...?";
+		next;
+		mes "[Moogang]";
+		mes "Oh, querido! Eu sempre";
+		mes "tenho um pouco de";
+		mes "dificuldade em falar com outras";
+		mes "pessoas. Agora, por que você";
+		mes "não fala com meu bom";
+		mes "amigo, Moohyun?";
+		next;
+		mes "[Moogang]";
+		mes "É que...";
+		mes "Estou tão animado!";
+		mes "Existe toda chance";
+		mes "de que você possa ser";
+		mes "o guerreiro que estou procurando!";
+		close;
+	}
+	else if (BaseJob == Job_Star_Gladiator) {
+		mes "[Moogang]";
+		mes "Oh, é muito bom";
+		mes "revê-lo. Então, onde";
+		mes "você esteve ultimamente? Eu confio";
+		mes "que você tenha estado em lugares";
+		mes "abençoados pelo Sol, Lua";
+		mes "e Estrelas, correto?";
+		next;
+		mes "[Moogang]";
+		mes "Meu amigo, por favor, tenha";
+		mes "meus conselhos em mente e ";
+		mes "sempre tenha cuidado quando";
+		mes "tomar decisões. Eu não";
+		mes "quero vê-lo se arrependendo mais tarde...";
+		next;
+		mes "[Moogang]";
+		mes "Ah, se você sentir falta da";
+		mes "Sala do Sol, da";
+		mes "Sala da Lua ou da Sala das Estrelas,";
+		mes "eu posso te enviar para lá a qualquer momento";
+		mes "que desejar. Você gostaria";
+		mes "de visitar alguma delas agora?";
+		next;
+		switch(select("Talvez na próxima vez.:Para a Sala do Sol!:Para a Sala da Lua!:Para a Sala das Estrelas!")) {
+		case 1:
+			mes "[Moogang]";
+			mes "Tudo bem. Eu estarei sempre";
+			mes "aqui, então sempre que você";
+			mes "sentir vontade de ir a algum";
+			mes "desses lugares, apenas venha";
+			mes "e fale comigo. Adeus";
+			mes "por agora, "+strcharinfo(0)+"~";
+			close;
+		case 2:
+			mes "[Moogang]";
+			mes "Ah, você deve estar com";
+			mes "saudades do calor glorioso";
+			mes "do sol, né? Deixe-me";
+			mes "te enviar para lá";
+			mes "imediatamente...";
+			close2;
+			warp "job_star",34,12;
+			end;
+		case 3:
+			mes "[Moogang]";
+			mes "Hm? Você precisa";
+			mes "da luz suave da";
+			mes "lua? Então espero";
+			mes "que você encontre paz";
+			mes "em sua influência calmante...";
+			close2;
+			warp "job_star",100,13;
+			end;
+		case 4:
+			mes "[Moogang]";
+			mes "Ah, há inúmeras";
+			mes "razões pelas quais você gostaria";
+			mes "de contemplar o brilho das";
+			mes "estrelas. Bem, deixe-me";
+			mes "te enviar para a Sala das Estrelas";
+			mes "imediatamente~";
+			close2;
+			warp "job_star",166,29;
+			end;
+		}
+	}
+	mes "[Artista Marcial Errante]";
+	mes "Você gosta de fazer trilhas?";
+	mes "O ar fresco, a liberdade";
+	mes "encontrada no caminhar, e a";
+	mes "beleza natural são todos";
+	mes "benefícios bem-vindos.";
+	next;
+	mes "[Artista Marcial Errante]";
+	mes "É claro, não posso desfrutar";
+	mes "da luz da lua e das estrelas";
+	mes "em caminhadas noturnas tanto";
+	mes "quanto você. Bem então, que o";
+	mes "Sol, a Lua e as Estrelas protejam";
+	mes "você em todas as suas jornadas~";
+	close;
+}
+
+job_star,29,33,0	script	Daru#job_star	59,{
+	if (Class == Job_Taekwon) {
+		if (STGL_Q == 3) {
+			mes "[Daru]";
+			mes "Ah, cumprimentos.";
+			mes "Eu sou Daru, e eu serei";
+			mes "seu guia para esta sala.";
+			mes "Para este teste, você deve abrir";
+			mes "seus olhos e responder minhas";
+			mes "perguntas. Vamos começar.";
+			next;
+			mes "[Daru]";
+			mes "Diga-me.";
+			mes "O que é";
+			mes "que você vê?";
+			next;
+			switch(select("O Sol.:A Lua.:As Estrelas.:Eu não faço ideia.")) {
+			case 1:
+				mes "[Daru]";
+				mes "Sim! É o sol!";
+				mes "Suponho que você possa pensar";
+				mes "na humanidade como os filhos do";
+				mes "sol. Bom, muito bom...";
+				set .@sun_point,.@sun_point+10;
+				break;
+			case 2:
+				mes "[Daru]";
+				mes "A... A lua?";
+				mes "Mm. Mas esta é a";
+				mes "Sala do Sol. Hmmm...";
+				break;
+			case 3:
+				mes "[Daru]";
+				mes "As Estrelas. Bem, hmm.";
+				mes "Suponho que você possa pensar";
+				mes "no Sol como uma das milhares";
+				mes "de estrelas no universo...";
+				set .@sun_point,.@sun_point+5;
+				break;
+			case 4:
+				mes "[Daru]";
+				mes "Não... faço ideia?";
+				mes "Hmm. Você deveria";
+				mes "abrir sua mente assim";
+				mes "como seus olhos.";
+				mes "Não custa tentar";
+				mes "adivinhar uma resposta...";
+			}
+			next;
+			mes "[Daru]";
+			mes "Agora, não há nada";
+			mes "que possa viver sem o";
+			mes "sol. Você sabe oque";
+			mes "mais precisa do sol?";
+			next;
+			switch(select("Calor:Conforto:Luz:Nada")) {
+			case 1:
+				mes "[Daru]";
+				mes "Isso está correto.";
+				mes "Sem o calor";
+				mes "do sol, nosso mundo";
+				mes "não apenas seria frio, mas";
+				mes "seria completamente sem vida.";
+				set .@sun_point,.@sun_point+10;
+				break;
+			case 2:
+				mes "[Daru]";
+				mes "Conforto...?";
+				mes "Ah, sim. O calor";
+				mes "do sol traz conforto.";
+				mes "E sem conforto, a vida";
+				mes "realmente vale a pena? Boa resposta.";
+				set .@sun_point,.@sun_point+10;
+				break;
+			case 3:
+				mes "[Daru]";
+				mes "Sim. Sem a";
+				mes "gloriosa luz do sol,";
+				mes "não veríamos nada.";
+				mes "Não saberíamos nada.";
+				mes "Não seríamos nada.";
+				set .@sun_point,.@sun_point+10;
+				break;
+			case 4:
+				mes "[Daru]";
+				mes "Mmm...";
+				mes "A resposta deveria";
+				mes "vir do seu coração,";
+				mes "em vez da sua mente.";
+				mes "Todo mundo precisa de algo";
+				mes "do sol. Vamos ver agora...";
+				break;
+			}
+			next;
+			mes "[Daru]";
+			mes "Há uma canção que diz,";
+			mes "''^4D4DFFO Sol brilha até nos dias pares.";
+			mes "A Lua brilha nos dias ímpares.";
+			mes "As Estrelas brilham a cada";
+			mes "quinto dia sem falhar.^000000''";
+			next;
+			mes "[Daru]";
+			mes "''^4D4DFFUm deserto é um lugar Solar,";
+			mes "suas areias beijadas pelo Sol.";
+			mes "Um pântano é um lugar Lunar,";
+			mes "os lobos impulsionados pela Lua.";
+			mes "Uma caverna profunda é um lugar Estelar, seus cavaleiros encantados pelas Estrelas.^000000''";
+			next;
+			mes "[Daru]";
+			mes "Agora, qual das";
+			mes "seguintes combinações";
+			mes "brilha mais intensamente";
+			mes "entre todas elas? Pense cuidadosamente...";
+			next;
+			if (select("2ª, Pântano, Lobos:4ª, Deserto, Areia:10ª, Deserto, Cavaleiros:5ª, Caverna Profunda, Lobos") == 2)
+				set .@sun_point,.@sun_point+10;
+			mes "[Daru]";
+			mes "Bem, isso é tudo.";
+			mes "Eu não posso possivelmente saber tudo";
+			mes "sobre você apenas com 3 perguntas...";
+			mes "Mas isso deve servir para nossos";
+			mes "propósitos por agora.";
+			next;
+			if (.@sun_point == 30) {
+				mes "[Daru]";
+				mes "Admito que estou impressionado";
+				mes "com sua compreensão do";
+				mes "Sol. É a fonte de";
+				mes "toda vida, a origem do calor";
+				mes "e conforto. Agora, deixe-me levá-lo";
+				mes "para a Sala da Lua.";
+				set STGL_Q,4;
+				close2;
+				warp "job_star",100,13;
+				end;
+			}
+			else if (.@sun_point == 25) {
+				mes "[Daru]";
+				mes "Embora sua compreensão";
+				mes "do Sol não seja perfeita, você";
+				mes "parece entender a ideia";
+				mes "de que ele é a fonte de calor";
+				mes "e vida em nosso mundo.";
+				next;
+				mes "[Daru]";
+				mes "Essa ideia é um dos fundamentos";
+				mes "que o ajudarão a se sintonizar";
+				mes "melhor com o poder do";
+				mes "cosmos. Agora, por favor, venha";
+				mes "por aqui para a Sala da Lua...";
+				set STGL_Q,4;
+				close2;
+				warp "job_star",100,13;
+				end;
+			}
+			mes "[Daru]";
+			mes "Hmm... Se você não";
+			mes "entender o papel do";
+			mes "sol no universo e";
+			mes "no mundo humano, você";
+			mes "estará sempre desconectado";
+			mes "da natureza, do cosmos.";
+			next;
+			mes "[Daru]";
+			mes "Aconselho você a meditar";
+			mes "cuidadosamente sobre as verdades";
+			mes "fundamentais da natureza antes de voltar";
+			mes "a falar comigo novamente.";
+			mes "Contemple o poder infinito";
+			mes "do sol...";
+			set STGL_Q,5;
+			close;
+		}
+		else if (STGL_Q == 4) {
+			mes "[Daru]";
+			mes "Não há mais necessidade";
+			mes "de permanecermos aqui.";
+			mes "Vamos prosseguir para";
+			mes "a Sala da Lua juntos.";
+			close2;
+			warp "job_star",100,13;
+			end;
+		}
+		else if (STGL_Q == 5) {
+			if (rand(1,5) == 3) {
+				mes "[Daru]";
+				mes "Hmmm. Acredito que você";
+				mes "passou tempo suficiente refletindo";
+				mes "sobre a glória do Sol e";
+				mes "sua importância para os humanos";
+				mes "e o mundo. Bem feito. Agora,";
+				mes "vamos prosseguir para a Sala da Lua.";
+				set STGL_Q,4;
+				close2;
+				warp "job_star",100,13;
+				end;
+			}
+			mes "[Daru]";
+			mes "Relaxe todos os músculos";
+			mes "do seu corpo. Feche os olhos.";
+			mes "Sinta o calor do Sol";
+			mes "contra suas pálpebras enquanto você";
+			mes "medita sobre seu papel no mundo e seu lugar no cosmos.";
+			close;
+		}
+		else if (STGL_Q == 6) {
+			mes "[Daru]";
+			mes "Hm? O tempo para você";
+			mes "estar na Sala do";
+			mes "Sol passou. Vamos para";
+			mes "a Sala das Estrelas agora...";
+			close2;
+			warp "job_star",166,29;
+			end;
+		}
+		else if (STGL_Q == 7) {
+			mes "[Daru]";
+			mes "Ah, Beeryu deve ter";
+			mes "te dado o enigma dele";
+			mes "para resolver. Bem, você";
+			mes "precisará voltar para a cidade";
+			mes "para descobrir a resposta, então";
+			mes "deixe-me te enviar para lá agora~";
+			close2;
+			warp "payon",164,58;
+			end;
+		}
+		else if (STGL_Q == 8) {
+			mes "[Daru]";
+			mes "Hm? Beeryu está esperando";
+			mes "você na Sala da Lua. Deixe-me";
+			mes "te enviar para lá agora...";
+			close2;
+			warp "job_star",100,13;
+			end;
+		}
+		else if (STGL_Q > 8 && STGL_Q < 12) {
+			mes "[Daru]";
+			mes "Hm. Eu não posso te culpar";
+			mes "se você gosta tanto da";
+			mes "Sala do Sol, mas agora é";
+			mes "hora de você estar na Sala";
+			mes "das Estrelas. Vou te enviar para lá...";
+			close2;
+			warp "job_star",166,29;
+			end;
+		}
+		mes "[Daru]";
+		mes "Hm. Eu não posso te culpar";
+		mes "se você gosta tanto da";
+		mes "Sala do Sol, mas você tem";
+		mes "uma tarefa muito importante";
+		mes "para completar agora. Deixe-me";
+		mes "te enviar para a cidade.";
+		close2;
+		warp "payon",164,58;
+		end;
+	}
+	mes "[Daru]";
+	mes "Enquanto você estiver aqui,";
+	mes "peço que não interfira com";
+	mes "qualquer pessoa que possa estar";
+	mes "fazendo o teste de mudança de";
+	mes "classe. Então, você gostaria";
+	mes "de retornar para a cidade?";
+	next;
+	if (select("Voltar para Payon:Cancelar") == 1) {
+		mes "[Daru]";
+		mes "Entendi. Deixe-me";
+		mes "guiá-lo de volta";
+		mes "para Payon, então.";
+		close2;
+		warp "payon",164,58;
+		end;
+	}
+	mes "[Daru]";
+	mes "Por favor, aproveite";
+	mes "o esplendor do Sol";
+	mes "enquanto estiver aqui.";
+	close;
+	}
+
+job_star,95,33,0	script	Beeryu#job_star	106,{
+	if (Class == Job_Taekwon) {
+		if (STGL_Q == 4) {
+			mes "[Beeryu]";
+			mes "Bem-vindo à Sala da Lua.";
+			mes "Eu sou Beeryu, seu guia neste";
+			mes "santuário. Eu farei algumas perguntas, então por favor";
+			mes "pense cuidadosamente antes de me dar";
+			mes "sua resposta honesta.";
+			next;
+			mes "[Beeryu]";
+			mes "Qual Lua nós precisamos";
+			mes "e queremos mais? Pense nas";
+			mes "diferentes tonalidades da";
+			mes "lua, e como ela muda";
+			mes "em certas noites.";
+			next;
+			switch(select("Lua Vermelha:Lua Azul:Lua Dourada:...?")) {
+			case 1:
+				mes "[Beeryu]";
+				mes "A Lua Vermelha...?";
+				mes "É uma visão temível,";
+				mes "geralmente comparada a tingir o céu com a cor do sangue.";
+				mes "A Lua Vermelha desperta sentimentos sombrios que não devemos abraçar totalmente...";
+				break;
+			case 2:
+				mes "[Beeryu]";
+				mes "A Lua Azul...?";
+				mes "Ah, sim. É uma lua calma e";
+				mes "gentil cuja luz suave";
+				mes "ajuda você a pensar com clareza.";
+				mes "É uma lua de descanso pacífico...";
+				set .@moon_point,.@moon_point+10;
+				break;
+			case 3:
+				mes "[Beeryu]";
+				mes "A Lua Dourada...?";
+				mes "Ah, essa é uma lua de";
+				mes "abundância e riqueza. Agora,";
+				mes "aspirar a alcançar a prosperidade";
+				mes "é natural, e realizar suas";
+				mes "aspirações é o auge da vida.";
+				set .@moon_point,.@moon_point+10;
+				break;
+			case 4:
+				mes "[Beeryu]";
+				mes "Hmm...?";
+				mes "Você não tem uma";
+				mes "opinião sobre a Lua?";
+				mes "Você deveria estar confiante";
+				mes "e me dizer qual tonalidade";
+				mes "da lua você gosta...";
+			}
+			next;
+			mes "[Beeryu]";
+			mes "Agora, se as sombras";
+			mes "da Lua lhe emprestassem";
+			mes "seu poder,";
+			mes "para que fim você";
+			mes "usaria o poder do";
+			mes "cosmos Lunar?";
+			next;
+			switch(select("Justiça:Autopráxis:Preservação da Natureza:Vingança")) {
+			case 1:
+				mes "[Beeryu]";
+				mes "Sim. A justiça sempre é";
+				mes "um fim que vale a pena lutar.";
+				mes "Apenas lembre-se de que";
+				mes "tanto poder quanto compaixão";
+				mes "são necessários para";
+				mes "realizar a forma mais verdadeira de justiça.";
+				set .@moon_point,.@moon_point+10;
+				break;
+			case 2:
+				mes "[Beeryu]";
+				mes "Autotreinamento?";
+				mes "Essa é uma resposta aceitável.";
+				mes "No entanto, você nunca deve";
+				mes "esquecer suas razões";
+				mes "para alcançar a maestria do";
+				mes "self, caso contrário, você perderá seu caminho.";
+				set .@moon_point,.@moon_point+10;
+				break;
+			case 3:
+				mes "[Beeryu]";
+				mes "A preservação da";
+				mes "natureza é responsabilidade";
+				mes "de todo ser humano vivo. No entanto,";
+				mes "eu esperava uma resposta diferente";
+				mes "em termos de Maestria do Taekwon";
+				mes "como uma arte marcial...";
+				break;
+			case 4:
+				mes "[Beeryu]";
+				mes "Às vezes, a vingança pode";
+				mes "parecer ser a melhor solução,";
+				mes "especialmente se for";
+				mes "realizada em nome da justiça. No entanto,";
+				mes "a vingança por si só é geralmente ignóbil.";
+				next;
+				mes "[Beeryu]";
+				mes "Pergunte a si mesmo isso:";
+				mes "o que você fará depois";
+				mes "de alcançar sua vingança?";
+				mes "Quando você deixa sua raiva";
+				mes "consumi-lo, você inflige o";
+				mes "maior dano a si mesmo...";
+				break;
+			}
+			next;
+			mes "[Beeryu]";
+			mes "Agora, ouça atentamente";
+			mes "a letra desta";
+			mes "música. Tenho certeza de que";
+			mes "Daru já cantou isso para você...";
+			next;
+			mes "[Beeryu]";
+			mes "''^4D4DFFO Sol brilha nos dias pares.";
+			mes "A Lua reluz nos dias ímpares.";
+			mes "As Estrelas cintilam a cada";
+			mes "quinto dia sem falhar.^000000''";
+			next;
+			mes "[Beeryu]";
+			mes "''^4D4DFFUm deserto é um lugar Solar,";
+			mes "suas areias beijadas pelo Sol.";
+			mes "Um pântano é um lugar Lunar,";
+			mes "os lobos impulsionados pela Lua.";
+			mes "Uma caverna profunda é um lugar Estelar, seus cavaleiros encantados pelas Estrelas.^000000''";
+			next;
+			mes "[Beeryu]";
+			mes "De acordo com estas";
+			mes "letras, qual das";
+			mes "seguintes evoca";
+			mes "mais fortemente a";
+			mes "luz da lua?";
+			next;
+			if (select("2º, Pântano, Cavaleiros das Trevas:4º, Deserto, Areia:10º, Caverna Profunda, Cavaleiro das Trevas:5º, Pântano, Lobos") == 4)
+				set .@moon_point,.@moon_point+10;
+			mes "[Beeryu]";
+			mes "Bem, fiz as";
+			mes "perguntas que";
+			mes "queria antes de você.";
+			mes "Você deve aprender";
+			if (.@moon_point > 20) {
+				mes "o elo entre a luz da lua";
+				mes "com as sombras da lua.";
+				mes "Então, você se tornará um mestre.";
+				next;
+				mes "[Beeryu]";
+				mes "A suave luz da lua";
+				mes "ilumina a noite mais escura.";
+				mes "As sombras da lua equilibram";
+				mes "o glorioso brilho do Sol.";
+				mes "Sabedoria ao poder, calma";
+				mes "à raiva. Contemple isso...";
+				next;
+				mes "[Beeryu]";
+				mes "Eu tenho fé de que você";
+				mes "logo se tornará um grande";
+				mes "Mestre Taekwon.";
+				mes "Agora, chegou a hora de você";
+				mes "entrar na Sala das Estrelas. Venha,";
+				mes "siga-me por este caminho...";
+				set STGL_Q,6;
+				close2;
+				warp "job_star",166,29;
+				end;
+			}
+			mes "ser paciente e gentil";
+			mes "como o brilho suave da lua.";
+			next;
+			mes "[Beeryu]";
+			mes "Por favor, pense";
+			mes "seriamente sobre";
+			mes "isso. Um verdadeiro";
+			mes "Mestre Taekwon pode";
+			mes "demonstrar calma de espírito";
+			mes "em todas as situações, não importa";
+			mes "quais sejam as apostas.";
+			next;
+			mes "[Beeryu]";
+			mes "Agora, quero que você";
+			mes "aproveite esta oportunidade para";
+			mes "praticar alcançar a";
+			mes "mentalidade Lunar. Esteja calmo,";
+			mes "silencie seus pensamentos e";
+			mes "acalme sua mente ativa...";
+			next;
+			mes "[Beeryu]";
+			mes "Por enquanto, vou te enviar";
+			mes "para Payon. Saia";
+			mes "e aprenda o ^4D4DFFverdadeiro significado";
+			mes "da paciência^000000. Então, quando estiver";
+			mes "pronto, por favor, fale com Moogang";
+			mes "para que ele possa te enviar até mim.";
+			set STGL_Q,7;
+			close2;
+			warp "payon",164,58;
+			end;
+		}
+		else if (STGL_Q == 5) {
+			mes "[Beeryu]";
+			mes "Hm. Você deve primeiro passar";
+			mes "pelo teste na Sala do Sol";
+			mes "antes de poder ser testado aqui";
+			mes "na Sala da Lua. Deixe-me te enviar";
+			mes "para onde você precisa ir...";
+			close2;
+			warp "job_star",34,12;
+			end;
+		}
+		else if (STGL_Q == 6) {
+			mes "[Beeryu]";
+			mes "Como você ainda está aqui?";
+			mes "A luz da lua cheia";
+			mes "traz conforto, mas você deve";
+			mes "se mover se deseja se tornar";
+			mes "um Mestre Taekwon. Venha, eu vou";
+			mes "te guiar até a Sala das Estrelas.";
+			close2;
+			warp "job_star",166,29;
+			end;
+		}
+		else if (STGL_Q == 7) {
+			mes "[Beeryu]";
+			mes "Eu quero que você me traga";
+			mes "provas de que entende";
+			mes "a natureza da paciência que";
+			mes "está associada à lua.";
+			mes "Você não pode se tornar um Mestre Taekwon";
+			mes "sem essa atitude...";
+			next;
+			mes "[Beeryu]";
+			mes "A prova que quero que";
+			mes "me mostre é concreta e";
+			mes "incontestável. Por favor, pense";
+			mes "no que pode ser. Agora,";
+			mes "vou te enviar de volta à cidade...";
+			close2;
+			warp "payon",164,58;
+			end;
+		}
+		else if (STGL_Q == 8) {
+			mes "[Beeryu]";
+			mes "Ah, você finalmente";
+			mes "voltou. Posso ver em";
+			mes "como você se comporta";
+			mes "que sua determinação";
+			mes "foi fortalecida. Bom.";
+			mes "Espero que agora você conheça a paciência...";
+			next;
+			mes "[Beeryu]";
+			mes "Paciência e determinação são";
+			mes "necessárias para viver sem";
+			mes "nenhum arrependimento. Você deve acreditar";
+			mes "em si mesmo enquanto é";
+			mes "considerado e compreensivo";
+			mes "com os outros em harmonia cósmica.";
+			next;
+			mes "[Beeryu]";
+			mes "Aprenda a controlar seu";
+			mes "poder através do treinamento";
+			mes "espiritual. Aprenda a ter";
+			mes "orgulho sem arrogância. Você está";
+			mes "pronto para a Sala das Estrelas, então";
+			mes "eu vou te enviar para Cheehee agora.";
+			set STGL_Q,6;
+			close2;
+			warp "job_star",166,29;
+			end;
+		}
+		else if (STGL_Q > 8 && STGL_Q < 12) {
+			mes "[Beeryu]";
+			mes "Você deveria estar";
+			mes "recebendo o ensinamento de Cheehee";
+			mes "na Sala das Estrelas";
+			mes "agora. Venha, deixe-me te guiar";
+			mes "lá. Espero vê-lo como";
+			mes "um Mestre Taekwon em breve...";
+			close2;
+			warp "job_star",166,29;
+			end;
+		}
+		mes "[Beeryu]";
+		mes "Por que você ainda está aqui?";
+		mes "Você tem algo muito";
+		mes "mais importante para fazer, então";
+		mes "deixe-me te enviar de volta para a cidade...";
+		close2;
+		warp "payon",164,58;
+		end;
+	}
+	mes "[Beeryu]";
+	mes "Tente não incomodar os";
+	mes "Rapazes e Garotas Taekwon";
+	mes "ao completarem seu teste de";
+	mes "mudança de classe enquanto estiver aqui.";
+	mes "Ah, e me avise quando";
+	mes "quiser voltar para Payon.";
+	next;
+	if (select("Voltar para Payon:Cancelar") == 1) {
+		mes "[Beeryu]";
+		mes "Fique seguro!";
+		close2;
+		warp "payon",164,58;
+		end;
+	}
+	mes "[Beeryu]";
+	mes "......";
+	mes ".........";
+	close;
+}
+
+job_star,161,33,0	script	Cheehee#job_star	77,{
+	if (Class == Job_Taekwon) {
+		if (STGL_Q == 6) {
+			mes "[Cheehee]";
+			mes "Você não acha as estrelas";
+			mes "tão bonitas? Elas são";
+			mes "como lágrimas de uma";
+			mes "garota bonita derramadas";
+			mes "em um fundo de céu noturno";
+			mes "preto como breu...";
+			set STGL_Q,9;
+			close;
+		}
+		else if (STGL_Q == 9) {
+			if (rand(1,5) == 3) {
+				mes "[Cheehee]";
+				mes "O teste que tenho para";
+				mes "você é simples. Apenas";
+				mes "traga-me os itens neste";
+				mes "mundo que vêm das";
+				mes "estrelas. Traga um pedaço de uma estrela e a areia de uma estrela...";
+				set STGL_Q,10;
+				changequest 7009,7010;
+				close;
+			}
+			mes "[Cheehee]";
+			mes "......";
+			mes ".........";
+			next;
+			mes "^3355FFCheehee fica hipnotizada,";
+			mes "olhando para o céu como se estivesse contando cada";
+			mes "uma das estrelas brilhantes nos céus.^000000";
+			close;
+		}
+		else if (STGL_Q == 10) {
+			if (countitem(1000) > 0 && countitem(1001) > 0) {
+			mes "[Cheehee]";
+			mes "Oh? Você trouxe exatamente";
+			mes "o que pedi para trazer.";
+			mes "Você sabia que o espírito";
+			mes "das estrelas é usado para";
+			mes "aumentar as armaduras e armas";
+			mes "que todos os aventureiros usam";
+			mes "em batalha?";
+			next;
+			mes "[Cheehee]";
+			mes "As estrelas estão ligadas às";
+			mes "ideias de desejos, sonhos,";
+			mes "esperanças, magia e romance.";
+			mes "Às vezes, as estrelas podem";
+			mes "ser tristes, mas é uma tristeza";
+			mes "muito doce...";
+			delitem 1000,1; //Star_Crumb
+			delitem 1001,1; //Sparkling_Dust
+			set STGL_Q,11;
+			close;
+		}
+		mes "[Cheehee]";
+		mes "Os pedaços das estrelas...";
+		mes "A areia das estrelas. Se você";
+		mes "não trouxe com você, então você";
+		mes "não os encontrará aqui. Você terá";
+		mes "que sair e encontrá-los lá fora";
+		mes "antes de trazê-los para mim.";
+		close2;
+		warp "payon",164,58;
+		end;
+	}
+	else if (STGL_Q == 11) {
+		mes "[Cheehee]";
+		mes "Você já pensou";
+		mes "na ideia de sentir tristeza";
+		mes "das estrelas? Talvez esta";
+		mes "música te ajude a entender melhor,";
+		mes "embora eu saiba que você";
+		mes "já a ouviu...";
+		next;
+		mes "[Cheehee]";
+		mes "''^4D4DFFO Sol brilha em dias pares.";
+		mes "A Lua brilha em dias ímpares.";
+		mes "As Estrelas brilham a cada";
+		mes "quinto dia sem falta.^000000''";
+		next;
+		mes "[Cheehee]";
+		mes "''^4D4DFFUm deserto é um lugar Solar,";
+		mes "suas areias beijadas pelo Sol.";
+		mes "Um pântano é um lugar Lunar,";
+		mes "os lobos conduzidos pela Lua.";
+		mes "Uma caverna profunda é um lugar Estelar, seus cavaleiros encantados pelas Estrelas.^000000''";
+		next;
+		mes "[Cheehee]";
+		mes "Agora...";
+		mes "Qual dos seguintes";
+		mes "grupos brilha mais";
+		mes "com a luz das estrelas?";
+		next;
+		if (select("5º dia, Caverna Profunda, Areia:10º dia, Deserto, Areia:25º dia, Caverna Profunda, Cavaleiros:10º dia, Deserto, Cavaleiros") == 3) {
+			mes "[Cheehee]";
+			mes "Você está certo. A combinação";
+			mes "do 25º dia, um múltiplo de";
+			mes "o número 5, e os Cavaleiros";
+			mes "estacionados em Cavernas Profundas brilha";
+			mes "mais forte com a luz das estrelas.";
+			next;
+			mes "[Cheehee]";
+			mes "Se você pode entender";
+			mes "a letra desta música,";
+			mes "você deveria entender a";
+			mes "essência de ser um Mestre Taekwon.";
+			mes "Lembre-se que a luz";
+			mes "vem em diferentes tonalidades...";
+			next;
+			mes "[Cheehee]";
+			mes "A glória do sol, a";
+			mes "suave luz da lua, e o";
+			mes "piscar melancólico das";
+			mes "estrelas são únicos entre";
+			mes "si. Por favor, aproveite a luz das estrelas nesta sala pelo tempo que quiser.";
+			next;
+			mes "[Cheehee]";
+			mes "Quando estiver pronto,";
+			mes "por favor, vá falar com";
+			mes "Moogang novamente. Eu";
+			mes "vou informá-lo de que você";
+			mes "completou nossos testes.";
+			set STGL_Q,12;
+			changequest 7010,7011;
+			close;
+		}
+		mes "[Cheehee]";
+		mes "Hmm...";
+		mes "Você deve aprender mais";
+		mes "sobre a natureza das";
+		mes "Estrelas. Você deve entender";
+		mes "o cosmos se quiser se tornar";
+		mes "um Mestre Taekwon.";
+		next;
+		mes "[Cheehee]";
+		mes "Se você pode entender";
+		mes "a letra desta música,";
+		mes "você deveria entender a";
+		mes "essência de ser um Mestre Taekwon.";
+		mes "Lembre-se que a luz";
+		mes "vem em diferentes tonalidades...";
+		next;
+		mes "[Cheehee]";
+		mes "A glória do sol, a";
+		mes "suave luz da lua, e o";
+		mes "piscar melancólico das";
+		mes "estrelas são únicos entre";
+		mes "si. Por favor, aproveite a luz das estrelas nesta sala pelo tempo que quiser.";
+		next;
+		mes "[Cheehee]";
+		mes "Quando estiver pronto,";
+		mes "por favor, vá falar com";
+		mes "Moogang novamente. Eu";
+		mes "vou informá-lo de que você";
+		mes "completou nossos testes.";
+		set STGL_Q,12;
+		changequest 7010,7011;
+		close;
+		}
+		else if (STGL_Q == 12) {
+			mes "[Cheehee]";
+			mes "Você deseja";
+			mes "sair da Sala das Estrelas?";
+			next;
+			if (select("Sim:Não") == 1) {
+				mes "[Cheehee]";
+				mes "Então, eu vou te guiar";
+				mes "até Payon, a cidade mais próxima.";
+				mes "Adeus por agora...";
+				close2;
+				warp "payon",164,58;
+				end;
+			}
+			mes "[Cheehee]";
+			mes "Por favor, aproveite";
+			mes "o tempo e desfrute";
+			mes "da luz das estrelas nesta sala...";
+			close;
+		}
+		mes "[Cheehee]";
+		mes "As estrelas são";
+		mes "realmente bonitas, não";
+		mes "são? Você gostaria";
+		mes "de voltar para Payon agora?";
+		next;
+		if (select("Sim:Não") == 1) {
+			mes "[Cheehee]";
+			mes "Entendi.";
+			mes "Deixe-me te guiar";
+			mes "de volta para Payon.";
+			close2;
+			warp "payon",164,58;
+			end;
+		}
+		mes "[Cheehee]";
+		mes "Por favor, aproveite";
+		mes "o tempo e desfrute";
+		mes "da luz das estrelas nesta sala...";
+		close;
+	}
+	mes "[Cheehee]";
+	mes "As estrelas são";
+	mes "realmente bonitas, não";
+	mes "são? Você gostaria";
+	mes "de voltar para Payon agora?";
+	next;
+	if (select("Sim:Não") == 1) {
+		mes "[Cheehee]";
+		mes "Entendi.";
+		mes "Deixe-me te guiar";
+		mes "de volta para Payon.";
+		close2;
+		warp "payon",164,58;
+		end;
+	}
+	mes "[Cheehee]";
+	mes "Por favor, aproveite";
+	mes "o tempo e desfrute";
+	mes "da luz das estrelas nesta sala...";
+	close;
+}
+
+//============================================================ 
+// Registro de alterações antigo
+//============================================= = ===========
+//= Um trocador de classe temporário de Mestre Taeknow baseado na missão kRO.
+//= Informações da missão do RagnaInfo.
+//= Sprites das capturas de tela do kRO, barra dois que eu apenas tive que adivinhar.
+//= 1.0 Otimizado, atualizado [Lupus]
+//============================================================ 

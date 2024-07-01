@@ -1,0 +1,1359 @@
+//===========================================================\\
+//          ____   __   _  _  __    ____   __   ____         //
+//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
+//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
+//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
+//                                                           //
+//================== www.souleat.com.br =====================\\
+//======================= by: Guru ==========================//
+
+que_ng,28,50,3	script	Boshuu	709,{
+
+	if (BaseClass != Job_Ninja){
+		mes "[Boshuu]";
+		mes "Eu sou o melhor artesão do que as pessoas chamam de Três Artesãos de Ferramentas Ninja.";
+		mes "Eles me chamam de Murata Boshuu.";
+		next;
+		mes "[Boshuu]";
+		mes "Sei criar qualquer armadura e escudo do mundo oriental, e meus escudos são considerados os melhores que existem.";
+		next;
+		mes "[Boshuu]";
+		mes "Mas vendo como você é um estranho...";
+		mes "Parece que não tenho negócios com você.";
+		mes "Ehem~";
+		close;
+	}
+	if (BaseLevel < 20){
+		mes "[Boshuu]";
+		mes "Eu faço os melhores escudos para Ninjas de todas as idades,";
+		mes "Mas até eu tenho alguns requisitos mínimos";
+		next;
+		mes "[Boshuu]";
+		mes "Parece que você não precisa de um escudo, mas de mais níveis.";
+		mes "Volte depois de crescer um pouco mais.";
+		close;
+	}
+	if (countitem(2102) < 1 && !(MISC_QUEST & 2048)){
+		mes "[Boshuu]";
+		mes "Eu sou o melhor artesão do que as pessoas chamam de Três Artesãos de Ferramentas Ninja.";
+		mes "Eles me chamam de Murata Boshuu.";
+		next;
+		mes "[Boshuu]";
+		mes "Dizem que são três artesãos, mas os outros dois provavelmente são golpistas.";
+		mes "Não há um único artesão melhor do que eu para ninjas neste mundo.";
+		next;
+		mes "[Boshuu]";
+		mes "Eu sei fazer todas as armaduras e escudos orientais.";
+		next;
+		mes "[Boshuu]";
+		mes "Como a armadura que eu criei era tão superior e defensiva, quando duas pessoas lutam usando uma armadura feita por mim, ninguém pode vencer!";
+		next;
+		mes "[Boshuu]";
+		mes "Por esse motivo, não faço mais nenhuma armadura.";
+		mes "Hoje em dia só estou colecionando armaduras, só para ter certeza de que minhas habilidades não serão desperdiçadas.";
+		next;
+		mes "[Boshuu]";
+		mes "Mas me sinto tão entediado hoje em dia.";
+		next;
+		mes "[Boshuu]";
+		mes "Agora que só coleciono armaduras, sinto que a chama criativa dentro de mim está morrendo.";
+		next;
+		mes "[Boshuu]";
+		mes "Pelo que ouvi, há uma armadura no exterior da qual nunca ouvi falar.";
+		mes "Chamava-se... hmm... como se chamava?";
+		next;
+		mes "[Boshuu]";
+		mes "^ff0000Guarda[1]^000000? ";
+		mes "Eu gostaria de ver a coisa real sozinho.";
+		next;
+		mes "[Boshuu]";
+		mes "Mas obviamente, provavelmente não vale nada comparado com a armadura que eu faço.";
+		next;
+		mes "[Boshuu]";
+		mes "Faça-me um favor e farei algo especial para você.";
+		next;
+		mes "[Boshuu]";
+		mes "Não tenho certeza do que farei, mas tenho a sensação de que me sentirei inspirado quando vir aquela armadura.";
+		mes "Que tal~ Você pode me encontrar um ^ff0000Guard[1]^000000?";
+		next;
+		if(select("Hmm.. Não estou com vontade.:Muito bem.") == 1){
+			mes "[Boshuu]";
+			mes "Ah~ Que pena..";
+			mes "Você está perdendo a oportunidade de colocar as mãos em algo feito por um artesão genial como eu...";
+			close;
+		}else{
+			mes "[Boshuu]";
+			mes "Oh muito bem.";
+			mes "Vá em frente.";
+			mes "Encontre o escudo chamado ^ff0000Guard[1]^000000 e traga-o para mim.";
+			set ninbo,1;
+			close;
+		}
+	}
+	if (ninbo == 1){
+		mes "[Boshuu]";
+		mes "Ah... então você trouxe?";
+		mes "Mostre-me...";
+		mes "Hummmm...";
+		next;
+		mes "[Boshuu]";
+		mes "Ah~! ";
+		next;
+		mes "[Boshuu]";
+		mes "Ahh, agora estou ansioso para imitar essa armadura e fazer um espaço em outras armaduras.";
+		next;
+		mes "[Boshuu]";
+		mes "Se você tiver um protetor de braço normal sem slot e um protetor com slot, farei o sem slot com slot ao custo de 10.000 Zeny.";
+		next;
+		mes "[Boshuu]";
+		mes "Que tal? ";
+		next;
+		if(select("Não, obrigado.:Ok, parece bom.") == 1){
+			mes "[Boshuu]";
+			mes "Hum, ok.";
+			mes "Estou muito grato por ter visto uma coisa tão rara do exterior.";
+			mes "Obrigado por tudo.";
+			set ninbo,0;
+			close;
+		}else{
+			mes "[Boshuu]";
+			mes "Oh, OK.";
+			mes "Mal posso esperar para começar.";
+			mes "Se você me trouxer 1 Arm Guard";
+			mes "1 proteção com fenda e";
+			mes "10.000 Zeny..";
+			next;
+			mes "[Boshuu]";
+			mes "Então vou encaixar seu protetor de braço sem slot.";
+			mes "Volte quando tiver todos os materiais necessários.";
+			set ninbo,2;
+			close;
+		}
+	}
+	else if (ninbo == 2){
+		if (countitem(2102) < 1 || countitem(2117) < 1){
+			mes "[Boshuu]";
+			mes "Hmm... Parece que você não me trouxe materiais suficientes.";
+			mes "Para criar um Slotted Arm Guard, preciso de 1 Slotted Guard";
+			mes "1 guarda de braço e 10.000 Zeny";
+			mes "Volte quando tiver certeza de que tem tudo.";
+			close;
+		}
+		if (Zeny < 10000){
+			mes "[Boshuu]";
+			mes "Hmm.. Você trouxe muitos materiais, mas está com pouco zeny.";
+			next;
+			mes "[Boshuu]";
+			mes "Para criar um Slotted Arm Guard, preciso de 1 Guard[1]";
+			mes "1 guarda de braço e 10.000 Zeny.";
+			mes "Volte quando tiver certeza de que tem tudo.";
+			close;
+		}
+		mes "[Boshuu]";
+		mes "Oh, vejo que você voltou com todos os materiais necessários.";
+		mes "Mas antes de começar, devo perguntar mais uma vez.";
+		mes "Você quer me dar os materiais que trouxe e receber um Slotted Arm Guard?";
+		next;
+		if(select("Não: Sim") == 1){
+			mes "[Boshuu]";
+			mes "OK";
+			mes "Bem, se você decidir novamente, venha me ver.";
+			close;
+		}else{
+			mes "[Boshuu]";
+			mes "Tudo bem!";
+			mes "Isso deve levar apenas um segundo";
+			mes "Bang Clang ~ Bang Clang ~";
+			next;
+			if(countitem(2102) < 1 || countitem(2117) < 1 || Zeny < 10000){
+				mes "HACK DETECTADO";
+				close;
+			}
+			mes "[Boshuu]";
+			mes "Aqui, finalmente está completo.";
+			mes "Apresento a vocês um protetor de braço com fenda.";
+			mes "Venha me encontrar sempre que estiver pronto para solicitar mais.";
+			delitem 2102,1;
+			delitem 2117,1;
+			set Zeny,Zeny-10000;
+			set ninbo,0;
+			set MISC_QUEST,MISC_QUEST | 2048;
+			getitem 2118,1;
+			close;
+		}
+	}
+	else if (MISC_QUEST & 2048){
+		set ninbo,0;
+		mes "[Boshuu]";
+		mes "Oh ~ vejo que você voltou.";
+		mes "É porque você precisa de outro protetor de braço com fenda?";
+		next;
+		if(select("Não, na verdade não.:Sim, faça-me outro.") == 1){
+			mes "[Boshuu]";
+			mes "Hmmph ~ Você com certeza é estranho.";
+			mes "Bem, vejo você mais tarde ~";
+			close;
+		}else{
+			if (countitem(2102) < 1 || countitem(2117) < 1){
+				mes "[Boshuu]";
+				mes "Hmm... Parece que você não me trouxe materiais suficientes.";
+				mes "Para fazer um protetor de braço com fenda,";
+				mes "Eu preciso de 1 protetor com fenda";
+				mes "1 protetor de braço e";
+				mes "10.000 Zeny.";
+				mes "Volte quando tiver certeza de que tem tudo.";
+				close;
+			}
+			if (Zeny < 10000){
+				mes "[Boshuu]";
+				mes "Hmm.. Você trouxe muitos materiais, mas está com pouco zeny.";
+				next;
+				mes "[Boshuu]";
+				mes "Para criar um Slotted Arm Guard,";
+				mes "Preciso de 1 Slotted Guard, 1 Arm Guard e 10.000 Zeny.";
+				mes "Volte quando tiver certeza de que tem tudo.";
+				close;
+			}
+			mes "[Boshuu]";
+			mes "Oh, você me trouxe os materiais necessários.";
+			mes "Antes de começar, deixe-me perguntar uma última vez...";
+			mes "Você vai me dar os materiais que reuniu e, em troca, receber um Arm Guard com fenda?";
+			next;
+			if(select("Não: Sim") == 1){
+				mes "[Boshuu]";
+				mes "OK";
+				mes "Se você alguma vez se decidir";
+				mes "venha e me encontre novamente.";
+				close;
+			}else{
+				mes "[Boshuu]";
+				mes "Tudo bem!";
+				mes "Isso deve levar apenas um segundo";
+				mes "Bang Clang ~Bang Clang~";
+				next;
+				mes "[Boshuu]";
+				mes "Aqui, finalmente está completo.";
+				mes "Apresento a vocês um protetor de braço com fenda.";
+				next;
+				if(countitem(2102) < 1 || countitem(2117) < 1 || Zeny < 10000){
+					mes "HACK DETECTADO";
+					close;
+				}
+				mes "[Boshuu]";
+				mes "Se você quiser me pedir para fazer mais itens, fique à vontade para voltar a qualquer momento.";
+				delitem 2102,1;
+				delitem 2117,1;
+				set Zeny,Zeny-10000;
+				getitem 2118,1;
+				close;
+			}
+		}
+	}
+	else{
+		set ninbo,0;
+		mes "[Boshuu]";
+		mes "Oh ~ você ~!";
+		mes "O que você tem aí é o escudo do além-mar chamado Guarda? ";
+		next;
+		mes "[Boshuu]";
+		mes "Inacreditável!! ";
+		mes "Se todos os escudos tivessem um slot, eles poderiam se tornar mais eficazes do que nunca.";
+		mes "Como é que só percebi isso agora?";
+		next;
+		mes "[Boshuu]";
+		mes "Sou o melhor dos três artesãos de ferramentas Ninja chamados Murata Boshuu.";
+		mes "Eu sei criar todas as armaduras e escudos do mundo oriental.";
+		next;
+		mes "[Boshuu]";
+		mes "Mas como a armadura que eu criaria era tão refinada e de alta defesa, quando as pessoas que usavam minha armadura lutassem novamente entre si, nenhum dos lados poderia vencer.";
+		next;
+		mes "[Boshuu]";
+		mes "Por esse motivo, não faço mais escudos e armaduras.";
+		next;
+		mes "[Boshuu]";
+		mes "Hoje em dia, tudo que faço é colecionar escudos e armaduras.";
+		next;
+		mes "[Boshuu]";
+		mes "Mas a vida é meio chata sem criar coisas.";
+		next;
+		mes "[Boshuu]";
+		mes "Como tudo que faço agora é colecionar, sinto que o espírito criativo dentro de mim está desaparecendo.";
+		next;
+		mes "[Boshuu]";
+		mes "Mas ao ver seu escudo, sinto que meu espírito adormecido de criatividade despertou.";
+		next;
+		mes "[Boshuu]";
+		mes "Se você quiser, traga-me um Arm Guard, um Slotted Guard e 10.000 Zeny, e eu farei para você um Slotted Arm Guard.";
+		mes "Que tal? ";
+		next;
+		if(select("Não, prefiro não.:Sim~!! ") == 1){
+			mes "[Boshuu]";
+			mes "Hum, é isso mesmo?";
+			mes "Que pena...";
+			mes "Bem, se você mudar de ideia mais tarde, volte e me veja.";
+			close;
+		}else{
+			if (countitem(2102) < 1 || countitem(2117) < 1){
+				mes "[Boshuu]";
+				mes "Hmm... Parece que você não me trouxe materiais suficientes.";
+				next;
+				mes "[Boshuu]";
+				mes "Para fazer um protetor de braço com fenda,";
+				mes "Eu preciso de 1 protetor com fenda";
+				mes "1 protetor de braço e";
+				mes "10.000 Zeny.";
+				mes "Volte quando tiver certeza de que tem tudo.";
+				close;
+			}
+			if (Zeny < 10000){
+				mes "[Boshuu]";
+				mes "Hmm.. Você trouxe muitos materiais, mas está com pouco zeny.";
+				next;
+				mes "[Boshuu]";
+				mes "Para fazer um protetor de braço com fenda,";
+				mes "Eu preciso de 1 protetor com fenda";
+				mes "1 protetor de braço e";
+				mes "10.000 Zeny.";
+				mes "Volte quando tiver certeza de que tem tudo.";
+				close;
+			}
+			mes "[Boshuu]";
+			mes "Oh, você me trouxe os materiais necessários.";
+			mes "Antes de começar, deixe-me perguntar uma última vez...";
+			mes "Você vai me dar os materiais que reuniu,";
+			mes "e por sua vez, receber um Slotted Arm Guard?";
+			next;
+			if(select("Não: Sim") == 1){
+				mes "[Boshuu]";
+				mes "OK";
+				mes "Se você alguma vez se decidir";
+				mes "venha e me encontre novamente.";
+				close;
+			}else{
+				mes "[Boshuu]";
+				mes "Tudo bem!";
+				mes "Isso deve levar apenas um segundo";
+				mes "Bang Clang ~Bang Clang~";
+				next;
+				if(countitem(2102) < 1 || countitem(2117) < 1 || Zeny < 10000){
+					mes "HACK DETECTADO";
+					close;
+				}
+				mes "[Boshuu]";
+				mes "Aqui, finalmente está completo.";
+				mes "Apresento a vocês um protetor de braço com fenda.";
+				mes "Se você quiser me pedir para fazer mais itens, fique à vontade para voltar a qualquer momento.";
+				delitem 2102,1;
+				delitem 2117,1;
+				set Zeny,Zeny-10000;
+				set MISC_QUEST,MISC_QUEST | 2048;
+				getitem 2118,1;
+				close;
+			}
+		}
+	}
+}
+
+que_ng,28,45,3	script	Basshu	86,{
+
+	if(BaseClass != Job_Ninja){
+		mes "[Basshu]";
+		mes "Eu sou um dos irmãos dos três irmãos encarregados de fabricar escudos no leste, chamados Murata Basshu.";
+		next;
+		mes "[Basshu]";
+		mes "As pessoas normalmente nos chamam de Três Artesãos, mas os outros dois artesãos são meus irmãos.";
+		next;
+		mes "[Basshu]";
+		mes "Mas parece que você não é meu tipo de cliente habitual, então não posso fazer nenhum escudo para você.";
+		mes "Desculpe.";
+		close;
+	}
+	if(BaseLevel < 50){
+		mes "[Basshu]";
+		mes "Eu sou um dos irmãos dos três irmãos encarregados de fabricar escudos no leste, chamados Murata Basshu.";
+		next;
+		mes "[Basshu]";
+		mes "Infelizmente, muitos dos meus escudos têm requisitos mínimos e temo que você não os atenda.";
+		next;
+		mes "[Basshu]";
+		mes "Volte quando estiver mais forte.";
+		close;
+	}
+	if (countitem(2107) < 1 && !(MISC_QUEST & 4096)){
+		mes "[Basshu]";
+		mes "Sou um dos irmãos dos três artesãos encarregados de confeccionar escudos no leste, chamados Murata Basshu.";
+		next;
+		mes "[Basshu]";
+		mes "Somos chamados de Três Artesãos, mas os outros dois artesãos são meus irmãos.";
+		mes "Aprendi meu ofício olhando furtivamente para meus irmãos, então minha habilidade é um pouco menor que a deles, mas muitas pessoas me elogiam muito.";
+		next;
+		mes "[Basshu]";
+		mes "A partir de agora, desisti de fazer escudos e atualmente administro uma loja de antiguidades para escudos.";
+		mes "Estou pesquisando para ver se escudos podem ser encantados com magia.";
+		next;
+		mes "[Basshu]";
+		mes "Por acaso você conhece um escudo chamado Escudo Espelho do exterior?";
+		mes "Eu adoraria ver esse item, mas não consigo colocar as mãos em um.";
+		next;
+		mes "[Basshu]";
+		mes "Me ajudaria muito se eu pudesse ver aquele escudo de perto.";
+		mes "Pode me ajudar?";
+		next;
+		if(select("Hmm...não estou com vontade.:Muito bem.") == 1){
+			mes "[Basshu]";
+			mes "Ah~ acho que foi um pedido impossível.";
+			mes "Desculpe.";
+			mes "Se você encontrar um escudo de espelho e quiser se livrar dele, por favor, venha me ver.";
+			close;
+		}else{
+			mes "[Basshu]";
+			mes "Ah, obrigado.";
+			mes "Se você realmente pudesse me encontrar um Mirror Shield, eu poderia ter algumas ideias realmente boas.";
+			set ninbot,1;
+			close;
+		}
+	}
+	if (ninbot == 1){
+		mes "[Basshu]";
+		mes "Oh. ";
+		mes "Deixe-me ver...";
+		mes "Hum ...";
+		next;
+		mes "[Basshu]";
+		mes "Oh! ";
+		mes "Ufa...";
+		next;
+		mes "[Basshu]";
+		mes "Isso com certeza me deixa animado.";
+		mes "Se você tem um protetor de braço normal, traga-me seu protetor de braço e...";
+		next;
+		mes "[Basshu]";
+		mes "1 escudo de espelho e";
+		mes "20.000 Zeny e eu transformarei seu protetor de braço em um protetor de braço aprimorado.";
+		next;
+		mes "[Basshu]";
+		mes "Que tal isso? ";
+		next;
+		if(select("Não, eu não faria.: Sim, eu faria.") == 1){
+			mes "[Basshu]";
+			mes "Hum, muito bem.";
+			mes "Estou muito grato por você ter me mostrado aquele escudo raro do exterior.";
+			next;
+			mes "[Basshu]";
+			mes "Obrigado por tudo.";
+			set ninbot,0;
+			close;
+		}else{
+			mes "[Basshu]";
+			mes "Muito bem.";
+			mes "Estou ansioso por isso.";
+			next;
+			mes "[Basshu]";
+			mes "Traga-me 1 protetor de braço,";
+			mes "1 escudo de espelho e";
+			mes "20.000 Zeny,";
+			mes "e eu farei para você um protetor de braço aprimorado.";
+			next;
+			mes "[Basshu]";
+			mes "Venha me ver quando tiver tudo pronto.";
+			set ninbot,2;
+			close;
+		}
+	}
+	else if (ninbot == 2){
+		if(countitem(2107) < 1 || countitem(2117) < 1){
+			mes "[Basshu]";
+			mes "Hmm.. Parece que não há materiais suficientes.";
+			mes "Para um protetor de braço aprimorado, eu preciso...";
+			mes "1 escudo espelhado, 1 protetor de braço";
+			mes "e 20.000 Zeny.";
+			mes "Volte quando tiver esses materiais.";
+			close;
+		}
+		if(Zeny < 20000){
+			mes "[Basshu]";
+			mes "Hmm.. Você trouxe muitos materiais, mas está com pouco zeny.";
+			mes "Para criar um protetor de braço aprimorado, eu preciso...";
+			mes "1 escudo espelhado, 1 protetor de braço";
+			mes "e 20.000 Zeny.";
+			mes "Volte quando tiver esses materiais.";
+			close;
+		}
+		mes "[Basshu]";
+		mes "Os ingredientes adequados";
+		mes "foram reunidos.";
+		mes "Antes de começar,";
+		mes "Vou perguntar uma última vez.";
+		next;
+		mes "[Basshu]";
+		mes "Em troca do aumento da defesa mágica da Guarda de Braço, a capacidade do escudo de bloquear ataques físicos pode inevitavelmente diminuir.";
+		next;
+		mes "[Basshu]";
+		mes "Você vai me dar os materiais que você reuniu";
+		mes "e no comércio, receber um protetor de braço aprimorado?";
+		next;
+		if(select("Não: Sim") == 1){
+			mes "[Basshu]";
+			mes "Muito bem.";
+			mes "Se você alguma vez se decidir";
+			mes "venha e me encontre novamente.";
+			close;
+		}else{
+			mes "[Basshu]";
+			mes "Hmm~ Bem, então~";
+			mes "Começaremos?";
+			mes "Bang Clang ~Bang Clang~";
+			mes "Varredura Varredura~ Serra Serra~";
+			next;
+			if(countitem(2107) < 1 || countitem(2117) < 1 || Zeny < 20000){
+				mes "HACK DETECTADO";
+				close;
+			}
+			mes "[Basshu]";
+			mes "Aqui está - está completo.";
+			mes "Eu fiz para você um protetor de braço aprimorado.";
+			mes "Se você quiser que eu crie mais itens, venha me perguntar a qualquer hora.";
+			delitem 2107,1;
+			delitem 2117,1;
+			set Zeny,Zeny-20000;
+			set ninbot,0;
+			set MISC_QUEST,MISC_QUEST | 4096;
+			getitem 2119,1;
+			close;
+		}
+	}
+	else if (MISC_QUEST & 4096){
+		set ninbot,0;
+		mes "[Basshu]";
+		mes "Oh ~ vejo que você voltou.";
+		mes "Você está aqui porque precisa de um protetor de braço aprimorado?";
+		next;
+		if(select("Não, na verdade não.:Sim, faça-me outro.") == 1){
+			mes "[Basshu]";
+			mes "Aha ~ entendo ~.";
+			mes "Volte e fale comigo a qualquer hora.";
+			close;
+		}else{
+			if(countitem(2107) < 1 || countitem(2117) < 1){
+				mes "[Basshu]";
+				mes "Hmm.. Parece que não há materiais suficientes.";
+				mes "Para fazer um Protetor de Braço Aprimorado, eu preciso...";
+				mes "1 escudo de espelho, 1 protetor de braço,";
+				mes "E 20.000 Zeny.";
+				mes "Volte quando tiver esses materiais.";
+				close;
+			}
+			if(Zeny < 20000){
+				mes "[Basshu]";
+				mes "Hmm.. Você trouxe muitos materiais, mas está com pouco zeny.";
+				mes "Para fazer um Protetor de Braço Aprimorado, eu preciso...";
+				mes "1 escudo de espelho, 1 protetor de braço,";
+				mes "e 20.000 Zeny.";
+				mes "Volte quando tiver esses materiais.";
+				close;
+			}
+			mes "[Basshu]";
+			mes "Parece que você me trouxe os ingredientes corretos.";
+			mes "Antes de começar,";
+			mes "Vou perguntar uma última vez.";
+			next;
+			mes "[Basshu]";
+			mes "Em troca do aumento da defesa mágica da Guarda de Braço, a capacidade do escudo de bloquear ataques físicos pode inevitavelmente diminuir.";
+			next;
+			mes "[Basshu]";
+			mes "Você pode me dar os materiais que reuniu para receber um Protetor de Braço Aprimorado?";
+			next;
+			if(select("Não: Sim") == 1){
+				mes "[Basshu]";
+				mes "Muito bem.";
+				mes "Se você decidir";
+				mes "venha e me encontre novamente.";
+				close;
+			}else{
+				mes "[Basshu]";
+				mes "Hmm~ Bem, então~";
+				mes "Começaremos?";
+				mes "Bang Clang ~Bang Clang~";
+				mes "Varredura Varredura~ Serra Serra~";
+				next;
+				mes "[Basshu]";
+				mes "Aqui está - está completo.";
+				mes "Eu fiz para você um protetor de braço aprimorado";
+				next;
+				if(countitem(2107) < 1 || countitem(2117) < 1 || Zeny < 20000){
+					mes "HACK DETECTADO";
+					close;
+				}
+				mes "[Basshu]";
+				mes "Se você quiser que eu crie mais itens, venha me perguntar a qualquer hora.";
+				delitem 2107,1;
+				delitem 2117,1;
+				set Zeny,Zeny-20000;
+				getitem 2119,1;
+				close;
+			}
+		}
+	}
+	else{
+		set ninbot,0;
+		mes "[Basshu]";
+		mes "Por que ~ Isso é ~!";
+		mes "O que você tem aí é aquele escudo que é chamado de 'Escudo Espelho' no exterior?";
+		next;
+		mes "[Basshu]";
+		mes "Com licença, mas posso dar uma olhada?";
+		next;
+		mes "[Basshu]";
+		mes "Eu sabia!! ";
+		mes "Deve haver uma maneira de qualquer escudo possuir poderes mágicos!!";
+		next;
+		mes "[Basshu]";
+		mes "Os escudos poderiam ser muito mais úteis do que agora.";
+		mes "Por que não pensei nisso antes?";
+		next;
+		mes "[Basshu]";
+		mes "Tenho dois irmãos e juntos somos os Três Artesãos do Oriente.";
+		mes "Aprendi minha habilidade de artesanato observando meus irmãos mais velhos.";
+		next;
+		mes "[Basshu]";
+		mes "Devido a isso, minha habilidade não é tão boa quanto a deles, mas muitas pessoas dizem que sou habilidoso...";
+		next;
+		mes "[Basshu]";
+		mes "A partir de agora, também desisti de fazer escudos e atualmente administro uma loja de antiguidades para escudos.";
+		next;
+		mes "[Basshu]";
+		mes "Estou pesquisando para ver se escudos podem ser encantados com magia.";
+		next;
+		mes "[Basshu]";
+		mes "Portanto, eu queria ter uma ideia de como a magia funciona em escudos estudando um escudo estrangeiro chamado Escudo Espelhado, mas não consegui colocar as mãos em um.";
+		mes "Que estresse isso me causou.";
+		next;
+		mes "[Basshu]";
+		mes "Mas, felizmente, você, um viajante, tinha um escudo espelhado e agora sinto meu espírito criativo queimando por dentro.";
+		next;
+		mes "[Basshu]";
+		mes "Se você quiser, farei para você um protetor de braço aprimorado se você me trouxer 1 protetor de braço, 1 escudo espelhado e 20.000 Zeny.";
+		mes "Você gostaria de tentar usar um?";
+		next;
+		if(select("Não, eu não quero!:Sim~!! ") == 1){
+			mes "[Basshu]";
+			mes "Hum, é isso mesmo.";
+			mes "Que pena.";
+			mes "Venha me encontrar se mudar de ideia.";
+			close;
+		}else{
+			if(countitem(2107) < 1 || countitem(2117) < 1){
+				mes "[Basshu]";
+				mes "Hmm.. Parece que não há materiais suficientes.";
+				mes "Para criar um protetor de braço aprimorado, eu preciso...";
+				mes "1 escudo espelhado, 1 protetor de braço";
+				mes "E 20.000 Zeny";
+				mes "Volte quando tiver esses materiais.";
+				close;
+			}
+			if(Zeny < 20000){
+				mes "[Basshu]";
+				mes "Hmm.. Você trouxe muitos materiais, mas está com pouco zeny.";
+				mes "Para fazer um Protetor de Braço Aprimorado, eu preciso...";
+				mes "1 escudo de espelho, 1 protetor de braço,";
+				mes "E 20.000 Zeny.";
+				mes "Volte quando tiver esses materiais.";
+				close;
+			}
+			mes "[Basshu]";
+			mes "Os ingredientes adequados";
+			mes "foram reunidos.";
+			mes "Antes de começar,";
+			mes "Vou perguntar uma última vez.";
+			next;
+			mes "[Basshu]";
+			mes "Em troca do aumento da defesa mágica da Guarda de Braço, a capacidade do escudo de bloquear ataques físicos pode inevitavelmente diminuir.";
+			next;
+			mes "[Basshu]";
+			mes "Você vai me dar os materiais que você reuniu";
+			mes "receber um protetor de braço aprimorado?";
+			next;
+			if(select("Não: Sim") == 1){
+				mes "[Basshu]";
+				mes "Muito bem.";
+				mes "Se você alguma vez se decidir";
+				mes "venha e me encontre novamente.";
+				close;
+			}else{
+				mes "[Basshu]";
+				mes "Hmm~ Bem, então~";
+				mes "Começaremos?";
+				mes "Bang Clang ~Bang Clang~";
+				mes "Varredura Varredura~ Serra Serra~";
+				next;
+				if(countitem(2107) < 1 || countitem(2117) < 1 || Zeny < 20000){
+					mes "HACK DETECTADO";
+					close;
+				}
+				mes "[Basshu]";
+				mes "Aqui está - está completo.";
+				mes "Eu fiz para você um protetor de braço aprimorado";
+				mes "Se você quiser que eu crie mais itens, venha me perguntar a qualquer hora.";
+				delitem 2107,1;
+				delitem 2117,1;
+				set Zeny,Zeny-20000;
+				set MISC_QUEST,MISC_QUEST | 4096;
+				getitem 2119,1;
+				close;
+			}
+		}
+	}
+}
+
+que_ng,27,18,3	script	Toshu	709,{
+	
+	if(BaseClass != Job_Ninja){
+		mes "[Toshu]";
+		mes "Como você está ~";
+		mes "Meu jovem amigo ~";
+		mes "Sou um dos três irmãos do mundo oriental que fabricam armaduras. ";
+		next;
+		mes "[Toshu]";
+		mes "Aprendi como encaixar coisas em terras estrangeiras.";
+		mes "Estou pensando em ganhar algum dinheiro usando essa habilidade.";
+		next;
+		mes "[Toshu]";
+		mes "Mas você não parece ser o tipo de cliente com quem eu possa fazer negócios...";
+		close;
+	}
+	mes "[Toshu]";
+	mes "Como você está, meu jovem amigo ~";
+	mes "Sou o irmão do meio dos três irmãos encarregados de fabricar escudos no leste.";
+	mes "Eles me chamam de Murata Toshu.";
+	next;
+	mes "[Toshu]";
+	mes "Aprendi como encaixar coisas no exterior, então estou pensando em ganhar algum dinheiro com essa habilidade em tempo parcial.";
+	next;
+	mes "[Toshu]";
+	mes "Se você quiser, posso criar um protetor de braço aprimorado com fenda se você me trouxer";
+	mes "1 protetor de braço aprimorado, 1 broquel com fenda";
+	mes "e 40.000 Zeny.";
+	next;
+	mes "[Toshu]";
+	mes "A propósito, lamento dizer isso, mas há uma chance de eu quebrar seus materiais e não conseguir encaixar o Protetor de Braço Aprimorado, então você pode querer pensar sobre isso.";
+	mes "Que tal? ";
+	next;
+	if(select("Não. Eu não quero fazer isso.:Sim! ") == 1){
+		mes "[Toshu]";
+		mes "OK.";
+		mes "Claro, os escudos são importantes para você.";
+		mes "Se você decidir prosseguir com isso depois, venha me encontrar.";
+		close;
+	}else{
+		if(countitem(2104) < 1 || countitem(2119) < 1){
+			mes "[Toshu]";
+			mes "Não parece que você me trouxe materiais suficientes.";
+			mes "Os materiais necessários são 1 broquel com fenda";
+			mes "1 Protetor de braço aprimorado e";
+			mes "40.000 Zeny.";
+			mes "Você deve me trazer a quantidade certa de materiais e Zeny.";
+			mes "Não se esqueça disso.";
+			close;
+		}
+		if(Zeny < 40000){
+			mes "[Toshu]";
+			mes "Parece que você trouxe a quantidade certa de materiais.";
+			mes "No entanto... você não trouxe Zeny suficiente.";
+			mes "Os materiais necessários são 1 broquel com fenda";
+			mes "1 protetor de braço aprimorado e 40.000 Zeny.";
+			mes "Você deve me trazer a quantidade certa de materiais e Zeny.";
+			mes "Não se esqueça disso.";
+			close;
+		}
+		mes "[Toshu]";
+		mes "Hum. ";
+		mes "É hora de começar minha parte.";
+		mes "Só para avisar..";
+		next;
+		mes "[Toshu]";
+		mes "Enquanto eu estiver em produção, posso não conseguir criar seu equipamento, então você pode querer pensar sobre isso.";
+		next;
+		mes "[Toshu]";
+		mes "Você quer que eu produza seu equipamento, mesmo que haja uma chance de eu falhar?";
+		next;
+		if(select("Acho que é melhor recuar. ") == 1){
+			mes "[Toshu]";
+			mes "OK.";
+			mes "Bem, volte mais tarde quando tiver coragem de tentar.";
+			mes "Erherherherher ~";
+			close;
+		}else{
+			mes "[Toshu]";
+			mes "OK! ";
+			mes "Espere 3 segundos!!";
+			mes "Clink Clank~!Clink Clank~!!";
+			mes "Varredura Varredura~ Serra Serra~";
+			next;
+			if(countitem(2104) < 1 || countitem(2119) < 1 || Zeny < 40000){
+				mes "HACK DETECTADO";
+				close;
+			}
+			delitem 2104,1;
+			delitem 2119,1;
+			set Zeny,Zeny-40000;
+
+			switch (rand(5)) {
+				case 1:
+					getitem 12043,1;
+					mes "[Toshu]";
+					mes "Aah!!!";
+					mes "Ah.. isso";
+					mes "é uma má notícia.";
+					mes "O encaixe do escudo falhou";
+					mes "como eu temia.";
+					mes "Sinto muito por isso.";
+					mes "Coma isso e anime-se.";
+					close;
+					break;
+				case 2:
+					getitem 12043,1;
+					mes "[Toshu]";
+					mes "Aah!!!";
+					mes "Ah.. isso";
+					mes "é uma má notícia.";
+					mes "O encaixe do escudo falhou";
+					mes "como eu temia.";
+					mes "Sinto muito por isso.";
+					mes "Coma isso e anime-se.";
+					close;
+					break;
+				default:
+					getitem 2120,1;
+					mes "[Toshu]";
+					mes "Hmm~~ Parece que tudo correu bem.";
+					mes "Aqui está o seu Slotted completo";
+					mes "Protetor de braço aprimorado.";
+					mes "Eu estava nervoso com a possibilidade de falhar, mas ei, há uma razão pela qual sou chamado de Artesão, certo?";
+					mes "Se precisar de mim novamente, venha me procurar.";
+					close;
+					break;
+			}
+		}
+	}
+}
+
+que_ng,72,34,3	script	Craftsman Kaibara	847,{
+
+	if (BaseClass != Job_Ninja){
+		mes "[Kaibara]";
+		mes "Eu sou um artesão chamado Kaibara";
+		mes "Eu crio armas para Ninjas.";
+		mes "No entanto, não parece que você é um ninja.";
+		next;
+		mes "[Kaibara]";
+		mes "Mesmo se eu criasse uma espada para você, duvido que você fosse capaz de apreciá-la. ";
+		close;
+	}
+	mes "[Kaibara]";
+	mes "Sou o último artesão que sabe fazer uma espada com as escamas de um Dragão Negro. ";
+	mes "Você parece um Ninja.";
+	mes "Se você estiver interessado, dê uma olhada em meus produtos enquanto decide o que deseja.";
+	next;
+	switch(select("Gokurin:Jitte:Ashura[3]:Murasame:Hakujin:Cancelar")){
+		case 1:
+			mes "[Kaibara]";
+			mes "Hmm ~ vejo que você escolheu o Gokurin.";
+			mes "Gokurin é feito com vários materiais, sendo um deles a Escama de Dragão.";
+			next;
+			mes "[Kaibara]";
+			mes "O material necessário para esta espada é 400 Escamas de Dragão,";
+			mes "5 Oridecons e 30 skins de dragão.";
+			mes "e 200.000 Zeny.";
+			mes "Quer que eu crie esse item para você?";
+			next;
+			if(select("Não, obrigado. ") == 1){
+				mes "[Kaibara]";
+				mes "Hum. ";
+				mes "Se algum dia você reunir todos esses materiais, fique à vontade para voltar.";
+				close;
+			}else{
+				if(countitem(1036) < 400 || countitem(984) < 5 || countitem(7123) < 30){
+					mes "[Kaibara]";
+					mes "Parece que não há ingredientes suficientes para eu fazer um Gokurin para você.";
+					next;
+					mes "[Kaibara]";
+					mes "Para fazer o Gokurin,";
+					mes "Eu preciso de ^ff0000 400 Escama de Dragão,^000000";
+					mes "^ff00005 Oridecons^000000, ^ff000030 Peles de dragão^000000";
+					mes "e ^ff0000200000 Zeny^000000.";
+					mes "Certifique-se de ter esses itens quando retornar para mim.";
+					close;
+				}
+				if(Zeny < 200000){
+					mes "[Kaibara]";
+					mes "Hmm, parece que você tem materiais suficientes, mas falta Zeny.";
+					next;
+					mes "[Kaibara]";
+					mes "Para fazer o Gokurin,";
+					mes "Eu preciso de ^ff0000 400 Escamas de Dragão,^000000";
+					mes "^ff00005 Oridecons^000000, ^ff000030 Peles de dragão^000000";
+					mes "e ^ff0000200.000 Zeny^000000.";
+					mes "Certifique-se de ter esses itens quando retornar para mim.";
+					close;
+				}
+				delitem 1036,400;
+				delitem 984,5;
+				delitem 7123,30;
+				set Zeny,Zeny-200000;
+				getitem 13006,1;
+				mes "[Kaibara]";
+				mes "Hum, parece bom.";
+				mes "Verifiquei seus ingredientes e taxas.";
+				mes "Aqui está seu Gokurin completo.";
+				close;
+			}
+			break;
+		case 2:
+			mes "[Kaibara]";
+			mes "Hmm~ Você escolheu ^ff0000Jitte^000000.";
+			mes "Esta espada tem uma lenda que diz que quanto mais inimigos você mata com ela, mais forte ela fica.";
+			next;
+			mes "[Kaibara]";
+			mes "Os materiais necessários são 30 aço, um punho antigo";
+			mes "e 20.000 Zeny.";
+			mes "Quer que eu crie esse item para você?";
+			next;
+			if(select("Não, obrigado. ") == 1){
+				mes "[Kaibara]";
+				mes "Hum. ";
+				mes "Se algum dia você reunir todos esses materiais, fique à vontade para voltar.";
+				close;
+			}else{
+				if(countitem(999) < 30 || countitem(7022) < 1){
+					mes "[Kaibara]";
+					mes "Parece que você precisa de mais materiais antes que eu possa fazer um Jitte para você.";
+					next;
+					mes "[Kaibara]";
+					mes "Para criar um Jitte, preciso";
+					mes "^ff000030 Aço^000000,";
+					mes "^f00001 Cabo antigo^000000,";
+					mes "e ^ff000020.000 Zeny^000000.";
+					mes "Lembre-se desses materiais necessários e volte quando tiver certeza de que tem todos eles.";
+					close;
+				}
+				if(Zeny < 20000){
+					mes "[Kaibara]";
+					mes "Hmm.. Você trouxe muitos materiais, mas está com pouco zeny.";
+					next;
+					mes "[Kaibara]";
+					mes "Para criar o Jitte, preciso";
+					mes "^ff000030 Aço,^000000";
+					mes "^f00001 Cabo antigo^000000,";
+					mes "e ^ff000020.000 Zeny^000000.";
+					mes "Lembre-se desses materiais necessários e volte quando tiver certeza de que tem todos eles.";
+					close;
+				}
+				delitem 999,30;
+				delitem 7022,1;
+				set Zeny,Zeny-20000;
+				getitem 13007,1;
+				mes "[Kaibara]";
+				mes "Hum, muito bem.";
+				mes "Verifiquei seus ingredientes e taxas.";
+				mes "Aqui está seu Jitte completo.";
+				close;
+			}
+			break;
+		case 3:
+			mes "[Kaibara]";
+			mes "Hmm~ Você escolheu ^ff0000Ashura[3]^000000.";
+			mes "Para criar uma Ashura[3], eu preciso";
+			mes "25 Aço, 5 Pergaminhos Mágicos Desgastados";
+			mes "E 32.000 Zeny.";
+			mes "Quer que eu crie esse item para você?";
+			next;
+			if(select("Não, obrigado. ") == 1){
+				mes "[Kaibara]";
+				mes "Hum. ";
+				mes "Se algum dia você reunir todos esses materiais, fique à vontade para voltar.";
+				close;
+			}else{
+				if(countitem(999) < 25 || countitem(7099) < 5){
+					mes "[Kaibara]";
+					mes "Parece que você não tem todos os materiais necessários para criar uma Ashura[3] para você.";
+					next;
+					mes "[Kaibara]";
+					mes "Preciso de ^ff000025 Aço,^000000";
+					mes "^ff0000Cinco pergaminhos mágicos gastos,^000000";
+					mes "e ^ff0000 32.000 Zeny^000000 para criar um Ashura[3].";
+					mes "Lembre-se desses materiais necessários e volte quando tiver certeza de que tem todos eles.";
+					close;
+				}
+				if(Zeny < 32000){
+					mes "[Kaibara]";
+					mes "Hmm.. Você trouxe muitos materiais, mas está com pouco zeny.";
+					next;
+					mes "[Kaibara]";
+					mes "Para criar uma Ashura[3], preciso dos seguintes materiais -";
+					mes "^ff000025 Aço,^000000";
+					mes "^ff00005 Pergaminhos Mágicos Desgastados^000000,";
+					mes "e ^ff0000 32.000 Zeny^000000";
+					mes "Lembre-se desses materiais necessários e volte quando tiver certeza de que tem todos eles.";
+					close;
+				}
+				delitem 999,25;
+				delitem 7099,5;
+				set Zeny,Zeny-32000;
+				getitem 13011,1;
+				mes "[Kaibara]";
+				mes "Hum, muito bem.";
+				mes "Verifiquei seus ingredientes e taxas.";
+				mes "Aqui está sua Ashura completa[3].";
+				close;
+			}
+			break;
+		case 4:
+			mes "[Kaibara]";
+			mes "Hmm~ Você escolheu ^ff0000Murasame^000000.";
+			mes "Para criar o Murasame, preciso";
+			mes "30 aço, 10 águas-marinhas";
+			mes "E 48.000 Zeny.";
+			mes "Quer que eu crie esse item para você?";
+			next;
+			if(select("Não, obrigado. ") == 1){
+				mes "[Kaibara]";
+				mes "Hum. ";
+				mes "Se algum dia você reunir todos esses materiais, fique à vontade para voltar.";
+				close;
+			}else{
+				if(countitem(999) < 30 || countitem(720) < 10){
+					mes "[Kaibara]";
+					mes "Parece que você está com falta de materiais para eu criar um Murasame para você.";
+					next;
+					mes "[Kaibara]";
+					mes "Eu preciso de ^ff000030 Aço^000000,";
+					mes "^ff000010 Águas-marinhas^000000,";
+					mes "e ^ff000048.000 Zeny^000000";
+					mes "para criar um Murasame.";
+					mes "Lembre-se desses materiais necessários e volte quando tiver certeza de que tem todos eles.";
+					close;
+				}
+				if(Zeny < 48000){
+					mes "[Kaibara]";
+					mes "Hmm.. Você trouxe muitos materiais, mas está com pouco zeny.";
+					next;
+					mes "[Kaibara]";
+					mes "Para criar um Murasame, eu preciso..";
+					mes "^ff000030 Aço^000000,";
+					mes "^ff000010 Águas-marinhas^000000,";
+					mes "e ^ff000048.000 Zeny^000000.";
+					mes "Lembre-se desses materiais necessários e volte quando tiver certeza de que tem todos eles.";
+					close;
+				}
+				delitem 999,30;
+				delitem 720,10;
+				set Zeny,Zeny-48000;
+				getitem 13012,1;
+				mes "[Kaibara]";
+				mes "Hum, muito bem.";
+				mes "Verifiquei seus ingredientes e taxas.";
+				mes "Aqui está seu Murasame completo.";
+				close;
+			}
+			break;
+		case 5:
+			mes "[Kaibara]";
+			mes "Hmm~ Você escolheu ^ff0000Hakujin^000000.";
+			mes "Para criar um Hakujin, eu preciso...";
+			mes "500 ossos de esqueleto, 5 pérolas";
+			mes "10 pergaminhos de cura de nível 3";
+			mes "e 120.000 Zeny.";
+			mes "Quer que eu crie esse item para você?";
+			next;
+			if(select("Não, obrigado. ") == 1){
+				mes "[Kaibara]";
+				mes "Hum. ";
+				mes "Se algum dia você reunir todos esses materiais, fique à vontade para voltar.";
+				close;
+			}else{
+				if(countitem(932) < 500 || countitem(12001) < 10 || countitem(722) < 5){
+					mes "[Kaibara]";
+					mes "Parece que você está com pouca matéria-prima para eu poder fazer um Hakujin para você.";
+					next;
+					mes "[Kaibara]";
+					mes "Para criar um Hakujin, eu preciso...";
+					mes "500 ossos de esqueleto, 5 pérolas";
+					mes "10 pergaminhos de cura de nível 3";
+					mes "e 120.000 Zeny.";
+					mes "Lembre-se desses materiais necessários e volte quando tiver certeza de que tem todos eles.";
+					close;
+				}
+				if(Zeny < 120000){
+					mes "[Kaibara]";
+					mes "Hmm.. Você trouxe muitos materiais, mas está com pouco zeny.";
+					next;
+					mes "[Kaibara]";
+					mes "Para criar um Hakujin, eu preciso...";
+					mes "500 ossos de esqueleto, 5 pérolas";
+					mes "10 pergaminhos de cura de nível 3";
+					mes "e 120.000 Zeny.";
+					mes "Lembre-se desses materiais necessários e volte quando tiver certeza de que tem todos eles.";
+					close;
+				}
+				delitem 932,500;
+				delitem 12001,10;
+				delitem 722,5;
+				set Zeny,Zeny-120000;
+				getitem 13014,1;
+				mes "[Kaibara]";
+				mes "Hum, muito bem.";
+				mes "Verifiquei novamente os materiais e Zeny que você trouxe.";
+				mes "Aqui está seu Hakujin completo.";
+				close;
+			}
+			break;
+		default:
+			mes "[Kaibara]";
+			mes "Hum, muito bem.";
+			mes "Venha me procurar novamente.";
+			close;
+			break;
+	}
+}
+
+que_ng,22,62,3	script	Tetsu	709,{
+
+	mes "[Tetsu]";
+	if(BaseClass != Job_Ninja){
+		mes "Eu sou o artesão de Fuuma Ninjas chamado Tetsu.";
+		next;
+		mes "[Tetsu]";
+		mes "Minha vida está ficando difícil por causa do jogo, então comecei a fabricar armas em tempo parcial.";
+		next;
+		mes "[Tetsu]";
+		mes "No entanto, parece que você não é um ninja.";
+		mes "Não faz sentido eu explicar mais então.";
+		next;
+		mes "[Tetsu]";
+		mes "Talvez quando eu tiver algum dinheiro sobrando, possamos jogar uma partida de Mah-jong juntos.";
+		close;
+	}
+	mes "Eu sou o artesão do Fuuma Ninja. ";
+	next;
+	mes "[Tetsu]";
+	mes "As coisas ficaram difíceis para mim devido ao meu hábito de jogar... Então, aqui estou eu fazendo armas novamente, finalmente.";
+	next;
+	mes "[Tetsu]";
+	mes "Posso não parecer, mas se for sobre algum item relacionado ao Fuuma, não há ninguém que se aproxime do meu trabalho artesanal.";
+	mes "Bem, olhe ao redor, olhe ao redor.";
+	next;
+	menu "Fuuma Shuriken Beneki",M_BENEKI,"Fuuma Shuriken Daisharin",M_DAIS,
+		"Fuuma Shuriken Daisharin[4]",M_DAIS4,"Fuuma Shuriken Rekka",M_REKKA,"Cancelar",M_CANCEL;
+
+//=====================BENEKI========================
+M_BENEKI:
+	mes "[Tetsu]";
+	mes "Hmm~ Você escolheu ^ff0000Fuuma Beneki^000000.";
+	mes "Para fazer o Fuuma Beneki, preciso";
+	mes "50 Aço, 20 Penas de Harpia";
+	mes "5 Oridecon e 90.000 Zeny.";
+	mes "Quer que eu crie esse item para você?";
+	next;
+	menu "Bem... erm... é meio caro.",M_NOPE,"Sim! ",-;
+	
+	if(countitem(999)<50 || countitem(7115)<20 || countitem(984)<5){
+		mes "[Tetsu]";
+		mes "Parece que você não me trouxe materiais suficientes para fazer um Fuuma Shuriken Beneki para você.";
+		next;
+		mes "[Tetsu]";
+		mes "Para criar uma Fuuma shuriken Beneki, eu preciso...";
+		mes "^ff000050 Aço,^000000";
+		mes "^ff000020 Penas de Harpia^000000,";
+		mes "^ff00005 Oridecons^000000,";
+		mes "e ^ff000090.000 Zeny^000000.";
+		mes "Lembre-se desses materiais necessários e volte quando tiver certeza de que tem todos eles.";
+		close;
+	}
+	if(Zeny < 90000){
+		mes "[Tetsu]";
+		mes "Hmm.. Você trouxe muitos materiais, mas está com pouco zeny.";
+		next;
+		mes "[Tetsu]";
+		mes "Para criar um Fuuma Shuriken Beneki, eu preciso...";
+		mes "^ff000050 Aço,^000000";
+		mes "^ff000020 Penas de Harpia^000000,";
+		mes "^ff00005 Oridecons^000000,";
+		mes "e ^ff000090.000 Zeny^000000.";
+		mes "Lembre-se desses materiais necessários e volte quando tiver certeza de que tem todos eles.";
+		close;
+	}
+	delitem 999,50;
+	delitem 7115,20;
+	delitem 984,5;
+	set Zeny,Zeny-90000;
+	getitem 13300,1;
+	mes "[Tetsu]";
+	mes "Hum, muito bem.";
+	mes "Parece que você me trouxe a quantidade correta de materiais e Zeny";
+	mes "Aqui está seu Fuuma Shuriken Beneki completo";
+	close;
+
+//=====================DAISHARIN========================
+M_DAIS:
+	mes "[Tetsu]";
+	mes "Hmm~ Vejo que você escolheu ^ff0000Fuuma Shuriken Daisharin^000000.";
+	mes "Fuuma Shuriken Daisharin Para criar Fuuma Shuriken Daisharin, eu preciso...";
+	mes "30 aço, 100 borlas";
+	mes "2 Oridecons e 40.000 Zeny.";
+	mes "Quer que eu crie esse item para você?";
+	next;
+	menu "Bem... erm... é meio caro.",M_NOPE,"Sim! ",-;
+
+	if(countitem(999)<30 || countitem(7301)<100 || countitem(984)<2){
+		mes "[Tetsu]";
+		mes "Parece que você não me trouxe materiais suficientes para fazer um Fuuma Shuriken Daisharin para você.";
+		next;
+		mes "[Tetsu]";
+		mes "Fuuma Shuriken Daisharin, eu preciso...";
+		mes "^ff000030 Aço^000000,";
+		mes "^ff0000100 Borlas^000000,";
+		mes "^ff00002 Oridecons^000000,";
+		mes "e ^ff000040.000 Zeny^000000.";
+		mes "Lembre-se desses materiais necessários e volte quando tiver certeza de que tem todos eles.";
+		close;
+	}
+	if(Zeny < 40000){
+		mes "[Tetsu]";
+		mes "Hmm.. Você trouxe muitos materiais, mas está com pouco zeny.";
+		next;
+		mes "[Tetsu]";
+		mes "Fuuma Shuriken Daisharin, eu preciso...";
+		mes "^ff000030 Aço^000000,";
+		mes "^ff0000100 Borlas^000000,";
+		mes "^ff00002 Oridecons^000000,";
+		mes "e ^ff000040.000 Zeny^000000.";
+		mes "Lembre-se desses materiais necessários e volte quando tiver certeza de que tem todos eles.";
+		close;
+	}
+	delitem 999,30;
+	delitem 7301,100;
+	delitem 984,2;
+	set Zeny,Zeny-40000;
+	getitem 13301,1;
+	mes "[Tetsu]";
+	mes "Hum, muito bem.";
+	mes "Parece que você me trouxe a quantidade correta de materiais e Zeny";
+	mes "Aqui está seu Fuuma Shuriken Daisharin completo";
+	close;
+
+//=====================DAISHARIN4========================
+M_DAIS4:
+	mes "[Tetsu]";
+	mes "Hmm~ Vejo que você escolheu ^ff0000Fuuma Shuriken Daisharin[4]^000000.";
+	mes "Para criar Fuuma Shuriken Daisharin[4], eu preciso...";
+	mes "20 diamantes quebrados, 1 Fuuma Shuriken Daisharin";
+	mes "3 Oridecons e 40.000 Zeny.";
+	mes "Quer que eu crie esse item para você?";
+	next;
+	mes "[Tetsu]";
+	mes "E caso você não saiba...";
+	mes "No processo de encaixar uma arma, sua arma perderá todos os pontos de refinamento e cartas encaixadas, se houver.";
+	mes "Pense nisso com cautela e então decida se você realmente quer fazer isso ou não.";
+	next;
+	menu "Não, obrigado.. É um pouco caro..",M_NOPE,"Sim! ",-;
+
+	if(countitem(733)<20 || countitem(13301)<1 || countitem(984)<3){
+		mes "[Tetsu]";
+		mes "Parece que você não me trouxe materiais suficientes para fazer um Fuuma Shuriken Daisharin[4].";
+		next;
+		mes "[Tetsu]";
+		mes "Para criar um Fuuma Shuriken Daisharin[4], eu preciso...";
+		mes "^ff000020 Diamantes Rachados^000000,";
+		mes "^ff00003 Oridecons^000000,";
+		mes "1 Fuuma Shuriken Daisharin, e";
+		mes "^ff000040.000 Zeny^000000.";
+		mes "Lembre-se desses materiais necessários e volte quando tiver certeza de que tem todos eles.";
+		close;
+	}
+	if(Zeny < 40000){
+		mes "[Tetsu]";
+		mes "Hmm.. Você trouxe muitos materiais, mas está com pouco zeny.";
+		next;
+		mes "[Tetsu]";
+		mes "Para criar um Fuuma Shuriken Daisharin[4], eu preciso...";
+		mes "^ff000020 Diamantes Rachados^000000,";
+		mes "^ff00003 Oridecons^000000,";
+		mes "1 Fuuma Shuriken Daisharin, e";
+		mes "^ff000040.000 Zeny^000000.";
+		mes "Lembre-se desses materiais necessários e volte quando tiver certeza de que tem todos eles.";
+		close;
+	}
+	delitem 733,20;
+	delitem 984,3;
+	set Zeny,Zeny-40000;
+	delitem 13301,1;
+	getitem 13302,1;
+	mes "[Tetsu]";
+	mes "Hum, muito bem.";
+	mes "Parece que você me trouxe a quantidade correta de materiais e Zeny";
+	mes "Aqui está seu Fuuma Shuriken Daisharin completo[4].";
+	close;
+
+//=====================REKKA========================
+M_REKKA:
+	mes "[Tetsu]";
+	mes "Hmm~ Vejo que você escolheu ^ff0000Fuuma Shuriken Rekka^000000.";
+	mes "Para criar um Fuuma Shuriken Rekka, preciso";
+	mes "50 Aço, 100 Carvão Vivo";
+	mes "100 Corações Ardentes, 50 Pedras Ardentes";
+	mes "e 78.000 Zeny.";
+	mes "Quer que eu crie esse item para você?";
+	next;
+	menu "Bem... erm... é meio caro",M_NOPE,"Sim! ",-;
+
+	if(countitem(999)<50 || countitem(7098)<100 || countitem(7097)<100 || countitem(7521)<50){
+		mes "[Tetsu]";
+		mes "Parece que você não me trouxe materiais suficientes para fazer um Fuuma Shuriken Rekka.";
+		next;
+		mes "[Tetsu]";
+		mes "Para criar um Fuuma Shuriken Rekka, eu preciso...";
+		mes "^ff000050 Aço^000000,^ff000050 Pedras Ardentes^000000,";
+		mes "^ff0000100 Corações em Chamas^000000,^ff0000100 Carvão Vivo^000000,";
+		mes "e ^ff000078.000 Zeny^000000";
+		mes "Lembre-se desses materiais necessários e volte quando tiver certeza de que tem todos eles.";
+		close;
+	}
+	if(Zeny < 78000){
+		mes "[Tetsu]";
+		mes "Hmm.. Você trouxe muitos materiais, mas está com pouco zeny.";
+		next;
+		mes "[Tetsu]";
+		mes "Para criar um Fuuma Shuriken Rekka, eu preciso...";
+		mes "^ff000050 Aço^000000,^ff000050 Pedras Ardentes^000000,";
+		mes "^ff0000100 Corações em Chamas^000000,^ff0000100 Carvão Vivo^000000,";
+		mes "e ^ff000078.000 Zeny^000000";
+		mes "Lembre-se desses materiais necessários e volte quando tiver certeza de que tem todos eles.";
+		close;
+	}
+	delitem 999,50;
+	delitem 7098,100;
+	delitem 7097,100;
+	delitem 7521,50;
+	set Zeny,Zeny-78000;
+	getitem 13303,1;
+	mes "[Tetsu]";
+	mes "Hum, muito bem.";
+	mes "Parece que você me trouxe a quantidade correta de materiais e Zeny";
+	mes "Aqui está seu Fuuma Shuriken Rekka completo.";
+	close;
+
+//=====================I'M SORRY========================
+M_NOPE:
+	mes "[Tetsu]";
+	mes "Hum. ";
+	mes "Tudo bem. ";
+	close;
+
+M_CANCEL:
+	mes "[Tetsu]";
+	mes "Que pena.";
+	mes "Eu queria mostrar a vocês as armas que coloquei de coração e alma para fabricá-las.";
+	mes "Se você tiver dúvidas, nunca é tarde para voltar e perguntar.";
+	close;
+}
+
