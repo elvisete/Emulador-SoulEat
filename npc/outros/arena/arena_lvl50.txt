@@ -36,47 +36,47 @@ OnStart:
 	end;
 
 OnTimer3000:
-	mapannounce "força_1-1","Bom dia, meu nome é Heel and Toe, o guia do Time Force Battle para o nível 50!",0;
+	mapannounce "forÃ§a_1-1","Bom dia, meu nome Ã© Heel and Toe, o guia do Time Force Battle para o nÃ­vel 50!",0;
 	end;
 
 OnTimer4000:
-	mapannounce "força_1-1","Lembre-se de que sua decisão certa economizará muito do seu tempo!",0;
+	mapannounce "forÃ§a_1-1","Lembre-se de que sua decisÃ£o certa economizarÃ¡ muito do seu tempo!",0;
 	end;
 
 OnTimer5000:
-	mapannounce "força_1-1","Para completar este percurso de batalha, você deve começar da extremidade esquerda desta sala no sentido horário. ",0;
+	mapannounce "forÃ§a_1-1","Para completar este percurso de batalha, vocÃª deve comeÃ§ar da extremidade esquerda desta sala no sentido horÃ¡rio. ",0;
 	end;
 
 OnTimer60000:
-	if (getmapusers("força_1-1") == 0) {
+	if (getmapusers("forÃ§a_1-1") == 0) {
 		donpcevent "Heel and Toe#arena::OnFailClearStage";
 	}
-	mapannounce "força_1-1","Tempo restante: 4 minutos",0;
+	mapannounce "forÃ§a_1-1","Tempo restante: 4 minutos",0;
 	end;
 
 OnTimer120000:
-	if (getmapusers("força_1-1") == 0) {
+	if (getmapusers("forÃ§a_1-1") == 0) {
 		donpcevent "Heel and Toe#arena::OnFailClearStage";
 	}
-	mapannounce "força_1-1","Tempo restante: 3 minutos",0;
+	mapannounce "forÃ§a_1-1","Tempo restante: 3 minutos",0;
 	end;
 
 OnTimer180000:
-	if (getmapusers("força_1-1") == 0) {
+	if (getmapusers("forÃ§a_1-1") == 0) {
 		donpcevent "Heel and Toe#arena::OnFailClearStage";
 	}
-	mapannounce "força_1-1","Tempo restante: 2 minutos",0;
+	mapannounce "forÃ§a_1-1","Tempo restante: 2 minutos",0;
 	end;
 
 OnTimer240000:
-	if (getmapusers("força_1-1") == 0) {
+	if (getmapusers("forÃ§a_1-1") == 0) {
 		donpcevent "Heel and Toe#arena::OnFailClearStage";
 	}
-	mapannounce "força_1-1","Tempo restante: 1 minuto",0;
+	mapannounce "forÃ§a_1-1","Tempo restante: 1 minuto",0;
 	end;
 
 OnTimer300000:
-	mapannounce "força_1-1","Seu tempo acabou. ",0;
+	mapannounce "forÃ§a_1-1","Seu tempo acabou. ",0;
 	end;
 
 OnTimer305000:
@@ -111,71 +111,71 @@ OnFailClearStage:
 	end;
 
 On01_Start:
-	mapannounce "força_1-1","Para terminar esta batalha, você deve matar todos os Smokies!",0;
+	mapannounce "forÃ§a_1-1","Para terminar esta batalha, vocÃª deve matar todos os Smokies!",0;
 	end;
 
 On01_End:
-	mapannounce "força_1-1","Uma porta para a sala norte se abriu!",0;
+	mapannounce "forÃ§a_1-1","Uma porta para a sala norte se abriu!",0;
 	end;
 
 On02_Start:
-	mapannounce "força_1-1","Por favor, escape pela porta dos monstros!",0;
+	mapannounce "forÃ§a_1-1","Por favor, escape pela porta dos monstros!",0;
 	end;
 
 On02_End:
-	mapannounce "força_1-1","Uma porta para a sala norte se abriu!",0;
+	mapannounce "forÃ§a_1-1","Uma porta para a sala norte se abriu!",0;
 	end;
 
 On03_Start:
-	mapannounce "força_1-1","Para terminar esta batalha, você deve matar todos os Karakasa!",0;
+	mapannounce "forÃ§a_1-1","Para terminar esta batalha, vocÃª deve matar todos os Karakasa!",0;
 	end;
 
 On03_End:
-	mapannounce "força_1-1","Claro! ",0;
+	mapannounce "forÃ§a_1-1","Claro! ",0;
 	end;
 
 On04_Start:
-	mapannounce "força_1-1","Para terminar esta batalha, você deve matar todos os Kobolds e escapar para a sala leste!",0;
+	mapannounce "forÃ§a_1-1","Para terminar esta batalha, vocÃª deve matar todos os Kobolds e escapar para a sala leste!",0;
 	end;
 
 On04_End:
-	mapannounce "força_1-1","Uma porta para a sala leste se abriu!",0;
+	mapannounce "forÃ§a_1-1","Uma porta para a sala leste se abriu!",0;
 	end;
 
 On05_Start:
-	mapannounce "força_1-1","Para terminar esta batalha, você deve matar todos os monstros, exceto os monstros obstrutores!",0;
+	mapannounce "forÃ§a_1-1","Para terminar esta batalha, vocÃª deve matar todos os monstros, exceto os monstros obstrutores!",0;
 	end;
 
 On05_End:
-	mapannounce "força_1-1","Claro! ",0;
+	mapannounce "forÃ§a_1-1","Claro! ",0;
 	end;
 
 On06_Start:
-	mapannounce "força_1-1","Para terminar esta batalha, você deve matar todos os Drops e escapar para a sala sul!",0;
+	mapannounce "forÃ§a_1-1","Para terminar esta batalha, vocÃª deve matar todos os Drops e escapar para a sala sul!",0;
 	end;
 
 On06_End:
-	mapannounce "força_1-1","Uma porta para a sala sul se abriu!",0;
+	mapannounce "forÃ§a_1-1","Uma porta para a sala sul se abriu!",0;
 	end;
 
 On07_Start:
-	mapannounce "força_1-1","Para terminar esta batalha, você deve se livrar de uma Planta Vermelha no centro desta sala enquanto se esquiva dos ataques das Hidras!",0;
+	mapannounce "forÃ§a_1-1","Para terminar esta batalha, vocÃª deve se livrar de uma Planta Vermelha no centro desta sala enquanto se esquiva dos ataques das Hidras!",0;
 	end;
 
 On07_End:
-	mapannounce "força_1-1","Claro! ",0;
+	mapannounce "forÃ§a_1-1","Claro! ",0;
 	end;
 
 On08_Start:
-	mapannounce "força_1-1","Por favor, fuja para a saída norte!",0;
+	mapannounce "forÃ§a_1-1","Por favor, fuja para a saÃ­da norte!",0;
 	end;
 
 On09_Start:
-	mapannounce "força_1-1","Para terminar esta batalha, você deve derrotar um Vocal!",0;
+	mapannounce "forÃ§a_1-1","Para terminar esta batalha, vocÃª deve derrotar um Vocal!",0;
 	end;
 
 On09_End:
-	mapannounce "força_1-1","Chefe claro! ",0;
+	mapannounce "forÃ§a_1-1","Chefe claro! ",0;
 	end;
 }
 
@@ -368,30 +368,30 @@ OnReset:
 	end;
 
 OnSummonMob1:
-	monster "força_1-1",25,26,"Gotas",1572,1,"force_01ex";
-	monster "força_1-1",15,25,"Gotas",1572,1,"force_01ex";
-	monster "força_1-1",30,25,"Gotas",1572,1,"force_01ex";
-	monster "força_1-1",25,31,"Gotas",1572,1,"force_01ex";
-	monster "força_1-1",24,19,"Gotas",1572,1,"force_01ex";
-	monster "força_1-1",25,28,"Gotas",1572,1,"force_01ex";
-	monster "força_1-1",18,23,"Gotas",1572,1,"force_01ex";
-	monster "força_1-1",24,25,"Gotas",1572,1,"force_01ex";
-	monster "força_1-1",23,18,"Gotas",1572,1,"force_01ex";
-	monster "força_1-1",20,18,"Gotas",1572,1,"force_01ex";
-	monster "força_1-1",35,31,"Hidra",1579,1,"force_01ex";
-	monster "força_1-1",35,28,"Hidra",1579,1,"force_01ex";
-	monster "força_1-1",35,25,"Hidra",1579,1,"force_01ex";
-	monster "força_1-1",35,21,"Hidra",1579,1,"force_01ex";
-	monster "força_1-1",26,16,"Sapo Venenoso",1556,1,"force_01ex";
-	monster "força_1-1",26,15,"Sapo Venenoso",1556,1,"force_01ex";
-	monster "força_1-1",26,14,"Sapo Venenoso",1556,1,"force_01ex";
-	monster "força_1-1",23,17,"Sapo Venenoso",1556,1,"force_01ex";
-	monster "força_1-1",23,18,"Sapo Venenoso",1556,1,"force_01ex";
-	monster "força_1-1",23,19,"Sapo Venenoso",1556,1,"force_01ex";
-	monster "força_1-1",29,20,"Sapo Venenoso",1556,1,"force_01ex";
-	monster "força_1-1",23,16,"Sapo Venenoso",1556,1,"force_01ex";
-	monster "força_1-1",19,16,"Sapo Venenoso",1556,1,"force_01ex";
-	monster "força_1-1",32,19,"Sapo Venenoso",1556,1,"force_01ex";
+	monster "forÃ§a_1-1",25,26,"Gotas",1572,1,"force_01ex";
+	monster "forÃ§a_1-1",15,25,"Gotas",1572,1,"force_01ex";
+	monster "forÃ§a_1-1",30,25,"Gotas",1572,1,"force_01ex";
+	monster "forÃ§a_1-1",25,31,"Gotas",1572,1,"force_01ex";
+	monster "forÃ§a_1-1",24,19,"Gotas",1572,1,"force_01ex";
+	monster "forÃ§a_1-1",25,28,"Gotas",1572,1,"force_01ex";
+	monster "forÃ§a_1-1",18,23,"Gotas",1572,1,"force_01ex";
+	monster "forÃ§a_1-1",24,25,"Gotas",1572,1,"force_01ex";
+	monster "forÃ§a_1-1",23,18,"Gotas",1572,1,"force_01ex";
+	monster "forÃ§a_1-1",20,18,"Gotas",1572,1,"force_01ex";
+	monster "forÃ§a_1-1",35,31,"Hidra",1579,1,"force_01ex";
+	monster "forÃ§a_1-1",35,28,"Hidra",1579,1,"force_01ex";
+	monster "forÃ§a_1-1",35,25,"Hidra",1579,1,"force_01ex";
+	monster "forÃ§a_1-1",35,21,"Hidra",1579,1,"force_01ex";
+	monster "forÃ§a_1-1",26,16,"Sapo Venenoso",1556,1,"force_01ex";
+	monster "forÃ§a_1-1",26,15,"Sapo Venenoso",1556,1,"force_01ex";
+	monster "forÃ§a_1-1",26,14,"Sapo Venenoso",1556,1,"force_01ex";
+	monster "forÃ§a_1-1",23,17,"Sapo Venenoso",1556,1,"force_01ex";
+	monster "forÃ§a_1-1",23,18,"Sapo Venenoso",1556,1,"force_01ex";
+	monster "forÃ§a_1-1",23,19,"Sapo Venenoso",1556,1,"force_01ex";
+	monster "forÃ§a_1-1",29,20,"Sapo Venenoso",1556,1,"force_01ex";
+	monster "forÃ§a_1-1",23,16,"Sapo Venenoso",1556,1,"force_01ex";
+	monster "forÃ§a_1-1",19,16,"Sapo Venenoso",1556,1,"force_01ex";
+	monster "forÃ§a_1-1",32,19,"Sapo Venenoso",1556,1,"force_01ex";
 	end;
 
 OnMyMobDead:
@@ -401,11 +401,11 @@ OnMyMobDead:
 -	script	force_01mob#50	-1,{
 OnEnable:
 	donpcevent "force_01ex#50::OnSummonMob1";
-	monster "força_1-1",25,25,"Esfumaçado",1561,1,"force_01mob";
-	monster "força_1-1",18,25,"Esfumaçado",1561,1,"force_01mob";
-	monster "força_1-1",32,25,"Esfumaçado",1561,1,"force_01mob";
-	monster "força_1-1",25,32,"Esfumaçado",1561,1,"force_01mob";
-	monster "força_1-1",25,18,"Esfumaçado",1561,1,"force_01mob";
+	monster "forÃ§a_1-1",25,25,"EsfumaÃ§ado",1561,1,"force_01mob";
+	monster "forÃ§a_1-1",18,25,"EsfumaÃ§ado",1561,1,"force_01mob";
+	monster "forÃ§a_1-1",32,25,"EsfumaÃ§ado",1561,1,"force_01mob";
+	monster "forÃ§a_1-1",25,32,"EsfumaÃ§ado",1561,1,"force_01mob";
+	monster "forÃ§a_1-1",25,18,"EsfumaÃ§ado",1561,1,"force_01mob";
 	end;
 
 OnReset:
@@ -413,7 +413,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("força_1-1","force_01mob") < 1) {
+	if (mobcount("forÃ§a_1-1","force_01mob") < 1) {
 		donpcevent "Heel and Toe#arena::On01_End";
 		donpcevent "arena#50::OnReset_01";
 	}
@@ -432,17 +432,17 @@ OnReset:
 	end;
 
 OnSummonMob2:
-	monster "força_1-1",24,76,"Familiar",1419,1,"force_02mob";
-	monster "força_1-1",28,76,"Familiar",1419,1,"force_02mob";
-	monster "força_1-1",24,86,"Familiar",1419,1,"force_02mob";
-	monster "força_1-1",26,86,"canibal",1423,1,"force_02mob";
-	monster "força_1-1",25,100,"canibal",1423,1,"force_02mob";
-	monster "força_1-1",26,118,"canibal",1423,1,"force_02mob";
-	monster "força_1-1",28,79,"Mamãe",1393,1,"force_02mob";
-	monster "força_1-1",23,87,"Mamãe",1393,1,"force_02mob";
-	monster "força_1-1",28,99,"Mamãe",1393,1,"force_02mob";
-	monster "força_1-1",23,112,"Mamãe",1393,1,"force_02mob";
-	monster "força_1-1",28,128,"Mamãe",1393,1,"force_02mob";
+	monster "forÃ§a_1-1",24,76,"Familiar",1419,1,"force_02mob";
+	monster "forÃ§a_1-1",28,76,"Familiar",1419,1,"force_02mob";
+	monster "forÃ§a_1-1",24,86,"Familiar",1419,1,"force_02mob";
+	monster "forÃ§a_1-1",26,86,"canibal",1423,1,"force_02mob";
+	monster "forÃ§a_1-1",25,100,"canibal",1423,1,"force_02mob";
+	monster "forÃ§a_1-1",26,118,"canibal",1423,1,"force_02mob";
+	monster "forÃ§a_1-1",28,79,"MamÃ£e",1393,1,"force_02mob";
+	monster "forÃ§a_1-1",23,87,"MamÃ£e",1393,1,"force_02mob";
+	monster "forÃ§a_1-1",28,99,"MamÃ£e",1393,1,"force_02mob";
+	monster "forÃ§a_1-1",23,112,"MamÃ£e",1393,1,"force_02mob";
+	monster "forÃ§a_1-1",28,128,"MamÃ£e",1393,1,"force_02mob";
 	end;
 
 OnMyMobDead:
@@ -461,14 +461,14 @@ OnReset:
 	end;
 
 OnSummonMob_03:
-	monster "força_1-1",26,173,"Hidra",1579,1,"force_03ex";
-	monster "força_1-1",21,173,"Hidra",1579,1,"force_03ex";
-	monster "força_1-1",31,173,"Hidra",1579,1,"force_03ex";
-	monster "força_1-1",26,186,"Marte",1551,1,"force_03ex";
-	monster "força_1-1",26,161,"Marte",1551,1,"force_03ex";
-	monster "força_1-1",13,173,"Marte",1551,1,"force_03ex";
-	monster "força_1-1",38,173,"Marte",1551,1,"force_03ex";
-	monster "força_1-1",29,174,"Marte",1551,1,"force_03ex";
+	monster "forÃ§a_1-1",26,173,"Hidra",1579,1,"force_03ex";
+	monster "forÃ§a_1-1",21,173,"Hidra",1579,1,"force_03ex";
+	monster "forÃ§a_1-1",31,173,"Hidra",1579,1,"force_03ex";
+	monster "forÃ§a_1-1",26,186,"Marte",1551,1,"force_03ex";
+	monster "forÃ§a_1-1",26,161,"Marte",1551,1,"force_03ex";
+	monster "forÃ§a_1-1",13,173,"Marte",1551,1,"force_03ex";
+	monster "forÃ§a_1-1",38,173,"Marte",1551,1,"force_03ex";
+	monster "forÃ§a_1-1",29,174,"Marte",1551,1,"force_03ex";
 	end;
 
 OnMyMobDead:
@@ -478,11 +478,11 @@ OnMyMobDead:
 -	script	force_03mob#50	-1,{
 OnEnable:
 	donpcevent "force_03ex#50::OnSummonMob_03";
-	monster "força_1-1",23,174,"Karakasa",1544,1,"force_03mob";
-	monster "força_1-1",18,173,"Karakasa",1544,1,"force_03mob";
-	monster "força_1-1",33,173,"Karakasa",1544,1,"force_03mob";
-	monster "força_1-1",26,181,"Karakasa",1544,1,"force_03mob";
-	monster "força_1-1",26,166,"Karakasa",1544,1,"force_03mob";
+	monster "forÃ§a_1-1",23,174,"Karakasa",1544,1,"force_03mob";
+	monster "forÃ§a_1-1",18,173,"Karakasa",1544,1,"force_03mob";
+	monster "forÃ§a_1-1",33,173,"Karakasa",1544,1,"force_03mob";
+	monster "forÃ§a_1-1",26,181,"Karakasa",1544,1,"force_03mob";
+	monster "forÃ§a_1-1",26,166,"Karakasa",1544,1,"force_03mob";
 	end;
 
 OnReset:
@@ -491,7 +491,7 @@ OnReset:
 
 OnMyMobDead:
 	//donpcevent "force_03mob#50::OnSummonMob_03";
-	if (mobcount("força_1-1","force_03mob") < 1) {
+	if (mobcount("forÃ§a_1-1","force_03mob") < 1) {
 		donpcevent "Heel and Toe#arena::On03_End";
 		donpcevent "arena#50::OnReset_03";
 	}
@@ -510,20 +510,20 @@ OnReset:
 	end;
 
 OnSummonMob_04:
-	monster "força_1-1",99,174,"Familiar",1419,1,"force_04ex";
-	monster "força_1-1",103,174,"Familiar",1419,1,"force_04ex";
-	monster "força_1-1",107,174,"Familiar",1419,1,"force_04ex";
-	monster "força_1-1",111,176,"Familiar",1419,1,"force_04ex";
-	monster "força_1-1",115,176,"Familiar",1419,1,"force_04ex";
-	monster "força_1-1",119,172,"Familiar",1419,1,"force_04ex";
-	monster "força_1-1",95,178,"Familiar",1419,1,"force_04ex";
-	monster "força_1-1",100,178,"Familiar",1419,1,"force_04ex";
-	monster "força_1-1",105,172,"Familiar",1419,1,"force_04ex";
-	monster "força_1-1",110,172,"Flora",1575,1,"force_04ex";
-	monster "força_1-1",115,172,"Flora",1575,1,"force_04ex";
-	monster "força_1-1",120,172,"Flora",1575,1,"force_04ex";
-	monster "força_1-1",125,172,"Flora",1575,1,"force_04ex";
-	monster "força_1-1",105,178,"Flora",1575,1,"force_04ex";
+	monster "forÃ§a_1-1",99,174,"Familiar",1419,1,"force_04ex";
+	monster "forÃ§a_1-1",103,174,"Familiar",1419,1,"force_04ex";
+	monster "forÃ§a_1-1",107,174,"Familiar",1419,1,"force_04ex";
+	monster "forÃ§a_1-1",111,176,"Familiar",1419,1,"force_04ex";
+	monster "forÃ§a_1-1",115,176,"Familiar",1419,1,"force_04ex";
+	monster "forÃ§a_1-1",119,172,"Familiar",1419,1,"force_04ex";
+	monster "forÃ§a_1-1",95,178,"Familiar",1419,1,"force_04ex";
+	monster "forÃ§a_1-1",100,178,"Familiar",1419,1,"force_04ex";
+	monster "forÃ§a_1-1",105,172,"Familiar",1419,1,"force_04ex";
+	monster "forÃ§a_1-1",110,172,"Flora",1575,1,"force_04ex";
+	monster "forÃ§a_1-1",115,172,"Flora",1575,1,"force_04ex";
+	monster "forÃ§a_1-1",120,172,"Flora",1575,1,"force_04ex";
+	monster "forÃ§a_1-1",125,172,"Flora",1575,1,"force_04ex";
+	monster "forÃ§a_1-1",105,178,"Flora",1575,1,"force_04ex";
 	end;
 
 OnMyMobDead:
@@ -533,16 +533,16 @@ OnMyMobDead:
 -	script	force_04mob#50	-1,{
 OnEnable:
 	donpcevent "force_04ex#50::OnSummonMob_04";
-	monster "força_1-1",85,172,"Kobold",1547,1,"force_04mob";
-	monster "força_1-1",95,172,"Kobold",1547,1,"force_04mob";
-	monster "força_1-1",120,172,"Kobold",1545,1,"force_04mob";
+	monster "forÃ§a_1-1",85,172,"Kobold",1547,1,"force_04mob";
+	monster "forÃ§a_1-1",95,172,"Kobold",1547,1,"force_04mob";
+	monster "forÃ§a_1-1",120,172,"Kobold",1545,1,"force_04mob";
 	end;
 OnReset:
 	killmonster "force_1-1","force_04mob#50::OnMyMobDead";
 	end;
 
 OnMyMobDead:
-	if (mobcount("força_1-1","force_04mob") < 1) {
+	if (mobcount("forÃ§a_1-1","force_04mob") < 1) {
 		donpcevent "Heel and Toe#arena::On04_End";
 		donpcevent "arena#50::OnReset_04";
 	}
@@ -563,10 +563,10 @@ OnReset:
 OnSummonMob_05:
 	switch(rand(1,2)) {
 	case 1:
-		monster "força_1-1",174,174,"Lobo do Deserto",1432,1,"force_05ex";
+		monster "forÃ§a_1-1",174,174,"Lobo do Deserto",1432,1,"force_05ex";
 		break;
 	case 2:
-		monster "força_1-1",173,173,"Zero",1470,1,"force_05ex";
+		monster "forÃ§a_1-1",173,173,"Zero",1470,1,"force_05ex";
 		break;
 	}
 	end;
@@ -577,13 +577,13 @@ OnMyMobDead:
 
 -	script	force_05mob#50	-1,{
 OnEnable:
-	monster "força_1-1",173,166,"Hidra",1579,1,"force_05mob";
-	monster "força_1-1",171,170,"Hidra",1579,1,"force_05mob";
-	monster "força_1-1",177,170,"Hidra",1579,1,"force_05mob";
-	monster "força_1-1",183,173,"Senhora Orc",1452,1,"force_05mob";
-	monster "força_1-1",173,173,"Senhora Orc",1452,1,"force_05mob";
-	monster "força_1-1",181,173,"Golem",1540,1,"force_05mob";
- 	monster "força_1-1",171,177,"Golem",1540,1,"force_05mob";
+	monster "forÃ§a_1-1",173,166,"Hidra",1579,1,"force_05mob";
+	monster "forÃ§a_1-1",171,170,"Hidra",1579,1,"force_05mob";
+	monster "forÃ§a_1-1",177,170,"Hidra",1579,1,"force_05mob";
+	monster "forÃ§a_1-1",183,173,"Senhora Orc",1452,1,"force_05mob";
+	monster "forÃ§a_1-1",173,173,"Senhora Orc",1452,1,"force_05mob";
+	monster "forÃ§a_1-1",181,173,"Golem",1540,1,"force_05mob";
+ 	monster "forÃ§a_1-1",171,177,"Golem",1540,1,"force_05mob";
 	end;
 
 OnReset:
@@ -591,7 +591,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("força_1-1","force_05mob") < 1) {
+	if (mobcount("forÃ§a_1-1","force_05mob") < 1) {
 		donpcevent "Heel and Toe#arena::On05_End";
 		donpcevent "arena#50::OnReset_05";
 	}
@@ -611,17 +611,17 @@ OnReset:
 	end;
 
 OnSummonMob_06:
-	monster "força_1-1",173,118,"Esfumaçado",1561,1,"force_06ex";
-	monster "força_1-1",173,108,"Esfumaçado",1561,1,"force_06ex";
-	monster "força_1-1",173,99,"Esfumaçado",1561,1,"force_06ex";
-	monster "força_1-1",171,108,"Golem",1540,1,"force_06ex";
-	monster "força_1-1",171,99,"Trabalhador Esquelético",1469,1,"force_06ex";
-	monster "força_1-1",171,85,"Trabalhador Esquelético",1469,1,"force_06ex";
-	monster "força_1-1",171,90,"Golem",1540,1,"force_06ex";
-	monster "força_1-1",171,79,"Escorpião",1559,1,"force_06ex";
-	monster "força_1-1",175,118,"Escorpião",1559,1,"force_06ex";
-	monster "força_1-1",175,108,"Homem Areia",1558,1,"force_06ex";
-	monster "força_1-1",175,99,"Homem Areia",1558,1,"force_06ex";
+	monster "forÃ§a_1-1",173,118,"EsfumaÃ§ado",1561,1,"force_06ex";
+	monster "forÃ§a_1-1",173,108,"EsfumaÃ§ado",1561,1,"force_06ex";
+	monster "forÃ§a_1-1",173,99,"EsfumaÃ§ado",1561,1,"force_06ex";
+	monster "forÃ§a_1-1",171,108,"Golem",1540,1,"force_06ex";
+	monster "forÃ§a_1-1",171,99,"Trabalhador EsquelÃ©tico",1469,1,"force_06ex";
+	monster "forÃ§a_1-1",171,85,"Trabalhador EsquelÃ©tico",1469,1,"force_06ex";
+	monster "forÃ§a_1-1",171,90,"Golem",1540,1,"force_06ex";
+	monster "forÃ§a_1-1",171,79,"EscorpiÃ£o",1559,1,"force_06ex";
+	monster "forÃ§a_1-1",175,118,"EscorpiÃ£o",1559,1,"force_06ex";
+	monster "forÃ§a_1-1",175,108,"Homem Areia",1558,1,"force_06ex";
+	monster "forÃ§a_1-1",175,99,"Homem Areia",1558,1,"force_06ex";
 	end;
 
 OnMyMobDead:
@@ -631,11 +631,11 @@ OnMyMobDead:
 -	script	force_06mob#50	-1,{
 OnEnable:
 	donpcevent "force_06ex#50::OnSummonMob_06";
-	monster "força_1-1",173,90,"Gotas",1572,1,"force_06mob";
-	monster "força_1-1",173,79,"Gotas",1572,1,"force_06mob";
-	monster "força_1-1",172,70,"Gotas",1572,1,"force_06mob";
-	monster "força_1-1",175,70,"Gotas",1572,1,"force_06mob";
-	monster "força_1-1",171,118,"Gotas",1572,1,"force_06mob";
+	monster "forÃ§a_1-1",173,90,"Gotas",1572,1,"force_06mob";
+	monster "forÃ§a_1-1",173,79,"Gotas",1572,1,"force_06mob";
+	monster "forÃ§a_1-1",172,70,"Gotas",1572,1,"force_06mob";
+	monster "forÃ§a_1-1",175,70,"Gotas",1572,1,"force_06mob";
+	monster "forÃ§a_1-1",171,118,"Gotas",1572,1,"force_06mob";
 	end;
 
 OnReset:
@@ -643,7 +643,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("força_1-1","force_06mob") < 1) {
+	if (mobcount("forÃ§a_1-1","force_06mob") < 1) {
 		donpcevent "Heel and Toe#arena::On06_End";
 		donpcevent "arena#50::OnReset_06";
 	}
@@ -662,28 +662,28 @@ OnReset:
 	end;
 
 OnSummonMob_07:
-	monster "força_1-1",163,36,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",167,36,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",171,36,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",175,36,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",179,36,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",183,36,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",183,32,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",183,28,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",183,24,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",183,20,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",183,16,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",179,16,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",175,16,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",171,16,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",167,16,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",163,16,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",163,20,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",163,24,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",163,28,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",163,32,"Hidra",1579,1,"force_07ex";
-	monster "força_1-1",163,31,"Punk",1481,1,"force_07ex";
-	monster "força_1-1",163,23,"Punk",1481,1,"force_07ex";
+	monster "forÃ§a_1-1",163,36,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",167,36,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",171,36,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",175,36,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",179,36,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",183,36,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",183,32,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",183,28,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",183,24,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",183,20,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",183,16,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",179,16,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",175,16,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",171,16,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",167,16,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",163,16,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",163,20,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",163,24,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",163,28,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",163,32,"Hidra",1579,1,"force_07ex";
+	monster "forÃ§a_1-1",163,31,"Punk",1481,1,"force_07ex";
+	monster "forÃ§a_1-1",163,23,"Punk",1481,1,"force_07ex";
 	end;
 
 OnMyMobDead:
@@ -693,7 +693,7 @@ OnMyMobDead:
 -	script	force_07mob#50	-1,{
 OnEnable:
 	donpcevent "force_07ex#50::OnSummonMob_07";
-	monster "força_1-1",174,25,"Planta Vermelha",1078,1,"force_07mob";
+	monster "forÃ§a_1-1",174,25,"Planta Vermelha",1078,1,"force_07mob";
 	end;
 
 OnReset:
@@ -701,7 +701,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("força_1-1","force_07mob") < 1) {
+	if (mobcount("forÃ§a_1-1","force_07mob") < 1) {
 		donpcevent "Heel and Toe#arena::On07_End";
 		donpcevent "arena#50::OnReset_07";
 	}
@@ -732,21 +732,21 @@ OnReset:
 	end;
 
 OnSummonMob_09:
-	monster "força_1-1",110,110,"Familiar",1419,1,"force_09ex";
-	monster "força_1-1",89,110,"Familiar",1419,1,"force_09ex";
-	monster "força_1-1",89,89,"Familiar",1419,1,"force_09ex";
-	monster "força_1-1",110,89,"Familiar",1419,1,"force_09ex";
-	monster "força_1-1",105,105,"Familiar",1419,1,"force_09ex";
-	monster "força_1-1",94,105,"Familiar",1419,1,"force_09ex";
-	monster "força_1-1",94,94,"Familiar",1419,1,"force_09ex";
-	monster "força_1-1",110,110,"Familiar",1419,1,"force_09ex";
-	monster "força_1-1",89,110,"Familiar",1419,1,"force_09ex";
-	monster "força_1-1",89,89,"Familiar",1419,1,"force_09ex";
-	monster "força_1-1",110,89,"Familiar",1419,1,"force_09ex";
-	monster "força_1-1",105,105,"Familiar",1419,1,"force_09ex";
-	monster "força_1-1",94,105,"Familiar",1419,1,"force_09ex";
-	monster "força_1-1",94,94,"Familiar",1419,1,"force_09ex";
-	monster "força_1-1",105,94,"Familiar",1419,1,"force_09ex";
+	monster "forÃ§a_1-1",110,110,"Familiar",1419,1,"force_09ex";
+	monster "forÃ§a_1-1",89,110,"Familiar",1419,1,"force_09ex";
+	monster "forÃ§a_1-1",89,89,"Familiar",1419,1,"force_09ex";
+	monster "forÃ§a_1-1",110,89,"Familiar",1419,1,"force_09ex";
+	monster "forÃ§a_1-1",105,105,"Familiar",1419,1,"force_09ex";
+	monster "forÃ§a_1-1",94,105,"Familiar",1419,1,"force_09ex";
+	monster "forÃ§a_1-1",94,94,"Familiar",1419,1,"force_09ex";
+	monster "forÃ§a_1-1",110,110,"Familiar",1419,1,"force_09ex";
+	monster "forÃ§a_1-1",89,110,"Familiar",1419,1,"force_09ex";
+	monster "forÃ§a_1-1",89,89,"Familiar",1419,1,"force_09ex";
+	monster "forÃ§a_1-1",110,89,"Familiar",1419,1,"force_09ex";
+	monster "forÃ§a_1-1",105,105,"Familiar",1419,1,"force_09ex";
+	monster "forÃ§a_1-1",94,105,"Familiar",1419,1,"force_09ex";
+	monster "forÃ§a_1-1",94,94,"Familiar",1419,1,"force_09ex";
+	monster "forÃ§a_1-1",105,94,"Familiar",1419,1,"force_09ex";
 	end;
 
 OnMyMobDead:
@@ -755,7 +755,7 @@ OnMyMobDead:
 
 -	script	force_09mob#50	-1,{
 OnEnable:
-	monster "força_1-1",99,99,"Vocal",1581,1,"force_09mob";
+	monster "forÃ§a_1-1",99,99,"Vocal",1581,1,"force_09mob";
 	donpcevent "force_09ex#50::OnSummonMob_09";
 	end;
 
@@ -764,7 +764,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("força_1-1","force_09mob") < 1) {
+	if (mobcount("forÃ§a_1-1","force_09mob") < 1) {
 		donpcevent "Heel and Toe#arena::On09_End";
 		donpcevent "arena#50::OnReset_09";
 		donpcevent "arena#50::OnReset_All";
@@ -775,20 +775,20 @@ OnMyMobDead:
 }
 
 prt_are_in,129,188,3	script	Staff#50-1	67,{
-	mes "[Funcionários]";
-	mes "Você fez um bom trabalho.";
-	mes "Mesmo que você não tenha conseguido concluir uma batalha de contra-relógio, eu o recompensarei com uma pequena quantidade de pontos de arena.";
+	mes "[FuncionÃ¡rios]";
+	mes "VocÃª fez um bom trabalho.";
+	mes "Mesmo que vocÃª nÃ£o tenha conseguido concluir uma batalha de contra-relÃ³gio, eu o recompensarei com uma pequena quantidade de pontos de arena.";
 	next;
 	if (arena_point == 30000) {
-		mes "[Funcionários]";
+		mes "[FuncionÃ¡rios]";
 		mes "Uh, hein!";
-		mes "Você já tem pontos de arena suficientes.";
+		mes "VocÃª jÃ¡ tem pontos de arena suficientes.";
 		mes "Por favor, gaste alguns pontos de arena mais tarde. ";
 		next;
 	}
 	else set arena_point, arena_point + 1;
-	mes "[Funcionários]";
-	mes "Deixe-me guiá-lo para fora. ";
+	mes "[FuncionÃ¡rios]";
+	mes "Deixe-me guiÃ¡-lo para fora. ";
 	close2;
 	specialeffect2 EF_EXIT;
 	warp "arena_room",100,75;
@@ -814,45 +814,45 @@ prt_are_in,25,188,3	script	Staff#50-2	67,{
 		}
 	}
 	set @gap50,(60 * $top_50min + $top_50sec) - (60 * @record_min50 + @record_sec50);
-	mes "[Funcionários]";
-	mes "Uau, você fez um bom trabalho ~";
-	mes "Seu nome é...^3131FF" + strcharinfo(0) +"^000000, não é?";
+	mes "[FuncionÃ¡rios]";
+	mes "Uau, vocÃª fez um bom trabalho ~";
+	mes "Seu nome Ã©...^3131FF" + strcharinfo(0) +"^000000, nÃ£o Ã©?";
 	mes "^3131FF"+ strcharinfo(0) +"^000000, tempo total gasto para passar a batalha.";
 	next;
-	mes "[Funcionários]";
-	mes "é"+@record_min50+"minutos"+@record_sec50+"segundos.";
-	mes "Parabéns!";
+	mes "[FuncionÃ¡rios]";
+	mes "Ã©"+@record_min50+"minutos"+@record_sec50+"segundos.";
+	mes "ParabÃ©ns!";
 	next;
-	mes "[Funcionários]";
-	mes "O jogador mais rápido entre as pessoas que concluíram a batalha de força do tempo na arena do nível 50 é ^3131FF"+$arena_50topn$+"^000000.";
+	mes "[FuncionÃ¡rios]";
+	mes "O jogador mais rÃ¡pido entre as pessoas que concluÃ­ram a batalha de forÃ§a do tempo na arena do nÃ­vel 50 Ã© ^3131FF"+$arena_50topn$+"^000000.";
 	next;
-	mes "[Funcionários]";
-	mes "^3131FF"+$arena_50topn$+"O tempo de execução de ^000000 foi de ^3131FF"+$top_50min+"^000000minutos ^3131FF"+$top_50sec+"^000000segundos.";
+	mes "[FuncionÃ¡rios]";
+	mes "^3131FF"+$arena_50topn$+"O tempo de execuÃ§Ã£o de ^000000 foi de ^3131FF"+$top_50min+"^000000minutos ^3131FF"+$top_50sec+"^000000segundos.";
 	next;
 	if (@gap50 < 0) {
-		mes "[Funcionários]";
-		mes "Embora você não tenha conseguido fazer um novo disco, espero que tenha sucesso na próxima vez.";
+		mes "[FuncionÃ¡rios]";
+		mes "Embora vocÃª nÃ£o tenha conseguido fazer um novo disco, espero que tenha sucesso na prÃ³xima vez.";
 		next;
 		if (arena_point > 29980) {
-			mes "[Funcionários]";
-			mes "Então deixe-me recompensá-lo com alguns pontos de arena... eh?";
-			mes "Seus pontos de arena excederam o valor máximo. ";
+			mes "[FuncionÃ¡rios]";
+			mes "EntÃ£o deixe-me recompensÃ¡-lo com alguns pontos de arena... eh?";
+			mes "Seus pontos de arena excederam o valor mÃ¡ximo. ";
 			next;
-			mes "[Funcionários]";
-			mes "Você pode verificar a quantidade de pontos de arena que possui na sala de espera da arena.";
+			mes "[FuncionÃ¡rios]";
+			mes "VocÃª pode verificar a quantidade de pontos de arena que possui na sala de espera da arena.";
 			next;
-			mes "[Funcionários]";
-			mes "Espero que você tenha se divertido e deixe-me guiá-lo até a entrada da arena.";
+			mes "[FuncionÃ¡rios]";
+			mes "Espero que vocÃª tenha se divertido e deixe-me guiÃ¡-lo atÃ© a entrada da arena.";
 			mes "Obrigado.";
 			close2;
 		} else {
 			set arena_point, arena_point + 20;
-			mes "[Funcionários]";
-			mes "Deixe-me recompensá-lo com alguns pontos de arena.";
-			mes "Se você quiser verificar a quantidade de pontos de arena que possui, fale com ^3131FFVendigos^000000 na entrada da arena.";
+			mes "[FuncionÃ¡rios]";
+			mes "Deixe-me recompensÃ¡-lo com alguns pontos de arena.";
+			mes "Se vocÃª quiser verificar a quantidade de pontos de arena que possui, fale com ^3131FFVendigos^000000 na entrada da arena.";
 			next;
-			mes "[Funcionários]";
-			mes "Deixe-me guiá-lo até a entrada da arena.";
+			mes "[FuncionÃ¡rios]";
+			mes "Deixe-me guiÃ¡-lo atÃ© a entrada da arena.";
 			mes "Te vejo mais tarde~";
 			close2;
 		}
@@ -865,41 +865,41 @@ prt_are_in,25,188,3	script	Staff#50-2	67,{
 		end;
 	} else {
 		emotion ET_HUK;
-		mes "[Funcionários]";
+		mes "[FuncionÃ¡rios]";
 		mes "Uau! ";
-		mes "Que ótimo trabalho!";
+		mes "Que Ã³timo trabalho!";
 		next;
-		mes "[Funcionários]";
-		mes "Você foi registrado como o jogador mais rápido entre as pessoas que completaram ^FF0000Arena Time Force Battle nível 50s^000000, ^3131FF"+strcharinfo(0)+"^000000.";
+		mes "[FuncionÃ¡rios]";
+		mes "VocÃª foi registrado como o jogador mais rÃ¡pido entre as pessoas que completaram ^FF0000Arena Time Force Battle nÃ­vel 50s^000000, ^3131FF"+strcharinfo(0)+"^000000.";
 		set $top_50min, @record_min50;
 		set $top_50sec, @record_sec50;
 		set $arena_50topn$,strcharinfo(0);
 		donpcevent "Vendigos::OnLineRec_50";
 		next;
 		if (arena_point > 29950) {
-			mes "[Funcionários]";
-			mes "Então deixe-me recompensá-lo com alguns pontos de arena... eh?";
-			mes "Seus pontos de arena excederam o valor máximo. ";
+			mes "[FuncionÃ¡rios]";
+			mes "EntÃ£o deixe-me recompensÃ¡-lo com alguns pontos de arena... eh?";
+			mes "Seus pontos de arena excederam o valor mÃ¡ximo. ";
 			next;
-			mes "[Funcionários]";
-			mes "Você pode verificar a quantidade de pontos de arena que possui na sala de espera da arena.";
+			mes "[FuncionÃ¡rios]";
+			mes "VocÃª pode verificar a quantidade de pontos de arena que possui na sala de espera da arena.";
 			next;
-			mes "[Funcionários]";
-			mes "Espero que você tenha se divertido e deixe-me guiá-lo até a entrada da arena.";
+			mes "[FuncionÃ¡rios]";
+			mes "Espero que vocÃª tenha se divertido e deixe-me guiÃ¡-lo atÃ© a entrada da arena.";
 			mes "Obrigado.";
 			close2;
 		} else {
-			mes "[Funcionários]";
-			mes "Deixe-me recompensá-lo com alguns pontos de arena.";
-			mes "Ao mesmo tempo, como você renovou o registro, desta vez receberá uma quantia extra de pontos.";
+			mes "[FuncionÃ¡rios]";
+			mes "Deixe-me recompensÃ¡-lo com alguns pontos de arena.";
+			mes "Ao mesmo tempo, como vocÃª renovou o registro, desta vez receberÃ¡ uma quantia extra de pontos.";
 			next;
 			set arena_point, arena_point + 50;
-			mes "[Funcionários]";
-			mes "Deixe-me recompensá-lo com alguns pontos de arena.";
-			mes "Se você quiser verificar a quantidade de pontos de arena que possui, fale com ^3131FFVendigos^000000 na entrada da arena.";
+			mes "[FuncionÃ¡rios]";
+			mes "Deixe-me recompensÃ¡-lo com alguns pontos de arena.";
+			mes "Se vocÃª quiser verificar a quantidade de pontos de arena que possui, fale com ^3131FFVendigos^000000 na entrada da arena.";
 			next;
-			mes "[Funcionários]";
-			mes "Deixe-me guiá-lo até a entrada da arena.";
+			mes "[FuncionÃ¡rios]";
+			mes "Deixe-me guiÃ¡-lo atÃ© a entrada da arena.";
 			mes "Te vejo mais tarde~";
 			close2;
 		}
@@ -919,7 +919,7 @@ OnEnable:
 	end;
 
 OnTimer2000:
-	mapannounce "prt_are_in","Esta transmissão informa sobre a restrição para arena nível 50.",0,0xFFCE00;
+	mapannounce "prt_are_in","Esta transmissÃ£o informa sobre a restriÃ§Ã£o para arena nÃ­vel 50.",0,0xFFCE00;
 	end;
 
 OnTimer3000:
@@ -927,7 +927,7 @@ OnTimer3000:
 	end;
 
 OnTimer4000:
-	mapannounce "prt_are_in","Por favor, prossiga sua batalha o mais rápido possível para evitar desvantagens. ",0,0xFFCE00;
+	mapannounce "prt_are_in","Por favor, prossiga sua batalha o mais rÃ¡pido possÃ­vel para evitar desvantagens. ",0,0xFFCE00;
 	end;
 
 OnTimer60000:
@@ -951,16 +951,16 @@ OnOut:
 
 -	script	cast#50	-1,{
 OnTimeOver1:
-	mapannounce "força_1-1","A Arena será reativada devido a um erro ocorrido durante a batalha.",0,0xFFCE00;
+	mapannounce "forÃ§a_1-1","A Arena serÃ¡ reativada devido a um erro ocorrido durante a batalha.",0,0xFFCE00;
 	end;
 OnTimeOver2:
-	mapannounce "força_1-1","A Arena será ativada devido a um erro ocorrido na sala de espera.",0,0xFFCE00;
+	mapannounce "forÃ§a_1-1","A Arena serÃ¡ ativada devido a um erro ocorrido na sala de espera.",0,0xFFCE00;
 	end;
 OnNomal1:
-	mapannounce "força_1-1","Arena será reativada.",0,0xFFCE00;
+	mapannounce "forÃ§a_1-1","Arena serÃ¡ reativada.",0,0xFFCE00;
 	end;
 OnNomal2:
-	mapannounce "força_1-1","Arena será reativada.",0,0xFFCE00;
+	mapannounce "forÃ§a_1-1","Arena serÃ¡ reativada.",0,0xFFCE00;
 	end;
 }
 

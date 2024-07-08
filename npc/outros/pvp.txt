@@ -11,59 +11,59 @@
 //============================================================ 
 -	script	PVP Narrator::pvpe	-1,{
 	mes "[Narrador PVP]";
-	mes "Olá e bem-vindo!";
+	mes "OlÃ¡ e bem-vindo!";
 	mes "Estou encarregado de";
 	mes "explicando os modos PVP.";
 	mes "Eu sou o Narrador PVP!";
 	next;
-	switch(select("O que é PVP?:Quais são os modos PVP?:Quais são as regras para PVP?:Salvar posição.:Finalizar caixa de diálogo.")) {
+	switch(select("O que Ã© PVP?:Quais sÃ£o os modos PVP?:Quais sÃ£o as regras para PVP?:Salvar posiÃ§Ã£o.:Finalizar caixa de diÃ¡logo.")) {
 	case 1:
 		mes "[Narrador PVP]";
 		mes "Resumindo, PVP significa";
 		mes "'Modo Jogador VS Jogador'";
-		mes "É um lugar único para pessoas";
+		mes "Ã‰ um lugar Ãºnico para pessoas";
 		mes "duelar entre si.";
 		next;
 		mes "[Narrador PVP]";
 		mes "Apenas diga ao";
-		mes "^3355FFGuardião do portão^000000";
-		mes "que você deseja experimentar. ";
-		mes "deixe você entrar no quadrado PVP.";
+		mes "^3355FFGuardiÃ£o do portÃ£o^000000";
+		mes "que vocÃª deseja experimentar. ";
+		mes "deixe vocÃª entrar no quadrado PVP.";
 		next;
 		mes "[Narrador PVP]";
-		mes "Mas, você precisa estar em";
-		mes "pelo menos nível 31. E você";
+		mes "Mas, vocÃª precisa estar em";
+		mes "pelo menos nÃ­vel 31. E vocÃª";
 		mes "deve pagar 500 zeny de taxa de entrada para";
 		mes "para entrar em um quadrado de luta PVP.";
 		break;
 	case 2:
 		mes "[Narrador PVP]";
-		mes "Quando você está qualificado, você";
+		mes "Quando vocÃª estÃ¡ qualificado, vocÃª";
 		mes "pode escolher um dos dois modos.";
 		mes "Modo Yoyo ou Modo Pesadelo.";
 		next;
 		mes "[Narrador PVP]";
-		mes "O modo Yoyo é livre de riscos.";
-		mes "Você pode experimentar PVP";
-		mes "sem qualquer restrição ou";
-		mes "punição. ";
-		mes "que você pratique suas habilidades";
+		mes "O modo Yoyo Ã© livre de riscos.";
+		mes "VocÃª pode experimentar PVP";
+		mes "sem qualquer restriÃ§Ã£o ou";
+		mes "puniÃ§Ã£o. ";
+		mes "que vocÃª pratique suas habilidades";
 		mes "aqui antes de prosseguir.";
 		next;
 		mes "[Narrador PVP]";
-		mes "O modo pesadelo é muito";
+		mes "O modo pesadelo Ã© muito";
 		mes "perigoso! ";
-		mes "você perderá um pouco do seu";
-		mes "EXP quando você for derrotado. ";
-		mes "há uma pequena chance de que";
-		mes "você deixará cair alguns equipamentos.";
+		mes "vocÃª perderÃ¡ um pouco do seu";
+		mes "EXP quando vocÃª for derrotado. ";
+		mes "hÃ¡ uma pequena chance de que";
+		mes "vocÃª deixarÃ¡ cair alguns equipamentos.";
 		next;
 		mes "[Narrador PVP]";
-		mes "No entanto, se você vencer, o";
-		mes "as recompensas podem ser ótimas!";
+		mes "No entanto, se vocÃª vencer, o";
+		mes "as recompensas podem ser Ã³timas!";
 		mes "Para evitar mal-entendidos,";
-		mes "você deveria pensar duas vezes";
-		mes "antes de ir para lá...";
+		mes "vocÃª deveria pensar duas vezes";
+		mes "antes de ir para lÃ¡...";
 		mes "Boa sorte!";
 		break;
 	case 3:
@@ -71,70 +71,70 @@
 		mes "Cada um dos quadrados de luta";
 		mes "tem uma fileira de narradores e";
 		mes "escolha-os com base em seu";
-		mes "qualificações.";
+		mes "qualificaÃ§Ãµes.";
 		next;
 		mes "[Narrador PVP]";
-		mes "Cada Narrador perguntará";
+		mes "Cada Narrador perguntarÃ¡";
 		mes "qual dos cinco mapas PVP";
-		mes "você deseja ir.";
+		mes "vocÃª deseja ir.";
 		mes "Escolha e entre!";
 		next;
 		mes "[Narrador PVP]";
-		mes "Cada mapa tem uma limitação de";
-		mes "o número de pessoas que podem";
+		mes "Cada mapa tem uma limitaÃ§Ã£o de";
+		mes "o nÃºmero de pessoas que podem";
 		mes "participar. ";
 		mes "figuras no canto mostrando";
 		mes "'Participante/Total'.";
 		next;
 		mes "[Narrador PVP]";
-		mes "Além disso, há um EXP oculto";
+		mes "AlÃ©m disso, hÃ¡ um EXP oculto";
 		mes "valor no modo PVP. ";
-		mes "a pontuação só será aplicada dentro";
-		mes "da zona PVP, então não";
+		mes "a pontuaÃ§Ã£o sÃ³ serÃ¡ aplicada dentro";
+		mes "da zona PVP, entÃ£o nÃ£o";
 		mes "preocupar.";
 		next;
 		mes "[Narrador PVP]";
 		mes "A EXP de cada jogador no";
-		mes "o início geralmente é de 5 pontos.";
-		mes "Se você vencer, será";
+		mes "o inÃ­cio geralmente Ã© de 5 pontos.";
+		mes "Se vocÃª vencer, serÃ¡";
 		mes "aumentar em 1 ponto";
 		next;
 		mes "[Narrador PVP]";
-		mes "Da mesma forma, quando você";
-		mes "perder... Sua EXP irá";
+		mes "Da mesma forma, quando vocÃª";
+		mes "perder... Sua EXP irÃ¡";
 		mes "cair 5 pontos.";
 		mes "Por isso tem cuidado!";
 		next;
 		mes "[Narrador PVP]";
-		mes "Quando você é derrotado";
-		mes "E sua EXP é igual";
+		mes "Quando vocÃª Ã© derrotado";
+		mes "E sua EXP Ã© igual";
 		mes "igual ou inferior a 0,";
-		mes "Você será removido do PVP";
+		mes "VocÃª serÃ¡ removido do PVP";
 		mes "e seu duelo terminou!";
 		next;
 		mes "[Narrador PVP]";
-		mes "Porém, se sua EXP for mais";
-		mes "do que 0. Você ainda pode obter ajuda";
-		mes "através da cura de outros jogadores...";
-		mes "Você entendeu?";
+		mes "PorÃ©m, se sua EXP for mais";
+		mes "do que 0. VocÃª ainda pode obter ajuda";
+		mes "atravÃ©s da cura de outros jogadores...";
+		mes "VocÃª entendeu?";
 		next;
 		mes "[Narrador PVP]";
 		mes "Os comandos de luta dentro de";
-		mes "PVP são iguais ao normal.";
-		mes "Todos os controles básicos são os";
+		mes "PVP sÃ£o iguais ao normal.";
+		mes "Todos os controles bÃ¡sicos sÃ£o os";
 		mes "mesmo.";
 		next;
 		mes "[Narrador PVP]";
-		mes "Porém, há uma coisa...";
-		mes "Dentro da praça de luta PVP";
+		mes "PorÃ©m, hÃ¡ uma coisa...";
+		mes "Dentro da praÃ§a de luta PVP";
 		mes "e zonas de combate PVP,";
-		mes "você não pode salvar sua posição.";
+		mes "vocÃª nÃ£o pode salvar sua posiÃ§Ã£o.";
 		mes "Lembre-se bem... Estas regras";
-		mes "pode ajudar a garantir sua vitória.";
+		mes "pode ajudar a garantir sua vitÃ³ria.";
 		break;
 	case 4:
 		mes "[Narrador PVP]";
-		mes "Posição salva com sucesso...";
+		mes "PosiÃ§Ã£o salva com sucesso...";
 		mes "Muito obrigado!";
 		mes "Nos veremos novamente em breve.";
 		if(strnpcinfo(4) == "marrocos_in") { savepoint "marrocos_in",141,139,1,1; }
@@ -146,9 +146,9 @@
 	case 5:
 		mes "[Narrador PVP]";
 		mes "Com a guerra travada entre monstros";
-		mes "e humanos, esta competição";
+		mes "e humanos, esta competiÃ§Ã£o";
 		mes "entre as pessoas - PVP -";
-		mes "encoraja todos nós a obter";
+		mes "encoraja todos nÃ³s a obter";
 		mes "mais forte. ";
 		mes "acolhemos o seu desafio!";
 		break;
@@ -165,26 +165,26 @@ geffen_in,67,63,4	duplicate(pvpe)	PVP Narrator#pe6	84
 // Mode Select
 //============================================================ 
 -	script	Gate Keeper::gkut	-1,{
-	mes "[Guardião do Portão]";
+	mes "[GuardiÃ£o do PortÃ£o]";
 	mes "Fico feliz em poder servir.";
 	mes "Vou abrir a luta PVP";
-	mes "quadrado para você! ";
-	mes "alguma dúvida sobre o PVP";
+	mes "quadrado para vocÃª! ";
+	mes "alguma dÃºvida sobre o PVP";
 	mes "modos ou regras, por favor pergunte";
 	mes "o narrador...";
 	next;
 	switch(select("^FF5533' Modo Pesadelo PvP'^000000:^3355FF' Modo PvP Yoyo'^000000:^3355FF' Modo Evento PvP'^000000:Sair")) {
 		case 1:
-			mes "[Guardião do Portão]";
-			mes "Lamento, mas atualmente o serviço do modo Pesadelo não está disponível.";
+			mes "[GuardiÃ£o do PortÃ£o]";
+			mes "Lamento, mas atualmente o serviÃ§o do modo Pesadelo nÃ£o estÃ¡ disponÃ­vel.";
 			mes "Por favor, use o modo Yoyo. ";
 			break;
 		case 2:
-			mes "[Guardião do Portão]";
-			mes "A taxa de admissão é de 500 Zeny.";
-			mes "Você quer se mover";
+			mes "[GuardiÃ£o do PortÃ£o]";
+			mes "A taxa de admissÃ£o Ã© de 500 Zeny.";
+			mes "VocÃª quer se mover";
 			mes "para o modo Yoyo";
-			mes "lutar na praça?";
+			mes "lutar na praÃ§a?";
 			next;
 			switch(select("Mover:Cancelar")) {
 			case 1:
@@ -193,50 +193,50 @@ geffen_in,67,63,4	duplicate(pvpe)	PVP Narrator#pe6	84
 					callsub L_Warp,"pvp_y_room";
 				}
 				else {
-					mes "[Guardião do Portão]";
+					mes "[GuardiÃ£o do PortÃ£o]";
 					mes "Desculpe, mas";
-					mes "você não veio preparado?";
-					mes "Verifique novamente se você tem o";
+					mes "vocÃª nÃ£o veio preparado?";
+					mes "Verifique novamente se vocÃª tem o";
 					mes "Taxa de entrada de 500 Zeny e";
-					mes "que você está pelo menos no nível 31!";
+					mes "que vocÃª estÃ¡ pelo menos no nÃ­vel 31!";
 				}
 				close;
 			case 2:
-				mes "[Guardião do Portão]";
+				mes "[GuardiÃ£o do PortÃ£o]";
 				mes "Com a guerra travada entre monstros";
-				mes "e humanos, esta competição";
+				mes "e humanos, esta competiÃ§Ã£o";
 				mes "entre as pessoas - PVP -";
-				mes "encoraja todos nós a obter";
+				mes "encoraja todos nÃ³s a obter";
 				mes "mais forte. ";
 				mes "acolhemos o seu desafio!";
 				close;
 			}
 		case 3:
-			mes "[Guardião do Portão]";
+			mes "[GuardiÃ£o do PortÃ£o]";
 			mes "Bem-vindo!";
 			mes "Por favor cheque duas vezes";
-			mes "que você tem o ingresso ou ingresso de visualização.";
+			mes "que vocÃª tem o ingresso ou ingresso de visualizaÃ§Ã£o.";
 			next;
 			if ((countitem(7028) == 0) && (countitem(7029) == 0)) {
-				mes "[Guardião do Portão]";
+				mes "[GuardiÃ£o do PortÃ£o]";
 				mes "Eh? ";
-				mes "sinto muito, esse quadrado de luta é";
-				mes "apenas para pessoas que têm";
-				mes "admissão ou visualização de ingressos.";
-				mes "Você não pode entrar sem ele.";
+				mes "sinto muito, esse quadrado de luta Ã©";
+				mes "apenas para pessoas que tÃªm";
+				mes "admissÃ£o ou visualizaÃ§Ã£o de ingressos.";
+				mes "VocÃª nÃ£o pode entrar sem ele.";
 				close;
 			}
-			mes "[Guardião do Portão]";
+			mes "[GuardiÃ£o do PortÃ£o]";
 			mes "Sim, obrigado por participar. ";
 			if (Zeny >= 500) set Zeny, Zeny - 500;
 			callsub L_Warp,"sala_pvp";
 			break;
 		case 4:
-			mes "[Guardião do Portão]";
+			mes "[GuardiÃ£o do PortÃ£o]";
 			mes "Com a guerra travada entre monstros";
-			mes "e humanos, esta competição";
+			mes "e humanos, esta competiÃ§Ã£o";
 			mes "entre as pessoas - PVP -";
-			mes "encoraja todos nós a obter";
+			mes "encoraja todos nÃ³s a obter";
 			mes "mais forte. ";
 			mes "acolhemos o seu desafio!";
 			break;
@@ -277,8 +277,8 @@ function	script	F_PVP_FSRS	{
 	if (getargcount()) {
 		setarray .@lvl[0], getarg(0), getarg(1);
 		if (BaseLevel < .@lvl[0] || BaseLevel > .@lvl[1]) {
-			mes "[Equipe de recepção do PVP Fight Square]";
-			mes "Desculpe, mas seu nível base deve estar entre LV"+ .@lvl[0] +"e LV"+ .@lvl[1] +".";
+			mes "[Equipe de recepÃ§Ã£o do PVP Fight Square]";
+			mes "Desculpe, mas seu nÃ­vel base deve estar entre LV"+ .@lvl[0] +"e LV"+ .@lvl[1] +".";
 			close;
 		}
 	}
@@ -289,7 +289,7 @@ function	script	F_PVP_FSRS	{
 		setarray .@Limit[0],	128,			128,			128,			128,			128;
 	} else {
 		setarray .@Maps$[0],	"pvp_n_8-1",	"pvp_n_8-2",	"pvp_n_8-3",	"pvp_n_8-4",	"pvp_n_8-5";
-		setarray .@Name$[0],	"Sanduíche",		"Trancar",		"Quatro Quartos",	"Sob a cruz",	"Sala da Bússola";
+		setarray .@Name$[0],	"SanduÃ­che",		"Trancar",		"Quatro Quartos",	"Sob a cruz",	"Sala da BÃºssola";
 		setarray .@Limit[0],	64,				32,				32,				32,				32;
 	}
 	for(set .@i,0; .@i<5; set .@i,.@i+1)
@@ -298,8 +298,8 @@ function	script	F_PVP_FSRS	{
 	set .@i, select(.@menu$)-1;
 	if (.@i == 5) close;
 	if (getmapusers(.@Maps$[.@i]) >= .@Limit[.@i]) {
-		mes "[Equipe de recepção do PVP Fight Square]";
-		mes "Este mapa está cheio no momento.";
+		mes "[Equipe de recepÃ§Ã£o do PVP Fight Square]";
+		mes "Este mapa estÃ¡ cheio no momento.";
 		close;
 	}
 	warp .@Maps$[.@i],0,0;
@@ -314,8 +314,8 @@ pvp_room,54,85,4	script	Registration Staff#1	105,{
 	if (countitem(7028) == 0) {
 		mes "[Equipe de Registro do PVP Combat Square]";
 		mes "Eh? ";
-		mes "Esta é a entrada apenas para jogadores.";
-		mes "Para obter detalhes sobre os espectadores, vá para a equipe de registro à sua direita.";
+		mes "Esta Ã© a entrada apenas para jogadores.";
+		mes "Para obter detalhes sobre os espectadores, vÃ¡ para a equipe de registro Ã  sua direita.";
 		close;
 	}
 	set .@size, getarraysize(.warp_x);
@@ -326,9 +326,9 @@ pvp_room,54,85,4	script	Registration Staff#1	105,{
 	if (select("Combate Square One: Cancelar") == 1) {
 		mes "[Equipe de Registro do PVP Combat Square]";
 		mes "'"+ strcharinfo(0) +"'";
-		mes "Você está pronto?!";
+		mes "VocÃª estÃ¡ pronto?!";
 		next;
-		if (select("Sim não!") == 1) {
+		if (select("Sim nÃ£o!") == 1) {
 			mes "[Equipe de Registro do PVP Combat Square]";
 			mes "OK! ";
 			mes "Boa sorte!";
@@ -356,13 +356,13 @@ OnInit:
 -	script	Spectator's Entrance#dum::PVPSpectator	-1,{
 	if (countitem(7029) == 0) {
 		mes "[Equipe de registro do PVP Compete Square]";
-		mes "Esta é a entrada para os telespectadores.";
-		mes "Para obter detalhes sobre a entrada de jogadores, dirija-se à Equipe de Registro à sua esquerda.";
+		mes "Esta Ã© a entrada para os telespectadores.";
+		mes "Para obter detalhes sobre a entrada de jogadores, dirija-se Ã  Equipe de Registro Ã  sua esquerda.";
 		close;
 	}
 	if (select("Competir estaca zero: cancelar") == 1) {
 		mes "[Equipe de Registro do PVP Combat Square]";
-		mes "Você acertou, obrigado por participar. ";
+		mes "VocÃª acertou, obrigado por participar. ";
 		close2;
 		delitem 7029,1; //Admission_For_Duel
 		switch(rand(1,4)) {
@@ -387,9 +387,9 @@ pvp_room,86,85,4	duplicate(PVPSpectator)	Spectator's Entrance#4	105
 //============================================================ 
 -	script	Combat Square Staff#dum::PVPSpecWarp	-1,{
 OnTouch_:
-	mes "[Equipe da Praça de Combate]";
+	mes "[Equipe da PraÃ§a de Combate]";
 	mes "Posso te ajudar?";
-	if (select("Para o assento central do espectador.: Saia da Praça de Combate.") == 1) {
+	if (select("Para o assento central do espectador.: Saia da PraÃ§a de Combate.") == 1) {
 		warp "pvp_2vs2",38,38;
 		end;
 	}
@@ -402,9 +402,9 @@ pvp_2vs2,74,74,0	duplicate(PVPSpecWarp)	Combat Square Staff#3	45,1,1
 pvp_2vs2,74,5,0	duplicate(PVPSpecWarp)	Combat Square Staff#4	45,1,1
 
 pvp_2vs2,40,40,0	script	Combat Square Staff#5	45,1,1,{
-	mes "[Equipe da Praça de Combate]";
+	mes "[Equipe da PraÃ§a de Combate]";
 	mes "Posso te ajudar?";
-	switch(select("Para o assento do espectador lateral.: Saia da Praça de Combate.")) {
+	switch(select("Para o assento do espectador lateral.: Saia da PraÃ§a de Combate.")) {
 	case 1:
 		switch(rand(1,4)) {
 			case 1: warp "pvp_2vs2",39,7; end;
@@ -422,9 +422,9 @@ pvp_2vs2,40,40,0	script	Combat Square Staff#5	45,1,1,{
 //============================================================ 
 pvp_room,51,19,0	script	out#eventpvp	45,4,2,{
 OnTouch_:
-	mes "[Equipe da Praça de Combate]";
-	mes "Você se divertiu no Combat Square?";
-	mes "Posso perguntar para onde você quer ir?";
+	mes "[Equipe da PraÃ§a de Combate]";
+	mes "VocÃª se divertiu no Combat Square?";
+	mes "Posso perguntar para onde vocÃª quer ir?";
 	next;
 	switch(select("Prontera.:Marrocos.:Geffen.:Payon.:Alberta.:Cancelar.")) {
 		case 1: warp "prontera",107,60; end;

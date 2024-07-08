@@ -35,24 +35,24 @@ prt_are_in,76,87,3	script	Helper#party	67,4,4,{
 		emotion ET_SURPRISE;
 		mes "[Ajudante Iriff]";
 		mes "Bom dia, desafiantes!";
-		mes "VocÍ est· na sala de espera da arena da festa.";
+		mes "Voc√™ est√° na sala de espera da arena da festa.";
 		next;
 		mes "[Ajudante Iriff]";
-		mes "Apenas uma pessoa por vez poder· permanecer nesta sala de espera.";
-		mes "VocÍ gostaria de comeÁar uma batalha agora?";
+		mes "Apenas uma pessoa por vez poder√° permanecer nesta sala de espera.";
+		mes "Voc√™ gostaria de come√ßar uma batalha agora?";
 		next;
-		switch( select( "N„o","Sim" ) ) {
+		switch( select( "N√£o","Sim" ) ) {
 		case 1:
 			set $arn_partywait,0;
 			mes "[Ajudante Iriff]";
 			mes "Eu vejo.";
-			mes "No entanto, lembre-se de que vocÍ tem apenas um tempo limitado.";
+			mes "No entanto, lembre-se de que voc√™ tem apenas um tempo limitado.";
 			close;
 		case 2:
 			mes "[Ajudante Iriff]";
-			mes "Obrigado, deixe-me comeÁar uma batalha.";
+			mes "Obrigado, deixe-me come√ßar uma batalha.";
 			mes "A warp portal leading to the arena room will be open.";
-			mes "Espero que vocÍ sobreviva atÈ o final da batalha e grave seu nome na lista de honra...";
+			mes "Espero que voc√™ sobreviva at√© o final da batalha e grave seu nome na lista de honra...";
 			close2;
 			donpcevent "toarena#party::OnEnter";
 			donpcevent "Helper#party::OnStop";
@@ -123,7 +123,7 @@ OnEnter:
 	end;
 
 OnStop:
-// 	broadcastinmap "toout desliga o cronÙmetro."
+// 	broadcastinmap "toout desliga o cron√¥metro."
 	stopnpctimer;
 	end;
 }
@@ -143,79 +143,79 @@ OnStart:
 	end;
 
 OnTimer2000:
-	mapannounce "forÁa_1-2","Bom dia, meu nome È Slipslowrun! ",bc_all;
+	mapannounce "for√ßa_1-2","Bom dia, meu nome √© Slipslowrun! ",bc_all;
 	//Official "arena_compass" script is extremely buggy, so we aren't using it.
 	//donpcevent "arena_compass::OnStart";
 	end;
 
 OnTimer3000:
-	mapannounce "forÁa_1-2","O objetivo da arena de festa È eliminar todos os monstros de cada sala.",bc_all;
+	mapannounce "for√ßa_1-2","O objetivo da arena de festa √© eliminar todos os monstros de cada sala.",bc_all;
 	end;
 
 OnTimer4000:
-	mapannounce "forÁa_1-2","N„o h· ordem para entrar em uma das 3 salas na 3 direÁ„o. ",bc_all;
+	mapannounce "for√ßa_1-2","N√£o h√° ordem para entrar em uma das 3 salas na 3 dire√ß√£o. ",bc_all;
 	end;
 
 OnTimer5000:
-	mapannounce "forÁa_1-2","VocÍ tem 10 minutos a partir de agora. ",bc_all;
+	mapannounce "for√ßa_1-2","Voc√™ tem 10 minutos a partir de agora. ",bc_all;
 	end;
 
 OnTimer60000:
-	if (getmapusers("forÁa_1-2") == 0)
+	if (getmapusers("for√ßa_1-2") == 0)
 		donpcevent "Slipslowrun#party::OnFail";
-	mapannounce "forÁa_1-2","Tempo restante: 9 minutos",bc_all;
+	mapannounce "for√ßa_1-2","Tempo restante: 9 minutos",bc_all;
 	end;
 
 OnTimer120000:
-	if (getmapusers("forÁa_1-2") == 0)
+	if (getmapusers("for√ßa_1-2") == 0)
 		donpcevent "Slipslowrun#party::OnFail";
-	mapannounce "forÁa_1-2","Tempo restante: 8 minutos",bc_all;
+	mapannounce "for√ßa_1-2","Tempo restante: 8 minutos",bc_all;
 	end;
 
 OnTimer180000:
-	if (getmapusers("forÁa_1-2") == 0)
+	if (getmapusers("for√ßa_1-2") == 0)
 		donpcevent "Slipslowrun#party::OnFail";
-	mapannounce "forÁa_1-2","Tempo restante: 7 minutos",bc_all;
+	mapannounce "for√ßa_1-2","Tempo restante: 7 minutos",bc_all;
 	end;
 
 OnTimer240000:
-	if (getmapusers("forÁa_1-2") == 0)
+	if (getmapusers("for√ßa_1-2") == 0)
 		donpcevent "Slipslowrun#party::OnFail";
-	mapannounce "forÁa_1-2","Tempo restante: 6 minutos",bc_all;
+	mapannounce "for√ßa_1-2","Tempo restante: 6 minutos",bc_all;
 	end;
 
 OnTimer300000:
-	if (getmapusers("forÁa_1-2") == 0)
+	if (getmapusers("for√ßa_1-2") == 0)
 		donpcevent "Slipslowrun#party::OnFail";
-	mapannounce "forÁa_1-2","Tempo restante: 5 minutos",bc_all;
+	mapannounce "for√ßa_1-2","Tempo restante: 5 minutos",bc_all;
 	end;
 
 OnTimer360000:
-	if (getmapusers("forÁa_1-2") == 0)
+	if (getmapusers("for√ßa_1-2") == 0)
 		donpcevent "Slipslowrun#party::OnFail";
-	mapannounce "forÁa_1-2","Tempo restante: 4 minutos",bc_all;
+	mapannounce "for√ßa_1-2","Tempo restante: 4 minutos",bc_all;
 	end;
 
 OnTimer420000:
-	if (getmapusers("forÁa_1-2") == 0)
+	if (getmapusers("for√ßa_1-2") == 0)
 		donpcevent "Slipslowrun#party::OnFail";
-	mapannounce "forÁa_1-2","Tempo restante: 3 minutos",bc_all;
+	mapannounce "for√ßa_1-2","Tempo restante: 3 minutos",bc_all;
 	end;
 
 OnTimer480000:
-	if (getmapusers("forÁa_1-2") == 0)
+	if (getmapusers("for√ßa_1-2") == 0)
 		donpcevent "Slipslowrun#party::OnFail";
-	mapannounce "forÁa_1-2","Tempo restante: 2 minutos",bc_all;
+	mapannounce "for√ßa_1-2","Tempo restante: 2 minutos",bc_all;
 	end;
 
 OnTimer540000:
-	if (getmapusers("forÁa_1-2") == 0)
+	if (getmapusers("for√ßa_1-2") == 0)
 		donpcevent "Slipslowrun#party::OnFail";
-	mapannounce "forÁa_1-2","Tempo restante: 1 minuto",bc_all;
+	mapannounce "for√ßa_1-2","Tempo restante: 1 minuto",bc_all;
 	end;
 
 OnTimer600000:
-	mapannounce "forÁa_1-2","Tempo acabou! ",bc_all;
+	mapannounce "for√ßa_1-2","Tempo acabou! ",bc_all;
 	end;
 
 OnTimer605000:
@@ -252,19 +252,19 @@ OnTimerOff:
 	end;
 
 On01_End:
-	mapannounce "forÁa_1-2","Uma porta para a sala leste se abriu!",bc_all;
+	mapannounce "for√ßa_1-2","Uma porta para a sala leste se abriu!",bc_all;
 	end;
 
 On02_End:
-	mapannounce "forÁa_1-2","Uma porta para a sala oeste se abriu!",bc_all;
+	mapannounce "for√ßa_1-2","Uma porta para a sala oeste se abriu!",bc_all;
 	end;
 
 On03_End:
-	mapannounce "forÁa_1-2","Uma porta para a sala sul se abriu!",bc_all;
+	mapannounce "for√ßa_1-2","Uma porta para a sala sul se abriu!",bc_all;
 	end;
 
 On04_Start:
-	mapannounce "forÁa_1-2","Uma porta para a 4™ sala a leste foi aberta!",bc_all;
+	mapannounce "for√ßa_1-2","Uma porta para a 4¬™ sala a leste foi aberta!",bc_all;
 	end;
 
 On04_End1:
@@ -276,31 +276,31 @@ On04_End2:
 	end;
 
 On05_End1:
-	mapannounce "forÁa_1-2","Uma porta para a sala leste se abriu~",bc_all;
+	mapannounce "for√ßa_1-2","Uma porta para a sala leste se abriu~",bc_all;
 	end;
 
 On05_End2:
-	mapannounce "forÁa_1-2","Uma porta para a sala norte se abriu~",bc_all;
+	mapannounce "for√ßa_1-2","Uma porta para a sala norte se abriu~",bc_all;
 	end;
 
 On06_End:
-	mapannounce "forÁa_1-2","Uma porta para a sala leste se abriu~",bc_all;
+	mapannounce "for√ßa_1-2","Uma porta para a sala leste se abriu~",bc_all;
 	end;
 
 On07_End:
-	mapannounce "forÁa_1-2","Uma porta ao norte se abriu~",bc_all;
+	mapannounce "for√ßa_1-2","Uma porta ao norte se abriu~",bc_all;
 	end;
 
 On08_End:
-	mapannounce "forÁa_1-2","Uma porta para o corredor oeste se abriu~",bc_all;
+	mapannounce "for√ßa_1-2","Uma porta para o corredor oeste se abriu~",bc_all;
 	end;
 
 On09_End:
-	mapannounce "forÁa_1-2","Uma saÌda oeste foi aberta!",bc_all;
+	mapannounce "for√ßa_1-2","Uma sa√≠da oeste foi aberta!",bc_all;
 	end;
 
 On10_End:
-	mapannounce "forÁa_1-2","Est·gio do chefe concluÌdo! ",bc_all;
+	mapannounce "for√ßa_1-2","Est√°gio do chefe conclu√≠do! ",bc_all;
 	end;
 }
 
@@ -421,32 +421,32 @@ OnTouch_:
 
 -	script	force_01mob#party	-1,{
 OnEnable:
-	monster "forÁa_1-2",15,35,"PenÙmenos",1441,1,"force_01mob";
-	monster "forÁa_1-2",35,35,"PenÙmenos",1441,1,"force_01mob";
-	monster "forÁa_1-2",15,15,"PenÙmenos",1441,1,"force_01mob";
-	monster "forÁa_1-2",35,15,"PenÙmenos",1441,1,"force_01mob";
-	monster "forÁa_1-2",15,25,"RelÛgio",1528,1,"force_01mob";
-	monster "forÁa_1-2",17,25,"RelÛgio",1528,1,"force_01mob";
-	monster "forÁa_1-2",19,25,"RelÛgio",1528,1,"force_01mob";
-	monster "forÁa_1-2",21,25,"RelÛgio",1528,1,"force_01mob";
-	monster "forÁa_1-2",15,25,"RelÛgio",1528,1,"force_01mob";
-	monster "forÁa_1-2",17,25,"RelÛgio",1528,1,"force_01mob";
-	monster "forÁa_1-2",19,25,"RelÛgio",1528,1,"force_01mob";
-	monster "forÁa_1-2",21,25,"RelÛgio",1528,1,"force_01mob";
-	monster "forÁa_1-2",15,30,"Alarme",1476,1,"force_01mob";
-	monster "forÁa_1-2",17,22,"Alarme",1476,1,"force_01mob";
-	monster "forÁa_1-2",19,32,"Alarme",1476,1,"force_01mob";
-	monster "forÁa_1-2",21,22,"Alarme",1476,1,"force_01mob";
-	monster "forÁa_1-2",26,33,"Guardi„o da Torre do RelÛgio",1527,1,"force_01mob";
-	monster "forÁa_1-2",26,33,"Guardi„o da Torre do RelÛgio",1527,1,"force_01mob";
-	monster "forÁa_1-2",26,14,"Verme Antigo",1567,1,"force_01mob";
-	monster "forÁa_1-2",30,27,"Verme Antigo",1567,1,"force_01mob";
-	monster "forÁa_1-2",29,25,"Verme Antigo",1567,1,"force_01mob";
-	monster "forÁa_1-2",26,14,"Verme Antigo",1567,1,"force_01mob";
-	monster "forÁa_1-2",33,26,"Õncubo",1580,1,"force_01mob";
-	monster "forÁa_1-2",29,28,"Õncubo",1580,1,"force_01mob";
-	monster "forÁa_1-2",33,20,"Õncubo",1580,1,"force_01mob";
-	monster "forÁa_1-2",33,30,"Õncubo",1580,1,"force_01mob";
+	monster "for√ßa_1-2",15,35,"Pen√¥menos",1441,1,"force_01mob";
+	monster "for√ßa_1-2",35,35,"Pen√¥menos",1441,1,"force_01mob";
+	monster "for√ßa_1-2",15,15,"Pen√¥menos",1441,1,"force_01mob";
+	monster "for√ßa_1-2",35,15,"Pen√¥menos",1441,1,"force_01mob";
+	monster "for√ßa_1-2",15,25,"Rel√≥gio",1528,1,"force_01mob";
+	monster "for√ßa_1-2",17,25,"Rel√≥gio",1528,1,"force_01mob";
+	monster "for√ßa_1-2",19,25,"Rel√≥gio",1528,1,"force_01mob";
+	monster "for√ßa_1-2",21,25,"Rel√≥gio",1528,1,"force_01mob";
+	monster "for√ßa_1-2",15,25,"Rel√≥gio",1528,1,"force_01mob";
+	monster "for√ßa_1-2",17,25,"Rel√≥gio",1528,1,"force_01mob";
+	monster "for√ßa_1-2",19,25,"Rel√≥gio",1528,1,"force_01mob";
+	monster "for√ßa_1-2",21,25,"Rel√≥gio",1528,1,"force_01mob";
+	monster "for√ßa_1-2",15,30,"Alarme",1476,1,"force_01mob";
+	monster "for√ßa_1-2",17,22,"Alarme",1476,1,"force_01mob";
+	monster "for√ßa_1-2",19,32,"Alarme",1476,1,"force_01mob";
+	monster "for√ßa_1-2",21,22,"Alarme",1476,1,"force_01mob";
+	monster "for√ßa_1-2",26,33,"Guardi√£o da Torre do Rel√≥gio",1527,1,"force_01mob";
+	monster "for√ßa_1-2",26,33,"Guardi√£o da Torre do Rel√≥gio",1527,1,"force_01mob";
+	monster "for√ßa_1-2",26,14,"Verme Antigo",1567,1,"force_01mob";
+	monster "for√ßa_1-2",30,27,"Verme Antigo",1567,1,"force_01mob";
+	monster "for√ßa_1-2",29,25,"Verme Antigo",1567,1,"force_01mob";
+	monster "for√ßa_1-2",26,14,"Verme Antigo",1567,1,"force_01mob";
+	monster "for√ßa_1-2",33,26,"√çncubo",1580,1,"force_01mob";
+	monster "for√ßa_1-2",29,28,"√çncubo",1580,1,"force_01mob";
+	monster "for√ßa_1-2",33,20,"√çncubo",1580,1,"force_01mob";
+	monster "for√ßa_1-2",33,30,"√çncubo",1580,1,"force_01mob";
 	end;
 
 OnReset:
@@ -454,7 +454,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_1-2","force_01mob") < 1) {
+	if (mobcount("for√ßa_1-2","force_01mob") < 1) {
 		enablenpc "force_01_00";
 		donpcevent "Slipslowrun#party::On01_End";
 		set $arn_partyc,$arn_partyc +1;
@@ -476,36 +476,36 @@ OnTouch_:
 
 -	script	force_02mob#party	-1,{
 OnEnable:
-	monster "forÁa_1-2",163,36,"PenÙmenos",1441,1,"force_02mob";
-	monster "forÁa_1-2",184,36,"PenÙmenos",1441,1,"force_02mob";
-	monster "forÁa_1-2",184,16,"PenÙmenos",1441,1,"force_02mob";
-	monster "forÁa_1-2",163,16,"PenÙmenos",1441,1,"force_02mob";
-	monster "forÁa_1-2",171,37,"PalhaÁo",1437,1,"force_02mob";
-	monster "forÁa_1-2",177,37,"PalhaÁo",1437,1,"force_02mob";
-	monster "forÁa_1-2",184,29,"PalhaÁo",1437,1,"force_02mob";
-	monster "forÁa_1-2",184,22,"PalhaÁo",1437,1,"force_02mob";
-	monster "forÁa_1-2",177,16,"PalhaÁo",1437,1,"force_02mob";
-	monster "forÁa_1-2",170,16,"PalhaÁo",1437,1,"force_02mob";
-	monster "forÁa_1-2",169,28,"BatÛrio",1525,1,"force_02mob";
-	monster "forÁa_1-2",171,28,"BatÛrio",1525,1,"force_02mob";
-	monster "forÁa_1-2",173,28,"BatÛrio",1525,1,"force_02mob";
-	monster "forÁa_1-2",175,28,"BatÛrio",1525,1,"force_02mob";
-	monster "forÁa_1-2",177,28,"BatÛrio",1525,1,"force_02mob";
-	monster "forÁa_1-2",177,23,"BatÛrio",1525,1,"force_02mob";
-	monster "forÁa_1-2",175,23,"BatÛrio",1525,1,"force_02mob";
-	monster "forÁa_1-2",173,23,"BatÛrio",1525,1,"force_02mob";
-	monster "forÁa_1-2",171,23,"BatÛrio",1525,1,"force_02mob";
-	monster "forÁa_1-2",169,23,"BatÛrio",1525,1,"force_02mob";
-	monster "forÁa_1-2",187,30,"Arclouse",1477,1,"force_02mob";
-	monster "forÁa_1-2",187,30,"Arclouse",1477,1,"force_02mob";
-	monster "forÁa_1-2",187,30,"Arclouse",1477,1,"force_02mob";
-	monster "forÁa_1-2",187,22,"Arclouse",1477,1,"force_02mob";
-	monster "forÁa_1-2",187,22,"Arclouse",1477,1,"force_02mob";
-	monster "forÁa_1-2",187,22,"Arclouse",1477,1,"force_02mob";
-	monster "forÁa_1-2",173,40,"Arclouse",1477,1,"force_02mob";
-	monster "forÁa_1-2",173,40,"Arclouse",1477,1,"force_02mob";
-	monster "forÁa_1-2",181,25,"Arclouse",1477,1,"force_02mob";
-	monster "forÁa_1-2",181,25,"Arclouse",1477,1,"force_02mob";
+	monster "for√ßa_1-2",163,36,"Pen√¥menos",1441,1,"force_02mob";
+	monster "for√ßa_1-2",184,36,"Pen√¥menos",1441,1,"force_02mob";
+	monster "for√ßa_1-2",184,16,"Pen√¥menos",1441,1,"force_02mob";
+	monster "for√ßa_1-2",163,16,"Pen√¥menos",1441,1,"force_02mob";
+	monster "for√ßa_1-2",171,37,"Palha√ßo",1437,1,"force_02mob";
+	monster "for√ßa_1-2",177,37,"Palha√ßo",1437,1,"force_02mob";
+	monster "for√ßa_1-2",184,29,"Palha√ßo",1437,1,"force_02mob";
+	monster "for√ßa_1-2",184,22,"Palha√ßo",1437,1,"force_02mob";
+	monster "for√ßa_1-2",177,16,"Palha√ßo",1437,1,"force_02mob";
+	monster "for√ßa_1-2",170,16,"Palha√ßo",1437,1,"force_02mob";
+	monster "for√ßa_1-2",169,28,"Bat√≥rio",1525,1,"force_02mob";
+	monster "for√ßa_1-2",171,28,"Bat√≥rio",1525,1,"force_02mob";
+	monster "for√ßa_1-2",173,28,"Bat√≥rio",1525,1,"force_02mob";
+	monster "for√ßa_1-2",175,28,"Bat√≥rio",1525,1,"force_02mob";
+	monster "for√ßa_1-2",177,28,"Bat√≥rio",1525,1,"force_02mob";
+	monster "for√ßa_1-2",177,23,"Bat√≥rio",1525,1,"force_02mob";
+	monster "for√ßa_1-2",175,23,"Bat√≥rio",1525,1,"force_02mob";
+	monster "for√ßa_1-2",173,23,"Bat√≥rio",1525,1,"force_02mob";
+	monster "for√ßa_1-2",171,23,"Bat√≥rio",1525,1,"force_02mob";
+	monster "for√ßa_1-2",169,23,"Bat√≥rio",1525,1,"force_02mob";
+	monster "for√ßa_1-2",187,30,"Arclouse",1477,1,"force_02mob";
+	monster "for√ßa_1-2",187,30,"Arclouse",1477,1,"force_02mob";
+	monster "for√ßa_1-2",187,30,"Arclouse",1477,1,"force_02mob";
+	monster "for√ßa_1-2",187,22,"Arclouse",1477,1,"force_02mob";
+	monster "for√ßa_1-2",187,22,"Arclouse",1477,1,"force_02mob";
+	monster "for√ßa_1-2",187,22,"Arclouse",1477,1,"force_02mob";
+	monster "for√ßa_1-2",173,40,"Arclouse",1477,1,"force_02mob";
+	monster "for√ßa_1-2",173,40,"Arclouse",1477,1,"force_02mob";
+	monster "for√ßa_1-2",181,25,"Arclouse",1477,1,"force_02mob";
+	monster "for√ßa_1-2",181,25,"Arclouse",1477,1,"force_02mob";
 	end;
 
 OnReset:
@@ -513,7 +513,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_1-2","force_02mob") < 1) {
+	if (mobcount("for√ßa_1-2","force_02mob") < 1) {
 		enablenpc "force_02_00";
 		donpcevent "Slipslowrun#party::On02_End";
 		set $arn_partyc,$arn_partyc +1;
@@ -535,32 +535,32 @@ OnTouch_:
 
 -	script	force_03mob#party	-1,{
 OnEnable:
-	monster "forÁa_1-2",89,81,"Trit„o",1451,1,"force_03mob";
-	monster "forÁa_1-2",90,81,"Trit„o",1451,1,"force_03mob";
-	monster "forÁa_1-2",91,81,"Trit„o",1451,1,"force_03mob";
-	monster "forÁa_1-2",92,81,"Trit„o",1451,1,"force_03mob";
-	monster "forÁa_1-2",93,81,"Trit„o",1451,1,"force_03mob";
-	monster "forÁa_1-2",96,85,"Vento Fantasma",1450,1,"force_03mob";
-	monster "forÁa_1-2",98,85,"Vento Fantasma",1450,1,"force_03mob";
-	monster "forÁa_1-2",100,85,"Vento Fantasma",1450,1,"force_03mob";
-	monster "forÁa_1-2",102,85,"Vento Fantasma",1450,1,"force_03mob";
-	monster "forÁa_1-2",104,85,"Vento Fantasma",1450,1,"force_03mob";
-	monster "forÁa_1-2",88,79,"Deviruchi",1433,1,"force_03mob";
-	monster "forÁa_1-2",90,79,"Deviruchi",1433,1,"force_03mob";
-	monster "forÁa_1-2",92,79,"Deviruchi",1433,1,"force_03mob";
-	monster "forÁa_1-2",94,79,"Deviruchi",1433,1,"force_03mob";
-	monster "forÁa_1-2",96,79,"Deviruchi",1433,1,"force_03mob";
-	monster "forÁa_1-2",98,79,"Deviruchi",1433,1,"force_03mob";
-	monster "forÁa_1-2",100,79,"Deviruchi",1433,1,"force_03mob";
-	monster "forÁa_1-2",102,79,"Deviruchi",1433,1,"force_03mob";
-	monster "forÁa_1-2",104,79,"Deviruchi",1433,1,"force_03mob";
-	monster "forÁa_1-2",106,79,"Deviruchi",1433,1,"force_03mob";
-	monster "forÁa_1-2",108,79,"Deviruchi",1433,1,"force_03mob";
-	monster "forÁa_1-2",110,79,"Deviruchi",1433,1,"force_03mob";
-	monster "forÁa_1-2",91,86,"Andarilho",1490,1,"force_03mob";
-	monster "forÁa_1-2",108,86,"Andarilho",1490,1,"force_03mob";
-	monster "forÁa_1-2",91,69,"Andarilho",1490,1,"force_03mob";
-	monster "forÁa_1-2",108,69,"Andarilho",1490,1,"force_03mob";
+	monster "for√ßa_1-2",89,81,"Trit√£o",1451,1,"force_03mob";
+	monster "for√ßa_1-2",90,81,"Trit√£o",1451,1,"force_03mob";
+	monster "for√ßa_1-2",91,81,"Trit√£o",1451,1,"force_03mob";
+	monster "for√ßa_1-2",92,81,"Trit√£o",1451,1,"force_03mob";
+	monster "for√ßa_1-2",93,81,"Trit√£o",1451,1,"force_03mob";
+	monster "for√ßa_1-2",96,85,"Vento Fantasma",1450,1,"force_03mob";
+	monster "for√ßa_1-2",98,85,"Vento Fantasma",1450,1,"force_03mob";
+	monster "for√ßa_1-2",100,85,"Vento Fantasma",1450,1,"force_03mob";
+	monster "for√ßa_1-2",102,85,"Vento Fantasma",1450,1,"force_03mob";
+	monster "for√ßa_1-2",104,85,"Vento Fantasma",1450,1,"force_03mob";
+	monster "for√ßa_1-2",88,79,"Deviruchi",1433,1,"force_03mob";
+	monster "for√ßa_1-2",90,79,"Deviruchi",1433,1,"force_03mob";
+	monster "for√ßa_1-2",92,79,"Deviruchi",1433,1,"force_03mob";
+	monster "for√ßa_1-2",94,79,"Deviruchi",1433,1,"force_03mob";
+	monster "for√ßa_1-2",96,79,"Deviruchi",1433,1,"force_03mob";
+	monster "for√ßa_1-2",98,79,"Deviruchi",1433,1,"force_03mob";
+	monster "for√ßa_1-2",100,79,"Deviruchi",1433,1,"force_03mob";
+	monster "for√ßa_1-2",102,79,"Deviruchi",1433,1,"force_03mob";
+	monster "for√ßa_1-2",104,79,"Deviruchi",1433,1,"force_03mob";
+	monster "for√ßa_1-2",106,79,"Deviruchi",1433,1,"force_03mob";
+	monster "for√ßa_1-2",108,79,"Deviruchi",1433,1,"force_03mob";
+	monster "for√ßa_1-2",110,79,"Deviruchi",1433,1,"force_03mob";
+	monster "for√ßa_1-2",91,86,"Andarilho",1490,1,"force_03mob";
+	monster "for√ßa_1-2",108,86,"Andarilho",1490,1,"force_03mob";
+	monster "for√ßa_1-2",91,69,"Andarilho",1490,1,"force_03mob";
+	monster "for√ßa_1-2",108,69,"Andarilho",1490,1,"force_03mob";
 	end;
 
 OnReset:
@@ -568,7 +568,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_1-2","force_03mob") < 1) {
+	if (mobcount("for√ßa_1-2","force_03mob") < 1) {
 		enablenpc "force_03_00";
 		donpcevent "Slipslowrun#party::On03_End";
 		set $arn_partyc,$arn_partyc +1;
@@ -590,28 +590,28 @@ OnTouch_:
 
 -	script	force_04mob#party	-1,{
 OnEnable:
-	monster "forÁa_1-2",174,78,"PenÙmenos",1441,1,"force_04mob";
-	monster "forÁa_1-2",184,78,"PenÙmenos",1441,1,"force_04mob";
-	monster "forÁa_1-2",184,68,"PenÙmenos",1441,1,"force_04mob";
-	monster "forÁa_1-2",174,68,"PenÙmenos",1441,1,"force_04mob";
-	monster "forÁa_1-2",169,87,"Palavra de passeio",1478,1,"force_04mob";
-	monster "forÁa_1-2",170,87,"Palavra de passeio",1478,1,"force_04mob";
-	monster "forÁa_1-2",171,87,"Palavra de passeio",1478,1,"force_04mob";
-	monster "forÁa_1-2",172,87,"Palavra de passeio",1478,1,"force_04mob";
-	monster "forÁa_1-2",169,77,"Palavra de passeio",1478,1,"force_04mob";
-	monster "forÁa_1-2",170,77,"Palavra de passeio",1478,1,"force_04mob";
-	monster "forÁa_1-2",171,77,"Palavra de passeio",1478,1,"force_04mob";
-	monster "forÁa_1-2",172,77,"Palavra de passeio",1478,1,"force_04mob";
-	monster "forÁa_1-2",183,83,"Espectro Morto",1566,1,"force_04mob";
-	monster "forÁa_1-2",183,80,"Espectro Morto",1566,1,"force_04mob";
-	monster "forÁa_1-2",183,73,"Espectro Morto",1566,1,"force_04mob";
-	monster "forÁa_1-2",183,70,"Espectro Morto",1566,1,"force_04mob";
-	monster "forÁa_1-2",179,77,"Espectro Morto",1566,1,"force_04mob";
-	monster "forÁa_1-2",169,72,"Assaltante",1364,1,"force_04mob";
-	monster "forÁa_1-2",171,72,"Assaltante",1364,1,"force_04mob";
-	monster "forÁa_1-2",173,72,"Assaltante",1364,1,"force_04mob";
-	monster "forÁa_1-2",175,72,"Assaltante",1364,1,"force_04mob";
-	monster "forÁa_1-2",177,72,"Assaltante",1364,1,"force_04mob";
+	monster "for√ßa_1-2",174,78,"Pen√¥menos",1441,1,"force_04mob";
+	monster "for√ßa_1-2",184,78,"Pen√¥menos",1441,1,"force_04mob";
+	monster "for√ßa_1-2",184,68,"Pen√¥menos",1441,1,"force_04mob";
+	monster "for√ßa_1-2",174,68,"Pen√¥menos",1441,1,"force_04mob";
+	monster "for√ßa_1-2",169,87,"Palavra de passeio",1478,1,"force_04mob";
+	monster "for√ßa_1-2",170,87,"Palavra de passeio",1478,1,"force_04mob";
+	monster "for√ßa_1-2",171,87,"Palavra de passeio",1478,1,"force_04mob";
+	monster "for√ßa_1-2",172,87,"Palavra de passeio",1478,1,"force_04mob";
+	monster "for√ßa_1-2",169,77,"Palavra de passeio",1478,1,"force_04mob";
+	monster "for√ßa_1-2",170,77,"Palavra de passeio",1478,1,"force_04mob";
+	monster "for√ßa_1-2",171,77,"Palavra de passeio",1478,1,"force_04mob";
+	monster "for√ßa_1-2",172,77,"Palavra de passeio",1478,1,"force_04mob";
+	monster "for√ßa_1-2",183,83,"Espectro Morto",1566,1,"force_04mob";
+	monster "for√ßa_1-2",183,80,"Espectro Morto",1566,1,"force_04mob";
+	monster "for√ßa_1-2",183,73,"Espectro Morto",1566,1,"force_04mob";
+	monster "for√ßa_1-2",183,70,"Espectro Morto",1566,1,"force_04mob";
+	monster "for√ßa_1-2",179,77,"Espectro Morto",1566,1,"force_04mob";
+	monster "for√ßa_1-2",169,72,"Assaltante",1364,1,"force_04mob";
+	monster "for√ßa_1-2",171,72,"Assaltante",1364,1,"force_04mob";
+	monster "for√ßa_1-2",173,72,"Assaltante",1364,1,"force_04mob";
+	monster "for√ßa_1-2",175,72,"Assaltante",1364,1,"force_04mob";
+	monster "for√ßa_1-2",177,72,"Assaltante",1364,1,"force_04mob";
 	end;
 
 OnReset:
@@ -619,7 +619,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_1-2","force_04mob") < 1) {
+	if (mobcount("for√ßa_1-2","force_04mob") < 1) {
 		enablenpc "force_04_03";
 		enablenpc "force_03_05";
 		enablenpc "force_05start#party";
@@ -637,30 +637,30 @@ OnTouch_:
 
 -	script	force_05mob#party	-1,{
 OnEnable:
-	monster "forÁa_1-2",25,68,"PenÙmenos",1441,1,"force_05mob";
-	monster "forÁa_1-2",36,68,"PenÙmenos",1441,1,"force_05mob";
-	monster "forÁa_1-2",16,88,"PenÙmenos",1441,1,"force_05mob";
-	monster "forÁa_1-2",15,78,"PenÙmenos",1441,1,"force_05mob";
-	monster "forÁa_1-2",33,88,"Picada",1489,1,"force_05mob";
-	monster "forÁa_1-2",29,87,"Picada",1489,1,"force_05mob";
-	monster "forÁa_1-2",25,81,"Picada",1489,1,"force_05mob";
-	monster "forÁa_1-2",25,78,"Picada",1489,1,"force_05mob";
-	monster "forÁa_1-2",25,72,"Picada",1489,1,"force_05mob";
-	monster "forÁa_1-2",29,70,"Picada",1489,1,"force_05mob";
-	monster "forÁa_1-2",21,70,"Picada",1489,1,"force_05mob";
-	monster "forÁa_1-2",19,76,"Picada",1489,1,"force_05mob";
-	monster "forÁa_1-2",19,83,"Picada",1489,1,"force_05mob";
-	monster "forÁa_1-2",23,89,"Picada",1489,1,"force_05mob";
-	monster "forÁa_1-2",22,85,"C„ibra",1570,1,"force_05mob";
-	monster "forÁa_1-2",23,85,"C„ibra",1570,1,"force_05mob";
-	monster "forÁa_1-2",24,85,"C„ibra",1570,1,"force_05mob";
-	monster "forÁa_1-2",23,86,"C„ibra",1570,1,"force_05mob";
-	monster "forÁa_1-2",22,86,"C„ibra",1570,1,"force_05mob";
-	monster "forÁa_1-2",22,71,"C„ibra",1570,1,"force_05mob";
-	monster "forÁa_1-2",22,72,"C„ibra",1570,1,"force_05mob";
-	monster "forÁa_1-2",23,71,"C„ibra",1570,1,"force_05mob";
-	monster "forÁa_1-2",23,72,"C„ibra",1570,1,"force_05mob";
-	monster "forÁa_1-2",24,71,"C„ibra",1570,1,"force_05mob";
+	monster "for√ßa_1-2",25,68,"Pen√¥menos",1441,1,"force_05mob";
+	monster "for√ßa_1-2",36,68,"Pen√¥menos",1441,1,"force_05mob";
+	monster "for√ßa_1-2",16,88,"Pen√¥menos",1441,1,"force_05mob";
+	monster "for√ßa_1-2",15,78,"Pen√¥menos",1441,1,"force_05mob";
+	monster "for√ßa_1-2",33,88,"Picada",1489,1,"force_05mob";
+	monster "for√ßa_1-2",29,87,"Picada",1489,1,"force_05mob";
+	monster "for√ßa_1-2",25,81,"Picada",1489,1,"force_05mob";
+	monster "for√ßa_1-2",25,78,"Picada",1489,1,"force_05mob";
+	monster "for√ßa_1-2",25,72,"Picada",1489,1,"force_05mob";
+	monster "for√ßa_1-2",29,70,"Picada",1489,1,"force_05mob";
+	monster "for√ßa_1-2",21,70,"Picada",1489,1,"force_05mob";
+	monster "for√ßa_1-2",19,76,"Picada",1489,1,"force_05mob";
+	monster "for√ßa_1-2",19,83,"Picada",1489,1,"force_05mob";
+	monster "for√ßa_1-2",23,89,"Picada",1489,1,"force_05mob";
+	monster "for√ßa_1-2",22,85,"C√£ibra",1570,1,"force_05mob";
+	monster "for√ßa_1-2",23,85,"C√£ibra",1570,1,"force_05mob";
+	monster "for√ßa_1-2",24,85,"C√£ibra",1570,1,"force_05mob";
+	monster "for√ßa_1-2",23,86,"C√£ibra",1570,1,"force_05mob";
+	monster "for√ßa_1-2",22,86,"C√£ibra",1570,1,"force_05mob";
+	monster "for√ßa_1-2",22,71,"C√£ibra",1570,1,"force_05mob";
+	monster "for√ßa_1-2",22,72,"C√£ibra",1570,1,"force_05mob";
+	monster "for√ßa_1-2",23,71,"C√£ibra",1570,1,"force_05mob";
+	monster "for√ßa_1-2",23,72,"C√£ibra",1570,1,"force_05mob";
+	monster "for√ßa_1-2",24,71,"C√£ibra",1570,1,"force_05mob";
 	end;
 
 OnReset:
@@ -668,7 +668,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_1-2","force_05mob") < 1) {
+	if (mobcount("for√ßa_1-2","force_05mob") < 1) {
 		donpcevent "arena_p::On06_Start";
 		donpcevent "Slipslowrun#party::On05_End2";
 	}
@@ -684,28 +684,28 @@ OnTouch_:
 
 -	script	force_06mob#party	-1,{
 OnEnable:
-	monster "forÁa_1-2",19,135,"Eremita das Nuvens",1531,1,"force_06mob";
-	monster "forÁa_1-2",24,135,"Eremita das Nuvens",1531,1,"force_06mob";
-	monster "forÁa_1-2",28,135,"Eremita das Nuvens",1531,1,"force_06mob";
-	monster "forÁa_1-2",32,135,"Eremita das Nuvens",1531,1,"force_06mob";
-	monster "forÁa_1-2",24,127,"Shinobi",1560,1,"force_06mob";
-	monster "forÁa_1-2",27,127,"Shinobi",1560,1,"force_06mob";
-	monster "forÁa_1-2",24,128,"Shinobi",1560,1,"force_06mob";
-	monster "forÁa_1-2",27,128,"Shinobi",1560,1,"force_06mob";
-	monster "forÁa_1-2",24,129,"Shinobi",1560,1,"force_06mob";
-	monster "forÁa_1-2",27,129,"Shinobi",1560,1,"force_06mob";
-	monster "forÁa_1-2",16,140,"tengu",1563,1,"force_06mob";
-	monster "forÁa_1-2",16,136,"tengu",1563,1,"force_06mob";
-	monster "forÁa_1-2",16,132,"tengu",1563,1,"force_06mob";
-	monster "forÁa_1-2",16,128,"tengu",1563,1,"force_06mob";
-	monster "forÁa_1-2",16,124,"tengu",1563,1,"force_06mob";
-	monster "forÁa_1-2",16,120,"tengu",1563,1,"force_06mob";
-	monster "forÁa_1-2",16,140,"Ninfa Malvada",1564,1,"force_06mob";
-	monster "forÁa_1-2",16,136,"Ninfa Malvada",1564,1,"force_06mob";
-	monster "forÁa_1-2",16,132,"Ninfa Malvada",1564,1,"force_06mob";
-	monster "forÁa_1-2",16,128,"Ninfa Malvada",1564,1,"force_06mob";
-	monster "forÁa_1-2",16,124,"Ninfa Malvada",1564,1,"force_06mob";
-	monster "forÁa_1-2",16,120,"Ninfa Malvada",1564,1,"force_06mob";
+	monster "for√ßa_1-2",19,135,"Eremita das Nuvens",1531,1,"force_06mob";
+	monster "for√ßa_1-2",24,135,"Eremita das Nuvens",1531,1,"force_06mob";
+	monster "for√ßa_1-2",28,135,"Eremita das Nuvens",1531,1,"force_06mob";
+	monster "for√ßa_1-2",32,135,"Eremita das Nuvens",1531,1,"force_06mob";
+	monster "for√ßa_1-2",24,127,"Shinobi",1560,1,"force_06mob";
+	monster "for√ßa_1-2",27,127,"Shinobi",1560,1,"force_06mob";
+	monster "for√ßa_1-2",24,128,"Shinobi",1560,1,"force_06mob";
+	monster "for√ßa_1-2",27,128,"Shinobi",1560,1,"force_06mob";
+	monster "for√ßa_1-2",24,129,"Shinobi",1560,1,"force_06mob";
+	monster "for√ßa_1-2",27,129,"Shinobi",1560,1,"force_06mob";
+	monster "for√ßa_1-2",16,140,"tengu",1563,1,"force_06mob";
+	monster "for√ßa_1-2",16,136,"tengu",1563,1,"force_06mob";
+	monster "for√ßa_1-2",16,132,"tengu",1563,1,"force_06mob";
+	monster "for√ßa_1-2",16,128,"tengu",1563,1,"force_06mob";
+	monster "for√ßa_1-2",16,124,"tengu",1563,1,"force_06mob";
+	monster "for√ßa_1-2",16,120,"tengu",1563,1,"force_06mob";
+	monster "for√ßa_1-2",16,140,"Ninfa Malvada",1564,1,"force_06mob";
+	monster "for√ßa_1-2",16,136,"Ninfa Malvada",1564,1,"force_06mob";
+	monster "for√ßa_1-2",16,132,"Ninfa Malvada",1564,1,"force_06mob";
+	monster "for√ßa_1-2",16,128,"Ninfa Malvada",1564,1,"force_06mob";
+	monster "for√ßa_1-2",16,124,"Ninfa Malvada",1564,1,"force_06mob";
+	monster "for√ßa_1-2",16,120,"Ninfa Malvada",1564,1,"force_06mob";
 	end;
 
 OnReset:
@@ -713,7 +713,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_1-2","force_06mob") < 1) {
+	if (mobcount("for√ßa_1-2","force_06mob") < 1) {
 		donpcevent "arena_p::On07_Start";
 		donpcevent "Slipslowrun#party::On06_End";
 		set $arn_partyc,$arn_partyc +1;
@@ -730,18 +730,18 @@ OnTouch_:
 
 -	script	force_07mob#party	-1,{
 OnEnable:
-	monster "forÁa_1-2",104,134,"Maior General",1541,1,"force_07mob";
-	monster "forÁa_1-2",104,136,"Maior General",1541,1,"force_07mob";
-	monster "forÁa_1-2",104,137,"Maior General",1541,1,"force_07mob";
-	monster "forÁa_1-2",104,139,"Maior General",1541,1,"force_07mob";
-	monster "forÁa_1-2",111,134,"Maior General",1541,1,"force_07mob";
-	monster "forÁa_1-2",111,136,"Maior General",1541,1,"force_07mob";
-	monster "forÁa_1-2",111,137,"Maior General",1541,1,"force_07mob";
-	monster "forÁa_1-2",111,139,"Maior General",1541,1,"force_07mob";
-	monster "forÁa_1-2",98,122,"Khalitzburgo",1438,1,"force_07mob";
-	monster "forÁa_1-2",90,119,"Khalitzburgo",1438,1,"force_07mob";
-	monster "forÁa_1-2",98,122,"Carrasco",1487,1,"force_07mob";
-	monster "forÁa_1-2",108,140,"Quimera",1456,1,"force_07mob";
+	monster "for√ßa_1-2",104,134,"Maior General",1541,1,"force_07mob";
+	monster "for√ßa_1-2",104,136,"Maior General",1541,1,"force_07mob";
+	monster "for√ßa_1-2",104,137,"Maior General",1541,1,"force_07mob";
+	monster "for√ßa_1-2",104,139,"Maior General",1541,1,"force_07mob";
+	monster "for√ßa_1-2",111,134,"Maior General",1541,1,"force_07mob";
+	monster "for√ßa_1-2",111,136,"Maior General",1541,1,"force_07mob";
+	monster "for√ßa_1-2",111,137,"Maior General",1541,1,"force_07mob";
+	monster "for√ßa_1-2",111,139,"Maior General",1541,1,"force_07mob";
+	monster "for√ßa_1-2",98,122,"Khalitzburgo",1438,1,"force_07mob";
+	monster "for√ßa_1-2",90,119,"Khalitzburgo",1438,1,"force_07mob";
+	monster "for√ßa_1-2",98,122,"Carrasco",1487,1,"force_07mob";
+	monster "for√ßa_1-2",108,140,"Quimera",1456,1,"force_07mob";
 	end;
 
 OnReset:
@@ -749,7 +749,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_1-2","force_07mob") < 1) {
+	if (mobcount("for√ßa_1-2","force_07mob") < 1) {
 		donpcevent "arena_p::On08_Start";
 		donpcevent "Slipslowrun#party::On07_End";
 		set $arn_partyc,$arn_partyc +1;
@@ -766,24 +766,24 @@ OnTouch_:
 
 -	script	force_08mob#party	-1,{
 OnEnable:
-	monster "forÁa_1-2",172,154,"Khalitzburgo",1438,1,"force_08mob";
-	monster "forÁa_1-2",174,145,"Anel Fantasma",1576,1,"force_08mob";
-	monster "forÁa_1-2",174,145,"Quimera",1456,1,"force_08mob";
+	monster "for√ßa_1-2",172,154,"Khalitzburgo",1438,1,"force_08mob";
+	monster "for√ßa_1-2",174,145,"Anel Fantasma",1576,1,"force_08mob";
+	monster "for√ßa_1-2",174,145,"Quimera",1456,1,"force_08mob";
 	for(set .@i,0; .@i<5; set .@i,.@i+1) {
-		monster "forÁa_1-2",rand(162,184),rand(122,185),"InjustiÁa",1446,1,"force_08mob";
+		monster "for√ßa_1-2",rand(162,184),rand(122,185),"Injusti√ßa",1446,1,"force_08mob";
 	}
-	monster "forÁa_1-2",rand(162,184),rand(122,185),"Arqueiro Raydric",1453,1,"force_08mob";
+	monster "for√ßa_1-2",rand(162,184),rand(122,185),"Arqueiro Raydric",1453,1,"force_08mob";
 	for(set .@i,0; .@i<5; set .@i,.@i+1) {
-		monster "forÁa_1-2",rand(162,184),rand(122,185),"Pesadelo Terror",1554,1,"force_08mob";
+		monster "for√ßa_1-2",rand(162,184),rand(122,185),"Pesadelo Terror",1554,1,"force_08mob";
 	}
 	for(set .@i,0; .@i<6; set .@i,.@i+1) {
-		monster "forÁa_1-2",rand(162,184),rand(122,185),"M˙mia Antiga",1522,1,"force_08mob";
+		monster "for√ßa_1-2",rand(162,184),rand(122,185),"M√∫mia Antiga",1522,1,"force_08mob";
 	}
 	for(set .@i,0; .@i<10; set .@i,.@i+1) {
-		monster "forÁa_1-2",rand(162,184),rand(122,185),"Prisioneiro Skel",1479,1,"force_08mob";
+		monster "for√ßa_1-2",rand(162,184),rand(122,185),"Prisioneiro Skel",1479,1,"force_08mob";
 	}
 	for(set .@i,0; .@i<5; set .@i,.@i+1) {
-		monster "forÁa_1-2",rand(162,184),rand(122,185),"CaÁador Mosca",1422,1,"force_08mob";
+		monster "for√ßa_1-2",rand(162,184),rand(122,185),"Ca√ßador Mosca",1422,1,"force_08mob";
 	}
 	end;
 
@@ -792,7 +792,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_1-2","force_08mob") < 1) {
+	if (mobcount("for√ßa_1-2","force_08mob") < 1) {
 		donpcevent "arena_p::On09_Start";
 		donpcevent "Slipslowrun#party::On08_End";
 		set $arn_partyc,$arn_partyc +1;
@@ -809,21 +809,21 @@ OnTouch_:
 
 -	script	force_09mob#party	-1,{
 OnEnable:
-	monster "forÁa_1-2",86,180,"Mais velho",1573,1,"force_09mob";
-	monster "forÁa_1-2",86,176,"Mais velho",1573,1,"force_09mob";
-	monster "forÁa_1-2",95,183,"Mais velho",1573,1,"force_09mob";
-	monster "forÁa_1-2",94,175,"Mais velho",1573,1,"force_09mob";
-	monster "forÁa_1-2",76,178,"Mais velho",1573,1,"force_09mob";
-	monster "forÁa_1-2",84,179,"Explos„o",1532,1,"force_09mob";
-	monster "forÁa_1-2",74,181,"Explos„o",1532,1,"force_09mob";
-	monster "forÁa_1-2",73,176,"Explos„o",1532,1,"force_09mob";
-	monster "forÁa_1-2",62,178,"Explos„o",1532,1,"force_09mob";
-	monster "forÁa_1-2",68,177,"Explos„o",1532,1,"force_09mob";
-	monster "forÁa_1-2",122,177,"Golem de Lava",1549,1,"force_09mob";
-	monster "forÁa_1-2",112,179,"Golem de Lava",1549,1,"force_09mob";
-	monster "forÁa_1-2",122,178,"Anoliano",1488,1,"force_09mob";
-	monster "forÁa_1-2",121,177,"Anoliano",1488,1,"force_09mob";
-	monster "forÁa_1-2",122,177,"Anoliano",1488,1,"force_09mob";
+	monster "for√ßa_1-2",86,180,"Mais velho",1573,1,"force_09mob";
+	monster "for√ßa_1-2",86,176,"Mais velho",1573,1,"force_09mob";
+	monster "for√ßa_1-2",95,183,"Mais velho",1573,1,"force_09mob";
+	monster "for√ßa_1-2",94,175,"Mais velho",1573,1,"force_09mob";
+	monster "for√ßa_1-2",76,178,"Mais velho",1573,1,"force_09mob";
+	monster "for√ßa_1-2",84,179,"Explos√£o",1532,1,"force_09mob";
+	monster "for√ßa_1-2",74,181,"Explos√£o",1532,1,"force_09mob";
+	monster "for√ßa_1-2",73,176,"Explos√£o",1532,1,"force_09mob";
+	monster "for√ßa_1-2",62,178,"Explos√£o",1532,1,"force_09mob";
+	monster "for√ßa_1-2",68,177,"Explos√£o",1532,1,"force_09mob";
+	monster "for√ßa_1-2",122,177,"Golem de Lava",1549,1,"force_09mob";
+	monster "for√ßa_1-2",112,179,"Golem de Lava",1549,1,"force_09mob";
+	monster "for√ßa_1-2",122,178,"Anoliano",1488,1,"force_09mob";
+	monster "for√ßa_1-2",121,177,"Anoliano",1488,1,"force_09mob";
+	monster "for√ßa_1-2",122,177,"Anoliano",1488,1,"force_09mob";
 	set $force_09_pt,15;
 	end;
 
@@ -832,7 +832,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_1-2","force_09mob") < 1) {
+	if (mobcount("for√ßa_1-2","force_09mob") < 1) {
 		donpcevent "arena_p::On10_Start";
 		donpcevent "Slipslowrun#party::On09_End";
 		set $arn_partyc,$arn_partyc +1;
@@ -851,10 +851,10 @@ OnTouch_:
 OnEnable:
 	switch(rand(1,2)) {
 	case 1:
-		monster "forÁa_1-2",16,179,"Senhor Serpente Maligno",1529,1,"force_10mob-1";
+		monster "for√ßa_1-2",16,179,"Senhor Serpente Maligno",1529,1,"force_10mob-1";
 		break;
 	case 2:
-		monster "forÁa_1-2",24,179,"Dr·cula",1530,1,"force_10mob-1";
+		monster "for√ßa_1-2",24,179,"Dr√°cula",1530,1,"force_10mob-1";
 		break;
 	}
 	end;
@@ -864,19 +864,19 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_1-2","force_10mob-1") < 1)
+	if (mobcount("for√ßa_1-2","force_10mob-1") < 1)
 		donpcevent "force_10mob-2#party::OnEnable";
 	end;
 }
 
 -	script	force_10mob-2#party	-1,{
 OnEnable:
-	monster "forÁa_1-2",16,179,"Espector Samurai",1542,1,"force_10mob-2";
-	monster "forÁa_1-2",16,179,"Shinobi",1560,1,"force_10mob-2";
-	monster "forÁa_1-2",16,179,"Shinobi",1560,1,"force_10mob-2";
-	monster "forÁa_1-2",16,179,"Shinobi",1560,1,"force_10mob-2";
-	monster "forÁa_1-2",16,179,"Shinobi",1560,1,"force_10mob-2";
-	monster "forÁa_1-2",16,179,"Shinobi",1560,1,"force_10mob-2";
+	monster "for√ßa_1-2",16,179,"Espector Samurai",1542,1,"force_10mob-2";
+	monster "for√ßa_1-2",16,179,"Shinobi",1560,1,"force_10mob-2";
+	monster "for√ßa_1-2",16,179,"Shinobi",1560,1,"force_10mob-2";
+	monster "for√ßa_1-2",16,179,"Shinobi",1560,1,"force_10mob-2";
+	monster "for√ßa_1-2",16,179,"Shinobi",1560,1,"force_10mob-2";
+	monster "for√ßa_1-2",16,179,"Shinobi",1560,1,"force_10mob-2";
 	end;
 
 OnReset:
@@ -884,7 +884,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_1-2","force_10mob-2") < 1) {
+	if (mobcount("for√ßa_1-2","force_10mob-2") < 1) {
 		donpcevent "arena_p::OnExit";
 		donpcevent "Slipslowrun#party::On10_End";
 		set $arn_partyc,0;
@@ -901,35 +901,35 @@ OnTouch_:
 
 -	script	force_exitmob#party	-1,{
 OnEnable:
-	monster "forÁa_1-2",95,177,"AtÈ a prÛxima",1393,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"te odeio",1543,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"eu gosto de chocolate",1472,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"VocÍ gosta, nÈ?",1472,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Desculpe",1420,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Tristram II",1562,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"estou com fome",1468,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Tchau",1419,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Tomar cuidado",1394,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Corpo sexy",1578,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Press„o",1471,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"V· com calma",1491,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"VocÍ vai me machucar?",1555,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Comerciante",1428,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Sra.",1472,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Artes marciais",1472,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Meio perÌodo",1420,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Chefe",1562,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Caixa Amarela Velha",1474,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Bast„o",1419,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Extra",1394,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Comerciante de leite",1578,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Querido",1471,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Ah, n„o!",1491,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Eu n„o sou um Wraith",1566,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Mam„e Espectro",1566,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Papai Espectro",1566,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Livro[3]",1478,1,"force_exitmob";
-	monster "forÁa_1-2",95,177,"Di·rio de troca",1478,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"At√© a pr√≥xima",1393,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"te odeio",1543,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"eu gosto de chocolate",1472,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Voc√™ gosta, n√©?",1472,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Desculpe",1420,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Tristram II",1562,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"estou com fome",1468,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Tchau",1419,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Tomar cuidado",1394,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Corpo sexy",1578,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Press√£o",1471,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"V√° com calma",1491,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Voc√™ vai me machucar?",1555,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Comerciante",1428,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Sra.",1472,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Artes marciais",1472,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Meio per√≠odo",1420,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Chefe",1562,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Caixa Amarela Velha",1474,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Bast√£o",1419,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Extra",1394,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Comerciante de leite",1578,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Querido",1471,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Ah, n√£o!",1491,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Eu n√£o sou um Wraith",1566,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Mam√£e Espectro",1566,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Papai Espectro",1566,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Livro[3]",1478,1,"force_exitmob";
+	monster "for√ßa_1-2",95,177,"Di√°rio de troca",1478,1,"force_exitmob";
 	end;
 
 OnReset:
@@ -941,20 +941,20 @@ OnMyMobDead:
 }
 
 prt_are_in,181,135,3	script	Staff#party-1	67,{
-	mes "[Funcion·rios]";
-	mes "VocÍ fez um bom trabalho.";
-	mes "Mesmo que vocÍ n„o tenha conseguido concluir uma batalha de contra-relÛgio, eu o recompensarei com uma pequena quantidade de pontos de arena.";
+	mes "[Funcion√°rios]";
+	mes "Voc√™ fez um bom trabalho.";
+	mes "Mesmo que voc√™ n√£o tenha conseguido concluir uma batalha de contra-rel√≥gio, eu o recompensarei com uma pequena quantidade de pontos de arena.";
 	next;
 	if (arena_point == 30000) {
-		mes "[Funcion·rios]";
+		mes "[Funcion√°rios]";
 		mes "Uh, hein!";
-		mes "VocÍ j· tem pontos de arena suficientes.";
+		mes "Voc√™ j√° tem pontos de arena suficientes.";
 		mes "Por favor, gaste alguns pontos de arena mais tarde. ";
 		next;
 	}
 	else set arena_point, arena_point + 1;
-	mes "[Funcion·rios]";
-	mes "Deixe-me gui·-lo para fora. ";
+	mes "[Funcion√°rios]";
+	mes "Deixe-me gui√°-lo para fora. ";
 	close2;
 	specialeffect2 EF_HIT5;
 	warp "arena_room",100,75;
@@ -980,45 +980,45 @@ prt_are_in,77,135,3	script	Staff#party-2	67,{
 		}
 	}
 	set @gappt,(60 * $top_ptmin + $top_ptsec) - (60 * @record_minpt + @record_secpt);
-	mes "[Funcion·rios]";
-	mes "Uau, vocÍ fez um bom trabalho ~";
-	mes "Seu nome È...^3131FF" + strcharinfo(0) +"^000000, n„o È?";
+	mes "[Funcion√°rios]";
+	mes "Uau, voc√™ fez um bom trabalho ~";
+	mes "Seu nome √©...^3131FF" + strcharinfo(0) +"^000000, n√£o √©?";
 	mes "^3131FF"+ strcharinfo(0) +"^000000, tempo total gasto para passar a batalha.";
 	next;
-	mes "[Funcion·rios]";
-	mes "È"+@record_minpt+"minutos"+@record_secpt+"segundos.";
-	mes "ParabÈns!";
+	mes "[Funcion√°rios]";
+	mes "√©"+@record_minpt+"minutos"+@record_secpt+"segundos.";
+	mes "Parab√©ns!";
 	next;
-	mes "[Funcion·rios]";
-	mes "O grupo mais r·pido entre as pessoas que concluÌram a batalha de forÁa do tempo na arena do grupo È ^3131FF"+$arena_pttopn$+"^000000.";
+	mes "[Funcion√°rios]";
+	mes "O grupo mais r√°pido entre as pessoas que conclu√≠ram a batalha de for√ßa do tempo na arena do grupo √© ^3131FF"+$arena_pttopn$+"^000000.";
 	next;
-	mes "[Funcion·rios]";
-	mes "^3131FF"+$arena_pttopn$+"O tempo de execuÁ„o de ^000000 foi de ^3131FF"+$top_ptmin+"^000000minutos ^3131FF"+$top_ptsec+"^000000segundos.";
+	mes "[Funcion√°rios]";
+	mes "^3131FF"+$arena_pttopn$+"O tempo de execu√ß√£o de ^000000 foi de ^3131FF"+$top_ptmin+"^000000minutos ^3131FF"+$top_ptsec+"^000000segundos.";
 	next;
 	if (@gappt < 0) {
-		mes "[Funcion·rios]";
-		mes "Embora vocÍ n„o tenha conseguido fazer um novo disco, espero que tenha sucesso na prÛxima vez.";
+		mes "[Funcion√°rios]";
+		mes "Embora voc√™ n√£o tenha conseguido fazer um novo disco, espero que tenha sucesso na pr√≥xima vez.";
 		next;
 		if (arena_point > 29980) {
-			mes "[Funcion·rios]";
-			mes "Ent„o deixe-me recompens·-lo com alguns pontos de arena... eh?";
-			mes "Seus pontos de arena excederam o valor m·ximo. ";
+			mes "[Funcion√°rios]";
+			mes "Ent√£o deixe-me recompens√°-lo com alguns pontos de arena... eh?";
+			mes "Seus pontos de arena excederam o valor m√°ximo. ";
 			next;
-			mes "[Funcion·rios]";
-			mes "VocÍ pode verificar a quantidade de pontos de arena que possui na sala de espera da arena.";
+			mes "[Funcion√°rios]";
+			mes "Voc√™ pode verificar a quantidade de pontos de arena que possui na sala de espera da arena.";
 			next;
-			mes "[Funcion·rios]";
-			mes "Espero que vocÍ tenha se divertido e deixe-me gui·-lo atÈ a entrada da arena.";
+			mes "[Funcion√°rios]";
+			mes "Espero que voc√™ tenha se divertido e deixe-me gui√°-lo at√© a entrada da arena.";
 			mes "Obrigado.";
 			close2;
 		} else {
 			set arena_point, arena_point + 40;
-			mes "[Funcion·rios]";
-			mes "Deixe-me recompens·-lo com alguns pontos de arena.";
-			mes "Se vocÍ quiser verificar a quantidade de pontos de arena que possui, fale com ^3131FFVendigos^000000 na entrada da arena.";
+			mes "[Funcion√°rios]";
+			mes "Deixe-me recompens√°-lo com alguns pontos de arena.";
+			mes "Se voc√™ quiser verificar a quantidade de pontos de arena que possui, fale com ^3131FFVendigos^000000 na entrada da arena.";
 			next;
-			mes "[Funcion·rios]";
-			mes "Deixe-me gui·-lo atÈ a entrada da arena.";
+			mes "[Funcion√°rios]";
+			mes "Deixe-me gui√°-lo at√© a entrada da arena.";
 			mes "Te vejo mais tarde~";
 			close2;
 		}
@@ -1033,70 +1033,70 @@ prt_are_in,77,135,3	script	Staff#party-2	67,{
 		end;
 	} else {
 		emotion ET_HUK;
-		mes "[Funcion·rios]";
+		mes "[Funcion√°rios]";
 		mes "Uau! ";
-		mes "Que Ûtimo trabalho!";
+		mes "Que √≥timo trabalho!";
 		next;
 		if (is_party_leader() == true) {
-			mes "[Funcion·rios]";
-			mes "VocÍ pode gravar vocÍ e os membros do seu grupo em ^FF0000no sal„o da festa Arena Time Force Battle ^000000.";
-			mes "Quando vocÍ insere um nome, o nome permanecer· no topo, a menos que alguÈm faÁa um novo registro.";
+			mes "[Funcion√°rios]";
+			mes "Voc√™ pode gravar voc√™ e os membros do seu grupo em ^FF0000no sal√£o da festa Arena Time Force Battle ^000000.";
+			mes "Quando voc√™ insere um nome, o nome permanecer√° no topo, a menos que algu√©m fa√ßa um novo registro.";
 			next;
-			mes "[Funcion·rios]";
-			mes "Por favor, insira um nome com atÈ 10 letras que possa representar vocÍ e os membros do seu grupo.";
+			mes "[Funcion√°rios]";
+			mes "Por favor, insira um nome com at√© 10 letras que possa representar voc√™ e os membros do seu grupo.";
 			next;
 			switch( select( "OK.","Deixe-me pensar." ) )  {
 			case 1:
 				input .@arnparty$;
-				mes "[Funcion·rios]";
-				mes "VocÍ digitou ^3131FF"+.@arnparty$+"^000000. ";
+				mes "[Funcion√°rios]";
+				mes "Voc√™ digitou ^3131FF"+.@arnparty$+"^000000. ";
 				next;
-				switch( select( "Sim","N„o" ) ) {
+				switch( select( "Sim","N√£o" ) ) {
 				case 1:
 					set $top_ptmin, @record_minpt;
 					set $top_ptsec, @record_secpt;
 					set $arena_pttopn$,.@arnparty$;
 					donpcevent "Vendigos::OnLineRec_pt";
-					mes "[Funcion·rios]";
+					mes "[Funcion√°rios]";
 					mes "Seu registro foi inserido.";
 					next;
 					break;
 				case 2:
-					mes "[Funcion·rios]";
-					mes "Por favor, n„o tenha pressa e pense em um nome bonito.";
+					mes "[Funcion√°rios]";
+					mes "Por favor, n√£o tenha pressa e pense em um nome bonito.";
 					close;
 				}
 				break;
 			case 2:
-				mes "[Funcion·rios]";
-				mes "Por favor, n„o tenha pressa e pense em um nome bonito.";
+				mes "[Funcion√°rios]";
+				mes "Por favor, n√£o tenha pressa e pense em um nome bonito.";
 				close;
 			}
 		}
 		if (arena_point > 29900) {
-			mes "[Funcion·rios]";
-			mes "Ent„o deixe-me recompens·-lo com alguns pontos de arena... eh?";
-			mes "Seus pontos de arena excederam o valor m·ximo. ";
+			mes "[Funcion√°rios]";
+			mes "Ent√£o deixe-me recompens√°-lo com alguns pontos de arena... eh?";
+			mes "Seus pontos de arena excederam o valor m√°ximo. ";
 			next;
-			mes "[Funcion·rios]";
-			mes "VocÍ pode verificar a quantidade de pontos de arena que possui na sala de espera da arena.";
+			mes "[Funcion√°rios]";
+			mes "Voc√™ pode verificar a quantidade de pontos de arena que possui na sala de espera da arena.";
 			next;
-			mes "[Funcion·rios]";
-			mes "Espero que vocÍ tenha se divertido e deixe-me gui·-lo atÈ a entrada da arena.";
+			mes "[Funcion√°rios]";
+			mes "Espero que voc√™ tenha se divertido e deixe-me gui√°-lo at√© a entrada da arena.";
 			mes "Obrigado.";
 			close2;
 		} else {
-			mes "[Funcion·rios]";
-			mes "Deixe-me recompens·-lo com alguns pontos de arena.";
-			mes "Ao mesmo tempo, como vocÍ renovou o registro, desta vez receber· uma quantia extra de pontos.";
+			mes "[Funcion√°rios]";
+			mes "Deixe-me recompens√°-lo com alguns pontos de arena.";
+			mes "Ao mesmo tempo, como voc√™ renovou o registro, desta vez receber√° uma quantia extra de pontos.";
 			next;
 			set arena_point, arena_point + 100;
-			mes "[Funcion·rios]";
-			mes "Deixe-me recompens·-lo com alguns pontos de arena.";
-			mes "Se vocÍ quiser verificar a quantidade de pontos de arena que possui, fale com ^3131FFVendigos^000000 na entrada da arena.";
+			mes "[Funcion√°rios]";
+			mes "Deixe-me recompens√°-lo com alguns pontos de arena.";
+			mes "Se voc√™ quiser verificar a quantidade de pontos de arena que possui, fale com ^3131FFVendigos^000000 na entrada da arena.";
 			next;
-			mes "[Funcion·rios]";
-			mes "Deixe-me gui·-lo atÈ a entrada da arena.";
+			mes "[Funcion√°rios]";
+			mes "Deixe-me gui√°-lo at√© a entrada da arena.";
 			mes "Te vejo mais tarde~";
 			close2;
 		}
@@ -1117,7 +1117,7 @@ OnEnter:
 	end;
 
 OnTimer2000:
-	mapannounce "prt_are_in","Esta transmiss„o informa sobre a restriÁ„o para arena de festa.",0,0xFFCE00;
+	mapannounce "prt_are_in","Esta transmiss√£o informa sobre a restri√ß√£o para arena de festa.",0,0xFFCE00;
 	end;
 
 OnTimer3000:
@@ -1125,7 +1125,7 @@ OnTimer3000:
 	end;
 
 OnTimer4000:
-	mapannounce "prt_are_in","Por favor, prossiga sua batalha o mais r·pido possÌvel para evitar desvantagens. ",0,0xFFCE00;
+	mapannounce "prt_are_in","Por favor, prossiga sua batalha o mais r√°pido poss√≠vel para evitar desvantagens. ",0,0xFFCE00;
 	end;
 
 OnTimer60000:
@@ -1149,19 +1149,19 @@ OnOut:
 
 -	script	cast#pt	-1,{
 OnTimeOver1:
-	mapannounce "forÁa_2-1","A Arena ser· reativada devido a um erro ocorrido durante a batalha.",0,0xFFCE00;
+	mapannounce "for√ßa_2-1","A Arena ser√° reativada devido a um erro ocorrido durante a batalha.",0,0xFFCE00;
 	end;
 
 OnNomal1:
-	mapannounce "forÁa_2-1","Arena ser· reativada.",0,0xFFCE00;
+	mapannounce "for√ßa_2-1","Arena ser√° reativada.",0,0xFFCE00;
 	end;
 
 OnNomal2:
-	mapannounce "forÁa_2-1","Arena ser· reativada.",0,0xFFCE00;
+	mapannounce "for√ßa_2-1","Arena ser√° reativada.",0,0xFFCE00;
 	end;
 
 OnTimeOver2:
-	mapannounce "forÁa_2-1","A Arena ser· reativada devido a um erro ocorrido na sala de espera.",0,0xFFCE00;
+	mapannounce "for√ßa_2-1","A Arena ser√° reativada devido a um erro ocorrido na sala de espera.",0,0xFFCE00;
 	end;
 }
 

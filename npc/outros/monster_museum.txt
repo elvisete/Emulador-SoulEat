@@ -8,42 +8,42 @@
 //======================= by: Guru ==========================//
 
 yuno_in03,32,15,3	script	Museum Guide	67,{
-	mes "[CÍnia]";
+	mes "[C√™nia]";
 	mes "Bem-vindo ao Museu dos Monstros.";
 	next;
 	switch(select("Museu dos Monstros?:Dicas")) {
 	case 1:
-		mes "[CÍnia]";
+		mes "[C√™nia]";
 		mes "O Museu dos Monstros foi fundado por";
-		mes "os S·bios do Schweicherbil";
+		mes "os S√°bios do Schweicherbil";
 		mes "Academia de Magia depois de pesquisar";
 		mes "toda criatura que habita no";
 		mes "Continente Midgard.";
 		next;
-		mes "[CÍnia]";
-		mes "Neste museu vocÍ pode ver todos";
-		mes "˙nico monstro em Midgard,";
-		mes "mesmo aqueles que vocÍ quase nunca encontra.";
+		mes "[C√™nia]";
+		mes "Neste museu voc√™ pode ver todos";
+		mes "√∫nico monstro em Midgard,";
+		mes "mesmo aqueles que voc√™ quase nunca encontra.";
 		next;
-		mes "[CÍnia]";
+		mes "[C√™nia]";
 		mes "Os tubos de vidro contendo monstros";
-		mes "foi desenvolvido com o que h· de mais moderno";
+		mes "foi desenvolvido com o que h√° de mais moderno";
 		mes "tecnologia como parte do";
 		mes "Projeto Schwarz. ";
-		mes "vocÍ estar· bem protegido.";
+		mes "voc√™ estar√° bem protegido.";
 		next;
 		break;
 	case 2:
-		mes "[CÍnia]";
-		mes "Verifique a opÁ„o Opaco";
-		mes "em suas janelas de opÁıes por";
-		mes "pressionando ALT O, se vocÍ quiser";
+		mes "[C√™nia]";
+		mes "Verifique a op√ß√£o Opaco";
+		mes "em suas janelas de op√ß√µes por";
+		mes "pressionando ALT O, se voc√™ quiser";
 		mes "veja melhor os monstros.";
 		next;
 		break;
 	}
-	mes "[CÍnia]";
-	mes "Sinta-se ‡ vontade para falar comigo a qualquer hora.";
+	mes "[C√™nia]";
+	mes "Sinta-se √† vontade para falar comigo a qualquer hora.";
 	close;
 }
 	
@@ -52,14 +52,14 @@ yuno_in03,36,21,3	script	Deviace#yuno	1108,{
 }
 yuno_in03,33,21,1	script	#DEVIACE	111,{
 	mes "";
-	mes "Nome CientÌfico: Deviace";
-	mes "Tamanho mÈdio";
-	mes "Atributo: ¡gua";
+	mes "Nome Cient√≠fico: Deviace";
+	mes "Tamanho m√©dio";
+	mes "Atributo: √Ågua";
 	next;
-	mes "ExplicaÁ„o:";
+	mes "Explica√ß√£o:";
 	mes "Este monstro habita nas profundezas";
 	mes "mar e tem um corpo redondo com uma";
-	mes "acet·bulo em sua face dorsal.";
+	mes "acet√°bulo em sua face dorsal.";
 	mes "Embora seus dentes afiados sejam";
 	mes "intimidante, tem um som muito suave";
 	mes "personagem.";
@@ -68,8 +68,8 @@ yuno_in03,33,21,1	script	#DEVIACE	111,{
 	mes "ataque a um viajante submarino";
 	mes "a menos que seja atacado primeiro.";
 	mes "No entanto, uma vez que fica chateado,";
-	mes "usa habilidades m·gicas de alto nÌvel. ";
-	mes "È melhor ter cuidado com esse monstro.";
+	mes "usa habilidades m√°gicas de alto n√≠vel. ";
+	mes "√© melhor ter cuidado com esse monstro.";
 	close;
 }
 	
@@ -78,23 +78,23 @@ yuno_in03,36,27,3	script	Seal#yuno	1317,{
 }
 yuno_in03,33,27,1	script	#FUR_SEAL	111,{
 	mes "";
-	mes "Nome cientÌfico: Selo";
-	mes "Tamanho mÈdio";
-	mes "Atributo: ¡gua";
+	mes "Nome cient√≠fico: Selo";
+	mes "Tamanho m√©dio";
+	mes "Atributo: √Ågua";
 	next;
-	mes "ExplicaÁ„o:";
-	mes "Quando vocÍ d· uma olhada nisso";
-	mes "monstro com cuidado, vocÍ encontrar·";
-	mes "que na verdade n„o È um selo, mas";
-	mes "um monstro n„o identificado escondido";
+	mes "Explica√ß√£o:";
+	mes "Quando voc√™ d√° uma olhada nisso";
+	mes "monstro com cuidado, voc√™ encontrar√°";
+	mes "que na verdade n√£o √© um selo, mas";
+	mes "um monstro n√£o identificado escondido";
 	mes "dentro do couro tipo foca";
 	mes "roupas.";
 	next;
-	mes "H· rumores de que o monstro";
+	mes "H√° rumores de que o monstro";
 	mes "usa esta roupa em ordem";
-	mes "para proteger sua pele sensÌvel";
+	mes "para proteger sua pele sens√≠vel";
 	mes "do clima. ";
-	mes "a roupa È um material muito bom";
+	mes "a roupa √© um material muito bom";
 	mes "para as pessoas produzirem casacos de inverno.";
 	close;
 }
@@ -104,20 +104,20 @@ yuno_in03,36,33,3	script	Sage Worm#yuno	1281,{
 }
 yuno_in03,33,33,1	script	#SAGEWORM	111,{
 	mes "";
-	mes "Nome cientÌfico: Sage Worm";
+	mes "Nome cient√≠fico: Sage Worm";
 	mes "Tamanho pequeno";
 	mes "Atributo: Neutro";
 	next;
-	mes "ExplicaÁ„o:";
-	mes "Uma fera estranha com cabeÁa de";
+	mes "Explica√ß√£o:";
+	mes "Uma fera estranha com cabe√ßa de";
 	mes "um velho estudioso e o rabo de um";
 	mes "minhoca. ";
-	mes "fraco, tem a inteligÍncia";
+	mes "fraco, tem a intelig√™ncia";
 	mes "para apoiar os seus camaradas com";
-	mes "habilidades m·gicas.";
+	mes "habilidades m√°gicas.";
 	next;
-	mes "Como sua aparÍncia acadÍmica";
-	mes "indica, geralmente È visto perto de livros ou estantes de livros.";
+	mes "Como sua apar√™ncia acad√™mica";
+	mes "indica, geralmente √© visto perto de livros ou estantes de livros.";
 	close;
 }
 	
@@ -126,23 +126,23 @@ yuno_in03,39,39,3	script	Penomena#yuno	1216,{
 }
 yuno_in03,38,39,1	script	#PENOMANA	111,{
 	mes "";
-	mes "Nome CientÌfico: Penomena";
-	mes "Tamanho mÈdio";
+	mes "Nome Cient√≠fico: Penomena";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Veneno";
 	next;
-	mes "ExplicaÁ„o:";
+	mes "Explica√ß√£o:";
 	mes "Este monstro habita dentro do";
-	mes "parte mais profunda das cavernas onde h·";
-	mes "h· umidade suficiente para mantÍ-lo";
+	mes "parte mais profunda das cavernas onde h√°";
+	mes "h√° umidade suficiente para mant√™-lo";
 	mes "ficando seco.";
 	next;
-	mes "Ao contr·rio de Hydra, uma aparÍncia semelhante";
+	mes "Ao contr√°rio de Hydra, uma apar√™ncia semelhante";
 	mes "criatura, ela pode se mover";
-	mes "em direÁ„o ao seu inimigo usando muitos";
-	mes "pequenos apÍndices em seu acet·bulo.";
+	mes "em dire√ß√£o ao seu inimigo usando muitos";
+	mes "pequenos ap√™ndices em seu acet√°bulo.";
 	next;
-	mes "Os longos e finos tent·culos do";
-	mes "corpo dispara veneno mortal que È";
+	mes "Os longos e finos tent√°culos do";
+	mes "corpo dispara veneno mortal que √©";
 	mes "o suficiente para matar seu inimigo de uma vez.";
 	close;
 }
@@ -152,19 +152,19 @@ yuno_in03,39,44,3	script	Galapago#yuno	1391,{
 }
 yuno_in03,37,44,3	script	#GALAPAGO	111,{
 	mes "";
-	mes "Nome CientÌfico: Gal·pago";
+	mes "Nome Cient√≠fico: Gal√°pago";
 	mes "Tamanho pequeno";
 	mes "Atributo: Terra";
 	next;
-	mes "ExplicaÁ„o:";
-	mes "… uma espÈcie de p·ssaro, mas infelizmente seu corpo È pesado demais para voar.";
-	mes "… muito sensÌvel ‡ luz solar, por isso carrega uma garrafa de ·gua e usa Ûculos escuros o tempo todo.";
+	mes "Explica√ß√£o:";
+	mes "√â uma esp√©cie de p√°ssaro, mas infelizmente seu corpo √© pesado demais para voar.";
+	mes "√â muito sens√≠vel √† luz solar, por isso carrega uma garrafa de √°gua e usa √≥culos escuros o tempo todo.";
 	next;
-	mes "Embora guloso, ser·";
+	mes "Embora guloso, ser√°";
 	mes "sempre coopere para atacar";
 	mes "presas, bem como predadores.";
-	mes "Caso contr·rio, Gal·pago È um";
-	mes "monstro geralmente descontraÌdo.";
+	mes "Caso contr√°rio, Gal√°pago √© um";
+	mes "monstro geralmente descontra√≠do.";
 	close;
 }
 	
@@ -173,19 +173,19 @@ yuno_in03,15,21,5	script	Raydric#yuno	1163,{
 }
 yuno_in03,19,21,1	script	#RAYDRIC	111,{
 	mes "";
-	mes "Nome CientÌfico: Raydric";
+	mes "Nome Cient√≠fico: Raydric";
 	mes "Tamanho grande";
 	mes "Atributo: Sombra";
 	next;
-	mes "ExplicaÁ„o:";
+	mes "Explica√ß√£o:";
 	mes "Uma armadura animada pelo";
-	mes "espÌrito de um guarda do castelo. ";
-	mes "espÌrito est· ligado a esta armadura por";
-	mes "uma maldiÁ„o poderosa.";
+	mes "esp√≠rito de um guarda do castelo. ";
+	mes "esp√≠rito est√° ligado a esta armadura por";
+	mes "uma maldi√ß√£o poderosa.";
 	next;
-	mes "J· que Raydric costumava ser um castelo";
-	mes "guarda, possui movimentos r·pidos";
-	mes "e poderosa forÁa de ataque.";
+	mes "J√° que Raydric costumava ser um castelo";
+	mes "guarda, possui movimentos r√°pidos";
+	mes "e poderosa for√ßa de ataque.";
 	close;
 }
 	
@@ -194,16 +194,16 @@ yuno_in03,15,27,5	script	Chepet#yuno	1250,{
 }
 yuno_in03,19,27,1	script	#CHEPET	111,{
 	mes "";
-	mes "Nome CientÌfico: Chepet";
-	mes "Tamanho mÈdio";
+	mes "Nome Cient√≠fico: Chepet";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Fogo";
 	next;
-	mes "ExplicaÁ„o:";
+	mes "Explica√ß√£o:";
 	mes "Uma criatura maligna escondida em um";
 	mes "linda boneca. ";
-	mes "ao bater palitos de fÛsforo presos";
-	mes "a m„o da boneca. ";
-	mes "monstro j· que habita";
+	mes "ao bater palitos de f√≥sforo presos";
+	mes "a m√£o da boneca. ";
+	mes "monstro j√° que habita";
 	mes "apenas alguns lugares.";
 	close;
 }
@@ -213,13 +213,13 @@ yuno_in03,15,33,5	script	Violy#yuno	1390,{
 }
 yuno_in03,19,33,1	script	#VIOLY	111,{
 	mes "";
-	mes "Nome CientÌfico: Violy";
-	mes "Tamanho mÈdio";
+	mes "Nome Cient√≠fico: Violy";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Neutro";
 	next;
-	mes "ExplicaÁ„o:";
-	mes "Uma linda criatura com aparÍncia de boneca e lindos cabelos dourados.";
-	mes "Como ele toca violino o tempo todo com uma express„o pacÌfica no rosto, as pessoas a princÌpio n„o percebem que ele È um monstro.";
+	mes "Explica√ß√£o:";
+	mes "Uma linda criatura com apar√™ncia de boneca e lindos cabelos dourados.";
+	mes "Como ele toca violino o tempo todo com uma express√£o pac√≠fica no rosto, as pessoas a princ√≠pio n√£o percebem que ele √© um monstro.";
 	next;
 	mes "Tenha extremo cuidado ao encontrar um Violy. ";
 	close;
@@ -230,20 +230,20 @@ yuno_in03,10,39,5	script	Alice#yuno	1275,{
 }
 yuno_in03,12,39,1	script	#ALICE	111,{
 	mes "";
-	mes "Nome cientÌfico: Alice";
-	mes "Tamanho mÈdio";
+	mes "Nome cient√≠fico: Alice";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Neutro";
 	next;
-	mes "ExplicaÁ„o:";
-	mes "Alice È um robÙ feito para ajudar";
+	mes "Explica√ß√£o:";
+	mes "Alice √© um rob√¥ feito para ajudar";
 	mes "uma empregada do castelo. ";
 	mes "conhecido por permanecer e automaticamente";
 	mes "realizam suas tarefas muito depois do";
 	mes "castelo foi abandonado.";
 	next;
-	mes "Sem qualquer poder discernÌvel";
+	mes "Sem qualquer poder discern√≠vel";
 	mes "fonte, como ela se move e opera";
-	mes "ainda È um mistÈrio cientÌfico.";
+	mes "ainda √© um mist√©rio cient√≠fico.";
 	close;
 }
 	
@@ -252,12 +252,12 @@ yuno_in03,10,45,5	script	Assulter#yuno	1315,{
 }
 yuno_in03,12,45,1	script	#ASSULTER	111,{
 	mes "";
-	mes "Nome CientÌfico: Assulter";
-	mes "Tamanho mÈdio";
+	mes "Nome Cient√≠fico: Assulter";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Vento";
 	next;
-	mes "ExplicaÁ„o:";
-	mes "Ao contr·rio de outras tartarugas no Turtle";
+	mes "Explica√ß√£o:";
+	mes "Ao contr√°rio de outras tartarugas no Turtle";
 	mes "Ilha, esta tartaruga fica em dois";
 	mes "pernas e ataca os transeuntes com";
 	mes "as outras duas pernas, empunhando uma";
@@ -267,8 +267,8 @@ yuno_in03,12,45,1	script	#ASSULTER	111,{
 	mes "causar mais danos quando";
 	mes "encontra inimigos perigosos.";
 	mes "Causa danos muito poderosos usando";
-	mes "È shuriken, mas È ataque de unhas";
-	mes "È mais ameaÁador.";
+	mes "√© shuriken, mas √© ataque de unhas";
+	mes "√© mais amea√ßador.";
 	close;
 }
 	
@@ -287,19 +287,19 @@ yuno_in03,18,96,5	script	Wanderer#yuno	1208,{
 }
 yuno_in03,20,96,1	script	#WANDER_MAN	111,{
 	mes "";
-	mes "Nome CientÌfico: Andarilho";
-	mes "Tamanho mÈdio";
+	mes "Nome Cient√≠fico: Andarilho";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Vento";
 	next;
-	mes "ExplicaÁ„o:";
+	mes "Explica√ß√£o:";
 	mes "Guerreiro morto-vivo que voltou para";
-	mes "vida atravÈs de uma maldiÁ„o. ";
-	mes "sua habilidade tÈcnica em esgrima, ele";
+	mes "vida atrav√©s de uma maldi√ß√£o. ";
+	mes "sua habilidade t√©cnica em esgrima, ele";
 	mes "deve ter sido muito honrado";
 	mes "guerreiro como um ser humano vivo.";
 	next;
-	mes "Wanderer pode se mover incrivelmente r·pido";
-	mes "e pode matar inimigos com um ˙nico";
+	mes "Wanderer pode se mover incrivelmente r√°pido";
+	mes "e pode matar inimigos com um √∫nico";
 	mes "golpe de sua espada.";
 	close;
 }
@@ -309,19 +309,19 @@ yuno_in03,16,100,5	script	Caterpillar#yuno	1300,{
 }
 yuno_in03,18,100,1	script	#CATERPILLAR	111,{
 	mes "";
-	mes "Nome cientÌfico: Lagarta";
+	mes "Nome cient√≠fico: Lagarta";
 	mes "Tamanho pequeno";
 	mes "Atributo: Terra";
 	next;
-	mes "ExplicaÁ„o:";
+	mes "Explica√ß√£o:";
 	mes "Embora os olhos desta criatura";
 	mes "atrofiaram devido a viver sob";
 	mes "a terra, ele usa um apalpador e";
-	mes "apÍndices em seu corpo para sentir";
+	mes "ap√™ndices em seu corpo para sentir";
 	mes "objetos em seu ambiente escuro.";
 	next;
-	mes "H· rumores de que a Caterpillar È a";
-	mes "larva de Creamy Fear, o avanÁado";
+	mes "H√° rumores de que a Caterpillar √© a";
+	mes "larva de Creamy Fear, o avan√ßado";
 	mes "Cremoso.";
 	close;
 }
@@ -331,16 +331,16 @@ yuno_in03,16,104,5	script	Male Thiefbug#yuno	1054,{
 }
 yuno_in03,18,104,1	script	#THIEF_BUG__	111,{
 	mes "";
-	mes "Nome CientÌfico: Bug Ladr„o";
-	mes "^FFFFFFNome cientÌfico:^000000 (Masculino)";
-	mes "Tamanho mÈdio";
+	mes "Nome Cient√≠fico: Bug Ladr√£o";
+	mes "^FFFFFFNome cient√≠fico:^000000 (Masculino)";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Sombra";
 	next;
-	mes "ExplicaÁ„o:";
+	mes "Explica√ß√£o:";
 	mes "Embora tenha um grande corpo azul,";
-	mes "tambÈm È r·pido e voraz, assim como outros Thief Bugs.";
+	mes "tamb√©m √© r√°pido e voraz, assim como outros Thief Bugs.";
 	next;
-	mes "No entanto, È mais forte do que outros insetos ladrıes porque foi designado para proteger as mulheres e os bebÍs do perigo.";
+	mes "No entanto, √© mais forte do que outros insetos ladr√µes porque foi designado para proteger as mulheres e os beb√™s do perigo.";
 	close;
 }
 	
@@ -349,18 +349,18 @@ yuno_in03,16,108,5	script	Tri Joint#yuno	1279,{
 }
 yuno_in03,18,108,1	script	#TRI_JOINT	111,{
 	mes "";
-	mes "Nome cientÌfico: Tri Joint";
+	mes "Nome cient√≠fico: Tri Joint";
 	mes "Tamanho pequeno";
 	mes "Atributo: Terra";
 	next;
-	mes "ExplicaÁ„o:";
-	mes "Tri Joint È um prÈ-histÛrico";
-	mes "monstro que est· coberto de";
+	mes "Explica√ß√£o:";
+	mes "Tri Joint √© um pr√©-hist√≥rico";
+	mes "monstro que est√° coberto de";
 	mes "uma casca dura e usa um apalpador";
 	mes "em vez de olhos para que possa";
 	mes "viver em lugares escuros.";
 	next;
-	mes "Recentemente, como muitas Tri ArticulaÁıes foram descobertas dentro de muitas cavernas, os S·bios est„o muito entusiasmados em estud·-las para aprender mais sobre a evoluÁ„o dos monstros em Midgard.";
+	mes "Recentemente, como muitas Tri Articula√ß√µes foram descobertas dentro de muitas cavernas, os S√°bios est√£o muito entusiasmados em estud√°-las para aprender mais sobre a evolu√ß√£o dos monstros em Midgard.";
 	close;
 }
 	
@@ -369,21 +369,21 @@ yuno_in03,16,111,5	script	Arclouz#yuno	1194,{
 }
 yuno_in03,18,111,1	script	#ARCLOUSE	111,{
 	mes "";
-	mes "Nome cientÌfico: Arclouz";
-	mes "Tamanho mÈdio";
+	mes "Nome cient√≠fico: Arclouz";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Terra";
 	next;
-	mes "ExplicaÁ„o:";
+	mes "Explica√ß√£o:";
 	mes "Monstro de casca dura que se enrola";
 	mes "seu corpo para atacar seu inimigo.";
 	mes "Arclouz tende a ficar em grupos";
-	mes "e s„o muito agressivos";
+	mes "e s√£o muito agressivos";
 	mes "criaturas.";
 	next;
-	mes "Eles tÍm incrivelmente r·pido";
-	mes "velocidade de movimento, ao contr·rio";
-	mes "sua aparÍncia, e muitas vezes s„o";
-	mes "em comparaÁ„o com PecoPecos.";
+	mes "Eles t√™m incrivelmente r√°pido";
+	mes "velocidade de movimento, ao contr√°rio";
+	mes "sua apar√™ncia, e muitas vezes s√£o";
+	mes "em compara√ß√£o com PecoPecos.";
 	close;
 }
 	
@@ -392,11 +392,11 @@ yuno_in03,16,117,5	script	Dragon Tail#yuno	1321,{
 }
 yuno_in03,18,116,1	script	#DRAGON_TAIL	111,{
 	mes "";
-	mes "Nome CientÌfico: Rabo de Drag„o";
-	mes "Tamanho mÈdio";
+	mes "Nome Cient√≠fico: Rabo de Drag√£o";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Vento";
 	next;
-	mes "ExplicaÁ„o:";
+	mes "Explica√ß√£o:";
 	mes "Um inseto considerado";
 	mes "um Libelluidae, ou Dragon Fly. ";
 	mes "usa sua cauda forte para sugar o";
@@ -411,23 +411,23 @@ yuno_in03,46,96,3	script	Owl Duke#yuno	1320,{
 }
 yuno_in03,44,96,1	script	#OWL_DUKE	111,{
 	mes "";
-	mes "Nome cientÌfico: Coruja Duke";
+	mes "Nome cient√≠fico: Coruja Duke";
 	mes "Tamanho grande";
 	mes "Atributo: Neutro";
 	next;
-	mes "ExplicaÁ„o:";
+	mes "Explica√ß√£o:";
 	mes "Uma coruja que usa fantasia de conde.";
-	mes "… muito intimidante";
+	mes "√â muito intimidante";
 	mes "com seu visual escuro, mas suave.";
-	mes "Owl Duke n„o È realmente uma coruja,";
-	mes "mas um demÙnio com garras muito afiadas";
-	mes "em seus pÈs grandes.";
+	mes "Owl Duke n√£o √© realmente uma coruja,";
+	mes "mas um dem√¥nio com garras muito afiadas";
+	mes "em seus p√©s grandes.";
 	next;
-	mes "… h·bil em usar muitos";
-	mes "feitiÁos m·gicos rel‚mpagos. ";
-	mes "vocÍ o vÍ atacando um inimigo,";
-	mes "vocÍ pode sentir o Duque Coruja";
-	mes "pompa aristocr·tica.";
+	mes "√â h√°bil em usar muitos";
+	mes "feiti√ßos m√°gicos rel√¢mpagos. ";
+	mes "voc√™ o v√™ atacando um inimigo,";
+	mes "voc√™ pode sentir o Duque Coruja";
+	mes "pompa aristocr√°tica.";
 	close;
 }
 	
@@ -436,22 +436,22 @@ yuno_in03,48,100,3	script	Marine Sphere#yuno	1142,{
 }
 yuno_in03,46,101,1	script	#MARINE_SPHERE	111,{
 	mes "";
-	mes "Nome cientÌfico: Esfera Marinha";
+	mes "Nome cient√≠fico: Esfera Marinha";
 	mes "Tamanho pequeno";
-	mes "Atributo: ¡gua";
+	mes "Atributo: √Ågua";
 	next;
-	mes "ExplicaÁ„o:";
+	mes "Explica√ß√£o:";
 	mes "Uma estranha criatura que vagueia";
 	mes "nos oceanos profundos. ";
-	mes "com grande poder quando È";
+	mes "com grande poder quando √©";
 	mes "tocado, ganhando o nome";
 	mes "'A Bomba do Mar.'";
 	next;
 	mes "Se houver uma Esfera Marinha";
-	mes "pego na explos„o de";
-	mes "outro, uma explos„o de gatilho";
-	mes "resultar· e poder· levar a";
-	mes "uma perigosa reaÁ„o em cadeia.";
+	mes "pego na explos√£o de";
+	mes "outro, uma explos√£o de gatilho";
+	mes "resultar√° e poder√° levar a";
+	mes "uma perigosa rea√ß√£o em cadeia.";
 	close;
 }
 	
@@ -460,29 +460,29 @@ yuno_in03,48,104,3	script	Mandragora#yuno	1020,{
 }
 yuno_in03,46,105,1	script	#MANDRAGORA	111,{
 	mes "";
-	mes "Nome CientÌfico: Mandr·gora";
-	mes "Tamanho mÈdio";
+	mes "Nome Cient√≠fico: Mandr√°gora";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Terra";
 	next;
-	mes "ExplicaÁ„o:";
-	mes "Um insetÌvoro que engole";
+	mes "Explica√ß√£o:";
+	mes "Um inset√≠voro que engole";
 	mes "qualquer coisa viva. ";
 	mes "sua presa, ele ataca primeiro";
-	mes "com um longo tent·culo para";
-	mes "para paralis·-lo.";
+	mes "com um longo tent√°culo para";
+	mes "para paralis√°-lo.";
 	next;
-	mes "Uma vez paralisado, sua presa È";
+	mes "Uma vez paralisado, sua presa √©";
 	mes "coloque um tubo grande anexado";
-	mes "para o seu corpo onde È lentamente";
+	mes "para o seu corpo onde √© lentamente";
 	mes "digerido. ";
 	mes "tem uma marca de caveira, Mandragora";
-	mes "na verdade n„o contÈm nenhum";
-	mes "tÛxico.";
+	mes "na verdade n√£o cont√©m nenhum";
+	mes "t√≥xico.";
 	next;
 	mes "Este tubo digestivo";
-	mes "aparelho tambÈm tem um muito original,";
-	mes "mas cheiro nojento que est· longe";
-	mes "de ˙til para atrair presas.";
+	mes "aparelho tamb√©m tem um muito original,";
+	mes "mas cheiro nojento que est√° longe";
+	mes "de √∫til para atrair presas.";
 	close;
 }
 	
@@ -491,32 +491,32 @@ yuno_in03,48,108,3	script	Geographer#yuno	1368,{
 }
 yuno_in03,46,108,1	script	#GEOGRAPHER	111,{
 	mes "";
-	mes "Nome cientÌfico: GeÛgrafo";
-	mes "Tamanho mÈdio";
+	mes "Nome cient√≠fico: Ge√≥grafo";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Terra";
 	next;
-	mes "ExplicaÁ„o:";
-	mes "Um insetÌvoro que parece";
+	mes "Explica√ß√£o:";
+	mes "Um inset√≠voro que parece";
 	mes "um girassol. ";
-	mes "como tent·culos ao seu redor";
+	mes "como tent√°culos ao seu redor";
 	mes "boca para atrair e capturar";
 	mes "sua presa.";
 	next;
-	mes "Ao contr·rio de Mandragora, geÛgrafo";
-	mes "n„o tem tubo para";
+	mes "Ao contr√°rio de Mandragora, ge√≥grafo";
+	mes "n√£o tem tubo para";
 	mes "armazenar sua presa. ";
 	mes "come sua presa, pouco a pouco.";
 	next;
-	mes "Embora o GeÛgrafo tenha pequenos";
-	mes "e raÌzes curtas, as raÌzes s„o";
+	mes "Embora o Ge√≥grafo tenha pequenos";
+	mes "e ra√≠zes curtas, as ra√≠zes s√£o";
 	mes "resistente e forte o suficiente para";
 	mes "suportar o peso da parte superior do corpo.";
 	next;
-	mes "O homÙnimo deste monstro, um";
-	mes "geÛgrafo humano que foi";
+	mes "O hom√¥nimo deste monstro, um";
+	mes "ge√≥grafo humano que foi";
 	mes "prontamente comido ao descobrir";
-	mes "esta espÈcie de animal, ir·";
-	mes "nunca ser· esquecido...";
+	mes "esta esp√©cie de animal, ir√°";
+	mes "nunca ser√° esquecido...";
 	close;
 }
 	
@@ -525,22 +525,22 @@ yuno_in03,48,112,3	script	Rafflesia#yuno	1162,{
 }
 yuno_in03,46,112,1	script	#RAFFLESIA	111,{
 	mes "";
-	mes "Nome cientÌfico: RaflÈsia";
+	mes "Nome cient√≠fico: Rafl√©sia";
 	mes "Tamanho pequeno";
 	mes "Atributo: Terra";
 	next;
-	mes "ExplicaÁ„o:";
+	mes "Explica√ß√£o:";
 	mes "Um monstro inchado e frondoso";
-	mes "ameaÁado de extinÁ„o.";
-	mes "RaflÈsia È a mais rara";
+	mes "amea√ßado de extin√ß√£o.";
+	mes "Rafl√©sia √© a mais rara";
 	mes "monstro em Midgard e";
-	mes "È, portanto, protegido por lei.";
+	mes "√©, portanto, protegido por lei.";
 	next;
-	mes "Devido a esta situaÁ„o, a maioria dos S·bios";
-	mes "est„o tendo dificuldades para";
+	mes "Devido a esta situa√ß√£o, a maioria dos S√°bios";
+	mes "est√£o tendo dificuldades para";
 	mes "pesquise esse monstro.";
-	mes "No entanto, alguns S·bios s„o";
-	mes "atualmente buscando mÈtodos para";
+	mes "No entanto, alguns S√°bios s√£o";
+	mes "atualmente buscando m√©todos para";
 	mes "cultive e salve as Rafflesias.";
 	close;
 }
@@ -550,16 +550,16 @@ yuno_in03,48,116,3	script	Stem Worm#yuno	1215,{
 }
 yuno_in03,45,116,1	script	#STEM_WORM	111,{
 	mes "";
-	mes "Nome cientÌfico: Verme do caule";
-	mes "Tamanho mÈdio";
+	mes "Nome cient√≠fico: Verme do caule";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Vento";
 	next;
-	mes "ExplicaÁ„o:";
+	mes "Explica√ß√£o:";
 	mes "Uma cauda de verme mutante que possui um";
 	mes "corpo redondo, cinza acastanhado com";
-	mes "uma cabeÁa pequena. ";
+	mes "uma cabe√ßa pequena. ";
 	mes "com escamas e tem um longo";
-	mes "cauda semelhante a um caule que È usada";
+	mes "cauda semelhante a um caule que √© usada";
 	mes "como um chicote nos ataques.";
 	close;
 }
@@ -569,23 +569,23 @@ yuno_in03,24,124,3	script	Blazzer#yuno	1367,{
 }
 yuno_in03,24,122,1	script	#BLAZZER	111,{
 	mes "";
-	mes "Nome CientÌfico: Blazzer";
-	mes "Tamanho mÈdio";
+	mes "Nome Cient√≠fico: Blazzer";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Fogo";
 	next;
-	mes "ExplicaÁ„o:";
-	mes "Esta È uma bola de fogo que foi";
-	mes "visto perto de zonas vulc‚nicas.";
+	mes "Explica√ß√£o:";
+	mes "Esta √© uma bola de fogo que foi";
+	mes "visto perto de zonas vulc√¢nicas.";
 	mes "Por causa da repentina";
-	mes "aparÍncia, os S·bios acreditam que";
-	mes "atividade vulc‚nica pode ocorrer";
+	mes "apar√™ncia, os S√°bios acreditam que";
+	mes "atividade vulc√¢nica pode ocorrer";
 	mes "mais cedo ou mais tarde perto de Juno.";
 	next;
-	mes "Blazzer libera g·s nocivo";
+	mes "Blazzer libera g√°s nocivo";
 	mes "que prejudicam os transeuntes. ";
 	mes "desconhecido se estes";
-	mes "s„o ataques ou do Blazzer";
-	mes "forma de comunicaÁ„o.";
+	mes "s√£o ataques ou do Blazzer";
+	mes "forma de comunica√ß√£o.";
 	close;
 }
 	
@@ -594,12 +594,12 @@ yuno_in03,28,124,5	script	Ride Word#yuno	1195,{
 }
 yuno_in03,28,122,1	script	#RIDEWORD	111,{
 	mes "";
-	mes "Nome cientÌfico: Ride Word";
+	mes "Nome cient√≠fico: Ride Word";
 	mes "Tamanho pequeno";
 	mes "Atributo: Neutro";
 	next;
-	mes "ExplicaÁ„o:";
-	mes "… um livro m·gico amaldiÁoado com";
+	mes "Explica√ß√£o:";
+	mes "√â um livro m√°gico amaldi√ßoado com";
 	mes "dentes afiados. ";
 	close;
 }
@@ -609,15 +609,15 @@ yuno_in03,31,124,3	script	Megalodon#yuno	1064,{
 }
 yuno_in03,31,122,1	script	#MEGALODON	111,{
 	mes "";
-	mes "Nome CientÌfico: Megalodonte";
-	mes "Tamanho mÈdio";
+	mes "Nome Cient√≠fico: Megalodonte";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Morto-vivo";
 	next;
-	mes "ExplicaÁ„o:";
+	mes "Explica√ß√£o:";
 	mes "Um peixe esqueleto que foi trazido";
-	mes "de volta ‡ vida por uma maldiÁ„o. ";
-	mes "Parece muito ameaÁador, È";
-	mes "benigno e n„o atacar·";
+	mes "de volta √† vida por uma maldi√ß√£o. ";
+	mes "Parece muito amea√ßador, √©";
+	mes "benigno e n√£o atacar√°";
 	mes "viajantes submarinos de uma vez.";
 	close;
 }
@@ -627,18 +627,18 @@ yuno_in03,35,124,3	script	Sleeper#yuno	1386,{
 }
 yuno_in03,35,122,1	script	#SLEEPER	111,{
 	mes "";
-	mes "Nome cientÌfico: Dorminhoco";
-	mes "Tamanho mÈdio";
+	mes "Nome cient√≠fico: Dorminhoco";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Terra";
 	next;
-	mes "ExplicaÁ„o:";
-	mes "Criatura de areia n„o identificada.";
+	mes "Explica√ß√£o:";
+	mes "Criatura de areia n√£o identificada.";
 	mes "Geralmente fica debaixo da terra,";
 	mes "mas quando os viajantes pisam no";
 	mes "areia, pode ocorrer abruptamente";
-	mes "parecem atac·-los.";
+	mes "parecem atac√°-los.";
 	next;
-	mes "… menor que Sandman e pode";
+	mes "√â menor que Sandman e pode";
 	mes "causar ataques indiretos, causando uma tempestade de areia.";
 	close;
 }
@@ -648,27 +648,27 @@ yuno_in03,39,124,3	script	Ancient Mummy#yuno	1297,{
 }
 yuno_in03,39,122,1	script	#ANCIENT_MUMMY	111,{
 	mes "";
-	mes "Nome cientÌfico: M˙mia Antiga";
-	mes "Tamanho mÈdio";
+	mes "Nome cient√≠fico: M√∫mia Antiga";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Morto-vivo";
 	next;
-	mes "ExplicaÁ„o:";
-	mes "Uma m˙mia amaldiÁoada com a vida eterna.";
-	mes "Embora envolto em decomposiÁ„o";
-	mes "bandagens, M˙mia Antiga tambÈm";
-	mes "usa um esplÍndido enfeite de cabelo";
+	mes "Explica√ß√£o:";
+	mes "Uma m√∫mia amaldi√ßoada com a vida eterna.";
+	mes "Embora envolto em decomposi√ß√£o";
+	mes "bandagens, M√∫mia Antiga tamb√©m";
+	mes "usa um espl√™ndido enfeite de cabelo";
 	mes "adornado com uma cobra.";
 	next;
-	mes "Este tipo de enfeite de cabeÁa";
+	mes "Este tipo de enfeite de cabe√ßa";
 	mes "indica que o Antigo";
-	mes "Mam„e era uma pessoa de alto escal„o";
+	mes "Mam√£e era uma pessoa de alto escal√£o";
 	mes "enquanto ele ainda estava vivo.";
 	next;
-	mes "Desde que a M˙mia Antiga";
+	mes "Desde que a M√∫mia Antiga";
 	mes "estive vagando pelo submundo";
-	mes "h· muito tempo n„o tem";
-	mes "qualquer consciÍncia e vontade";
-	mes "atacar qualquer ser vivo prÛximo.";
+	mes "h√° muito tempo n√£o tem";
+	mes "qualquer consci√™ncia e vontade";
+	mes "atacar qualquer ser vivo pr√≥ximo.";
 	close;
 }
 	
@@ -677,20 +677,20 @@ yuno_in03,18,122,5	script	Incubus#yuno	1374,{
 }
 yuno_in03,19,120,1	script	#INCUBUS	111,{
 	mes "";
-	mes "Nome cientÌfico: Incubus";
-	mes "Tamanho mÈdio";
+	mes "Nome cient√≠fico: Incubus";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Sombra";
 	next;
-	mes "ExplicaÁ„o:";
-	mes "Este demÙnio atrai humanos";
+	mes "Explica√ß√£o:";
+	mes "Este dem√¥nio atrai humanos";
 	mes "com sua beleza estonteante";
-	mes "aparÍncia. ";
-	mes "humano do sexo masculino, nÛs o chamamos de Incubus.";
-	mes "Como mulher, chamamos isso de S˙cubo.";
+	mes "apar√™ncia. ";
+	mes "humano do sexo masculino, n√≥s o chamamos de Incubus.";
+	mes "Como mulher, chamamos isso de S√∫cubo.";
 	next;
 	mes "Este diabo tem como alvo pessoas com";
 	mes "vulnerabilidades mentais para que";
-	mes "eventualmente pode lev·-los para o inferno.";
+	mes "eventualmente pode lev√°-los para o inferno.";
 	close;
 }
 	
@@ -699,20 +699,20 @@ yuno_in03,44,120,3	script	Succubus#yuno	1370,{
 }
 yuno_in03,42,120,1	script	#SUCCUBUS	111,{
 	mes "";
-	mes "Nome CientÌfico: S˙cubo";
-	mes "Tamanho mÈdio";
+	mes "Nome Cient√≠fico: S√∫cubo";
+	mes "Tamanho m√©dio";
 	mes "Atributo: Sombra";
 	next;
-	mes "ExplicaÁ„o:";
-	mes "Este demÙnio atrai humanos";
+	mes "Explica√ß√£o:";
+	mes "Este dem√¥nio atrai humanos";
 	mes "com sua beleza estonteante";
-	mes "aparÍncia. ";
-	mes "mulher humana, nÛs a chamamos de S˙cubo.";
+	mes "apar√™ncia. ";
+	mes "mulher humana, n√≥s a chamamos de S√∫cubo.";
 	mes "Como homem, chamamos isso de Incubus.";
 	next;
 	mes "Este diabo tem como alvo pessoas com";
 	mes "vulnerabilidades mentais para que";
-	mes "eventualmente pode lev·-los para o inferno.";
+	mes "eventualmente pode lev√°-los para o inferno.";
 	close;
 }
 

@@ -36,54 +36,54 @@ OnStart:
 	end;
 
 OnTimer3000:
-	mapannounce "força_2-1","Bom dia, meu nome é Minilover, o guia do Time Force Battle para o nível 60!",0;
+	mapannounce "forÃ§a_2-1","Bom dia, meu nome Ã© Minilover, o guia do Time Force Battle para o nÃ­vel 60!",0;
 	end;
 
 OnTimer4000:
-	mapannounce "força_2-1","Lembre-se de que sua decisão certa economizará muito do seu tempo!",0;
+	mapannounce "forÃ§a_2-1","Lembre-se de que sua decisÃ£o certa economizarÃ¡ muito do seu tempo!",0;
 	end;
 
 OnTimer5000:
-	mapannounce "força_2-1","Para completar este percurso de batalha, você deve começar da extremidade esquerda desta sala no sentido horário. ",0;
+	mapannounce "forÃ§a_2-1","Para completar este percurso de batalha, vocÃª deve comeÃ§ar da extremidade esquerda desta sala no sentido horÃ¡rio. ",0;
 	end;
 
 OnTimer60000:
-	if (getmapusers("força_2-1") == 0) {
+	if (getmapusers("forÃ§a_2-1") == 0) {
 		donpcevent "Minilover#arena::OnFailClearStage";
 	}
-	mapannounce "força_2-1","Tempo restante: 5 minutos",0;
+	mapannounce "forÃ§a_2-1","Tempo restante: 5 minutos",0;
 	end;
 
 OnTimer120000:
-	if (getmapusers("força_2-1") == 0) {
+	if (getmapusers("forÃ§a_2-1") == 0) {
 		donpcevent "Minilover#arena::OnFailClearStage";
 	}
-	mapannounce "força_2-1","Tempo restante: 4 minutos",0;
+	mapannounce "forÃ§a_2-1","Tempo restante: 4 minutos",0;
 	end;
 
 OnTimer180000:
-	if (getmapusers("força_2-1") == 0) {
+	if (getmapusers("forÃ§a_2-1") == 0) {
 		donpcevent "Minilover#arena::OnFailClearStage";
 	}
-	mapannounce "força_2-1","Tempo restante: 3 minutos",0;
+	mapannounce "forÃ§a_2-1","Tempo restante: 3 minutos",0;
 	end;
 
 OnTimer240000:
-	if (getmapusers("força_2-1") == 0) {
+	if (getmapusers("forÃ§a_2-1") == 0) {
 		donpcevent "Minilover#arena::OnFailClearStage";
 	}
-	mapannounce "força_2-1","Tempo restante: 2 minutos",0;
+	mapannounce "forÃ§a_2-1","Tempo restante: 2 minutos",0;
 	end;
 
 OnTimer300000:
-	if (getmapusers("força_2-1") == 0) {
+	if (getmapusers("forÃ§a_2-1") == 0) {
 		donpcevent "Minilover#arena::OnFailClearStage";
 	}
-	mapannounce "força_2-1","Tempo restante: 1 minuto",0;
+	mapannounce "forÃ§a_2-1","Tempo restante: 1 minuto",0;
 	end;
 
 OnTimer360000:
-	mapannounce "força_2-1","Seu tempo acabou. ",0;
+	mapannounce "forÃ§a_2-1","Seu tempo acabou. ",0;
 	end;
 
 OnTimer365000:
@@ -118,71 +118,71 @@ OnFailClearStage:
 	end;
 
 On01_Start:
-	mapannounce "força_2-1","Para terminar esta batalha, você deve matar pelo menos 5 Goblins enquanto se esquiva de Rotar Zairos!",0;
+	mapannounce "forÃ§a_2-1","Para terminar esta batalha, vocÃª deve matar pelo menos 5 Goblins enquanto se esquiva de Rotar Zairos!",0;
 	end;
 
 On01_End:
-	mapannounce "força_2-1","Uma porta para a sala norte se abriu!",0;
+	mapannounce "forÃ§a_2-1","Uma porta para a sala norte se abriu!",0;
 	end;
 
 On02_Start:
-	mapannounce "força_2-1","Fuja para a saída norte dos monstros!",0;
+	mapannounce "forÃ§a_2-1","Fuja para a saÃ­da norte dos monstros!",0;
 	end;
 
 On02_End:
-	mapannounce "força_2-1","Uma porta para a sala norte se abriu!",0;
+	mapannounce "forÃ§a_2-1","Uma porta para a sala norte se abriu!",0;
 	end;
 
 On03_Start:
-	mapannounce "força_2-1","Para terminar esta batalha, você deve matar todos os Louva-a-deus!",0;
+	mapannounce "forÃ§a_2-1","Para terminar esta batalha, vocÃª deve matar todos os Louva-a-deus!",0;
 	end;
 
 On03_End:
-	mapannounce "força_2-1","Claro! ",0;
+	mapannounce "forÃ§a_2-1","Claro! ",0;
 	end;
 
 On04_Start:
-	mapannounce "força_2-1","Para terminar esta batalha, você deve matar todos os monstros não agressivos enquanto se esquiva dos monstros agressivos!",0;
+	mapannounce "forÃ§a_2-1","Para terminar esta batalha, vocÃª deve matar todos os monstros nÃ£o agressivos enquanto se esquiva dos monstros agressivos!",0;
 	end;
 
 On04_End:
-	mapannounce "força_2-1","Uma porta para a sala leste se abriu!",0;
+	mapannounce "forÃ§a_2-1","Uma porta para a sala leste se abriu!",0;
 	end;
 
 On05_Start:
-	mapannounce "força_2-1","Para terminar esta batalha, você deve matar todos os monstros, exceto Hydras e Kaphas!",0;
+	mapannounce "forÃ§a_2-1","Para terminar esta batalha, vocÃª deve matar todos os monstros, exceto Hydras e Kaphas!",0;
 	end;
 
 On05_End:
-	mapannounce "força_2-1","Claro! ",0;
+	mapannounce "forÃ§a_2-1","Claro! ",0;
 	end;
 
 On06_Start:
-	mapannounce "força_2-1","Para terminar esta batalha, você deve matar todas as bonecas Miyabi e escapar para a saída sul!",0;
+	mapannounce "forÃ§a_2-1","Para terminar esta batalha, vocÃª deve matar todas as bonecas Miyabi e escapar para a saÃ­da sul!",0;
 	end;
 
 On06_End:
-	mapannounce "força_2-1","Uma porta para a sala sul se abriu!",0;
+	mapannounce "forÃ§a_2-1","Uma porta para a sala sul se abriu!",0;
 	end;
 
 On07_Start:
-	mapannounce "força_2-1","Para terminar esta batalha, você deve matar todos os monstros!",0;
+	mapannounce "forÃ§a_2-1","Para terminar esta batalha, vocÃª deve matar todos os monstros!",0;
 	end;
 
 On07_End:
-	mapannounce "força_2-1","Claro! ",0;
+	mapannounce "forÃ§a_2-1","Claro! ",0;
 	end;
 
 On08_Start:
-	mapannounce "força_2-1","Por favor, fuja para a saída norte!",0;
+	mapannounce "forÃ§a_2-1","Por favor, fuja para a saÃ­da norte!",0;
 	end;
 
 On09_Start:
-	mapannounce "força_2-1","Para terminar esta batalha, você deve derrotar um Líder Goblin!",0;
+	mapannounce "forÃ§a_2-1","Para terminar esta batalha, vocÃª deve derrotar um LÃ­der Goblin!",0;
 	end;
 
 On09_End:
-	mapannounce "força_2-1","Chefe claro! ",0;
+	mapannounce "forÃ§a_2-1","Chefe claro! ",0;
 	end;
 }
 
@@ -377,7 +377,7 @@ OnReset:
 	end;
 
 OnEnable:
-	monster "força_2-1",25,25,"Rotar Zairo",1392,1,"force_01ex";
+	monster "forÃ§a_2-1",25,25,"Rotar Zairo",1392,1,"force_01ex";
 	end;
 
 OnMyMobDead:
@@ -391,20 +391,20 @@ OnReset:
 
 OnEnable:
 	donpcevent "force_01ex#60::OnEnable";
-	monster "força_2-1",25,32,"Arqueiro Goblin",1577,1,"force_01mob";
-	monster "força_2-1",21,26,"Duende",1534,1,"force_01mob";
-	monster "força_2-1",25,36,"Duende",1536,1,"force_01mob";
-	monster "força_2-1",25,15,"Duende",1534,1,"force_01mob";
-	monster "força_2-1",40,30,"Duende",1536,1,"force_01mob";
-	monster "força_2-1",25,24,"Duende",1534,1,"force_01mob";
-	monster "força_2-1",25,9,"Duende",1536,1,"force_01mob";
-	monster "força_2-1",28,15,"Arqueiro Goblin",1577,1,"force_01mob";
-	monster "força_2-1",12,33,"Duende",1536,1,"force_01mob";
-	monster "força_2-1",24,20,"Duende",1535,1,"force_01mob";
+	monster "forÃ§a_2-1",25,32,"Arqueiro Goblin",1577,1,"force_01mob";
+	monster "forÃ§a_2-1",21,26,"Duende",1534,1,"force_01mob";
+	monster "forÃ§a_2-1",25,36,"Duende",1536,1,"force_01mob";
+	monster "forÃ§a_2-1",25,15,"Duende",1534,1,"force_01mob";
+	monster "forÃ§a_2-1",40,30,"Duende",1536,1,"force_01mob";
+	monster "forÃ§a_2-1",25,24,"Duende",1534,1,"force_01mob";
+	monster "forÃ§a_2-1",25,9,"Duende",1536,1,"force_01mob";
+	monster "forÃ§a_2-1",28,15,"Arqueiro Goblin",1577,1,"force_01mob";
+	monster "forÃ§a_2-1",12,33,"Duende",1536,1,"force_01mob";
+	monster "forÃ§a_2-1",24,20,"Duende",1535,1,"force_01mob";
 	end;
 
 OnMyMobDead:
-	if (mobcount("força_2-1","force_01mob") < 6) {
+	if (mobcount("forÃ§a_2-1","force_01mob") < 6) {
 		donpcevent "Minilover#arena::On01_End";
 		donpcevent "arena#60::OnReset_01";
 	}
@@ -422,36 +422,36 @@ OnReset:
 	killmonster "force_2-1","force_02mob#60::OnMyMobDead";
 	end;
 OnEnable:
-	monster "força_2-1",24,76,"Dreno",1434,1,"force_02mob";
-	monster "força_2-1",28,76,"Dreno",1434,1,"force_02mob";
-	monster "força_2-1",24,86,"Dreno",1434,1,"force_02mob";
-	monster "força_2-1",24,76,"Dreno",1434,1,"force_02mob";
-	monster "força_2-1",28,76,"Dreno",1434,1,"force_02mob";
-	monster "força_2-1",24,86,"Dreno",1434,1,"force_02mob";
-	monster "força_2-1",24,76,"Dreno",1434,1,"force_02mob";
-	monster "força_2-1",28,76,"Dreno",1434,1,"force_02mob";
-	monster "força_2-1",23,76,"Réquiem",1468,1,"force_02mob";
-	monster "força_2-1",27,76,"Réquiem",1468,1,"force_02mob";
-	monster "força_2-1",25,86,"Réquiem",1468,1,"force_02mob";
-	monster "força_2-1",26,86,"canibal",1423,1,"force_02mob";
-	monster "força_2-1",25,100,"canibal",1423,1,"force_02mob";
-	monster "força_2-1",26,118,"canibal",1423,1,"force_02mob";
-	monster "força_2-1",25,100,"canibal",1423,1,"force_02mob";
-	monster "força_2-1",26,118,"canibal",1423,1,"force_02mob";
-	monster "força_2-1",28,79,"Zero",1470,1,"force_02mob";
-	monster "força_2-1",23,87,"Zero",1470,1,"force_02mob";
-	monster "força_2-1",28,99,"Zero",1470,1,"force_02mob";
-	monster "força_2-1",23,112,"Zero",1470,1,"force_02mob";
-	monster "força_2-1",28,128,"Matir",1460,1,"force_02mob";
-	monster "força_2-1",28,128,"Matir",1460,1,"force_02mob";
-	monster "força_2-1",28,128,"Matir",1460,1,"force_02mob";
-	monster "força_2-1",28,128,"Orc Zumbi",1463,1,"force_02mob";
-	monster "força_2-1",28,128,"Orc Zumbi",1463,1,"force_02mob";
-	monster "força_2-1",28,128,"Orc Zumbi",1463,1,"force_02mob";
-	monster "força_2-1",28,128,"Orc Zumbi",1463,1,"force_02mob";
-	monster "força_2-1",28,128,"Orc Zumbi",1463,1,"force_02mob";
-	monster "força_2-1",28,128,"Matir",1460,1,"force_02mob";
-	monster "força_2-1",28,128,"Matir",1460,1,"force_02mob";
+	monster "forÃ§a_2-1",24,76,"Dreno",1434,1,"force_02mob";
+	monster "forÃ§a_2-1",28,76,"Dreno",1434,1,"force_02mob";
+	monster "forÃ§a_2-1",24,86,"Dreno",1434,1,"force_02mob";
+	monster "forÃ§a_2-1",24,76,"Dreno",1434,1,"force_02mob";
+	monster "forÃ§a_2-1",28,76,"Dreno",1434,1,"force_02mob";
+	monster "forÃ§a_2-1",24,86,"Dreno",1434,1,"force_02mob";
+	monster "forÃ§a_2-1",24,76,"Dreno",1434,1,"force_02mob";
+	monster "forÃ§a_2-1",28,76,"Dreno",1434,1,"force_02mob";
+	monster "forÃ§a_2-1",23,76,"RÃ©quiem",1468,1,"force_02mob";
+	monster "forÃ§a_2-1",27,76,"RÃ©quiem",1468,1,"force_02mob";
+	monster "forÃ§a_2-1",25,86,"RÃ©quiem",1468,1,"force_02mob";
+	monster "forÃ§a_2-1",26,86,"canibal",1423,1,"force_02mob";
+	monster "forÃ§a_2-1",25,100,"canibal",1423,1,"force_02mob";
+	monster "forÃ§a_2-1",26,118,"canibal",1423,1,"force_02mob";
+	monster "forÃ§a_2-1",25,100,"canibal",1423,1,"force_02mob";
+	monster "forÃ§a_2-1",26,118,"canibal",1423,1,"force_02mob";
+	monster "forÃ§a_2-1",28,79,"Zero",1470,1,"force_02mob";
+	monster "forÃ§a_2-1",23,87,"Zero",1470,1,"force_02mob";
+	monster "forÃ§a_2-1",28,99,"Zero",1470,1,"force_02mob";
+	monster "forÃ§a_2-1",23,112,"Zero",1470,1,"force_02mob";
+	monster "forÃ§a_2-1",28,128,"Matir",1460,1,"force_02mob";
+	monster "forÃ§a_2-1",28,128,"Matir",1460,1,"force_02mob";
+	monster "forÃ§a_2-1",28,128,"Matir",1460,1,"force_02mob";
+	monster "forÃ§a_2-1",28,128,"Orc Zumbi",1463,1,"force_02mob";
+	monster "forÃ§a_2-1",28,128,"Orc Zumbi",1463,1,"force_02mob";
+	monster "forÃ§a_2-1",28,128,"Orc Zumbi",1463,1,"force_02mob";
+	monster "forÃ§a_2-1",28,128,"Orc Zumbi",1463,1,"force_02mob";
+	monster "forÃ§a_2-1",28,128,"Orc Zumbi",1463,1,"force_02mob";
+	monster "forÃ§a_2-1",28,128,"Matir",1460,1,"force_02mob";
+	monster "forÃ§a_2-1",28,128,"Matir",1460,1,"force_02mob";
 	end;
 
 OnMyMobDead:
@@ -470,16 +470,16 @@ OnReset:
 	end;
 
 OnEnable:
-	monster "força_2-1",26,173,"Hidra",1579,1,"force_03ex";
-	monster "força_2-1",21,173,"Hidra",1579,1,"force_03ex";
-	monster "força_2-1",31,173,"Hidra",1579,1,"force_03ex";
-	monster "força_2-1",26,178,"Hidra",1579,1,"force_03ex";
-	monster "força_2-1",21,178,"Hidra",1579,1,"force_03ex";
-	monster "força_2-1",31,178,"Hidra",1579,1,"force_03ex";
-	monster "força_2-1",19,174,"Obeaune",1425,1,"force_03ex";
-	monster "força_2-1",26,161,"Obeaune",1425,1,"force_03ex";
-	monster "força_2-1",13,173,"Obeaune",1425,1,"force_03ex";
-	monster "força_2-1",38,173,"Obeaune",1425,1,"force_03ex";
+	monster "forÃ§a_2-1",26,173,"Hidra",1579,1,"force_03ex";
+	monster "forÃ§a_2-1",21,173,"Hidra",1579,1,"force_03ex";
+	monster "forÃ§a_2-1",31,173,"Hidra",1579,1,"force_03ex";
+	monster "forÃ§a_2-1",26,178,"Hidra",1579,1,"force_03ex";
+	monster "forÃ§a_2-1",21,178,"Hidra",1579,1,"force_03ex";
+	monster "forÃ§a_2-1",31,178,"Hidra",1579,1,"force_03ex";
+	monster "forÃ§a_2-1",19,174,"Obeaune",1425,1,"force_03ex";
+	monster "forÃ§a_2-1",26,161,"Obeaune",1425,1,"force_03ex";
+	monster "forÃ§a_2-1",13,173,"Obeaune",1425,1,"force_03ex";
+	monster "forÃ§a_2-1",38,173,"Obeaune",1425,1,"force_03ex";
 	end;
 
 OnMyMobDead:
@@ -489,10 +489,10 @@ OnMyMobDead:
 -	script	force_03mob#60	-1,{
 OnEnable:
 	donpcevent "force_03ex#60::OnEnable";
-	monster "força_2-1",23,174,"louva a Deus",1457,1,"force_03mob";
-	monster "força_2-1",18,173,"louva a Deus",1457,1,"force_03mob";
-	monster "força_2-1",33,173,"louva a Deus",1457,1,"force_03mob";
-	monster "força_2-1",26,181,"louva a Deus",1457,1,"force_03mob";
+	monster "forÃ§a_2-1",23,174,"louva a Deus",1457,1,"force_03mob";
+	monster "forÃ§a_2-1",18,173,"louva a Deus",1457,1,"force_03mob";
+	monster "forÃ§a_2-1",33,173,"louva a Deus",1457,1,"force_03mob";
+	monster "forÃ§a_2-1",26,181,"louva a Deus",1457,1,"force_03mob";
 	end;
 
 OnReset:
@@ -500,7 +500,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("força_2-1","force_03mob") < 1) {
+	if (mobcount("forÃ§a_2-1","force_03mob") < 1) {
 		donpcevent "Minilover#arena::On03_End";
 		donpcevent "arena#60::OnReset_03";
 	}
@@ -519,13 +519,13 @@ OnReset:
 	end;
 
 OnEnable:
-	monster "força_2-1",84,177,"Pé Grande",1442,1,"force_04ex";
-	monster "força_2-1",125,170,"Pé Grande",1442,1,"force_04ex";
-	monster "força_2-1",109,172,"Bebê leopardo",1524,1,"force_04ex";
-	monster "força_2-1",121,172,"Bebê leopardo",1524,1,"force_04ex";
-	monster "força_2-1",104,173,"Chepet",1444,1,"force_04ex";
-	monster "força_2-1",75,174,"Dokebi",1491,1,"force_04ex";
-	monster "força_2-1",102,176,"Dokebi",1491,1,"force_04ex";
+	monster "forÃ§a_2-1",84,177,"PÃ© Grande",1442,1,"force_04ex";
+	monster "forÃ§a_2-1",125,170,"PÃ© Grande",1442,1,"force_04ex";
+	monster "forÃ§a_2-1",109,172,"BebÃª leopardo",1524,1,"force_04ex";
+	monster "forÃ§a_2-1",121,172,"BebÃª leopardo",1524,1,"force_04ex";
+	monster "forÃ§a_2-1",104,173,"Chepet",1444,1,"force_04ex";
+	monster "forÃ§a_2-1",75,174,"Dokebi",1491,1,"force_04ex";
+	monster "forÃ§a_2-1",102,176,"Dokebi",1491,1,"force_04ex";
 	end;
 
 OnMyMobDead:
@@ -539,12 +539,12 @@ OnReset:
 
 OnEnable:
 	donpcevent "force_04ex#60::OnEnable";
-	monster "força_2-1",79,174,"Golem",1540,1,"force_04mob";
-	monster "força_2-1",131,178,"Marte",1551,1,"force_04mob";
+	monster "forÃ§a_2-1",79,174,"Golem",1540,1,"force_04mob";
+	monster "forÃ§a_2-1",131,178,"Marte",1551,1,"force_04mob";
 	end;
 
 OnMyMobDead:
-	if (mobcount("força_2-1","force_04mob") < 1) {
+	if (mobcount("forÃ§a_2-1","force_04mob") < 1) {
 		donpcevent "force_04ex#60::OnReset";
 		donpcevent "Minilover#arena::On04_End";
 		donpcevent "arena#60::OnReset_04";
@@ -564,18 +564,18 @@ OnReset:
 	end;
 
 OnSummonMob_05:
-	monster "força_2-1",168,177,"Hidra",1579,1,"force_05ex";
-	monster "força_2-1",170,179,"Hidra",1579,1,"force_05ex";
-	monster "força_2-1",177,179,"Hidra",1579,1,"force_05ex";
-	monster "força_2-1",179,178,"Hidra",1579,1,"force_05ex";
-	monster "força_2-1",179,170,"Hidra",1579,1,"force_05ex";
-	monster "força_2-1",177,168,"Hidra",1579,1,"force_05ex";
-	monster "força_2-1",170,168,"Hidra",1579,1,"force_05ex";
-	monster "força_2-1",173,174,"Hidra",1579,1,"force_05ex";
-	monster "força_2-1",174,174,"Hidra",1579,1,"force_05ex";
-	monster "força_2-1",173,173,"Hidra",1579,1,"force_05ex";
-	monster "força_2-1",174,173,"Hidra",1579,1,"force_05ex";
-	monster "força_2-1",173,181,"Kapha",1543,1,"force_05ex";
+	monster "forÃ§a_2-1",168,177,"Hidra",1579,1,"force_05ex";
+	monster "forÃ§a_2-1",170,179,"Hidra",1579,1,"force_05ex";
+	monster "forÃ§a_2-1",177,179,"Hidra",1579,1,"force_05ex";
+	monster "forÃ§a_2-1",179,178,"Hidra",1579,1,"force_05ex";
+	monster "forÃ§a_2-1",179,170,"Hidra",1579,1,"force_05ex";
+	monster "forÃ§a_2-1",177,168,"Hidra",1579,1,"force_05ex";
+	monster "forÃ§a_2-1",170,168,"Hidra",1579,1,"force_05ex";
+	monster "forÃ§a_2-1",173,174,"Hidra",1579,1,"force_05ex";
+	monster "forÃ§a_2-1",174,174,"Hidra",1579,1,"force_05ex";
+	monster "forÃ§a_2-1",173,173,"Hidra",1579,1,"force_05ex";
+	monster "forÃ§a_2-1",174,173,"Hidra",1579,1,"force_05ex";
+	monster "forÃ§a_2-1",173,181,"Kapha",1543,1,"force_05ex";
 	end;
 
 OnMyMobDead:
@@ -589,15 +589,15 @@ OnReset:
 
 OnEnable:
 	donpcevent "force_05ex#60::OnSummonMob_05";
-	monster "força_2-1",163,173,"Dreno",1434,1,"force_05mob";
-	monster "força_2-1",173,173,"Misto",1553,1,"force_05mob";
-	monster "força_2-1",181,173,"Esqueleto Orc",1462,1,"force_05mob";
-	monster "força_2-1",171,177,"Esqueleto Orc",1462,1,"force_05mob";
-	monster "força_2-1",173,181,"trapaceiro",1445,1,"force_05mob";
+	monster "forÃ§a_2-1",163,173,"Dreno",1434,1,"force_05mob";
+	monster "forÃ§a_2-1",173,173,"Misto",1553,1,"force_05mob";
+	monster "forÃ§a_2-1",181,173,"Esqueleto Orc",1462,1,"force_05mob";
+	monster "forÃ§a_2-1",171,177,"Esqueleto Orc",1462,1,"force_05mob";
+	monster "forÃ§a_2-1",173,181,"trapaceiro",1445,1,"force_05mob";
 	end;
 
 OnMyMobDead:
-	if (mobcount("força_2-1","force_05mob") < 1) {
+	if (mobcount("forÃ§a_2-1","force_05mob") < 1) {
 		donpcevent "Minilover#arena::On05_End";
 		donpcevent "arena#60::OnReset_05";
 	}
@@ -616,42 +616,42 @@ OnReset:
 	end;
 
 OnEnable:
-	monster "força_2-1",169,130,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",178,130,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",169,125,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",178,125,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",169,120,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",178,120,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",169,115,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",178,115,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",169,110,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",178,110,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",169,105,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",178,105,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",169,100,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",178,100,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",169,95,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",178,95,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",169,90,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",178,90,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",169,85,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",178,85,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",169,80,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",178,80,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",169,75,"Maior General",1541,1,"force_06ex";
-	monster "força_2-1",178,75,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",169,130,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",178,130,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",169,125,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",178,125,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",169,120,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",178,120,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",169,115,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",178,115,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",169,110,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",178,110,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",169,105,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",178,105,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",169,100,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",178,100,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",169,95,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",178,95,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",169,90,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",178,90,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",169,85,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",178,85,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",169,80,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",178,80,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",169,75,"Maior General",1541,1,"force_06ex";
+	monster "forÃ§a_2-1",178,75,"Maior General",1541,1,"force_06ex";
 	end;
 
 OnSubOn:
 	switch(rand(1,3)) {
 	case 1:
-		monster "força_2-1",rand(170,177),rand(70,120),"Sidewinder",1424,1,"force_06ex";
+		monster "forÃ§a_2-1",rand(170,177),rand(70,120),"Sidewinder",1424,1,"force_06ex";
 		break;
 	case 2:
-		monster "força_2-1",rand(170,177),rand(70,120),"Planta Eremita",1565,1,"force_06ex";
+		monster "forÃ§a_2-1",rand(170,177),rand(70,120),"Planta Eremita",1565,1,"force_06ex";
 		break;
 	case 3:
-		monster "força_2-1",rand(170,177),rand(70,120),"Cruzador",1443,1,"force_06ex";
+		monster "forÃ§a_2-1",rand(170,177),rand(70,120),"Cruzador",1443,1,"force_06ex";
 		break;
 	}
 	end;
@@ -667,12 +667,12 @@ OnReset:
 
 OnEnable:
 	donpcevent "force_06ex#60::OnEnable";
-	monster "força_2-1",174,100,"Boneca Miyabi",1552,1,"force_06mob";
-	monster "força_2-1",174,80,"Boneca Miyabi",1552,1,"force_06mob";
+	monster "forÃ§a_2-1",174,100,"Boneca Miyabi",1552,1,"force_06mob";
+	monster "forÃ§a_2-1",174,80,"Boneca Miyabi",1552,1,"force_06mob";
 	end;
 
 OnMyMobDead:
-	if (mobcount("força_2-1","force_06mob") < 1) {
+	if (mobcount("forÃ§a_2-1","force_06mob") < 1) {
 		donpcevent "Minilover#arena::On06_End";
 		donpcevent "arena#60::OnReset_06";
 	}
@@ -692,14 +692,14 @@ OnReset:
 	end;
 
 OnEnable:
-	monster "força_2-1",170,25,"Jakk",1436,1,"force_07mob";
-	monster "força_2-1",170,25,"Jakk",1436,1,"force_07mob";
-	monster "força_2-1",175,25,"Misto",1553,1,"force_07mob";
-	monster "força_2-1",179,25,"Ísis",1421,1,"force_07mob";
+	monster "forÃ§a_2-1",170,25,"Jakk",1436,1,"force_07mob";
+	monster "forÃ§a_2-1",170,25,"Jakk",1436,1,"force_07mob";
+	monster "forÃ§a_2-1",175,25,"Misto",1553,1,"force_07mob";
+	monster "forÃ§a_2-1",179,25,"Ãsis",1421,1,"force_07mob";
 	end;
 
 OnMyMobDead:
-	if (mobcount("força_2-1","force_07mob") < 1) {
+	if (mobcount("forÃ§a_2-1","force_07mob") < 1) {
 		donpcevent "Minilover#arena::On07_End";
 		donpcevent "arena#60::OnReset_07";
 	}
@@ -730,32 +730,32 @@ OnReset:
 	end;
 
 OnSummonMob_09:
-	monster "força_2-1",90,100,"Horong",1578,1,"force_09ex";
-	monster "força_2-1",92,100,"Horong",1578,1,"force_09ex";
-	monster "força_2-1",99,100,"Horong",1578,1,"force_09ex";
-	monster "força_2-1",105,100,"Horong",1578,1,"force_09ex";
-	monster "força_2-1",91,108,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",91,104,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",91,100,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",91,96,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",91,92,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",95,108,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",99,108,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",100,108,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",104,108,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",108,108,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",108,104,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",108,100,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",108,96,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",108,92,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",104,102,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",196,102,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",114,100,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",121,100,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",85,100,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",78,100,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",96,118,"Maior General",1541,1,"force_09ex";
-	monster "força_2-1",103,118,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",90,100,"Horong",1578,1,"force_09ex";
+	monster "forÃ§a_2-1",92,100,"Horong",1578,1,"force_09ex";
+	monster "forÃ§a_2-1",99,100,"Horong",1578,1,"force_09ex";
+	monster "forÃ§a_2-1",105,100,"Horong",1578,1,"force_09ex";
+	monster "forÃ§a_2-1",91,108,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",91,104,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",91,100,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",91,96,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",91,92,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",95,108,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",99,108,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",100,108,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",104,108,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",108,108,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",108,104,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",108,100,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",108,96,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",108,92,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",104,102,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",196,102,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",114,100,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",121,100,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",85,100,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",78,100,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",96,118,"Maior General",1541,1,"force_09ex";
+	monster "forÃ§a_2-1",103,118,"Maior General",1541,1,"force_09ex";
 	end;
 
 OnMyMobDead:
@@ -765,7 +765,7 @@ OnMyMobDead:
 -	script	force_09mob#60	-1,{
 OnEnable:
 	donpcevent "force_09ex#60::OnSummonMob_09";
-	monster "força_2-1",99,99,"Líder Goblin",1539,1,"force_09mob";
+	monster "forÃ§a_2-1",99,99,"LÃ­der Goblin",1539,1,"force_09mob";
 	end;
 
 OnReset:
@@ -773,7 +773,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("força_2-1","force_09mob") < 1) {
+	if (mobcount("forÃ§a_2-1","force_09mob") < 1) {
 		donpcevent "Minilover#arena::On09_End";
 		donpcevent "arena#60::OnReset_09";
 		donpcevent "arena#60::OnReset_All";
@@ -784,20 +784,20 @@ OnMyMobDead:
 }
 
 prt_are_in,129,135,3	script	Staff#60-1	67,{
-	mes "[Funcionários]";
-	mes "Você fez um bom trabalho.";
-	mes "Mesmo que você não tenha conseguido concluir uma batalha de contra-relógio, eu o recompensarei com uma pequena quantidade de pontos de arena.";
+	mes "[FuncionÃ¡rios]";
+	mes "VocÃª fez um bom trabalho.";
+	mes "Mesmo que vocÃª nÃ£o tenha conseguido concluir uma batalha de contra-relÃ³gio, eu o recompensarei com uma pequena quantidade de pontos de arena.";
 	next;
 	if (arena_point == 30000) {
-		mes "[Funcionários]";
+		mes "[FuncionÃ¡rios]";
 		mes "Uh, hein!";
-		mes "Você já tem pontos de arena suficientes.";
+		mes "VocÃª jÃ¡ tem pontos de arena suficientes.";
 		mes "Por favor, gaste alguns pontos de arena mais tarde. ";
 		next;
 	}
 	else set arena_point, arena_point + 1;
-	mes "[Funcionários]";
-	mes "Deixe-me guiá-lo para fora. ";
+	mes "[FuncionÃ¡rios]";
+	mes "Deixe-me guiÃ¡-lo para fora. ";
 	close2;
 	specialeffect2 EF_EXIT;
 	warp "arena_room",100,75;
@@ -823,45 +823,45 @@ prt_are_in,25,135,3	script	Staff#60-2	67,{
 		}
 	}
 	set @gap60,(60 * $top_60min + $top_60sec) - (60 * @record_min60 + @record_sec60);
-	mes "[Funcionários]";
-	mes "Uau, você fez um bom trabalho ~";
-	mes "Seu nome é...^3131FF" + strcharinfo(0) +"^000000, não é?";
+	mes "[FuncionÃ¡rios]";
+	mes "Uau, vocÃª fez um bom trabalho ~";
+	mes "Seu nome Ã©...^3131FF" + strcharinfo(0) +"^000000, nÃ£o Ã©?";
 	mes "^3131FF"+ strcharinfo(0) +"^000000, tempo total gasto para passar a batalha.";
 	next;
-	mes "[Funcionários]";
-	mes "é"+@record_min60+"minutos"+@record_sec60+"segundos.";
-	mes "Parabéns!";
+	mes "[FuncionÃ¡rios]";
+	mes "Ã©"+@record_min60+"minutos"+@record_sec60+"segundos.";
+	mes "ParabÃ©ns!";
 	next;
-	mes "[Funcionários]";
-	mes "O jogador mais rápido entre as pessoas que concluíram a batalha de força do tempo na arena Lv60 é ^3131FF"+$arena_60topn$+"^000000.";
+	mes "[FuncionÃ¡rios]";
+	mes "O jogador mais rÃ¡pido entre as pessoas que concluÃ­ram a batalha de forÃ§a do tempo na arena Lv60 Ã© ^3131FF"+$arena_60topn$+"^000000.";
 	next;
-	mes "[Funcionários]";
-	mes "^3131FF"+$arena_60topn$+"O tempo de execução de ^000000 foi de ^3131FF"+$top_60min+"^000000minutos ^3131FF"+$top_60sec+"^000000segundos.";
+	mes "[FuncionÃ¡rios]";
+	mes "^3131FF"+$arena_60topn$+"O tempo de execuÃ§Ã£o de ^000000 foi de ^3131FF"+$top_60min+"^000000minutos ^3131FF"+$top_60sec+"^000000segundos.";
 	next;
 	if (@gap60 < 0) {
-		mes "[Funcionários]";
-		mes "Embora você não tenha conseguido fazer um novo disco, espero que tenha sucesso na próxima vez.";
+		mes "[FuncionÃ¡rios]";
+		mes "Embora vocÃª nÃ£o tenha conseguido fazer um novo disco, espero que tenha sucesso na prÃ³xima vez.";
 		next;
 		if (arena_point > 29980) {
-			mes "[Funcionários]";
-			mes "Então deixe-me recompensá-lo com alguns pontos de arena... eh?";
-			mes "Seus pontos de arena excederam o valor máximo. ";
+			mes "[FuncionÃ¡rios]";
+			mes "EntÃ£o deixe-me recompensÃ¡-lo com alguns pontos de arena... eh?";
+			mes "Seus pontos de arena excederam o valor mÃ¡ximo. ";
 			next;
-			mes "[Funcionários]";
-			mes "Você pode verificar a quantidade de pontos de arena que possui na sala de espera da arena.";
+			mes "[FuncionÃ¡rios]";
+			mes "VocÃª pode verificar a quantidade de pontos de arena que possui na sala de espera da arena.";
 			next;
-			mes "[Funcionários]";
-			mes "Espero que você tenha se divertido e deixe-me guiá-lo até a entrada da arena.";
+			mes "[FuncionÃ¡rios]";
+			mes "Espero que vocÃª tenha se divertido e deixe-me guiÃ¡-lo atÃ© a entrada da arena.";
 			mes "Obrigado.";
 			close2;
 		} else {
 			set arena_point, arena_point + 20;
-			mes "[Funcionários]";
-			mes "Deixe-me recompensá-lo com alguns pontos de arena.";
-			mes "Se você quiser verificar a quantidade de pontos de arena que possui, fale com ^3131FFVendigos^000000 na entrada da arena.";
+			mes "[FuncionÃ¡rios]";
+			mes "Deixe-me recompensÃ¡-lo com alguns pontos de arena.";
+			mes "Se vocÃª quiser verificar a quantidade de pontos de arena que possui, fale com ^3131FFVendigos^000000 na entrada da arena.";
 			next;
-			mes "[Funcionários]";
-			mes "Deixe-me guiá-lo até a entrada da arena.";
+			mes "[FuncionÃ¡rios]";
+			mes "Deixe-me guiÃ¡-lo atÃ© a entrada da arena.";
 			mes "Te vejo mais tarde~";
 			close2;
 		}
@@ -874,41 +874,41 @@ prt_are_in,25,135,3	script	Staff#60-2	67,{
 		end;
 	} else {
 		emotion ET_HUK;
-		mes "[Funcionários]";
+		mes "[FuncionÃ¡rios]";
 		mes "Uau! ";
-		mes "Que ótimo trabalho!";
+		mes "Que Ã³timo trabalho!";
 		next;
-		mes "[Funcionários]";
-		mes "Você foi registrado como o jogador mais rápido entre as pessoas que completaram ^FF0000Arena Time Force Battle nível 60s^000000, ^3131FF"+strcharinfo(0)+"^000000.";
+		mes "[FuncionÃ¡rios]";
+		mes "VocÃª foi registrado como o jogador mais rÃ¡pido entre as pessoas que completaram ^FF0000Arena Time Force Battle nÃ­vel 60s^000000, ^3131FF"+strcharinfo(0)+"^000000.";
 		set $top_60min, @record_min60;
 		set $top_60sec, @record_sec60;
 		set $arena_60topn$,strcharinfo(0);
 		donpcevent "Vendigos::OnLineRec_60";
 		next;
 		if (arena_point > 29950) {
-			mes "[Funcionários]";
-			mes "Então deixe-me recompensá-lo com alguns pontos de arena... eh?";
-			mes "Seus pontos de arena excederam o valor máximo. ";
+			mes "[FuncionÃ¡rios]";
+			mes "EntÃ£o deixe-me recompensÃ¡-lo com alguns pontos de arena... eh?";
+			mes "Seus pontos de arena excederam o valor mÃ¡ximo. ";
 			next;
-			mes "[Funcionários]";
-			mes "Você pode verificar a quantidade de pontos de arena que possui na sala de espera da arena.";
+			mes "[FuncionÃ¡rios]";
+			mes "VocÃª pode verificar a quantidade de pontos de arena que possui na sala de espera da arena.";
 			next;
-			mes "[Funcionários]";
-			mes "Espero que você tenha se divertido e deixe-me guiá-lo até a entrada da arena.";
+			mes "[FuncionÃ¡rios]";
+			mes "Espero que vocÃª tenha se divertido e deixe-me guiÃ¡-lo atÃ© a entrada da arena.";
 			mes "Obrigado.";
 			close2;
 		} else {
-			mes "[Funcionários]";
-			mes "Deixe-me recompensá-lo com alguns pontos de arena.";
-			mes "Ao mesmo tempo, como você renovou o registro, desta vez receberá uma quantia extra de pontos.";
+			mes "[FuncionÃ¡rios]";
+			mes "Deixe-me recompensÃ¡-lo com alguns pontos de arena.";
+			mes "Ao mesmo tempo, como vocÃª renovou o registro, desta vez receberÃ¡ uma quantia extra de pontos.";
 			next;
 			set arena_point, arena_point + 50;
-			mes "[Funcionários]";
-			mes "Deixe-me recompensá-lo com alguns pontos de arena.";
-			mes "Se você quiser verificar a quantidade de pontos de arena que possui, fale com ^3131FFVendigos^000000 na entrada da arena.";
+			mes "[FuncionÃ¡rios]";
+			mes "Deixe-me recompensÃ¡-lo com alguns pontos de arena.";
+			mes "Se vocÃª quiser verificar a quantidade de pontos de arena que possui, fale com ^3131FFVendigos^000000 na entrada da arena.";
 			next;
-			mes "[Funcionários]";
-			mes "Deixe-me guiá-lo até a entrada da arena.";
+			mes "[FuncionÃ¡rios]";
+			mes "Deixe-me guiÃ¡-lo atÃ© a entrada da arena.";
 			mes "Te vejo mais tarde~";
 			close2;
 		}
@@ -928,7 +928,7 @@ OnEnable:
 	end;
 
 OnTimer2000:
-	mapannounce "prt_are_in","Esta transmissão informa sobre a restrição para arena nível 60.",0,0xFFCE00;
+	mapannounce "prt_are_in","Esta transmissÃ£o informa sobre a restriÃ§Ã£o para arena nÃ­vel 60.",0,0xFFCE00;
 	end;
 
 OnTimer3000:
@@ -936,7 +936,7 @@ OnTimer3000:
 	end;
 
 OnTimer4000:
-	mapannounce "prt_are_in","Por favor, prossiga sua batalha o mais rápido possível para evitar desvantagens. ",0,0xFFCE00;
+	mapannounce "prt_are_in","Por favor, prossiga sua batalha o mais rÃ¡pido possÃ­vel para evitar desvantagens. ",0,0xFFCE00;
 	end;
 
 OnTimer60000:
@@ -960,19 +960,19 @@ OnOut:
 
 -	script	cast#60	-1,{
 OnTimeOver1:
-	mapannounce "força_2-1","A Arena será reativada devido a um erro ocorrido durante a batalha.",0,0xFFCE00;
+	mapannounce "forÃ§a_2-1","A Arena serÃ¡ reativada devido a um erro ocorrido durante a batalha.",0,0xFFCE00;
 	end;
 
 OnNomal1:
-	mapannounce "força_2-1","Arena será reativada.",0,0xFFCE00;
+	mapannounce "forÃ§a_2-1","Arena serÃ¡ reativada.",0,0xFFCE00;
 	end;
 
 OnNomal2:
-	mapannounce "força_2-1","Arena será reativada.",0,0xFFCE00;
+	mapannounce "forÃ§a_2-1","Arena serÃ¡ reativada.",0,0xFFCE00;
 	end;
 
 OnTimeOver2:
-	mapannounce "força_2-1","A Arena será reativada devido a um erro ocorrido na sala de espera.",0,0xFFCE00;
+	mapannounce "forÃ§a_2-1","A Arena serÃ¡ reativada devido a um erro ocorrido na sala de espera.",0,0xFFCE00;
 	end;
 }
 

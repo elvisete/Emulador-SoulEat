@@ -1,11 +1,21 @@
-//===========================================================\\
-//          ____   __   _  _  __    ____   __   ____         //
-//         / ___) /  \ / )( \(  )  (  __) / _\ (_  _)        \\
-//         \___ \(  O )) \/ (/ (_/\ ) _) /    \  )(          //
-//         (____/ \__/ \____/\____/(____)\_/\_/ (__)         \\
-//                                                           //
-//================== www.souleat.com.br =====================\\
-//======================= by: Guru ==========================//
+//===== rAthena Script =======================================
+//= Izlude Arena Script
+//===== By: ==================================================
+//= L0ne_W0lf
+//===== Current Version: =====================================
+//= 1.5
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: =========================================
+//= Izlude Acolyte Battle Arena
+//===== Additional Comments: =================================
+//= 1.0 First version.
+//= 1.1 Corrected variable typos. (bugreport:4374) [L0ne_w0lf]
+//= 1.2 Updated 'waitingroom' to support required zeny/lvl. [Kisuka]
+//= 1.3 Label standardization. [Euphy]
+//= 1.4 Script updates, and removed two level restrictions. [Euphy]
+//= 1.5 Added GM management function. [Euphy]
+//============================================================
 
 arena_room,114,102,0	script	onlyaco#arena	45,1,1,{
 OnTouch_:
@@ -14,7 +24,7 @@ OnTouch_:
 		end;
 	}
 	else {
-		mes "Apenas a classe NoviÁo È aplic·vel para ingressar neste modo.";
+		mes "Apenas a classe Novi√ßo √© aplic√°vel para ingressar neste modo.";
 		close;
 	}
 }
@@ -23,7 +33,7 @@ arena_room,136,138,3	script	Sala de Espera	124,{
 	end;
 
 OnInit:
-	waitingroom "ForÁa Pessoal, Classe NoviÁo",50,"Sala de Espera do NoviÁo::OnStartArena",1,1000,10;
+	waitingroom "For√ßa Pessoal, Classe Novi√ßo",50,"Sala de Espera do Novi√ßo::OnStartArena",1,1000,10;
 	enablewaitingroomevent;
 	end;
 
@@ -109,68 +119,68 @@ OnEnable:
 	end;
 
 OnTimer2000:
-	mapannounce "forÁa_5-1","Bom dia! ",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Bom dia! ",bc_map|bc_npc;
 	end;
 
 OnTimer3000:
-	mapannounce "forÁa_5-1","Tome suas decisıes com cuidado. ",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Tome suas decis√µes com cuidado. ",bc_map|bc_npc;
 	end;
 
 OnTimer4000:
-	mapannounce "forÁa_5-1","Agora vocÍ tem 8 minutos para completar este desafio. ",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Agora voc√™ tem 8 minutos para completar este desafio. ",bc_map|bc_npc;
 	end;
 
 OnTimer60000:
-	if (getmapusers("forÁa_5-1") == 0) {
+	if (getmapusers("for√ßa_5-1") == 0) {
 		donpcevent "Trocco#aco1::OnFailClearStage";
 	}
-	mapannounce "forÁa_5-1","Tempo restante: 7 minutos",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Tempo restante: 7 minutos",bc_map|bc_npc;
 	end;
 
 OnTimer120000:
-	if (getmapusers("forÁa_5-1") == 0) {
+	if (getmapusers("for√ßa_5-1") == 0) {
 		donpcevent "Trocco#aco1::OnFailClearStage";
 	}
-	mapannounce "forÁa_5-1","Tempo restante: 6 minutos",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Tempo restante: 6 minutos",bc_map|bc_npc;
 	end;
 
 OnTimer180000:
-	if (getmapusers("forÁa_5-1") == 0) {
+	if (getmapusers("for√ßa_5-1") == 0) {
 		donpcevent "Trocco#aco1::OnFailClearStage";
 	}
-	mapannounce "forÁa_5-1","Tempo restante: 5 minutos",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Tempo restante: 5 minutos",bc_map|bc_npc;
 	end;
 
 OnTimer240000:
-	if (getmapusers("forÁa_5-1") == 0) {
+	if (getmapusers("for√ßa_5-1") == 0) {
 		donpcevent "Trocco#aco1::OnFailClearStage";
 	}
-	mapannounce "forÁa_5-1","Tempo restante: 4 minutos",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Tempo restante: 4 minutos",bc_map|bc_npc;
 	end;
 
 OnTimer300000:
-	if (getmapusers("forÁa_5-1") == 0) {
+	if (getmapusers("for√ßa_5-1") == 0) {
 		donpcevent "Trocco#aco1::OnFailClearStage";
 	}
-	mapannounce "forÁa_5-1","Tempo restante: 3 minutos",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Tempo restante: 3 minutos",bc_map|bc_npc;
 	end;
 
 OnTimer360000:
-	if (getmapusers("forÁa_5-1") == 0) {
+	if (getmapusers("for√ßa_5-1") == 0) {
 		donpcevent "Trocco#aco1::OnFailClearStage";
 	}
-	mapannounce "forÁa_5-1","Tempo restante: 2 minutos",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Tempo restante: 2 minutos",bc_map|bc_npc;
 	end;
 
 OnTimer420000:
-	if (getmapusers("forÁa_5-1") == 0) {
+	if (getmapusers("for√ßa_5-1") == 0) {
 		donpcevent "Trocco#aco1::OnFailClearStage";
 	}
-	mapannounce "forÁa_5-1","Tempo restante: 1 minuto",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Tempo restante: 1 minuto",bc_map|bc_npc;
 	end;
 
 OnTimer480000:
-	mapannounce "forÁa_5-1","Acabou o tempo! ",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Acabou o tempo! ",bc_map|bc_npc;
 	end;
 
 OnTimer485000:
@@ -203,63 +213,63 @@ OnFailClearStage:
 	end;
 
 On01_Start:
-	mapannounce "forÁa_5-1","Objetivo: Destruir todas as Plantas Vermelhas!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Objetivo: Destruir todas as Plantas Vermelhas!",bc_map|bc_npc;
 	end;
 
 On01_End:
-	mapannounce "forÁa_5-1","A SaÌda Norte foi aberta!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","A Sa√≠da Norte foi aberta!",bc_map|bc_npc;
 	end;
 
 On02_Start:
-	mapannounce "forÁa_5-1","Objetivo: Mate pelo menos 10 Drops!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Objetivo: Mate pelo menos 10 Drops!",bc_map|bc_npc;
 	end;
 
 On02_End:
-	mapannounce "forÁa_5-1","A SaÌda Norte foi aberta!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","A Sa√≠da Norte foi aberta!",bc_map|bc_npc;
 	end;
 
 On03_Start:
-	mapannounce "forÁa_5-1","Objetivo: exterminar todos os zumbis!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Objetivo: exterminar todos os zumbis!",bc_map|bc_npc;
 	end;
 
 On03_End:
-	mapannounce "forÁa_5-1","A saÌda leste foi aberta!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","A sa√≠da leste foi aberta!",bc_map|bc_npc;
 	end;
 
 On04_Start:
-	mapannounce "forÁa_5-1","Como cortesia, restauraremos parte do seu HP e SP. ",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Como cortesia, restauraremos parte do seu HP e SP. ",bc_map|bc_npc;
 	end;
 
 On05_Start:
-	mapannounce "forÁa_5-1","Objetivo: Destruir todos os Orcs Zumbis!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Objetivo: Destruir todos os Orcs Zumbis!",bc_map|bc_npc;
 	end;
 
 On05_End:
-	mapannounce "forÁa_5-1","A SaÌda Sul foi aberta!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","A Sa√≠da Sul foi aberta!",bc_map|bc_npc;
 	end;
 
 On06_Start:
-	mapannounce "forÁa_5-1","Objetivo: Alcance a SaÌda Sul enquanto desvia das Hidras!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Objetivo: Alcance a Sa√≠da Sul enquanto desvia das Hidras!",bc_map|bc_npc;
 	end;
 
 On07_Start:
-	mapannounce "forÁa_5-1","Objetivo: Mate todos os Esqueletos Arqueiros e Soldados Firelock!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Objetivo: Mate todos os Esqueletos Arqueiros e Soldados Firelock!",bc_map|bc_npc;
 	end;
 
 On07_End:
-	mapannounce "forÁa_5-1","A saÌda oeste foi aberta!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","A sa√≠da oeste foi aberta!",bc_map|bc_npc;
 	end;
 
 On08_Start:
-	mapannounce "forÁa_5-1","Objetivo: Batalha contra Boss. ",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Objetivo: Batalha contra Boss. ",bc_map|bc_npc;
 	end;
 
 On09_Start:
-	mapannounce "forÁa_5-1","Objetivo: Matar Prisioneiros Zumbis, Prisioneiros Skel e Tropas Zumbis!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Objetivo: Matar Prisioneiros Zumbis, Prisioneiros Skel e Tropas Zumbis!",bc_map|bc_npc;
 	end;
 
 On09_End:
-	mapannounce "forÁa_5-1","Chefe derrotado! ",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Chefe derrotado! ",bc_map|bc_npc;
 	end;
 }
 
@@ -273,11 +283,11 @@ OnTouch_:
 -	script	force_01mob#aco	-1,{
 OnEnable:
 	donpcevent "Trocco#aco1::On01_Start";
-	monster "forÁa_5-1",22,29,"Planta Vermelha",1078,1,"force_01mob";
-	monster "forÁa_5-1",29,29,"Planta Vermelha",1078,1,"force_01mob";
-	monster "forÁa_5-1",29,22,"Planta Vermelha",1078,1,"force_01mob";
-	monster "forÁa_5-1",22,22,"Planta Vermelha",1078,1,"force_01mob";
-	monster "forÁa_5-1",25,25,"Planta Vermelha",1078,1,"force_01mob";
+	monster "for√ßa_5-1",22,29,"Planta Vermelha",1078,1,"force_01mob";
+	monster "for√ßa_5-1",29,29,"Planta Vermelha",1078,1,"force_01mob";
+	monster "for√ßa_5-1",29,22,"Planta Vermelha",1078,1,"force_01mob";
+	monster "for√ßa_5-1",22,22,"Planta Vermelha",1078,1,"force_01mob";
+	monster "for√ßa_5-1",25,25,"Planta Vermelha",1078,1,"force_01mob";
 	end;
 
 OnReset:
@@ -285,7 +295,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_5-1","force_01mob") < 1) {
+	if (mobcount("for√ßa_5-1","force_01mob") < 1) {
 		donpcevent "Trocco#aco1::On01_End";
 		donpcevent "arena_aco1::OnReset_01";
 	}
@@ -303,7 +313,7 @@ OnTouch_:
 -	script	force_02mob#aco	-1,{
 OnEnable:
 	donpcevent "Trocco#aco1::On02_Start";
-	areamonster "forÁa_5-1",22,69,29,130,"Gotas",1572,20,"force_02mob";
+	areamonster "for√ßa_5-1",22,69,29,130,"Gotas",1572,20,"force_02mob";
 	end;
 
 OnReset:
@@ -311,7 +321,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if ((mobcount("forÁa_5-1","force_02mob") < 11) && ($@drop_gate == 0)) {
+	if ((mobcount("for√ßa_5-1","force_02mob") < 11) && ($@drop_gate == 0)) {
 		set $@drop_gate,1;
 		donpcevent "Trocco#aco1::On02_End";
 		donpcevent "arena_aco1::OnReset_02";
@@ -328,7 +338,7 @@ OnTouch_:
 -	script	force_03mob#aco	-1,{
 OnEnable:
 	donpcevent "Trocco#aco1::On03_Start";
-	areamonster "forÁa_5-1",9,157,41,190,"Zumbi",1394,10,"force_03mob";
+	areamonster "for√ßa_5-1",9,157,41,190,"Zumbi",1394,10,"force_03mob";
 	end;
 
 OnReset:
@@ -336,7 +346,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_5-1","force_03mob") < 1) {
+	if (mobcount("for√ßa_5-1","force_03mob") < 1) {
 		donpcevent "Trocco#aco1::On03_End";
 		donpcevent "arena_aco1::OnReset_03";
 	}
@@ -362,7 +372,7 @@ OnTouch_:
 -	script	force_05mob#aco	-1,{
 OnEnable:
 	donpcevent "Trocco#aco1::On05_Start";
-	areamonster "forÁa_5-1",159,157,187,190,"Orc Zumbi",1463,8,"force_05mob";
+	areamonster "for√ßa_5-1",159,157,187,190,"Orc Zumbi",1463,8,"force_05mob";
 	end;
 
 OnReset:
@@ -370,7 +380,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_5-1","force_05mob") < 1) {
+	if (mobcount("for√ßa_5-1","force_05mob") < 1) {
 		donpcevent "Trocco#aco1::On05_End";
 		donpcevent "arena_aco1::OnReset_05";
 	}
@@ -388,23 +398,23 @@ OnTouch_:
 -	script	force_06mob#aco	-1,{
 OnEnable:
 	donpcevent "Trocco#aco1::On06_Start";
-	monster "forÁa_5-1",170,124,"Hidra",1579,1,"force_06mob";
-	monster "forÁa_5-1",170,121,"Hidra",1579,1,"force_06mob";
-	monster "forÁa_5-1",173,116,"Hidra",1579,1,"force_06mob";
-	monster "forÁa_5-1",175,113,"Hidra",1579,1,"force_06mob";
-	monster "forÁa_5-1",175,110,"Hidra",1579,1,"force_06mob";
-	monster "forÁa_5-1",170,106,"Hidra",1579,1,"force_06mob";
-	monster "forÁa_5-1",173,106,"Hidra",1579,1,"force_06mob";
-	monster "forÁa_5-1",176,106,"Hidra",1579,1,"force_06mob";
-	monster "forÁa_5-1",179,106,"Hidra",1579,1,"force_06mob";
-	monster "forÁa_5-1",174,100,"Hidra",1579,1,"force_06mob";
-	monster "forÁa_5-1",174,96,"Hidra",1579,1,"force_06mob";
-	monster "forÁa_5-1",174,92,"Hidra",1579,1,"force_06mob";
-	monster "forÁa_5-1",174,88,"Hidra",1579,1,"force_06mob";
-	monster "forÁa_5-1",170,80,"Hidra",1579,1,"force_06mob";
-	monster "forÁa_5-1",173,80,"Hidra",1579,1,"force_06mob";
-	monster "forÁa_5-1",176,80,"Hidra",1579,1,"force_06mob";
-	monster "forÁa_5-1",179,80,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",170,124,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",170,121,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",173,116,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",175,113,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",175,110,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",170,106,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",173,106,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",176,106,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",179,106,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",174,100,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",174,96,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",174,92,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",174,88,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",170,80,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",173,80,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",176,80,"Hidra",1579,1,"force_06mob";
+	monster "for√ßa_5-1",179,80,"Hidra",1579,1,"force_06mob";
 	end;
 
 OnReset:
@@ -424,11 +434,11 @@ OnTouch_:
 -	script	force_07mob#aco	-1,{
 OnEnable:
 	donpcevent "Trocco#aco1::On07_Start";
-	monster "forÁa_5-1",170,32,"Esqueleto de Arqueiro",1420,1,"force_07mob";
-	monster "forÁa_5-1",184,23,"Esqueleto de Arqueiro",1420,1,"force_07mob";
-	monster "forÁa_5-1",165,9,"Esqueleto de Arqueiro",1420,1,"force_07mob";
-	monster "forÁa_5-1",184,15,"Soldado Firelock",1523,1,"force_07mob";
-	monster "forÁa_5-1",189,23,"Soldado Firelock",1523,1,"force_07mob";
+	monster "for√ßa_5-1",170,32,"Esqueleto de Arqueiro",1420,1,"force_07mob";
+	monster "for√ßa_5-1",184,23,"Esqueleto de Arqueiro",1420,1,"force_07mob";
+	monster "for√ßa_5-1",165,9,"Esqueleto de Arqueiro",1420,1,"force_07mob";
+	monster "for√ßa_5-1",184,15,"Soldado Firelock",1523,1,"force_07mob";
+	monster "for√ßa_5-1",189,23,"Soldado Firelock",1523,1,"force_07mob";
 	end;
 
 OnReset:
@@ -436,7 +446,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_5-1","force_07mob") < 1) {
+	if (mobcount("for√ßa_5-1","force_07mob") < 1) {
 		donpcevent "Trocco#aco1::On07_End";
 		donpcevent "arena_aco1::OnReset_07";
 	}
@@ -462,9 +472,9 @@ OnTouch_:
 
 -	script	force_09mob#aco	-1,{
 OnEnable:
-	monster "forÁa_5-1",rand(88,111),rand(89,110),"Prisioneiro Zumbi",1480,1,"force_09mob";
-	monster "forÁa_5-1",rand(88,111),rand(89,110),"Prisioneiro Skel",1479,1,"force_09mob";
-	areamonster "forÁa_5-1",88,89,111,110,"Zumbi",1394,4,"force_09mob";
+	monster "for√ßa_5-1",rand(88,111),rand(89,110),"Prisioneiro Zumbi",1480,1,"force_09mob";
+	monster "for√ßa_5-1",rand(88,111),rand(89,110),"Prisioneiro Skel",1479,1,"force_09mob";
+	areamonster "for√ßa_5-1",88,89,111,110,"Zumbi",1394,4,"force_09mob";
 	end;
 
 OnReset:
@@ -472,7 +482,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_5-1","force_09mob") < 1) {
+	if (mobcount("for√ßa_5-1","force_09mob") < 1) {
 		donpcevent "Trocco#aco1::On09_End";
 		set $@arn_2,gettimetick(2);
 		donpcevent "arena_aco1::OnReset_09";
@@ -537,68 +547,68 @@ OnEnable:
 	end;
 
 OnTimer2000:
-	mapannounce "forÁa_5-1","Bom dia! ",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Bom dia! ",bc_map|bc_npc;
 	end;
 
 OnTimer3000:
-	mapannounce "forÁa_5-1","Tome suas decisıes com cuidado. ",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Tome suas decis√µes com cuidado. ",bc_map|bc_npc;
 	end;
 
 OnTimer4000:
-	mapannounce "forÁa_5-1","Agora vocÍ tem 8 minutos para completar este desafio. ",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Agora voc√™ tem 8 minutos para completar este desafio. ",bc_map|bc_npc;
 	end;
 
 OnTimer60000:
-	if (getmapusers("forÁa_5-1") == 0) {
+	if (getmapusers("for√ßa_5-1") == 0) {
 		donpcevent "Trocco#aco2::OnFailClearStage";
 	}
-	mapannounce "forÁa_5-1","Tempo restante: 7 minutos",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Tempo restante: 7 minutos",bc_map|bc_npc;
 	end;
 
 OnTimer120000:
-	if (getmapusers("forÁa_5-1") == 0) {
+	if (getmapusers("for√ßa_5-1") == 0) {
 		donpcevent "Trocco#aco2::OnFailClearStage";
 	}
-	mapannounce "forÁa_5-1","Tempo restante: 6 minutos",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Tempo restante: 6 minutos",bc_map|bc_npc;
 	end;
 
 OnTimer180000:
-	if (getmapusers("forÁa_5-1") == 0) {
+	if (getmapusers("for√ßa_5-1") == 0) {
 		donpcevent "Trocco#aco2::OnFailClearStage";
 	}
-	mapannounce "forÁa_5-1","Tempo restante: 5 minutos",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Tempo restante: 5 minutos",bc_map|bc_npc;
 	end;
 
 OnTimer240000:
-	if (getmapusers("forÁa_5-1") == 0) {
+	if (getmapusers("for√ßa_5-1") == 0) {
 		donpcevent "Trocco#aco2::OnFailClearStage";
 	}
-	mapannounce "forÁa_5-1","Tempo restante: 4 minutos",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Tempo restante: 4 minutos",bc_map|bc_npc;
 	end;
 
 OnTimer300000:
-	if (getmapusers("forÁa_5-1") == 0) {
+	if (getmapusers("for√ßa_5-1") == 0) {
 		donpcevent "Trocco#aco2::OnFailClearStage";
 	}
-	mapannounce "forÁa_5-1","Tempo restante: 3 minutos",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Tempo restante: 3 minutos",bc_map|bc_npc;
 	end;
 
 OnTimer360000:
-	if (getmapusers("forÁa_5-1") == 0) {
+	if (getmapusers("for√ßa_5-1") == 0) {
 		donpcevent "Trocco#aco2::OnFailClearStage";
 	}
-	mapannounce "forÁa_5-1","Tempo restante: 2 minutos",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Tempo restante: 2 minutos",bc_map|bc_npc;
 	end;
 
 OnTimer420000:
-	if (getmapusers("forÁa_5-1") == 0) {
+	if (getmapusers("for√ßa_5-1") == 0) {
 		donpcevent "Trocco#aco2::OnFailClearStage";
 	}
-	mapannounce "forÁa_5-1","Tempo restante: 1 minuto",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Tempo restante: 1 minuto",bc_map|bc_npc;
 	end;
 
 OnTimer480000:
-	mapannounce "forÁa_5-1","Acabou o tempo! ",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Acabou o tempo! ",bc_map|bc_npc;
 	end;
 
 OnTimer485000:
@@ -631,71 +641,71 @@ OnFailClearStage:
 	end;
 
 On01_Start:
-	mapannounce "forÁa_5-1","Objetivo: Mate todos os zumbis!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Objetivo: Mate todos os zumbis!",bc_map|bc_npc;
 	end;
 
 On01_End:
-	mapannounce "forÁa_5-1","A SaÌda Norte foi aberta!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","A Sa√≠da Norte foi aberta!",bc_map|bc_npc;
 	end;
 
 On02_Start:
-	mapannounce "forÁa_5-1","Objetivo: Derrote todos os monstros!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Objetivo: Derrote todos os monstros!",bc_map|bc_npc;
 	end;
 
 On02_End:
-	mapannounce "forÁa_5-1","A SaÌda Norte foi aberta!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","A Sa√≠da Norte foi aberta!",bc_map|bc_npc;
 	end;
 
 On03_Start:
-	mapannounce "forÁa_5-1","Objetivo: Destruir todas as Plantas Vermelhas!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Objetivo: Destruir todas as Plantas Vermelhas!",bc_map|bc_npc;
 	end;
 
 On03_End:
-	mapannounce "forÁa_5-1","A saÌda leste foi aberta!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","A sa√≠da leste foi aberta!",bc_map|bc_npc;
 	end;
 
 On04_Start:
-	mapannounce "forÁa_5-1","Objetivo: Destruir todos os monstros!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Objetivo: Destruir todos os monstros!",bc_map|bc_npc;
 	end;
 
 On04_End:
-	mapannounce "forÁa_5-1","A saÌda leste foi aberta!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","A sa√≠da leste foi aberta!",bc_map|bc_npc;
 	end;
 
 On05_Start:
-	mapannounce "forÁa_5-1","Objetivo: Derrote G·rgula!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Objetivo: Derrote G√°rgula!",bc_map|bc_npc;
 	end;
 
 On05_End:
-	mapannounce "forÁa_5-1","A SaÌda Sul foi aberta!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","A Sa√≠da Sul foi aberta!",bc_map|bc_npc;
 	end;
 
 On06_Start:
-	mapannounce "forÁa_5-1","Objetivo: Mate todos os Khalitzburgs!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Objetivo: Mate todos os Khalitzburgs!",bc_map|bc_npc;
 	end;
 
 On06_End:
-	mapannounce "forÁa_5-1","A SaÌda Sul foi aberta!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","A Sa√≠da Sul foi aberta!",bc_map|bc_npc;
 	end;
 
 On07_Start:
-	mapannounce "forÁa_5-1","Objetivo: Mate 1 M˙mia Antiga!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Objetivo: Mate 1 M√∫mia Antiga!",bc_map|bc_npc;
 	end;
 
 On07_End:
-	mapannounce "forÁa_5-1","A saÌda oeste foi aberta!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","A sa√≠da oeste foi aberta!",bc_map|bc_npc;
 	end;
 
 On08_Start:
-	mapannounce "forÁa_5-1","Chegou a hora da Batalha do Chefe. ",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Chegou a hora da Batalha do Chefe. ",bc_map|bc_npc;
 	end;
 
 On09_Start:
-	mapannounce "forÁa_5-1","Objetivo: Derrote o Monstro Chefe!",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Objetivo: Derrote o Monstro Chefe!",bc_map|bc_npc;
 	end;
 
 On09_End:
-	mapannounce "forÁa_5-1","Chefe liberado! ",bc_map|bc_npc;
+	mapannounce "for√ßa_5-1","Chefe liberado! ",bc_map|bc_npc;
 	end;
 }
 
@@ -709,7 +719,7 @@ OnTouch_:
 -	script	force_01mob#pri	-1,{
 OnEnable:
 	donpcevent "Trocco#aco2::On01_Start";
-	areamonster "forÁa_5-1",13,9,38,41,"Zumbi",1394,10,"force_01mob";
+	areamonster "for√ßa_5-1",13,9,38,41,"Zumbi",1394,10,"force_01mob";
 	end;
 
 OnReset:
@@ -717,7 +727,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_5-1","force_01mob") < 1) {
+	if (mobcount("for√ßa_5-1","force_01mob") < 1) {
 		donpcevent "Trocco#aco2::On01_End";
 		donpcevent "arena_aco2::OnReset_01";
 	}
@@ -739,12 +749,12 @@ OnTouch_:
 -	script	force_02mob#pri	-1,{
 OnOn1:
 	donpcevent "Trocco#aco2::On02_Start";
-	areamonster "forÁa_5-1",22,69,29,130,"Esqueleto Orc",1462,5,"force_02mob";
+	areamonster "for√ßa_5-1",22,69,29,130,"Esqueleto Orc",1462,5,"force_02mob";
 	end;
 
 OnOn2:
 	donpcevent "Trocco#aco2::On02_Start";
-	areamonster "forÁa_5-1",22,69,29,130,"canibal",1423,5,"force_02mob";
+	areamonster "for√ßa_5-1",22,69,29,130,"canibal",1423,5,"force_02mob";
 	end;
 
 OnReset:
@@ -752,7 +762,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_5-1","force_02mob") < 1) {
+	if (mobcount("for√ßa_5-1","force_02mob") < 1) {
 		donpcevent "Trocco#aco2::On02_End";
 		donpcevent "arena_aco2::OnReset_02";
 	}
@@ -769,7 +779,7 @@ OnTouch_:
 -	script	force_03mob#pri	-1,{
 OnEnable:
 	donpcevent "Trocco#aco2::On03_Start";
-	areamonster "forÁa_5-1",14,163,37,185,"Planta Vermelha",1078,5,"force_03mob";
+	areamonster "for√ßa_5-1",14,163,37,185,"Planta Vermelha",1078,5,"force_03mob";
 	end;
 
 OnReset:
@@ -777,7 +787,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_5-1","force_03mob") < 1) {
+	if (mobcount("for√ßa_5-1","force_03mob") < 1) {
 		donpcevent "Trocco#aco2::On03_End";
 		donpcevent "arena_aco2::OnReset_03";
 	}
@@ -799,18 +809,18 @@ OnTouch_:
 -	script	force_04mob#pri	-1,{
 OnOn1:
 	donpcevent "Trocco#aco2::On04_Start";
-	monster "forÁa_5-1",rand(71,130),rand(170,178),"Druida Maligno",1435,1,"force_04mob";
-	monster "forÁa_5-1",rand(71,130),rand(170,178),"F˙ria",1475,1,"force_04mob";
-	monster "forÁa_5-1",rand(71,130),rand(170,178),"Prisioneiro Zumbi",1480,1,"force_04mob";
-	monster "forÁa_5-1",rand(71,130),rand(170,178),"Prisioneiro Skel",1479,1,"force_04mob";
+	monster "for√ßa_5-1",rand(71,130),rand(170,178),"Druida Maligno",1435,1,"force_04mob";
+	monster "for√ßa_5-1",rand(71,130),rand(170,178),"F√∫ria",1475,1,"force_04mob";
+	monster "for√ßa_5-1",rand(71,130),rand(170,178),"Prisioneiro Zumbi",1480,1,"force_04mob";
+	monster "for√ßa_5-1",rand(71,130),rand(170,178),"Prisioneiro Skel",1479,1,"force_04mob";
 	end;
 
 OnOn2:
 	donpcevent "Trocco#aco2::On04_Start";
-	areamonster "forÁa_5-1",71,170,130,178,"Druida Maligno",1435,2,"force_04mob";
-	areamonster "forÁa_5-1",71,170,130,178,"F˙ria",1475,2,"force_04mob";
-	areamonster "forÁa_5-1",71,170,130,178,"Prisioneiro Zumbi",1480,2,"force_04mob";
-	monster "forÁa_5-1",rand(71,130),rand(170,178),"Prisioneiro Skel",1479,1,"force_04mob";
+	areamonster "for√ßa_5-1",71,170,130,178,"Druida Maligno",1435,2,"force_04mob";
+	areamonster "for√ßa_5-1",71,170,130,178,"F√∫ria",1475,2,"force_04mob";
+	areamonster "for√ßa_5-1",71,170,130,178,"Prisioneiro Zumbi",1480,2,"force_04mob";
+	monster "for√ßa_5-1",rand(71,130),rand(170,178),"Prisioneiro Skel",1479,1,"force_04mob";
 	end;
 
 OnReset:
@@ -818,7 +828,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_5-1","force_04mob") < 1) {
+	if (mobcount("for√ßa_5-1","force_04mob") < 1) {
 		donpcevent "Trocco#aco2::On04_End";
 		donpcevent "arena_aco2::OnReset_04";
 	}
@@ -840,11 +850,11 @@ OnTouch_:
 
 -	script	force_05ex#pri	-1,{
 OnOn1:
-	areamonster "forÁa_5-1",161,159,187,190,"Hidra",1579,10,"force_05ex";
+	areamonster "for√ßa_5-1",161,159,187,190,"Hidra",1579,10,"force_05ex";
 	end;
 
 OnOn2:
-	areamonster "forÁa_5-1",161,159,187,190,"PenÙmenos",1441,10,"force_05ex";
+	areamonster "for√ßa_5-1",161,159,187,190,"Pen√¥menos",1441,10,"force_05ex";
 	end;
 
 OnReset:
@@ -858,7 +868,7 @@ OnMyMobDead:
 -	script	force_05mob#pri	-1,{
 OnEnable:
 	donpcevent "Trocco#aco2::On05_Start";
-	areamonster "forÁa_5-1",161,159,187,190,"G·rgula",1597,4,"force_05mob";
+	areamonster "for√ßa_5-1",161,159,187,190,"G√°rgula",1597,4,"force_05mob";
 	end;
 
 OnReset:
@@ -866,7 +876,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_5-1","force_05mob") < 1) {
+	if (mobcount("for√ßa_5-1","force_05mob") < 1) {
 		donpcevent "force_05ex#pri::OnReset";
 		donpcevent "Trocco#aco2::On05_End";
 		donpcevent "arena_aco2::OnReset_05";
@@ -892,7 +902,7 @@ OnTouch_:
 
 -	script	force_06ex#pri	-1,{
 OnEnable:
-	areamonster "forÁa_5-1",170,67,178,131,"PerÌmetro",1314,5,"force_06ex";
+	areamonster "for√ßa_5-1",170,67,178,131,"Per√≠metro",1314,5,"force_06ex";
 	end;
 
 OnReset:
@@ -906,17 +916,17 @@ OnMyMobDead:
 -	script	force_06mob#pri	-1,{
 OnOn1:
 	donpcevent "Trocco#aco2::On06_Start";
-	monster "forÁa_5-1",rand(170,178),rand(67,131),"Khalitzburgo",1438,1,"force_06mob";
+	monster "for√ßa_5-1",rand(170,178),rand(67,131),"Khalitzburgo",1438,1,"force_06mob";
 	end;
 
 OnOn2:
 	donpcevent "Trocco#aco2::On06_Start";
-	areamonster "forÁa_5-1",170,67,178,131,"Khalitzburgo",1438,2,"force_06mob";
+	areamonster "for√ßa_5-1",170,67,178,131,"Khalitzburgo",1438,2,"force_06mob";
 	end;
 
 OnOn3:
 	donpcevent "Trocco#aco2::On06_Start";
-	areamonster "forÁa_5-1",170,67,178,131,"Khalitzburgo",1438,4,"force_06mob";
+	areamonster "for√ßa_5-1",170,67,178,131,"Khalitzburgo",1438,4,"force_06mob";
 	end;
 
 OnReset:
@@ -924,7 +934,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_5-1","force_06mob") < 1) {
+	if (mobcount("for√ßa_5-1","force_06mob") < 1) {
 		donpcevent "force_06ex#pri::OnReset";
 		donpcevent "Trocco#aco2::On06_End";
 		donpcevent "arena_aco2::OnReset_06";
@@ -942,7 +952,7 @@ OnTouch_:
 -	script	force_07mob#pri	-1,{
 OnEnable:
 	donpcevent "Trocco#aco2::On07_Start";
-	monster "forÁa_5-1",rand(160,188),rand(9,42),"M˙mia Antiga",1522,1,"force_07mob";
+	monster "for√ßa_5-1",rand(160,188),rand(9,42),"M√∫mia Antiga",1522,1,"force_07mob";
 	end;
 
 OnReset:
@@ -950,7 +960,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_5-1","force_07mob") < 1) {
+	if (mobcount("for√ßa_5-1","force_07mob") < 1) {
 		donpcevent "Trocco#aco2::On07_End";
 		donpcevent "arena_aco2::OnReset_07";
 	}
@@ -986,21 +996,21 @@ OnTouch_:
 
 -	script	force_09mob#pri	-1,{
 OnOn1:
-	monster "forÁa_5-1",rand(88,111),rand(89,110),"MÌmico",1474,1,"force_09mob";
+	monster "for√ßa_5-1",rand(88,111),rand(89,110),"M√≠mico",1474,1,"force_09mob";
 	end;
 
 OnOn2:
-	monster "forÁa_5-1",rand(88,111),rand(89,110),"Ira Morta",1566,1,"force_09mob";
+	monster "for√ßa_5-1",rand(88,111),rand(89,110),"Ira Morta",1566,1,"force_09mob";
 	end;
 
 OnOn3:
-	monster "forÁa_5-1",rand(88,111),rand(89,110),"Ilus„o Negra",1605,1,"force_09mob";
+	monster "for√ßa_5-1",rand(88,111),rand(89,110),"Ilus√£o Negra",1605,1,"force_09mob";
 	end;
 
 OnOn4:
-	monster "forÁa_5-1",rand(88,111),rand(89,110),"Prisioneiro Zumbi",1480,1,"force_09mob";
-	monster "forÁa_5-1",rand(88,111),rand(89,110),"Prisioneiro Skel",1479,1,"force_09mob";
-	areamonster "forÁa_5-1",88,89,111,110,"Zumbi",1394,4,"force_09mob";
+	monster "for√ßa_5-1",rand(88,111),rand(89,110),"Prisioneiro Zumbi",1480,1,"force_09mob";
+	monster "for√ßa_5-1",rand(88,111),rand(89,110),"Prisioneiro Skel",1479,1,"force_09mob";
+	areamonster "for√ßa_5-1",88,89,111,110,"Zumbi",1394,4,"force_09mob";
 	end;
 
 OnReset:
@@ -1008,7 +1018,7 @@ OnReset:
 	end;
 
 OnMyMobDead:
-	if (mobcount("forÁa_5-1","force_09mob") < 1) {
+	if (mobcount("for√ßa_5-1","force_09mob") < 1) {
 		donpcevent "Trocco#aco2::On09_End";
 		set $@arn_2,gettimetick(2);
 		donpcevent "arena_aco2::OnReset_09";
@@ -1037,30 +1047,30 @@ OnTouch_:
 }
 
 prt_are_in,181,83,3	script	Staff#aco-1	67,{
-	mes "[Funcion·rios]";
+	mes "[Funcion√°rios]";
 	mes "Bom trabalho!";
-	mes "VocÍ pode ter falhado";
+	mes "Voc√™ pode ter falhado";
 	mes "a batalha do Time Attack,";
-	mes "mas vocÍ ainda ganhou um";
+	mes "mas voc√™ ainda ganhou um";
 	mes "pequena recompensa de Arena Point ~";
 	next;
 	if (arena_point == 30000) {
-		mes "[Funcion·rios]";
-		mes "Espere, me desculpe, mas vocÍ";
+		mes "[Funcion√°rios]";
+		mes "Espere, me desculpe, mas voc√™";
 		mes "tem muitos Pontos de Arena.";
-		mes "Desde que vocÍ chegou ao ponto";
-		mes "limitaÁ„o, n„o posso lhe dar nenhuma recompensa em pontos atÈ que vocÍ gaste";
+		mes "Desde que voc√™ chegou ao ponto";
+		mes "limita√ß√£o, n√£o posso lhe dar nenhuma recompensa em pontos at√© que voc√™ gaste";
 		mes "alguns de seus Pontos de Arena.";
 		next;
 	}
 	else {
 		set arena_point,arena_point+1;
 	}
-	mes "[Funcion·rios]";
+	mes "[Funcion√°rios]";
 	mes "Bem, deixe-me guiar";
-	mes "vocÍ volta para fora.";
-	mes "Eu espero que vocÍ tenha gostado";
-	mes "sua batalha na ·rea ~";
+	mes "voc√™ volta para fora.";
+	mes "Eu espero que voc√™ tenha gostado";
+	mes "sua batalha na √°rea ~";
 	close2;
 	specialeffect2 EF_EXIT;
 	warp "arena_room",100,75;
@@ -1087,34 +1097,34 @@ prt_are_in,25,31,3	script	Staff#aco-2	67,{
 	set .@record_secaco, .@record_timeaco % 60;
 	if ((.@record_timeaco < 0 ) || (.@record_houraco < 0) || (.@record_minaco < 0 ) || (.@record_secaco < 0)) {
 		emotion ET_HUK;
-		mes "[Funcion·rios]";
-		mes "Como vocÍ...?";
+		mes "[Funcion√°rios]";
+		mes "Como voc√™...?";
 		mes "De acordo com essas re-";
 		mes "Ah, ah. ";
 		mes "ficou confuso de alguma forma.";
-		mes "I-Isso n„o È nada bom!";
+		mes "I-Isso n√£o √© nada bom!";
 		mes "Agora o que vou fazer?";
 		next;
-		mes "[Funcion·rios]";
+		mes "[Funcion√°rios]";
 		mes "Bem, eu vou te dar o";
-		mes "benefÌcio da d˙vida e";
-		mes "suponha que vocÍ completou o";
+		mes "benef√≠cio da d√∫vida e";
+		mes "suponha que voc√™ completou o";
 		mes "batalha de arena sob o tempo";
 		mes "limite. ";
-		mes "recompensa padr„o de Arena Point.";
+		mes "recompensa padr√£o de Arena Point.";
 		next;
-		mes "[Funcion·rios]";
+		mes "[Funcion√°rios]";
 		mes "Eu realmente sinto muito por";
-		mes "isso, especialmente se vocÍ";
+		mes "isso, especialmente se voc√™";
 		mes "quebrou algum recorde, mas";
-		mes "tudo que posso fazer È restaurar seu";
-		mes "HP e SP para vocÍ,"+strcharinfo(0)+".";
+		mes "tudo que posso fazer √© restaurar seu";
+		mes "HP e SP para voc√™,"+strcharinfo(0)+".";
 		percentheal 100,100;
 		next;
-		mes "[Funcion·rios]";
+		mes "[Funcion√°rios]";
 		emotion ET_FLAG;
 		mes "Obrigado.";
-		mes "Espero que vocÍ goste";
+		mes "Espero que voc√™ goste";
 		mes "seu tempo na Arena~";
 		close2;
 		if (arena_point < 29981) {
@@ -1156,37 +1166,37 @@ prt_are_in,25,31,3	script	Staff#aco-2	67,{
 		set .@topbunaco, ((.@acotop_t % 3600) / 60);
 		set .@topchoaco, .@acotop_t % 60;
 		set .@gapaco, .@acotop_t - .@record_timeaco;
-		mes "[Funcion·rios]";
+		mes "[Funcion√°rios]";
 		mes "^3131FF"+strcharinfo(0)+"^000000, certo?";
-		mes "Ei, vocÍ foi Ûtimo! ";
+		mes "Ei, voc√™ foi √≥timo! ";
 		mes "completou esta Batalha de Arena";
 		mes "em"+.@record_minaco+"min e"+.@record_secaco+"segundos!";
 		next;
-		mes "[Funcion·rios]";
+		mes "[Funcion√°rios]";
 		mes "Atualmente, ^3131FF"+.@acotop_n$+"^000000";
-		mes "È o melhor jogador, com um recorde";
-		mes "de ^3131FF"+.@topbunaco+"^000000 minutos, ^3131FF"+.@topchoaco+"^000000 segundos, da Batalha da ForÁa do Tempo da Classe AcÛlito.";
+		mes "√© o melhor jogador, com um recorde";
+		mes "de ^3131FF"+.@topbunaco+"^000000 minutos, ^3131FF"+.@topchoaco+"^000000 segundos, da Batalha da For√ßa do Tempo da Classe Ac√≥lito.";
 		next;
 		if ((.@acotop_t < 0) || (.@topbunaco < 0 ) || (.@topchoaco < 0)) {
 			emotion ET_HUK;
-			mes "[Funcion·rios]";
+			mes "[Funcion√°rios]";
 			mes "Espere um segundo...";
-			mes "Seu tempo È melhor";
+			mes "Seu tempo √© melhor";
 			mes "do que isso. ";
-			mes "… hora de fazer um pouco";
-			mes "correÁ„o nos registros.";
+			mes "√â hora de fazer um pouco";
+			mes "corre√ß√£o nos registros.";
 			next;
 			emotion ET_BEST;
-			mes "[Funcion·rios]";
+			mes "[Funcion√°rios]";
 			mes "Uau! ";
 			mes "Excelente!";
 			next;
-			mes "[Funcion·rios]";
+			mes "[Funcion√°rios]";
 			mes "^333333*Aham*^000000 Uau!";
 			mes "Um novo recorde! ";
-			mes "o nome agora ser· listado";
-			mes "sob a Batalha da ForÁa do Tempo";
-			mes "Arena - Recorde de Classe de AcÛlito!";
+			mes "o nome agora ser√° listado";
+			mes "sob a Batalha da For√ßa do Tempo";
+			mes "Arena - Recorde de Classe de Ac√≥lito!";
 			if (BaseJob == Job_Acolyte) {
 				set $arn_acotop,.@record_timeaco;
 				set $arn_acotopn$, strcharinfo(0);
@@ -1213,51 +1223,51 @@ prt_are_in,25,31,3	script	Staff#aco-2	67,{
 			}
 			next;
 			if (arena_point == 30000) {
-				mes "[Funcion·rios]";
-				mes "Tudo bem, deixe-me recompens·-lo";
-				mes "com um pouco de Arena Poi ñ Espere.";
-				mes "N„o posso. ";
-				mes "j· estourou o m·ximo. ";
-				mes "mas vocÍ ter· que gastar um pouco antes de receber mais pontos.";
+				mes "[Funcion√°rios]";
+				mes "Tudo bem, deixe-me recompens√°-lo";
+				mes "com um pouco de Arena Poi ‚Äì Espere.";
+				mes "N√£o posso. ";
+				mes "j√° estourou o m√°ximo. ";
+				mes "mas voc√™ ter√° que gastar um pouco antes de receber mais pontos.";
 				next;
-				mes "[Funcion·rios]";
-				mes "De qualquer forma, vocÍ pode verificar";
+				mes "[Funcion√°rios]";
+				mes "De qualquer forma, voc√™ pode verificar";
 				mes "seu ponto de arena atual";
 				mes "total no Lobby da Arena";
 				mes "com Vendigos. ";
-				mes "vocÍ gostou da sua batalha. ";
+				mes "voc√™ gostou da sua batalha. ";
 				close2;
 			}
 			else if (arena_point > 29950) {
-				mes "[Funcion·rios]";
-				mes "Deixe-me recompens·-lo com alguns";
+				mes "[Funcion√°rios]";
+				mes "Deixe-me recompens√°-lo com alguns";
 				mes "Pontos de Arena. ";
 				mes "estar ganhando mais pontos desde";
-				mes "vocÍ estabeleceu um novo recorde. ";
+				mes "voc√™ estabeleceu um novo recorde. ";
 				mes "fale com ^3131FFVendigos^000000 no lobby";
 				mes "para verificar seu novo total de pontos.";
 				next;
-				mes "[Funcion·rios]";
-				mes "Bem, eu espero que vocÍ";
+				mes "[Funcion√°rios]";
+				mes "Bem, eu espero que voc√™";
 				mes "gostei da sua batalha.";
-				mes "Agora deixe-me gui·-lo";
+				mes "Agora deixe-me gui√°-lo";
 				mes "de volta ao lobby da Arena...";
 				close2;
 				set arena_point,30000;
 			}
 			else {
-				mes "[Funcion·rios]";
-				mes "Deixe-me recompens·-lo com alguns";
+				mes "[Funcion√°rios]";
+				mes "Deixe-me recompens√°-lo com alguns";
 				mes "Pontos de Arena. ";
 				mes "estar ganhando mais pontos desde";
-				mes "vocÍ estabeleceu um novo recorde. ";
+				mes "voc√™ estabeleceu um novo recorde. ";
 				mes "fale com ^3131FFVendigos^000000 no lobby";
 				mes "para verificar seu novo total de pontos.";
 				next;
-				mes "[Funcion·rios]";
-				mes "Bem, eu espero que vocÍ";
+				mes "[Funcion√°rios]";
+				mes "Bem, eu espero que voc√™";
 				mes "gostei da sua batalha.";
-				mes "Agora deixe-me gui·-lo";
+				mes "Agora deixe-me gui√°-lo";
 				mes "de volta ao lobby da Arena...";
 				close2;
 				set arena_point,arena_point+50;
@@ -1270,58 +1280,58 @@ prt_are_in,25,31,3	script	Staff#aco-2	67,{
 			end;
 		}
 		if (gapaco < 0) {
-			mes "[Funcion·rios]";
-			mes "VocÍ n„o quebrou o";
+			mes "[Funcion√°rios]";
+			mes "Voc√™ n√£o quebrou o";
 			mes "recorde atual desta vez,";
-			mes "mas vocÍ ainda deu um incrÌvel";
+			mes "mas voc√™ ainda deu um incr√≠vel";
 			mes "desempenho. ";
 			next;
 			if (arena_point == 30000) {
-				mes "[Funcion·rios]";
-				mes "Tudo bem, deixe-me recompens·-lo";
-				mes "com um pouco de Arena Poi ñ Espere.";
-				mes "N„o posso. ";
-				mes "j· estourou o m·ximo. ";
-				mes "mas vocÍ ter· que gastar um pouco antes de receber mais pontos.";
+				mes "[Funcion√°rios]";
+				mes "Tudo bem, deixe-me recompens√°-lo";
+				mes "com um pouco de Arena Poi ‚Äì Espere.";
+				mes "N√£o posso. ";
+				mes "j√° estourou o m√°ximo. ";
+				mes "mas voc√™ ter√° que gastar um pouco antes de receber mais pontos.";
 				next;
-				mes "[Funcion·rios]";
-				mes "De qualquer forma, vocÍ pode verificar";
+				mes "[Funcion√°rios]";
+				mes "De qualquer forma, voc√™ pode verificar";
 				mes "seu ponto de arena atual";
 				mes "total no Lobby da Arena";
 				mes "com Vendigos. ";
-				mes "vocÍ gostou da sua batalha. ";
+				mes "voc√™ gostou da sua batalha. ";
 				close2;
 			}
 			else if (arena_point > 29980) {
-				mes "[Funcion·rios]";
-				mes "Deixe-me recompens·-lo";
+				mes "[Funcion√°rios]";
+				mes "Deixe-me recompens√°-lo";
 				mes "com alguns Pontos de Arena.";
 				mes "Por favor, verifique seu novo";
 				mes "Total de pontos de arena no";
 				mes "Arena Lobby falando";
-				mes "aos simp·ticos ^3131FFVendigos.^000000";
+				mes "aos simp√°ticos ^3131FFVendigos.^000000";
 				next;
-				mes "[Funcion·rios]";
-				mes "Bem, eu espero que vocÍ";
+				mes "[Funcion√°rios]";
+				mes "Bem, eu espero que voc√™";
 				mes "gostei da sua batalha.";
-				mes "Agora deixe-me gui·-lo";
+				mes "Agora deixe-me gui√°-lo";
 				mes "de volta ao lobby da Arena...";
 				close2;
 				set arena_point,30000;
 			}
 			else {
-				mes "[Funcion·rios]";
-				mes "Deixe-me recompens·-lo";
+				mes "[Funcion√°rios]";
+				mes "Deixe-me recompens√°-lo";
 				mes "com alguns Pontos de Arena.";
 				mes "Por favor, verifique seu novo";
 				mes "Total de pontos de arena no";
 				mes "Arena Lobby falando";
-				mes "aos simp·ticos ^3131FFVendigos.^000000";
+				mes "aos simp√°ticos ^3131FFVendigos.^000000";
 				next;
-				mes "[Funcion·rios]";
-				mes "Bem, eu espero que vocÍ";
+				mes "[Funcion√°rios]";
+				mes "Bem, eu espero que voc√™";
 				mes "gostei da sua batalha.";
-				mes "Agora deixe-me gui·-lo";
+				mes "Agora deixe-me gui√°-lo";
 				mes "de volta ao lobby da Arena...";
 				close2;
 				set arena_point,arena_point+20;
@@ -1335,17 +1345,17 @@ prt_are_in,25,31,3	script	Staff#aco-2	67,{
 		}
 		else {
 			emotion ET_HUK;
-			mes "[Funcion·rios]";
+			mes "[Funcion√°rios]";
 			mes "Uau! ";
-			mes "Isso È incrÌvel!";
+			mes "Isso √© incr√≠vel!";
 			next;
-			mes "[Funcion·rios]";
+			mes "[Funcion√°rios]";
 			mes "Oooh... Um novo";
 			mes "registro. "+ strcharinfo(0)+"^000000, seu";
-			mes "nome agora ser· listado em";
-			mes "a Arena de Batalha da ForÁa do Tempo";
-			mes "Registros de classe de acÛlito.";
-			mes "ParabÈns ~";
+			mes "nome agora ser√° listado em";
+			mes "a Arena de Batalha da For√ßa do Tempo";
+			mes "Registros de classe de ac√≥lito.";
+			mes "Parab√©ns ~";
 			if (BaseJob == Job_Acolyte) {
 				set $arn_acotop,.@record_timeaco;
 				set $arn_acotopn$, strcharinfo(0);
@@ -1375,51 +1385,51 @@ prt_are_in,25,31,3	script	Staff#aco-2	67,{
 			}
 			next;
 			if (arena_point == 30000) {
-				mes "[Funcion·rios]";
-				mes "Tudo bem, deixe-me recompens·-lo";
-				mes "com um pouco de Arena Poi ñ Espere.";
-				mes "N„o posso. ";
-				mes "j· estourou o m·ximo. ";
-				mes "mas vocÍ ter· que gastar um pouco antes de receber mais pontos.";
+				mes "[Funcion√°rios]";
+				mes "Tudo bem, deixe-me recompens√°-lo";
+				mes "com um pouco de Arena Poi ‚Äì Espere.";
+				mes "N√£o posso. ";
+				mes "j√° estourou o m√°ximo. ";
+				mes "mas voc√™ ter√° que gastar um pouco antes de receber mais pontos.";
 				next;
-				mes "[Funcion·rios]";
-				mes "De qualquer forma, vocÍ pode verificar";
+				mes "[Funcion√°rios]";
+				mes "De qualquer forma, voc√™ pode verificar";
 				mes "seu ponto de arena atual";
 				mes "total no Lobby da Arena";
 				mes "com Vendigos. ";
-				mes "vocÍ gostou da sua batalha. ";
+				mes "voc√™ gostou da sua batalha. ";
 				close2;
 			}
 			else if (arena_point > 29980) {
-				mes "[Funcion·rios]";
-				mes "Deixe-me recompens·-lo com alguns";
+				mes "[Funcion√°rios]";
+				mes "Deixe-me recompens√°-lo com alguns";
 				mes "Pontos de Arena. ";
 				mes "estar ganhando mais pontos desde";
-				mes "vocÍ estabeleceu um novo recorde. ";
+				mes "voc√™ estabeleceu um novo recorde. ";
 				mes "fale com ^3131FFVendigos^000000 no lobby";
 				mes "para verificar seu novo total de pontos.";
 				next;
-				mes "[Funcion·rios]";
-				mes "Bem, eu espero que vocÍ";
+				mes "[Funcion√°rios]";
+				mes "Bem, eu espero que voc√™";
 				mes "gostei da sua batalha.";
-				mes "Agora deixe-me gui·-lo";
+				mes "Agora deixe-me gui√°-lo";
 				mes "de volta ao lobby da Arena...";
 				close2;
 				set arena_point,30000;
 			}
 			else {
-				mes "[Funcion·rios]";
-				mes "Deixe-me recompens·-lo com alguns";
+				mes "[Funcion√°rios]";
+				mes "Deixe-me recompens√°-lo com alguns";
 				mes "Pontos de Arena. ";
 				mes "estar ganhando mais pontos desde";
-				mes "vocÍ estabeleceu um novo recorde. ";
+				mes "voc√™ estabeleceu um novo recorde. ";
 				mes "fale com ^3131FFVendigos^000000 no lobby";
 				mes "para verificar seu novo total de pontos.";
 				next;
-				mes "[Funcion·rios]";
-				mes "Bem, eu espero que vocÍ";
+				mes "[Funcion√°rios]";
+				mes "Bem, eu espero que voc√™";
 				mes "gostei da sua batalha.";
-				mes "Agora deixe-me gui·-lo";
+				mes "Agora deixe-me gui√°-lo";
 				mes "de volta ao lobby da Arena...";
 				close2;
 				set arena_point,arena_point+20;
@@ -1440,11 +1450,11 @@ OnEnable:
 	end;
 
 OnTimer2000:
-	mapannounce "prt_are_in","Esta transmiss„o È para inform·-los sobre a Arena da Classe Acolyte.",bc_map,"0xFFCE00";
+	mapannounce "prt_are_in","Esta transmiss√£o √© para inform√°-los sobre a Arena da Classe Acolyte.",bc_map,"0xFFCE00";
 	end;
 
 OnTimer3000:
-	mapannounce "prt_are_in","Para um jogo mais tranquilo, o Portal Warp na Sala de Espera Final ser· ativado em 1 minuto.",bc_map,"0xFFCE00";
+	mapannounce "prt_are_in","Para um jogo mais tranquilo, o Portal Warp na Sala de Espera Final ser√° ativado em 1 minuto.",bc_map,"0xFFCE00";
 	end;
 
 OnTimer4000:
@@ -1546,21 +1556,21 @@ OnEnable:
 
 arena_room,94,82,7	script	Arena Record Staff#aco	79,{
 	mes "[Mathea]";
-	mes "Ol·, sou respons·vel por";
-	mes "os registros da classe AcÛlito";
+	mes "Ol√°, sou respons√°vel por";
+	mes "os registros da classe Ac√≥lito";
 	mes "na Arena. ";
 	mes "veja os outros registros, por favor";
-	mes "fale com a equipe de gravaÁ„o da Arena,";
-	mes "Owen Kheuv, e ele ir· ajud·-lo.";
+	mes "fale com a equipe de grava√ß√£o da Arena,";
+	mes "Owen Kheuv, e ele ir√° ajud√°-lo.";
 	next;
 	mes "[Mathea]";
-	mes "VocÍ gostaria de";
-	mes "veja quem s„o os melhores";
-	mes "jogadores do AcÛlito";
+	mes "Voc√™ gostaria de";
+	mes "veja quem s√£o os melhores";
+	mes "jogadores do Ac√≥lito";
 	mes "Desafios da Arena de Classe?";
 	mes "Por favor, escolha no menu.";
 	next;
-	switch(select("Modo AcÛlito: Sacerdote - NÌvel 70 ou inferior: Sacerdote - NÌvel 80 ou inferior: Sacerdote - NÌvel 90 ou inferior: Sacerdote - NÌvel 91 ~"+(checkre(0)?"160":"99"))) {
+	switch(select("Modo Ac√≥lito: Sacerdote - N√≠vel 70 ou inferior: Sacerdote - N√≠vel 80 ou inferior: Sacerdote - N√≠vel 90 ou inferior: Sacerdote - N√≠vel 91 ~"+(checkre(0)?"160":"99"))) {
 	case 1:
 		set .@acotop_t,$arn_acotop;
 		set .@acotop_n$,$arn_acotopn$;
@@ -1568,8 +1578,8 @@ arena_room,94,82,7	script	Arena Record Staff#aco	79,{
 		set .@acotopcho, (.@acotop_t % 60);
 		mes "[Mathea]";
 		mes "^3131FF"+.@acotop_n$+"^000000";
-		mes "È o melhor jogador do";
-		mes "Modo AcÛlito, finalizaÁ„o";
+		mes "√© o melhor jogador do";
+		mes "Modo Ac√≥lito, finaliza√ß√£o";
 		mes "com um tempo de ^3131FF"+.@acotopbun+"^000000 minutos";
 		mes "e ^3131FF"+.@acotopcho+"^000000 segundos. ";
 		mes "por participar da Arena.";
@@ -1595,7 +1605,7 @@ arena_room,94,82,7	script	Arena Record Staff#aco	79,{
 	set .@pritopcho, (.@pritop_t % 60);
 	mes "[Mathea]";
 	mes "^3131FF"+.@pritop_n$+"^000000";
-	mes "È o melhor jogador disso";
+	mes "√© o melhor jogador disso";
 	mes "Modo Sacerdote, finalizando";
 	mes "com um tempo de ^3131FF"+.@pritopbun+"minutos";
 	mes "e ^3131FF"+.@pritopcho+"segundos. ";
@@ -1609,11 +1619,11 @@ OnInit:
 		set $arn_pritop80, 480;
 		set $arn_pritop90, 480;
 		set $arn_acotop, 480;
-		set $arn_pritopn60$, "Padr„o";
-		set $arn_pritopn70$, "Padr„o";
-		set $arn_pritopn80$, "Padr„o";
-		set $arn_pritopn90$, "Padr„o";
-		set $arn_acotopn$, "Padr„o";
+		set $arn_pritopn60$, "Padr√£o";
+		set $arn_pritopn70$, "Padr√£o";
+		set $arn_pritopn80$, "Padr√£o";
+		set $arn_pritopn90$, "Padr√£o";
+		set $arn_acotopn$, "Padr√£o";
 	}
 	end;
 }
@@ -1642,60 +1652,60 @@ OnLineRec_pri90:
 
 arena_room,140,136,3	script	Guide Alias	729,{
 	mes "[Alias]";
-	mes "Ol·, estou aqui";
-	mes "para inform·-lo sobre";
+	mes "Ol√°, estou aqui";
+	mes "para inform√°-lo sobre";
 	mes "a Arena Izlude";
-	mes "Modo Classe AcÛlito.";
-	mes "Meu nome È Alias,";
+	mes "Modo Classe Ac√≥lito.";
+	mes "Meu nome √© Alias,";
 	mes "seu Guia da Arena.";
 	next;
 	mes "[Alias]";
 	mes "Agora, existem dois modos";
-	mes "no modo de classe AcÛlito.";
-	mes "Estes s„o ^3131FFAcolyte Mode^000000 e";
+	mes "no modo de classe Ac√≥lito.";
+	mes "Estes s√£o ^3131FFAcolyte Mode^000000 e";
 	mes "^3131FFModo Padre^000000. ";
-	mes "vocÍ precisar· esperar dentro da ^3131FFAcolyte Class Waiting Room^000000.";
+	mes "voc√™ precisar√° esperar dentro da ^3131FFAcolyte Class Waiting Room^000000.";
 	next;
 	mes "[Alias]";
 	mes "Quando chegar a sua vez,";
-	mes "vocÍ ser· enviado para fora do";
+	mes "voc√™ ser√° enviado para fora do";
 	mes "sala de espera e orientado para";
 	mes "o terreno da arena. ";
-	mes "a taxa de entrada È de 1.000 zeny.";
+	mes "a taxa de entrada √© de 1.000 zeny.";
 	next;
 	mes "[Alias]";
-	mes "Ser· ˙til saber";
+	mes "Ser√° √∫til saber";
 	mes "que as Plantas Vermelhas e";
-	mes "Permeters no AcÛlito";
-	mes "O Modo Classe derrubar· itens";
-	mes "e dar experiÍncia. ";
-	mes "monstros, entretanto, n„o o far„o.";
+	mes "Permeters no Ac√≥lito";
+	mes "O Modo Classe derrubar√° itens";
+	mes "e dar experi√™ncia. ";
+	mes "monstros, entretanto, n√£o o far√£o.";
 	next;
 	mes "[Alias]";
 	mes "Depois de ter sido guiado";
 	mes "para o terreno da arena real,";
-	mes "ouÁa ^3131FFTrocco^000000 para os objetivos da miss„o que vocÍ ter· que";
+	mes "ou√ßa ^3131FFTrocco^000000 para os objetivos da miss√£o que voc√™ ter√° que";
 	mes "concluir dentro do prazo";
 	mes "de ^3131FF8 minutos^000000. ";
 	next;
 	mes "[Alias]";
 	mes "Ao completar o";
-	mes "etapa inteira, vocÍ estar·";
+	mes "etapa inteira, voc√™ estar√°";
 	mes "warped to the ^3131DDFinale Waiting";
-	mes "Sala^000000 onde vocÍ ser· recompensado";
+	mes "Sala^000000 onde voc√™ ser√° recompensado";
 	mes "com Pontos de Arena. ";
 	next;
 	mes "[Alias]";
-	mes "Quando vocÍ estiver automaticamente";
+	mes "Quando voc√™ estiver automaticamente";
 	mes "enviado fora do Finale";
-	mes "Sala de Espera, vocÍ n„o ter·";
+	mes "Sala de Espera, voc√™ n√£o ter√°";
 	mes "a chance de obter sua Arena";
-	mes "Pontos se vocÍ n„o os obteve";
-	mes "aÌ, ent„o tome cuidado ~";
+	mes "Pontos se voc√™ n√£o os obteve";
+	mes "a√≠, ent√£o tome cuidado ~";
 	next;
 	mes "[Alias]";
-	mes "Bom, espero que vocÍs gostem";
-	mes "a Arena do Modo AcÛlito!";
+	mes "Bom, espero que voc√™s gostem";
+	mes "a Arena do Modo Ac√≥lito!";
 	mes "Boa sorte e bons combates!";
 	close;
 }
@@ -1711,33 +1721,33 @@ arena_room,195,5,3	script	log-on-aco#arena	802,{
 		mes "[!!CUIDADO!!]";
 		mes "^3355FFO seguinte menu";
 		mes "o recorde disso";
-		mes "modo especÌfico no";
-		mes "Modo de classe Arena AcÛlito.^000000";
+		mes "modo espec√≠fico no";
+		mes "Modo de classe Arena Ac√≥lito.^000000";
 		next;
-		switch(select("Cancelar:AcÛlito:~nÌvel 70:~nÌvel 80:~nÌvel 90:~nÌvel"+(checkre(0)?"160":"99"))) {
+		switch(select("Cancelar:Ac√≥lito:~n√≠vel 70:~n√≠vel 80:~n√≠vel 90:~n√≠vel"+(checkre(0)?"160":"99"))) {
 		case 1:
 			mes "^3355FFO comando tem";
 			mes "foi cancelado.^000000";
 			close;
 		case 2:
 			set $arn_acotop, 480;
-			set $arn_acotopn$, "Padr„o";
+			set $arn_acotopn$, "Padr√£o";
 			break;
 		case 3:
 			set $arn_pritop60, 480;
-			set $arn_pritopn60$, "Padr„o";
+			set $arn_pritopn60$, "Padr√£o";
 			break;
 		case 4:
 			set $arn_pritop70, 480;
-			set $arn_pritopn70$, "Padr„o";
+			set $arn_pritopn70$, "Padr√£o";
 			break;
 		case 5:
 			set $arn_pritop80, 480;
-			set $arn_pritopn80$, "Padr„o";
+			set $arn_pritopn80$, "Padr√£o";
 			break;
 		case 6:
 			set $arn_pritop90, 480;
-			set $arn_pritopn90$, "Padr„o";
+			set $arn_pritopn90$, "Padr√£o";
 			break;
 		}
 		close;
@@ -1755,9 +1765,9 @@ arena_room,195,10,3	script	acolink#arena	802,{
 	} else {
 		mes "Este NPC abre e";
 		mes "fecha o Portal Warp";
-		mes "para o AcÛlito da Arena";
+		mes "para o Ac√≥lito da Arena";
 		mes "Modo de aula. ";
-		mes "uma opÁ„o do menu.";
+		mes "uma op√ß√£o do menu.";
 		next;
 		switch(select("Cancelar: Warp ON: Warp OFF")) {
 		case 1:
@@ -1767,12 +1777,12 @@ arena_room,195,10,3	script	acolink#arena	802,{
 		case 2:
 			enablenpc "onlyaco#arena";
 			mes "O Portal Warp";
-			mes "ser· inaugurado em breve.";
+			mes "ser√° inaugurado em breve.";
 			close;
 		case 3:
 			disablenpc "onlyaco#arena";
 			mes "O Portal Warp";
-			mes "estar· fechado em breve.";
+			mes "estar√° fechado em breve.";
 			close;
 		}
 	}

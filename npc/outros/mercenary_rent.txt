@@ -8,24 +8,24 @@
 //======================= by: Guru ==========================//
 
 -	script	Mercenary Manager#main	-1,{
-	setarray .@name$, 	"Lança", 			"Espada", 			"Arco";
+	setarray .@name$, 	"LanÃ§a", 			"Espada", 			"Arco";
 	setarray .@faith$, 	"SPEAR_MERC_GUILD",	"SWORD_MERC_GUILD",	"ARCH_MERC_GUILD";
 	setarray .@item, 	12182,				12172,				12162;
 	.@npc$ = strnpcinfo(2);
 	for (.@size = getarraysize(.@name$); .@type < .@size; .@type++)
 		if( compare( .@npc$,.@name$[.@type] ) ) break;
 	.@faith_merc = mercenary_get_faith(getd(.@faith$[.@type]));
-	mes "[Gerente Mercenário]";
-	mes "Bem vindo à";
-	mes .@name$[.@type] + "Guilda dos Mercenários.";
-	mes "O que posso fazer para você?";
+	mes "[Gerente MercenÃ¡rio]";
+	mes "Bem vindo Ã ";
+	mes .@name$[.@type] + "Guilda dos MercenÃ¡rios.";
+	mes "O que posso fazer para vocÃª?";
 	next;
-	switch(select("Contratar Mercenário:Informações sobre Mercenários:Nada:Mercenários do 10º ano")) {
+	switch(select("Contratar MercenÃ¡rio:InformaÃ§Ãµes sobre MercenÃ¡rios:Nada:MercenÃ¡rios do 10Âº ano")) {
 		case 1:
-			mes "[Gerente Mercenário]";
-			mes "Você quer contratar um";
-			mes .@name$[.@type] + "Mercenário?";
-			mes "Em que série você estava";
+			mes "[Gerente MercenÃ¡rio]";
+			mes "VocÃª quer contratar um";
+			mes .@name$[.@type] + "MercenÃ¡rio?";
+			mes "Em que sÃ©rie vocÃª estava";
 			mes "interessado em contratar?";
 			next;
 			for (.@i = 1; .@i <= 9; .@i++)
@@ -36,159 +36,159 @@
 			.@ZenyCost = 7 * .@Grade;
 			setarray .@FaithCost[7], 50,100,300;
 			.@FaithCost = .@FaithCost[.@Grade];
-			mes "[Gerente Mercenário]";
+			mes "[Gerente MercenÃ¡rio]";
 			mes "So you want to hire a " + callfunc("F_GetNumSuffix",.@Grade);
-			mes "Nota" + .@name$[.@type] + "Mercenário?";
-			mes "Você precisa ter alcançado";
-			mes "Nível base" + .@BaseLevel + "ou superior, e";
+			mes "Nota" + .@name$[.@type] + "MercenÃ¡rio?";
+			mes "VocÃª precisa ter alcanÃ§ado";
+			mes "NÃ­vel base" + .@BaseLevel + "ou superior, e";
 			mes "deve pagar o" + .@ZenyCost + ".000 zeny de taxa.";
 			next;
-			if(select("Sim não") == 2) {
-				mes "[Gerente Mercenário]";
-				mes "Oh sério? ";
-				mes "pode não ser um bom momento";
-				mes "para você considerar contratar";
-				mes "um Mercenário, mas por favor sinta";
-				mes "livre para voltar se você";
-				mes "precisa de mudança. ";
+			if(select("Sim nÃ£o") == 2) {
+				mes "[Gerente MercenÃ¡rio]";
+				mes "Oh sÃ©rio? ";
+				mes "pode nÃ£o ser um bom momento";
+				mes "para vocÃª considerar contratar";
+				mes "um MercenÃ¡rio, mas por favor sinta";
+				mes "livre para voltar se vocÃª";
+				mes "precisa de mudanÃ§a. ";
 			}
 			else if(.@FaithCost && .@faith_merc < .@FaithCost) {
-				mes "[Gerente Mercenário]";
-				mes "Ah... Sua classificação de fidelidade";
-				mes "com o" + .@name$[.@type] + "Mercenário";
-				mes "A guilda não é alta o suficiente para";
-				mes "contrate este mercenário. ";
+				mes "[Gerente MercenÃ¡rio]";
+				mes "Ah... Sua classificaÃ§Ã£o de fidelidade";
+				mes "com o" + .@name$[.@type] + "MercenÃ¡rio";
+				mes "A guilda nÃ£o Ã© alta o suficiente para";
+				mes "contrate este mercenÃ¡rio. ";
 				mes "volte depois de ganhar";
 				mes "" + .@FaithCost + "ou mais Fidelidade conosco.";
 			}
 			else if (BaseLevel < .@BaseLevel) {
-				mes "[Gerente Mercenário]";
+				mes "[Gerente MercenÃ¡rio]";
 				mes "Sinto muito, mas sua Base";
-				mes "O nível não é alto o suficiente";
-				mes "para contratar este mercenário.";
+				mes "O nÃ­vel nÃ£o Ã© alto o suficiente";
+				mes "para contratar este mercenÃ¡rio.";
 				mes "Por favor volte para mim";
-				mes "quando você atingir o nível básico" + .@BaseLevel + ".";
+				mes "quando vocÃª atingir o nÃ­vel bÃ¡sico" + .@BaseLevel + ".";
 			}
 			else if (Zeny < .@ZenyCost * 1000) {
-				mes "[Gerente Mercenário]";
-				mes "Me desculpe, mas você";
-				mes "não tenho zeny suficiente";
-				mes "para contratar este mercenário.";
-				mes "A taxa de contratação é" + .@ZenyCost + ".000 zeny.";
+				mes "[Gerente MercenÃ¡rio]";
+				mes "Me desculpe, mas vocÃª";
+				mes "nÃ£o tenho zeny suficiente";
+				mes "para contratar este mercenÃ¡rio.";
+				mes "A taxa de contrataÃ§Ã£o Ã©" + .@ZenyCost + ".000 zeny.";
 			}
 			else {
-				mes "[Gerente Mercenário]";
-				mes "Ótimo! ";
-				mes "são sinceros e dedicados";
+				mes "[Gerente MercenÃ¡rio]";
+				mes "Ã“timo! ";
+				mes "sÃ£o sinceros e dedicados";
 				mes "para proteger seus clientes.";
-				mes "Mercenários convocados irão";
-				mes "oferecer seu apoio a você para";
+				mes "MercenÃ¡rios convocados irÃ£o";
+				mes "oferecer seu apoio a vocÃª para";
 				mes "30 minutos. ";
 				Zeny = Zeny - (.@ZenyCost * 1000);
 				getitem .@item[.@type] - 10 + .@Grade, 1;
 			}
 			close;
 		case 2:
-			mes "[Gerente Mercenário]";
-			mes "Mercenários são soldados";
-			mes "que lutará ao seu lado";
-			mes "no campo de batalha, mas há";
-			mes "são alguns termos e condições";
-			mes "você deve cumprir para contratá-los.";
+			mes "[Gerente MercenÃ¡rio]";
+			mes "MercenÃ¡rios sÃ£o soldados";
+			mes "que lutarÃ¡ ao seu lado";
+			mes "no campo de batalha, mas hÃ¡";
+			mes "sÃ£o alguns termos e condiÃ§Ãµes";
+			mes "vocÃª deve cumprir para contratÃ¡-los.";
 			next;
-			mes "[Gerente Mercenário]";
-			mes "Você deve cumprir um nível";
-			mes "exigência e pague um zeny";
-			mes "taxa para contratar um mercenário.";
-			mes "Mercenários de nível superior";
-			mes "também exigirá que você";
-			mes "construa uma classificação de fidelidade conosco.";
+			mes "[Gerente MercenÃ¡rio]";
+			mes "VocÃª deve cumprir um nÃ­vel";
+			mes "exigÃªncia e pague um zeny";
+			mes "taxa para contratar um mercenÃ¡rio.";
+			mes "MercenÃ¡rios de nÃ­vel superior";
+			mes "tambÃ©m exigirÃ¡ que vocÃª";
+			mes "construa uma classificaÃ§Ã£o de fidelidade conosco.";
 			next;
-			mes "[Gerente Mercenário]";
-			mes "Contratos mercenários não podem ser";
+			mes "[Gerente MercenÃ¡rio]";
+			mes "Contratos mercenÃ¡rios nÃ£o podem ser";
 			mes "transferido para outras pessoas,";
-			mes "e só permitimos uma diferença de 5 níveis básicos entre o Mercenário";
-			mes "e cliente, então você não pode contratar alguém muito mais forte que você.";
+			mes "e sÃ³ permitimos uma diferenÃ§a de 5 nÃ­veis bÃ¡sicos entre o MercenÃ¡rio";
+			mes "e cliente, entÃ£o vocÃª nÃ£o pode contratar alguÃ©m muito mais forte que vocÃª.";
 			next;
-			mes "[Gerente Mercenário]";
-			mes "Bem, você pode descobrir";
-			mes "detalhes quando você realmente forma";
+			mes "[Gerente MercenÃ¡rio]";
+			mes "Bem, vocÃª pode descobrir";
+			mes "detalhes quando vocÃª realmente forma";
 			mes "um contrato com um de nossos";
-			mes "Mercenários e receba";
-			mes "o Pergaminho de Invocação que irá";
-			mes "chame um Mercenário para o seu lado.";
+			mes "MercenÃ¡rios e receba";
+			mes "o Pergaminho de InvocaÃ§Ã£o que irÃ¡";
+			mes "chame um MercenÃ¡rio para o seu lado.";
 			next;
-			mes "[Gerente Mercenário]";
-			mes "Você não pode dar este pergaminho";
+			mes "[Gerente MercenÃ¡rio]";
+			mes "VocÃª nÃ£o pode dar este pergaminho";
 			mes "para qualquer outra pessoa, e o";
-			mes "Mercenário só permanecerá";
-			mes "com você por 30 minutos depois";
-			mes "você o convoca. ";
+			mes "MercenÃ¡rio sÃ³ permanecerÃ¡";
+			mes "com vocÃª por 30 minutos depois";
+			mes "vocÃª o convoca. ";
 			mes "sobre o limite de tempo, ok?";
 			close;
 		case 3:
-			mes "[Gerente Mercenário]";
-			mes "Não? ";
+			mes "[Gerente MercenÃ¡rio]";
+			mes "NÃ£o? ";
 			mes "ajuda? ";
-			mes "pergunte-me se você tem algum";
-			mes "perguntas sobre Mercenários.";
+			mes "pergunte-me se vocÃª tem algum";
+			mes "perguntas sobre MercenÃ¡rios.";
 			close;
 		case 4:
-			mes "[Gerente Mercenário]";
-			mes "Mercenários da 10ª série são";
+			mes "[Gerente MercenÃ¡rio]";
+			mes "MercenÃ¡rios da 10Âª sÃ©rie sÃ£o";
 			mes "o melhor que temos para oferecer,";
-			mes "e usamos critérios diferentes";
+			mes "e usamos critÃ©rios diferentes";
 			mes "para que nossos clientes os contratem.";
-			mes "Não há taxa zeny, mas você";
+			mes "NÃ£o hÃ¡ taxa zeny, mas vocÃª";
 			mes "deve ter 500 Lealdade.";
 			next;
-			mes "[Gerente Mercenário]";
+			mes "[Gerente MercenÃ¡rio]";
 			mes "Depois de fazer um contrato";
-			mes "com um mercenário do 10º ano,";
-			mes "sua classificação de fidelidade será";
+			mes "com um mercenÃ¡rio do 10Âº ano,";
+			mes "sua classificaÃ§Ã£o de fidelidade serÃ¡";
 			mes "diminuiu em 400. Em outros";
-			mes "palavras, você paga 400 Lealdade";
-			mes "para contratar um mercenário de 10º ano.";
+			mes "palavras, vocÃª paga 400 Lealdade";
+			mes "para contratar um mercenÃ¡rio de 10Âº ano.";
 			next;
-			mes "[Gerente Mercenário]";
-			mes "Você também deve estar em";
-			mes "Nível Base 90 ou superior para";
-			mes "contrate um mercenário de 10º ano.";
-			mes "Você ainda está interessado em";
+			mes "[Gerente MercenÃ¡rio]";
+			mes "VocÃª tambÃ©m deve estar em";
+			mes "NÃ­vel Base 90 ou superior para";
+			mes "contrate um mercenÃ¡rio de 10Âº ano.";
+			mes "VocÃª ainda estÃ¡ interessado em";
 			mes "formando este contrato?";
 			next;
-			if (select("Sim não") == 2) {
-				mes "[Gerente Mercenário]";
-				mes "Eu entendo... É preciso";
-				mes "trabalho duro e sacrifício para";
-				mes "chegar até ao ponto em que";
-				mes "você pode contratar um aluno do 10º ano";
-				mes "Mercenário. ";
-				mes "contratar um mercenário de grau inferior?";
+			if (select("Sim nÃ£o") == 2) {
+				mes "[Gerente MercenÃ¡rio]";
+				mes "Eu entendo... Ã‰ preciso";
+				mes "trabalho duro e sacrifÃ­cio para";
+				mes "chegar atÃ© ao ponto em que";
+				mes "vocÃª pode contratar um aluno do 10Âº ano";
+				mes "MercenÃ¡rio. ";
+				mes "contratar um mercenÃ¡rio de grau inferior?";
 			}
 			else if (.@faith_merc < 500) {
-				mes "[Gerente Mercenário]";
+				mes "[Gerente MercenÃ¡rio]";
 				mes "Sinto muito, mas seu";
-				mes "A classificação de fidelidade também é";
-				mes "baixo para contratar um 10º ano";
-				mes "Mercenário. ";
+				mes "A classificaÃ§Ã£o de fidelidade tambÃ©m Ã©";
+				mes "baixo para contratar um 10Âº ano";
+				mes "MercenÃ¡rio. ";
 				mes "500 ou mais Lealdade a";
 				mes "firmar um contrato com um.";
 			}
 			else if (BaseLevel < 90) {
-				mes "[Gerente Mercenário]";
-				mes "Sinto muito, mas você deve";
-				mes "estar no Nível Base 90 ou";
+				mes "[Gerente MercenÃ¡rio]";
+				mes "Sinto muito, mas vocÃª deve";
+				mes "estar no NÃ­vel Base 90 ou";
 				mes "superior para formar um contrato";
-				mes "com um mercenário do 10º ano.";
+				mes "com um mercenÃ¡rio do 10Âº ano.";
 			}
 			else {
-				mes "[Gerente Mercenário]";
-				mes "Parabéns! ";
-				mes "como se você estivesse planejando tomar";
+				mes "[Gerente MercenÃ¡rio]";
+				mes "ParabÃ©ns! ";
+				mes "como se vocÃª estivesse planejando tomar";
 				mes "em algum trabalho muito perigoso";
-				mes "já que você está contratando um décimo";
-				mes "Grau Mercenário. ";
+				mes "jÃ¡ que vocÃª estÃ¡ contratando um dÃ©cimo";
+				mes "Grau MercenÃ¡rio. ";
 				mes "boa sorte com ele.";
 				mercenary_set_faith getd(.@faith$[.@type]),-400;
 				getitem .@item[.@type],1;
@@ -202,12 +202,12 @@ pay_arche,99,167,4	duplicate(Mercenary Manager#main)	Mercenary Manager#Bow	4_M_J
 // Mercenary Merchant NPCs
 //============================================================
 -	script	Mercenary Merchant#dummy::MercMerchant	-1,{
-	mes "[Comerciante de Mercadorias Mercenárias]";
-	mes "Olá, eu vendo mercadorias";
-	mes "que os Mercenários podem";
+	mes "[Comerciante de Mercadorias MercenÃ¡rias]";
+	mes "OlÃ¡, eu vendo mercadorias";
+	mes "que os MercenÃ¡rios podem";
 	mes "usar. ";
 	mes "em especial que";
-	mes "você está procurando?";
+	mes "vocÃª estÃ¡ procurando?";
 	next;
 	setarray .@item, 12184,	12185,	12241,	12242,	12243;
 	setarray .@cost, 1750,	3000,	560,	1050,	2100;
@@ -217,59 +217,59 @@ pay_arche,99,167,4	duplicate(Mercenary Manager#main)	Mercenary Manager#Bow	4_M_J
 	.@str$ = .@cost[.@m] + "";
 	.@len = getstrlen(.@str$);
 	.@str_cost$ = (.@len <= 3)? .@str$ : insertchar(.@str$,",",.@len-3);
-	mes "[Comerciante de Mercadorias Mercenárias]";
+	mes "[Comerciante de Mercadorias MercenÃ¡rias]";
 	mes getitemname(.@item[.@m]);
 	mes "cada custo" + .@str_cost$ + "Zeny.";
 	mes "Quantos quer?";
 	next;
 	input .@input;
 	if (!.@input) {
-		mes "[Comerciante de Mercadorias Mercenárias]";
-		mes "Você mudou de ideia?";
-		mes "Tudo bem, fique à vontade para vir";
+		mes "[Comerciante de Mercadorias MercenÃ¡rias]";
+		mes "VocÃª mudou de ideia?";
+		mes "Tudo bem, fique Ã  vontade para vir";
 		mes "volte para mim sempre que quiser";
-		mes "para comprar qualquer Poção Mercenária.";
+		mes "para comprar qualquer PoÃ§Ã£o MercenÃ¡ria.";
 		close;
 	}
 	else if (.@input < 0 || .@input > 10000) {
-		mes "[Comerciante de Mercadorias Mercenárias]";
-		mes "Me desculpe, mas você";
-		mes "só pode comprar até";
-		mes "10.000 dessas poções";
+		mes "[Comerciante de Mercadorias MercenÃ¡rias]";
+		mes "Me desculpe, mas vocÃª";
+		mes "sÃ³ pode comprar atÃ©";
+		mes "10.000 dessas poÃ§Ãµes";
 		mes "de uma vez. ";
-		mes "um número de 1 a 10.000.";
+		mes "um nÃºmero de 1 a 10.000.";
 		close;
 	}
 	else if (set(.@total_po, .@input * .@cost[.@m]) > Zeny) {
-		mes "[Comerciante de Mercadorias Mercenárias]";
-		mes "Me desculpe, mas você não";
+		mes "[Comerciante de Mercadorias MercenÃ¡rias]";
+		mes "Me desculpe, mas vocÃª nÃ£o";
 		mes "tenha zeny suficiente para isso";
-		mes "muitas poções. ";
+		mes "muitas poÃ§Ãµes. ";
 		mes "esteja aqui quando estiver pronto";
 		mes "comprar algo";
-		mes "para seus Mercenários.";
+		mes "para seus MercenÃ¡rios.";
 		close;
 	}
 	else if (!checkweight(.@item[.@m], .@input)) {
-		mes "[Comerciante de Mercadorias Mercenárias]";
+		mes "[Comerciante de Mercadorias MercenÃ¡rias]";
 		mes "Se eu te desse tantos";
-		mes "poções, você não estaria";
-		mes "capaz de carregá-los com você.";
+		mes "poÃ§Ãµes, vocÃª nÃ£o estaria";
+		mes "capaz de carregÃ¡-los com vocÃª.";
 		mes "Por favor volte depois";
-		mes "você libera algum espaço";
-		mes "em seu inventário.";
+		mes "vocÃª libera algum espaÃ§o";
+		mes "em seu inventÃ¡rio.";
 		close;
 	}
-	mes "[Comerciante de Mercadorias Mercenárias]";
+	mes "[Comerciante de Mercadorias MercenÃ¡rias]";
 	if (.@input == 1) 
-		mes "Aqui está o seu" + getitemname(.@item[.@m]) + ".";
+		mes "Aqui estÃ¡ o seu" + getitemname(.@item[.@m]) + ".";
 	else {
-		mes "Aqui está, isso é exatamente";
+		mes "Aqui estÃ¡, isso Ã© exatamente";
 		mes callfunc("F_InsertPlural",.@input,getitemname(.@item[.@m])) + ".";
 	}
 	mes "Obrigado e por favor venha";
-	mes "novamente quando você precisar de mais";
-	mes "poções para seus Mercenários.";
+	mes "novamente quando vocÃª precisar de mais";
+	mes "poÃ§Ãµes para seus MercenÃ¡rios.";
 	Zeny = Zeny - .@total_po;
 	getitem .@item[.@m], .@input;
 	close;
@@ -281,7 +281,7 @@ pay_arche,102,167,5	duplicate(MercMerchant)	Mercenary Merchant#Bow	4_F_CAPEGIRL
 //============================================================
 -	script	Mercenary_Switch	-1,{
 
-	setarray .@name$, "Lança","Espada","Arco";
+	setarray .@name$, "LanÃ§a","Espada","Arco";
 	.@npc$ = strnpcinfo(2);
 	for (.@size = getarraysize(.@name$); .@type < .@size; .@type++)
 		if (.@npc$ == .@name$[.@type]) break;
@@ -294,18 +294,18 @@ pay_arche,102,167,5	duplicate(MercMerchant)	Mercenary Merchant#Bow	4_F_CAPEGIRL
 	if (.@i == -2)
 		mes "Erro.";
 	else if (.@i == 0)
-		mes "Número errado";
+		mes "NÃºmero errado";
 	else if (.@i == 1) {
 		mes "Por favor selecione.";
 		next;
-		switch( select( "Desligue o NPC Mercenário","Ative o NPC Mercenário" ) ) {
+		switch( select( "Desligue o NPC MercenÃ¡rio","Ative o NPC MercenÃ¡rio" ) ) {
 		case 1:
-			mes "NPCs estão desligados.";
+			mes "NPCs estÃ£o desligados.";
 			disablenpc "Mercenary Manager#" + .@name$[.@type];
 			disablenpc "Mercenary Merchant#" + .@name$[.@type];
 			break;
 		case 2:
-			mes "NPCs estão ativados.";
+			mes "NPCs estÃ£o ativados.";
 			enablenpc "Mercenary Manager#" + .@name$[.@type];
 			enablenpc "Mercenary Merchant#" + .@name$[.@type];
 			break;
