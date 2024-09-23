@@ -63,7 +63,7 @@ que_ng,73,26,5	shop	Boonray#nin	83,2117:-1,7521:-1,7522:-1,7523:-1,7524:-1
 //=======================================================
 // Cooking Addition
 //=======================================================
-prontera,156,212,1	shop	Chef Assistant#prt	700,7454:-1,7456:-1,7482:-1,580:-1
+//prontera,156,212,1	shop	Chef Assistant#prt	700,7454:-1,7456:-1,7482:-1,580:-1
 moc_ruins,115,123,5	shop	Chef Assistant#moc	86,7455:-1,7453:-1,7454:-1,7456:-1,7452:-1
 geffen,196,111,3	shop	Chef Assistant#gef	85,7482:-1
 alberta,167,135,5	shop	Chef Assistant#alb	712,579:-1

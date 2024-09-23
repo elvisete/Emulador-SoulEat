@@ -18,27 +18,27 @@ OnInit:
 	end;
 
 OnTimer10000:
-	mapannounce "enorme","A Corrida de Monstro Único começará em breve. ",bc_map,"0x87ceeb";
+	mapannounce "hugel","A Corrida de Monstro Único começará em breve. ",bc_map,"0x87ceeb";
 	end;
 OnTimer30000:
-	mapannounce "enorme","A Arena Single Monster Race acaba de abrir.",bc_map,"0x87ceeb";
+	mapannounce "hugel","A Arena Single Monster Race acaba de abrir.",bc_map,"0x87ceeb";
 	$@mon_time_1_1 = 1;
 	donpcevent "Race Progress Timer::OnEnable";
 	end;
 OnTimer90000:
-	mapannounce "enorme","A arena Single Monster Race já está aberta. ",bc_map,"0x87ceeb";
+	mapannounce "hugel","A arena Single Monster Race já está aberta. ",bc_map,"0x87ceeb";
 	end;
 OnTimer210000:
-	mapannounce "enorme","A entrada para a Single Monster Race Arena será fechada em breve. ",bc_map,"0x87ceeb";
+	mapannounce "hugel","A entrada para a Single Monster Race Arena será fechada em breve. ",bc_map,"0x87ceeb";
 	end;
 OnTimer270000:
-	mapannounce "enorme","A entrada da Single Monster Race Arena será fechada em breve.",bc_map,"0x87ceeb";
+	mapannounce "hugel","A entrada da Single Monster Race Arena será fechada em breve.",bc_map,"0x87ceeb";
 	end;
 OnTimer272000:
-	mapannounce "enorme","Participantes, por favor entrem na Arena antes que as portas fechem.",bc_map,"0x87ceeb";
+	mapannounce "hugel","Participantes, por favor entrem na Arena antes que as portas fechem.",bc_map,"0x87ceeb";
 	end;
 OnTimer330000:
-	mapannounce "enorme","A corrida está começando agora. ",bc_map,"0x87ceeb";
+	mapannounce "hugel","A corrida está começando agora. ",bc_map,"0x87ceeb";
 	$@mon_time_1_1 = 0;
 	disablenpc "#race_timer1-1";
 	stopnpctimer;
@@ -906,11 +906,11 @@ OnInit:
 	end;
 
 OnTimer10000:
-	mapannounce "enorme","A Dual Monster Race começará em breve. ",bc_map,"0xffb6c1";
+	mapannounce "hugel","A Dual Monster Race começará em breve. ",bc_map,"0xffb6c1";
 	end;
 
 OnTimer30000:
-	mapannounce "enorme","A Dual Monster Race Arena acaba de ser inaugurada.",bc_map,"0xffb6c1";
+	mapannounce "hugel","A Dual Monster Race Arena acaba de ser inaugurada.",bc_map,"0xffb6c1";
 	$@mon_time_2_1 = 1;
 	donpcevent "#race_timer2-2::OnEnable";
 	donpcevent "TrapGlobal#race02::OnEnable";
@@ -918,23 +918,23 @@ OnTimer30000:
 	end;
 
 OnTimer90000:
-	mapannounce "enorme","A arena Dual Monster Race já está aberta. ",bc_map,"0xffb6c1";
+	mapannounce "hugel","A arena Dual Monster Race já está aberta. ",bc_map,"0xffb6c1";
 	end;
 
 OnTimer210000:
-	mapannounce "enorme","A entrada da Dual Monster Race Arena será fechada em breve. ",bc_map,"0xffb6c1";
+	mapannounce "hugel","A entrada da Dual Monster Race Arena será fechada em breve. ",bc_map,"0xffb6c1";
 	end;
 
 OnTimer270000:
-	mapannounce "enorme","A entrada da Dual Monster Race Arena será fechada em breve.",bc_map,"0xffb6c1";
+	mapannounce "hugel","A entrada da Dual Monster Race Arena será fechada em breve.",bc_map,"0xffb6c1";
 	end;
 
 OnTimer272000:
-	mapannounce "enorme","Participantes, por favor entrem na Arena antes que as portas fechem.",bc_map,"0xffb6c1";
+	mapannounce "hugel","Participantes, por favor entrem na Arena antes que as portas fechem.",bc_map,"0xffb6c1";
 	end;
 
 OnTimer330000:
-	mapannounce "enorme","A corrida está começando agora. ",bc_map,"0xffb6c1";
+	mapannounce "hugel","A corrida está começando agora. ",bc_map,"0xffb6c1";
 	$@mon_time_2_1 = 0;
 	disablenpc "#race_timer2-1";
 	stopnpctimer;

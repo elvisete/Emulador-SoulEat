@@ -11353,71 +11353,71 @@ OnTouch:
 
 // Rogue Guild Investigation
 //============================================================
-prontera,163,204,3	script	Man from Morocc	99,{
-	if (rumour_nd == 0) {
-		mes "[Viajante de Marrocos]";
-		mes "Ah, é muito legal e";
-		mes "refrescante estar perto disso";
-		mes "fonte. ";
-		mes "aqui do que em Marrocos.";
-		next;
-		switch(select("Bom dia hoje, hein?:Como está o Marrocos ultimamente?")) {
-		case 1:
-			mes "[Viajante de Marrocos]";
-			mes "Oh sim. ";
-			mes "dia! ";
-			mes "e legal. ";
-			mes "muitas pessoas moram aqui!";
-			close;
-		case 2:
-			mes "[Viajante de Marrocos]";
-			mes "Você é um aventureiro e";
-			mes "você não ouviu a loucura";
-			mes "rumores se espalhando por toda parte";
-			mes "o reino de Rune-Midgarts?";
-			mes "Eu pensei que vocês viajassem";
-			mes "ao redor e ouvi coisas.";
-			next;
-		}
-		select("Que rumores malucos?");
-		mes "[Viajante de Marrocos]";
-		mes "Uh... Agentes desonestos!";
-		mes "Eles estão por todo lado!";
-		mes "Por que você não fala com alguns";
-		mes "dos agentes Rogue despachados";
-		mes "nas outras cidades? ";
-		mes "sabe do que estou falando!";
-		set rumour_nd,1;
-		close;
-	}
-	else if (rumour_nd == 1) {
-		mes "[Viajante de Marrocos]";
-		mes "Você não deveria estar";
-		mes "procurando um ladino";
-		mes "agente para conversar?";
-		mes "Quero dizer, talvez você";
-		mes "pode contribuir e";
-		mes "ajude-os.";
-		close;
-	}
-	else if (rumour_nd > 1) {
-		if (zdan_edq > 12) {
-			mes "[Viajante de Marrocos]";
-			mes "Então a Gangue Z foi o que";
-			mes "aqueles rumores malucos eram";
-			mes "tudo sobre. ";
-			mes "que estão todos na prisão.";
-			close;
-		}
-		else {
-			mes "[Viajante de Marrocos]";
-			mes "Ei, uh...";
-			mes "Eu só estou tentando";
-			mes "relaxar nas minhas férias.";
-			close;
-		}
-	}
-}
+//prontera,163,204,3	script	Man from Morocc	99,{
+//	if (rumour_nd == 0) {
+//		mes "[Viajante de Marrocos]";
+//		mes "Ah, é muito legal e";
+//		mes "refrescante estar perto disso";
+//		mes "fonte. ";
+//		mes "aqui do que em Marrocos.";
+//		next;
+//		switch(select("Bom dia hoje, hein?:Como está o Marrocos ultimamente?")) {
+//		case 1:
+//			mes "[Viajante de Marrocos]";
+//			mes "Oh sim. ";
+//			mes "dia! ";
+//			mes "e legal. ";
+//			mes "muitas pessoas moram aqui!";
+//			close;
+//		case 2:
+//			mes "[Viajante de Marrocos]";
+//			mes "Você é um aventureiro e";
+//			mes "você não ouviu a loucura";
+//			mes "rumores se espalhando por toda parte";
+//			mes "o reino de Rune-Midgarts?";
+//			mes "Eu pensei que vocês viajassem";
+//			mes "ao redor e ouvi coisas.";
+//			next;
+//		}
+//		select("Que rumores malucos?");
+//		mes "[Viajante de Marrocos]";
+//		mes "Uh... Agentes desonestos!";
+//		mes "Eles estão por todo lado!";
+//		mes "Por que você não fala com alguns";
+//		mes "dos agentes Rogue despachados";
+//		mes "nas outras cidades? ";
+//		mes "sabe do que estou falando!";
+//		set rumour_nd,1;
+//		close;
+//	}
+//	else if (rumour_nd == 1) {
+//		mes "[Viajante de Marrocos]";
+//		mes "Você não deveria estar";
+//		mes "procurando um ladino";
+//		mes "agente para conversar?";
+//		mes "Quero dizer, talvez você";
+//		mes "pode contribuir e";
+//		mes "ajude-os.";
+//		close;
+//	}
+//	else if (rumour_nd > 1) {
+//		if (zdan_edq > 12) {
+//			mes "[Viajante de Marrocos]";
+//			mes "Então a Gangue Z foi o que";
+//			mes "aqueles rumores malucos eram";
+//			mes "tudo sobre. ";
+//			mes "que estão todos na prisão.";
+//			close;
+//		}
+//		else {
+//			mes "[Viajante de Marrocos]";
+//			mes "Ei, uh...";
+//			mes "Eu só estou tentando";
+//			mes "relaxar nas minhas férias.";
+//			close;
+//		}
+//	}
+//}
 
 in_rogue,355,28,5	script	Rogue Agent	118,{
 	if (checkweight(907,200) == 0) {
